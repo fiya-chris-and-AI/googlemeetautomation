@@ -35,7 +35,7 @@ export async function POST(request: Request) {
         const { data: chunks, error: rpcError } = await supabase.rpc('match_chunks', {
             query_embedding: queryEmbedding,
             match_count: 10,
-            match_threshold: 0.7,
+            match_threshold: 0.3,
             filter_transcript_id: transcriptId ?? null,
         });
 

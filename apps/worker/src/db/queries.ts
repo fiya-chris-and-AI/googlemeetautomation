@@ -138,7 +138,7 @@ export async function getProcessingLogs(limit = 100): Promise<ProcessingLogEntry
 export async function matchChunks(
     queryEmbedding: number[],
     matchCount = 10,
-    matchThreshold = 0.7,
+    matchThreshold = 0.3,
     transcriptId?: string
 ): Promise<Array<{
     id: string;
