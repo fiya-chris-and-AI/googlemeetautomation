@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  body {
+    @apply bg-surface text-gray-100 antialiased;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-surface-raised/60 backdrop-blur-xl border border-white/[0.06]
+           rounded-2xl shadow-lg shadow-black/20 transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-white/[0.12] shadow-xl shadow-black/30;
+  }
+
+  /* Stat card with gradient accent */
+  .stat-card {
+    @apply glass-card p-6 relative overflow-hidden;
+  }
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-[0.04] bg-gradient-to-br;
+  }
+
+  /* Glow effect on focus/active inputs */
+  .input-glow {
+    @apply bg-surface-overlay border border-white/10 rounded-xl px-4 py-3
+           text-gray-100 placeholder-gray-500
+           focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20
+           transition-all duration-200;
+  }
+
+  /* Table rows */
+  .table-row {
+    @apply border-b border-white/[0.04] transition-colors duration-150
+           hover:bg-white/[0.03] cursor-pointer;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-success {
+    @apply badge bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20;
+  }
+  .badge-error {
+    @apply badge bg-rose-500/10 text-rose-400 ring-1 ring-rose-500/20;
+  }
+  .badge-warning {
+    @apply badge bg-amber-500/10 text-amber-400 ring-1 ring-amber-500/20;
+  }
+  .badge-info {
+    @apply badge bg-brand-500/10 text-brand-400 ring-1 ring-brand-500/20;
+  }
+
+  /* Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
