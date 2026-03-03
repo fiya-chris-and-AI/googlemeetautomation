@@ -45,14 +45,26 @@ export default function ActionItemsPage() {
     const [newPriority, setNewPriority] = useState<ActionItemPriority>('medium');
     const [newDueDate, setNewDueDate] = useState('');
 
+    // Grouping state
+    const [viewMode, setViewMode] = useState<'grouped' | 'flat'>('grouped');
+    const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+    const [grouping, setGrouping] = useState(false);
+    const [groupError, setGroupError] = useState<string | null>(null);
+
+    const fetchItems = async () => {
+        try {
+            const r = await fetch('/api/action-items');
+            const data = await r.json();
+            if (Array.isArray(data)) setItems(data);
+        } catch {
+            // silently fail
+        } finally {
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
-        fetch('/api/action-items')
-            .then((r) => r.json())
-            .then((data) => {
-                if (Array.isArray(data)) setItems(data);
-                setLoading(false);
-            })
-            .catch(() => setLoading(false));
+        fetchItems();
     }, []);
 
     // Derive unique assignees from data
@@ -79,6 +91,46 @@ export default function ActionItemsPage() {
             return true;
         });
     }, [items, assigneeFilter, priorityFilter, sourceFilter, search]);
+
+    // Organize items into groups per column
+    const groupedByColumn = useMemo(() => {
+        const result: Record<ActionItemStatus, { label: string | null; items: ActionItem[] }[]> = {
+            open: [], in_progress: [], done: [], dismissed: [],
+        };
+
+        for (const col of COLUMNS) {
+            const colItems = filtered.filter(i => i.status === col.key);
+
+            // Bucket items by group_label
+            const buckets = new Map<string | null, ActionItem[]>();
+            for (const item of colItems) {
+                const key = item.group_label ?? null;
+                if (!buckets.has(key)) buckets.set(key, []);
+                buckets.get(key)!.push(item);
+            }
+
+            // Sort: named groups first (alphabetically), then ungrouped (null) last
+            const groups = [...buckets.entries()]
+                .sort((a, b) => {
+                    if (a[0] === null) return 1;
+                    if (b[0] === null) return -1;
+                    return a[0].localeCompare(b[0]);
+                })
+                .map(([label, groupItems]) => ({ label, items: groupItems }));
+
+            result[col.key] = groups;
+        }
+
+        return result;
+    }, [filtered]);
+
+    const toggleGroup = (key: string) => {
+        setCollapsedGroups(prev => {
+            const next = new Set(prev);
+            next.has(key) ? next.delete(key) : next.add(key);
+            return next;
+        });
+    };
 
     const updateStatus = async (id: string, status: ActionItemStatus) => {
         try {
@@ -132,6 +184,51 @@ export default function ActionItemsPage() {
         } catch { /* silently fail */ }
     };
 
+    const handleSmartGroup = async () => {
+        setGrouping(true);
+        setGroupError(null);
+        try {
+            const res = await fetch('/api/action-items/group', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ force: true }),
+            });
+            const result = await res.json();
+
+            if (!res.ok) {
+                setGroupError(result.error || 'Grouping failed');
+                console.error('[Smart Group] API error:', result);
+                return;
+            }
+
+            console.log(`[Smart Group] Grouped ${result.updated} items`);
+            await fetchItems();
+        } catch (err) {
+            setGroupError('Network error — could not reach grouping API');
+            console.error('[Smart Group] Error:', err);
+        } finally {
+            setGrouping(false);
+        }
+    };
+
+    const handleGroupLabelSave = async (id: string, newLabel: string) => {
+        const trimmed = newLabel.trim() || null;
+        const item = items.find(i => i.id === id);
+        if (!item || item.group_label === trimmed) return;
+
+        try {
+            const res = await fetch(`/api/action-items/${id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ group_label: trimmed }),
+            });
+            const updated = (await res.json()) as ActionItem;
+            if (updated.id) {
+                setItems((prev) => prev.map((i) => (i.id === id ? updated : i)));
+            }
+        } catch { /* keep current state */ }
+    };
+
     const isOverdue = (item: ActionItem) => {
         if (!item.due_date || item.status === 'done') return false;
         return new Date(item.due_date) < new Date();
@@ -145,15 +242,30 @@ export default function ActionItemsPage() {
                     <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Action Items</h1>
                     <p className="text-theme-text-tertiary mt-1">Track and manage tasks from your meetings</p>
                 </div>
-                <button
-                    onClick={() => setShowCreate(true)}
-                    className="px-5 py-2.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-xl font-medium text-sm
-                       hover:from-brand-400 hover:to-brand-500 transition-all duration-200
-                       shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30"
-                >
-                    + Add Item
-                </button>
+                <div className="flex items-center gap-3">
+                    <button
+                        onClick={handleSmartGroup}
+                        disabled={grouping}
+                        className="px-5 py-2.5 bg-gradient-to-r from-accent-violet to-purple-600 text-white rounded-xl font-medium text-sm
+                           hover:from-accent-violet/90 hover:to-purple-500 transition-all duration-200
+                           shadow-lg shadow-accent-violet/20 hover:shadow-accent-violet/30 disabled:opacity-50"
+                    >
+                        {grouping ? 'Grouping...' : '\u2726 Smart Group'}
+                    </button>
+                    <button
+                        onClick={() => setShowCreate(true)}
+                        className="px-5 py-2.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-xl font-medium text-sm
+                           hover:from-brand-400 hover:to-brand-500 transition-all duration-200
+                           shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30"
+                    >
+                        + Add Item
+                    </button>
+                </div>
             </div>
+
+            {groupError && (
+                <p className="text-xs text-rose-400 mt-2">{groupError}</p>
+            )}
 
             {/* Filters Bar */}
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-3">
@@ -189,6 +301,29 @@ export default function ActionItemsPage() {
                         { value: 'manual', label: 'Manual' },
                     ]}
                 />
+                {/* View mode toggle */}
+                <div className="flex items-center gap-1 bg-theme-bg-overlay/50 rounded-lg p-0.5">
+                    <button
+                        onClick={() => setViewMode('grouped')}
+                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+                            viewMode === 'grouped'
+                                ? 'bg-brand-500/20 text-brand-400'
+                                : 'text-theme-text-muted hover:text-theme-text-secondary'
+                        }`}
+                    >
+                        Grouped
+                    </button>
+                    <button
+                        onClick={() => setViewMode('flat')}
+                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
+                            viewMode === 'flat'
+                                ? 'bg-brand-500/20 text-brand-400'
+                                : 'text-theme-text-muted hover:text-theme-text-secondary'
+                        }`}
+                    >
+                        Flat
+                    </button>
+                </div>
             </div>
 
             {/* Kanban Board */}
@@ -198,6 +333,7 @@ export default function ActionItemsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {COLUMNS.map((col) => {
                         const colItems = filtered.filter((i) => i.status === col.key);
+                        const groups = groupedByColumn[col.key];
                         return (
                             <div key={col.key} className="flex flex-col">
                                 {/* Column Header */}
@@ -215,7 +351,8 @@ export default function ActionItemsPage() {
                                         <div className="p-6 text-center text-xs text-theme-text-muted border border-dashed border-theme-border/[0.08] rounded-2xl">
                                             No items
                                         </div>
-                                    ) : (
+                                    ) : viewMode === 'flat' ? (
+                                        /* Flat view — original rendering */
                                         colItems.map((item) => (
                                             <ActionItemCard
                                                 key={item.id}
@@ -225,8 +362,72 @@ export default function ActionItemsPage() {
                                                 onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
                                                 onStatusChange={updateStatus}
                                                 onDismiss={dismissItem}
+                                                onGroupLabelSave={handleGroupLabelSave}
                                             />
                                         ))
+                                    ) : (
+                                        /* Grouped view */
+                                        groups.map((group) => {
+                                            if (group.label === null) {
+                                                // Ungrouped items — render as loose cards
+                                                return group.items.map((item) => (
+                                                    <ActionItemCard
+                                                        key={item.id}
+                                                        item={item}
+                                                        isOverdue={isOverdue(item)}
+                                                        isExpanded={expandedId === item.id}
+                                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                        onStatusChange={updateStatus}
+                                                        onDismiss={dismissItem}
+                                                        onGroupLabelSave={handleGroupLabelSave}
+                                                    />
+                                                ));
+                                            }
+
+                                            const groupKey = `${col.key}::${group.label}`;
+                                            const isCollapsed = collapsedGroups.has(groupKey);
+
+                                            return (
+                                                <div key={groupKey} className="border-l-2 border-brand-500/30 rounded-xl overflow-hidden">
+                                                    {/* Group header */}
+                                                    <button
+                                                        onClick={() => toggleGroup(groupKey)}
+                                                        className="w-full flex items-center justify-between px-4 py-2.5
+                                                            bg-theme-bg-overlay/50 hover:bg-theme-bg-overlay/70
+                                                            transition-colors cursor-pointer"
+                                                    >
+                                                        <div className="flex items-center gap-2">
+                                                            <span
+                                                                className="text-xs text-theme-text-muted transition-transform duration-200"
+                                                                style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
+                                                            >
+                                                                &#9654;
+                                                            </span>
+                                                            <span className="text-sm font-semibold text-theme-text-primary">{group.label}</span>
+                                                        </div>
+                                                        <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
+                                                    </button>
+
+                                                    {/* Group items */}
+                                                    {!isCollapsed && (
+                                                        <div className="space-y-3 p-2 pt-2">
+                                                            {group.items.map((item) => (
+                                                                <ActionItemCard
+                                                                    key={item.id}
+                                                                    item={item}
+                                                                    isOverdue={isOverdue(item)}
+                                                                    isExpanded={expandedId === item.id}
+                                                                    onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                                    onStatusChange={updateStatus}
+                                                                    onDismiss={dismissItem}
+                                                                    onGroupLabelSave={handleGroupLabelSave}
+                                                                />
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            );
+                                        })
                                     )}
                                 </div>
                             </div>
@@ -330,6 +531,7 @@ function ActionItemCard({
     onToggleExpand,
     onStatusChange,
     onDismiss,
+    onGroupLabelSave,
 }: {
     item: ActionItem;
     isOverdue: boolean;
@@ -337,7 +539,15 @@ function ActionItemCard({
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: ActionItemStatus) => void;
     onDismiss: (id: string) => void;
+    onGroupLabelSave: (id: string, label: string) => void;
 }) {
+    const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
+
+    // Sync local state when item changes (e.g. after Smart Group)
+    useEffect(() => {
+        setEditGroupLabel(item.group_label ?? '');
+    }, [item.group_label]);
+
     const transitions: Partial<Record<ActionItemStatus, { label: string; target: ActionItemStatus }[]>> = {
         open: [{ label: 'Start', target: 'in_progress' }, { label: 'Done', target: 'done' }],
         in_progress: [{ label: 'Reopen', target: 'open' }, { label: 'Done', target: 'done' }],
@@ -392,9 +602,24 @@ function ActionItemCard({
                             href={`/transcripts/${item.transcript_id}`}
                             className="block text-xs text-brand-400 hover:text-brand-300 transition-colors"
                         >
-                            View source transcript →
+                            View source transcript &rarr;
                         </Link>
                     )}
+
+                    {/* Group label editor */}
+                    <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-theme-text-tertiary uppercase tracking-wider">Group:</span>
+                        <input
+                            type="text"
+                            value={editGroupLabel}
+                            onChange={(e) => setEditGroupLabel(e.target.value)}
+                            onBlur={() => onGroupLabelSave(item.id, editGroupLabel)}
+                            onKeyDown={(e) => e.key === 'Enter' && onGroupLabelSave(item.id, editGroupLabel)}
+                            placeholder="Ungrouped"
+                            className="text-xs text-theme-text-secondary bg-transparent border-b border-theme-border/[0.1]
+                                       focus:border-brand-500/50 focus:outline-none px-1 py-0.5 w-32 transition-colors"
+                        />
+                    </div>
                 </div>
             )}
 

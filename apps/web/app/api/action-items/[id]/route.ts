@@ -54,6 +54,7 @@ export async function PATCH(
         if (body.assigned_to !== undefined) update.assigned_to = body.assigned_to;
         if (body.priority !== undefined) update.priority = body.priority;
         if (body.due_date !== undefined) update.due_date = body.due_date;
+        if (body.group_label !== undefined) update.group_label = body.group_label || null;
         if (body.status !== undefined) {
             update.status = body.status;
             // Auto-set completed_at when marking done

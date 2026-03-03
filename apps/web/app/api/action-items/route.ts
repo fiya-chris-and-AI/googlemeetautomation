@@ -91,6 +91,7 @@ export async function POST(req: NextRequest) {
                 due_date: body.due_date ?? null,
                 source_text: body.source_text ?? null,
                 created_by: body.created_by ?? 'manual',
+                group_label: body.group_label ?? null,
             })
             .select()
             .single();

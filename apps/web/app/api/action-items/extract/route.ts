@@ -52,6 +52,7 @@ Return a JSON array of objects with these fields:
 - priority ("low" | "medium" | "high" | "urgent"): Infer from context and urgency cues
 - due_date (string | null): ISO date if a deadline is mentioned, otherwise null
 - source_text (string): The exact excerpt from the transcript that implies this action item
+- group_label (string | null): A short label (1-3 words, title-cased) for the project, tool, or topic this item relates to. Use null if it doesn't clearly belong to a group. If multiple items relate to the same topic, give them the same label.
 
 Only return action items that are clearly implied by the transcript — do not fabricate tasks.
 If there are no action items, return an empty array.
@@ -88,6 +89,7 @@ Return ONLY valid JSON, no markdown fences or extra text.`;
             priority?: string;
             due_date?: string | null;
             source_text?: string;
+            group_label?: string | null;
         }>;
 
         try {
@@ -115,6 +117,7 @@ Return ONLY valid JSON, no markdown fences or extra text.`;
             due_date: item.due_date ?? null,
             source_text: item.source_text ?? null,
             created_by: 'ai',
+            group_label: item.group_label ?? null,
         }));
 
         const { data: inserted, error: insertError } = await supabase
