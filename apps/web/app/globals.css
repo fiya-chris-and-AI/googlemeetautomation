@@ -5,22 +5,69 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-white/10;
+  /* ── Light theme (default) ── */
+  :root {
+    --color-bg-base: 248 250 252;
+    --color-bg-raised: 255 255 255;
+    --color-bg-overlay: 241 245 249;
+    --color-bg-muted: 226 232 240;
+
+    --color-text-primary: 15 23 42;
+    --color-text-secondary: 71 85 105;
+    --color-text-tertiary: 100 116 139;
+    --color-text-muted: 148 163 184;
+
+    --color-border: 0 0 0;
+    --border-opacity: 0.1;
+
+    --color-scrollbar: 0 0 0;
+    --shadow-opacity-sm: 0.06;
+    --shadow-opacity-lg: 0.1;
   }
+
+  /* ── Dark theme ── */
+  .dark {
+    --color-bg-base: 10 15 30;
+    --color-bg-raised: 17 24 39;
+    --color-bg-overlay: 26 34 54;
+    --color-bg-muted: 30 41 59;
+
+    --color-text-primary: 243 244 246;
+    --color-text-secondary: 156 163 175;
+    --color-text-tertiary: 107 114 128;
+    --color-text-muted: 75 85 99;
+
+    --color-border: 255 255 255;
+    --border-opacity: 0.06;
+
+    --color-scrollbar: 255 255 255;
+    --shadow-opacity-sm: 0.2;
+    --shadow-opacity-lg: 0.3;
+  }
+
+  * {
+    border-color: rgb(var(--color-border) / var(--border-opacity));
+  }
+
   body {
-    @apply bg-surface text-gray-100 antialiased;
+    background-color: rgb(var(--color-bg-base));
+    color: rgb(var(--color-text-primary));
+    @apply antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 @layer components {
   /* Glassmorphism card */
   .glass-card {
-    @apply bg-surface-raised/60 backdrop-blur-xl border border-white/[0.06]
-           rounded-2xl shadow-lg shadow-black/20 transition-all duration-300;
+    background-color: rgb(var(--color-bg-raised) / 0.6);
+    border: 1px solid rgb(var(--color-border) / var(--border-opacity));
+    box-shadow: 0 10px 15px rgb(0 0 0 / var(--shadow-opacity-sm));
+    @apply backdrop-blur-xl rounded-2xl transition-all duration-300;
   }
   .glass-card:hover {
-    @apply border-white/[0.12] shadow-xl shadow-black/30;
+    border-color: rgb(var(--color-border) / calc(var(--border-opacity) * 2));
+    box-shadow: 0 20px 25px rgb(0 0 0 / var(--shadow-opacity-lg));
   }
 
   /* Stat card with gradient accent */
@@ -34,16 +81,24 @@
 
   /* Glow effect on focus/active inputs */
   .input-glow {
-    @apply bg-surface-overlay border border-white/10 rounded-xl px-4 py-3
-           text-gray-100 placeholder-gray-500
+    background-color: rgb(var(--color-bg-overlay));
+    border: 1px solid rgb(var(--color-border) / 0.1);
+    color: rgb(var(--color-text-primary));
+    @apply rounded-xl px-4 py-3
            focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20
            transition-all duration-200;
+  }
+  .input-glow::placeholder {
+    color: rgb(var(--color-text-tertiary));
   }
 
   /* Table rows */
   .table-row {
-    @apply border-b border-white/[0.04] transition-colors duration-150
-           hover:bg-white/[0.03] cursor-pointer;
+    border-bottom: 1px solid rgb(var(--color-border) / 0.04);
+    @apply transition-colors duration-150 cursor-pointer;
+  }
+  .table-row:hover {
+    background-color: rgb(var(--color-border) / 0.03);
   }
 
   /* Badge styles */
@@ -71,9 +126,10 @@
     @apply bg-transparent;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full;
+    background-color: rgb(var(--color-scrollbar) / 0.1);
+    @apply rounded-full;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-white/20;
+    background-color: rgb(var(--color-scrollbar) / 0.2);
   }
 }

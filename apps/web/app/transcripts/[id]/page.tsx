@@ -63,7 +63,7 @@ export default function TranscriptDetailPage({
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center h-64 text-gray-500">
+            <div className="flex items-center justify-center h-64 text-theme-text-tertiary">
                 Loading transcript...
             </div>
         );
@@ -71,7 +71,7 @@ export default function TranscriptDetailPage({
 
     if (!transcript) {
         return (
-            <div className="flex items-center justify-center h-64 text-gray-500">
+            <div className="flex items-center justify-center h-64 text-theme-text-tertiary">
                 Transcript not found.
             </div>
         );
@@ -91,7 +91,7 @@ export default function TranscriptDetailPage({
             <div className="flex gap-8">
                 {/* Main Content */}
                 <div className="flex-1 min-w-0">
-                    <h1 className="text-2xl font-bold text-gray-100 tracking-tight mb-6">
+                    <h1 className="text-2xl font-bold text-theme-text-primary tracking-tight mb-6">
                         {transcript.meeting_title}
                     </h1>
 
@@ -118,8 +118,8 @@ export default function TranscriptDetailPage({
                             </button>
                         </div>
                         {answer && (
-                            <div className="mt-4 pt-4 border-t border-white/[0.06]">
-                                <p className="text-sm text-gray-200 whitespace-pre-wrap">{answer.answer}</p>
+                            <div className="mt-4 pt-4 border-t border-theme-border/[0.06]">
+                                <p className="text-sm text-theme-text-primary whitespace-pre-wrap">{answer.answer}</p>
                             </div>
                         )}
                     </div>
@@ -133,20 +133,20 @@ export default function TranscriptDetailPage({
                             );
 
                             if (speaker) {
-                                const colorClass = speakerColorMap.get(speaker) ?? 'text-gray-300';
+                                const colorClass = speakerColorMap.get(speaker) ?? 'text-theme-text-primary';
                                 const prefix = line.substring(0, line.indexOf(speaker) + speaker.length);
                                 const rest = line.substring(prefix.length);
 
                                 return (
                                     <p key={i} className="mb-1">
                                         <span className={`font-semibold ${colorClass}`}>{prefix}</span>
-                                        <span className="text-gray-300">{rest}</span>
+                                        <span className="text-theme-text-secondary">{rest}</span>
                                     </p>
                                 );
                             }
 
                             return (
-                                <p key={i} className="text-gray-400 mb-1">
+                                <p key={i} className="text-theme-text-secondary mb-1">
                                     {line || '\u00A0'}
                                 </p>
                             );
@@ -170,15 +170,15 @@ export default function TranscriptDetailPage({
                         </MetaField>
                         <MetaField label="Processed At" value={new Date(transcript.processed_at).toLocaleString()} />
                         <div>
-                            <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-2">
+                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-2">
                                 Participants ({transcript.participants.length})
                             </p>
                             <div className="space-y-1.5">
                                 {transcript.participants.map((p) => (
                                     <div key={p} className="flex items-center gap-2">
-                                        <div className={`w-2 h-2 rounded-full ${speakerColorMap.get(p)?.replace('text-', 'bg-') ?? 'bg-gray-500'
+                                        <div className={`w-2 h-2 rounded-full ${speakerColorMap.get(p)?.replace('text-', 'bg-') ?? 'bg-theme-text-tertiary'
                                             }`} />
-                                        <span className="text-sm text-gray-300">{p}</span>
+                                        <span className="text-sm text-theme-text-secondary">{p}</span>
                                     </div>
                                 ))}
                             </div>
@@ -197,8 +197,8 @@ function MetaField({ label, value, children }: {
 }) {
     return (
         <div>
-            <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-1">{label}</p>
-            {children ?? <p className="text-sm text-gray-300">{value}</p>}
+            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-1">{label}</p>
+            {children ?? <p className="text-sm text-theme-text-secondary">{value}</p>}
         </div>
     );
 }

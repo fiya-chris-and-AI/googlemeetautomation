@@ -70,8 +70,8 @@ export default function DashboardPage() {
         <div className="max-w-6xl mx-auto animate-fade-in">
             {/* Header */}
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-100 tracking-tight">Dashboard</h1>
-                <p className="text-gray-500 mt-1">Your meeting transcript overview</p>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Dashboard</h1>
+                <p className="text-theme-text-tertiary mt-1">Your meeting transcript overview</p>
             </div>
 
             {/* Query Bar */}
@@ -100,10 +100,10 @@ export default function DashboardPage() {
 
                 {answer && (
                     <div className="glass-card p-6 mt-4 animate-slide-up">
-                        <p className="text-gray-200 whitespace-pre-wrap">{answer.answer}</p>
+                        <p className="text-theme-text-primary whitespace-pre-wrap">{answer.answer}</p>
                         {answer.sources.length > 0 && (
-                            <div className="mt-4 pt-4 border-t border-white/[0.06]">
-                                <p className="text-xs text-gray-500 mb-2">Sources ({answer.sources.length})</p>
+                            <div className="mt-4 pt-4 border-t border-theme-border/[0.06]">
+                                <p className="text-xs text-theme-text-tertiary mb-2">Sources ({answer.sources.length})</p>
                                 <div className="space-y-2">
                                     {answer.sources.map((s) => (
                                         <Link
@@ -131,7 +131,7 @@ export default function DashboardPage() {
             {/* Top Participants */}
             {topParticipants.length > 0 && (
                 <div className="glass-card p-6 mb-8">
-                    <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
+                    <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-4">
                         Most Frequent Participants
                     </h2>
                     <div className="flex flex-wrap gap-2">
@@ -146,19 +146,19 @@ export default function DashboardPage() {
 
             {/* Recent Transcripts */}
             <div className="glass-card overflow-hidden">
-                <div className="px-6 py-4 border-b border-white/[0.06]">
-                    <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                <div className="px-6 py-4 border-b border-theme-border/[0.06]">
+                    <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider">
                         Recent Transcripts
                     </h2>
                 </div>
                 {loading ? (
-                    <div className="p-12 text-center text-gray-500">Loading...</div>
+                    <div className="p-12 text-center text-theme-text-tertiary">Loading...</div>
                 ) : recent.length === 0 ? (
-                    <div className="p-12 text-center text-gray-500">
+                    <div className="p-12 text-center text-theme-text-tertiary">
                         No transcripts yet. Processed emails will appear here.
                     </div>
                 ) : (
-                    <div className="divide-y divide-white/[0.04]">
+                    <div className="divide-y divide-theme-border/[0.04]">
                         {recent.map((t) => (
                             <Link
                                 key={t.transcript_id}
@@ -166,13 +166,13 @@ export default function DashboardPage() {
                                 className="table-row flex items-center justify-between px-6 py-4"
                             >
                                 <div>
-                                    <p className="text-sm font-medium text-gray-200">{t.meeting_title}</p>
-                                    <p className="text-xs text-gray-500 mt-0.5">
+                                    <p className="text-sm font-medium text-theme-text-primary">{t.meeting_title}</p>
+                                    <p className="text-xs text-theme-text-tertiary mt-0.5">
                                         {new Date(t.meeting_date).toLocaleDateString()} · {t.participants.length} participants
                                     </p>
                                 </div>
                                 <div className="text-right">
-                                    <p className="text-xs text-gray-500">{t.word_count.toLocaleString()} words</p>
+                                    <p className="text-xs text-theme-text-tertiary">{t.word_count.toLocaleString()} words</p>
                                     <span className={`text-[10px] font-medium ${t.extraction_method === 'inline' ? 'text-brand-400' :
                                             t.extraction_method === 'google_doc' ? 'text-accent-teal' : 'text-accent-violet'
                                         }`}>
@@ -197,8 +197,8 @@ function StatCard({ label, value, color, loading }: {
     return (
         <div className="stat-card">
             <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${color} opacity-80`} />
-            <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">{label}</p>
-            <p className="text-3xl font-bold text-gray-100 mt-2">
+            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider">{label}</p>
+            <p className="text-3xl font-bold text-theme-text-primary mt-2">
                 {loading ? '—' : value}
             </p>
         </div>

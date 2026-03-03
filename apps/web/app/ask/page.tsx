@@ -69,8 +69,8 @@ export default function AskPage() {
         <div className="max-w-4xl mx-auto animate-fade-in flex flex-col h-[calc(100vh-4rem)]">
             {/* Header */}
             <div className="mb-6">
-                <h1 className="text-3xl font-bold text-gray-100 tracking-tight">Ask AI</h1>
-                <p className="text-gray-500 mt-1">Query your meeting history with natural language</p>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Ask AI</h1>
+                <p className="text-theme-text-tertiary mt-1">Query your meeting history with natural language</p>
             </div>
 
             {/* Chat Area */}
@@ -80,10 +80,10 @@ export default function AskPage() {
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500/20 to-accent-teal/20 flex items-center justify-center mb-6">
                             <span className="text-3xl">◈</span>
                         </div>
-                        <h2 className="text-lg font-semibold text-gray-300 mb-2">
+                        <h2 className="text-lg font-semibold text-theme-text-primary mb-2">
                             Ask anything about your meetings
                         </h2>
-                        <p className="text-sm text-gray-500 mb-8 max-w-md">
+                        <p className="text-sm text-theme-text-tertiary mb-8 max-w-md">
                             I can search through all your transcripts and provide answers with citations to the original meetings.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-lg">
@@ -91,8 +91,8 @@ export default function AskPage() {
                                 <button
                                     key={q}
                                     onClick={() => handleSend(q)}
-                                    className="text-left text-sm p-3 rounded-xl bg-surface-overlay border border-white/[0.06]
-                             text-gray-400 hover:text-gray-200 hover:border-white/[0.1] transition-all duration-200"
+                                    className="text-left text-sm p-3 rounded-xl bg-theme-overlay border border-theme-border/[0.06]
+                             text-theme-text-secondary hover:text-theme-text-primary hover:border-theme-border/[0.1] transition-all duration-200"
                                 >
                                     {q}
                                 </button>
@@ -105,16 +105,16 @@ export default function AskPage() {
                     <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                         <div
                             className={`max-w-[80%] rounded-2xl px-5 py-3 ${msg.role === 'user'
-                                    ? 'bg-brand-500/20 text-gray-100 rounded-br-md'
+                                    ? 'bg-brand-500/20 text-theme-text-primary rounded-br-md'
                                     : 'glass-card rounded-bl-md'
                                 }`}
                         >
-                            <p className="text-sm whitespace-pre-wrap text-gray-200">{msg.content}</p>
+                            <p className="text-sm whitespace-pre-wrap text-theme-text-primary">{msg.content}</p>
 
                             {/* Source Citations */}
                             {msg.sources && msg.sources.length > 0 && (
-                                <div className="mt-3 pt-3 border-t border-white/[0.06]">
-                                    <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-2">
+                                <div className="mt-3 pt-3 border-t border-theme-border/[0.06]">
+                                    <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
                                         Sources ({msg.sources.length})
                                     </p>
                                     <div className="space-y-1.5">
@@ -174,10 +174,10 @@ function SourceCard({ source }: { source: SourceChunk }) {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <div className="rounded-lg bg-surface-overlay/50 border border-white/[0.04] overflow-hidden">
+        <div className="rounded-lg bg-theme-overlay/50 border border-theme-border/[0.04] overflow-hidden">
             <button
                 onClick={() => setExpanded(!expanded)}
-                className="w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/[0.02] transition-colors"
+                className="w-full text-left px-3 py-2 flex items-center justify-between hover:bg-theme-border/[0.02] transition-colors"
             >
                 <div>
                     <Link
@@ -187,15 +187,15 @@ function SourceCard({ source }: { source: SourceChunk }) {
                     >
                         {source.meeting_title}
                     </Link>
-                    <p className="text-[10px] text-gray-600">
+                    <p className="text-[10px] text-theme-text-muted">
                         {new Date(source.meeting_date).toLocaleDateString()} · {Math.round(source.similarity * 100)}% match
                     </p>
                 </div>
-                <span className="text-gray-600 text-xs">{expanded ? '▲' : '▼'}</span>
+                <span className="text-theme-text-muted text-xs">{expanded ? '▲' : '▼'}</span>
             </button>
             {expanded && (
                 <div className="px-3 pb-2 animate-slide-up">
-                    <p className="text-xs text-gray-400 whitespace-pre-wrap border-l-2 border-brand-500/30 pl-2">
+                    <p className="text-xs text-theme-text-secondary whitespace-pre-wrap border-l-2 border-brand-500/30 pl-2">
                         {source.text.length > 300 ? source.text.slice(0, 300) + '...' : source.text}
                     </p>
                 </div>

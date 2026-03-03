@@ -77,8 +77,8 @@ export default function TranscriptsPage() {
     return (
         <div className="max-w-6xl mx-auto animate-fade-in">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-100 tracking-tight">Transcript Library</h1>
-                <p className="text-gray-500 mt-1">{transcripts.length} transcripts indexed</p>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Transcript Library</h1>
+                <p className="text-theme-text-tertiary mt-1">{transcripts.length} transcripts indexed</p>
             </div>
 
             {/* Filters */}
@@ -105,29 +105,29 @@ export default function TranscriptsPage() {
             <div className="glass-card overflow-hidden">
                 <table className="w-full">
                     <thead>
-                        <tr className="border-b border-white/[0.06]">
+                        <tr className="border-b border-theme-border/[0.06]">
                             <th
                                 onClick={() => toggleSort('meeting_title')}
-                                className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider cursor-pointer hover:text-gray-300 transition-colors"
+                                className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
                             >
                                 Title{sortIndicator('meeting_title')}
                             </th>
                             <th
                                 onClick={() => toggleSort('meeting_date')}
-                                className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider cursor-pointer hover:text-gray-300 transition-colors"
+                                className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
                             >
                                 Date{sortIndicator('meeting_date')}
                             </th>
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Participants
                             </th>
                             <th
                                 onClick={() => toggleSort('word_count')}
-                                className="text-right px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider cursor-pointer hover:text-gray-300 transition-colors"
+                                className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
                             >
                                 Words{sortIndicator('word_count')}
                             </th>
-                            <th className="text-right px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Method
                             </th>
                         </tr>
@@ -135,13 +135,13 @@ export default function TranscriptsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                <td colSpan={5} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     Loading transcripts...
                                 </td>
                             </tr>
                         ) : filtered.length === 0 ? (
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                <td colSpan={5} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {search || participantFilter
                                         ? 'No transcripts match your filters.'
                                         : 'No transcripts yet.'}
@@ -153,12 +153,12 @@ export default function TranscriptsPage() {
                                     <td className="px-6 py-4">
                                         <Link
                                             href={`/transcripts/${t.transcript_id}`}
-                                            className="text-sm font-medium text-gray-200 hover:text-brand-400 transition-colors"
+                                            className="text-sm font-medium text-theme-text-primary hover:text-brand-400 transition-colors"
                                         >
                                             {t.meeting_title}
                                         </Link>
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-gray-400">
+                                    <td className="px-6 py-4 text-sm text-theme-text-secondary">
                                         {new Date(t.meeting_date).toLocaleDateString()}
                                     </td>
                                     <td className="px-6 py-4">
@@ -167,13 +167,13 @@ export default function TranscriptsPage() {
                                                 <span key={p} className="badge-info text-[10px]">{p}</span>
                                             ))}
                                             {t.participants.length > 3 && (
-                                                <span className="badge text-[10px] text-gray-500">
+                                                <span className="badge text-[10px] text-theme-text-tertiary">
                                                     +{t.participants.length - 3}
                                                 </span>
                                             )}
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-gray-400 text-right">
+                                    <td className="px-6 py-4 text-sm text-theme-text-secondary text-right">
                                         {t.word_count.toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4 text-right">

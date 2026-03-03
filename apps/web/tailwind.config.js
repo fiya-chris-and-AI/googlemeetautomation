@@ -34,6 +34,20 @@ module.exports = {
                     amber: '#f59e0b',
                     rose: '#f43f5e',
                 },
+                // Semantic theme tokens backed by CSS variables
+                theme: {
+                    base: 'rgb(var(--color-bg-base) / <alpha-value>)',
+                    raised: 'rgb(var(--color-bg-raised) / <alpha-value>)',
+                    overlay: 'rgb(var(--color-bg-overlay) / <alpha-value>)',
+                    muted: 'rgb(var(--color-bg-muted) / <alpha-value>)',
+                },
+                'theme-text': {
+                    primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
+                    secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+                    tertiary: 'rgb(var(--color-text-tertiary) / <alpha-value>)',
+                    muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
+                },
+                'theme-border': 'rgb(var(--color-border) / <alpha-value>)',
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],

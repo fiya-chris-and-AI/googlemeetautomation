@@ -24,27 +24,27 @@ export default function LogsPage() {
     return (
         <div className="max-w-6xl mx-auto animate-fade-in">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-100 tracking-tight">Processing Log</h1>
-                <p className="text-gray-500 mt-1">Track every email processed by the worker</p>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Processing Log</h1>
+                <p className="text-theme-text-tertiary mt-1">Track every email processed by the worker</p>
             </div>
 
             <div className="glass-card overflow-hidden">
                 <table className="w-full">
                     <thead>
-                        <tr className="border-b border-white/[0.06]">
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                        <tr className="border-b border-theme-border/[0.06]">
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Timestamp
                             </th>
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Email Subject
                             </th>
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Status
                             </th>
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Method
                             </th>
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Error
                             </th>
                         </tr>
@@ -52,23 +52,23 @@ export default function LogsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                <td colSpan={5} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     Loading logs...
                                 </td>
                             </tr>
                         ) : logs.length === 0 ? (
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                                <td colSpan={5} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     No processing logs yet.
                                 </td>
                             </tr>
                         ) : (
                             logs.map((log) => (
                                 <tr key={log.id} className="table-row">
-                                    <td className="px-6 py-4 text-sm text-gray-400 whitespace-nowrap">
+                                    <td className="px-6 py-4 text-sm text-theme-text-secondary whitespace-nowrap">
                                         {new Date(log.processed_at).toLocaleString()}
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-gray-300 max-w-xs truncate" title={log.email_subject}>
+                                    <td className="px-6 py-4 text-sm text-theme-text-primary max-w-xs truncate" title={log.email_subject}>
                                         {log.email_subject}
                                     </td>
                                     <td className="px-6 py-4">
@@ -78,7 +78,7 @@ export default function LogsPage() {
                                             {log.status}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 text-sm text-gray-500">
+                                    <td className="px-6 py-4 text-sm text-theme-text-tertiary">
                                         {log.extraction_method ?? '—'}
                                     </td>
                                     <td className="px-6 py-4 text-sm text-rose-400/70 max-w-xs truncate" title={log.error_message ?? ''}>
