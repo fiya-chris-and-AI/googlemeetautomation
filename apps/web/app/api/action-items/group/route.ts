@@ -58,13 +58,13 @@ Below is a JSON array of action items. Each has an "id", "title", and optional "
 
 Your job:
 1. Identify items that belong to the same project, product, tool, client, initiative, or topic.
-2. Assign a short group label (1–3 words, title-cased) to each item.
-3. Items that don't clearly belong to any group should get group_label: null.
-4. A group must have at least 2 items. If only 1 item relates to a topic, set its group_label to null.
-5. Be conservative — only group items that are genuinely related, not just vaguely similar.
+2. Assign a short group label (1–3 words, title-cased) to EVERY item. No item may be left without a group.
+3. If an item doesn't clearly fit an existing group, create a descriptive group for it (e.g. "Meeting Follow-ups", "Infrastructure", "Outreach").
+4. As a last resort, assign items to a "Miscellaneous" group — but prefer creating meaningful groups.
+5. Be conservative about merging unrelated items, but DO assign every item to some group.
 
-Return a JSON object where keys are item IDs and values are the group label (string) or null.
-Example: { "abc123": "Raggy", "def456": "Raggy", "ghi789": "Website UI", "jkl012": null }
+Return a JSON object where keys are item IDs and values are the group label (string). Every value MUST be a non-null string.
+Example: { "abc123": "Raggy", "def456": "Raggy", "ghi789": "Website UI", "jkl012": "Outreach" }
 
 Return ONLY valid JSON, no markdown fences or extra text.`;
 

@@ -6,7 +6,6 @@ import type { ActionItem, ActionItemStatus, ActionItemPriority } from '@meet-pip
 
 const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
-    { key: 'in_progress', label: 'In Progress', color: 'from-brand-500 to-brand-600' },
     { key: 'done', label: 'Done', color: 'from-emerald-500 to-emerald-600' },
 ];
 
@@ -131,6 +130,20 @@ export default function ActionItemsPage() {
             return next;
         });
     };
+
+    const allGroupKeys = useMemo(() => {
+        const keys: string[] = [];
+        for (const col of COLUMNS) {
+            for (const group of groupedByColumn[col.key]) {
+                const label = group.label ?? 'Ungrouped';
+                keys.push(`${col.key}::${label}`);
+            }
+        }
+        return keys;
+    }, [groupedByColumn]);
+
+    const collapseAll = () => setCollapsedGroups(new Set(allGroupKeys));
+    const expandAll = () => setCollapsedGroups(new Set());
 
     const updateStatus = async (id: string, status: ActionItemStatus) => {
         try {
@@ -305,38 +318,52 @@ export default function ActionItemsPage() {
                 <div className="flex items-center gap-1 bg-theme-bg-overlay/50 rounded-lg p-0.5">
                     <button
                         onClick={() => setViewMode('grouped')}
-                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-                            viewMode === 'grouped'
-                                ? 'bg-brand-500/20 text-brand-400'
-                                : 'text-theme-text-muted hover:text-theme-text-secondary'
-                        }`}
+                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${viewMode === 'grouped'
+                            ? 'bg-brand-500/20 text-brand-400'
+                            : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            }`}
                     >
                         Grouped
                     </button>
                     <button
                         onClick={() => setViewMode('flat')}
-                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${
-                            viewMode === 'flat'
-                                ? 'bg-brand-500/20 text-brand-400'
-                                : 'text-theme-text-muted hover:text-theme-text-secondary'
-                        }`}
+                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${viewMode === 'flat'
+                            ? 'bg-brand-500/20 text-brand-400'
+                            : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            }`}
                     >
                         Flat
                     </button>
                 </div>
+                {viewMode === 'grouped' && allGroupKeys.length > 0 && (
+                    <div className="flex items-center gap-1">
+                        <button
+                            onClick={expandAll}
+                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                        >
+                            Expand All
+                        </button>
+                        <button
+                            onClick={collapseAll}
+                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                        >
+                            Collapse All
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* Kanban Board */}
             {loading ? (
                 <div className="p-12 text-center text-theme-text-tertiary">Loading action items...</div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="space-y-6">
                     {COLUMNS.map((col) => {
                         const colItems = filtered.filter((i) => i.status === col.key);
                         const groups = groupedByColumn[col.key];
                         return (
-                            <div key={col.key} className="flex flex-col">
-                                {/* Column Header */}
+                            <div key={col.key}>
+                                {/* Section Header */}
                                 <div className="glass-card p-4 mb-3 flex items-center justify-between">
                                     <div className="flex items-center gap-2">
                                         <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${col.color}`} />
@@ -345,15 +372,14 @@ export default function ActionItemsPage() {
                                     <span className="text-xs text-theme-text-tertiary font-medium">{colItems.length}</span>
                                 </div>
 
-                                {/* Cards */}
-                                <div className="space-y-3 flex-1">
-                                    {colItems.length === 0 ? (
-                                        <div className="p-6 text-center text-xs text-theme-text-muted border border-dashed border-theme-border/[0.08] rounded-2xl">
-                                            No items
-                                        </div>
-                                    ) : viewMode === 'flat' ? (
-                                        /* Flat view — original rendering */
-                                        colItems.map((item) => (
+                                {/* Cards — responsive grid */}
+                                {colItems.length === 0 ? (
+                                    <div className="p-6 text-center text-xs text-theme-text-muted border border-dashed border-theme-border/[0.08] rounded-2xl">
+                                        No items
+                                    </div>
+                                ) : viewMode === 'flat' ? (
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                        {colItems.map((item) => (
                                             <ActionItemCard
                                                 key={item.id}
                                                 item={item}
@@ -364,28 +390,58 @@ export default function ActionItemsPage() {
                                                 onDismiss={dismissItem}
                                                 onGroupLabelSave={handleGroupLabelSave}
                                             />
-                                        ))
-                                    ) : (
-                                        /* Grouped view */
-                                        groups.map((group) => {
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="space-y-3">
+                                        {groups.map((group) => {
+                                            // Treat null-labelled items the same as named groups
+                                            const displayLabel = group.label ?? 'Ungrouped';
+                                            const groupKey = `${col.key}::${displayLabel}`;
+                                            const isCollapsed = collapsedGroups.has(groupKey);
+
                                             if (group.label === null) {
-                                                // Ungrouped items — render as loose cards
-                                                return group.items.map((item) => (
-                                                    <ActionItemCard
-                                                        key={item.id}
-                                                        item={item}
-                                                        isOverdue={isOverdue(item)}
-                                                        isExpanded={expandedId === item.id}
-                                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                        onStatusChange={updateStatus}
-                                                        onDismiss={dismissItem}
-                                                        onGroupLabelSave={handleGroupLabelSave}
-                                                    />
-                                                ));
+                                                // Ungrouped items — render with a collapsible header
+                                                return (
+                                                    <div key={groupKey} className="border-l-2 border-theme-text-muted/30 rounded-xl overflow-hidden">
+                                                        <button
+                                                            onClick={() => toggleGroup(groupKey)}
+                                                            className="w-full flex items-center justify-between px-4 py-2.5
+                                                                bg-theme-bg-overlay/50 hover:bg-theme-bg-overlay/70
+                                                                transition-colors cursor-pointer"
+                                                        >
+                                                            <div className="flex items-center gap-2">
+                                                                <span
+                                                                    className="text-xs text-theme-text-muted transition-transform duration-200"
+                                                                    style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
+                                                                >
+                                                                    &#9654;
+                                                                </span>
+                                                                <span className="text-sm font-semibold text-theme-text-muted">{displayLabel}</span>
+                                                            </div>
+                                                            <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
+                                                        </button>
+                                                        {!isCollapsed && (
+                                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2 pt-2">
+                                                                {group.items.map((item) => (
+                                                                    <ActionItemCard
+                                                                        key={item.id}
+                                                                        item={item}
+                                                                        isOverdue={isOverdue(item)}
+                                                                        isExpanded={expandedId === item.id}
+                                                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                                        onStatusChange={updateStatus}
+                                                                        onDismiss={dismissItem}
+                                                                        onGroupLabelSave={handleGroupLabelSave}
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                );
                                             }
 
-                                            const groupKey = `${col.key}::${group.label}`;
-                                            const isCollapsed = collapsedGroups.has(groupKey);
+                                            // Named group — uses groupKey and isCollapsed from above
 
                                             return (
                                                 <div key={groupKey} className="border-l-2 border-brand-500/30 rounded-xl overflow-hidden">
@@ -408,9 +464,9 @@ export default function ActionItemsPage() {
                                                         <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
                                                     </button>
 
-                                                    {/* Group items */}
+                                                    {/* Group items — responsive grid inside the group */}
                                                     {!isCollapsed && (
-                                                        <div className="space-y-3 p-2 pt-2">
+                                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2 pt-2">
                                                             {group.items.map((item) => (
                                                                 <ActionItemCard
                                                                     key={item.id}
@@ -427,9 +483,9 @@ export default function ActionItemsPage() {
                                                     )}
                                                 </div>
                                             );
-                                        })
-                                    )}
-                                </div>
+                                        })}
+                                    </div>
+                                )}
                             </div>
                         );
                     })}
@@ -549,8 +605,7 @@ function ActionItemCard({
     }, [item.group_label]);
 
     const transitions: Partial<Record<ActionItemStatus, { label: string; target: ActionItemStatus }[]>> = {
-        open: [{ label: 'Start', target: 'in_progress' }, { label: 'Done', target: 'done' }],
-        in_progress: [{ label: 'Reopen', target: 'open' }, { label: 'Done', target: 'done' }],
+        open: [{ label: 'Done', target: 'done' }],
         done: [{ label: 'Reopen', target: 'open' }],
     };
 
@@ -565,11 +620,10 @@ function ActionItemCard({
                         {item.assigned_to && (
                             <span className="badge-info text-[10px]">{item.assigned_to}</span>
                         )}
-                        <span className={`text-[10px] font-medium ${
-                            item.priority === 'urgent' ? 'text-rose-400' :
+                        <span className={`text-[10px] font-medium ${item.priority === 'urgent' ? 'text-rose-400' :
                             item.priority === 'high' ? 'text-amber-400' :
-                            'text-theme-text-muted'
-                        }`}>
+                                'text-theme-text-muted'
+                            }`}>
                             {PRIORITY_LABEL[item.priority]}
                         </span>
                         {item.due_date && (
