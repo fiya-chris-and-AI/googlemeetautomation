@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { ActionItem, ActionItemStatus, ActionItemPriority } from '@meet-pipeline/shared';
 
@@ -604,6 +604,53 @@ function ActionItemCard({
         setEditGroupLabel(item.group_label ?? '');
     }, [item.group_label]);
 
+    // ── Ask AI mini-chat state ──────────────────────
+    const [showAskAI, setShowAskAI] = useState(false);
+    const [aiQuestion, setAiQuestion] = useState('');
+    const [aiMessages, setAiMessages] = useState<{ role: 'user' | 'assistant'; content: string }[]>([]);
+    const [aiLoading, setAiLoading] = useState(false);
+    const chatEndRef = useRef<HTMLDivElement>(null);
+
+    // Auto-scroll chat to latest message
+    useEffect(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [aiMessages, aiLoading]);
+
+    const handleAskAI = async (question?: string) => {
+        const q = question ?? aiQuestion.trim();
+        if (!q || !item.transcript_id) return;
+
+        setAiMessages((prev) => [...prev, { role: 'user', content: q }]);
+        setAiQuestion('');
+        setAiLoading(true);
+
+        try {
+            const res = await fetch('/api/query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    question: `${q} — Context: this is about an action item titled "${item.title}"`,
+                    transcript_id: item.transcript_id,
+                }),
+            });
+            const data = await res.json();
+            setAiMessages((prev) => [...prev, { role: 'assistant', content: data.answer }]);
+        } catch {
+            setAiMessages((prev) => [
+                ...prev,
+                { role: 'assistant', content: 'Sorry, something went wrong. Please try again.' },
+            ]);
+        } finally {
+            setAiLoading(false);
+        }
+    };
+
+    const suggestedQuestions = [
+        'What was the full discussion about this?',
+        'Who else was involved in this decision?',
+        'What was the context leading to this action item?',
+    ];
+
     const transitions: Partial<Record<ActionItemStatus, { label: string; target: ActionItemStatus }[]>> = {
         open: [{ label: 'Done', target: 'done' }],
         done: [{ label: 'Reopen', target: 'open' }],
@@ -651,6 +698,97 @@ function ActionItemCard({
                             <p className="text-xs text-theme-text-secondary italic">&ldquo;{item.source_text}&rdquo;</p>
                         </div>
                     )}
+
+                    {/* Ask AI button — only when transcript is available */}
+                    {item.transcript_id && (
+                        <button
+                            onClick={() => setShowAskAI((v) => !v)}
+                            className={`px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors ${showAskAI
+                                    ? 'bg-accent-violet/20 text-accent-violet'
+                                    : 'bg-accent-violet/10 text-accent-violet hover:bg-accent-violet/20'
+                                }`}
+                        >
+                            ◈ Ask AI
+                        </button>
+                    )}
+
+                    {/* Inline mini-chat panel */}
+                    {showAskAI && item.transcript_id && (
+                        <div className="mt-3 p-3 rounded-xl bg-theme-overlay/40 border border-theme-border/[0.06]">
+                            {/* Messages area */}
+                            <div className="max-h-[300px] overflow-y-auto custom-scrollbar space-y-2 mb-3">
+                                {aiMessages.length === 0 && !aiLoading && (
+                                    <div className="space-y-1.5">
+                                        <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
+                                            Suggested questions
+                                        </p>
+                                        {suggestedQuestions.map((q) => (
+                                            <button
+                                                key={q}
+                                                onClick={() => handleAskAI(q)}
+                                                className="block w-full text-left text-xs px-3 py-1.5 rounded-lg
+                                                           bg-theme-overlay/50 border border-theme-border/[0.04]
+                                                           text-theme-text-secondary hover:text-theme-text-primary
+                                                           hover:border-theme-border/[0.1] transition-all duration-200"
+                                            >
+                                                {q}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {aiMessages.map((msg, i) => (
+                                    <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div
+                                            className={`max-w-[85%] px-3 py-1.5 text-xs whitespace-pre-wrap ${msg.role === 'user'
+                                                    ? 'bg-brand-500/15 text-theme-text-primary rounded-xl rounded-br-sm'
+                                                    : 'glass-card text-theme-text-primary rounded-xl rounded-bl-sm'
+                                                }`}
+                                        >
+                                            {msg.content}
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {aiLoading && (
+                                    <div className="flex justify-start">
+                                        <div className="glass-card rounded-xl rounded-bl-sm px-3 py-1.5">
+                                            <div className="flex gap-1">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '150ms' }} />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div ref={chatEndRef} />
+                            </div>
+
+                            {/* Input row */}
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    placeholder="Ask about this action item..."
+                                    value={aiQuestion}
+                                    onChange={(e) => setAiQuestion(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleAskAI()}
+                                    disabled={aiLoading}
+                                    className="flex-1 input-glow text-xs border-0 bg-transparent focus:ring-0 py-1.5"
+                                />
+                                <button
+                                    onClick={() => handleAskAI()}
+                                    disabled={aiLoading || !aiQuestion.trim()}
+                                    className="px-3 py-1.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-lg
+                                               text-xs font-medium hover:from-brand-400 hover:to-brand-500 transition-all
+                                               duration-200 disabled:opacity-50 shadow-sm shadow-brand-500/20"
+                                >
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
                     {item.transcript_id && (
                         <Link
                             href={`/transcripts/${item.transcript_id}`}
