@@ -54,6 +54,11 @@ Return a JSON array of objects with these fields:
 - due_date (string | null): ISO date if a deadline is mentioned, otherwise null
 - source_text (string): The exact excerpt from the transcript that implies this action item
 - group_label (string | null): A short label (1-3 words, title-cased) for the project, tool, or topic this item relates to. Use null if it doesn't clearly belong to a group. If multiple items relate to the same topic, give them the same label.
+- effort ("quick_fix" | "moderate" | "significant"): Estimate the effort required to complete this task:
+  • "quick_fix" — Can likely be done in under 30 minutes (e.g. sending an email, a quick decision, looking something up)
+  • "moderate" — Likely takes 30 minutes to a few hours (e.g. writing a short document, setting up a tool, a focused work session)
+  • "significant" — Likely takes multiple hours or spans multiple days (e.g. building a feature, conducting research, coordinating across people)
+  Base this on the nature of the task described in the transcript, not on its urgency or priority.
 
 Only return action items that are clearly implied by the transcript — do not fabricate tasks.
 If there are no action items, return an empty array.
@@ -91,6 +96,7 @@ Return ONLY valid JSON, no markdown fences or extra text.`;
             due_date?: string | null;
             source_text?: string;
             group_label?: string | null;
+            effort?: string;
         }>;
 
         try {
@@ -127,6 +133,7 @@ Return ONLY valid JSON, no markdown fences or extra text.`;
                     source_text: item.source_text ?? null,
                     created_by: 'ai',
                     group_label: item.group_label ?? null,
+                    effort: item.effort ?? null,
                 });
             }
         }

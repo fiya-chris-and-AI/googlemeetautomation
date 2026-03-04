@@ -2,12 +2,11 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import type { MeetingTranscript, ActionItem } from '@meet-pipeline/shared';
+import type { MeetingTranscript } from '@meet-pipeline/shared';
 import { UploadModal } from '../../components/upload-modal';
 
 type SortField = 'meeting_date' | 'meeting_title' | 'word_count';
 type SortDirection = 'asc' | 'desc';
-type ExtractionState = { status: 'idle' } | { status: 'extracting' } | { status: 'done'; count: number };
 
 /**
  * Transcript Library — filterable, sortable table of all transcripts.
@@ -19,15 +18,22 @@ export default function TranscriptsPage() {
     const [participantFilter, setParticipantFilter] = useState('');
     const [sortField, setSortField] = useState<SortField>('meeting_date');
     const [sortDir, setSortDir] = useState<SortDirection>('desc');
-    const [extractionStates, setExtractionStates] = useState<Map<string, ExtractionState>>(new Map());
     const [deletingIds, setDeletingIds] = useState<Set<string>>(new Set());
     const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+    const [syncing, setSyncing] = useState(false);
+    const [syncResult, setSyncResult] = useState<{
+        found: number;
+        alreadyProcessed: number;
+        newlyProcessed: number;
+        errors: number;
+    } | null>(null);
+    const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
 
     const refreshTranscripts = () => {
         fetch('/api/transcripts')
-            .then((r) => r.json() as Promise<MeetingTranscript[]>)
+            .then((r) => r.json())
             .then((data) => {
-                setTranscripts(data);
+                setTranscripts(Array.isArray(data) ? data : []);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
@@ -35,19 +41,30 @@ export default function TranscriptsPage() {
 
     useEffect(() => { refreshTranscripts(); }, []);
 
-    const handleExtract = async (transcriptId: string) => {
-        setExtractionStates((prev) => new Map(prev).set(transcriptId, { status: 'extracting' }));
+    const handleSync = async () => {
+        setSyncing(true);
+        setSyncResult(null);
+        setNewSyncedIds(new Set());
         try {
-            const res = await fetch('/api/action-items/extract', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ transcript_id: transcriptId }),
-            });
-            const data = (await res.json()) as { items?: ActionItem[]; count?: number };
-            const count = data.count ?? data.items?.length ?? 0;
-            setExtractionStates((prev) => new Map(prev).set(transcriptId, { status: 'done', count }));
+            const res = await fetch('/api/sync', { method: 'POST' });
+            const data = await res.json();
+            setSyncResult(data);
+
+            // Track which transcripts were just synced so we can show a "new" dot.
+            // The sync API returns details with subject but not transcript_id,
+            // so we snapshot current IDs, refresh, then diff.
+            const before = new Set(transcripts.map((t) => t.transcript_id));
+            const refreshRes = await fetch('/api/transcripts');
+            const refreshed = await refreshRes.json();
+            const list: MeetingTranscript[] = Array.isArray(refreshed) ? refreshed : [];
+            setTranscripts(list);
+
+            const added = new Set(list.filter((t) => !before.has(t.transcript_id)).map((t) => t.transcript_id));
+            setNewSyncedIds(added);
         } catch {
-            setExtractionStates((prev) => new Map(prev).set(transcriptId, { status: 'idle' }));
+            setSyncResult(null);
+        } finally {
+            setSyncing(false);
         }
     };
 
@@ -146,8 +163,42 @@ export default function TranscriptsPage() {
                     onChange={(e) => setParticipantFilter(e.target.value)}
                     className="input-glow w-64"
                 />
+                <button
+                    id="sync-inbox-btn"
+                    onClick={handleSync}
+                    disabled={syncing}
+                    className="px-4 py-2 text-sm font-medium rounded-lg transition-colors
+                               bg-transparent border border-theme-border
+                               text-theme-text-primary
+                               hover:bg-[rgb(var(--color-muted))]
+                               disabled:opacity-50 disabled:cursor-not-allowed
+                               whitespace-nowrap"
+                >
+                    {syncing ? 'Syncing...' : '⟳ Sync Inbox'}
+                </button>
                 <UploadModal onSuccess={() => refreshTranscripts()} />
             </div>
+
+            {/* Sync result banner */}
+            {syncResult && (
+                <div className="mb-4 px-4 py-3 rounded-lg border border-theme-border
+                                bg-theme-card text-sm text-theme-text-primary
+                                flex items-center justify-between">
+                    <span>
+                        Sync complete — found {syncResult.found} email{syncResult.found !== 1 ? 's' : ''}
+                        {syncResult.newlyProcessed > 0
+                            ? `, ingested ${syncResult.newlyProcessed} new transcript${syncResult.newlyProcessed !== 1 ? 's' : ''}`
+                            : ', no new transcripts'}
+                        {syncResult.errors > 0 && `, ${syncResult.errors} error${syncResult.errors !== 1 ? 's' : ''}`}
+                    </span>
+                    <button
+                        onClick={() => { setSyncResult(null); setNewSyncedIds(new Set()); }}
+                        className="text-theme-text-muted hover:text-theme-text-primary ml-4 transition-colors"
+                    >
+                        ✕
+                    </button>
+                </div>
+            )}
 
             {/* Table */}
             <div className="glass-card overflow-hidden">
@@ -179,6 +230,9 @@ export default function TranscriptsPage() {
                                 Method
                             </th>
                             <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
+                                AI Items
+                            </th>
+                            <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Actions
                             </th>
                         </tr>
@@ -186,13 +240,13 @@ export default function TranscriptsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     Loading transcripts...
                                 </td>
                             </tr>
                         ) : filtered.length === 0 ? (
                             <tr>
-                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {search || participantFilter
                                         ? 'No transcripts match your filters.'
                                         : 'No transcripts yet.'}
@@ -202,12 +256,20 @@ export default function TranscriptsPage() {
                             filtered.map((t) => (
                                 <tr key={t.transcript_id} className="table-row">
                                     <td className="px-6 py-4">
-                                        <Link
-                                            href={`/transcripts/${t.transcript_id}`}
-                                            className="text-sm font-medium text-theme-text-primary hover:text-brand-400 transition-colors"
-                                        >
-                                            {t.meeting_title}
-                                        </Link>
+                                        <div className="flex items-center gap-2">
+                                            {newSyncedIds.has(t.transcript_id) && (
+                                                <span className="relative flex h-2 w-2 shrink-0" title="Newly synced">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                                                </span>
+                                            )}
+                                            <Link
+                                                href={`/transcripts/${t.transcript_id}`}
+                                                className="text-sm font-medium text-theme-text-primary hover:text-brand-400 transition-colors"
+                                            >
+                                                {t.meeting_title}
+                                            </Link>
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-theme-text-secondary">
                                         {new Date(t.meeting_date).toLocaleDateString()}
@@ -229,33 +291,30 @@ export default function TranscriptsPage() {
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <span className={`badge text-[10px] ${t.extraction_method === 'inline' ? 'badge-info' :
-                                                t.extraction_method === 'google_doc' ? 'badge-success' :
-                                                    t.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
+                                            t.extraction_method === 'google_doc' ? 'badge-success' :
+                                                t.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
                                             }`}>
                                             {t.extraction_method}
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 text-right">
-                                        <div className="flex items-center justify-end gap-2">
-                                            <ExtractButton
-                                                state={extractionStates.get(t.transcript_id) ?? { status: 'idle' }}
-                                                onExtract={() => handleExtract(t.transcript_id)}
-                                            />
-                                            <button
-                                                onClick={() => handleDelete(t.transcript_id)}
-                                                disabled={deletingIds.has(t.transcript_id)}
-                                                className={`px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors disabled:opacity-50 ${confirmDeleteId === t.transcript_id
-                                                        ? 'bg-rose-500/20 text-rose-400 ring-1 ring-rose-500/30'
-                                                        : 'text-theme-text-muted hover:text-rose-400 hover:bg-rose-500/10'
-                                                    }`}
-                                            >
-                                                {deletingIds.has(t.transcript_id)
-                                                    ? '...'
-                                                    : confirmDeleteId === t.transcript_id
-                                                        ? 'Confirm?'
-                                                        : 'Delete'}
-                                            </button>
-                                        </div>
+                                        <ExtractionStatusBadge count={t.ai_extracted_count} />
+                                    </td>
+                                    <td className="px-6 py-4 text-right">
+                                        <button
+                                            onClick={() => handleDelete(t.transcript_id)}
+                                            disabled={deletingIds.has(t.transcript_id)}
+                                            className={`px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors disabled:opacity-50 ${confirmDeleteId === t.transcript_id
+                                                ? 'bg-rose-500/20 text-rose-400 ring-1 ring-rose-500/30'
+                                                : 'text-theme-text-muted hover:text-rose-400 hover:bg-rose-500/10'
+                                                }`}
+                                        >
+                                            {deletingIds.has(t.transcript_id)
+                                                ? '...'
+                                                : confirmDeleteId === t.transcript_id
+                                                    ? 'Confirm?'
+                                                    : 'Delete'}
+                                        </button>
                                     </td>
                                 </tr>
                             ))
@@ -267,32 +326,18 @@ export default function TranscriptsPage() {
     );
 }
 
-function ExtractButton({ state, onExtract }: {
-    state: ExtractionState;
-    onExtract: () => void;
-}) {
-    if (state.status === 'extracting') {
+function ExtractionStatusBadge({ count }: { count?: number }) {
+    if (count && count > 0) {
         return (
-            <span className="px-2.5 py-1 text-[11px] font-medium text-brand-400 opacity-70">
-                Extracting...
-            </span>
-        );
-    }
-
-    if (state.status === 'done') {
-        return (
-            <span className="px-2.5 py-1 text-[11px] font-medium text-emerald-400">
-                {state.count} found
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                ✓ {count} item{count !== 1 ? 's' : ''}
             </span>
         );
     }
 
     return (
-        <button
-            onClick={onExtract}
-            className="px-2.5 py-1 text-[11px] font-medium text-brand-400 hover:bg-brand-500/10 rounded-lg transition-colors"
-        >
-            Extract AI
-        </button>
+        <span className="text-[10px] text-theme-text-muted">
+            —
+        </span>
     );
 }

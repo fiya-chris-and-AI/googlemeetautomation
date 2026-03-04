@@ -2,11 +2,16 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
-import type { ActionItem, ActionItemStatus, ActionItemPriority } from '@meet-pipeline/shared';
+import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort } from '@meet-pipeline/shared';
 
 const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
     { key: 'done', label: 'Done', color: 'from-emerald-500 to-emerald-600' },
+];
+
+const ASSIGNEES: { name: string; displayName: string; accent: string }[] = [
+    { name: 'Lutfiya Miller', displayName: 'Dr. Lutfiya Miller', accent: 'border-violet-500' },
+    { name: 'Chris Müller', displayName: 'Chris Müller', accent: 'border-blue-500' },
 ];
 
 const PRIORITY_DOT: Record<ActionItemPriority, string> = {
@@ -23,6 +28,12 @@ const PRIORITY_LABEL: Record<ActionItemPriority, string> = {
     low: 'Low',
 };
 
+const EFFORT_CONFIG: Record<string, { icon: string; label: string; color: string }> = {
+    quick_fix: { icon: '⚡', label: 'Quick Fix', color: 'text-emerald-400' },
+    moderate: { icon: '🔧', label: 'Moderate', color: 'text-brand-400' },
+    significant: { icon: '🏗️', label: 'Significant', color: 'text-amber-400' },
+};
+
 export default function ActionItemsPage() {
     const [items, setItems] = useState<ActionItem[]>([]);
     const [loading, setLoading] = useState(true);
@@ -31,7 +42,9 @@ export default function ActionItemsPage() {
     const [assigneeFilter, setAssigneeFilter] = useState('all');
     const [priorityFilter, setPriorityFilter] = useState('all');
     const [sourceFilter, setSourceFilter] = useState('all');
+    const [duplicateFilter, setDuplicateFilter] = useState<'hidden' | 'shown'>('hidden');
     const [search, setSearch] = useState('');
+    const [effortFilter, setEffortFilter] = useState('all');
 
     // Modal state
     const [showCreate, setShowCreate] = useState(false);
@@ -42,6 +55,7 @@ export default function ActionItemsPage() {
     const [newDescription, setNewDescription] = useState('');
     const [newAssignee, setNewAssignee] = useState('');
     const [newPriority, setNewPriority] = useState<ActionItemPriority>('medium');
+    const [newEffort, setNewEffort] = useState<ActionItemEffort | ''>('');
     const [newDueDate, setNewDueDate] = useState('');
 
     // Grouping state
@@ -49,6 +63,8 @@ export default function ActionItemsPage() {
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
     const [grouping, setGrouping] = useState(false);
     const [groupError, setGroupError] = useState<string | null>(null);
+    const [estimating, setEstimating] = useState(false);
+    const [estimateError, setEstimateError] = useState<string | null>(null);
 
     const fetchItems = async () => {
         try {
@@ -77,8 +93,10 @@ export default function ActionItemsPage() {
     const filtered = useMemo(() => {
         return items.filter((i) => {
             if (i.status === 'dismissed') return false;
+            if (duplicateFilter === 'hidden' && i.is_duplicate) return false;
             if (assigneeFilter !== 'all' && i.assigned_to !== assigneeFilter) return false;
             if (priorityFilter !== 'all' && i.priority !== priorityFilter) return false;
+            if (effortFilter !== 'all' && i.effort !== effortFilter) return false;
             if (sourceFilter === 'ai' && i.created_by !== 'ai') return false;
             if (sourceFilter === 'manual' && i.created_by !== 'manual') return false;
             if (search) {
@@ -89,35 +107,57 @@ export default function ActionItemsPage() {
             }
             return true;
         });
-    }, [items, assigneeFilter, priorityFilter, sourceFilter, search]);
+    }, [items, assigneeFilter, priorityFilter, effortFilter, sourceFilter, duplicateFilter, search]);
 
-    // Organize items into groups per column
-    const groupedByColumn = useMemo(() => {
-        const result: Record<ActionItemStatus, { label: string | null; items: ActionItem[] }[]> = {
-            open: [], in_progress: [], done: [], dismissed: [],
-        };
+    // Detect shared items — tasks assigned to both people from the same meeting
+    const sharedItemIds = useMemo(() => {
+        const shared = new Set<string>();
+        const lutfiyaItems = items.filter(i => i.assigned_to === 'Lutfiya Miller');
+        const chrisItems = items.filter(i => i.assigned_to === 'Chris Müller');
+        for (const li of lutfiyaItems) {
+            const match = chrisItems.find(ci =>
+                ci.title.trim().toLowerCase() === li.title.trim().toLowerCase() &&
+                ci.transcript_id === li.transcript_id
+            );
+            if (match) { shared.add(li.id); shared.add(match.id); }
+        }
+        return shared;
+    }, [items]);
 
-        for (const col of COLUMNS) {
-            const colItems = filtered.filter(i => i.status === col.key);
+    // Items with no assignee — shown below both columns
+    const unassignedItems = useMemo(() =>
+        filtered.filter(i => !i.assigned_to), [filtered]);
 
-            // Bucket items by group_label
-            const buckets = new Map<string | null, ActionItem[]>();
-            for (const item of colItems) {
-                const key = item.group_label ?? null;
-                if (!buckets.has(key)) buckets.set(key, []);
-                buckets.get(key)!.push(item);
+    // Organize items by assignee → status → group_label
+    const groupedByAssignee = useMemo(() => {
+        const result: Record<string, Record<ActionItemStatus, { label: string | null; items: ActionItem[] }[]>> = {};
+
+        for (const assignee of ASSIGNEES) {
+            const assigneeItems = filtered.filter(i => i.assigned_to === assignee.name);
+            result[assignee.name] = { open: [], in_progress: [], done: [], dismissed: [] };
+
+            for (const col of COLUMNS) {
+                const colItems = assigneeItems.filter(i => i.status === col.key);
+
+                // Bucket items by group_label
+                const buckets = new Map<string | null, ActionItem[]>();
+                for (const item of colItems) {
+                    const key = item.group_label ?? null;
+                    if (!buckets.has(key)) buckets.set(key, []);
+                    buckets.get(key)!.push(item);
+                }
+
+                // Sort: named groups first (alphabetically), then ungrouped (null) last
+                const groups = [...buckets.entries()]
+                    .sort((a, b) => {
+                        if (a[0] === null) return 1;
+                        if (b[0] === null) return -1;
+                        return a[0].localeCompare(b[0]);
+                    })
+                    .map(([label, groupItems]) => ({ label, items: groupItems }));
+
+                result[assignee.name][col.key] = groups;
             }
-
-            // Sort: named groups first (alphabetically), then ungrouped (null) last
-            const groups = [...buckets.entries()]
-                .sort((a, b) => {
-                    if (a[0] === null) return 1;
-                    if (b[0] === null) return -1;
-                    return a[0].localeCompare(b[0]);
-                })
-                .map(([label, groupItems]) => ({ label, items: groupItems }));
-
-            result[col.key] = groups;
         }
 
         return result;
@@ -133,14 +173,18 @@ export default function ActionItemsPage() {
 
     const allGroupKeys = useMemo(() => {
         const keys: string[] = [];
-        for (const col of COLUMNS) {
-            for (const group of groupedByColumn[col.key]) {
-                const label = group.label ?? 'Ungrouped';
-                keys.push(`${col.key}::${label}`);
+        for (const assignee of ASSIGNEES) {
+            const assigneeGroups = groupedByAssignee[assignee.name];
+            if (!assigneeGroups) continue;
+            for (const col of COLUMNS) {
+                for (const group of assigneeGroups[col.key]) {
+                    const label = group.label ?? 'Ungrouped';
+                    keys.push(`${assignee.name}::${col.key}::${label}`);
+                }
             }
         }
         return keys;
-    }, [groupedByColumn]);
+    }, [groupedByAssignee]);
 
     const collapseAll = () => setCollapsedGroups(new Set(allGroupKeys));
     const expandAll = () => setCollapsedGroups(new Set());
@@ -180,6 +224,7 @@ export default function ActionItemsPage() {
                     description: newDescription.trim() || null,
                     assigned_to: newAssignee || null,
                     priority: newPriority,
+                    effort: newEffort || null,
                     due_date: newDueDate || null,
                     created_by: 'manual',
                 }),
@@ -192,9 +237,37 @@ export default function ActionItemsPage() {
                 setNewDescription('');
                 setNewAssignee('');
                 setNewPriority('medium');
+                setNewEffort('');
                 setNewDueDate('');
             }
         } catch { /* silently fail */ }
+    };
+
+    const handleEstimateEffort = async () => {
+        setEstimating(true);
+        setEstimateError(null);
+        try {
+            const res = await fetch('/api/action-items/estimate-effort', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({}),
+            });
+            const result = await res.json() as { error?: string; updated?: number };
+
+            if (!res.ok) {
+                setEstimateError(result.error || 'Effort estimation failed');
+                console.error('[Estimate Effort] API error:', result);
+                return;
+            }
+
+            console.log(`[Estimate Effort] Estimated ${result.updated} items`);
+            await fetchItems();
+        } catch (err) {
+            setEstimateError('Network error — could not reach estimation API');
+            console.error('[Estimate Effort] Error:', err);
+        } finally {
+            setEstimating(false);
+        }
     };
 
     const handleSmartGroup = async () => {
@@ -257,11 +330,18 @@ export default function ActionItemsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                     <button
+                        onClick={handleEstimateEffort}
+                        disabled={estimating}
+                        className="btn-primary px-5 py-2.5"
+                    >
+                        {estimating ? 'Estimating...' : '⚡ Estimate Effort'}
+                    </button>
+                    <button
                         onClick={handleSmartGroup}
                         disabled={grouping}
                         className="btn-primary px-5 py-2.5"
                     >
-                        {grouping ? 'Grouping...' : '\u2726 Smart Group'}
+                        {grouping ? 'Grouping...' : '✦ Smart Group'}
                     </button>
                     <button
                         onClick={() => setShowCreate(true)}
@@ -274,6 +354,9 @@ export default function ActionItemsPage() {
 
             {groupError && (
                 <p className="text-xs text-rose-400 mt-2">{groupError}</p>
+            )}
+            {estimateError && (
+                <p className="text-xs text-rose-400 mt-2">{estimateError}</p>
             )}
 
             {/* Filters Bar */}
@@ -302,6 +385,16 @@ export default function ActionItemsPage() {
                     ]}
                 />
                 <FilterSelect
+                    value={effortFilter}
+                    onChange={setEffortFilter}
+                    options={[
+                        { value: 'all', label: 'All Effort Levels' },
+                        { value: 'quick_fix', label: '⚡ Quick Fix' },
+                        { value: 'moderate', label: '🔧 Moderate' },
+                        { value: 'significant', label: '🏗️ Significant' },
+                    ]}
+                />
+                <FilterSelect
                     value={sourceFilter}
                     onChange={setSourceFilter}
                     options={[
@@ -310,6 +403,16 @@ export default function ActionItemsPage() {
                         { value: 'manual', label: 'Manual' },
                     ]}
                 />
+                {/* Duplicate toggle */}
+                <button
+                    onClick={() => setDuplicateFilter(duplicateFilter === 'hidden' ? 'shown' : 'hidden')}
+                    className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors whitespace-nowrap ${duplicateFilter === 'shown'
+                        ? 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+                        : 'border-theme-border text-theme-text-muted hover:text-theme-text-secondary'
+                        }`}
+                >
+                    {duplicateFilter === 'shown' ? '◈ Hiding Duplicates' : '◇ Show Duplicates'}
+                </button>
                 {/* View mode toggle */}
                 <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
                     <button
@@ -349,142 +452,145 @@ export default function ActionItemsPage() {
                 )}
             </div>
 
-            {/* Kanban Board */}
+            {/* Two-Column Assignee Board */}
             {loading ? (
                 <div className="p-12 text-center text-theme-text-tertiary">Loading action items...</div>
             ) : (
                 <div className="space-y-6">
-                    {COLUMNS.map((col) => {
-                        const colItems = filtered.filter((i) => i.status === col.key);
-                        const groups = groupedByColumn[col.key];
-                        return (
-                            <div key={col.key}>
-                                {/* Section Header */}
-                                <div className="glass-card p-4 mb-3 flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <div className={`w-2 h-2 rounded-full ${col.key === 'open' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
-                                        <h3 className="text-sm font-semibold text-theme-text-primary">{col.label}</h3>
-                                    </div>
-                                    <span className="text-xs text-theme-text-tertiary font-medium">{colItems.length}</span>
-                                </div>
+                    {/* Main two-column grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {ASSIGNEES.map((assignee) => {
+                            const assigneeGroups = groupedByAssignee[assignee.name];
+                            const assigneeItemCount = filtered.filter(i => i.assigned_to === assignee.name).length;
 
-                                {/* Cards — responsive grid */}
-                                {colItems.length === 0 ? (
-                                    <div className="p-6 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
-                                        No items
+                            return (
+                                <div key={assignee.name} className="space-y-4">
+                                    {/* Assignee column header */}
+                                    <div className={`glass-card p-4 border-l-4 ${assignee.accent} flex items-center justify-between sticky top-0 z-10`}>
+                                        <h2 className="text-lg font-semibold text-theme-text-primary">{assignee.displayName}</h2>
+                                        <span className="text-sm text-theme-text-tertiary font-medium">{assigneeItemCount}</span>
                                     </div>
-                                ) : viewMode === 'flat' ? (
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                        {colItems.map((item) => (
-                                            <ActionItemCard
-                                                key={item.id}
-                                                item={item}
-                                                isOverdue={isOverdue(item)}
-                                                isExpanded={expandedId === item.id}
-                                                onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                onStatusChange={updateStatus}
-                                                onDismiss={dismissItem}
-                                                onGroupLabelSave={handleGroupLabelSave}
-                                            />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div className="space-y-3">
-                                        {groups.map((group) => {
-                                            // Treat null-labelled items the same as named groups
-                                            const displayLabel = group.label ?? 'Ungrouped';
-                                            const groupKey = `${col.key}::${displayLabel}`;
-                                            const isCollapsed = collapsedGroups.has(groupKey);
 
-                                            if (group.label === null) {
-                                                // Ungrouped items — render with a collapsible header
-                                                return (
-                                                    <div key={groupKey} className="border-l-2 border-theme-text-muted/30 rounded-xl overflow-hidden">
-                                                        <button
-                                                            onClick={() => toggleGroup(groupKey)}
-                                                            className="w-full flex items-center justify-between px-4 py-2.5
-                                                                bg-theme-overlay hover:bg-theme-muted
-                                                                transition-colors cursor-pointer"
-                                                        >
-                                                            <div className="flex items-center gap-2">
-                                                                <span
-                                                                    className="text-xs text-theme-text-muted transition-transform duration-200"
-                                                                    style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
-                                                                >
-                                                                    &#9654;
-                                                                </span>
-                                                                <span className="text-sm font-semibold text-theme-text-muted">{displayLabel}</span>
-                                                            </div>
-                                                            <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
-                                                        </button>
-                                                        {!isCollapsed && (
-                                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2 pt-2">
-                                                                {group.items.map((item) => (
-                                                                    <ActionItemCard
-                                                                        key={item.id}
-                                                                        item={item}
-                                                                        isOverdue={isOverdue(item)}
-                                                                        isExpanded={expandedId === item.id}
-                                                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                                        onStatusChange={updateStatus}
-                                                                        onDismiss={dismissItem}
-                                                                        onGroupLabelSave={handleGroupLabelSave}
-                                                                    />
-                                                                ))}
-                                                            </div>
-                                                        )}
+                                    {/* Status sections within this column */}
+                                    {COLUMNS.map((col) => {
+                                        const groups = assigneeGroups?.[col.key] ?? [];
+                                        const statusItemCount = groups.reduce((sum, g) => sum + g.items.length, 0);
+
+                                        return (
+                                            <div key={col.key}>
+                                                {/* Status header */}
+                                                <div className="glass-card p-3 mb-2 flex items-center justify-between">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className={`w-2 h-2 rounded-full ${col.key === 'open' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
+                                                        <h3 className="text-sm font-semibold text-theme-text-primary">{col.label}</h3>
                                                     </div>
-                                                );
-                                            }
-
-                                            // Named group — uses groupKey and isCollapsed from above
-
-                                            return (
-                                                <div key={groupKey} className="border-l-2 border-brand-500/30 rounded-xl overflow-hidden">
-                                                    {/* Group header */}
-                                                    <button
-                                                        onClick={() => toggleGroup(groupKey)}
-                                                        className="w-full flex items-center justify-between px-4 py-2.5
-                                                            bg-theme-overlay hover:bg-theme-muted
-                                                            transition-colors cursor-pointer"
-                                                    >
-                                                        <div className="flex items-center gap-2">
-                                                            <span
-                                                                className="text-xs text-theme-text-muted transition-transform duration-200"
-                                                                style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
-                                                            >
-                                                                &#9654;
-                                                            </span>
-                                                            <span className="text-sm font-semibold text-theme-text-primary">{group.label}</span>
-                                                        </div>
-                                                        <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
-                                                    </button>
-
-                                                    {/* Group items — responsive grid inside the group */}
-                                                    {!isCollapsed && (
-                                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2 pt-2">
-                                                            {group.items.map((item) => (
-                                                                <ActionItemCard
-                                                                    key={item.id}
-                                                                    item={item}
-                                                                    isOverdue={isOverdue(item)}
-                                                                    isExpanded={expandedId === item.id}
-                                                                    onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                                    onStatusChange={updateStatus}
-                                                                    onDismiss={dismissItem}
-                                                                    onGroupLabelSave={handleGroupLabelSave}
-                                                                />
-                                                            ))}
-                                                        </div>
-                                                    )}
+                                                    <span className="text-xs text-theme-text-tertiary font-medium">{statusItemCount}</span>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
+
+                                                {/* Cards */}
+                                                {statusItemCount === 0 ? (
+                                                    <div className="p-4 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
+                                                        No items
+                                                    </div>
+                                                ) : viewMode === 'flat' ? (
+                                                    <div className="grid grid-cols-1 gap-3">
+                                                        {groups.flatMap(g => g.items).map((item) => (
+                                                            <ActionItemCard
+                                                                key={item.id}
+                                                                item={item}
+                                                                allItems={items}
+                                                                isOverdue={isOverdue(item)}
+                                                                isShared={sharedItemIds.has(item.id)}
+                                                                isExpanded={expandedId === item.id}
+                                                                onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                                onStatusChange={updateStatus}
+                                                                onDismiss={dismissItem}
+                                                                onGroupLabelSave={handleGroupLabelSave}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <div className="space-y-3">
+                                                        {groups.map((group) => {
+                                                            const displayLabel = group.label ?? 'Ungrouped';
+                                                            const groupKey = `${assignee.name}::${col.key}::${displayLabel}`;
+                                                            const isCollapsed = collapsedGroups.has(groupKey);
+
+                                                            return (
+                                                                <div key={groupKey} className={`border-l-2 ${group.label === null ? 'border-theme-text-muted/30' : 'border-brand-500/30'} rounded-xl overflow-hidden`}>
+                                                                    <button
+                                                                        onClick={() => toggleGroup(groupKey)}
+                                                                        className="w-full flex items-center justify-between px-4 py-2.5
+                                                                            bg-theme-overlay hover:bg-theme-muted
+                                                                            transition-colors cursor-pointer"
+                                                                    >
+                                                                        <div className="flex items-center gap-2">
+                                                                            <span
+                                                                                className="text-xs text-theme-text-muted transition-transform duration-200"
+                                                                                style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
+                                                                            >
+                                                                                &#9654;
+                                                                            </span>
+                                                                            <span className={`text-sm font-semibold ${group.label === null ? 'text-theme-text-muted' : 'text-theme-text-primary'}`}>{displayLabel}</span>
+                                                                        </div>
+                                                                        <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
+                                                                    </button>
+                                                                    {!isCollapsed && (
+                                                                        <div className="grid grid-cols-1 gap-3 p-2 pt-2">
+                                                                            {group.items.map((item) => (
+                                                                                <ActionItemCard
+                                                                                    key={item.id}
+                                                                                    item={item}
+                                                                                    allItems={items}
+                                                                                    isOverdue={isOverdue(item)}
+                                                                                    isShared={sharedItemIds.has(item.id)}
+                                                                                    isExpanded={expandedId === item.id}
+                                                                                    onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                                                    onStatusChange={updateStatus}
+                                                                                    onDismiss={dismissItem}
+                                                                                    onGroupLabelSave={handleGroupLabelSave}
+                                                                                />
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Unassigned items — full width below both columns */}
+                    {unassignedItems.length > 0 && (
+                        <div className="mt-2">
+                            <div className="glass-card p-4 mb-3 border-l-4 border-theme-text-muted/40 flex items-center justify-between">
+                                <h2 className="text-lg font-semibold text-theme-text-muted">Unassigned</h2>
+                                <span className="text-sm text-theme-text-tertiary font-medium">{unassignedItems.length}</span>
                             </div>
-                        );
-                    })}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                {unassignedItems.map((item) => (
+                                    <ActionItemCard
+                                        key={item.id}
+                                        item={item}
+                                        allItems={items}
+                                        isOverdue={isOverdue(item)}
+                                        isShared={false}
+                                        isExpanded={expandedId === item.id}
+                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                        onStatusChange={updateStatus}
+                                        onDismiss={dismissItem}
+                                        onGroupLabelSave={handleGroupLabelSave}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
 
@@ -515,7 +621,7 @@ export default function ActionItemsPage() {
                                     placeholder="Additional context (optional)"
                                 />
                             </div>
-                            <div className="grid grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <div>
                                     <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Assignee</label>
                                     <input
@@ -537,6 +643,19 @@ export default function ActionItemsPage() {
                                         <option value="medium">Medium</option>
                                         <option value="high">High</option>
                                         <option value="urgent">Urgent</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Effort</label>
+                                    <select
+                                        value={newEffort}
+                                        onChange={(e) => setNewEffort(e.target.value as ActionItemEffort | '')}
+                                        className="input-glow w-full text-sm"
+                                    >
+                                        <option value="">None</option>
+                                        <option value="quick_fix">⚡ Quick Fix</option>
+                                        <option value="moderate">🔧 Moderate</option>
+                                        <option value="significant">🏗️ Significant</option>
                                     </select>
                                 </div>
                                 <div>
@@ -576,7 +695,9 @@ export default function ActionItemsPage() {
 
 function ActionItemCard({
     item,
+    allItems,
     isOverdue,
+    isShared,
     isExpanded,
     onToggleExpand,
     onStatusChange,
@@ -584,7 +705,9 @@ function ActionItemCard({
     onGroupLabelSave,
 }: {
     item: ActionItem;
+    allItems: ActionItem[];
     isOverdue: boolean;
+    isShared?: boolean;
     isExpanded: boolean;
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: ActionItemStatus) => void;
@@ -667,6 +790,11 @@ function ActionItemCard({
                             }`}>
                             {PRIORITY_LABEL[item.priority]}
                         </span>
+                        {item.effort && EFFORT_CONFIG[item.effort] && (
+                            <span className={`text-[10px] font-medium ${EFFORT_CONFIG[item.effort].color}`}>
+                                {EFFORT_CONFIG[item.effort].icon} {EFFORT_CONFIG[item.effort].label}
+                            </span>
+                        )}
                         {item.due_date && (
                             <span className={`text-[10px] ${isOverdue ? 'text-rose-400 font-medium' : 'text-theme-text-muted'}`}>
                                 {isOverdue ? 'Overdue · ' : 'Due '}
@@ -675,6 +803,16 @@ function ActionItemCard({
                         )}
                         {item.created_by === 'ai' && (
                             <span className="text-[10px] text-accent-violet">AI</span>
+                        )}
+                        {item.is_duplicate && (
+                            <span className="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-full bg-amber-500/10 text-amber-500">
+                                Duplicate
+                            </span>
+                        )}
+                        {isShared && (
+                            <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-medium rounded-full bg-violet-500/10 text-violet-400">
+                                🤝 Shared
+                            </span>
                         )}
                     </div>
                 </div>
@@ -690,6 +828,14 @@ function ActionItemCard({
                         <div className="bg-theme-muted/30 rounded-lg p-3">
                             <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-1">Source excerpt</p>
                             <p className="text-xs text-theme-text-secondary italic">&ldquo;{item.source_text}&rdquo;</p>
+                        </div>
+                    )}
+
+                    {/* Duplicate reference */}
+                    {item.is_duplicate && item.duplicate_of && (
+                        <div className="flex items-center gap-1.5 text-xs text-amber-500/80">
+                            <span>◈</span>
+                            <span>Duplicate of: <DuplicateOfLabel itemId={item.duplicate_of} allItems={allItems} /></span>
                         </div>
                     )}
 
@@ -851,4 +997,11 @@ function FilterSelect({
             ))}
         </select>
     );
+}
+
+/** Resolves a duplicate_of ID to the original item's title for display. */
+function DuplicateOfLabel({ itemId, allItems }: { itemId: string; allItems: ActionItem[] }) {
+    const original = allItems.find((i) => i.id === itemId);
+    if (!original) return <span className="italic text-theme-text-muted">{itemId.slice(0, 8)}…</span>;
+    return <span className="font-medium">{original.title}</span>;
 }

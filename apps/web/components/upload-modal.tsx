@@ -115,7 +115,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
         setFile(null);
         setPastedText('');
         setTitle('');
-        setDate(new Date().toISOString().split('T')[0]);
+        setDate('');
         setUploading(false);
         setProgressIndex(0);
         setResult(null);
@@ -371,7 +371,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                         {/* Date input */}
                         <div className="mb-5">
                             <label htmlFor="upload-date" className="block text-xs font-medium text-theme-text-secondary mb-1">
-                                Meeting Date
+                                Meeting Date <span className="text-theme-text-muted font-normal">(auto-detected if blank)</span>
                             </label>
                             <input
                                 id="upload-date"
@@ -424,7 +424,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 }
 
@@ -478,7 +478,7 @@ function UploadModalPortal({
     const [file, setFile] = useState<File | null>(null);
     const [pastedText, setPastedText] = useState('');
     const [title, setTitle] = useState('');
-    const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+    const [date, setDate] = useState('');
     const [uploading, setUploading] = useState(false);
     const [progressIndex, setProgressIndex] = useState(0);
     const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript; detectedDate?: string | null } | { type: 'error'; message: string } | null>(null);
@@ -712,7 +712,7 @@ function UploadModalPortal({
 
                         <div className="mb-5">
                             <label htmlFor="portal-upload-date" className="block text-xs font-medium text-theme-text-secondary mb-1">
-                                Meeting Date
+                                Meeting Date <span className="text-theme-text-muted font-normal">(auto-detected if blank)</span>
                             </label>
                             <input
                                 id="portal-upload-date"
@@ -762,6 +762,6 @@ function UploadModalPortal({
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 }
