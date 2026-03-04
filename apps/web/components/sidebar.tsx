@@ -105,6 +105,27 @@ export function Sidebar() {
             <div className="p-4 border-t border-theme-border space-y-3">
                 <TimezoneClock />
                 <ThemeToggle />
+
+                {/* Admin & Auth */}
+                <div className="pt-2 space-y-1">
+                    <Link
+                        href="/admin/login"
+                        className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all
+                            ${pathname.startsWith('/admin')
+                                ? 'bg-gray-100 dark:bg-neutral-800 text-gray-900 dark:text-neutral-100'
+                                : 'text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800'
+                            }`}
+                    >
+                        <span>👤</span> Admin
+                    </Link>
+                    <a
+                        href="/api/auth/logout"
+                        className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-all"
+                    >
+                        <span>🚪</span> Abmelden
+                    </a>
+                </div>
+
                 <p className="text-[11px] text-theme-text-muted text-center mt-2">
                     ScienceExperts.ai — Powered by 3rd AI LLC
                 </p>

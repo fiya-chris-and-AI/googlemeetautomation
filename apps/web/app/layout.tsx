@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Sidebar } from '../components/sidebar';
+import { AuthLayout } from '../components/auth-layout';
 import { ThemeProvider } from '../lib/theme';
 import './globals.css';
 
@@ -23,7 +23,7 @@ const themeScript = `
 `;
 
 /**
- * Root layout — sidebar + main content area with theme support.
+ * Root layout — uses AuthLayout to conditionally show sidebar.
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -33,12 +33,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen custom-scrollbar">
         <ThemeProvider>
-          <Sidebar />
-          <main className="ml-64 min-h-screen p-8">
-            {children}
-          </main>
+          <AuthLayout>{children}</AuthLayout>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
