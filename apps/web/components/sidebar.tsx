@@ -38,15 +38,15 @@ export function Sidebar() {
             {/* Brand */}
             <div className="p-5 border-b border-theme-border">
                 <div className="flex flex-col items-start">
-                    {/* Light mode logo */}
+                    {/* Light mode logo (black text) */}
                     <img
-                        src="/logo-light.svg"
+                        src="https://rgltabjdjrbmbjrjoqga.supabase.co/storage/v1/object/public/community-assets/community-logo-1772070053980.png"
                         alt="ScienceExperts.ai"
                         className="h-14 w-auto dark:hidden"
                     />
-                    {/* Dark mode logo */}
+                    {/* Dark mode logo (white text) */}
                     <img
-                        src="/logo-dark.svg"
+                        src="https://rgltabjdjrbmbjrjoqga.supabase.co/storage/v1/object/public/community-assets/community-logo-dark-1772073090031.png"
                         alt="ScienceExperts.ai"
                         className="h-14 w-auto hidden dark:block"
                     />
