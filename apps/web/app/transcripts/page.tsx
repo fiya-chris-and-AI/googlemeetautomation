@@ -25,9 +25,9 @@ export default function TranscriptsPage() {
 
     const refreshTranscripts = () => {
         fetch('/api/transcripts')
-            .then((r) => r.json() as Promise<MeetingTranscript[]>)
+            .then((r) => r.json())
             .then((data) => {
-                setTranscripts(data);
+                setTranscripts(Array.isArray(data) ? data : []);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
@@ -229,8 +229,8 @@ export default function TranscriptsPage() {
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <span className={`badge text-[10px] ${t.extraction_method === 'inline' ? 'badge-info' :
-                                                t.extraction_method === 'google_doc' ? 'badge-success' :
-                                                    t.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
+                                            t.extraction_method === 'google_doc' ? 'badge-success' :
+                                                t.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
                                             }`}>
                                             {t.extraction_method}
                                         </span>
@@ -245,8 +245,8 @@ export default function TranscriptsPage() {
                                                 onClick={() => handleDelete(t.transcript_id)}
                                                 disabled={deletingIds.has(t.transcript_id)}
                                                 className={`px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors disabled:opacity-50 ${confirmDeleteId === t.transcript_id
-                                                        ? 'bg-rose-500/20 text-rose-400 ring-1 ring-rose-500/30'
-                                                        : 'text-theme-text-muted hover:text-rose-400 hover:bg-rose-500/10'
+                                                    ? 'bg-rose-500/20 text-rose-400 ring-1 ring-rose-500/30'
+                                                    : 'text-theme-text-muted hover:text-rose-400 hover:bg-rose-500/10'
                                                     }`}
                                             >
                                                 {deletingIds.has(t.transcript_id)
