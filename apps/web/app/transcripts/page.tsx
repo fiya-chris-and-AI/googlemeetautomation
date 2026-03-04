@@ -20,6 +20,14 @@ export default function TranscriptsPage() {
     const [sortDir, setSortDir] = useState<SortDirection>('desc');
     const [deletingIds, setDeletingIds] = useState<Set<string>>(new Set());
     const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+    const [syncing, setSyncing] = useState(false);
+    const [syncResult, setSyncResult] = useState<{
+        found: number;
+        alreadyProcessed: number;
+        newlyProcessed: number;
+        errors: number;
+    } | null>(null);
+    const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
 
     const refreshTranscripts = () => {
         fetch('/api/transcripts')
@@ -32,6 +40,33 @@ export default function TranscriptsPage() {
     };
 
     useEffect(() => { refreshTranscripts(); }, []);
+
+    const handleSync = async () => {
+        setSyncing(true);
+        setSyncResult(null);
+        setNewSyncedIds(new Set());
+        try {
+            const res = await fetch('/api/sync', { method: 'POST' });
+            const data = await res.json();
+            setSyncResult(data);
+
+            // Track which transcripts were just synced so we can show a "new" dot.
+            // The sync API returns details with subject but not transcript_id,
+            // so we snapshot current IDs, refresh, then diff.
+            const before = new Set(transcripts.map((t) => t.transcript_id));
+            const refreshRes = await fetch('/api/transcripts');
+            const refreshed = await refreshRes.json();
+            const list: MeetingTranscript[] = Array.isArray(refreshed) ? refreshed : [];
+            setTranscripts(list);
+
+            const added = new Set(list.filter((t) => !before.has(t.transcript_id)).map((t) => t.transcript_id));
+            setNewSyncedIds(added);
+        } catch {
+            setSyncResult(null);
+        } finally {
+            setSyncing(false);
+        }
+    };
 
     const handleDelete = async (transcriptId: string) => {
         // Two-click confirmation: first click sets confirmDeleteId, second click executes
@@ -128,8 +163,42 @@ export default function TranscriptsPage() {
                     onChange={(e) => setParticipantFilter(e.target.value)}
                     className="input-glow w-64"
                 />
+                <button
+                    id="sync-inbox-btn"
+                    onClick={handleSync}
+                    disabled={syncing}
+                    className="px-4 py-2 text-sm font-medium rounded-lg transition-colors
+                               bg-transparent border border-theme-border
+                               text-theme-text-primary
+                               hover:bg-[rgb(var(--color-muted))]
+                               disabled:opacity-50 disabled:cursor-not-allowed
+                               whitespace-nowrap"
+                >
+                    {syncing ? 'Syncing...' : '⟳ Sync Inbox'}
+                </button>
                 <UploadModal onSuccess={() => refreshTranscripts()} />
             </div>
+
+            {/* Sync result banner */}
+            {syncResult && (
+                <div className="mb-4 px-4 py-3 rounded-lg border border-theme-border
+                                bg-theme-card text-sm text-theme-text-primary
+                                flex items-center justify-between">
+                    <span>
+                        Sync complete — found {syncResult.found} email{syncResult.found !== 1 ? 's' : ''}
+                        {syncResult.newlyProcessed > 0
+                            ? `, ingested ${syncResult.newlyProcessed} new transcript${syncResult.newlyProcessed !== 1 ? 's' : ''}`
+                            : ', no new transcripts'}
+                        {syncResult.errors > 0 && `, ${syncResult.errors} error${syncResult.errors !== 1 ? 's' : ''}`}
+                    </span>
+                    <button
+                        onClick={() => { setSyncResult(null); setNewSyncedIds(new Set()); }}
+                        className="text-theme-text-muted hover:text-theme-text-primary ml-4 transition-colors"
+                    >
+                        ✕
+                    </button>
+                </div>
+            )}
 
             {/* Table */}
             <div className="glass-card overflow-hidden">
@@ -187,12 +256,20 @@ export default function TranscriptsPage() {
                             filtered.map((t) => (
                                 <tr key={t.transcript_id} className="table-row">
                                     <td className="px-6 py-4">
-                                        <Link
-                                            href={`/transcripts/${t.transcript_id}`}
-                                            className="text-sm font-medium text-theme-text-primary hover:text-brand-400 transition-colors"
-                                        >
-                                            {t.meeting_title}
-                                        </Link>
+                                        <div className="flex items-center gap-2">
+                                            {newSyncedIds.has(t.transcript_id) && (
+                                                <span className="relative flex h-2 w-2 shrink-0" title="Newly synced">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                                                </span>
+                                            )}
+                                            <Link
+                                                href={`/transcripts/${t.transcript_id}`}
+                                                className="text-sm font-medium text-theme-text-primary hover:text-brand-400 transition-colors"
+                                            >
+                                                {t.meeting_title}
+                                            </Link>
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-theme-text-secondary">
                                         {new Date(t.meeting_date).toLocaleDateString()}

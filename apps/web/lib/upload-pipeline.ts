@@ -234,6 +234,8 @@ export interface UploadPipelineParams {
     date?: Date;
     /** How the transcript was extracted — defaults to 'upload' */
     extractionMethod?: ExtractionMethod;
+    /** Real email ID for Gmail-sourced transcripts (used for dedup). Auto-generated if omitted. */
+    sourceEmailId?: string;
 }
 
 /**
@@ -248,12 +250,12 @@ export interface UploadPipelineParams {
  * On failure, cleans up the transcript record and logs the error.
  */
 export async function processUpload(params: UploadPipelineParams): Promise<MeetingTranscript> {
-    const { text, title, date = new Date(), extractionMethod = 'upload' } = params;
+    const { text, title, date = new Date(), extractionMethod = 'upload', sourceEmailId: providedEmailId } = params;
     const supabase = getServerSupabase();
 
-    // Build synthetic source ID unique to this upload
+    // Use provided email ID (from Gmail sync) or generate a synthetic one
     const randomChars = Math.random().toString(36).substring(2, 10);
-    const sourceEmailId = `upload_${Date.now()}_${randomChars}`;
+    const sourceEmailId = providedEmailId ?? `upload_${Date.now()}_${randomChars}`;
 
     // PDF-extracted text lacks structured "Speaker: text" lines, so the
     // speaker regex produces false positives on arbitrary sentences.
