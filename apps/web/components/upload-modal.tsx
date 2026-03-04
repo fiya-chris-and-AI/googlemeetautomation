@@ -3,15 +3,18 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { MeetingTranscript } from '@meet-pipeline/shared';
 
-const ACCEPTED_EXTENSIONS = '.txt,.vtt,.sbv';
+const ACCEPTED_EXTENSIONS = '.txt,.vtt,.sbv,.pdf';
+const VALID_EXTENSIONS = ['.txt', '.vtt', '.sbv', '.pdf'];
 const FORMAT_LABELS: Record<string, string> = {
     '.txt': 'Plain Text',
     '.vtt': 'WebVTT',
     '.sbv': 'SubViewer',
+    '.pdf': 'PDF',
 };
 
 const PROGRESS_STAGES = [
     'Uploading file...',
+    'Extracting text from PDF...',
     'Parsing transcript...',
     'Generating embeddings...',
     'Storing in database...',
@@ -34,6 +37,13 @@ function getFileExtension(filename: string): string {
     return filename.slice(filename.lastIndexOf('.')).toLowerCase();
 }
 
+/** Response shape from POST /api/upload */
+interface UploadResponse {
+    error?: string;
+    transcript?: MeetingTranscript;
+    detectedDate?: string | null;
+}
+
 interface UploadModalProps {
     /** Called after a successful upload with the new transcript */
     onSuccess?: (transcript: MeetingTranscript) => void;
@@ -46,7 +56,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     const [date, setDate] = useState('');
     const [uploading, setUploading] = useState(false);
     const [progressIndex, setProgressIndex] = useState(0);
-    const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript } | { type: 'error'; message: string } | null>(null);
+    const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript; detectedDate?: string | null } | { type: 'error'; message: string } | null>(null);
     const [dragOver, setDragOver] = useState(false);
 
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -99,7 +109,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
 
     const handleFileSelect = (selected: File) => {
         const ext = getFileExtension(selected.name);
-        if (!['.txt', '.vtt', '.sbv'].includes(ext)) return;
+        if (!VALID_EXTENSIONS.includes(ext)) return;
         setFile(selected);
         setTitle(titleFromFilename(selected.name));
         setResult(null);
@@ -126,7 +136,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
             if (date) formData.append('date', new Date(date).toISOString());
 
             const res = await fetch('/api/upload', { method: 'POST', body: formData });
-            const data = (await res.json()) as { error?: string; transcript?: MeetingTranscript };
+            const data = (await res.json()) as UploadResponse;
 
             if (!res.ok) {
                 setResult({ type: 'error', message: data.error || 'Upload failed' });
@@ -134,7 +144,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
             }
 
             if (data.transcript) {
-                setResult({ type: 'success', transcript: data.transcript });
+                setResult({ type: 'success', transcript: data.transcript, detectedDate: data.detectedDate });
                 onSuccess?.(data.transcript);
             }
         } catch {
@@ -186,6 +196,12 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                         <p className="text-sm text-theme-text-secondary">
                             &ldquo;{result.transcript.meeting_title}&rdquo; has been processed and is now searchable.
                         </p>
+                        {result.detectedDate && (
+                            <div className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 mt-2">
+                                <span>✓</span>
+                                <span>Date auto-detected from PDF</span>
+                            </div>
+                        )}
                         <a
                             href={`/transcripts/${result.transcript.transcript_id}`}
                             className="inline-block mt-2 text-sm text-brand-400 hover:text-brand-300 transition-colors font-medium"
@@ -244,7 +260,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                                         Drag and drop a transcript file here, or click to browse
                                     </p>
                                     <p className="text-xs text-theme-text-muted mt-2">
-                                        Supported: .txt, .vtt, .sbv
+                                        Supported: .txt, .vtt, .sbv, .pdf
                                     </p>
                                 </div>
                             )}
@@ -376,7 +392,7 @@ function UploadModalPortal({
     const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
     const [uploading, setUploading] = useState(false);
     const [progressIndex, setProgressIndex] = useState(0);
-    const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript } | { type: 'error'; message: string } | null>(null);
+    const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript; detectedDate?: string | null } | { type: 'error'; message: string } | null>(null);
     const [dragOver, setDragOver] = useState(false);
 
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -411,7 +427,7 @@ function UploadModalPortal({
 
     const handleFileSelect = (selected: File) => {
         const ext = getFileExtension(selected.name);
-        if (!['.txt', '.vtt', '.sbv'].includes(ext)) return;
+        if (!VALID_EXTENSIONS.includes(ext)) return;
         setFile(selected);
         setTitle(titleFromFilename(selected.name));
         setResult(null);
@@ -437,7 +453,7 @@ function UploadModalPortal({
             if (date) formData.append('date', new Date(date).toISOString());
 
             const res = await fetch('/api/upload', { method: 'POST', body: formData });
-            const data = (await res.json()) as { error?: string; transcript?: MeetingTranscript };
+            const data = (await res.json()) as UploadResponse;
 
             if (!res.ok) {
                 setResult({ type: 'error', message: data.error || 'Upload failed' });
@@ -445,7 +461,7 @@ function UploadModalPortal({
             }
 
             if (data.transcript) {
-                setResult({ type: 'success', transcript: data.transcript });
+                setResult({ type: 'success', transcript: data.transcript, detectedDate: data.detectedDate });
                 onSuccess?.(data.transcript);
             }
         } catch {
@@ -485,6 +501,12 @@ function UploadModalPortal({
                         <p className="text-sm text-theme-text-secondary">
                             &ldquo;{result.transcript.meeting_title}&rdquo; has been processed and is now searchable.
                         </p>
+                        {result.detectedDate && (
+                            <div className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 mt-2">
+                                <span>✓</span>
+                                <span>Date auto-detected from PDF</span>
+                            </div>
+                        )}
                         <a
                             href={`/transcripts/${result.transcript.transcript_id}`}
                             className="inline-block mt-2 text-sm text-brand-400 hover:text-brand-300 transition-colors font-medium"
@@ -539,7 +561,7 @@ function UploadModalPortal({
                                     <p className="text-sm text-theme-text-secondary">
                                         Drag and drop a transcript file here, or click to browse
                                     </p>
-                                    <p className="text-xs text-theme-text-muted mt-2">Supported: .txt, .vtt, .sbv</p>
+                                    <p className="text-xs text-theme-text-muted mt-2">Supported: .txt, .vtt, .sbv, .pdf</p>
                                 </div>
                             )}
                         </div>

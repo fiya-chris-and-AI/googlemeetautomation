@@ -1,5 +1,5 @@
 /** Method used to extract transcript content from the email. */
-export type ExtractionMethod = 'inline' | 'google_doc' | 'attachment' | 'upload';
+export type ExtractionMethod = 'inline' | 'google_doc' | 'attachment' | 'upload' | 'pdf_upload';
 
 /** Status of a processing log entry. */
 export type LogStatus = 'success' | 'skipped' | 'error';

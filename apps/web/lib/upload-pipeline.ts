@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 import { getServerSupabase } from './supabase';
-import type { MeetingTranscript, TranscriptChunk } from '@meet-pipeline/shared';
+import type { MeetingTranscript, TranscriptChunk, ExtractionMethod } from '@meet-pipeline/shared';
 
 /** Simple slug helper — avoids adding slugify as a dependency. */
 function slugify(text: string): string {
@@ -232,6 +232,8 @@ export interface UploadPipelineParams {
     title: string;
     /** Meeting date (defaults to now) */
     date?: Date;
+    /** How the transcript was extracted — defaults to 'upload' */
+    extractionMethod?: ExtractionMethod;
 }
 
 /**
@@ -246,14 +248,16 @@ export interface UploadPipelineParams {
  * On failure, cleans up the transcript record and logs the error.
  */
 export async function processUpload(params: UploadPipelineParams): Promise<MeetingTranscript> {
-    const { text, title, date = new Date() } = params;
+    const { text, title, date = new Date(), extractionMethod = 'upload' } = params;
     const supabase = getServerSupabase();
 
     // Build synthetic source ID unique to this upload
     const randomChars = Math.random().toString(36).substring(2, 10);
     const sourceEmailId = `upload_${Date.now()}_${randomChars}`;
 
-    const participants = extractParticipants(text);
+    // PDF-extracted text lacks structured "Speaker: text" lines, so the
+    // speaker regex produces false positives on arbitrary sentences.
+    const participants = extractionMethod === 'pdf_upload' ? [] : extractParticipants(text);
     const transcriptId = generateTranscriptId(title, date);
     const wordCount = text.split(/\s+/).filter(Boolean).length;
 
@@ -264,7 +268,7 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
         participants,
         raw_transcript: text,
         source_email_id: sourceEmailId,
-        extraction_method: 'upload',
+        extraction_method: extractionMethod,
         word_count: wordCount,
         processed_at: new Date().toISOString(),
     };
@@ -330,7 +334,7 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
             source_email_id: sourceEmailId,
             email_subject: title,
             status: 'success',
-            extraction_method: 'upload',
+            extraction_method: extractionMethod,
         });
 
         // Log activity
@@ -355,7 +359,7 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
             source_email_id: sourceEmailId,
             email_subject: title,
             status: 'error',
-            extraction_method: 'upload',
+            extraction_method: extractionMethod,
             error_message: errorMessage,
         });
 
