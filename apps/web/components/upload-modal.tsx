@@ -68,8 +68,8 @@ function TabSwitcher({ mode, onChange, disabled }: { mode: InputMode; onChange: 
                 onClick={() => onChange('file')}
                 disabled={disabled}
                 className={`flex-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${mode === 'file'
-                        ? 'bg-white dark:bg-[rgb(var(--color-surface))] text-theme-text-primary shadow-sm'
-                        : 'text-theme-text-tertiary hover:text-theme-text-secondary'
+                    ? 'bg-white dark:bg-[rgb(var(--color-surface))] text-theme-text-primary shadow-sm'
+                    : 'text-theme-text-tertiary hover:text-theme-text-secondary'
                     } disabled:opacity-50`}
             >
                 📄 Upload File
@@ -79,8 +79,8 @@ function TabSwitcher({ mode, onChange, disabled }: { mode: InputMode; onChange: 
                 onClick={() => onChange('paste')}
                 disabled={disabled}
                 className={`flex-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${mode === 'paste'
-                        ? 'bg-white dark:bg-[rgb(var(--color-surface))] text-theme-text-primary shadow-sm'
-                        : 'text-theme-text-tertiary hover:text-theme-text-secondary'
+                    ? 'bg-white dark:bg-[rgb(var(--color-surface))] text-theme-text-primary shadow-sm'
+                    : 'text-theme-text-tertiary hover:text-theme-text-secondary'
                     } disabled:opacity-50`}
             >
                 ✏️ Paste Text
@@ -231,7 +231,6 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     return (
         <div
             className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
-            onClick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
         >
             <div
                 ref={modalRef}
@@ -581,7 +580,6 @@ function UploadModalPortal({
     return (
         <div
             className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
-            onClick={(e) => { if (e.target === e.currentTarget && !uploading) onClose(); }}
         >
             <div
                 ref={modalRef}

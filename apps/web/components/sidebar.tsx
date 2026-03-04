@@ -36,21 +36,23 @@ export function Sidebar() {
     return (
         <aside className="fixed left-0 top-0 bottom-0 w-64 bg-theme-raised border-r border-theme-border flex flex-col z-50">
             {/* Brand */}
-            <div className="p-6 border-b border-theme-border">
-                <div className="flex items-center gap-3">
+            <div className="p-5 border-b border-theme-border">
+                <div className="flex flex-col items-start">
+                    {/* Light mode logo */}
                     <img
-                        src="https://rgltabjdjrbmbjrjoqga.supabase.co/storage/v1/object/public/community-assets/community-logo-1772070053980.png"
+                        src="/logo-light.svg"
                         alt="ScienceExperts.ai"
-                        className="w-14 h-14 rounded-lg object-contain"
+                        className="h-14 w-auto dark:hidden"
                     />
-                    <div>
-                        <h1 className="text-base font-bold text-theme-text-primary tracking-tight">
-                            ScienceExperts
-                        </h1>
-                        <p className="text-[11px] text-theme-text-secondary font-medium">
-                            Transcript Pipeline
-                        </p>
-                    </div>
+                    {/* Dark mode logo */}
+                    <img
+                        src="/logo-dark.svg"
+                        alt="ScienceExperts.ai"
+                        className="h-14 w-auto hidden dark:block"
+                    />
+                    <p className="text-[11px] text-theme-text-secondary font-medium mt-1.5 ml-0.5">
+                        Transcript Pipeline
+                    </p>
                 </div>
             </div>
 

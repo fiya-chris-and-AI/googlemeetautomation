@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <!-- Red vertical bar -->
+  <rect x="0" y="0" width="12" height="80" rx="2" fill="#E02020"/>
+  <!-- Text -->
+  <text x="22" y="32" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="30" fill="#ffffff" letter-spacing="-0.5">
+    science
+  </text>
+  <text x="22" y="66" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="30" fill="#ffffff" letter-spacing="-0.5">
+    experts<tspan fill="#E02020">.ai</tspan>
+  </text>
+</svg>
