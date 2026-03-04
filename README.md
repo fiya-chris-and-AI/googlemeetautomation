@@ -195,7 +195,8 @@ npx vitest run src/__tests__/normalize.test.ts
 |-------|-----------|
 | Frontend | Next.js 14 (App Router), TypeScript, Tailwind CSS |
 | Backend | Node.js, Express, TypeScript |
-| Database | Supabase (PostgreSQL + pgvector) |
+| Database | Supabase (PostgreSQL + pgvector) | 
+
 | Embeddings | OpenAI `text-embedding-3-small` (1536 dims) |
 | AI Answers | Anthropic Claude |
 | Gmail | Google APIs (Gmail, Docs, Drive) + Cloud Pub/Sub |
