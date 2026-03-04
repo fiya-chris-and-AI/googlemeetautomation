@@ -34,7 +34,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         } else {
             root.classList.remove('dark');
         }
-        localStorage.setItem(STORAGE_KEY, theme);
+        try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) { /* quota exceeded – ignore */ }
     }, [theme]);
 
     const toggleTheme = useCallback(() => {

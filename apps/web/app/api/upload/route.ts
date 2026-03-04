@@ -24,6 +24,35 @@ async function extractPdfText(file: File): Promise<string> {
 
 export async function POST(request: NextRequest) {
     try {
+        const contentType = request.headers.get('content-type') ?? '';
+
+        // ── Pasted-text path (JSON) ─────────────────────────────
+        if (contentType.includes('application/json')) {
+            const body = await request.json();
+            const { text, title: titleOverride, date: dateOverride } = body as {
+                text?: string;
+                title?: string;
+                date?: string;
+            };
+
+            if (!text || !text.trim()) {
+                return NextResponse.json({ error: 'Transcript text is required' }, { status: 400 });
+            }
+
+            const title = titleOverride?.trim() || 'Pasted Transcript';
+            const date = dateOverride ? new Date(dateOverride) : undefined;
+
+            const transcript = await processUpload({
+                text: text.trim(),
+                title,
+                date,
+                extractionMethod: 'paste',
+            });
+
+            return NextResponse.json({ transcript, detectedDate: null }, { status: 201 });
+        }
+
+        // ── File-upload path (FormData) ─────────────────────────
         const formData = await request.formData();
         const file = formData.get('file');
         const titleOverride = formData.get('title') as string | null;

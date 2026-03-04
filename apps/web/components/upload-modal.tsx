@@ -12,13 +12,22 @@ const FORMAT_LABELS: Record<string, string> = {
     '.pdf': 'PDF',
 };
 
-const PROGRESS_STAGES = [
+const PROGRESS_STAGES_FILE = [
     'Uploading file...',
     'Extracting text from PDF...',
     'Parsing transcript...',
     'Generating embeddings...',
     'Storing in database...',
 ];
+
+const PROGRESS_STAGES_PASTE = [
+    'Processing text...',
+    'Parsing transcript...',
+    'Generating embeddings...',
+    'Storing in database...',
+];
+
+type InputMode = 'file' | 'paste';
 
 /** Derive a title from a filename: strip extension, replace separators, title-case. */
 function titleFromFilename(filename: string): string {
@@ -49,9 +58,44 @@ interface UploadModalProps {
     onSuccess?: (transcript: MeetingTranscript) => void;
 }
 
+// ── Shared Tab Switcher Component ────────────────────────────────────
+
+function TabSwitcher({ mode, onChange, disabled }: { mode: InputMode; onChange: (m: InputMode) => void; disabled: boolean }) {
+    return (
+        <div className="flex rounded-xl bg-theme-muted p-1 mb-4">
+            <button
+                type="button"
+                onClick={() => onChange('file')}
+                disabled={disabled}
+                className={`flex-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${mode === 'file'
+                        ? 'bg-white dark:bg-[rgb(var(--color-surface))] text-theme-text-primary shadow-sm'
+                        : 'text-theme-text-tertiary hover:text-theme-text-secondary'
+                    } disabled:opacity-50`}
+            >
+                📄 Upload File
+            </button>
+            <button
+                type="button"
+                onClick={() => onChange('paste')}
+                disabled={disabled}
+                className={`flex-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${mode === 'paste'
+                        ? 'bg-white dark:bg-[rgb(var(--color-surface))] text-theme-text-primary shadow-sm'
+                        : 'text-theme-text-tertiary hover:text-theme-text-secondary'
+                    } disabled:opacity-50`}
+            >
+                ✏️ Paste Text
+            </button>
+        </div>
+    );
+}
+
+// ── Main Upload Modal (header button) ────────────────────────────────
+
 export function UploadModal({ onSuccess }: UploadModalProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [mode, setMode] = useState<InputMode>('file');
     const [file, setFile] = useState<File | null>(null);
+    const [pastedText, setPastedText] = useState('');
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
     const [uploading, setUploading] = useState(false);
@@ -62,9 +106,14 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
 
+    const progressStages = mode === 'paste' ? PROGRESS_STAGES_PASTE : PROGRESS_STAGES_FILE;
+    const canSubmit = mode === 'file' ? !!file : !!pastedText.trim();
+
     // Reset state when modal opens
     const openModal = useCallback(() => {
+        setMode('file');
         setFile(null);
+        setPastedText('');
         setTitle('');
         setDate(new Date().toISOString().split('T')[0]);
         setUploading(false);
@@ -75,7 +124,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     }, []);
 
     const closeModal = useCallback(() => {
-        if (uploading) return; // prevent close during upload
+        if (uploading) return;
         setIsOpen(false);
     }, [uploading]);
 
@@ -93,7 +142,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     useEffect(() => {
         if (!isOpen || !modalRef.current) return;
         const focusable = modalRef.current.querySelectorAll<HTMLElement>(
-            'button, input, [tabindex]:not([tabindex="-1"])'
+            'button, input, textarea, [tabindex]:not([tabindex="-1"])'
         );
         if (focusable.length > 0) focusable[0].focus();
     }, [isOpen, result]);
@@ -102,10 +151,10 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     useEffect(() => {
         if (!uploading) return;
         const interval = setInterval(() => {
-            setProgressIndex((prev) => (prev + 1) % PROGRESS_STAGES.length);
+            setProgressIndex((prev) => (prev + 1) % progressStages.length);
         }, 2000);
         return () => clearInterval(interval);
-    }, [uploading]);
+    }, [uploading, progressStages.length]);
 
     const handleFileSelect = (selected: File) => {
         const ext = getFileExtension(selected.name);
@@ -122,20 +171,34 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
         if (dropped) handleFileSelect(dropped);
     };
 
-    const handleUpload = async () => {
-        if (!file) return;
+    const handleSubmit = async () => {
+        if (!canSubmit) return;
 
         setUploading(true);
         setProgressIndex(0);
         setResult(null);
 
         try {
-            const formData = new FormData();
-            formData.append('file', file);
-            if (title.trim()) formData.append('title', title.trim());
-            if (date) formData.append('date', new Date(date).toISOString());
+            let res: Response;
 
-            const res = await fetch('/api/upload', { method: 'POST', body: formData });
+            if (mode === 'paste') {
+                res = await fetch('/api/upload', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        text: pastedText,
+                        title: title.trim() || undefined,
+                        date: date ? new Date(date).toISOString() : undefined,
+                    }),
+                });
+            } else {
+                const formData = new FormData();
+                formData.append('file', file!);
+                if (title.trim()) formData.append('title', title.trim());
+                if (date) formData.append('date', new Date(date).toISOString());
+                res = await fetch('/api/upload', { method: 'POST', body: formData });
+            }
+
             const data = (await res.json()) as UploadResponse;
 
             if (!res.ok) {
@@ -219,52 +282,77 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                     </div>
                 )}
 
-                {/* Drop zone */}
+                {/* Input form */}
                 {!result?.type && (
                     <>
-                        <div
-                            onClick={() => fileInputRef.current?.click()}
-                            onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-                            onDragLeave={() => setDragOver(false)}
-                            onDrop={handleDrop}
-                            className={`
-                                border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
-                                transition-all duration-200 mb-4
-                                ${dragOver
-                                    ? 'border-brand-500 bg-brand-500/5'
-                                    : 'border-theme-border hover:border-theme-border'
-                                }
-                            `}
-                        >
-                            <input
-                                ref={fileInputRef}
-                                type="file"
-                                accept={ACCEPTED_EXTENSIONS}
-                                className="hidden"
-                                onChange={(e) => {
-                                    const f = e.target.files?.[0];
-                                    if (f) handleFileSelect(f);
-                                }}
-                            />
+                        {/* Tab Switcher */}
+                        <TabSwitcher mode={mode} onChange={setMode} disabled={uploading} />
 
-                            {file ? (
-                                <div>
-                                    <p className="text-sm font-medium text-theme-text-primary">{file.name}</p>
-                                    <p className="text-xs text-theme-text-tertiary mt-1">
-                                        {formatFileSize(file.size)} &middot; {FORMAT_LABELS[getFileExtension(file.name)] ?? 'Unknown'}
+                        {/* File drop zone */}
+                        {mode === 'file' && (
+                            <div
+                                onClick={() => fileInputRef.current?.click()}
+                                onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                                onDragLeave={() => setDragOver(false)}
+                                onDrop={handleDrop}
+                                className={`
+                                    border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
+                                    transition-all duration-200 mb-4
+                                    ${dragOver
+                                        ? 'border-brand-500 bg-brand-500/5'
+                                        : 'border-theme-border hover:border-theme-border'
+                                    }
+                                `}
+                            >
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept={ACCEPTED_EXTENSIONS}
+                                    className="hidden"
+                                    onChange={(e) => {
+                                        const f = e.target.files?.[0];
+                                        if (f) handleFileSelect(f);
+                                    }}
+                                />
+
+                                {file ? (
+                                    <div>
+                                        <p className="text-sm font-medium text-theme-text-primary">{file.name}</p>
+                                        <p className="text-xs text-theme-text-tertiary mt-1">
+                                            {formatFileSize(file.size)} &middot; {FORMAT_LABELS[getFileExtension(file.name)] ?? 'Unknown'}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p className="text-sm text-theme-text-secondary">
+                                            Drag and drop a transcript file here, or click to browse
+                                        </p>
+                                        <p className="text-xs text-theme-text-muted mt-2">
+                                            Supported: .txt, .vtt, .sbv, .pdf
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* Paste text area */}
+                        {mode === 'paste' && (
+                            <div className="mb-4">
+                                <textarea
+                                    id="paste-transcript-text"
+                                    value={pastedText}
+                                    onChange={(e) => setPastedText(e.target.value)}
+                                    placeholder="Paste your meeting transcript here..."
+                                    rows={8}
+                                    className="input-glow w-full resize-y min-h-[120px] max-h-[400px]"
+                                />
+                                {pastedText.trim() && (
+                                    <p className="text-xs text-theme-text-muted mt-1">
+                                        {pastedText.trim().split(/\s+/).length.toLocaleString()} words
                                     </p>
-                                </div>
-                            ) : (
-                                <div>
-                                    <p className="text-sm text-theme-text-secondary">
-                                        Drag and drop a transcript file here, or click to browse
-                                    </p>
-                                    <p className="text-xs text-theme-text-muted mt-2">
-                                        Supported: .txt, .vtt, .sbv, .pdf
-                                    </p>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
+                        )}
 
                         {/* Title input */}
                         <div className="mb-3">
@@ -300,7 +388,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                             <div className="mb-4 p-3 rounded-xl bg-brand-500/5 border border-brand-500/10">
                                 <div className="flex items-center gap-2">
                                     <div className="w-4 h-4 border-2 border-brand-400 border-t-transparent rounded-full animate-spin" />
-                                    <p className="text-sm text-brand-400 font-medium">{PROGRESS_STAGES[progressIndex]}</p>
+                                    <p className="text-sm text-brand-400 font-medium">{progressStages[progressIndex]}</p>
                                 </div>
                             </div>
                         )}
@@ -315,11 +403,11 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                                 Cancel
                             </button>
                             <button
-                                onClick={handleUpload}
-                                disabled={!file || uploading}
+                                onClick={handleSubmit}
+                                disabled={!canSubmit || uploading}
                                 className="btn-primary px-5 py-2"
                             >
-                                {uploading ? 'Processing...' : 'Upload & Process'}
+                                {uploading ? 'Processing...' : mode === 'paste' ? 'Process Text' : 'Upload & Process'}
                             </button>
                         </div>
                     </>
@@ -387,7 +475,9 @@ function UploadModalPortal({
     onClose: () => void;
     onSuccess?: (transcript: MeetingTranscript) => void;
 }) {
+    const [mode, setMode] = useState<InputMode>('file');
     const [file, setFile] = useState<File | null>(null);
+    const [pastedText, setPastedText] = useState('');
     const [title, setTitle] = useState('');
     const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
     const [uploading, setUploading] = useState(false);
@@ -397,6 +487,9 @@ function UploadModalPortal({
 
     const fileInputRef = useRef<HTMLInputElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
+
+    const progressStages = mode === 'paste' ? PROGRESS_STAGES_PASTE : PROGRESS_STAGES_FILE;
+    const canSubmit = mode === 'file' ? !!file : !!pastedText.trim();
 
     // Close on Escape
     useEffect(() => {
@@ -411,7 +504,7 @@ function UploadModalPortal({
     useEffect(() => {
         if (!modalRef.current) return;
         const focusable = modalRef.current.querySelectorAll<HTMLElement>(
-            'button, input, [tabindex]:not([tabindex="-1"])'
+            'button, input, textarea, [tabindex]:not([tabindex="-1"])'
         );
         if (focusable.length > 0) focusable[0].focus();
     }, [result]);
@@ -420,10 +513,10 @@ function UploadModalPortal({
     useEffect(() => {
         if (!uploading) return;
         const interval = setInterval(() => {
-            setProgressIndex((prev) => (prev + 1) % PROGRESS_STAGES.length);
+            setProgressIndex((prev) => (prev + 1) % progressStages.length);
         }, 2000);
         return () => clearInterval(interval);
-    }, [uploading]);
+    }, [uploading, progressStages.length]);
 
     const handleFileSelect = (selected: File) => {
         const ext = getFileExtension(selected.name);
@@ -440,19 +533,33 @@ function UploadModalPortal({
         if (dropped) handleFileSelect(dropped);
     };
 
-    const handleUpload = async () => {
-        if (!file) return;
+    const handleSubmit = async () => {
+        if (!canSubmit) return;
         setUploading(true);
         setProgressIndex(0);
         setResult(null);
 
         try {
-            const formData = new FormData();
-            formData.append('file', file);
-            if (title.trim()) formData.append('title', title.trim());
-            if (date) formData.append('date', new Date(date).toISOString());
+            let res: Response;
 
-            const res = await fetch('/api/upload', { method: 'POST', body: formData });
+            if (mode === 'paste') {
+                res = await fetch('/api/upload', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        text: pastedText,
+                        title: title.trim() || undefined,
+                        date: date ? new Date(date).toISOString() : undefined,
+                    }),
+                });
+            } else {
+                const formData = new FormData();
+                formData.append('file', file!);
+                if (title.trim()) formData.append('title', title.trim());
+                if (date) formData.append('date', new Date(date).toISOString());
+                res = await fetch('/api/upload', { method: 'POST', body: formData });
+            }
+
             const data = (await res.json()) as UploadResponse;
 
             if (!res.ok) {
@@ -525,46 +632,71 @@ function UploadModalPortal({
 
                 {!result?.type && (
                     <>
-                        <div
-                            onClick={() => fileInputRef.current?.click()}
-                            onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-                            onDragLeave={() => setDragOver(false)}
-                            onDrop={handleDrop}
-                            className={`
-                                border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
-                                transition-all duration-200 mb-4
-                                ${dragOver
-                                    ? 'border-brand-500 bg-brand-500/5'
-                                    : 'border-theme-border hover:border-theme-border'
-                                }
-                            `}
-                        >
-                            <input
-                                ref={fileInputRef}
-                                type="file"
-                                accept={ACCEPTED_EXTENSIONS}
-                                className="hidden"
-                                onChange={(e) => {
-                                    const f = e.target.files?.[0];
-                                    if (f) handleFileSelect(f);
-                                }}
-                            />
-                            {file ? (
-                                <div>
-                                    <p className="text-sm font-medium text-theme-text-primary">{file.name}</p>
-                                    <p className="text-xs text-theme-text-tertiary mt-1">
-                                        {formatFileSize(file.size)} &middot; {FORMAT_LABELS[getFileExtension(file.name)] ?? 'Unknown'}
+                        {/* Tab Switcher */}
+                        <TabSwitcher mode={mode} onChange={setMode} disabled={uploading} />
+
+                        {/* File drop zone */}
+                        {mode === 'file' && (
+                            <div
+                                onClick={() => fileInputRef.current?.click()}
+                                onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                                onDragLeave={() => setDragOver(false)}
+                                onDrop={handleDrop}
+                                className={`
+                                    border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
+                                    transition-all duration-200 mb-4
+                                    ${dragOver
+                                        ? 'border-brand-500 bg-brand-500/5'
+                                        : 'border-theme-border hover:border-theme-border'
+                                    }
+                                `}
+                            >
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept={ACCEPTED_EXTENSIONS}
+                                    className="hidden"
+                                    onChange={(e) => {
+                                        const f = e.target.files?.[0];
+                                        if (f) handleFileSelect(f);
+                                    }}
+                                />
+                                {file ? (
+                                    <div>
+                                        <p className="text-sm font-medium text-theme-text-primary">{file.name}</p>
+                                        <p className="text-xs text-theme-text-tertiary mt-1">
+                                            {formatFileSize(file.size)} &middot; {FORMAT_LABELS[getFileExtension(file.name)] ?? 'Unknown'}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p className="text-sm text-theme-text-secondary">
+                                            Drag and drop a transcript file here, or click to browse
+                                        </p>
+                                        <p className="text-xs text-theme-text-muted mt-2">Supported: .txt, .vtt, .sbv, .pdf</p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* Paste text area */}
+                        {mode === 'paste' && (
+                            <div className="mb-4">
+                                <textarea
+                                    id="portal-paste-transcript-text"
+                                    value={pastedText}
+                                    onChange={(e) => setPastedText(e.target.value)}
+                                    placeholder="Paste your meeting transcript here..."
+                                    rows={8}
+                                    className="input-glow w-full resize-y min-h-[120px] max-h-[400px]"
+                                />
+                                {pastedText.trim() && (
+                                    <p className="text-xs text-theme-text-muted mt-1">
+                                        {pastedText.trim().split(/\s+/).length.toLocaleString()} words
                                     </p>
-                                </div>
-                            ) : (
-                                <div>
-                                    <p className="text-sm text-theme-text-secondary">
-                                        Drag and drop a transcript file here, or click to browse
-                                    </p>
-                                    <p className="text-xs text-theme-text-muted mt-2">Supported: .txt, .vtt, .sbv, .pdf</p>
-                                </div>
-                            )}
-                        </div>
+                                )}
+                            </div>
+                        )}
 
                         <div className="mb-3">
                             <label htmlFor="portal-upload-title" className="block text-xs font-medium text-theme-text-secondary mb-1">
@@ -597,7 +729,7 @@ function UploadModalPortal({
                             <div className="mb-4 p-3 rounded-xl bg-brand-500/5 border border-brand-500/10">
                                 <div className="flex items-center gap-2">
                                     <div className="w-4 h-4 border-2 border-brand-400 border-t-transparent rounded-full animate-spin" />
-                                    <p className="text-sm text-brand-400 font-medium">{PROGRESS_STAGES[progressIndex]}</p>
+                                    <p className="text-sm text-brand-400 font-medium">{progressStages[progressIndex]}</p>
                                 </div>
                             </div>
                         )}
@@ -611,11 +743,11 @@ function UploadModalPortal({
                                 Cancel
                             </button>
                             <button
-                                onClick={handleUpload}
-                                disabled={!file || uploading}
+                                onClick={handleSubmit}
+                                disabled={!canSubmit || uploading}
                                 className="btn-primary px-5 py-2"
                             >
-                                {uploading ? 'Processing...' : 'Upload & Process'}
+                                {uploading ? 'Processing...' : mode === 'paste' ? 'Process Text' : 'Upload & Process'}
                             </button>
                         </div>
                     </>

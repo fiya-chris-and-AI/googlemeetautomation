@@ -23,8 +23,8 @@ export default function DashboardPage() {
     const refreshData = () => {
         fetch('/api/transcripts')
             .then((r) => r.json())
-            .then((data: MeetingTranscript[]) => {
-                setTranscripts(data);
+            .then((data) => {
+                if (Array.isArray(data)) setTranscripts(data);
                 setLoading(false);
             })
             .catch(() => setLoading(false));
