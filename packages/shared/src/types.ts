@@ -88,6 +88,7 @@ export interface QueryResponse {
 
 export type ActionItemStatus = 'open' | 'in_progress' | 'done' | 'dismissed';
 export type ActionItemPriority = 'low' | 'medium' | 'high' | 'urgent';
+export type ActionItemEffort = 'quick_fix' | 'moderate' | 'significant';
 export type ActionItemCreatedBy = 'ai' | 'manual';
 
 export interface ActionItem {
@@ -98,6 +99,7 @@ export interface ActionItem {
     assigned_to: string | null;
     status: ActionItemStatus;
     priority: ActionItemPriority;
+    effort: ActionItemEffort | null;
     due_date: string | null;
     source_text: string | null;
     created_by: ActionItemCreatedBy;
@@ -105,6 +107,10 @@ export interface ActionItem {
     updated_at: string;
     completed_at: string | null;
     group_label: string | null;
+    /** Whether this item was flagged as a semantic duplicate during bulk extraction. */
+    is_duplicate: boolean;
+    /** ID of the original action item this is a duplicate of, if any. */
+    duplicate_of: string | null;
 }
 
 // ── Activity Log ────────────────────────────────

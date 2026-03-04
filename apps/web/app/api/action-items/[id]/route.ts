@@ -53,6 +53,7 @@ export async function PATCH(
         if (body.title !== undefined) update.title = body.title;
         if (body.description !== undefined) update.description = body.description;
         if (body.priority !== undefined) update.priority = body.priority;
+        if (body.effort !== undefined) update.effort = body.effort;
         if (body.due_date !== undefined) update.due_date = body.due_date;
         if (body.group_label !== undefined) update.group_label = body.group_label || null;
         if (body.status !== undefined) {
@@ -101,6 +102,7 @@ export async function PATCH(
                 assigned_to: cloneAssignee,
                 status: data.status,
                 priority: data.priority,
+                effort: data.effort,
                 due_date: data.due_date,
                 source_text: data.source_text,
                 created_by: data.created_by,

@@ -55,6 +55,9 @@ export async function GET(req: NextRequest) {
         const priority = searchParams.get('priority');
         if (priority) query = query.eq('priority', priority);
 
+        const effort = searchParams.get('effort');
+        if (effort) query = query.eq('effort', effort);
+
         const { data, error } = await query;
 
         if (error) {
@@ -91,6 +94,7 @@ export async function POST(req: NextRequest) {
             assigned_to: name,
             status: body.status ?? 'open',
             priority: body.priority ?? 'medium',
+            effort: body.effort ?? null,
             due_date: body.due_date ?? null,
             source_text: body.source_text ?? null,
             created_by: body.created_by ?? 'manual',

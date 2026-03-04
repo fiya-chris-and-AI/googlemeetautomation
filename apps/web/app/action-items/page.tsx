@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
-import type { ActionItem, ActionItemStatus, ActionItemPriority } from '@meet-pipeline/shared';
+import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort } from '@meet-pipeline/shared';
 
 const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
@@ -23,6 +23,12 @@ const PRIORITY_LABEL: Record<ActionItemPriority, string> = {
     low: 'Low',
 };
 
+const EFFORT_CONFIG: Record<string, { icon: string; label: string; color: string }> = {
+    quick_fix: { icon: '⚡', label: 'Quick Fix', color: 'text-emerald-400' },
+    moderate: { icon: '🔧', label: 'Moderate', color: 'text-brand-400' },
+    significant: { icon: '🏗️', label: 'Significant', color: 'text-amber-400' },
+};
+
 export default function ActionItemsPage() {
     const [items, setItems] = useState<ActionItem[]>([]);
     const [loading, setLoading] = useState(true);
@@ -31,7 +37,9 @@ export default function ActionItemsPage() {
     const [assigneeFilter, setAssigneeFilter] = useState('all');
     const [priorityFilter, setPriorityFilter] = useState('all');
     const [sourceFilter, setSourceFilter] = useState('all');
+    const [duplicateFilter, setDuplicateFilter] = useState<'hidden' | 'shown'>('hidden');
     const [search, setSearch] = useState('');
+    const [effortFilter, setEffortFilter] = useState('all');
 
     // Modal state
     const [showCreate, setShowCreate] = useState(false);
@@ -42,6 +50,7 @@ export default function ActionItemsPage() {
     const [newDescription, setNewDescription] = useState('');
     const [newAssignee, setNewAssignee] = useState('');
     const [newPriority, setNewPriority] = useState<ActionItemPriority>('medium');
+    const [newEffort, setNewEffort] = useState<ActionItemEffort | ''>('');
     const [newDueDate, setNewDueDate] = useState('');
 
     // Grouping state
@@ -49,6 +58,8 @@ export default function ActionItemsPage() {
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
     const [grouping, setGrouping] = useState(false);
     const [groupError, setGroupError] = useState<string | null>(null);
+    const [estimating, setEstimating] = useState(false);
+    const [estimateError, setEstimateError] = useState<string | null>(null);
 
     const fetchItems = async () => {
         try {
@@ -77,8 +88,10 @@ export default function ActionItemsPage() {
     const filtered = useMemo(() => {
         return items.filter((i) => {
             if (i.status === 'dismissed') return false;
+            if (duplicateFilter === 'hidden' && i.is_duplicate) return false;
             if (assigneeFilter !== 'all' && i.assigned_to !== assigneeFilter) return false;
             if (priorityFilter !== 'all' && i.priority !== priorityFilter) return false;
+            if (effortFilter !== 'all' && i.effort !== effortFilter) return false;
             if (sourceFilter === 'ai' && i.created_by !== 'ai') return false;
             if (sourceFilter === 'manual' && i.created_by !== 'manual') return false;
             if (search) {
@@ -89,7 +102,7 @@ export default function ActionItemsPage() {
             }
             return true;
         });
-    }, [items, assigneeFilter, priorityFilter, sourceFilter, search]);
+    }, [items, assigneeFilter, priorityFilter, effortFilter, sourceFilter, duplicateFilter, search]);
 
     // Organize items into groups per column
     const groupedByColumn = useMemo(() => {
@@ -180,6 +193,7 @@ export default function ActionItemsPage() {
                     description: newDescription.trim() || null,
                     assigned_to: newAssignee || null,
                     priority: newPriority,
+                    effort: newEffort || null,
                     due_date: newDueDate || null,
                     created_by: 'manual',
                 }),
@@ -192,9 +206,37 @@ export default function ActionItemsPage() {
                 setNewDescription('');
                 setNewAssignee('');
                 setNewPriority('medium');
+                setNewEffort('');
                 setNewDueDate('');
             }
         } catch { /* silently fail */ }
+    };
+
+    const handleEstimateEffort = async () => {
+        setEstimating(true);
+        setEstimateError(null);
+        try {
+            const res = await fetch('/api/action-items/estimate-effort', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({}),
+            });
+            const result = await res.json() as { error?: string; updated?: number };
+
+            if (!res.ok) {
+                setEstimateError(result.error || 'Effort estimation failed');
+                console.error('[Estimate Effort] API error:', result);
+                return;
+            }
+
+            console.log(`[Estimate Effort] Estimated ${result.updated} items`);
+            await fetchItems();
+        } catch (err) {
+            setEstimateError('Network error — could not reach estimation API');
+            console.error('[Estimate Effort] Error:', err);
+        } finally {
+            setEstimating(false);
+        }
     };
 
     const handleSmartGroup = async () => {
@@ -257,11 +299,18 @@ export default function ActionItemsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                     <button
+                        onClick={handleEstimateEffort}
+                        disabled={estimating}
+                        className="btn-primary px-5 py-2.5"
+                    >
+                        {estimating ? 'Estimating...' : '⚡ Estimate Effort'}
+                    </button>
+                    <button
                         onClick={handleSmartGroup}
                         disabled={grouping}
                         className="btn-primary px-5 py-2.5"
                     >
-                        {grouping ? 'Grouping...' : '\u2726 Smart Group'}
+                        {grouping ? 'Grouping...' : '✦ Smart Group'}
                     </button>
                     <button
                         onClick={() => setShowCreate(true)}
@@ -274,6 +323,9 @@ export default function ActionItemsPage() {
 
             {groupError && (
                 <p className="text-xs text-rose-400 mt-2">{groupError}</p>
+            )}
+            {estimateError && (
+                <p className="text-xs text-rose-400 mt-2">{estimateError}</p>
             )}
 
             {/* Filters Bar */}
@@ -302,6 +354,16 @@ export default function ActionItemsPage() {
                     ]}
                 />
                 <FilterSelect
+                    value={effortFilter}
+                    onChange={setEffortFilter}
+                    options={[
+                        { value: 'all', label: 'All Effort Levels' },
+                        { value: 'quick_fix', label: '⚡ Quick Fix' },
+                        { value: 'moderate', label: '🔧 Moderate' },
+                        { value: 'significant', label: '🏗️ Significant' },
+                    ]}
+                />
+                <FilterSelect
                     value={sourceFilter}
                     onChange={setSourceFilter}
                     options={[
@@ -310,6 +372,16 @@ export default function ActionItemsPage() {
                         { value: 'manual', label: 'Manual' },
                     ]}
                 />
+                {/* Duplicate toggle */}
+                <button
+                    onClick={() => setDuplicateFilter(duplicateFilter === 'hidden' ? 'shown' : 'hidden')}
+                    className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors whitespace-nowrap ${duplicateFilter === 'shown'
+                        ? 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+                        : 'border-theme-border text-theme-text-muted hover:text-theme-text-secondary'
+                        }`}
+                >
+                    {duplicateFilter === 'shown' ? '◈ Hiding Duplicates' : '◇ Show Duplicates'}
+                </button>
                 {/* View mode toggle */}
                 <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
                     <button
@@ -379,6 +451,7 @@ export default function ActionItemsPage() {
                                             <ActionItemCard
                                                 key={item.id}
                                                 item={item}
+                                                allItems={items}
                                                 isOverdue={isOverdue(item)}
                                                 isExpanded={expandedId === item.id}
                                                 onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
@@ -423,6 +496,7 @@ export default function ActionItemsPage() {
                                                                     <ActionItemCard
                                                                         key={item.id}
                                                                         item={item}
+                                                                        allItems={items}
                                                                         isOverdue={isOverdue(item)}
                                                                         isExpanded={expandedId === item.id}
                                                                         onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
@@ -467,6 +541,7 @@ export default function ActionItemsPage() {
                                                                 <ActionItemCard
                                                                     key={item.id}
                                                                     item={item}
+                                                                    allItems={items}
                                                                     isOverdue={isOverdue(item)}
                                                                     isExpanded={expandedId === item.id}
                                                                     onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
@@ -515,7 +590,7 @@ export default function ActionItemsPage() {
                                     placeholder="Additional context (optional)"
                                 />
                             </div>
-                            <div className="grid grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <div>
                                     <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Assignee</label>
                                     <input
@@ -537,6 +612,19 @@ export default function ActionItemsPage() {
                                         <option value="medium">Medium</option>
                                         <option value="high">High</option>
                                         <option value="urgent">Urgent</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Effort</label>
+                                    <select
+                                        value={newEffort}
+                                        onChange={(e) => setNewEffort(e.target.value as ActionItemEffort | '')}
+                                        className="input-glow w-full text-sm"
+                                    >
+                                        <option value="">None</option>
+                                        <option value="quick_fix">⚡ Quick Fix</option>
+                                        <option value="moderate">🔧 Moderate</option>
+                                        <option value="significant">🏗️ Significant</option>
                                     </select>
                                 </div>
                                 <div>
@@ -576,6 +664,7 @@ export default function ActionItemsPage() {
 
 function ActionItemCard({
     item,
+    allItems,
     isOverdue,
     isExpanded,
     onToggleExpand,
@@ -584,6 +673,7 @@ function ActionItemCard({
     onGroupLabelSave,
 }: {
     item: ActionItem;
+    allItems: ActionItem[];
     isOverdue: boolean;
     isExpanded: boolean;
     onToggleExpand: () => void;
@@ -667,6 +757,11 @@ function ActionItemCard({
                             }`}>
                             {PRIORITY_LABEL[item.priority]}
                         </span>
+                        {item.effort && EFFORT_CONFIG[item.effort] && (
+                            <span className={`text-[10px] font-medium ${EFFORT_CONFIG[item.effort].color}`}>
+                                {EFFORT_CONFIG[item.effort].icon} {EFFORT_CONFIG[item.effort].label}
+                            </span>
+                        )}
                         {item.due_date && (
                             <span className={`text-[10px] ${isOverdue ? 'text-rose-400 font-medium' : 'text-theme-text-muted'}`}>
                                 {isOverdue ? 'Overdue · ' : 'Due '}
@@ -675,6 +770,11 @@ function ActionItemCard({
                         )}
                         {item.created_by === 'ai' && (
                             <span className="text-[10px] text-accent-violet">AI</span>
+                        )}
+                        {item.is_duplicate && (
+                            <span className="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-full bg-amber-500/10 text-amber-500">
+                                Duplicate
+                            </span>
                         )}
                     </div>
                 </div>
@@ -690,6 +790,14 @@ function ActionItemCard({
                         <div className="bg-theme-muted/30 rounded-lg p-3">
                             <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-1">Source excerpt</p>
                             <p className="text-xs text-theme-text-secondary italic">&ldquo;{item.source_text}&rdquo;</p>
+                        </div>
+                    )}
+
+                    {/* Duplicate reference */}
+                    {item.is_duplicate && item.duplicate_of && (
+                        <div className="flex items-center gap-1.5 text-xs text-amber-500/80">
+                            <span>◈</span>
+                            <span>Duplicate of: <DuplicateOfLabel itemId={item.duplicate_of} allItems={allItems} /></span>
                         </div>
                     )}
 
@@ -851,4 +959,11 @@ function FilterSelect({
             ))}
         </select>
     );
+}
+
+/** Resolves a duplicate_of ID to the original item's title for display. */
+function DuplicateOfLabel({ itemId, allItems }: { itemId: string; allItems: ActionItem[] }) {
+    const original = allItems.find((i) => i.id === itemId);
+    if (!original) return <span className="italic text-theme-text-muted">{itemId.slice(0, 8)}…</span>;
+    return <span className="font-medium">{original.title}</span>;
 }

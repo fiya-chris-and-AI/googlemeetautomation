@@ -1,7 +1,13 @@
 export type { MeetingTranscript, TranscriptChunk, ProcessingLogEntry } from './types.js';
 export type { QueryRequest, QueryResponse, SourceChunk } from './types.js';
 export type { ExtractionMethod, LogStatus } from './types.js';
-export type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemCreatedBy } from './types.js';
+export type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort, ActionItemCreatedBy } from './types.js';
 export type { ActivityLogEntry } from './types.js';
 export type { DayMeetingSummary, ScoreboardMetrics, CumulativeStats } from './types.js';
 export { normalizeAssignee, normalizeAssigneeSingle, CANONICAL_NAMES } from './normalize-assignee';
+export {
+    EXTRACTION_SYSTEM_PROMPT,
+    extractActionItemsFromTranscript,
+    buildInsertionRows,
+} from './extract-action-items';
+export type { RawExtractedItem, TranscriptForExtraction } from './extract-action-items';
