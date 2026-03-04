@@ -73,6 +73,11 @@ export function detectMeetingDate(text: string): Date | null {
             regex: /\b(\d{4}-\d{2}-\d{2})T\d{2}:\d{2}/,
             formats: ['yyyy-MM-dd'],
         },
+        // Pipe-delimited metadata table: "| **Datum** | 2026-02-25 |" (Whisper transcripts)
+        {
+            regex: /\*{0,2}Datum\*{0,2}\s*\|\s*(\d{4}-\d{2}-\d{2})/i,
+            formats: ['yyyy-MM-dd'],
+        },
     ];
 
     for (const { regex, formats } of patterns) {
@@ -86,6 +91,35 @@ export function detectMeetingDate(text: string): Date | null {
                 return parsed;
             }
         }
+    }
+
+    return null;
+}
+
+/**
+ * Extract a meeting date from a filename.
+ *
+ * Handles common patterns from Google Meet recordings:
+ *   - "Chris_Lutfiya - 2026_01_22 11_58 CST - Recording.mp3"
+ *   - "meeting_2026-03-04.txt"
+ *   - "2026_01_22_notes.vtt"
+ *
+ * Returns the first valid Date found, or null.
+ */
+export function detectDateFromFilename(filename: string): Date | null {
+    // Strip extension for cleaner matching
+    const base = filename.replace(/\.[^.]+$/, '');
+
+    // Pattern: YYYY_MM_DD or YYYY-MM-DD (with underscores or hyphens)
+    const match = base.match(/(\d{4})[_-](\d{2})[_-](\d{2})/);
+    if (!match) return null;
+
+    const [, year, month, day] = match;
+    const candidate = `${year}-${month}-${day}`;
+    const parsed = parse(candidate, 'yyyy-MM-dd', new Date());
+
+    if (isValid(parsed) && parsed.getFullYear() > 1999 && parsed.getFullYear() < 2100) {
+        return parsed;
     }
 
     return null;
