@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parseVtt, parseSbv, processUpload } from '../../../lib/upload-pipeline';
-import { detectMeetingDate } from '../../../lib/detect-meeting-date';
+import { detectMeetingDate, detectDateFromFilename } from '../../../lib/detect-meeting-date';
 import { extractTextFromPdf } from '../../../lib/pdf-extract';
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -40,7 +40,17 @@ export async function POST(request: NextRequest) {
             }
 
             const title = titleOverride?.trim() || 'Pasted Transcript';
-            const date = dateOverride ? new Date(dateOverride) : undefined;
+
+            // Date cascade: user override → text content detection → undefined (today)
+            let detectedDate: Date | null = null;
+            let date: Date | undefined;
+
+            if (dateOverride) {
+                date = new Date(dateOverride);
+            } else {
+                detectedDate = detectMeetingDate(text.trim());
+                date = detectedDate ?? undefined;
+            }
 
             const transcript = await processUpload({
                 text: text.trim(),
@@ -49,7 +59,10 @@ export async function POST(request: NextRequest) {
                 extractionMethod: 'paste',
             });
 
-            return NextResponse.json({ transcript, detectedDate: null }, { status: 201 });
+            return NextResponse.json(
+                { transcript, detectedDate: detectedDate?.toISOString() ?? null },
+                { status: 201 }
+            );
         }
 
         // ── File-upload path (FormData) ─────────────────────────
@@ -112,14 +125,17 @@ export async function POST(request: NextRequest) {
         const title = titleOverride?.trim() || titleFromFilename(filename);
         const isPdf = ext === '.pdf';
 
-        // Date: user override takes priority → detected date (PDFs) → undefined (pipeline defaults to now)
+        // Date cascade: user override → text content detection → filename detection → undefined (today)
         let detectedDate: Date | null = null;
         let date: Date | undefined;
 
         if (dateOverride) {
             date = new Date(dateOverride);
-        } else if (isPdf) {
+        } else {
             detectedDate = detectMeetingDate(parsedText);
+            if (!detectedDate) {
+                detectedDate = detectDateFromFilename(filename);
+            }
             date = detectedDate ?? undefined;
         }
 

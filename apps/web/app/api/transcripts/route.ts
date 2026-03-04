@@ -1,28 +1,39 @@
 import { NextResponse } from 'next/server';
 import { getServerSupabase } from '../../../lib/supabase';
 
-// Prevent Next.js from caching this route — data changes on every backfill/push
 export const dynamic = 'force-dynamic';
 
-/**
- * GET /api/transcripts — List all transcripts, newest first.
- */
 export async function GET() {
     try {
         const supabase = getServerSupabase();
 
-        const { data, error } = await supabase
-            .from('transcripts')
-            .select('*')
-            .order('meeting_date', { ascending: false })
-            .limit(100);
+        const [transcriptRes, actionItemRes] = await Promise.all([
+            supabase
+                .from('transcripts')
+                .select('*')
+                .order('meeting_date', { ascending: false })
+                .limit(100),
+            supabase
+                .from('action_items')
+                .select('transcript_id')
+                .eq('created_by', 'ai')
+                .not('transcript_id', 'is', null),
+        ]);
 
-        if (error) {
-            return NextResponse.json({ error: error.message }, { status: 500 });
+        if (transcriptRes.error) {
+            return NextResponse.json({ error: transcriptRes.error.message }, { status: 500 });
         }
 
-        // Map DB rows to the canonical MeetingTranscript shape
-        const transcripts = (data ?? []).map((row) => ({
+        // Build lookup: transcript_id → AI-extracted item count
+        const countMap = new Map<string, number>();
+        if (!actionItemRes.error && Array.isArray(actionItemRes.data)) {
+            for (const row of actionItemRes.data) {
+                const tid = row.transcript_id as string;
+                countMap.set(tid, (countMap.get(tid) ?? 0) + 1);
+            }
+        }
+
+        const transcripts = (transcriptRes.data ?? []).map((row) => ({
             transcript_id: row.id,
             meeting_title: row.meeting_title,
             meeting_date: row.meeting_date,
@@ -32,6 +43,7 @@ export async function GET() {
             extraction_method: row.extraction_method,
             word_count: row.word_count,
             processed_at: row.processed_at,
+            ai_extracted_count: countMap.get(row.id) ?? 0,
         }));
 
         return NextResponse.json(transcripts);

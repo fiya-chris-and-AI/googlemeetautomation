@@ -24,6 +24,8 @@ export interface MeetingTranscript {
     word_count: number;
     /** ISO 8601 timestamp */
     processed_at: string;
+    /** Number of AI-extracted action items for this transcript. */
+    ai_extracted_count?: number;
 }
 
 /**

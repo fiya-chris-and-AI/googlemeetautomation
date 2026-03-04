@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { MeetingTranscript, QueryResponse, ActionItem } from '@meet-pipeline/shared';
 
 /** Color palette for speaker highlighting. */
@@ -15,8 +15,10 @@ const SPEAKER_COLORS = [
     'text-orange-400',
 ];
 
+type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
+
 /**
- * Transcript Detail — full text, metadata sidebar, and scoped Q&A.
+ * Transcript Detail — full text, editable metadata, and scoped Q&A.
  */
 export default function TranscriptDetailPage({
     params,
@@ -30,6 +32,40 @@ export default function TranscriptDetailPage({
     const [asking, setAsking] = useState(false);
     const [actionItems, setActionItems] = useState<ActionItem[]>([]);
     const [extracting, setExtracting] = useState(false);
+
+    // ── Editing state ────────────────────────────
+    const [editingTitle, setEditingTitle] = useState(false);
+    const [draftTitle, setDraftTitle] = useState('');
+    const [saveStatus, setSaveStatus] = useState<SaveStatus>('idle');
+
+    /** Persist a single field update via PATCH. Optimistic UI with rollback. */
+    const saveField = useCallback(async (
+        field: 'meeting_title' | 'meeting_date',
+        value: string,
+    ) => {
+        if (!transcript) return;
+
+        // Snapshot for rollback
+        const prev = { ...transcript };
+        setTranscript({ ...transcript, [field]: value });
+        setSaveStatus('saving');
+
+        try {
+            const res = await fetch(`/api/transcripts/${params.id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ [field]: value }),
+            });
+            if (!res.ok) throw new Error('Save failed');
+            setSaveStatus('saved');
+        } catch {
+            // Rollback on failure
+            setTranscript(prev);
+            setSaveStatus('error');
+        } finally {
+            setTimeout(() => setSaveStatus('idle'), 2000);
+        }
+    }, [transcript, params.id]);
 
     useEffect(() => {
         fetch(`/api/transcripts/${params.id}`)
@@ -117,9 +153,62 @@ export default function TranscriptDetailPage({
             <div className="flex gap-8">
                 {/* Main Content */}
                 <div className="flex-1 min-w-0">
-                    <h1 className="text-2xl font-bold text-theme-text-primary tracking-tight mb-6">
-                        {transcript.meeting_title}
-                    </h1>
+                    {/* Editable Title */}
+                    {editingTitle ? (
+                        <input
+                            id="edit-title-input"
+                            autoFocus
+                            value={draftTitle}
+                            onChange={(e) => setDraftTitle(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    const trimmed = draftTitle.trim();
+                                    if (trimmed && trimmed !== transcript.meeting_title) {
+                                        saveField('meeting_title', trimmed);
+                                    }
+                                    setEditingTitle(false);
+                                } else if (e.key === 'Escape') {
+                                    setEditingTitle(false);
+                                }
+                            }}
+                            onBlur={() => {
+                                const trimmed = draftTitle.trim();
+                                if (trimmed && trimmed !== transcript.meeting_title) {
+                                    saveField('meeting_title', trimmed);
+                                }
+                                setEditingTitle(false);
+                            }}
+                            className="w-full text-2xl font-bold text-theme-text-primary tracking-tight mb-6
+                                       bg-transparent border-b-2 border-brand-500/40 outline-none
+                                       focus:border-brand-400 transition-colors"
+                        />
+                    ) : (
+                        <h1
+                            onClick={() => {
+                                setDraftTitle(transcript.meeting_title);
+                                setEditingTitle(true);
+                            }}
+                            className="group text-2xl font-bold text-theme-text-primary tracking-tight mb-6
+                                       cursor-pointer hover:text-brand-400 transition-colors"
+                            title="Click to edit title"
+                        >
+                            {transcript.meeting_title}
+                            <span className="ml-2 text-theme-text-muted opacity-0 group-hover:opacity-100
+                                            transition-opacity text-sm font-normal">✏️</span>
+                        </h1>
+                    )}
+
+                    {/* Save status indicator */}
+                    {saveStatus !== 'idle' && (
+                        <p className={`text-xs mb-3 transition-opacity ${saveStatus === 'saving' ? 'text-theme-text-muted' :
+                                saveStatus === 'saved' ? 'text-emerald-400' :
+                                    'text-rose-400'
+                            }`}>
+                            {saveStatus === 'saving' ? 'Saving…' :
+                                saveStatus === 'saved' ? 'Saved ✓' :
+                                    'Error — changes reverted'}
+                        </p>
+                    )}
 
                     {/* Scoped Q&A */}
                     <div className="glass-card p-4 mb-6">
@@ -183,9 +272,22 @@ export default function TranscriptDetailPage({
                 {/* Metadata Sidebar */}
                 <div className="w-72 flex-shrink-0 space-y-6">
                     <div className="glass-card p-6 sticky top-8 space-y-6">
-                        <MetaField label="Date" value={new Date(transcript.meeting_date).toLocaleDateString('en-US', {
-                            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-                        })} />
+                        <MetaField label="Date">
+                            <input
+                                id="edit-date-input"
+                                type="date"
+                                value={transcript.meeting_date.slice(0, 10)}
+                                onChange={(e) => {
+                                    if (e.target.value) {
+                                        saveField('meeting_date', e.target.value);
+                                    }
+                                }}
+                                className="w-full text-sm text-theme-text-secondary bg-transparent
+                                           border border-theme-border rounded-lg px-2 py-1
+                                           hover:border-brand-500/40 focus:border-brand-400
+                                           focus:outline-none transition-colors cursor-pointer"
+                            />
+                        </MetaField>
                         <MetaField label="Word Count" value={transcript.word_count.toLocaleString()} />
                         <MetaField label="Extraction Method">
                             <span className={`badge text-xs ${transcript.extraction_method === 'inline' ? 'badge-info' :
@@ -235,8 +337,8 @@ export default function TranscriptDetailPage({
                                 {actionItems.filter((i) => i.status !== 'dismissed').map((item) => (
                                     <div key={item.id} className="flex items-start gap-2">
                                         <span className={`mt-1 inline-block w-2 h-2 rounded-full flex-shrink-0 ${item.priority === 'urgent' ? 'bg-rose-500' :
-                                                item.priority === 'high' ? 'bg-amber-500' :
-                                                    item.priority === 'medium' ? 'bg-brand-400' : 'bg-theme-text-muted'
+                                            item.priority === 'high' ? 'bg-amber-500' :
+                                                item.priority === 'medium' ? 'bg-brand-400' : 'bg-theme-text-muted'
                                             }`} />
                                         <div className="min-w-0 flex-1">
                                             <p className={`text-xs font-medium ${item.status === 'done' ? 'text-theme-text-muted line-through' : 'text-theme-text-primary'
@@ -248,8 +350,8 @@ export default function TranscriptDetailPage({
                                                     <span className="text-[10px] text-theme-text-tertiary">{item.assigned_to}</span>
                                                 )}
                                                 <span className={`text-[10px] font-medium ${item.status === 'done' ? 'text-emerald-400' :
-                                                        item.status === 'in_progress' ? 'text-brand-400' :
-                                                            'text-theme-text-muted'
+                                                    item.status === 'in_progress' ? 'text-brand-400' :
+                                                        'text-theme-text-muted'
                                                     }`}>
                                                     {item.status.replace('_', ' ')}
                                                 </span>

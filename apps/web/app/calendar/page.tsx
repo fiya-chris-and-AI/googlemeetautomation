@@ -68,7 +68,7 @@ export default function CalendarPage() {
     // Build a lookup from date string → DayMeetingSummary
     const dayMap = useMemo(() => {
         const map = new Map<string, DayMeetingSummary>();
-        if (data) {
+        if (data && Array.isArray(data.days)) {
             for (const d of data.days) map.set(d.date, d);
         }
         return map;
