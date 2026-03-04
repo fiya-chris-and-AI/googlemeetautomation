@@ -25,14 +25,14 @@ export default function LoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
-                setError(data.error || "Anmeldung fehlgeschlagen");
+                setError(data.error || "Login failed");
                 return;
             }
 
             router.push("/");
             router.refresh();
         } catch {
-            setError("Netzwerkfehler — bitte erneut versuchen");
+            setError("Network error — please try again");
         } finally {
             setLoading(false);
         }
@@ -61,7 +61,7 @@ export default function LoginPage() {
                 {/* Login Card */}
                 <div className="bg-theme-card rounded-xl border border-theme-border shadow-lg p-8">
                     <h1 className="text-2xl font-bold text-theme-text mb-6 text-center">
-                        Anmelden
+                        Sign In
                     </h1>
 
                     {error && (
@@ -76,7 +76,7 @@ export default function LoginPage() {
                                 htmlFor="username"
                                 className="block text-sm font-medium text-theme-text-secondary mb-1.5"
                             >
-                                Benutzername
+                                Username
                             </label>
                             <input
                                 id="username"
@@ -84,7 +84,7 @@ export default function LoginPage() {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 className="w-full px-4 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-theme-text placeholder-theme-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                                placeholder="Benutzername eingeben"
+                                placeholder="Enter username"
                                 required
                                 autoFocus
                             />
@@ -95,7 +95,7 @@ export default function LoginPage() {
                                 htmlFor="password"
                                 className="block text-sm font-medium text-theme-text-secondary mb-1.5"
                             >
-                                Passwort
+                                Password
                             </label>
                             <input
                                 id="password"
@@ -103,7 +103,7 @@ export default function LoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="w-full px-4 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-theme-text placeholder-theme-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                                placeholder="Passwort eingeben"
+                                placeholder="Enter password"
                                 required
                             />
                         </div>
@@ -113,7 +113,7 @@ export default function LoginPage() {
                             disabled={loading}
                             className="w-full py-2.5 px-4 bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                         >
-                            {loading ? "Anmelden..." : "Anmelden"}
+                            {loading ? "Signing in..." : "Sign In"}
                         </button>
                     </form>
                 </div>

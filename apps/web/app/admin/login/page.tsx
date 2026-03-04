@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
             const data = await res.json();
             if (data.users) setUsers(data.users);
         } catch {
-            setError("Benutzer konnten nicht geladen werden");
+            setError("Failed to load users");
         } finally {
             setLoading(false);
         }
@@ -69,17 +69,17 @@ export default function AdminLoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
-                setError(data.error || "Fehler beim Erstellen");
+                setError(data.error || "Failed to create user");
                 return;
             }
 
-            setSuccess(`Benutzer "${newUsername}" erfolgreich erstellt`);
+            setSuccess(`User "${newUsername}" created successfully`);
             setNewUsername("");
             setNewPassword("");
             setNewRole("member");
             loadUsers();
         } catch {
-            setError("Netzwerkfehler");
+            setError("Network error");
         } finally {
             setAdding(false);
         }
@@ -118,11 +118,11 @@ export default function AdminLoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
-                setError(data.error || "Fehler beim Aktualisieren");
+                setError(data.error || "Failed to update user");
                 return;
             }
 
-            setSuccess("Benutzer erfolgreich aktualisiert");
+            setSuccess("User updated successfully");
             cancelEdit();
             loadUsers();
         } catch {
@@ -133,7 +133,7 @@ export default function AdminLoginPage() {
     }
 
     async function deleteUser(id: number, username: string) {
-        if (!confirm(`Benutzer "${username}" wirklich löschen?`)) return;
+        if (!confirm(`Really delete user "${username}"?`)) return;
         setError("");
         setSuccess("");
 
@@ -146,11 +146,11 @@ export default function AdminLoginPage() {
 
             if (!res.ok) {
                 const data = await res.json();
-                setError(data.error || "Fehler beim Löschen");
+                setError(data.error || "Failed to delete user");
                 return;
             }
 
-            setSuccess(`Benutzer "${username}" gelöscht`);
+            setSuccess(`User "${username}" deleted`);
             loadUsers();
         } catch {
             setError("Netzwerkfehler");
@@ -167,7 +167,7 @@ export default function AdminLoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
-                setError(data.error || "Token-Generierung fehlgeschlagen");
+                setError(data.error || "Token generation failed");
                 return;
             }
 
@@ -199,10 +199,10 @@ export default function AdminLoginPage() {
     return (
         <div className="max-w-4xl mx-auto">
             <h1 className="text-3xl font-bold text-theme-text mb-2">
-                Benutzerverwaltung
+                User Management
             </h1>
             <p className="text-theme-text-secondary mb-8">
-                Benutzer hinzufügen, bearbeiten und löschen
+                Add, edit, and delete users
             </p>
 
             {/* Status Messages */}
@@ -220,38 +220,38 @@ export default function AdminLoginPage() {
             {/* Add User Form */}
             <div className="bg-theme-card rounded-xl border border-theme-border p-6 mb-6">
                 <h2 className="text-lg font-semibold text-theme-text mb-4">
-                    ➕ Neuen Benutzer hinzufügen
+                    ➕ Add New User
                 </h2>
                 <form onSubmit={addUser} className="flex flex-wrap gap-3 items-end">
                     <div className="flex-1 min-w-[180px]">
                         <label className="block text-xs font-medium text-theme-text-secondary mb-1">
-                            Benutzername
+                            Username
                         </label>
                         <input
                             type="text"
                             value={newUsername}
                             onChange={(e) => setNewUsername(e.target.value)}
                             className="w-full px-3 py-2 rounded-lg border border-theme-border bg-theme-bg text-theme-text text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                            placeholder="z.B. Sarah"
+                            placeholder="e.g. Sarah"
                             required
                         />
                     </div>
                     <div className="flex-1 min-w-[180px]">
                         <label className="block text-xs font-medium text-theme-text-secondary mb-1">
-                            Passwort
+                            Password
                         </label>
                         <input
                             type="password"
                             value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
                             className="w-full px-3 py-2 rounded-lg border border-theme-border bg-theme-bg text-theme-text text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
-                            placeholder="Sicheres Passwort"
+                            placeholder="Secure password"
                             required
                         />
                     </div>
                     <div className="w-[140px]">
                         <label className="block text-xs font-medium text-theme-text-secondary mb-1">
-                            Rolle
+                            Role
                         </label>
                         <select
                             value={newRole}
@@ -260,7 +260,7 @@ export default function AdminLoginPage() {
                             }
                             className="w-full px-3 py-2 rounded-lg border border-theme-border bg-theme-bg text-theme-text text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
                         >
-                            <option value="member">Mitglied</option>
+                            <option value="member">Member</option>
                             <option value="admin">Admin</option>
                         </select>
                     </div>
@@ -269,7 +269,7 @@ export default function AdminLoginPage() {
                         disabled={adding}
                         className="px-5 py-2 bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white text-sm font-medium rounded-lg transition-colors"
                     >
-                        {adding ? "..." : "Hinzufügen"}
+                        {adding ? "..." : "Add"}
                     </button>
                 </form>
             </div>
@@ -277,21 +277,20 @@ export default function AdminLoginPage() {
             {/* Users Table */}
             <div className="bg-theme-card rounded-xl border border-theme-border p-6 mb-6">
                 <h2 className="text-lg font-semibold text-theme-text mb-4">
-                    👥 Registrierte Benutzer
+                    👥 Registered Users
                 </h2>
 
                 {/* Info about env-var users */}
                 <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg text-blue-700 dark:text-blue-400 text-xs">
-                    💡 Zusätzlich zu den unten gelisteten Benutzern sind auch die Benutzer
-                    aus den Umgebungsvariablen (ADMIN_USERNAME, USERS) aktiv.
+                    💡 In addition to the users listed below, users from the environment
+                    variables (ADMIN_USERNAME, USERS) are also active.
                 </div>
 
                 {loading ? (
-                    <p className="text-theme-text-secondary text-sm">Lade Benutzer...</p>
+                    <p className="text-theme-text-secondary text-sm">Loading users...</p>
                 ) : users.length === 0 ? (
                     <p className="text-theme-text-secondary text-sm">
-                        Noch keine Benutzer in der Datenbank. Nutze das Formular oben, um
-                        Benutzer hinzuzufügen.
+                        No users in the database yet. Use the form above to add users.
                     </p>
                 ) : (
                     <div className="overflow-x-auto">
@@ -302,16 +301,16 @@ export default function AdminLoginPage() {
                                         ID
                                     </th>
                                     <th className="text-left py-2 px-3 text-theme-text-secondary font-medium">
-                                        Benutzername
+                                        Username
                                     </th>
                                     <th className="text-left py-2 px-3 text-theme-text-secondary font-medium">
-                                        Rolle
+                                        Role
                                     </th>
                                     <th className="text-left py-2 px-3 text-theme-text-secondary font-medium">
-                                        Erstellt
+                                        Created
                                     </th>
                                     <th className="text-right py-2 px-3 text-theme-text-secondary font-medium">
-                                        Aktionen
+                                        Actions
                                     </th>
                                 </tr>
                             </thead>
@@ -354,7 +353,7 @@ export default function AdminLoginPage() {
                                                         value={editPassword}
                                                         onChange={(e) => setEditPassword(e.target.value)}
                                                         className="w-full px-2 py-1 rounded border border-theme-border bg-theme-bg text-theme-text text-xs"
-                                                        placeholder="Neues Passwort (leer = beibehalten)"
+                                                        placeholder="New password (leave empty to keep)"
                                                     />
                                                 </td>
                                                 <td className="py-2.5 px-3 text-right space-x-1">
@@ -384,15 +383,15 @@ export default function AdminLoginPage() {
                                                 <td className="py-2.5 px-3">
                                                     <span
                                                         className={`px-2 py-0.5 rounded text-xs font-medium ${user.role === "admin"
-                                                                ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
-                                                                : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                                            ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
+                                                            : "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
                                                             }`}
                                                     >
-                                                        {user.role === "admin" ? "Admin" : "Mitglied"}
+                                                        {user.role === "admin" ? "Admin" : "Member"}
                                                     </span>
                                                 </td>
                                                 <td className="py-2.5 px-3 text-theme-text-secondary text-xs">
-                                                    {new Date(user.created_at).toLocaleDateString("de-DE")}
+                                                    {new Date(user.created_at).toLocaleDateString("en-US")}
                                                 </td>
                                                 <td className="py-2.5 px-3 text-right space-x-1">
                                                     <button
@@ -424,8 +423,8 @@ export default function AdminLoginPage() {
                     🔑 Community Bypass Token
                 </h2>
                 <p className="text-sm text-theme-text-secondary mb-4">
-                    Generiere einen Zugangslink für die ScienceExperts.ai Community. Dieser
-                    Link ermöglicht Mitgliedern den Zugang ohne separate Anmeldedaten.
+                    Generate an access link for the ScienceExperts.ai Community. This link
+                    allows members to access the app without separate login credentials.
                 </p>
 
                 <button
@@ -433,13 +432,13 @@ export default function AdminLoginPage() {
                     disabled={generating}
                     className="px-5 py-2.5 bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white font-medium rounded-lg transition-colors"
                 >
-                    {generating ? "Generiere..." : "🔑 Token generieren"}
+                    {generating ? "Generating..." : "🔑 Generate Token"}
                 </button>
 
                 {bypassUrl && (
                     <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                         <p className="text-sm font-medium text-green-800 dark:text-green-400 mb-2">
-                            ✅ Bypass-URL generiert:
+                            ✅ Bypass URL generated:
                         </p>
                         <div className="flex items-center gap-2">
                             <input
@@ -452,11 +451,11 @@ export default function AdminLoginPage() {
                                 onClick={copyToClipboard}
                                 className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded transition-colors whitespace-nowrap"
                             >
-                                {copied ? "✅ Kopiert!" : "📋 Kopieren"}
+                                {copied ? "✅ Copied!" : "📋 Copy"}
                             </button>
                         </div>
                         <p className="text-xs text-green-700 dark:text-green-500 mt-2">
-                            Diesen Link in der Community unter Admin Tools einfügen.
+                            Add this link to the Community under Admin Tools.
                         </p>
                     </div>
                 )}
