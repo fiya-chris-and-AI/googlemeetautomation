@@ -9,6 +9,11 @@ const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'done', label: 'Done', color: 'from-emerald-500 to-emerald-600' },
 ];
 
+const ASSIGNEES: { name: string; displayName: string; accent: string }[] = [
+    { name: 'Lutfiya Miller', displayName: 'Dr. Lutfiya Miller', accent: 'border-violet-500' },
+    { name: 'Chris Müller', displayName: 'Chris Müller', accent: 'border-blue-500' },
+];
+
 const PRIORITY_DOT: Record<ActionItemPriority, string> = {
     urgent: 'bg-rose-500',
     high: 'bg-amber-500',
@@ -104,33 +109,55 @@ export default function ActionItemsPage() {
         });
     }, [items, assigneeFilter, priorityFilter, effortFilter, sourceFilter, duplicateFilter, search]);
 
-    // Organize items into groups per column
-    const groupedByColumn = useMemo(() => {
-        const result: Record<ActionItemStatus, { label: string | null; items: ActionItem[] }[]> = {
-            open: [], in_progress: [], done: [], dismissed: [],
-        };
+    // Detect shared items — tasks assigned to both people from the same meeting
+    const sharedItemIds = useMemo(() => {
+        const shared = new Set<string>();
+        const lutfiyaItems = items.filter(i => i.assigned_to === 'Lutfiya Miller');
+        const chrisItems = items.filter(i => i.assigned_to === 'Chris Müller');
+        for (const li of lutfiyaItems) {
+            const match = chrisItems.find(ci =>
+                ci.title.trim().toLowerCase() === li.title.trim().toLowerCase() &&
+                ci.transcript_id === li.transcript_id
+            );
+            if (match) { shared.add(li.id); shared.add(match.id); }
+        }
+        return shared;
+    }, [items]);
 
-        for (const col of COLUMNS) {
-            const colItems = filtered.filter(i => i.status === col.key);
+    // Items with no assignee — shown below both columns
+    const unassignedItems = useMemo(() =>
+        filtered.filter(i => !i.assigned_to), [filtered]);
 
-            // Bucket items by group_label
-            const buckets = new Map<string | null, ActionItem[]>();
-            for (const item of colItems) {
-                const key = item.group_label ?? null;
-                if (!buckets.has(key)) buckets.set(key, []);
-                buckets.get(key)!.push(item);
+    // Organize items by assignee → status → group_label
+    const groupedByAssignee = useMemo(() => {
+        const result: Record<string, Record<ActionItemStatus, { label: string | null; items: ActionItem[] }[]>> = {};
+
+        for (const assignee of ASSIGNEES) {
+            const assigneeItems = filtered.filter(i => i.assigned_to === assignee.name);
+            result[assignee.name] = { open: [], in_progress: [], done: [], dismissed: [] };
+
+            for (const col of COLUMNS) {
+                const colItems = assigneeItems.filter(i => i.status === col.key);
+
+                // Bucket items by group_label
+                const buckets = new Map<string | null, ActionItem[]>();
+                for (const item of colItems) {
+                    const key = item.group_label ?? null;
+                    if (!buckets.has(key)) buckets.set(key, []);
+                    buckets.get(key)!.push(item);
+                }
+
+                // Sort: named groups first (alphabetically), then ungrouped (null) last
+                const groups = [...buckets.entries()]
+                    .sort((a, b) => {
+                        if (a[0] === null) return 1;
+                        if (b[0] === null) return -1;
+                        return a[0].localeCompare(b[0]);
+                    })
+                    .map(([label, groupItems]) => ({ label, items: groupItems }));
+
+                result[assignee.name][col.key] = groups;
             }
-
-            // Sort: named groups first (alphabetically), then ungrouped (null) last
-            const groups = [...buckets.entries()]
-                .sort((a, b) => {
-                    if (a[0] === null) return 1;
-                    if (b[0] === null) return -1;
-                    return a[0].localeCompare(b[0]);
-                })
-                .map(([label, groupItems]) => ({ label, items: groupItems }));
-
-            result[col.key] = groups;
         }
 
         return result;
@@ -146,14 +173,18 @@ export default function ActionItemsPage() {
 
     const allGroupKeys = useMemo(() => {
         const keys: string[] = [];
-        for (const col of COLUMNS) {
-            for (const group of groupedByColumn[col.key]) {
-                const label = group.label ?? 'Ungrouped';
-                keys.push(`${col.key}::${label}`);
+        for (const assignee of ASSIGNEES) {
+            const assigneeGroups = groupedByAssignee[assignee.name];
+            if (!assigneeGroups) continue;
+            for (const col of COLUMNS) {
+                for (const group of assigneeGroups[col.key]) {
+                    const label = group.label ?? 'Ungrouped';
+                    keys.push(`${assignee.name}::${col.key}::${label}`);
+                }
             }
         }
         return keys;
-    }, [groupedByColumn]);
+    }, [groupedByAssignee]);
 
     const collapseAll = () => setCollapsedGroups(new Set(allGroupKeys));
     const expandAll = () => setCollapsedGroups(new Set());
@@ -421,145 +452,145 @@ export default function ActionItemsPage() {
                 )}
             </div>
 
-            {/* Kanban Board */}
+            {/* Two-Column Assignee Board */}
             {loading ? (
                 <div className="p-12 text-center text-theme-text-tertiary">Loading action items...</div>
             ) : (
                 <div className="space-y-6">
-                    {COLUMNS.map((col) => {
-                        const colItems = filtered.filter((i) => i.status === col.key);
-                        const groups = groupedByColumn[col.key];
-                        return (
-                            <div key={col.key}>
-                                {/* Section Header */}
-                                <div className="glass-card p-4 mb-3 flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <div className={`w-2 h-2 rounded-full ${col.key === 'open' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
-                                        <h3 className="text-sm font-semibold text-theme-text-primary">{col.label}</h3>
-                                    </div>
-                                    <span className="text-xs text-theme-text-tertiary font-medium">{colItems.length}</span>
-                                </div>
+                    {/* Main two-column grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {ASSIGNEES.map((assignee) => {
+                            const assigneeGroups = groupedByAssignee[assignee.name];
+                            const assigneeItemCount = filtered.filter(i => i.assigned_to === assignee.name).length;
 
-                                {/* Cards — responsive grid */}
-                                {colItems.length === 0 ? (
-                                    <div className="p-6 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
-                                        No items
+                            return (
+                                <div key={assignee.name} className="space-y-4">
+                                    {/* Assignee column header */}
+                                    <div className={`glass-card p-4 border-l-4 ${assignee.accent} flex items-center justify-between sticky top-0 z-10`}>
+                                        <h2 className="text-lg font-semibold text-theme-text-primary">{assignee.displayName}</h2>
+                                        <span className="text-sm text-theme-text-tertiary font-medium">{assigneeItemCount}</span>
                                     </div>
-                                ) : viewMode === 'flat' ? (
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                        {colItems.map((item) => (
-                                            <ActionItemCard
-                                                key={item.id}
-                                                item={item}
-                                                allItems={items}
-                                                isOverdue={isOverdue(item)}
-                                                isExpanded={expandedId === item.id}
-                                                onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                onStatusChange={updateStatus}
-                                                onDismiss={dismissItem}
-                                                onGroupLabelSave={handleGroupLabelSave}
-                                            />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div className="space-y-3">
-                                        {groups.map((group) => {
-                                            // Treat null-labelled items the same as named groups
-                                            const displayLabel = group.label ?? 'Ungrouped';
-                                            const groupKey = `${col.key}::${displayLabel}`;
-                                            const isCollapsed = collapsedGroups.has(groupKey);
 
-                                            if (group.label === null) {
-                                                // Ungrouped items — render with a collapsible header
-                                                return (
-                                                    <div key={groupKey} className="border-l-2 border-theme-text-muted/30 rounded-xl overflow-hidden">
-                                                        <button
-                                                            onClick={() => toggleGroup(groupKey)}
-                                                            className="w-full flex items-center justify-between px-4 py-2.5
-                                                                bg-theme-overlay hover:bg-theme-muted
-                                                                transition-colors cursor-pointer"
-                                                        >
-                                                            <div className="flex items-center gap-2">
-                                                                <span
-                                                                    className="text-xs text-theme-text-muted transition-transform duration-200"
-                                                                    style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
-                                                                >
-                                                                    &#9654;
-                                                                </span>
-                                                                <span className="text-sm font-semibold text-theme-text-muted">{displayLabel}</span>
-                                                            </div>
-                                                            <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
-                                                        </button>
-                                                        {!isCollapsed && (
-                                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2 pt-2">
-                                                                {group.items.map((item) => (
-                                                                    <ActionItemCard
-                                                                        key={item.id}
-                                                                        item={item}
-                                                                        allItems={items}
-                                                                        isOverdue={isOverdue(item)}
-                                                                        isExpanded={expandedId === item.id}
-                                                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                                        onStatusChange={updateStatus}
-                                                                        onDismiss={dismissItem}
-                                                                        onGroupLabelSave={handleGroupLabelSave}
-                                                                    />
-                                                                ))}
-                                                            </div>
-                                                        )}
+                                    {/* Status sections within this column */}
+                                    {COLUMNS.map((col) => {
+                                        const groups = assigneeGroups?.[col.key] ?? [];
+                                        const statusItemCount = groups.reduce((sum, g) => sum + g.items.length, 0);
+
+                                        return (
+                                            <div key={col.key}>
+                                                {/* Status header */}
+                                                <div className="glass-card p-3 mb-2 flex items-center justify-between">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className={`w-2 h-2 rounded-full ${col.key === 'open' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
+                                                        <h3 className="text-sm font-semibold text-theme-text-primary">{col.label}</h3>
                                                     </div>
-                                                );
-                                            }
-
-                                            // Named group — uses groupKey and isCollapsed from above
-
-                                            return (
-                                                <div key={groupKey} className="border-l-2 border-brand-500/30 rounded-xl overflow-hidden">
-                                                    {/* Group header */}
-                                                    <button
-                                                        onClick={() => toggleGroup(groupKey)}
-                                                        className="w-full flex items-center justify-between px-4 py-2.5
-                                                            bg-theme-overlay hover:bg-theme-muted
-                                                            transition-colors cursor-pointer"
-                                                    >
-                                                        <div className="flex items-center gap-2">
-                                                            <span
-                                                                className="text-xs text-theme-text-muted transition-transform duration-200"
-                                                                style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
-                                                            >
-                                                                &#9654;
-                                                            </span>
-                                                            <span className="text-sm font-semibold text-theme-text-primary">{group.label}</span>
-                                                        </div>
-                                                        <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
-                                                    </button>
-
-                                                    {/* Group items — responsive grid inside the group */}
-                                                    {!isCollapsed && (
-                                                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2 pt-2">
-                                                            {group.items.map((item) => (
-                                                                <ActionItemCard
-                                                                    key={item.id}
-                                                                    item={item}
-                                                                    allItems={items}
-                                                                    isOverdue={isOverdue(item)}
-                                                                    isExpanded={expandedId === item.id}
-                                                                    onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
-                                                                    onStatusChange={updateStatus}
-                                                                    onDismiss={dismissItem}
-                                                                    onGroupLabelSave={handleGroupLabelSave}
-                                                                />
-                                                            ))}
-                                                        </div>
-                                                    )}
+                                                    <span className="text-xs text-theme-text-tertiary font-medium">{statusItemCount}</span>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
+
+                                                {/* Cards */}
+                                                {statusItemCount === 0 ? (
+                                                    <div className="p-4 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
+                                                        No items
+                                                    </div>
+                                                ) : viewMode === 'flat' ? (
+                                                    <div className="grid grid-cols-1 gap-3">
+                                                        {groups.flatMap(g => g.items).map((item) => (
+                                                            <ActionItemCard
+                                                                key={item.id}
+                                                                item={item}
+                                                                allItems={items}
+                                                                isOverdue={isOverdue(item)}
+                                                                isShared={sharedItemIds.has(item.id)}
+                                                                isExpanded={expandedId === item.id}
+                                                                onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                                onStatusChange={updateStatus}
+                                                                onDismiss={dismissItem}
+                                                                onGroupLabelSave={handleGroupLabelSave}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <div className="space-y-3">
+                                                        {groups.map((group) => {
+                                                            const displayLabel = group.label ?? 'Ungrouped';
+                                                            const groupKey = `${assignee.name}::${col.key}::${displayLabel}`;
+                                                            const isCollapsed = collapsedGroups.has(groupKey);
+
+                                                            return (
+                                                                <div key={groupKey} className={`border-l-2 ${group.label === null ? 'border-theme-text-muted/30' : 'border-brand-500/30'} rounded-xl overflow-hidden`}>
+                                                                    <button
+                                                                        onClick={() => toggleGroup(groupKey)}
+                                                                        className="w-full flex items-center justify-between px-4 py-2.5
+                                                                            bg-theme-overlay hover:bg-theme-muted
+                                                                            transition-colors cursor-pointer"
+                                                                    >
+                                                                        <div className="flex items-center gap-2">
+                                                                            <span
+                                                                                className="text-xs text-theme-text-muted transition-transform duration-200"
+                                                                                style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
+                                                                            >
+                                                                                &#9654;
+                                                                            </span>
+                                                                            <span className={`text-sm font-semibold ${group.label === null ? 'text-theme-text-muted' : 'text-theme-text-primary'}`}>{displayLabel}</span>
+                                                                        </div>
+                                                                        <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
+                                                                    </button>
+                                                                    {!isCollapsed && (
+                                                                        <div className="grid grid-cols-1 gap-3 p-2 pt-2">
+                                                                            {group.items.map((item) => (
+                                                                                <ActionItemCard
+                                                                                    key={item.id}
+                                                                                    item={item}
+                                                                                    allItems={items}
+                                                                                    isOverdue={isOverdue(item)}
+                                                                                    isShared={sharedItemIds.has(item.id)}
+                                                                                    isExpanded={expandedId === item.id}
+                                                                                    onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                                                                    onStatusChange={updateStatus}
+                                                                                    onDismiss={dismissItem}
+                                                                                    onGroupLabelSave={handleGroupLabelSave}
+                                                                                />
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Unassigned items — full width below both columns */}
+                    {unassignedItems.length > 0 && (
+                        <div className="mt-2">
+                            <div className="glass-card p-4 mb-3 border-l-4 border-theme-text-muted/40 flex items-center justify-between">
+                                <h2 className="text-lg font-semibold text-theme-text-muted">Unassigned</h2>
+                                <span className="text-sm text-theme-text-tertiary font-medium">{unassignedItems.length}</span>
                             </div>
-                        );
-                    })}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                {unassignedItems.map((item) => (
+                                    <ActionItemCard
+                                        key={item.id}
+                                        item={item}
+                                        allItems={items}
+                                        isOverdue={isOverdue(item)}
+                                        isShared={false}
+                                        isExpanded={expandedId === item.id}
+                                        onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
+                                        onStatusChange={updateStatus}
+                                        onDismiss={dismissItem}
+                                        onGroupLabelSave={handleGroupLabelSave}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
 
@@ -666,6 +697,7 @@ function ActionItemCard({
     item,
     allItems,
     isOverdue,
+    isShared,
     isExpanded,
     onToggleExpand,
     onStatusChange,
@@ -675,6 +707,7 @@ function ActionItemCard({
     item: ActionItem;
     allItems: ActionItem[];
     isOverdue: boolean;
+    isShared?: boolean;
     isExpanded: boolean;
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: ActionItemStatus) => void;
@@ -774,6 +807,11 @@ function ActionItemCard({
                         {item.is_duplicate && (
                             <span className="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-full bg-amber-500/10 text-amber-500">
                                 Duplicate
+                            </span>
+                        )}
+                        {isShared && (
+                            <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-medium rounded-full bg-violet-500/10 text-violet-400">
+                                🤝 Shared
                             </span>
                         )}
                     </div>
