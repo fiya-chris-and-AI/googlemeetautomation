@@ -118,9 +118,7 @@ export default function LoginPage() {
                     </form>
                 </div>
 
-                <p className="text-center text-xs text-theme-text-secondary mt-6">
-                    ScienceExperts.ai — Powered by 3rd AI LLC
-                </p>
+
             </div>
         </div>
     );

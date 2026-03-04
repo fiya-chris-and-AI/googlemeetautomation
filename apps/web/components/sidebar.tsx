@@ -122,13 +122,10 @@ export function Sidebar() {
                         href="/api/auth/logout"
                         className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-all"
                     >
-                        <span>🚪</span> Abmelden
+                        <span>🚪</span> Logout
                     </a>
                 </div>
 
-                <p className="text-[11px] text-theme-text-muted text-center mt-2">
-                    ScienceExperts.ai — Powered by 3rd AI LLC
-                </p>
             </div>
         </aside>
     );
