@@ -1,0 +1,1475 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Project Development and Collaboration Insights 🚀
+Video ID: 61a0de36ed334b318bf922bc5ead423b
+URL:      https://www.loom.com/share/61a0de36ed334b318bf922bc5ead423b
+Date:     Unknown
+Duration: [02:23:41]
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T19:39:05.667Z
+==========================================================
+
+[00:00:00] Speaker:
+I think it does it to the screen though. No, no, I think- Oh here, yeah, which is perfect because that's what we're doing.
+
+[00:00:05] Speaker:
+Exactly. I'm sharing that. Wonderful. I just couldn't do anything about it. I didn't start it, but you could. Perfect, there we go.
+
+[00:00:12] Speaker:
+Okay, so this is the road map. It's on both top and bottom, but we'll just look at it at the bottom.
+
+[00:00:19] Speaker:
+Here is what we're gonna approve. Uh, so it's got 11 different phases and then lined out here. So if you're good with all this, I'll go ahead and approve it.
+
+[00:00:35] Speaker:
+Yeah, I do that. Okay. Project initialized. Okay. Oh, okay. GSD planned. Okay, good. So it's prompting me to put that next phase in it now.
+
+[00:01:52] Speaker:
+The phase one. It's already initialized it here. Discuss phase. Oh, skip discussion plan directly. What? Okay, next up, phase one foundation, project scaffolding, database skin and app shell.
+
+[00:02:08] Speaker:
+GSD, discuss phase one, KatherCon. Yeah. I think we should discuss and clarify approach, because that was part of the process to do that.
+
+[00:02:17] Speaker:
+So we'll do this. Okay, now you meant to plan phase, okay? Yeah, it's a this is like the second part after all this is here after we get everything just to make sure that we're clarifying everything and if everything's good then it'll be quick.
+
+[00:02:35] Speaker:
+I'm sure better. I'll be right back. Yeah. on the heavy, where you use a statistical component system like that true.
+
+[00:03:31] Speaker:
+There's me in plan mode, but it is really helpful to be able to turn on bypass permissions. So the way that you do that is you go to the bottom left to settings, you're going to go to settings once again, those type in cloud code, and then you're just going to turn on this option that says allow bypass
+
+[00:03:44] Speaker:
+permissions mode, and that's what allows you to do that so that you can lay your agent run and you don't have to approve every step.
+
+[00:03:50] Speaker:
+Now as this is running, what you'll notice is on the left hand side, we're seeing some files and folders pop up.
+
+[00:03:54] Speaker:
+We've got a temporary folder which just means anything that it needs to store and then like to lead later just temporarily I can do so in there just to keep everything clean with our tools.
+
+[00:04:03] Speaker:
+Okay, I can hear your audio. Really? Yeah, but you can hear mine? Yeah. I can hear you, but I cannot hear your video.
+
+[00:04:15] Speaker:
+You know what? I wonder if it's because it was in so let me try it in Safari maybe. Yeah, yeah.
+
+[00:04:19] Speaker:
+It was a different browser. It was not Oh, different, oh, different that it played in or that it did not.
+
+[00:04:25] Speaker:
+You are in Chrome and Nate was in Chrome. Ah, so as long as it's in a different, oh, perfect. Okay, then good.
+
+[00:04:34] Speaker:
+And what I can do is, Oh, my God. But you probably heard it was an echo, right? No. It was clear.
+
+[00:04:46] Speaker:
+It was clear. Okay. I'm going to minimize this for a moment and she'll wait, I'm just trying to, and you can summing up and hear the sound.
+
+[00:05:05] Speaker:
+So the yodeling was not your thing, huh? It's not that it's not my thing, it's just, well, yeah, I guess it's kind of not my thing.
+
+[00:05:14] Speaker:
+It surprised your baby. But, you know what, no, but I appreciate it, I can appreciate it though. I'm not saying like, oh, I just think it's funny to mix stuff, you know, to test stuff out.
+
+[00:05:24] Speaker:
+Can you hear the music? Okay, no. Not Chrome then. Right? That's weird. That's so weird. Okay. Established project scaffolding database schema and app shell that all features build upon.
+
+[00:05:43] Speaker:
+Depends on nothing first phase. Bash. Decisions none yet. Prisma clients that have been config was Prisma. Let's see. I'll use some sample this minimize and put the docs on the screen.
+
+[00:06:06] Speaker:
+Okay, guess not. How about this? Oh, Prisma, I'll just follow the way. Prisma.ly I was in the shops. What is these typescript?
+
+[00:06:22] Speaker:
+Data-perish migration system. It's crazy what it does behind the background. Yeah, but I want you to see the base. It's that see the base in it.
+
+[00:06:35] Speaker:
+Yeah. But postgres and super basis from the same developers. So I think it might be right. You know what I mean?
+
+[00:06:43] Speaker:
+Yes, we can find them. I have logins for postgres. I just have to get a login for Prisma. Oh, or not.
+
+[00:06:56] Speaker:
+But what is by the way, what is your family saying that you're always doing AI stuff? They have no idea what I'm doing.
+
+[00:07:03] Speaker:
+They're just like, you look like you really like it. That's good for you. Okay. Maybe I don't have to do anything.
+
+[00:07:16] Speaker:
+Maybe it'll do the thing for me. If it does, that's just amazing. Since you can't hear the music anyway, I'm just going to play it on.
+
+[00:07:26] Speaker:
+It's just like the quiet background music. All right. You treat us. Ooh. That's cool. What kind of do you want to do that?
+
+[00:07:57] Speaker:
+Not in that. I kind of like this, how they do it, like, do it from the terminal, like how to build it.
+
+[00:08:13] Speaker:
+That's neat. Okay. Although I'd probably be like, hey, I don't know, I'd have to put it in a thing and be like, clump on these.
+
+[00:08:23] Speaker:
+I mean, this sketch at Don seems to be really good. We'll see what the plan phase, I guess the student's research first.
+
+[00:08:33] Speaker:
+Well, yeah, this is neat. I like seeing this because I really ideally I would like to be as hands off as possible and just use a system that will work every time kind of thing.
+
+[00:08:41] Speaker:
+You know what I mean? I know that each app is different. Each whatever is different, but you're still trying to meet some requirement.
+
+[00:08:49] Speaker:
+So I guess yeah, so long as the requirements are laid out and they're there then then they have a system orchestrated so that they can actually execute the properly and not stuff on each other's toes.
+
+[00:09:02] Speaker:
+That should be great. That should be super. Yeah, because I always just think, oh, I need to see something. If I want to build something, it needs to be like doing it like this, I wouldn't be starting in the terminal.
+
+[00:09:22] Speaker:
+I wouldn't know what project to open it in first or what it would do. And yeah, it's not so scary now.
+
+[00:09:31] Speaker:
+But I just try them out and see to see how these different things work because they usually don't take too too long, but it starts taking like a huge app like a whole afternoon.
+
+[00:09:43] Speaker:
+Yeah, I mean, if you have to approve all this stuff, you know, like, and if you have to always get new sub agents and you're always busy at the computer.
+
+[00:09:52] Speaker:
+But that was the point. You haven't automated anything. You're like, I think already because you don't need to develop it anymore.
+
+[00:09:59] Speaker:
+But still, you need to be there, you know, like you cannot do something else. And like this, if you answer all the questions, then you can, you know, you can create videos or whatever or music or whatever you want to do.
+
+[00:10:11] Speaker:
+Yep. Yeah, this would be cool. Like then you have a channel like getting shit done. you know, and then it's like each one is like making a different app using this, using this code that I'm super fun to see, especially I don't know because I feel like then everybody would do it.
+
+[00:10:32] Speaker:
+The great thing, like when I made so much, I made good money with SEO, you know, yeah, and the only thing I did was I was copying Americans and doing it in Europe, you know, And the Americans were like hitting their heads against each other, you know, and in Europe you were like open roads, you know,
+
+[00:10:52] Speaker:
+just like, okay, yeah, what do I do next? And nobody cares, nobody cares about other markets in America, they only care about American markets.
+
+[00:11:02] Speaker:
+Yeah, it's kind of silly. It's funny. It's funny. Yeah, I mean, it's, yeah, I never, yeah, it was interesting coming, like when I first moved here?
+
+[00:11:13] Speaker:
+There were like there were like a lot of things that like noticed quite apparently different like you know like basically like immediately upon arrival but then other things were more kind of over time where you where like for example when you get here at least here in the south and out good.
+
+[00:11:31] Speaker:
+You might not have been out in Alabama? I mean Alabama yeah yeah so I'm talking like when you coming from Canada when I first moved here, I think that there are a lot more commercials about lawyers and suing people, a lot more litigation and a lot more commercials like pharmaceutical commercials and
+
+[00:11:52] Speaker:
+healthcare commercials like a ton and everybody here loves the ball like crazy loves the ball which that's just more like everything.
+
+[00:12:00] Speaker:
+But then that and the like the guns thing where like it's just a regular like everybody has a right to have one carry one whatever.
+
+[00:12:09] Speaker:
+So that was that was kind of new and then then the healthcare thing. I think it's very different in the US versus Canada because here you have to pay for insurance and if you don't like the bill is gigantic and most people can't afford it.
+
+[00:12:24] Speaker:
+But in Canada it's covered. Your healthcare everybody has like an Ontario, Ohip and then other provinces you have whatever their health care is, but then everybody's covered and they have to wait a little bit longer, but you will get seen and it's covered, so people are generally pretty healthy, they're
+
+[00:12:37] Speaker:
+not like going around broken legs, trying to like stint together themselves. And so like that kind of thing, I was like, I kind of didn't believe that that happened here, but it does, and they're like documentaries about it, and it's kind of sad, but it just kind of shows like it's just the difference
+
+[00:12:53] Speaker:
+, the difference in ideology or culture in the different in the countries. You're originally a Canadian? Oh, okay. Yeah. Yeah, I moved to the States in like 11 years ago.
+
+[00:13:09] Speaker:
+Okay. Yeah, since you're 11 years ago and then stayed. But my family is still all there. And I mean, Canada is much better.
+
+[00:13:16] Speaker:
+I mean, from these like from the mine state, you know, like they are okay. Yeah, it's still an awesome America.
+
+[00:13:25] Speaker:
+you can still tell you know it's like it's like Europe has like a very special vibe you know because we are just like everything is so close to each other you know.
+
+[00:13:36] Speaker:
+Yeah no it is super cool and you're like I've tried yet just being able to hop around to the countries on like the fast train and it's just easy to go yeah you know it's super cool that's not here we have like one border between Canada and the US and then there's one down in Mexico and exactly that's
+
+[00:13:52] Speaker:
+it. Yeah okay so what does it say here, plans to verify and ready for execution. Plan two waves. We've one risk computer, okay.
+
+[00:14:02] Speaker:
+Next up, execute phase one, run all three plans. Clear first. Wait, do I do this first in that execute? Wait, wait, wait, wait, excuse me.
+
+[00:14:13] Speaker:
+Run all three plans. Plan one, next just plan, plan two. That is clear first. It has super base, clear first.
+
+[00:14:22] Speaker:
+Yeah, clear first I would say but is it is gonna know okay just say like okay, I guess it's saved everything I'm gonna clear first then it just was a context window.
+
+[00:14:34] Speaker:
+I know, but I just wanted to forget anything. Oh, it had it's fine look at it It's like nothing good.
+
+[00:14:44] Speaker:
+Okay All right, cool. So I don't do I need to clear context Yeah, so GSD execute phase one. Okay, so but then Alabama is like crazy.
+
+[00:15:08] Speaker:
+I mean, like that's completely redneck Trump country. You know what's funny, though? Okay, so I did. So what I when I first moved to when I was well back up even.
+
+[00:15:18] Speaker:
+And when I got an interview here, I was in my advisor's lab and I told him, hey, I have an interview.
+
+[00:15:25] Speaker:
+He's like, well, where? And I'm like, Alabama. And he's like, I am a biamba, because that's what everyone in Canada just thinks about like the South is that everybody's red neck and overalls and pitchforks and the hay and farms and all this stuff.
+
+[00:15:40] Speaker:
+But then you come here, and that's just maybe in like the rural out of, you know, really far out there areas but in like the main like Birmingham like proper it's a beautiful city they're like a ton of these like Michelin Star restaurants excellent theater great music scene that's like like some of the
+
+[00:15:59] Speaker:
+neighborhoods are super posh and rich and other ones are kind of in between and it's like a nice balance and yeah super cool not what I expected at all okay not at all I um I thought I was gonna take the bus here like public transit kind of like you kind of Toronto like super easy, you can't do that
+
+[00:16:15] Speaker:
+here, you can't do that here, like they don't have sidewalks and there's like they're public transit just just not developed because everybody drives a car.
+
+[00:16:24] Speaker:
+Yeah, so they don't really worry about recycling very much. Oh Joe, it's so it's so it's so crazy, like if you go here to make donuts, If you have a burger and a drink and french fries, you have to pay extra on top of anything else.
+
+[00:16:46] Speaker:
+For every item, you have to pay 50 cents for crashing the environment. So because there is a packaging, you have a packaging fee of 50 cents and on the drink you have a packaging fee of 50 cents.
+
+[00:17:03] Speaker:
+And if you get a sprawl, that is a packaging fee of 20 cents. You know what that's called? That's called their, uh, basically like, they're taking advantage of the fact that people have a soft spot for the environment.
+
+[00:17:17] Speaker:
+Because do you think that the ocean cares about your x amount of sense? I know it can accumulate over time, but I mean, like what do they actually do with it?
+
+[00:17:26] Speaker:
+Yeah, but the finally thing is it's not actually disadvantaged. It's kind of Of course, only if you go to McDonald's, it's a disadvantage.
+
+[00:17:35] Speaker:
+But the other thing, you know like electric bikes, right? Cikes, they cost like 2,000 euros or 4,000, it's quite expensive.
+
+[00:17:44] Speaker:
+In my city, you can get them now for a flat rate of $15 per month. You can ride all the time electric bikes.
+
+[00:17:54] Speaker:
+It's like, yeah, yeah, they have a good station, even park them. Yeah, like electric bikes. you can drive around the city all the time for next to nothing and they recharge them they do the whole stuff you know they have to do yeah so where do you where do you get the thing from like do you do you get
+
+[00:18:12] Speaker:
+it from one of the stations on every corner those bikes are the standing and the government is paying that so basically and the government pays a lot So we have like always if it is a environmentally unfriendly, we get punished a lot.
+
+[00:18:30] Speaker:
+And if it's a environmentally friendly, we get like, we get they paid for us. So that's really nice. That is really nice.
+
+[00:18:40] Speaker:
+That's a whole different mindset than than here. here. So here I'm so so curious to see see this in my too.
+
+[00:18:56] Speaker:
+I'm glad I came across this. I was just like looking on YouTube trying to learn about like get work trees because whenever I run into a bug, I never know the best way to handle it.
+
+[00:19:07] Speaker:
+I know that people are like, oh, like create an issue. I'm like, okay, well, do you do it in a new terminal?
+
+[00:19:11] Speaker:
+Do you do in the same one do you like kind of handling those like the actual management of those things and all people say yeah good work tree and do that and keep them separated like fine but like how are you actually like are you like where are you doing it and kind of like what directory and then
+
+[00:19:30] Speaker:
+you have do you need to account for anything in the context and I think just maybe just trying it and just, you know, failing until I figure it out, I guess, I'll, I mean, I've been learning, I've been like picking, picking some things up and at least now I understand about this project folder where
+
+[00:19:51] Speaker:
+I need to save my file. So that's at least for the one IDE. I'm only using VS Code now. I haven't installed anti-gravity yet or cursor yet.
+
+[00:20:02] Speaker:
+So right now, I'm just going to just for now with this one get the project files up put this like our skills our skills project specific or are they like in a folder where it can be accessed as needed globally I think you can do both okay okay yeah okay so and you can put also skills into cloud desktop
+
+[00:20:27] Speaker:
+Yes, yeah, I can also run Claude skills inside of the browser. It's kind of like you can like install them in different ways.
+
+[00:20:39] Speaker:
+Oh, I see which names are the probably yeah, okay. Yeah, I know it's in those settings and then you can like add a skill or.
+
+[00:20:46] Speaker:
+Yeah, I haven't I haven't I'm not sure about skills inside of the IDE if you can do it like globally.
+
+[00:20:53] Speaker:
+Yeah, you might have to do it in kind of each project. Okay, yeah, I mean, with the, but it's kind of easy, but you can put like all your skills into one folder, and then if you have a new project, you can just put them into the new project as a, as a whole file, you know, with all your skills.
+
+[00:21:12] Speaker:
+Yeah, yeah, I have to take my car to the dealership. I have an inspection, no inspection.
+
+[00:21:23] Speaker:
+Oh, they have to do an inspection of it because my inspection is due. I'm going to let this run. So, and I don't think what is there.
+
+[00:21:40] Speaker:
+Yeah, let me check on the meat. because then I want it to, oh yeah no it doesn't matter I guess because we joined outside of the meeting time so it's not going to cut anything off.
+
+[00:21:57] Speaker:
+So maybe I can just call maybe you did you change your plan with Google? Did you change your plan? Oh it was in my Yeah, my cards was I'm just in a called minors that are.
+
+[00:22:32] Speaker:
+Hey there, I have, I have a service point and say that was happening, but I have a, I think, but it's related.
+
+[00:24:03] Speaker:
+No tomorrow. Yeah, yeah, that was right. Yeah, 930 is perfect. All right, great see you then, thanks. Bye. All good.
+
+[00:24:16] Speaker:
+That's actually better because I'm already out in the morning. I thought I was going to have to go there now, wait like an hour and a half for them to the inspection and then I would have left the laptop here so I guess I would have to bring my other one to pass the time but I'm glad I don't have to
+
+[00:24:30] Speaker:
+go right now. It's just yeah just for my car. It's like that it gets to like certain mileage and then you go in for like regular inspections.
+
+[00:24:40] Speaker:
+I know how the car I mean, let's take a look over here. OK, let's see. Oh, did this re? I guess it must have cleared reference one to planning.
+
+[00:24:56] Speaker:
+Sessions start compact hook error, OK. Maybe it had just compacted before something, I don't know, because it had nothing. Yeah, I'll move this one out of the way, so it has full screen.
+
+[00:25:32] Speaker:
+I really do like the speed, definitely the speed about, yeah, with the other one's hurt. Yeah, we don't know that as well for using it for a lot of stuff I want to do.
+
+[00:25:53] Speaker:
+Which like the getcha done? Oh yeah, yeah. We'll see how it does. Hopefully it's not So what happened with, okay, so this is my regular regular keyboard, right?
+
+[00:26:09] Speaker:
+Yeah, but you know how you have the control like a control. It's a kind of the windows board. So it's not command, but what happens is that control doesn't work on this keyboard now anymore.
+
+[00:26:18] Speaker:
+It like made this one the same interface as the Mac. Yeah, so I have, yeah, it's, I'll sort it out.
+
+[00:26:29] Speaker:
+I'll adjust it and take the time to do it. Yeah. But at the moment, I just, it hasn't really been bothered me a lot much.
+
+[00:26:37] Speaker:
+But you can use the keyboard on your laptop as well, right? If it doesn't work, just use a keyboard on the laptop.
+
+[00:26:47] Speaker:
+Yeah, yeah, but if yeah, if I find like some things like Incidentally like I have to go do this now and I run to a issue and makes me wait Then I'll like fly get to something.
+
+[00:26:57] Speaker:
+I got a reason actually like looking to an address. Yeah But other things I'm like, I don't mind just doing that manually.
+
+[00:27:03] Speaker:
+I actually do what's When is my AI filmmaking? I just finished scraping that The thing is good, I mean he has a lot of really good knowledge in them.
+
+[00:27:22] Speaker:
+What time frame was it that you scraped it because I noticed he had stuff like even when I was scraping through part of stuff, he added implement to go, okay, yeah, I think he may have added additional stuff there and I think it's he is always repeating himself.
+
+[00:27:35] Speaker:
+I mean, that's like, I think his five, I mean, still in his five-dollar community. Yeah. But that one is great because I can actually see all the movies people are making.
+
+[00:27:46] Speaker:
+No, I find that way more interesting. And in his expensive community, it's just all the knowledge. But once you have extracted that and put it into notebooks, you don't need that.
+
+[00:27:59] Speaker:
+Yeah. Yeah. Yeah, that's kind of what I'm getting at right now. That's what I'm moving on. Set up around here a little bit, here we go.
+
+[00:28:07] Speaker:
+So that way, not just total turn right over there. But I think that it's like our issue, you know, like there are so many things we like to be good in, you know, if we would be good in everything, it would take forever, you know, like I told you.
+
+[00:28:22] Speaker:
+I think we really have to, like everybody has his jobs, you know, and then it will work actually really, really well.
+
+[00:28:29] Speaker:
+Yeah, like more like because everybody is ever we each we all benefit from the best of each other Exactly And you know then you don't have to you still can say okay, it's great to make movies, you know But it's not like your daily job because I can totally see like when I'm making movies My brain is
+
+[00:28:48] Speaker:
+completely in that mode and I cannot easily switch from that mode into building mode You know, it is a different, it's a complete different thing.
+
+[00:28:58] Speaker:
+If I do two hours of video, I cannot do two hours of building afterwards. Let me put in my super based credentials.
+
+[00:29:07] Speaker:
+Well, it's got to start a, wait, actually, I wanted to install the, but you should be based. You should put it in EMV file.
+
+[00:29:14] Speaker:
+It's much better because I had the same problem. Oh, I know, but I don't have a project yet. So I wanted to, I want to install the super based, which doesn't take long at all.
+
+[00:29:24] Speaker:
+Okay, okay. Here's what I'm going to do. Terminal. Terminal. To write here so you can see the other one. Yeah, I'm going to go.
+
+[00:29:38] Speaker:
+Yeah, I remember I did this before my last computer and I was surprised how quick it took, but it's super convenient because you don't have to go in and do the SQL queries and all that stuff.
+
+[00:29:46] Speaker:
+It's really, it's worth this week. We're going to install the super days. Yeah, I guess boom brew is max like standard downloader.
+
+[00:30:12] Speaker:
+If we say it was like, okay, yeah. Yes. Oh, yes, yes. Oh, okay, I just told you gotcha. token so that I can just access my stuff and I think I have one on my drive already.
+
+[00:31:13] Speaker:
+I'm already token, but I'll just make a new one because I cannot find one right now. I'm just log in to see the base.
+
+[00:31:44] Speaker:
+You should log in, yeah I did. All right so I'm going to token. Here we go. I never used a swamp again.
+
+[00:32:15] Speaker:
+Wait on the, yeah. Okay. One second. All this generating token name. This will be. You can't ask a cool. BSD.
+
+[00:32:31] Speaker:
+Community. Okay. It's not expire. Well, this is a token to access my thing, so I'm going to say 30 days.
+
+[00:32:43] Speaker:
+Because I don't have a nickname on it. Well, where do I get it? I can't actually see it now. No, I just can't really believe this token.
+
+[00:33:11] Speaker:
+Okay, can we, I'm just gonna show you later. I've gotta minimize this. So I, and here's the access tokens, right?
+
+[00:33:24] Speaker:
+That's the old one. So I'm gonna generate a new one. So, I'm gonna say GSD, that was the old one but I deleted it here, generate token.
+
+[00:33:36] Speaker:
+So I don't, I don't know where to actually, why do you wanna make it expire? Oh, this is just a token for, well, I guess it's a database for the community, you know?
+
+[00:33:51] Speaker:
+This? Oh, no, this isn't a database for the access token. It's for the CLI to access my database. Okay, okay, okay, okay, get it.
+
+[00:34:00] Speaker:
+But still all the same. I don't know, okay, I have to get that token. Yeah, just click on next to it.
+
+[00:34:11] Speaker:
+Yeah, delete token. I think you have to do it differently. Yeah, you have to before Oh, here. How about this one says this?
+
+[00:34:18] Speaker:
+That's right here. It's in front of my face. Oh my god. Let me go to my, uh, okay. A lot of night long because I'm working this environment.
+
+[00:34:32] Speaker:
+I'm going to not access K, pass token directly, sit in the bottom of the variable, and then open my token here.
+
+[00:34:50] Speaker:
+I have a token. Okay, I don't like doing stuff like that, but I don't know how else it's in the ENV file.
+
+[00:35:13] Speaker:
+Yeah. Yeah. Why did I talk to you? Like, if you put everything you put in the EMB file, it's not visible for the, Should I just be no?
+
+[00:35:26] Speaker:
+Well, I already gave it already. Well, no, I didn't, Yeah, I sent it. It's okay. We'll just, That's fine. Should I just cancel put in the ENV now?
+
+[00:35:36] Speaker:
+Well, it doesn't matter now. Just say yes, proceed. Well, I still should put it in the ENV, though. And then here.
+
+[00:35:47] Speaker:
+That is a good point. I just don't want it to get. Put it in V file. Just make it. Yeah.
+
+[00:35:54] Speaker:
+And then you're inside of C in V. You're just saying. Yeah. Super based access token. Yeah. It's there. You don't have to go there.
+
+[00:36:03] Speaker:
+You just have already there. You haven't even here. Okay. Here. Yeah. And then just make it new. like a new, no, not new, just like enter, press enter.
+
+[00:36:18] Speaker:
+Oh, here? No, where it says disabled. Oh, here? Yeah, enter, enter. And yeah, and now you say super based CLI access token.
+
+[00:36:29] Speaker:
+Okay. equals. Yeah, I don't want to just put here. And now you say in the, in the, you just say you see access token from the ENV file.
+
+[00:36:45] Speaker:
+It should work. So no. And then you just say I use access to yeah, but stop stop before you do it, close the envy files or it's saved.
+
+[00:36:58] Speaker:
+Okay, I'm safe. And then I'll go like to here. Okay, use the super base access token. And then you can be glad.
+
+[00:37:11] Speaker:
+Paul, do you have any follow-up? Uh, here, uh, what has it already? Yeah, add the token to add it to this, um, and to be glad he's, you know, should be there.
+
+[00:38:04] Speaker:
+Logging in for me. That was my bad. And it's in my ENV. It needs to be an ENV local, though.
+
+[00:38:15] Speaker:
+Okay, but no, now I have to be like a, because the credentials, let's see, seven new project, project, transaction, no.
+
+[00:38:24] Speaker:
+Use, set up, use the database, set this up, because now I can use the token to get in the back and do that stuff and then populate my ENB.
+
+[00:38:50] Speaker:
+Joining in, I don't need Docker. Oh, okay, I will download Docker. No apps. I don't think it's in there, but you tried.
+
+[00:39:06] Speaker:
+Oh, sorry, online. I keep forgetting. I always, God, I keep going to the app store. Yeah, it's not like it's not like on the iPhone.
+
+[00:39:21] Speaker:
+Yeah, don't go down. I don't know, don't go to the back. Intel chip or Apple, you have Apple Silicon. I do.
+
+[00:39:37] Speaker:
+Yes. Really? But no, and for really old apples are Intel. Oh, okay, gosh Yeah, download I think There it is.
+
+[00:39:58] Speaker:
+Yes, just double click It's okay. I'm sorry. No, don't worry And here, try and drop it.
+
+[00:40:16] Speaker:
+That's it. And where's Docker? Suffer installs. Now it's inside of you next to my face, I'm going to have to add the smiley the apps down here and that'll be a doctor, a doctor is an opt-out of me, yes I am, I'm sure.
+
+[00:41:05] Speaker:
+Yeah, yeah, it's uh, it's here. Yeah, that's fine. Oh, it's singing Apple password. Yeah. They should just say Apple password.
+
+[00:41:31] Speaker:
+I'm here, yeah, I've got to hear. I'm going to get out of my Gmail. Yeah, so I just need to do a good test time.
+
+[00:41:44] Speaker:
+Good, we're good. The session's next one. Really good. Huh? The session is really good. Yeah. I'm going to give you like we are all like this is like to work like this is amazing.
+
+[00:41:56] Speaker:
+Yeah, yeah, yeah. Yeah, this is cool. I don't know the answer, sometimes you don't know, you know, and then we're like way faster.
+
+[00:42:07] Speaker:
+Yeah, totally. And now this is here, then we'll get the super bay swoosh, so we'll get this out of the way.
+
+[00:42:14] Speaker:
+That'll start the darker engine and then that'll, here we go. This is really long. Yeah, usually take. Okay. Maybe it's on the first start, but was that it enabled until they speak just to roll and that was open back.
+
+[00:42:47] Speaker:
+So they're not getting such far. So it was that was that. I'm not doing it right now. It was a software I think that was trying to prompt you to do like right now.
+
+[00:43:00] Speaker:
+Oh, oh, that's why. What? Dr. Dr. Dr. Best of Reset installation failed. an error of purple and slumber, is that it?
+
+[00:43:09] Speaker:
+Wait, wait, wait, wait. I would copy that and put it into warp and say can you fix it, but the whole thing, Okay.
+
+[00:43:22] Speaker:
+It's fine Mr. Warp here. Because I have the idea of what that is. Not only that. Don't you go in a new window or?
+
+[00:43:30] Speaker:
+No, just yeah go a new window yes because you know what you could do okay can you fix it can you fix that because I remember I installed a Docker directly from a wall yeah well yeah I remember I did the first time.
+
+[00:44:05] Speaker:
+Can I close this then? No, you can just move it to the side. Okay. And then run. And either software update.
+
+[00:44:25] Speaker:
+Maybe it's just gonna do it behind the scenes. Okay, good, wonderful. Now you can retry the other part, the other window.
+
+[00:44:33] Speaker:
+Can you try to try? Good idea, instead of closing it, it might have a dialog works, I think. Oh no.
+
+[00:44:56] Speaker:
+But it says it's installed. You can now proceed, oh, maybe I'm going to exit. I'm going to close out of this because Rosetta was needed for the install.
+
+[00:45:05] Speaker:
+So I'm going close Docker and reopen it again from the door. Yeah, okay. So now that's there and then close it.
+
+[00:45:15] Speaker:
+If it's selling your taskbar, the work now, uh, I don't know. The doctor, okay, no, the doctor is not here.
+
+[00:45:24] Speaker:
+No, it's up there. It is, it is, you see up there is a Docker symbol next to, it's a top, uh, yeah, go to the desktop, yeah.
+
+[00:45:35] Speaker:
+It's not quitting. Can you pause? Oh, it's stonies. I'm surprised it's, um, I'll just ask this to install. Wait, I don't know why I have to do it manually if it's a anna.
+
+[00:46:05] Speaker:
+Yeah, because I tried doing it at the Docker. Now those old ones that were fixed it. Yeah, yeah, but something else.
+
+[00:46:13] Speaker:
+I think the Docker thing is stuck. Okay. Is there like a. With Docker desktop. Yeah, I did that like three times.
+
+[00:46:27] Speaker:
+Yeah, it doesn't do it. Is there a task manager? Like, you know, the same way you control out the leak to close application.
+
+[00:46:36] Speaker:
+One second. Task manager. Like, it's equivalent in whatever they call it. Yeah, I know what you mean. Why don't I know that out of my head?
+
+[00:47:16] Speaker:
+Yeah, I was he's not on page vision pro. The one I know he said is this continued, but it worked before.
+
+[00:47:24] Speaker:
+Sorry, I'm just going to move this here on this other way command plus space command plus space. Okay. I'm sorry.
+
+[00:47:37] Speaker:
+Command. It's a plus here. Of course, quit application command option to escape command option escape. Okay. First. Doctor. It's not there.
+
+[00:47:53] Speaker:
+No. Maybe that's just because it's installed on like I have no idea. I asked, I asked it, wait, how can we quit, force quit that one?
+
+[00:48:40] Speaker:
+Docker should be force quit. Yeah, it should be like it's okay that this is doing this. I just tell, I tell Claude.
+
+[00:48:52] Speaker:
+Okay. Okay. Okay. Go into go in a wall. Work. Okay. And then you in then you say this one.
+
+[00:49:17] Speaker:
+And if that doesn't work, you do that one. Okay, no matching processes. Okay. Okay, try that one. So sorry, which one?
+
+[00:49:28] Speaker:
+Oh. And if that doesn't work. Bash P kill. Yeah. And then new, new word, I don't know why, like a T kill.
+
+[00:49:50] Speaker:
+Oh, oh, I see it's doing here. And it's gone. It's gone. You have no more Docker. Nice. Okay. Now what?
+
+[00:50:02] Speaker:
+Okay. Now this should work for. Yeah. I mean, do it differently. I will just try it inside of warp and say install Docker.
+
+[00:50:10] Speaker:
+Okay. Yeah. Yeah. Perfect. Wonderful. I can get back to our ship then he's getting done. Will be a speed key in the care.
+
+[00:52:57] Speaker:
+Okay, it is installed. Okay. Okay, so let's go back to Oh, it's stuck to be done. I know, but it's no thing you should open Docker.
+
+[00:53:10] Speaker:
+You need to have open Docker. Oh, Oh, okay, gotcha, gotcha, gotcha, gotcha. I'll open it. But say it inside of a wall.
+
+[00:53:19] Speaker:
+So it was local, okay, local start Docker, okay. Okay, and let me just minimize this. Say what? Local here, add here.
+
+[00:53:28] Speaker:
+Yeah, this is installed now. So it should be able to try it. Yeah. Okay. Where? You should do it. Try it again in your apps next to the Smileyface.
+
+[00:53:50] Speaker:
+No, I know, but that that bar is not showing up anymore. Are you okay, then just open it and who up just say what open talker?
+
+[00:54:00] Speaker:
+Okay What is PSN open? Docker does not exist Install talker use it, but you installed it already. I did already.
+
+[00:54:19] Speaker:
+Okay, Docker is install, please open it. Oh, I think he's the thought it was a command. Run, yeah. Yeah, open E Docker, okay.
+
+[00:54:37] Speaker:
+Hello. And now in the background, it's open. Yeah, good. And now you're in my sink. back to you again. I'm good.
+
+[00:54:50] Speaker:
+Can't start talking as well. See service. Router is open. You can see. See if there is. Have you ever used open code?
+
+[00:55:44] Speaker:
+No, but I heard about the last couple of days a lot. A lot of people are using it to escape the cost of cloud.
+
+[00:55:56] Speaker:
+Oh, is that why? Okay. It's kind of like, I'm not sure if I, you know, because yeah, like you cannot use a cloud with it.
+
+[00:56:06] Speaker:
+Apparently, you can use a codex from ChatGPT using your regular subscription. So you don't have to pay API costs. Okay, that's doing this thing.
+
+[00:56:22] Speaker:
+Why isn't this recognizing? Drive. Yeah, the whole no USB ports and on the computer.
+
+[00:56:36] Speaker:
+No, I guess there's USB Cs, there's USB C ports and HDMI and the charging port for its cable an aux port and then a micro SD card port.
+
+[00:56:50] Speaker:
+I think there's a SD card port. Yeah. You have all USB stuff a lot? Well, just like so my two terabyte drive has a USB and is it an SSD?
+
+[00:57:10] Speaker:
+Yes. Okay. But USB-C is much faster like in writing. I wonder if you, so, I mean, could I just use a USB-C to USB-C?
+
+[00:57:24] Speaker:
+Like that cable and I'm trying get the adapter, you can use the adapter, yeah. You know, I have, I should have, it's an Amazon for nothing.
+
+[00:57:31] Speaker:
+on sand. I have like a bowl. I think I have one. Whoops. I literally organized all of my electronics like last week.
+
+[00:57:42] Speaker:
+Uh-huh. The USB-C that I have. And that's like, I know I've seen, I have one. I have one. I think I just recently got it too because it came with, you know, these are your students now.
+
+[00:58:04] Speaker:
+Liberation's successful. Perfect. So I want one pretty much. Nice super base. That's great. And let's see, let's know this one.
+
+[00:58:21] Speaker:
+No, that's the double one. These are both of the ones I have like the two thing. I know, I know, it's not.
+
+[00:58:30] Speaker:
+I know, I'm just looking forward. Yeah, I made just nothing going on the Amazon, because I don't actually think I have one.
+
+[00:58:36] Speaker:
+So he was, but I couldn't when I saw one. And I wonder if I have. You need this one. I show you like I show you a picture because otherwise yes.
+
+[00:58:54] Speaker:
+Oh, I know I know I know that that's the one I showed you is not I send your link. No, I send you a link what you need.
+
+[00:59:00] Speaker:
+Okay. Thank you. Because you can buy like a wrong one. You have to you need a female version of USB.
+
+[00:59:07] Speaker:
+be. Ah, perfect. Okay. I did want to get mailed to mail USB. But you have to be make sure that the USB pot is female.
+
+[00:59:17] Speaker:
+Yeah. And the speed and mail you see is male. Okay. We're going my Amazon because it's like Amazon, German Amazon.
+
+[00:59:27] Speaker:
+Yeah, exactly. How many Amazon? I'll see. How many Amazon? Ah. You. You speak to. In the space. And that. Oh, that's okay.
+
+[00:59:52] Speaker:
+Phase one. Okay. so it's running these at the same time. Okay, zero or four. Okay. Ready to plan. Very good.
+
+[01:00:05] Speaker:
+No, that's. Oh, it's in this face. Sorry, I was just updating the document. Please, I'm complete. Okay. Oh, let's see.
+
+[01:00:17] Speaker:
+Local host. Oh, cool. Let's see what we got. Oh, it's a little hoist open one. Oh, it's a student ID browser.
+
+[01:00:29] Speaker:
+That's a work. I'm so sorry. Okay, little, little one. Yeah. Open holes. Uh, which screen it's not showing anything right now.
+
+[01:00:45] Speaker:
+Can you see this? Nope. No, just didn't hear me minimize this, actually. It just said it can't be reached yet.
+
+[01:00:52] Speaker:
+Okay, that's it. Something's not, it's, yeah, here, it's local 2000, so it's not working right now. Okay, just take, put a screenshot and tell it, I think, or just tell it.
+
+[01:01:03] Speaker:
+Well, the site can't, let me look at that. Let me see what the issue is. Nothing. Can't connect. Oh, I don't have any firewall in here.
+
+[01:01:18] Speaker:
+Okay, wait. So just make sure. I know. Okay. It was what connect. Command. 5th floor. Command shift 4. Yeah. Yeah.
+
+[01:01:35] Speaker:
+Yeah. And then yeah. And then paid. That's copied. Okay. And then. I have an extra program to do that, but it's okay, um, that I'll just literally I'll just copy local hostries to connect, but I don't want to do it in this terminal though.
+
+[01:02:00] Speaker:
+So I'm going to see, okay, so it's when I get here, right? when I get to this phase, but you need to be able to copy screenshots.
+
+[01:02:21] Speaker:
+It's so often you need that. I know, but if I tell like this side can't be reached local host refuse to connect.
+
+[01:02:29] Speaker:
+Like this is the same as giving it a screenshot is it not? No, yeah, it doesn't matter. Yes, of course it's the same, but you will Oh, yeah, I see what you're saying about your capability.
+
+[01:02:40] Speaker:
+Yeah, yeah. How do I regularly make a screenshot on my Mac? What's the shot? What's the command? Oh, command should copy it to some welds.
+
+[01:03:02] Speaker:
+Command, Control, Shift, Plus, 4. Holy. Oh, command. No, I said, Command, Shift, 4. I mean, I got the picture. Oh, Command, Control, Shift, 4.
+
+[01:03:14] Speaker:
+Yeah, and that puts it to the clipboard. Oh, okay, gotcha. Well, now I'm not actually a thing. Let me escape.
+
+[01:03:21] Speaker:
+Okay, command control plus four. Yeah, now you can. And now you should be able to paste it. Here in this one.
+
+[01:03:35] Speaker:
+Nope. Yeah, you know, it's it. No, sorry, I just wanted to. Sorry, that's. That image, it's an image you see.
+
+[01:03:44] Speaker:
+Yeah, I know. Yes, I do. I just, I wanted to get this out of here. Okay, cool. There we go.
+
+[01:03:52] Speaker:
+Scan, I never know. Because usually they're like, well, do errors in a different terminal. But. I mean, if this is the one working on it, then I figure it's going to know how to fix it the best.
+
+[01:04:09] Speaker:
+maybe it's not supposed to be ready yet maybe it's just like it opened up the thing but it didn't actually build anything yet.
+
+[01:04:19] Speaker:
+I think it should have built everything already otherwise it wouldn't show it I think. Phase two authentication. Oh you know what back and I guess because if it is just the back and I'm not going to see it.
+
+[01:04:32] Speaker:
+I guess you're seeing this is where they've connected it to. I guess it went ahead with phase two. Okay. But I thought it said it had like a nice react.
+
+[01:04:54] Speaker:
+But there was an error showing. I don't know what what did it say? Error blah blah blah. Oh, it just couldn't connect.
+
+[01:05:00] Speaker:
+Is that the fail to connect? in my gradation successful because of my grades. Oh yes, no app shell. I mean there should be a shell, something, but it did whatever's not.
+
+[01:05:19] Speaker:
+OK, something good. But it went ahead and did it. I'm just complaining for these two created. Oh good, at least it's 2026.
+
+[01:05:45] Speaker:
+That's good. So it knows that it's not like, uh, yeah, bold. What is, uh, Comanche of P. What is it?
+
+[01:06:05] Speaker:
+Oh, I don't have to do that. It's okay. It always tells me to do that. but it seems to work fine without me doing it.
+
+[01:06:40] Speaker:
+Oh, sorry, I'm with this one. Was it custom error? I'm excited. Oh, we're sorry. I can't. Oh, here it is.
+
+[01:06:51] Speaker:
+It's over here. There you go. Good. Oh, there it is. That should have done. So it's working as a container, all nice.
+
+[01:07:36] Speaker:
+You know, there's a video on YouTube of this guy, if you type in study with me, it's the channel that I can understand it too.
+
+[01:07:45] Speaker:
+But it's a very relaxing sound. I'm super relaxing sound. I'm like, I'm pushing it out of the corner. That'll accompany me and share with you in what's up.
+
+[01:08:15] Speaker:
+Okay. Amazon or do you want to be a sender in the chat and send? No, it's easier. I'm going to go see easier.
+
+[01:08:23] Speaker:
+I don't know next. Like it's like 50 minutes study, 10 minutes break, 50 study, 10 minutes break, 50 study, 10 minutes break.
+
+[01:08:41] Speaker:
+Yeah, I did show you because you told me your brain is so great. Yeah, so I was like the first is like this intense music.
+
+[01:08:47] Speaker:
+It's almost like you're like in a womb. You know, like when you're in the water and your ears are closed, you can hear yourself breathing in your heartbeat and stuff.
+
+[01:08:53] Speaker:
+It's kind of like that. And then the second one gets a little bit lighter. And then the last one's like the latest kind of like coming out of it.
+
+[01:08:59] Speaker:
+It's neat. But I like because I know I'm like working like throughout the day. I put like that first segment on a few times.
+
+[01:09:05] Speaker:
+and like, swish to the second, go back to the first, do the second. It's really weird that we don't hear anything about the heck of the nursing.
+
+[01:09:45] Speaker:
+You know what, I was literally thinking that last night and I think maybe, I just didn't want to be the like shit-disturber one that's like, hey Mark, nudge nudge, what about the hackathon?
+
+[01:09:54] Speaker:
+Because obviously everyone's thinking that but no one said anything, I suppose that of like patience and respect, but it's It's kind of like, someone's every minute.
+
+[01:10:03] Speaker:
+Almost every, I can't learn does he need to review all of our stuff? He must know. I don't think it's his problem.
+
+[01:10:10] Speaker:
+I think NAD is like somewhere wild. And I also feel like NAD has gotten so much money. And now, everybody is shifting away from NADN that they are completely in their head somewhere else, you know?
+
+[01:10:28] Speaker:
+They must be. probably really worried about the whole cloud code thing. But the thing is, as you see, what Nate did, as he said, he basically took NADN and made it work in cloud code.
+
+[01:10:37] Speaker:
+So it's like, you're still on that NADN mindset, but applying it in cloud code, but it can operate and fix the things and do whatever.
+
+[01:10:43] Speaker:
+And I think now everybody is exiting the syncing ship, which is kind of NADN, you know? It is here. Nate is completely switching away.
+
+[01:10:55] Speaker:
+And he was a god of NADN. And Nick is also shifting away. And Nick was also in and in. Everybody, all the influence us are shifting away.
+
+[01:11:08] Speaker:
+Well, I mean, I guess because that's where the tide's going. And also, that's just because Claude's good. So yeah, I mean, I'm glad they are because if they were like, oh, yeah, we want to use work all the time now.
+
+[01:11:20] Speaker:
+It's like, well, why now kind of thing? It means Claude's been here. But it's like it's been progressively just getting better and better and better.
+
+[01:11:27] Speaker:
+Yeah, whereas like OpenAI kind of, I don't know, it kind of took a few turns. Along the way, what I think is really funny, you can open-cloth code also in warp.
+
+[01:11:39] Speaker:
+Yeah. Oh, yeah, because it's terminal. Yeah, I guess it's a terminal. And which, yeah, which I, yes, it's in the IDE, organize our document.
+
+[01:11:48] Speaker:
+But warp is kind of like your whole Mac is on warp, kind of. like if you give it access. So I think it would be super interesting to let Claude code do stop on your Mac True Warp because you are not bound into your local folders.
+
+[01:12:12] Speaker:
+I can go right in the shell. Yeah. Yeah, so it might be that you can install like that you can create It's a completely crazy apps on your Mac with Warp.
+
+[01:12:23] Speaker:
+And the funny thing is, you know, because AI is kind of like, it can do everything. It just, if nobody has asked before, then nobody would know.
+
+[01:12:36] Speaker:
+Whoops. I need to, what's the, I thought command A. Yeah, command A is okay. I think, oh, it's because there's this keyboard.
+
+[01:12:45] Speaker:
+I'm looking at that cloud code and work what just happened. Where did it go? Where did the code here is?
+
+[01:13:01] Speaker:
+Where did the, where did the one to go? Here's the firing. here. Now let's work. Like here, you know, you see?
+
+[01:13:31] Speaker:
+Yeah. Like this one is warp inside side of walk I started Claude code. Nice okay so then like have you actually try to using it?
+
+[01:13:44] Speaker:
+I'm kind of like you know it's like it's not a docker container you know if I I don't know what happens you know like but it's very interesting I mean there's like you can do like just because nobody has tried it doesn't mean it doesn't work you know.
+
+[01:14:01] Speaker:
+Where did it go? Oh, here we go. Wait, I'm going to board the Docker, FOD, or APNICROL, where the, Where is the VS Code?
+
+[01:14:20] Speaker:
+Oh, next to the trashcan, there's all this stuff. Yeah, but it's not here though. Let me check something. Just go, no problem.
+
+[01:14:42] Speaker:
+Just go next to the smiley face to your apps. And then look for, look it for the visual studio. Like just open it from there.
+
+[01:14:52] Speaker:
+This is the only one open. It doesn't, I don't even see it here. Oh, what is known as YouTube, this is um, but you probably have several versions open at the same time.
+
+[01:15:11] Speaker:
+You didn't throw it, I don't think you closed it. Yes, so this is the instance I have, this is an instance I have, which is all in VS Code.
+
+[01:15:25] Speaker:
+Okay, but it's one you can close probably right? Yeah, yeah, I can close my closest one. Okay, now go back and look for now open next VS code.
+
+[01:15:37] Speaker:
+Oh, okay, I saw it slide over somewhere and you know how you know how you just see how we did it, right?
+
+[01:15:45] Speaker:
+Yeah, yeah, yeah, I closed out the VS code and then I opened up the one at the bottom for whatever is left and then I pulled it out of whatever minimize state.
+
+[01:15:54] Speaker:
+Yeah, yeah, you okay All right back to I was looking on YouTube, so I know you have cloud couldn't work, but I wonder No one is cloud code is in the standard anymore work code is here cloud code is at the bar for this is four months ago What work versus cloud code?
+
+[01:16:16] Speaker:
+I tested work versus cloud code no one's weren't the new cloud code. No, no one's actually done cloud code. Exactly.
+
+[01:16:27] Speaker:
+Yeah, I don't. It's all versus this versus that. Yeah. I just. I mean, it's kind of like how you remember how you did like make made of like a Windows app and everybody was like, like, oh, you can do that.
+
+[01:16:50] Speaker:
+Yeah, that I literally just asked Clawed. And that one was like, I show you something. Okay. You see what it says?
+
+[01:17:08] Speaker:
+You need about Mac apps and re-askin- Oh. Oh, ask it for an idea for an app. Okay. I kind of just want to see, like even just something that, you know, you maybe even could use or like some Like, think about, I don't know, I guess the issue, like the, whether there's a auto, like a button to it, then
+
+[01:17:32] Speaker:
+automatically auto record your screen or something like that, you know. Give me a super useful app for a small app that if we swipe away apps that we can bring them back, like undo last.
+
+[01:17:50] Speaker:
+Minimize kind of. I'm sure there must be a key command, a key stroke in Apple that covers that, there must be.
+
+[01:18:06] Speaker:
+Yeah, yeah. I just want to create a small app for whatever, you know. Oh, I was going to do you want to try.
+
+[01:18:14] Speaker:
+Okay. I was going to say if you for a small app where you can basically press that button or activate it, it will automatically start recording your screen.
+
+[01:18:27] Speaker:
+Okay, whatever is on your screen. So you don't have to go through loom, you don't have to go through whatever.
+
+[01:18:31] Speaker:
+You just use your, give me a small app that I can record my screen on real quickly. Let's create. it.
+
+[01:18:43] Speaker:
+Let's create an app like that, okay? Maybe I have it asked you questions. Maybe. Yeah. And, okay, good, it's going to go planned on.
+
+[01:19:01] Speaker:
+Yeah. I like that it does that, like initially on its own. It's really funny because this guy has access to everything, you know?
+
+[01:19:19] Speaker:
+Yeah, SwiftUI. Yeah, screen reporting. Of course everything. You can do one and two. Oh, yeah, do you select? Oh, good.
+
+[01:19:34] Speaker:
+Area solution. Good. Yeah, so we're both screens on now. It just does, I guess, uh, the shaping it. I guess we had it on, um, yeah, it makes the one.
+
+[01:20:17] Speaker:
+It's the same as if you do it on terminal. Probably. This? Yeah, it doesn't work? Yeah, because warp is kind of like, like a user-friendly, do you want to proceed?
+
+[01:20:34] Speaker:
+Yeah. Good. I noticed how it's putting in 2026 a lot. So it seems that it's a, they must have updated their system prompt or something.
+
+[01:20:43] Speaker:
+Till like any time it's time, make sure it's 2026 and then it must like say it and it's output. Okay, next up, here we are.
+
+[01:20:56] Speaker:
+Phase two planned, phase two authentication, the research complete verification pass, next up, execute phase two, run all four plans, see your first, let me check the context.
+
+[01:21:15] Speaker:
+Wow, nothing, okay, I guess, oh, I guess it did already, now I do GSD. what's next on just the planned dash phase based oh god I'm actually face to yeah I guess it takes care of its own context yeah but your local The local hold still doesn't work or the local hold still doesn't work or.
+
+[01:22:31] Speaker:
+Let me see. No. Right now it's doing off. So, I mean, yeah, I see, I don't know what dependencies are needed for.
+
+[01:22:50] Speaker:
+I think that's supposed to be like done first, but I don't know what we should. If it doesn't work at the end, we can still use just anti gravity, you know.
+
+[01:22:59] Speaker:
+and fix up the front troubleshoot that thing. We have to add an agent's file for gravity and integrity, you know, doesn't it need kind of like it's working on it?
+
+[01:23:13] Speaker:
+No, no, no, you just have to open, you just have to open that to get your done folder in anti-gravity.
+
+[01:23:20] Speaker:
+Okay. And say, the student parallel. The problem is if you troubleshoot it, you know, we might interfere with the agents.
+
+[01:23:28] Speaker:
+Oh, I mean, like make a completely separate project and develop that in parallel like now. Ah, yeah, but then you use double the tokens.
+
+[01:23:39] Speaker:
+And I don't have a full account yet. No, I mean, I use it on mine. Okay, then you can, yeah, then you use it on endigravity, yes?
+
+[01:23:49] Speaker:
+Yeah, kind of just curious to see how it does because the first time that I use that, because that's how I made demo pro win actually.
+
+[01:23:55] Speaker:
+Okay, that's good. That's good for it's very good for having like a like to see how good it works and the gravity.
+
+[01:24:03] Speaker:
+Yeah, yeah, so when I download it to gravity, I come back in a second. But then how is it with all those Americans are you getting along with them well or sometimes it's a little bit weird?
+
+[01:26:48] Speaker:
+No, I mean they're fine. I don't really have to like so I have you know we have a group of friends here that were friends through, yeah, this is like a group of whole friends here through like DJing and stuff.
+
+[01:27:06] Speaker:
+And, but then the people who are like in the, kind of, really hoidy, toady kind of neighborhoods, they're nice, but they're not really my jam.
+
+[01:27:15] Speaker:
+Like, they're like the ones who put their children in those like gigantic bows, like the really big ones that they don't really like and you know they're kind of just I mean they're nice, they're fine, they're all right.
+
+[01:27:29] Speaker:
+I mean I don't know and I don't get like issues with anybody, everybody's super polite and you know yeah okay so let's use the same art that she gave me before I might go to the chat.
+
+[01:27:45] Speaker:
+Oh you're you have a command you gotta run and work. Oh I gave it to you I don't like this blueprint, right?
+
+[01:27:52] Speaker:
+Yeah, I'm getting it. I'm not going back for it. Oh, you get it to me. What's happened? I'm about to.
+
+[01:27:58] Speaker:
+But you want to use anti you have you will have to use. You first have to start the plot code there.
+
+[01:28:07] Speaker:
+Yeah. I will. And then we have to get the shit get the shit down there as well. Mm hmm. Let me open up the get shit done window so that it's not getting longer.
+
+[01:28:26] Speaker:
+It's situation. There we go. That's still going. Let's do like that. Okay, now let's do the GSD install, there we go, let's do it.
+
+[01:29:22] Speaker:
+Oh, you know what I did, I didn't come in to this with dangerously skit commissions. So I'm going to exit this.
+
+[01:29:54] Speaker:
+Yeah. I'm going to read. Okay, that's not, uh, then the x-axis you've done is the last she's seen. What the hell is this?
+
+[01:30:32] Speaker:
+I'm sorry. Excuse me. We can get them all set. The check. Wow. Which is the download. Okay. Okay. I'm not actually, I don't have a folder that I'm opening right now.
+
+[01:31:11] Speaker:
+I'm going open my projects for anti-gravity. So this one would open it in an anti-gravity folder. You see where that is.
+
+[01:31:32] Speaker:
+I don't have a dot-cloth folder, though. You know the one that's host to have like, Wait, let's have its own stuff in it.
+
+[01:31:40] Speaker:
+Okay, we'll just talk about it. What's missing? Oh, I'm just getting the project that you, the project. Project, so I don't, I, this isn't actually open in a project folder right now.
+
+[01:31:59] Speaker:
+You just open, just open a folder. Then make a new folder. Yeah, be. See, but this is where this is where this is your main.
+
+[01:32:14] Speaker:
+like you see at the right side, you see iCloud Drive before and you see this is your main folder and there you can just inside of going projects because I think the other one should be probably in projects yeah now you make a new folder now new folder so it doesn't okay because what I found okay you
+
+[01:32:36] Speaker:
+know again I know that's yeah okay what is this do it like this And then you say, I'm the gravity, huh?
+
+[01:32:44] Speaker:
+Just the anti-gravity? Yeah, anti-gravity. And then you can create a new folder inside and say, community. OK, but that is going to be super nested, though.
+
+[01:32:54] Speaker:
+My understanding was that you put the dot, like what it's going to do is that those are actually conflict files.
+
+[01:33:01] Speaker:
+And that actually, you know, I will put a project folder in here in this project. Because I think that the other ones are put in and those are actually config files where there were those IDEs have all their configurations.
+
+[01:33:11] Speaker:
+Right. The right now is in get shut down. Like the right now community is completely in get shut down because we started there.
+
+[01:33:19] Speaker:
+Right. Right. But I'm going to make a new like a new project completely separate from this initial one that'll just be like GSD and T gravity.
+
+[01:33:28] Speaker:
+Okay. Good. That way and you know, we know which one it was. And I'll put the project blueprint in here.
+
+[01:33:40] Speaker:
+Yes, I trust first, I trust. Oh, yeah, yeah, my bad. Then project. And then I quad. Of course. Where did quad go?
+
+[01:33:58] Speaker:
+Oh, no, no, I guess. No, no, no, no, no, no. here you see it likes it no no no no no no no yes in solo stay in you see project blueprint yeah go down no no the other one small one or just where is it empty go down and then down down down down down down no no in the middle like the icons on the icons
+
+[01:34:24] Speaker:
+on the real me to do I wanted you open extensions and then open clawed inside the extension. Now clawed code.
+
+[01:34:37] Speaker:
+Yes, now go in this one. Yes. Oh, it works for this? No, that's for VS code. No, it works like that as well.
+
+[01:34:45] Speaker:
+What code? Yes, install. Oh yeah, this is based on VS code. Yeah, exactly. Oh, so you don't use it with a terminal with this?
+
+[01:34:52] Speaker:
+I don't. You can. I don't. I would just, I'm usually like, oh, it's A, B, test it. Let's see. Next one, next one, next one, next one, next one.
+
+[01:35:05] Speaker:
+There it is. And now you can talk with it. Okay, let me close these extensions. Okay. Right. No, but the GSD I'm going to do in the terminal, because I think I need a terminal commands.
+
+[01:35:17] Speaker:
+You can do that as well. Yeah, yeah, so I'm going to go ahead. I'm going to leave this open now for any issues, but I'm going to run a terminal.
+
+[01:35:26] Speaker:
+Well, no, no, no, no, no, no, no, no, no, no, Sorry. Uh, did you just get funny? Thing is, like foreigners only know how to swear with bad words.
+
+[01:35:41] Speaker:
+We don't even have the nice ones, you know. We can like let the f*** and whatever. Oh yeah, you don't need do it in the, in the polite way.
+
+[01:35:48] Speaker:
+They're like, oh, they're not like dang darn like well, you know, I appreciate how concise the German language is and how the words are spelt phonetically and the words mean what they mean.
+
+[01:36:06] Speaker:
+Yeah. It's not necessarily that way in English. Okay, bypass permission is on. So let's go up to this GSD. So first you do bypass permission and then you then you start GSD.
+
+[01:36:19] Speaker:
+Yeah, yeah. So I did that. I don't know what's new. I'll go did that already. Jason project. Hello. Hey, I'm good now.
+
+[01:36:45] Speaker:
+Yeah, how are you? I'm good. Okay. Okay. Yeah, yeah. So the transition. Okay. Okay, but he's like, he's, oh, he's at the hospital, he's just sleeping, they're like keeping him much monitoring him.
+
+[01:37:48] Speaker:
+Yeah, no, no, that's fine, that's okay. We're not, okay, no, no, you're fine, it's okay. Yeah, I remember those. Yeah, yeah, no, I don't know if they, yeah, that I'm not sure if they do anymore.
+
+[01:39:05] Speaker:
+Yeah, I'm not sure, but I'm sure they figured it out. Figure out a way to do it. Okay. Well, let's have a phone with them.
+
+[01:39:43] Speaker:
+Okay, no worries. Don't you want me to call. I can call this phone right now. You want to try to find it.
+
+[01:39:50] Speaker:
+Oh, yeah, you can do it in your own. Okay. All right, no worries. Okay. No, no, no, no, no. I appreciate you letting me know.
+
+[01:40:06] Speaker:
+Yeah. Yeah, no worries. I'll give her a call. Oh, oh, yeah. I'll give you a call and I'll let her know.
+
+[01:40:20] Speaker:
+Yeah, no problem. Okay. I'll sign in a bit. All right, bye. No problem. Bye. So, do you see it made the show of the app?
+
+[01:40:30] Speaker:
+Yeah. Oh, yeah. So it's home. So it's still being obviously, you know, the phases aren't done yet. Yeah. Yeah. Yeah.
+
+[01:40:39] Speaker:
+Yeah. So now instead of, so as you know, school has this stuff listed across the top. like that. Yeah, yeah, yeah, like I have as well.
+
+[01:40:49] Speaker:
+Yeah, I show you mine again. Do you like it that way better because I mean, I can yeah, yeah, I like it better, but I think it doesn't matter.
+
+[01:41:00] Speaker:
+I mean, for now, I don't think wait a second, stop sharing. No, I think this is just a lot of stuff is the design is very at the end.
+
+[01:41:12] Speaker:
+Where are you here? Here. I know. Right. Like. Okay. Yeah. Now is this mine? So here. Wow. Yeah. Yeah. right here.
+
+[01:41:37] Speaker:
+Yeah, yeah, yeah, yeah. Holy smokes. That is great. Yeah, yeah, it is, it's actually you see and they are not all the same, you know, like I have separate categories.
+
+[01:41:50] Speaker:
+All post nice. And yeah, yeah, it's, it's, that's super cool. Yeah, it is quite, it's quite nice. This is quite nice.
+
+[01:41:59] Speaker:
+However, you know, this is just like, um, it's very vibe coded. I don't think it's very stable stuff. But it is made without Claude code.
+
+[01:42:11] Speaker:
+It's completely made with Claude 4.5 inside of a degradity. You know, oh, okay. Okay. Is that, is that, um, is that, um, computer now.
+
+[01:42:27] Speaker:
+Just on my local, but I can put it on GitHub, we can work on that. But whatever, I mean, we are just trying now three different versions, you know, and then we take the one that looks best.
+
+[01:42:38] Speaker:
+But mine has a little issue, you know, the problem with mine is it didn't ask me a lot of questions.
+
+[01:42:43] Speaker:
+I just love, for example, here, you know, like log out, we can do that. it. You can open a brownfield project with GSD.
+
+[01:42:59] Speaker:
+It doesn't have to be new. It can be a brownfield project. And then that's when you have it map your code base.
+
+[01:43:05] Speaker:
+Remember how it's saying should we map the code base and it's mapping its own. Yeah, so it can map this code base in a cloned repository and then it can get it's get shit done with this layout because this looks, I like how yours looks way better than this black one.
+
+[01:43:20] Speaker:
+Yeah, but is this what was not how it looked in the beginning might look completely shitty in like neon colors really yeah, yeah, yeah, so I just I just gave it like the style afterwards.
+
+[01:43:34] Speaker:
+words. So how, wait, I, I did it with what is it called again? What was this platform called where we, where you can find nice designs?
+
+[01:43:49] Speaker:
+Oh, be hands. No, no, no, no, no, inside side of, let me check school. Aura, Aura, Aura. Aura. Oh, okay, gotcha, gotcha.
+
+[01:44:01] Speaker:
+Yeah, there's also 21st. I don't know if they're just if I'm coding platform if they, but they also template. I show you which I did.
+
+[01:44:08] Speaker:
+I like, I did it in it was a shitty design, but it was already the design was at the top.
+
+[01:44:14] Speaker:
+So that was like that. But then I just figured, Oh do you take a template from there? No, I took screenshots and stuff but it was a screenshot from this, from Aurora.
+
+[01:44:48] Speaker:
+Why is it doing that? Ah here, this one. So I gave it this template. it. And I said, okay, get inspired by this URL.
+
+[01:45:14] Speaker:
+And you'll see like here everything is already rounded corners, you know. Yeah, that's nice. Yeah, you can see it kind of.
+
+[01:45:26] Speaker:
+Yeah. Yeah, so this is our pick which one. What can I see? No, I said I can never pick which one.
+
+[01:45:33] Speaker:
+I always go, So I'll go see all those pages and scroll through, scroll through them like this is nice. That's nice.
+
+[01:45:37] Speaker:
+That's nice. That's nice. Okay. Then I kind of pick one. Here's the thing. So it said, check, complete authentication flow.
+
+[01:45:47] Speaker:
+The dev server is running, but it has me as a guest user and there's no login. And so it's saying, click sign up to go what happened to the members.
+
+[01:46:02] Speaker:
+All this is placeholder. It's a show. Okay. So is it finished? Well, just no, it's not done. It's just a show.
+
+[01:46:09] Speaker:
+It's right now. It's after phase two. So it's saying that it finished the authentication, but it's not the authentication does not work.
+
+[01:46:16] Speaker:
+Um, I, oh, wait, on text, left, mental auto compact. It probably, you probably have to wait until it finishes. No, it's not doing anything.
+
+[01:46:31] Speaker:
+It's, it's waiting for input. Oh, okay, okay, okay, okay. Let me see. When I open the app on the browser, it appears.
+
+[01:46:53] Speaker:
+I don't know there's any command to give like, I don't want to override like its commands for whatever its compacting process is but I just wonder if there's anything I can tell it now just to, I don't guess it'll come back on its own.
+
+[01:47:21] Speaker:
+I'll let it come back. Yeah, let it come back. Yeah, when I open up that registration, what's wrong with API error?
+
+[01:47:48] Speaker:
+Is that the 500? Is that when there's too many requests? No, thank you, I air under cloud code. I expect an issue with red and different filling error.
+
+[01:48:07] Speaker:
+Quises generally not an issue with your coder set up or rather a problem with cloud API services itself sometimes new server being overloaded.
+
+[01:48:13] Speaker:
+Check the cloud steps page. Let's see where the hell is that okay. Also systems operational. Now, apparently, it's 412, what do you think?
+
+[01:48:40] Speaker:
+Looks like the operation also. I have exactly, right now a problem with Claude. Like Claude? Yeah, I cannot ask any question.
+
+[01:48:52] Speaker:
+Probably overloaded right now. Yeah, but it has nothing to do with you. It's like Claude itself is like not working right now, but why do the sales seems operational?
+
+[01:49:02] Speaker:
+Yeah, because they are it's not you see it's yellow at the end. Yeah. So right now they have they have errors.
+
+[01:49:12] Speaker:
+Man. Okay. And I have also exactly that problem right now. Let me see if anyone else has that problem. Well, I'll do that right the second.
+
+[01:50:13] Speaker:
+Excuse me. Well, this one's working. use GSD and net. What is the NET command?
+
+[01:51:36] Speaker:
+Yeah, they don't have it then. Okay. Yes, it is just a new project. I come back in five minutes. Okay.
+
+[01:52:13] Speaker:
+Yeah. No worries. Yeah. Okay. Back. It's still still looks yellow. And now I got that same message in my in anti-gravity.
+
+[02:03:02] Speaker:
+Over here. So I think it's just down down. Yeah, yeah, yeah, yeah, I was saying that I have the I got the same error in integrity was working first, but then yeah, I mean that work.
+
+[02:03:31] Speaker:
+I think I have issues at the moment. Okay, no worries. I'll pause using cloud then. I'm sorry, I was really hungry.
+
+[02:03:39] Speaker:
+I need to get some food. Hey, it's okay. It's okay. It's okay. It's done. Yeah, no worries. What kind of a doctor you have?
+
+[02:03:51] Speaker:
+Two multi-poose. These little white fluffy little things. What is a multi-poor? A multi-poor? I'll show you. They're seeing a trait in the living room.
+
+[02:04:03] Speaker:
+Like little white. They're like little poodles, little fluffy poodles. But like small. But it's like mixed with the maltees. Oh, okay.
+
+[02:04:13] Speaker:
+I'm not a big like dog person like like in terms of knowing their breeds or anything, but I just know that those are that's their brand of their breed so we put this.
+
+[02:04:29] Speaker:
+So do you not have to work now today go no no today I never work so I stay Friday. I only work from Saturday on.
+
+[02:04:39] Speaker:
+But the work is, I mean, it is the most stupid work you can do, but it's like, I have nothing to do there.
+
+[02:04:47] Speaker:
+It's like, I have on five, four days a night, you know, I can do my AI stuff. And not one in the world cares.
+
+[02:04:54] Speaker:
+So this is amazing. You know, like, yeah, I'm going to do this then, awesome. Yeah. Yeah, yeah. I just want to get off now.
+
+[02:05:00] Speaker:
+You know, I really want to, I think what we are, what we have in plan will like skyrocket past work.
+
+[02:05:06] Speaker:
+It's like I think it's instant it will instantly work I think I think it's a yeah, I think it's just a concept that I just I don't think anybody really had even thought of before no nobody Yeah, and with the medical stuff and the YouTube channel that will instantly work in the US and then go everywhere
+
+[02:05:28] Speaker:
+else and And with an AI class where people are not walking like AI jargon, just like how I told you, you know, and to do that internationally, I think that always also will immediately work.
+
+[02:05:46] Speaker:
+So we just need to get like some kind of communities running and then make a couple of videos and that's it.
+
+[02:05:54] Speaker:
+Yeah. I'm still an offensive at like how to it would it just be for ads are you talking about for like medical because I think that the videos itself I think the videos on your YouTube channel they can be almost anything as long as anyone from the medical field can see themselves there but you don't
+
+[02:06:19] Speaker:
+have to use like medical it's the same with with other stuff like for example like a chatbot for the website or to have like a rag, you know, like that kind of stuff without without the fancy words.
+
+[02:06:36] Speaker:
+So they can understand, you know, but it doesn't matter. It just like matters that you feel comfortable with those kind of videos and you make those, you know, so they look, you don't have to say medical.
+
+[02:06:49] Speaker:
+I mean, just like, you know, that they are, that people who are that feel, feel, feel that they are meant, you know, that they are like, they could be part of that group.
+
+[02:07:01] Speaker:
+Okay. I mean, and it's, you know, basically, it is, yeah, both regulated environments, truly, that's all it is. And it's just the clinical regulations, nonclinical regulations, but they're the same regulations.
+
+[02:07:13] Speaker:
+They're just, I mean, they're different ones, but under the same umbrella. Yeah. And so I just, yeah, okay. Yeah, I've been thinking about how to like, like, like really just, I mean, back and forth, these conversations and stuff with Claude to, to carve out what I actually want to make an entire channel
+
+[02:07:38] Speaker:
+about. Yeah. But I think like, you know, I'm saying, yes, but what you don't have a problem with is like, you know, what Mark is doing is like pushing every week another video.
+
+[02:07:49] Speaker:
+I don't think you have to do that at all. Sometimes, if you have an idea, make a video, you know, but this one's in two months, one's in three, one's in three weeks, it doesn't really matter because it wasn't a month maybe a little.
+
+[02:08:06] Speaker:
+But whatever it is, the thing is, we will, we are not trying to pull in new customers through your YouTube channel, but we get new customers through the ads, you know, and they are part of your YouTube channel, but we can scale those ads, for example, you know, if, if we think REC is a good product for
+
+[02:08:28] Speaker:
+you, you know, then we can create five different ads, which explain what a REC is in terms of somebody from your field and one of those ads will work with the examples you give and yes, you know so the point is our our funnel like Marx funnel is completely SEO it's I have to make a video and that video
+
+[02:08:56] Speaker:
+will put some people in our community and your YouTube channel is credibility that you know what you're talking about. And the ads are our funnel to get people in the community, our ads are the funnel and marks regular videos are the funnel.
+
+[02:09:17] Speaker:
+And that is much better, in my opinion, because we can scale that infinitely. Whereas Mark has to publish a new video all the time.
+
+[02:09:36] Speaker:
+So, for example, like the guy from the movie website, he's not doing any, he probably is a little bit, but his marketing is not creating content.
+
+[02:09:51] Speaker:
+His marketing is creating advertisements and pushing those on Instagram and all his clients come from Instagram. He just makes advertisements for his advertisement community.
+
+[02:10:08] Speaker:
+That's it. They use his ads. Yeah, and the ads bring in the customers. And for us, our ads on YouTube channel, on YouTube ads, in rich neighborhoods, in the US, in Canada, and afterwards everywhere else in rich areas will bring in the customers for the community.
+
+[02:10:33] Speaker:
+So, it's not like your channel is more like the channel of NADM. It's a channel where you showcase that you are the expert in automation in your specific field.
+
+[02:10:45] Speaker:
+But it's not necessary to make one hit video after the other. It's just making credibility of your knowledge, showing that you have that knowledge, you know.
+
+[02:11:01] Speaker:
+Gotcha. Yeah. And that pushes away the pressure. So basically that means you can make videos of whatever you like. It's much better because we can focus on what gives you credibility.
+
+[02:11:19] Speaker:
+Instead of what sells for the community, Mark has to think about how do I get more people in the community, we have to sing with your regular YouTube videos.
+
+[02:11:30] Speaker:
+How can we showcase your credibility in your field together with automation and we don't have to care, do we get a lot of clicks with that or not?
+
+[02:11:43] Speaker:
+We can be super serious, you know, like it's the opposite of clickbaiting, like Mark is also doing it kind of good, you know, because he takes care of that, but still he has to take care that his something that's look like, you know, whatever magic, blah, blah, you know, and we don't have to take care
+
+[02:12:01] Speaker:
+of that part, which is really, really good because in a serious field that looks very unserious. Yeah, yeah, yeah, because and you want to you want to showcase just like, okay, I am I have a PhD in toxicology, you know, and I have specialized in automation, you know, and I will show you a couple of automation
+
+[02:12:25] Speaker:
+switch I have done on my channel. And that looks way more serious. And the sales talk we keep for making advertisements.
+
+[02:12:39] Speaker:
+You know, because that's how we get people in our community for real. Yeah. Yeah, I can see that. And I mean, it's so timely with that.
+
+[02:12:53] Speaker:
+And with that call that I had the other day, because I can loop right into that. Yeah, exactly. Is he, yeah, I mean, I can, yeah.
+
+[02:13:05] Speaker:
+And it's a much better way because if you have anything serious to sell, then you really don't, you wanna really stay clear of all this clickbaiting stuff and of, you know, of shiny objects, you know, you wanna be completely clear of that.
+
+[02:13:22] Speaker:
+You are more like you know, I am like a professional of my field and we do have a big problem and that is hallucination of AI and in this video I show you how we can take care that the AI is not hallucinating and you you can make a video completely in this focus and Everybody who is like normally clicking
+
+[02:13:42] Speaker:
+away because oh, that's not interesting I'm more into how to make a million in one week. You know what I mean?
+
+[02:13:49] Speaker:
+Yeah. Yeah, but like, yeah, I'm listening to it everywhere, the opposite. So basically, you say, okay, I am professional. I know that you the viewer are professional and we have to make sure that our data is clean.
+
+[02:14:02] Speaker:
+We have to make sure that our data is protected. We have to make sure that our patients or our customers, if you want to say, not want to say patients, are not in some kind of Google document, whatever you want to call it, so you can make it like not boring but serious.
+
+[02:14:24] Speaker:
+So the people inside of the ad, they will also not see clickbaiting stuff, but they will say see something like, we are the experts of AI automation in this specific field.
+
+[02:14:39] Speaker:
+You know, and if you would like to see more of our videos, you can see the channel But you know, but what would we offer you is our community and we offer you those tools and we offer you a community of medical professionals That also want to automate with AI So I will have to have had some medical professionals
+
+[02:15:00] Speaker:
+sign up. Yeah, but I tried to you know the problem here It's the same as my swear words. I don't know other words for better words.
+
+[02:15:07] Speaker:
+I see what you're saying. Yeah. So kind of like swarge that kind of, but like busy or the community of, yeah, I mean, you say professional.
+
+[02:15:17] Speaker:
+As professionals. Health, health. Health, yeah. I was saying, like, health, health, health, health, health. Okay, health, health, health, health, health, health, health, health, like a nurse, a vet, and a doctor should feel like they are meant yeah health science professionals science yes you can call
+
+[02:15:39] Speaker:
+it health science yeah health science professionals yeah but whatever that is you know we we just those ads we put in to get them into the community and your videos are specific fields of health science professionals that you have done some AI for, but obviously with mock data, so nothing is shown.
+
+[02:16:07] Speaker:
+You know, the mock data route seems, I mean, it just, it was right there, like it just makes so much sense.
+
+[02:16:17] Speaker:
+And for so many things, I would wait, but I can't at the data right before I can try out this instead of like as a feature kind of thing.
+
+[02:16:28] Speaker:
+I was like just trying it. Yeah. I digress. What do you know? Yeah. Oh, that the mock data, it helps you to get through further stages of development and not just get stalled by the.
+
+[02:16:44] Speaker:
+Yeah, exactly. Yeah. You have like an issue with the data. Like, no, it's like you can you can try whatever you want the Google way with your mock data and then find out find a way to do it without the Google.
+
+[02:16:58] Speaker:
+You know like you can first see a problem and then you can take care of the compliance which is really good otherwise you have like it's complicated from the get go and this way you can just automate and then try to switch off the internet kind of.
+
+[02:17:20] Speaker:
+I see what you're saying. That makes a lot more sense and Yeah, I mean now But yeah, I have for like videos and stuff that can be Yeah, I'd like to make it like a off Google kind of thing and But I mean, anything you can, you can connect to AWS, but I don't know that I wanted to go to you on it.
+
+[02:17:56] Speaker:
+And I just, I, yeah, I'm like, well, what I show them, like, because you, like, how to build stuff. They don't care about our build stuff.
+
+[02:18:05] Speaker:
+They don't care about how we build stuff. They care that, like, you know, the video I made with, I didn't even do the video, but I showed you the pictures of the restaurant owner.
+
+[02:18:15] Speaker:
+You know, we can say, this is Peggy, Peggy owns a vet for poodles, whatever, you know. Okay, so straight up.
+
+[02:18:26] Speaker:
+Yeah, we can do that, you know, like let's imagine because we have to pick up normal people. We don't pick up AI people or nerds programmers.
+
+[02:18:37] Speaker:
+you know we pick up regular people and they we we would just explain them for like you know that's very good what Jen does because she's like oh you know we have a fitness center you know like yeah I mean that's I'm glad it's that's I that's inspiring to see because it takes you know you got to like
+
+[02:19:04] Speaker:
+really like believe that know it do it and then like execute well on it. And yeah, that's basically you don't show much of the technique behind.
+
+[02:19:15] Speaker:
+You just show the problem you know and then you show okay we made this automation. This is a website of the that.
+
+[02:19:24] Speaker:
+This is the little assistance inside of a website that takes care of our schedule. Okay and now you can see We don't care about the automation, but we care about Google Calendar.
+
+[02:19:38] Speaker:
+So now I talk to the assistant, Chatbot, okay. And now I say, okay, can I have an appointment with Thursday?
+
+[02:19:46] Speaker:
+And then the assistant says, oh, Thursday is full. How about Friday in the morning? And you say, okay, that's nice.
+
+[02:19:52] Speaker:
+And then the Chatbot says at 10 or 11 a.m. And you're like 11 a.m. And then you see the Google Calendar, where it is, where it's placed, you know?
+
+[02:20:06] Speaker:
+Can I please have your email? I will send you and what's it called? Like a welcome email or confirmation? Oh yeah, okay.
+
+[02:20:14] Speaker:
+Yeah. And I said you the confirmation and then you open the email and you can see confirmation is sent. And then a normal person understands, okay, we have seen the vet, we have seen the problem, we have seen on the website, we have seen the system and we have seen the confirmation and we have seen the
+
+[02:20:33] Speaker:
+Google Calendar call it fear now to get it into your own whatever climate, not clinic, just different world, you know?
+
+[02:20:44] Speaker:
+Yeah, but I guess yeah. But the thing is our own health business. Yeah, I guess, I'm going to do I want to, do I want to be showing Google?
+
+[02:20:53] Speaker:
+If I'm talking about like their business, like, No, no of course not because, but it was just my explanation of how to get done, you know, it's just we show the problem with like a video of the person we show a website we show the assistant and then we show in the background that stuff gets done, but
+
+[02:21:14] Speaker:
+not how not Google not an NN and not floor code just like there's a website there's a email client somebody gets a message on the phone that says appointment confirmed and we have seen that there has no one oh it can just be like an ad type thing really where it just shows like it's like an email client
+
+[02:21:38] Speaker:
+doesn't have to be an actual client it can be like email or like say one new email no no no no and because we also say we We put a subtitle for privacy reason, whatever.
+
+[02:21:54] Speaker:
+We show this with mock data with what is called potential client, but not a real client. So people know for sure they know that you show what's done and how it's done, but we don't show your real customers because that confidential.
+
+[02:22:15] Speaker:
+Yeah. And that way, you know, you think of a couple of things that you want to build where you think, OK, there is a target audience that looks serious.
+
+[02:22:28] Speaker:
+I also think like what's very good would be very good is because I know like doctors have a problem with their research that stuff is inside of the research, which is not true.
+
+[02:22:43] Speaker:
+And this is almost like this is as important as Mark's example of machine learning with cancer. You don't want to have research paper where the AI makes up stuff which is not true.
+
+[02:22:55] Speaker:
+So this could be a very good video for you to showcase how to use AI in a professional field. Because doctors, when they see that they're like, okay, I also have issues with that.
+
+[02:23:08] Speaker:
+I want to I wouldn't know more about that, you know? And then they see, okay, our communities they can learn that.
+
+[02:23:15] Speaker:
+Hey, I'm going to have to run. Are you, but you're not, you don't work today. So I mean, I would be available here if you like.
+
+[02:23:24] Speaker:
+Okay. All right. Cool. Yeah. Oh, I'll come back on a little bit. Yeah, do that. Okay. All right. I'll talk to you later.
+
+[02:23:30] Speaker:
+Bye.
+
+==========================================================
+END OF TRANSCRIPT

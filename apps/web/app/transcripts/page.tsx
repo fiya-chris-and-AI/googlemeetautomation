@@ -29,6 +29,17 @@ export default function TranscriptsPage() {
     } | null>(null);
     const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
 
+    // Bulk extraction state
+    const [extracting, setExtracting] = useState(false);
+    const [extractResult, setExtractResult] = useState<{
+        transcripts_processed: number;
+        transcripts_skipped: number;
+        transcripts_empty: number;
+        transcripts_failed: number;
+        items_extracted: number;
+        items_flagged_duplicate: number;
+    } | null>(null);
+
     const refreshTranscripts = () => {
         fetch('/api/transcripts')
             .then((r) => r.json())
@@ -65,6 +76,31 @@ export default function TranscriptsPage() {
             setSyncResult(null);
         } finally {
             setSyncing(false);
+        }
+    };
+
+    // Count transcripts that have no AI-extracted items (unprocessed)
+    const unprocessedCount = useMemo(
+        () => transcripts.filter((t) => !t.ai_extracted_count || t.ai_extracted_count === 0).length,
+        [transcripts],
+    );
+
+    const handleExtractAll = async () => {
+        setExtracting(true);
+        setExtractResult(null);
+        try {
+            const res = await fetch('/api/action-items/extract-all', { method: 'POST' });
+            const data = await res.json();
+            if (res.ok) {
+                setExtractResult(data);
+                refreshTranscripts();
+            } else {
+                console.error('Extract-all error:', data.error);
+            }
+        } catch {
+            // Silently handled
+        } finally {
+            setExtracting(false);
         }
     };
 
@@ -176,6 +212,20 @@ export default function TranscriptsPage() {
                 >
                     {syncing ? 'Syncing...' : '⟳ Sync Inbox'}
                 </button>
+                <button
+                    id="extract-all-btn"
+                    onClick={handleExtractAll}
+                    disabled={extracting || unprocessedCount === 0}
+                    title={unprocessedCount === 0 ? 'All transcripts already processed' : `${unprocessedCount} unprocessed transcript${unprocessedCount !== 1 ? 's' : ''}`}
+                    className="px-4 py-2 text-sm font-medium rounded-lg transition-colors
+                               bg-transparent border border-theme-border
+                               text-theme-text-primary
+                               hover:bg-[rgb(var(--color-muted))]
+                               disabled:opacity-50 disabled:cursor-not-allowed
+                               whitespace-nowrap"
+                >
+                    {extracting ? 'Extracting...' : `✦ Extract All${unprocessedCount > 0 ? ` (${unprocessedCount})` : ''}`}
+                </button>
                 <UploadModal onSuccess={() => refreshTranscripts()} />
             </div>
 
@@ -193,6 +243,30 @@ export default function TranscriptsPage() {
                     </span>
                     <button
                         onClick={() => { setSyncResult(null); setNewSyncedIds(new Set()); }}
+                        className="text-theme-text-muted hover:text-theme-text-primary ml-4 transition-colors"
+                    >
+                        ✕
+                    </button>
+                </div>
+            )}
+
+            {/* Extract-all result banner */}
+            {extractResult && (
+                <div className="mb-4 px-4 py-3 rounded-lg border border-theme-border
+                                bg-theme-card text-sm text-theme-text-primary
+                                flex items-center justify-between">
+                    <span>
+                        Extraction complete — {extractResult.transcripts_processed} transcript{extractResult.transcripts_processed !== 1 ? 's' : ''} with items
+                        {extractResult.items_extracted > 0
+                            ? `, ${extractResult.items_extracted} item${extractResult.items_extracted !== 1 ? 's' : ''} extracted`
+                            : ''}
+                        {extractResult.items_flagged_duplicate > 0 && ` (${extractResult.items_flagged_duplicate} duplicate${extractResult.items_flagged_duplicate !== 1 ? 's' : ''})`}
+                        {extractResult.transcripts_empty > 0 && `, ${extractResult.transcripts_empty} had no action items`}
+                        {extractResult.transcripts_failed > 0 && `, ${extractResult.transcripts_failed} failed`}
+                        {extractResult.transcripts_skipped > 0 && `, ${extractResult.transcripts_skipped} already processed`}
+                    </span>
+                    <button
+                        onClick={() => setExtractResult(null)}
                         className="text-theme-text-muted hover:text-theme-text-primary ml-4 transition-colors"
                     >
                         ✕

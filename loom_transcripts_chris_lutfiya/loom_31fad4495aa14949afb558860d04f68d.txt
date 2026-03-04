@@ -1,0 +1,1094 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Exploring AI Applications in Science and Business Strategies
+Video ID: 31fad4495aa14949afb558860d04f68d
+URL:      https://www.loom.com/share/31fad4495aa14949afb558860d04f68d
+Date:     Unknown
+Duration: [01:57:08]
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T19:38:34.023Z
+==========================================================
+
+[00:00:00] Speaker:
+Error space, uh, engineers or error, like astronauts and, uh, the field is what would be like, uh, error space Yeah, we're like, I don't know moon signs I don't know how it's called, you know, like, it's like astrology but but in a scientific way, you know, you know, and I think like, you know, that
+
+[00:00:21] Speaker:
+would be cool. Because also like, we could also do that with Ted, you know, we already have a lot of Ted talks and we could say okay, tell me all, why don't we just do that?
+
+[00:00:33] Speaker:
+I'll see, yeah. Okay, you start it and then you just start it, why don't we just do it? I like how you started saying what you were going to do, like what we should do and then you're like, you just stop and they're like, why don't we just do it?
+
+[00:00:47] Speaker:
+Yeah, exactly. Hey, I like to have like a list of the main branches of science exactly as they are from the TED science talks, which I have inside of this notebook and like it's the main branches are interesting for me and with like one or two sub branches as example and example like one field would
+
+[00:01:15] Speaker:
+be medical science and sub branches would be like like dentists or what are like cancer doctors called oncologists, cardiologists.
+
+[00:01:40] Speaker:
+Yeah, but I got two examples. So I mean, those are, yeah, those are obviously like a medical, they're just different special please, please give me a list of those scientific fields.
+
+[00:02:25] Speaker:
+And I think once we're alive it would be super interesting if you can get like some people from your who are interested like a little bit interested in AI, you know, from scientific people you know, you know, already it would be super cool to get them somehow like involved, you know?
+
+[00:02:40] Speaker:
+I will, yeah, I know more accepting. Cool, And I think like even like if you know them like who cares if we give like 50 accounts out for free, you know, it doesn't matter I mean, it would be amazing to just get activity in it, you know, before like when we're paying for it.
+
+[00:02:58] Speaker:
+Yeah Okay, genetics, Parontology, Neuroscience, Marine Biology, Ecology, Quantum Mechanics, Particle Jesus Christ. There's like a lot. But because you're such a learner for you, that will be a piece of cake, Hold up.
+
+[00:03:25] Speaker:
+Ooh anatomy, you forgot anatomy. Yeah. We'll cut it in the screen. That's not in the screen. That's like a, that's a field of skills and knowledge-based.
+
+[00:03:40] Speaker:
+Okay, so I put them in the science chat right now. Okay. So you can have a look, but you is not even in there, right?
+
+[00:03:48] Speaker:
+Yeah. Oh yeah, you're you're in the chemistry department, right? Like I put it in a chat of science experts dot AI Yeah, I love it.
+
+[00:04:09] Speaker:
+It's so much fun. That's how I see you usually when you are look when you when you lost me That's how it kind of looks So do you want me to just get like a full list?
+
+[00:04:28] Speaker:
+No, I just want to see like is that like what you think or is there something missing or is it like because I want to do it like what I want to do is now I want to So here in the mirror board, I will put all of them into target audiences.
+
+[00:04:47] Speaker:
+And when we have a YouTube on the YouTube stuff, I will create like techniques for example agent workflows or reg or whatever.
+
+[00:04:59] Speaker:
+And then we look that we have even an even amount of interesting videos for all those fields, just like one for each one.
+
+[00:05:21] Speaker:
+But so we have like a rarely will a pure chemist or say a pure like Warner, you know, whatever, like there's there's a lot of granularity here that doesn't necessarily exist in like actual like these are just like main fields and just in topics.
+
+[00:05:49] Speaker:
+You are toxicologists, so I think you are like inside of the chemistry department, So toxicology is like an umbrella, okay?
+
+[00:06:00] Speaker:
+It has multiple things underneath it. And so because you study toxicity as a result of some compound at a certain amount, then you have to consider things like one anatomy.
+
+[00:06:20] Speaker:
+me. Two physiology, your biochemistry. Oh, okay, I get it. So like, and then yeah, so all those things kind of come up.
+
+[00:06:29] Speaker:
+Okay. Yeah. Okay. Then let's put it differently. Let's put it differently. Let's say somebody is from the field of marine biology.
+
+[00:06:40] Speaker:
+Okay. Marine, what kind of like subject could he relate to? Not something that is for him, just something he would find interesting from the standpoint of like from he's like a marine biologist I know he is but like what will he find interesting but maybe not necessarily for him but he would find interesting
+
+[00:07:01] Speaker:
+like to make his brain spark interest in AI okay you know like that is like the thing you know so we get people in when you know then And it's because this is also like when we buy advertisement, you know, like when we get we get advertising, we can say, okay, this is like this video is about marine
+
+[00:07:24] Speaker:
+biology. You know, like not our video, but the video we want to place an ad in, you know, and then we know, okay, there are rich people watching this marine biology video right now.
+
+[00:07:38] Speaker:
+And we can place our content in there and they're like, ah, okay, that looks interesting as well. And then we do the same over in the content strategy so that we have a couple of videos in there and what I did this morning which was kind of interesting was all those brainstormed Let's say we have now
+
+[00:08:15] Speaker:
+different AI fields we would like to make videos for, like agentic workflows or RAC, okay? Then we get for each topic, we make brainstorming, like what I did, you know?
+
+[00:08:29] Speaker:
+So we get a list of 20 ideas, maybe, not something we are doing, so no stress, just something that in theory we could do, okay?
+
+[00:08:38] Speaker:
+And then we give an AI the job to say okay we have here we have here all those scientific fields and we have all those ideas please make us like a list of videos that could that have a high chance of going viral yeah and which respect every field of science so you say like make like a list of ideas Yeah
+
+[00:09:09] Speaker:
+I mean like you know I made this one yeah so this is what I showed you yesterday okay so this is like government contracting snip sniping system you know the lawyer stuff you know like those were the ideas okay and now imagine we have 50 or 100 ideas we just make ideas you know with our different branches
+
+[00:09:38] Speaker:
+of things we could do, like a rag or agentic workflows, okay? And now we tell the AI, okay? Please, AI have a look at those scientific fields, okay?
+
+[00:09:51] Speaker:
+And please have a look at our 50 ideas. We want that every target scientist in the field, that's at least one video and you pick the ID and you please tell us from each category which ideas you think will go viral and then we can manually check that with our brain as well but I think this way we get
+
+[00:10:20] Speaker:
+like we can we can get like really really good idea video ideas. And those we will finally do then. Okay.
+
+[00:10:35] Speaker:
+Sounds good, huh? Like doable or something? Yeah, yeah, I mean, I'm gonna play with the prawns a little bit. And I've been so like, so I see, so this is so that we can have a a lot of coverage throughout like the different sciences or is it like yeah I guess yeah I so yeah okay so yeah I just have a
+
+[00:11:03] Speaker:
+lot of coverage for those but so you're going to still be targeting targeting people by their postal code zip code yes yes yes yes like these Okay, okay, so with our target audience, okay, wait, so, okay, okay, so say, say, I feel like things like going on paleontology, marine biology, it's like, then
+
+[00:11:36] Speaker:
+it's like, okay, welcome to the earth science zone, like, it's a very. If we're targeting the people in those which areas, then let me, let me, I mean, this is not necessary.
+
+[00:11:56] Speaker:
+I mean, you're the scientist. It's not necessary. I gave you like the blueprint and we have to do it like that.
+
+[00:12:00] Speaker:
+You know, it's just like what I think, I mean, it's just Yeah, that's good. That's good. But obviously, if we target people in a rich area, you know, and in that case, that video would obviously be shown in front of another video that has something to do with marine science or marine biology.
+
+[00:12:24] Speaker:
+You know, so we can pick like the video And we can pick the zip code together so the video is not shown.
+
+[00:12:34] Speaker:
+It's only shown on the right topic in the right area. Okay, but however, you know, there are probably some very stupid.
+
+[00:12:44] Speaker:
+I like, you know, I think marine biology is very, very possible that there are not many people that interested. it, compared to medical, you know, I think the medical field is like, we have a lot more professionals in there because there's a lot more money to be made, you know?
+
+[00:13:02] Speaker:
+So it doesn't, we want to focus it, of course, in this area where money can be made. Question. Since you can, you can target specific people by the zip code and all the other parameters and stuff you send, can you also, like, in reverse, then request, like, hey, Google, what are these people in this
+
+[00:13:23] Speaker:
+drill down niche? What are they looking at? Give me what they're wanting, what are they, what are they clicking on?
+
+[00:13:30] Speaker:
+Like, can you, can, is there any way for, like, anyone to buy that from, like, so that they know what to put, like, to, in order to, like, say if they wanted to actually appease that audience, and they noticed, okay, half of them, like, looking up videos about spaghetti or you know something like that
+
+[00:13:47] Speaker:
+and you mean like yeah there is something that is called like people who are interested in this also like that you mean that right no no like if you're a target audience or doctors in Santa Barbara let's just say you're like okay hey Google Tell me the date from the doctors in Santa Barbara, filter the
+
+[00:14:16] Speaker:
+data and give you from the doctors in Santa Barbara. And we cannot know if they are doctors. The only way we can say that they are doctors is because they are watching a doctor video in Santa Barbara.
+
+[00:14:28] Speaker:
+Yeah. And then you set the per. I mean, we could do it by interest. I think you can also do by interest.
+
+[00:14:34] Speaker:
+I'm sure you know you can do by interest. So if somebody is interested in like medical stuff, you know, in Santa Barbara, we could target them.
+
+[00:14:44] Speaker:
+But that could be an old guy with cancer. You see like it's like that is not so specific. Like the TED Talk, you know, where somebody is like doing his brainy thing with medical blah, blah, blah, you know, like a cancer guy is not going to watch the TED Talk.
+
+[00:15:03] Speaker:
+You know, it's like it's a professional who is interested in This stuff, you know, yeah, so it's easier to target the right audience by by specific video I found it actually very interesting YouTube channel.
+
+[00:16:51] Speaker:
+I think yeah, yeah, really interesting Very very interesting. Yeah, yeah, let's see Yeah, wait. Okay. I just have to. Hey, it doesn't really work.
+
+[00:17:09] Speaker:
+What do we do with that? Um, nice Jewish. I suspect my last name. I don't know. It was just like somebody interviewed Rob Walling.
+
+[00:17:21] Speaker:
+I send you. Yeah. And I think it's interesting. I mean, I like yesterday when like you can click on the link I asked because I asked Gemini like because I prepared like for how to how to get your automation stuff going you know I did the same with the founders you know and it I tried to make like a strategy
+
+[00:17:47] Speaker:
+like Ted you know Ted is like the quality approval that the video inside of Ted is good, you know? And you will find shitloads of video on YouTube how to get rich.
+
+[00:17:59] Speaker:
+And basically, you know, this is mostly trash, you know? And so, you know, I asked like, okay, give me like four channels of, of worthwhile channel channels, where we can find like great ideas There's four professional people who are in the business field, you know, who want to make money, you know,
+
+[00:18:23] Speaker:
+and he's one of them, he was one of four channels, and he's like super specific on software. That's why it's interesting, like the other ones were all over the place with their ideas, you know, they were like, like, they had like investing money, blah, blah, blah.
+
+[00:18:38] Speaker:
+And this guy is like completely into into yeah, like into making software and he is like completely The AI is like not in his main thing.
+
+[00:18:52] Speaker:
+You know what I mean? Oh, he's like a key code. He's like a Click on click on the link It's in the what's app chat?
+
+[00:19:08] Speaker:
+This is a very dynamic arrangement right now. Here I go. Give such a nice, I can't say I can't say I can't do this.
+
+[00:19:52] Speaker:
+Here you come. All that is significantly better. See the Ted Science book. You want it? No, I haven't opened but I can't.
+
+[00:20:20] Speaker:
+No, you can't edit there, okay, hold on. Yeah, we always have to do now the email singing that seems to be like the issue.
+
+[00:20:30] Speaker:
+Yeah, I'll always use this on the other one because that's someone I use Google with author. Yeah, wait. It's the same email address I used right for Chris.
+
+[00:20:42] Speaker:
+It's the same email address I used for what was the other notebook I shared. Yeah, the L miller dot phd dot dabt.
+
+[00:20:53] Speaker:
+And which one do you want now? I'll put it on all types of TV. Ah, the tattoo, you want to have the tattoo.
+
+[00:21:05] Speaker:
+The tattoo on. Oh, would you book him in? Yeah, yeah. Oh, yeah, man, you know, you I know what you wait a second.
+
+[00:21:13] Speaker:
+Yeah, it's in the chat, yeah, it's a problem. Settings. Share. Yes, it's a problem. Not anyone who's linked. Okay. One second.
+
+[00:22:17] Speaker:
+Yeah. Okay, I edit you to the Science Notebook. Like I, it's an editor. So you can add now as well.
+
+[00:22:28] Speaker:
+I like when you do that nerdy smile, that introverted smile, which one? Like, you're like happy introverted, enjoying yourself sometimes.
+
+[00:23:00] Speaker:
+Because I was thinking about something. I do something that I think you'll enjoy. Oh, there you are. You muted me or you muted yourself.
+
+[00:24:42] Speaker:
+I muted myself so that I could think straight when I was prompting. I noticed I prompt differently when I know I'm recording it or if I know someone's listening or if I'm just thinking about it on my head, I'm like, oh yeah, it's conversation.
+
+[00:25:04] Speaker:
+This is all clear. But then you go to like see record like But I like that you just talk it that you just say stuff now I because I think it's it's the best way to prompt usually It's a huge relief that I didn't even know I was carrying away from because Now because I know that like I can Talk about
+
+[00:25:30] Speaker:
+something thing that I can convey the point before I thought I kept thinking I'd have to structure it out and I don't know just do a lot more in the front than I have to do.
+
+[00:26:02] Speaker:
+I hope the weather will be good in Berlin. I want to take a lot of pictures of you. That'll be nice, springtime, yeah, I said it'll be springtime so I'm not just going you very beautiful.
+
+[00:26:20] Speaker:
+Yeah. Right. No. Huh? McColleague just emailed a order just email the report with no context for what it is. Why is she sending it to me?
+
+[00:28:07] Speaker:
+And what she wants me to do with it? Okay, so tell me what's going to be around the walling. Okay.
+
+[00:29:59] Speaker:
+Now you can hear me. What did you say? Have you watched these videos? I have put them in. I didn't watch much.
+
+[00:30:11] Speaker:
+I just think it's the subject. are interesting but I will definitely because like he was on a really high list and I show you also like this like this one you know you know one of ten you believe you have shown that to me yeah and like he has like in here I can see like the outliers and like he has like
+
+[00:30:39] Speaker:
+the subject are interesting, you know, I mean we can make software now, you know, and his videos are new, and the AI told me that he's really good for founders, you know, like business ideas, like level like TED stuff, you know.
+
+[00:30:56] Speaker:
+Oh yeah, okay, you can know in one of those four channels, and when you see like this stuff, you know, like he's like a sus, you know, service as a business, you know, that's like what we could do if we want to, you know, and all his videos are about Sus, you know, and his focus is not mainly AI, his
+
+[00:31:22] Speaker:
+focus is business ideas with Sus, and that's actually much stronger because he's not trying to sell AI or teach AI, you know, but it's all about like for entrepreneurs making software kind of.
+
+[00:31:37] Speaker:
+And I found that this it's an interesting topic. I'm excited to check in on how I got home here. How long you subscribed?
+
+[00:31:47] Speaker:
+Check in the 115,000 subscribers. This is awesome. I never heard of him before. Yeah, exactly. And the other channels are quite good as well.
+
+[00:32:03] Speaker:
+Like I can show you what else it came up with. The diary of CO was one of them. So this guy has like a lot of crazy people he talked to like Elon Musk and stuff.
+
+[00:32:17] Speaker:
+Okay, okay, gotcha. You know, like he interviews like all the time people like that. And this one. Joe Rogan. What is it?
+
+[00:32:28] Speaker:
+What is it? What's the one I sent to you? I know him. I don't know what that guy is called.
+
+[00:32:37] Speaker:
+Okay, I think you like him. You're okay. I have not known him before, but he was like in the same list from Gemini.
+
+[00:32:46] Speaker:
+You know, when it said, okay, I want to have Ted style entrepreneur knowledge. Yeah. But and then it gave me those for like this one as well.
+
+[00:32:56] Speaker:
+it's Y combinator. I don't know too much about like why that is so hot. I don't know, hold on, why?
+
+[00:33:08] Speaker:
+No, this one is. Yeah, like this one was one of them, but here they also have interviews with a guy who made OpenClawed, you know, data centers and I don't know, like was kind of like in that way this sphere and how I made my first million that's a guy who also has like always like interviews with like
+
+[00:33:34] Speaker:
+interesting people. So I put them all together in this founder notebook. Those four channels you know and we combine that one with the with the agentic workflow for now But we can also do with reg or whatever, you know, and then just ask it, okay, which and like the lawyer business ideas I got from that
+
+[00:33:58] Speaker:
+like from putting those four notebooks together. Agents, and yeah, like the agentic, no, agentic, plus the founders like I put agentic notebook, plus on the notebook, which has all those four channels inside.
+
+[00:34:15] Speaker:
+And then I told you to get me ideas for like specific local businesses which have a lot of money to spend.
+
+[00:35:17] Speaker:
+What are you looking for, baby? I was just plugging in my second, my third monitor here, and just going to see if I can hold it one.
+
+[00:35:26] Speaker:
+Then it just makes it easier to step. But you see how it's going, like how I'm like trying to get my business stuff the same way organized that we are trying to do for the science world.
+
+[00:35:46] Speaker:
+But that's kind of important because I understand it like way less than obviously regular business stuff. And the workflow has to be like so simple that you get great ideas like very easily out of it, you know.
+
+[00:36:54] Speaker:
+I don't see it like it doesn't show I guess it wouldn't show up in my notebook after I saved it to a bookmark.
+
+[00:38:10] Speaker:
+Sorry, I asked you for the same link. Sorry. Yes, I'm sorry. I asked you for the same link so many times.
+
+[00:38:17] Speaker:
+I think you gave me the NYX AIRF1 in the right chat. The NYX AIRF1, that's just a really long one, right?
+
+[00:38:51] Speaker:
+He's like six and a half hour, everyone. Of what? The NYX AIRF1? Yeah, yeah, yeah, yeah. There's a long one, okay.
+
+[00:39:00] Speaker:
+Ah, you want to have the agenda workflow notebook? Oh, I mean, but just maybe, is it just what source? No, it's like four, it's four or five.
+
+[00:39:12] Speaker:
+Yeah, so what I did I ice, I have a, I'm just see, I saved a bookmark for all of the bookmarks, other than notebooks.
+
+[00:39:24] Speaker:
+But I also give you editor exit because I think editor exit is probably necessary if you want to add it to a Gem and I have access.
+
+[00:39:33] Speaker:
+Yeah, and that's kind of like, good, I put a nice perfect copy link. I send you a link. Okay. So that's the the authentic thingy, but they are like more fields, you know, I, I just use it.
+
+[00:40:04] Speaker:
+Oh, yeah, no, I mean, I'll expand from here. Um, yeah, this is very helpful because I've been meaning to get all this stuff along the spot.
+
+[00:40:12] Speaker:
+And while I'm doing this also, I too will have Claude help out with the, uh, loom notebook inventory. Mm-hmm. That is good.
+
+[00:41:12] Speaker:
+It says, I like, I put it into Gemini to make the mind met work for us. Both, you know, so it's nice.
+
+[00:41:19] Speaker:
+So it said like we should put like a one that's really good is like we should have like a sandbox like a like a piece inside of the mind map, but a side or below it where we can just be chaotic look I can just like place stuff.
+
+[00:41:32] Speaker:
+But it's not, you know, and what's also really good is what he says is we should have an AI prompt library in there.
+
+[00:41:43] Speaker:
+Yes. For stuff that is really always like this expert network, whatever we have, you know. Yes, we can just put that in there.
+
+[00:41:54] Speaker:
+Yes. Okay. Yes, and we should link like two specific notebooks from inside like having like sources you know, which we so we can always hold that.
+
+[00:42:26] Speaker:
+And with the that was interesting with the payment methods, you know, like it looked like pedal is like really perfect yeah really good and I never I had heard of it but it was like somewhere in my brain was like okay it exists you know but nothing more and but like what I read of it it's really amazing
+
+[00:42:50] Speaker:
+because they they take a lot of head because it also does like they do the taxes stuff you know because if you make too much money in one certain country you have to Pays their taxes, it's like weird, you know, and this way they do that kind of for you.
+
+[00:43:07] Speaker:
+I don't know how, but they, they seem to be like really good. And they have PayPal installed as well. Yeah.
+
+[00:43:15] Speaker:
+And there is one thing which is go cardless, you know, and I think this is really interesting, because I remember like, like I worked for like a university, like I had like a job from them, some one time in my life, you know, and they are like, for them, they need everything like different.
+
+[00:43:35] Speaker:
+You know, they like, they need to have an offer and then they will send you like a buying notification, something like that.
+
+[00:43:43] Speaker:
+It's kind of weird. Like they have like their own procedure, you know? And like, I like, for also in the video, it's said, and I can imagine that this is for Europe for sure, true.
+
+[00:43:54] Speaker:
+I don't know about the US. Like if students want to join our community, you know, that they could like that they have that we send them an invoice, you know, and then they pay that invoice.
+
+[00:44:06] Speaker:
+You know, I can totally see that that is in Europe and maybe also in the United States. Yes, that would be like also a really good way to get like professionals on board.
+
+[00:44:23] Speaker:
+You know, because if we like universities are paying the bill, you know, then they want to have a bill first, and then they wire trance for the money, you know, that's, and there is no credit card and any card, you know, it's just like, that's how they do stuff.
+
+[00:44:37] Speaker:
+Oh, yeah, yeah, yeah, you know, and you know, we might get like really, really great clients in there, you know, because like I say, I also think like when you make automations for was a science world, you know?
+
+[00:44:51] Speaker:
+There are a lot of people who are writing like they have doctor things, you know, like they are writing their papers and stuff.
+
+[00:44:57] Speaker:
+And, you know. I knew who I'm gonna reach out to for us. It's a, just like for, well, at some point just for, I think it'll go further.
+
+[00:45:09] Speaker:
+It's just a really good connection to have because he works at the university here. And I worked with him when I was at Southern, he was one of our clients and then we ended up publishing a paper after from the study that we did.
+
+[00:45:18] Speaker:
+And so he's still at UAB now and he's one of the professors there and he was always very like wanting to try new things, very edge of the, you know, he was kind of the edge one, you know, and his name is Rakesh Patel, really nice guy.
+
+[00:45:31] Speaker:
+And yeah, I'll reach out to him and I think that would be, like, yeah, that would be, that could be really good.
+
+[00:45:38] Speaker:
+I know, yeah, a couple of the girls that discovered people. Yeah. And like students and like people who are into like like research at the moment like at the entry level, you know?
+
+[00:45:50] Speaker:
+I think those people like that is like and they are like oh that's like why I'm saying like not just like oh professional but hey you want it because I mean anybody's got a research at whatever level whether you're a grad.
+
+[00:46:03] Speaker:
+Exactly you know and they are like in university and you know they have like that's why I'm saying with the with the invoices you know because like they have like a class you know And if professor of the class wants all of his students to use one tool, you know, they could like get something, you know
+
+[00:46:20] Speaker:
+, like a whatever, you know, special prize and also like, you know, they don't they don't have a credit card. The professor won't use his credit card, you know, he wants to the university place for that stuff, you know, like if we have like great tools inside, you know, that would be interesting.
+
+[00:46:36] Speaker:
+And also I think like young people who are right now in your university, they are really keen on learning AI because they have nothing to lose.
+
+[00:46:51] Speaker:
+They're just, they're just giving some ideas for things for certain automations. For example, like for universities, grant automation, like the grant preparation, because they don't have their study data.
+
+[00:47:01] Speaker:
+They generate the data in the lab and then they make their slides or whatever content from it. Then they have to summarize all together, whatever how long years of research across people, into a grant to summarize everything.
+
+[00:47:17] Speaker:
+And this thing just took weeks, okay. But something like this would be, I'm sure that academics would love. Yes. I'll talk to some people at U of T.
+
+[00:47:45] Speaker:
+And then also what I found interesting, it was not in my list, but it was because I have no idea about that stuff.
+
+[00:47:53] Speaker:
+But I think for the academic world, it also might be interesting, you know, like when, like, I can only say- You want an academic team, yeah?
+
+[00:48:02] Speaker:
+That's why you just mentioned academics in. Go ahead. Like, I can only like, I don't know how to say that an academic, you have to think about it, okay?
+
+[00:48:10] Speaker:
+but in like a business point of view, this city wants to build a new bridge or some house or whatever, okay.
+
+[00:48:19] Speaker:
+And they are not allowed just to hire someone. They have to make it public. So people can like apply to get the job, like businesses, you know.
+
+[00:48:30] Speaker:
+And to have an AI that automatically scans in your field, you know, and writes applications for interesting jobs. Baby. No word of a lie.
+
+[00:48:42] Speaker:
+On that mute call that I sent you yesterday, that was one of the things me and my sister talked about.
+
+[00:48:47] Speaker:
+She was talking about doing like all those verticals that, you know, during the day, like, well, she's, you know, say it's just an Etsy store or whatever, you know, say, like, call, just like run it for her or whatever.
+
+[00:48:56] Speaker:
+Yeah, that's funny. And I really hate that that call didn't have audio. It was just really funny the way that she you think she described, and I thought you'd appreciate it.
+
+[00:49:07] Speaker:
+Anyway, it's okay. Yeah, I think this is crazy. Yes, but I think this idea is good like me because imagine like students want to get funded for whatever, you know, for their projects, and we have like a tools that can use?
+
+[00:49:28] Speaker:
+Like an AI tool for whatever like, however that works in the academic world, I have no idea, but I think, oh, I got it.
+
+[00:49:35] Speaker:
+I got it. I got it. Yeah. No, the other. And like, it's a very straightforward. It would be easy to map because all of these things are like fill in this box with a section like it's very pre-structured.
+
+[00:49:48] Speaker:
+You know what I'm saying? And data that they that they summarize all the time. It's the same data. Okay, there's a little bit, maybe tweaking a little bit for this certain conference sound maybe a little bit more this way, but it's all the same source data because once they've generated it, that's the
+
+[00:50:02] Speaker:
+labs data and that's kind of what they're building is that whole repository of their knowledge. And so I think, yeah, that would be super if labs aren't already using it now.
+
+[00:50:14] Speaker:
+Yeah, I think it was maybe thinking very narrow in my scope before. there. I think that's why I was maybe a bit hurt for me to see other things.
+
+[00:50:23] Speaker:
+Yeah, possible. I think you know, like you're in the bubble, you know, like that is like an advantage and this advantage at the same time.
+
+[00:50:30] Speaker:
+I mean, you are a toxicologist and I'm like, like, you know, like I'm everywhere like with my head, you know, it's like it's not specific at any place.
+
+[00:50:38] Speaker:
+You know, so it's like easy to just like go black, but it's very hard to go specific afterwards, words, you know?
+
+[00:50:43] Speaker:
+So yeah, I love how you look baby. You're so amazing. Like that. There was a crazy call we had yesterday morning or this morning, like long.
+
+[00:50:58] Speaker:
+But it didn't I didn't feel like long, but it was long. Yeah, I don't need it. Yeah, I was just like going to Google, right?
+
+[00:51:06] Speaker:
+And Google meet. It's recording. Are you going to save to Google drive in our recordings. You know what I'm looking at while I'm talking to you?
+
+[00:51:15] Speaker:
+Are you seeing it? Oh yes, so nice. I love it. I love, I want to kiss you like here, you know, like here.
+
+[00:51:26] Speaker:
+Is this one? And here I like that, you know, like here and here, down there. I will never look at that cursor in the scene.
+
+[00:51:44] Speaker:
+I want to lick your beautiful v***** baby. That's so nice. Make me so horny when you send me something like this, you know.
+
+[00:51:59] Speaker:
+It's so beautiful. I like when you see it on the big screen. that is really nice, you know, but you really have to be careful to always put your WhatsApp closed.
+
+[00:52:21] Speaker:
+Oh, I do that now. I don't play around. Yeah, because we just have so many, Yeah, so many ones that, oh, oh, that was fast.
+
+[00:52:36] Speaker:
+Let's see. So I had clawed in the browser, get all of our transcripts from them. I'm going to see what it actually gave me.
+
+[00:52:44] Speaker:
+If it's just give me all of our transcripts. Oh, yes, you said it was not in here, but it's fine, say good to the test.
+
+[00:53:04] Speaker:
+And like this one is really nice, you know, I can totally see you like going shopping with me like this, you know, I would love that.
+
+[00:53:12] Speaker:
+I can totally see like the background is somewhere in Italy. Yeah. Okay, stop this lecture. What are SRT files? Yeah, this is what it's doing.
+
+[00:53:49] Speaker:
+Are you finished shouting the permission? For which one? Oh, no, I just saw that you were on it. So I thought that you were.
+
+[00:53:57] Speaker:
+Oh, yeah, yeah, I added that to this one. But I will like in the next couple of like on my to do list is like this one is already good because I've tested it and it works, you know, like this agenda workflow thingy.
+
+[00:54:13] Speaker:
+But I will for the other techniques, I will create work notebooks as well. For example, like the rack and whatever, but there are a couple, I think they are like four or five different kind of AI stuff we can do, you know.
+
+[00:54:30] Speaker:
+In order to put them in categories, you know, and then we can talk in each category. because like one thing is like also like because like obviously it's also important to make money, you know, like monetization is like community subscriptions, and it's also like automations for clients.
+
+[00:54:51] Speaker:
+You know, so like if you make like one, if we make one Google Chrome plugin, for example, and we make one automation, you know, and people can see all they can do this, they can do this, they can do this.
+
+[00:55:05] Speaker:
+you know, we can spark their creativity and they say, oh, I would like to have this. Could you do that for me?
+
+[00:55:12] Speaker:
+You know, I think especially in the beginning, because like that's how Mark grew his business, you know, in the beginning he was taking clients, you know, and I think with a YouTube channel, that is kind of of easy to do because it's kind of automatic.
+
+[00:55:31] Speaker:
+You show what you're doing and people think, oh, I would like to have an automation, yeah, I would like to have an automation for my specific use case.
+
+[00:55:38] Speaker:
+Let's call her, you know? And I think that is a good thing for us. I agree. Integrity IDE. How's that forget that I have the expectation?
+
+[00:57:30] Speaker:
+So I'm going to share this prompt with you and then tell you what you think. Okay. It's for the idea not necessarily for like this is the perfect prompt but where do you put it?
+
+[00:57:48] Speaker:
+In what? Oh, wrong one. Okay, that'll be, you know. I'm sorry, there's my van. Oh, I just, like, I like that I know if I want to find links to any of the notebooks and stuff.
+
+[00:58:08] Speaker:
+It's in the site. It's in the tech chat. Yes, but you know, like, I will just show you what I'm leaving now because of you send it in there hold on.
+
+[00:58:18] Speaker:
+I was like, I was here right now. Okay. I was watching I was enjoying that, you know, and now I'm going over here because it's work time, baby.
+
+[00:58:30] Speaker:
+Okay. We've never tried to animate those. What? I would not know actually how. Oh, baby. So easy. Go to mid-journey.
+
+[00:58:39] Speaker:
+Go to mid-journey. mid-journey, you can, no, you cannot do mid-journey, you know why? Only on the highest plan because everything is public.
+
+[00:58:50] Speaker:
+Oh, okay. All right, you can do that on ground. Okay, but mid-journey, I don't have ground, but mid-journey, everything you post there on the $10 plan, every image is automatically public.
+
+[00:59:05] Speaker:
+Really? Yes. is. Okay, that's fine. Yeah, they made me pay every month, 90, 90 dollars to keep my monkey's private.
+
+[00:59:19] Speaker:
+Oh my god, download them and then they're like, no, it's nice to have it there to like read, you know, do whatever with it's like.
+
+[00:59:26] Speaker:
+Yeah, it's great. I mean, mid-journey's amazing. It's just like the privacy is like only available for a lot of money.
+
+[00:59:32] Speaker:
+Okay, but now let me see your prompt again. Oh, it's quite a prompt. I put it in journal. Oh, that's quite a prompt.
+
+[00:59:45] Speaker:
+You're funny. Yeah, but you read a lot of books, you know, I can count all books I read with four hands.
+
+[00:59:56] Speaker:
+What? I didn't read many books. That's what I said. Do you know how to read? Yes, you do. Of course not.
+
+[01:00:04] Speaker:
+No, but I just said like I read about 20 books in my life. Okay. Like I audio books I read a lot.
+
+[01:00:12] Speaker:
+I like I. I mean, hey, that works too. Yeah. That's why I say it's a mega prompt. But for you, you read like, I mean, you don't, you can just skim through it just to get.
+
+[01:00:24] Speaker:
+No, no, no, no, I want to, I want to get it. to see the water with skin, but I would do it like the, Let's see if we're on it.
+
+[01:00:49] Speaker:
+Sometimes it's, Let's see if we can let's it go. Okay. Yes, cool. Who can know so much about me? Yes.
+
+[01:01:50] Speaker:
+Probably. About to know a whole lot more. Huh? They're about to know a whole lot more. Yeah, it's crazy what they know all this we'll see if it's doing it I just literally went to like the other tab and it started rendering a video of the picture of me on the bed.
+
+[01:02:39] Speaker:
+Oh really? On which one which platform? Oh wait no content moderated trying different ideas, okay. What about like you try Groc or what?
+
+[01:02:50] Speaker:
+Yeah, yeah, this is good. Let's try to see if I can, but I think you know it's actually good, you know, I kind of like, you know, with all this AI stuff, I think like our stuff, like also when I read your stuff, I want to read it like, because we could easily do that by AI, you know, but I kind of want
+
+[01:03:13] Speaker:
+to do it by myself, you know, and I think like with all the sexual stuff, I would really like, you know, I want you to do everything, you know, but I want to do it and I want you to feel it, you know, I don't want to I don't want you to be like like an artificial p*** actress for me, you know, I want
+
+[01:03:31] Speaker:
+you to be like a real p*** actress for me, artificial p*** actress. Oh you mean like the pictures I send you and stuff?
+
+[01:03:40] Speaker:
+No they're great because they are real but if I animate them then it's artificial and I want you to really like whip your butt you know like I want to have you really and I want you to swag it you know and like bounce it you know like the girls in the hip hop me video you know I like you know you like
+
+[01:04:05] Speaker:
+going on the sofa and then like going up and down to your cheeks go like now like open, open, close, that's a nice.
+
+[01:04:18] Speaker:
+I should probably should have maybe sent this instead. Just read that, don't read don't read the old prompt, that's like the this is what this prompt does.
+
+[01:04:26] Speaker:
+You said me a new one? Yeah, this is like the TLDR you can like. Okay, hold on, I already read the other one was good but let me see oh this one you send me an image images not good in what's that baby I'm sorry it's okay it's not so it's a small one you can play what no problem here you go This call
+
+[01:05:04] Speaker:
+today will be very interesting to analyze with AI. Tell me more. Yeah, because you put like so many prompts inside and we shared like the notebook, we talked about like strategies, you know, like to what to mix with what?
+
+[01:05:21] Speaker:
+You know, I think it's really interesting to put it in AI and say, okay, like in the expert network, like how can we make that better?
+
+[01:05:29] Speaker:
+You know, what did we miss? Something like that, you know? And I think this call, yeah, you're recording it, right, baby?
+
+[01:05:37] Speaker:
+Yeah. Yeah, sure. Good, good, good. Yeah. Yeah, because this one's really good, I think. I did miss a little from the beginning.
+
+[01:05:45] Speaker:
+Yeah, but it's okay. Okay, what are you trying to do? Was it last prompt? What are you trying to do with the last prompt?
+
+[01:06:40] Speaker:
+Oh, just make like a. And AI, almost like an assistant. Okay. So he knows what we are doing. Yeah. I get it.
+
+[01:06:52] Speaker:
+Huh? Cool. It's not like there are so many other ones available, like out, especially now. So we can certainly do research about before we like.
+
+[01:07:03] Speaker:
+No, I think it's really good. Like having like a short, like a short person in the room, you know? Yeah, yeah, and so it just keeps all the all the context in one spot and like You know, and then it can remind us of stuff or it can plan things You'll be able to get open claw and then use that use that
+
+[01:07:25] Speaker:
+for this You have a really big mouse baby excuse me like it's awesome like I have a really big mouth mouth okay I thought you said nose nose yeah no mouth and I love it it's like huge yeah it's amazing.
+
+[01:08:02] Speaker:
+Sometimes I sound funny when I say stuff. You miss misunderstand. But you know what what's very funny today was like the first time since I lived in the US, like in the in the end of living there, my brain was sinking in English, you know, and then it's not to become really good, you know, because like
+
+[01:08:20] Speaker:
+if I can't like if I go outside and my brain is just like English, English English, you know, once you're thinking switches to English, it becomes quite good and I noticed today I was walking on the street and my brain was talking to me in English.
+
+[01:08:35] Speaker:
+It was? Yes, whatever you're like saying, no, I have to get a bike, I have to do this, you know, I have to now do that, you know, just like my to-do list inside of my head was starting to talk to me in English which you know which is because we spoke like so much English like last couple of weeks.
+
+[01:08:56] Speaker:
+You were reading it like reading me stories in English and everything is English yeah. Hey I think you'll be happy to know that I that I started my learning in German again.
+
+[01:09:11] Speaker:
+Really? Yeah I mean I started I learned I was learning for like five or six months And then switch to French because I realized I had like really gotten rusting on it and I wanted to keep it just because I've had it for like ever.
+
+[01:09:26] Speaker:
+And so that solid that set. So I switched back to German. Okay, cool. So we'll see how much I'm looking so much forward to speak German with you while we're having sex.
+
+[01:09:39] Speaker:
+Because I can like I can like eat your sentence and I can then I can do that and then you know, oh that means that one, you know.
+
+[01:09:48] Speaker:
+Yes. That is amazing baby. Then I can't make a small effort to run away, because I'm standing on your small effort to run away, which is so sweet and I don't necessarily want to go in, oh f***, you have a trade, you have a recording and you will ask it later, what did I say?
+
+[01:10:14] Speaker:
+I haven't asked any other translations yet, I haven't, I love it, I love it because is I figured I will wait until a time comes at some point in the future that I listen to it and I actually understand it.
+
+[01:10:26] Speaker:
+Yes. You. But I think the words I'm using, I don't think that they are like in any kind of your language classes in the regular notebooks, not even medical, like they are different, they are like the, Well that's okay.
+
+[01:10:43] Speaker:
+It's okay. You will find it all. I got our transcripts from my, that's just from Loom. So then I also have to get Google, and that's something actually maybe we can sort out because that only does it in these gigantic videos that I don't know what the f*** to do with.
+
+[01:11:00] Speaker:
+Ah, okay, okay, okay, that is wonderful. Can you send me one? I can figure it out while you're doing something else.
+
+[01:11:07] Speaker:
+Yeah, because you're doing something and I don't know, right? But you're like grunting right now. Oh, it was just, I was getting the 10, I was getting the loom transcripts from, like, Claude got them from loom and so I have them now.
+
+[01:11:24] Speaker:
+But give me one YouTube, one YouTube, one Google video. Yeah, maybe it's in here. It's in our share folder. I'm going to give you the link for it.
+
+[01:11:31] Speaker:
+Okay. Okay. I just go in Google Drive. Yeah. It's okay. I mean, the links are here. Let me put it.
+
+[01:11:41] Speaker:
+Actually, it's a different one. So I'm going to share this. It's still in there. You have access to this one.
+
+[01:11:46] Speaker:
+It's the Meet recordings folder that I'm going to share with you. And here, I'll do what's that. I'll save it.
+
+[01:12:00] Speaker:
+Okay. Okay. That's all of our Meet recordings that I've ever recorded. Perfect. Perfect. Perfect. I mean, that's any of my new recordings, but like, they're all you all with you.
+
+[01:12:15] Speaker:
+Oh, okay, okay, okay, but there is like text, so this chat text is the recording of it or what? Yeah, it must be or not.
+
+[01:12:25] Speaker:
+The text, oh, it's just like that, it's just like that it was associated, like anything we exchanged in the chat during the video is what, okay.
+
+[01:12:34] Speaker:
+Oh, okay, I think I, Hold on a second. What would you connect the notebook on notebooks to right now? Now I prompting, okay?
+
+[01:13:18] Speaker:
+You can see those videos from our Google Meet recordings in the Google Drive on the right hand side. What is the best way to get the transcripts from those recordings?
+
+[01:13:52] Speaker:
+Maybe you can automatically generate transcripts in the future if it was enabled during the meeting. I just don't worry about it.
+
+[01:14:07] Speaker:
+It's just for the future. We find for the past we find a different solution, but for the future, there you can do that somehow.
+
+[01:14:16] Speaker:
+Maybe I send you the next invite for our thing and then I figure out how to do it while we do that.
+
+[01:14:23] Speaker:
+Okay? You're so cute. It's sometimes you think so complicated, but I love that too. So as I seem so complicated, you know, sometimes you think so complicated.
+
+[01:14:45] Speaker:
+It helps in a lot of cases, but in other cases, it can just make it, yeah, more complicated. And it needs to be okay, do we, for the older videos, we don't have that enabled.
+
+[01:14:58] Speaker:
+So how do I get the transcripts now? That is awesome. Okay. Cool. that's actually really good. What did you? I just download the video and then I upload them to my own private YouTube and to make some unlisted and then order them and then way we have that.
+
+[01:15:42] Speaker:
+With the object that you put in our community, didn't you put an update in there that gets you the transcript of anything or am I just dreaming of something Yeah, yeah, we could do that.
+
+[01:15:53] Speaker:
+I mean, yeah, yeah, that like that, but I mean it doesn't matter because like YouTube by nature already gives the transcripts, you know, we don't need to, but we can get the transcripts really easily once the video is in YouTube.
+
+[01:16:05] Speaker:
+Okay, perfect. So you know what will be cool them to do since we know that Google meets. We could have, like, so every time we have a meeting on Google Meet, it always is safe to that Meet folder in Google Drive, always.
+
+[01:16:22] Speaker:
+So then there, we just have it, what did you do with the next? You took your video and then you put it on YouTube, put it on YouTube, and then fetch the transcript and then save it to now.
+
+[01:16:36] Speaker:
+For now but like this like but you could like for the for the next kind of meetings you can just enable transcription and then we get like a separate file with a transcription.
+
+[01:16:50] Speaker:
+We'll do that. Yeah, that's much better because it's like you You already told me that existed and then I just forgot.
+
+[01:17:02] Speaker:
+Yeah, but I yeah, that's what I love about you're like so forgetful but the Google ones are all the the Google recordings are all not in the Latvia Chris folder yet right they should be idle in there but you couldn't make the transcript somebody would have to manually make the transcripts otherwise they
+
+[01:17:44] Speaker:
+can't be in the Latvia Chris folder Oh, right, so the ones that are in Google, like the videos in Google Drive right now have not been transcribed, have not been put into I can do the, I can do all those parts with the, with the multi notebooks now.
+
+[01:19:37] Speaker:
+Mm-hmm, perfect. I realize my brain works in funny ways sometimes because I knew you'd made that Ted notebook. I knew you'd shared it with me in a chat, but I knew I've never had access like direct access to it.
+
+[01:19:54] Speaker:
+And so I knew that I wanted to do it, but like I wasn't able to and so like part of my mind thought, oh, I have access, but I just haven't done it yet.
+
+[01:20:06] Speaker:
+But then I was just seeing that. Yeah, very good girl, baby. And I give smart scientists. I love that. You know, like, it's smart.
+
+[01:20:30] Speaker:
+And you're sending not, I really like that you sent me naughty pictures. I'm going to get transcribed. You know, that's okay.
+
+[01:20:41] Speaker:
+I'm like that because I feel like it brings, it brings some life to some of the outputs that it makes.
+
+[01:20:50] Speaker:
+like in some of the Some of the wording that it uses or some of the messaging because it's very like it's like these To these like these two people these like they think it's like It uses that energy that it that You know that I've like talked about with it and everything and just make it like kind of
+
+[01:21:13] Speaker:
+brings it out a little bit more That it puts like energy inside You know, it's like not dry, definitely not dry.
+
+[01:21:24] Speaker:
+It's more like wet baby. I love that. Damn, I want to have that in my face. I love that. Let me know.
+
+[01:21:44] Speaker:
+Can you? You can as unlimited in ultra unlimited. Yes, baby. I love that. Do that. Yes. I was doing that because I was so happy when you said it was unlimited notes.
+
+[01:22:10] Speaker:
+Oh my gosh, that's fantastic. That is so good. And I think in each individual notebook, you can put like 900 videos or something like that.
+
+[01:22:21] Speaker:
+Now, I feel like there's a point I wish is that context, you know, that is true. I also had the same idea with the funders notebook, you know, because there was so many ways of syncing already inside, like I was like 400 videos or so.
+
+[01:22:40] Speaker:
+And I thought, like, maybe it would be nicer to have like this, you know, like this, this sasky in Russ one notebook, you know, and like see oh guy and the million clap in one notebook and if I want to I can like put all four notebooks into one together with a genetic workflow or a wreck but you know
+
+[01:22:59] Speaker:
+like to have all of them inside sometimes it's too much. I agree, yeah, it can. But what's nice is like I guess if it is like a larger knowledge source, but if it's of like one source And then you keep asking kind of questions on that day on that information.
+
+[01:23:16] Speaker:
+Then I guess like as it gets more indexed on it It does a better job. Maybe we have to really be careful when you do that.
+
+[01:23:24] Speaker:
+Okay When you put videos on YouTube like just to get the transcripts Yeah That you make them unlisted. I do also unlisted.
+
+[01:23:33] Speaker:
+Okay Because if if we show like naked pictures of you like somewhere inside of that video You know, it's not unlisted then it's public Okay, and that's against the rules and because we say words like Chris and Latvia inside of our talking it would come into the search engine so we have to be careful
+
+[01:23:53] Speaker:
+about that stuff. Sorry, I have never thought it was important. I mean, you did like in like in mid journey, you know, you just put it in, you know, you and it's the same kind of thing, you know, like it's all searchable.
+
+[01:24:13] Speaker:
+you cannot image on you cannot. You're all your own photos is you can. Yeah, yeah, do that. You did it with yours.
+
+[01:24:27] Speaker:
+You did it with pictures of yours. No. No, these are these are Randall. None of the insight face swaps. None of those images are there.
+
+[01:24:39] Speaker:
+So they don't have any likeness to anyone. There are groups of t****** in my library, but it's of like girls who I don't know.
+
+[01:24:47] Speaker:
+Not me. Yeah, but that's good. Okay. Oh, is that what you were thinking? Yeah, yeah, because like, um, yeah, like, yeah, I was thinking that.
+
+[01:24:57] Speaker:
+Yeah, once I just, uh, tell me again how you remind me again, remember I was wanting to get like all the YouTube links and then you got them quickly.
+
+[01:25:07] Speaker:
+How did you got it? How did you get that channel and it's like a really really quick way? Yeah, just a quick one, just one second.
+
+[01:25:13] Speaker:
+I'm uploading one video. Okay. Okay, you can see my screen. I just go into YouTube. And then I click on Playlist, I don't know, Playlist, Pet, Business.
+
+[01:26:05] Speaker:
+Added it all to a list, Playlist, right? Yeah, you can make your own playlist, but I just take the ones which exist already, you know?
+
+[01:26:16] Speaker:
+So I go on this playlist. Now I have all those videos here, yeah. Okay, do you have to go into every playlist?
+
+[01:26:25] Speaker:
+No, no, no. Yeah, you have to go into the playlist, yes. But it's just like one, like once, like it grabs all the URLs automatically.
+
+[01:26:34] Speaker:
+Yeah, but if there are a bunch of playlists, then you got to do that a bunch of things. Yeah, but I think like, you can take like the big playlists.
+
+[01:26:45] Speaker:
+I don't know which have like, I don't know. Most pop, I mean, this one has, it has 10 pages, I think.
+
+[01:26:57] Speaker:
+Let me see. But I mean, there is a better way anyhow. I mean, oh, this one has 150 you can see how many videos there are.
+
+[01:27:07] Speaker:
+So let's take this one. It's 150 videos. And then I can just click here on the plot. Then I just say, please give me from this playlist all the video URLs from YouTube, don't put numbers in front of them.
+
+[01:27:25] Speaker:
+No descriptions us to pure URLs of all 154 videos. Okay. Let's show you what's happening on my end because I'm doing something similar but from a different approach.
+
+[01:28:06] Speaker:
+Okay. And so what I asked Clark to do was to because like, so with playlists, if this guy makes a playlist, it's not necessarily only of his videos.
+
+[01:28:21] Speaker:
+It's like stuff that he adds to. So I want this guy's stuff. I went to videos and I said I want, I asked Clark to give me, like, add every one of the 540 videos into a single playlist.
+
+[01:28:33] Speaker:
+And then from there, Okay, that's also great because that way you have like one step get all the views in one playlist and then you get all the views perfect, but like you see here, so it's working so it does like all the YouTube videos you see.
+
+[01:28:49] Speaker:
+So it's like writing 154 URLs and then I can just copy paste the whole thing into a notebook. Yeah, yeah, I like it.
+
+[01:28:59] Speaker:
+You know, it's amazing. I mean, your step is like really good for it's a first step because there is not always a playlist and it's a f****** like not nice to like, yeah, I mean, I did it for your videos, but that's different like for your music videos.
+
+[01:29:17] Speaker:
+Because I want to listen to all of them and I love them and I want you to listen to all of them.
+
+[01:29:23] Speaker:
+And then I start, okay, I have to make a good selection, you know. I don't want to have shitty tracks in there, I want to have good tracks in there for my awesome p****.
+
+[01:29:35] Speaker:
+Whenever I just want to, there's no, yeah, no rush, yeah, some songs have been coming up like here and there and so I just like, like write it down, like save it and then.
+
+[01:29:44] Speaker:
+Yeah. But I also, I mean, I have to say like, when I do something like for you or if it's private, I kind of enjoy the act of doing, you know, it's like not like I try to not be I it's not my ambition to be efficient in that moment, you know, I'm like listening to music.
+
+[01:30:00] Speaker:
+I kind of think about you, you know, it's nice. No, I do this, I do this thing. It's the same if I'm like making something and I know like I'm going to show him this and he's going to flip.
+
+[01:30:22] Speaker:
+Okay, so this one's it's on. So you understood how I do it, right? Yes. Yes, you basically just have it get like so you like.
+
+[01:30:30] Speaker:
+Just like give me you are to give you all the playlist and just make sure that no numbers and no description Just pure you are else See like that even this step Like a little long.
+
+[01:30:45] Speaker:
+I don't know. I it's quick to say I guess sometimes like the I was thinking about in terms of prompts We would save but That would definitely need to be like some chrome extension where you could like drop down a list and have like some easy the directory of your prompts, or search it, and then it would
+
+[01:31:00] Speaker:
+give them to you. Of the prompts you would want to, okay. Okay. It's saving it as a playlist called Rob Wiling All Videos.
+
+[01:31:15] Speaker:
+And I mean, that's the thing is like, look at this, this tool is like, I don't really want you to buy another subscription or so, but this tool is really kind of awesome because let's say give me something in in toxicology that is like I show you what I mean toxic toxicology okay so now what this one
+
+[01:31:43] Speaker:
+is crazy is it gives you you see here like outliers you know like in this channel you know like this channel is perfect for showing because it has 1.0 okay and this means yeah exactly I tell you right now like um like the amount of people watching this video was pretty much exactly the amount of average
+
+[01:32:08] Speaker:
+views he gets always on his channel okay okay so this channel like this video like this guy this mad forensic scientist The toxicology video he made was 32 times more successful than the other videos in his channel.
+
+[01:32:28] Speaker:
+Oh, so you can get the really good ones and be like, why were they like? Yes, yes. Yes. Exactly. It's like the script I wrote on school where I said, okay, I want to have a girl which is not only hot, but also smoking, smoking the intelligence and sexy.
+
+[01:32:45] Speaker:
+you know, and then it came up with your name and I was like, okay, I want that one. What? What?
+
+[01:32:52] Speaker:
+What is this for you? I'm joking. I'm just joking. What's that joking? It's hilarious though if you did because that'd be like, damn, and I knew it's up.
+
+[01:33:03] Speaker:
+Yeah, yeah, yeah, yeah, yeah. No, just like we like, you know, I mean, yeah, let's hop in before we meet them.
+
+[01:33:08] Speaker:
+Huh? No, I just thought that would have been like, totally wild if you did that. This is a great thing, you know, and you can, you can like if we want to say like what's good like business idea.
+
+[01:33:20] Speaker:
+Yeah. You know, like, for example, like if I just choose this one and you see now I have the same and here's a great part.
+
+[01:33:27] Speaker:
+Like, you know, like AI, okay, because with AI, everything that's older than six months is worth nothing. type in there and see if there's anything with AI toxicology, IND, those are three words.
+
+[01:33:45] Speaker:
+Actually, a non-clinical. AI toxicology, IND. here. Yeah. Why it's not doing it? I talk psychology, I end it. It's locked.
+
+[01:34:04] Speaker:
+I don't know what's locked here. It can't right now for some reason. Is that a subscription? Yeah, that's a thing, but wait, okay, I have to switch on the other thing again.
+
+[01:34:38] Speaker:
+Oxycology, IND. I muted something and I don't know what I've been doing. So, oh yeah, like no, but this is like assignment introduction, like maybe I have to put it into.
+
+[01:35:16] Speaker:
+Yeah, but there's probably nothing. Like I put it in brackets, you see there are no videos like, if I put it like exactly like that, then there is nothing.
+
+[01:35:26] Speaker:
+I feel like, like when I see stuff like that on all the different sites that I look at for certain content from between AI and toxicology it's like there's this like huge like acres and acres like just feel yes and we can just go play all up and that's what I mean I mean it's all like it's everywhere
+
+[01:35:48] Speaker:
+like that it's like everywhere like even like in really competitive fields because kind of the thing is they have to do it the same way we do it you know they have to learn the AI stuff.
+
+[01:36:00] Speaker:
+And then they can apply it to their field. They cannot learn AI and apply to the field at the same time because they would lose immediately credibility because some idiot is smarter with AI than they are.
+
+[01:36:14] Speaker:
+And then the lawyer with all this good reputation gets like a shitty remark from a law student who's just way better with AI.
+
+[01:36:25] Speaker:
+you know so they really that's why everything is available because like you need like this science brain and then you need to understand the AI and then you can apply it on your field yeah and that's why everything is available everything.
+
+[01:36:48] Speaker:
+Yeah, there's not good resources that I have from yeah, but you know, for us it's like this is brilliant, you know, because we can like a medical like, you know, we can we can like see and the thing is now if we go on filter, you know, I can say I only want to see the last three months.
+
+[01:37:11] Speaker:
+Do you see it, baby? Sorry. Like here, I can say I only want to see the last three months, you know?
+
+[01:37:18] Speaker:
+And if like if something's like really competitive, you know, we can say I want to have the quality score should be like, you know, it's like filtering reviews on Amazon or something or like what you're seeing.
+
+[01:37:34] Speaker:
+Yes. So yeah, we get like only now used. Now you see everything is like really high you know like everything is like has a lot of stuff but there is just not a lot with medical AI but we can say workflows then there are shit loads and now you can see baby yeah now you can see those are all AI workflows
+
+[01:38:20] Speaker:
+and only like you see like this was this one is in our list this is one from the genetic workflow you know and I just say AI workflow and I just said you know like it is within the last three months so we don't get old AI stuff which is not valuable anymore and we only want to have stuff which is more
+
+[01:38:45] Speaker:
+than 5.5 times the amount of average views the creators had on their channel so all those videos are viral, all of them.
+
+[01:38:55] Speaker:
+I wonder sometimes if it would be helpful to, is there any way to see why those videos were viral? Because I mean, I guess if the, I don't know, I guess if there was some apparent reason.
+
+[01:39:13] Speaker:
+I usually, usually with those, it's because it's like a really just brand new subject. And like an influencer which which already had credibility, you know, like if something like Claudeport comes out and Mark makes a video on the first day, then it goes viral because of that combination, you know.
+
+[01:39:35] Speaker:
+But AI science, for example, there is actually AI science guy, he looks really not good but there's Bill Nye the science guy there's like an English and like an English science guy where is that dude like he looks really weird but wait I have him in my youtube subscriptions somewhere oh here Andy Stapleton
+
+[01:40:13] Speaker:
+that's a weird guy Dr. Andrew Stapleton but that's not it's it is kind of interesting because he's a science guy, you know what I mean?
+
+[01:40:27] Speaker:
+So yeah, I show you with him and now we can check with that with that idea we can check which of his videos went viral.
+
+[01:41:14] Speaker:
+Okay, look at this stuff, like then you see like PhD brain, like he has like a lot of like stuff which is kind of interesting for you or us.
+
+[01:41:26] Speaker:
+Yeah, I'm curious to see how people advertise their PhDs on YouTube. Not advertise but see this guy like PhD bring like he puts it right in there and I think it's a little bit.
+
+[01:41:40] Speaker:
+Doctor Andrew Stapleton. Is he a medical doctor? I don't know that's what he says. I mean, not that he is mad at love, but he's a research doctor.
+
+[01:41:50] Speaker:
+He's like, yeah, he's got a, he's not a, what am I talking about? Of course, it's not MD. I am just a, that's matter, baby.
+
+[01:41:59] Speaker:
+I cannot, I cannot even spot those mistakes because I don't know like usually what you're talking about. Like if you don't, if you don't do the, you know, then I wouldn't know that you made a mistake.
+
+[01:42:14] Speaker:
+This is the MD and PhD are different. Even though they're both holding on. Yeah, I know, I know it. I know that I know in the in the short period my brain has to process your data, you know, I'm not like putting I wouldn't have put that in the wrong folder.
+
+[01:42:33] Speaker:
+But I think, you know, it is interesting. like that I mean he has kind of like your target audiences are overlapping and that's why it's interesting you know yeah I think it's closed the window that I need to close I send you the link maybe you can you want to send look at it later yeah But definitely
+
+[01:43:15] Speaker:
+, you know, for example, it would be interesting to put together his notebook together with a rag or an agent workflow and then ask what kind of content would be interested interesting for La La La, you know.
+
+[01:43:34] Speaker:
+And with this one, we can find out which have been like really successful. And they are so like, he's like so behind us, you know, because I mean, he's not, I mean, I don't know, maybe he knows more than what he's showing, you know, but like he's not vibe coding.
+
+[01:44:17] Speaker:
+He's just like showing how to use notebook LM for PhD people, you know, or like how to use this tool, one of the best tools to whatever, you know, but he's not like making tools I think doesn't look like it's 30 a month it's what 30 a month 30 what is 30 a month 30 to one of 10 hold on I I had like a
+
+[01:45:06] Speaker:
+really good deal I I had like so I I had 50% off from mark Okay, I just look way to second.
+
+[01:45:24] Speaker:
+School somebody wrote me. Oh, Mac wrote me. I asked him if he had knew any any more of the dates for Berlin.
+
+[01:45:56] Speaker:
+Okay, let's talk about the payment for Did you also get this yearly subscription with early AI adopters like when it was really cheap?
+
+[01:47:11] Speaker:
+Yeah, I'm annual already. I've been annual. I think it was like the fourth month, and it's September I went annual.
+
+[01:47:18] Speaker:
+Yeah, I think so. I went too. When you had this special, right? Yes. Yeah. He better let us OG in it for a year, at least, before he goes and raises it for like a bunch of new people yeah okay here it is okay this one it's I show you hold on okay so I mean I let's see if it still is working because it's
+
+[01:47:48] Speaker:
+quite a while that it was a code but otherwise we make a new deep research but tries this one like future 50, you see?
+
+[01:47:59] Speaker:
+Okay. Then was only to a 20 bucks. Yeah, cool. And for filtering like viral videos, it's amazing. Like, I don't do any YouTube is like not my source anymore for what content I should consume.
+
+[01:48:44] Speaker:
+Which is really, it's really a relief because I'm out of there, you know, of the algorithm. Yeah, because they spam you like so much, they just want more hours, you know, and this way I'm like getting just the best of the best.
+
+[01:49:01] Speaker:
+That's awesome. I always have like these awesome other programs or apps or extensions or something that like solves the solves some problem that I mean like it's really like to have to not have to go through YouTube jungle is is a dream.
+
+[01:49:18] Speaker:
+Yes. It's just so getting so loud and so messy and so you know. Yes, horrible. It's really really horrible. I can't understand all over each other's content.
+
+[01:49:32] Speaker:
+You don't know like who's actually like talking about something that hasn't just already been like read done before. Yes, and here you know if you go on like you you made a subscription right yeah okay so like if you look on my screen for a second then you you can see like so I have like here like below
+
+[01:49:57] Speaker:
+home I have trackers okay and here you can add trackers and here you can like have specific ones so you know whenever like Mark is making like a new video you know for example you know I can see like, okay, oh, this was crazy, what was that, you know?
+
+[01:50:15] Speaker:
+So it was old. But so I have to do it like the last three months. But if you have like all your people, you are following, you know, and with everyone, you can just every week, you know, you can just go in there and see, did he publish anything viral, you know?
+
+[01:50:33] Speaker:
+Like the amount you have to consume is very little then. That's awesome because then yes, like you're going out and picking your own content.
+
+[01:50:44] Speaker:
+Yes. Another thing that's really amazing is when, for example, like here, if I say TED science because that's actually how I did it with the other, with the founders, you know, that exactly I'll show you here, like I didn't take all of their videos.
+
+[01:51:00] Speaker:
+I only took the best, you know. So I had like the trackers of this one, you know, for example, and then I could just like with the plot extension.
+
+[01:51:13] Speaker:
+I only take because you can it can take directly the URL from YouTube out of this page as well. So you just say, give me YouTube URLs from this creator on this page without any numbers or any extras just URLs of the YouTube videos.
+
+[01:51:37] Speaker:
+And you know, then it just takes all of those and those are just the best he has produced, you know.
+
+[01:51:47] Speaker:
+How do you look? Oh, does it be there? Why can't it find work? Of course, I show you why. Okay, now it does it, okay?
+
+[01:51:58] Speaker:
+So that works. You see that, maybe? Yes. And if I want to go on mark, like the way you have to do it is like you go on YouTube, okay?
+
+[01:52:08] Speaker:
+I see. I show you. Like you go on YouTube and then you say, And then you have to click on him on his name, so you go to his channel.
+
+[01:52:23] Speaker:
+And then you see up here, like at marker chef, in that case, his channel name is at marker chef. And then you take that at marker chef.
+
+[01:52:36] Speaker:
+You go back to the tracker. Okay. Then you click on add channel. And then you can put the channel name in there.
+
+[01:53:13] Speaker:
+Oh, there it is. Made. Have you seen like the numbers of the videos in total? Yeah, but someone's made a shown page on which YouTube or the other one on one of 10 There you can only see you cannot see all because you cannot see less than one.
+
+[01:53:38] Speaker:
+So if something's really sucks I think you can't see let me see oh no no what I'm saying is can you count how many are on the page?
+
+[01:53:46] Speaker:
+Show a total Okay, like, I know it's true to the total amount or anything, okay, I get it. Like, let me see.
+
+[01:54:07] Speaker:
+I think it doesn't show, but here in Claude, it told me it got 89 videos from this other creator. Like, here, but here it doesn't say, it doesn't say the number.
+
+[01:54:23] Speaker:
+It's one. Yeah. Can't go distracted with another agent. So maybe. What baby? Oh, I was just, I was just talking about to myself.
+
+[01:55:58] Speaker:
+Dr. Andy Stapleton. Oh, yeah. Yeah, some Mark or someone in the community have mentioned and also I'll have some prompting to do and I'll do it with voice and I'll Yeah, just get a couple of prong threads set up and yeah, come back to us when I come in.
+
+[01:56:40] Speaker:
+I sometimes it's hard to like sit and think and zone in and like really like prong if you want to be like a load a little bit.
+
+[01:56:47] Speaker:
+Just for the prompting part, it'll like maybe like 20, 30 minutes or something and then get all the prompts out and then it can like run and okay, and then you come back.
+
+[01:56:56] Speaker:
+yeah yeah of course okay I'll see you soon okay bye bye baby
+
+==========================================================
+END OF TRANSCRIPT

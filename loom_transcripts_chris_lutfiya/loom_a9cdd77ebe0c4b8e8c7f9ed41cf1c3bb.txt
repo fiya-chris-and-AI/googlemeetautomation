@@ -1,0 +1,2966 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: a9cdd77ebe0c4b8e8c7f9ed41cf1c3bb
+URL:      https://www.loom.com/share/a9cdd77ebe0c4b8e8c7f9ed41cf1c3bb
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:12:40.880Z
+==========================================================
+
+[00:00:00] Speaker:
+Hm, Thanks. Thanks for watching! Oop.
+
+[00:02:08] Speaker:
+Thank you very much. Thank you very much.
+
+[00:02:24] Speaker:
+Eh, hm, hm, hm, hm, hm. Hm, hm, hm, hm, hm, hm.
+
+[00:02:48] Speaker:
+Thanks for watching! I'm not gonna There you go.
+
+[00:03:37] Speaker:
+Have a great day. Goodbye. Bye. Ah, see you Go potty! Go! Okay.
+
+[00:04:41] Speaker:
+Thank you. Thank Thank you.
+
+[00:05:05] Speaker:
+Oh, sorry. Hey, baby.
+
+[00:05:13] Speaker:
+Jace!
+
+[00:05:15] Speaker:
+Hey baby! Hey. Uhm, you have It was good, I got, I got, uhm, I did a couple of things. I did two rounds of prompting, and, Uhm, I got all those URLs, but it said that there was a limit, uhm, so, I'm not sure what the limit is, but I'll just take out a few.
+
+[00:05:36] Speaker:
+at the bottom, and see if I can run it, because it wouldn't let me actually even upload the notebook, uh, and the links, because it was too long.
+
+[00:05:45] Speaker:
+Yeah.
+
+[00:05:47] Speaker:
+That's. But also, I figured, like, Gemini has a suggestion, if the notebooks are too big and they're inside of the Gemini
+
+[00:05:53] Speaker:
+gem,
+
+[00:05:54] Speaker:
+that we should. It's just. No,
+
+[00:05:55] Speaker:
+I know.
+
+[00:05:56] Speaker:
+Yeah, I know. It has limit, but I say that because, because. Cause I want to always put them in Gemini gems, you know, also Gemini has like, it says it doesn't, if the notebook is too big.
+
+[00:06:08] Speaker:
+The
+
+[00:06:09] Speaker:
+quality will go down. Right, but I mean, that wasn't the problem
+
+[00:06:12] Speaker:
+I had
+
+[00:06:12] Speaker:
+though.
+
+[00:06:13] Speaker:
+Meaning, like, I, I could upload the knowledge, like the notepad. The notebooks to the gem, I just couldn't paste all of those clips at once into the notebook.
+
+[00:06:27] Speaker:
+That's kind of annoying, because then you might have duplicates or chart returns you already used. Let's see. Okay, well, whatever amount I just did there was, yeah, 298 sources, so I think 500 is the limit.
+
+[00:06:40] Speaker:
+Yeah. Or notebook. Yeah,
+
+[00:06:43] Speaker:
+possible. I thought it's more,
+
+[00:06:45] Speaker:
+but yeah, this might be right. What are you vaping there?
+
+[00:07:01] Speaker:
+What am I
+
+[00:07:03] Speaker:
+vaping here? Uh huh. Like what? Uh, it's, uh, joint. Ah, yeah, joint
+
+[00:07:10] Speaker:
+smoking, Joint smoking. Yeah.
+
+[00:07:13] Speaker:
+The door's open here. Your
+
+[00:07:18] Speaker:
+door's open?
+
+[00:07:19] Speaker:
+Yeah, back door.
+
+[00:07:21] Speaker:
+Oh, okay. Okay. That's fair, thank you. Thank
+
+[00:07:26] Speaker:
+you. Thanks. Yeah, it's so cool.
+
+[00:07:28] Speaker:
+Thank you. Thank you.
+
+[00:07:29] Speaker:
+Oh, there we go. Okay. Let me see,
+
+[00:07:34] Speaker:
+this is my map.
+
+[00:07:36] Speaker:
+Okay. YouTube here has a problem today with the transcription. I don't know why it doesn't do the transcriptions. Oh, the, Yeah, for one, I don't know what the problem is, but right now I cannot add them, which kind of sucks a bit.
+
+[00:07:53] Speaker:
+Yeah.
+
+[00:07:53] Speaker:
+It's not a
+
+[00:07:57] Speaker:
+browser
+
+[00:07:57] Speaker:
+thing, is it? No. No,
+
+[00:07:59] Speaker:
+I guess not. It doesn't look Like, I can't add them to, uh, to NotebookLM. It says there are no transcripts.
+
+[00:08:07] Speaker:
+And there are no transcripts inside. And maybe
+
+[00:08:12] Speaker:
+it's because of my German accent
+
+[00:08:14] Speaker:
+or something like that.
+
+[00:08:16] Speaker:
+What? Ah, no,
+
+[00:08:18] Speaker:
+it's still processing. Okay. No, it, it, I, for whatever reason, I have, like, uploaded them, like, a long time ago.
+
+[00:08:25] Speaker:
+And you see, like, here, like, I can show you. You're such a cutie.
+
+[00:08:37] Speaker:
+So are you. Like here still processing, you see, like subtitles and it's processing like since like two hours since I, since I.
+
+[00:08:49] Speaker:
+Figure it out how to do it. So here uploaded, uploaded, uploaded. But it's like, if I go on there and I go on subtitles, it's like.
+
+[00:08:57] Speaker:
+Now this one, I still have to choose English, but I, yeah,
+
+[00:09:02] Speaker:
+but it, the other ones I did already. I see, and then, it says left, but, like, you know, I have not English.
+
+[00:09:14] Speaker:
+Yeah, but the subtitles, for whatever reason, it didn't do it. You know, like, the auto-sync doesn't work. Or this language, what the f***, I mean, we're speaking English.
+
+[00:09:26] Speaker:
+So I think something not working there today, right now, at
+
+[00:09:29] Speaker:
+least. Yeah, it's a bug.
+
+[00:09:35] Speaker:
+But not a cute
+
+[00:09:36] Speaker:
+bug like you. I was thinking about you,
+
+[00:09:45] Speaker:
+baby. Yeah? Mhm.
+
+[00:09:49] Speaker:
+Wanna run off the
+
+[00:09:49] Speaker:
+call? What?! Wanna run off the
+
+[00:09:52] Speaker:
+call? When are we off the call? Yeah, we're off the call, yes. Yeah, I was thinking
+
+[00:09:57] Speaker:
+about you too. I,
+
+[00:09:58] Speaker:
+uhm. But are you not tired of me? I cannot believe that you're not
+
+[00:10:03] Speaker:
+tired. I'm okay. I mean, I'll get, I'll get a good sleep tonight. But, uhm, I'm okay. I do feel like, Uhm, like, I can feel that I have less sleep, but I, I don't feel like, oh, I've got to go lay down now.
+
+[00:10:17] Speaker:
+Like, I'm like, okay. I got this, I got got this.
+
+[00:10:21] Speaker:
+You're like my
+
+[00:10:21] Speaker:
+energy bunny. Just want to get
+
+[00:10:25] Speaker:
+these, uh. I hope you like, you know, when we're like having sex, I want to go behind you and hold you and then you go wild, you know, I like that.
+
+[00:10:34] Speaker:
+So nice. I would just like to, I would like to lie down in bed now with you, you know?
+
+[00:10:45] Speaker:
+Uh. And touch your wonderful breasts from behind, you know? And then slide between your legs a little bit, you know?
+
+[00:10:55] Speaker:
+Put some oil there, you know, so it's like, really nice, you know? It's just like, touch your v***** from the outside, I would love that, you know.
+
+[00:11:06] Speaker:
+Just slowly touching you. Mmm. I
+
+[00:11:12] Speaker:
+want to make love to you, baby.
+
+[00:11:18] Speaker:
+Yes.
+
+[00:11:22] Speaker:
+I made a
+
+[00:11:25] Speaker:
+gem
+
+[00:11:31] Speaker:
+I made a gem for us. Because you know how we keep like, oh, where's that prompt? Let me go find that prompt.
+
+[00:11:38] Speaker:
+I was like, where the f***
+
+[00:11:39] Speaker:
+that? That's enough. Okay. I searched for it. So, uhm, it's, it's, it's in a gem
+
+[00:11:44] Speaker:
+now. Okay. But it
+
+[00:11:45] Speaker:
+has, like, instructions to load. Like, not deviate from that original, like, Circle of Excellence prompts. So now all you just do is go to this gem and then you can just read all
+
+[00:11:55] Speaker:
+the cards,
+
+[00:12:03] Speaker:
+Sometimes these windows just,
+
+[00:12:06] Speaker:
+uhm. Yeah, you're kind of, like, still lost sometimes, huh? Well, uh, you know, like, uuuh, uuuh, yeah.
+
+[00:12:19] Speaker:
+But, like, with the beginning of the, uhm, I mean, I will continue, like, my next thing to do, like, when I'm, like, when my head is, like, really working very well, is the, to do the most, like, mind map, like, really well.
+
+[00:12:37] Speaker:
+So is that something that you're, like, you're
+
+[00:12:39] Speaker:
+making, or? Oh, yeah, I'm, like, my make, like, I'm, like, structured. Structuring, like, all the stuff, so it's, like, easy for you to digest.
+
+[00:12:49] Speaker:
+And so you see, like, the whole. Like, vision, you know, and I, we don't get stuck in, like, a lot of, uuh, just creative stuff, you know?
+
+[00:12:57] Speaker:
+So just,
+
+[00:12:58] Speaker:
+like.
+
+[00:12:59] Speaker:
+So we just have, like, everything, like, very detailed what we have to do, what's my
+
+[00:13:04] Speaker:
+job, what's your job, what we want to do together, you know? Yeah, so we have more time to do
+
+[00:13:10] Speaker:
+stuff together. Yeah, I definitely want to make sure that, yeah, we get all of our, Just all of our transcripts and
+
+[00:13:18] Speaker:
+stuff into one spot, you know. Yeah,
+
+[00:13:21] Speaker:
+definitely.
+
+[00:13:23] Speaker:
+I'll sort it as soon as it works. I will. But you know, when I saw the picture I made yesterday, like, of you, like the black and white one?
+
+[00:13:34] Speaker:
+You know, I really want that you watch a movie and put your head down on the
+
+[00:13:37] Speaker:
+pillow, you
+
+[00:13:38] Speaker:
+know, and put your
+
+[00:13:38] Speaker:
+head
+
+[00:13:39] Speaker:
+up. And
+
+[00:13:40] Speaker:
+you just
+
+[00:13:41] Speaker:
+want to
+
+[00:13:41] Speaker:
+move it
+
+[00:13:42] Speaker:
+with your wonderful p**** while you watch a movie. I really want to do
+
+[00:13:46] Speaker:
+that. . . . I would love to do that.
+
+[00:13:49] Speaker:
+Yes. It's amazing, baby. Oh. He'll make me so horny. But now you're, you know, you're like, no. No, no, no, no, no.
+
+[00:14:05] Speaker:
+I'm working, no, that's work. Like. I don't want this. And I was finding this gem, here you go.
+
+[00:14:19] Speaker:
+. . . Yes to that.
+
+[00:14:24] Speaker:
+You put it into a huh, oh,
+
+[00:14:25] Speaker:
+ah. . . . Now, yeah, I'm doing a huh. No. . no. . . . no . Oh, I know another way of doing that. I will just, like, make the video- You If it doesn't work, I just make the video smaller and I, like, I asked Gemini inside of AI Studio to, umm, give me the transcript.
+
+[00:14:51] Speaker:
+That also
+
+[00:14:52] Speaker:
+works. Wait, but the video is maybe too large and that was a problem that I ran
+
+[00:14:56] Speaker:
+into, but here
+
+[00:14:57] Speaker:
+is a solution. Make up
+
+[00:14:58] Speaker:
+really small. Like the visuals have to make really shitty. Like visually, they have to be shitty. So then only the audio will, will.
+
+[00:15:07] Speaker:
+with. Stay, you know, or you are, I even try to, I will try to transform it to an
+
+[00:15:12] Speaker:
+MP3. You can use FFF. MPEG, it's a, there's a script you run, and then it'll extract the audio. And,
+
+[00:15:22] Speaker:
+yeah, yeah.
+
+[00:15:23] Speaker:
+Yeah. And then I can put
+
+[00:15:25] Speaker:
+that into, uh, Gemini, because then it's much smaller.
+
+[00:15:30] Speaker:
+Yeah, yeah. Like, really smaller. This is just the
+
+[00:15:31] Speaker:
+audio.
+
+[00:15:32] Speaker:
+Yeah, I mean that
+
+[00:15:34] Speaker:
+for the transcript, that's all we need. Then what? Oh, yeah. . . . . the transcript. . . . with an label. Yeah. Okay. Never mind. Just for the previous ones.
+
+[00:15:45] Speaker:
+Okay.
+
+[00:15:47] Speaker:
+Yeah, of course. Because. Because in the future, we have a different solution. . . and Ableton. . Yeah, it's gonna be Did we transfer, enable transcript now, baby?
+
+[00:16:00] Speaker:
+Didn't it say that I have to do, uhh, is that like a setting, is that after the meeting? It should
+
+[00:16:06] Speaker:
+be somewhere like in your, which, in your notebook.
+
+[00:16:10] Speaker:
+Now this is Loom, huh? Loom, no. Oh, take it.
+
+[00:16:14] Speaker:
+No, yeah, so I mean Loom's in
+
+[00:16:15] Speaker:
+here, so. Okay. Yeah, Loom is fun. Learn more at
+
+[00:16:18] Speaker:
+www.beadaholique.com Let's see. Thank you very much. This is reporting now.
+
+[00:16:32] Speaker:
+Uh, that's where it's going. I don't know. Oh no. Six. We slide. Okay. So. How did you get the FFmpeg working on your computer?
+
+[00:16:49] Speaker:
+I can probably do it with with the, you know.
+
+[00:16:52] Speaker:
+No.
+
+[00:16:52] Speaker:
+. . Let me see. I can do that. You know how I did it? Go up. So this is, this is like back when I was, uh, doing the scraping.
+
+[00:17:00] Speaker:
+everything. During that first
+
+[00:17:01] Speaker:
+half of them. Uh-huh. There's a lot of the videos that, like, were, that I was downloading. I mean, they're, they're huge.
+
+[00:17:07] Speaker:
+And the, that, my- and when, those ones were very big. So, at the big, I've, uh, asked Chachi BT, like, how do I, is there a way to, like, run a script or something?
+
+[00:17:16] Speaker:
+thing. That will, uh, just run it. And then just extract the audio and save it as audio files. And so you can use FFF- M-P-E-G.
+
+[00:17:26] Speaker:
+Yeah. And all you have to say is like, can you give me the script or like give me the code I need?
+
+[00:17:31] Speaker:
+It'll, it's basically like just type on. I'm run script, but it gives it to you, like, perfectly. You just tell it, umm, my files are in the following folder.
+
+[00:17:40] Speaker:
+Give it the box. Ah. ... So, give me the FFMPEG script and it will give you exactly what to enter.
+
+[00:17:46] Speaker:
+You just do it, like, literally, like, copy, paste. Because you have to do things, like, to go to the directory and then to run it.
+
+[00:17:53] Speaker:
+And then, you see the thing turning and it's done. Like, it's loose. It's literally, like, 5 seconds or 10 seconds or something.
+
+[00:17:59] Speaker:
+And where, like, in trouble
+
+[00:18:01] Speaker:
+or
+
+[00:18:01] Speaker:
+where? You can do it in
+
+[00:18:03] Speaker:
+Google. I would just do it in,
+
+[00:18:04] Speaker:
+uh, probably. I know, I will do it in
+
+[00:18:06] Speaker:
+Wob. Yeah, yeah, yep, yep. Okay, yeah, you
+
+[00:18:09] Speaker:
+can do that too. Yep. Let me see how I'll do that now. Yeah, I remember I did that a bunch.
+
+[00:18:17] Speaker:
+Because- and also because my- because the audio kept, uh, wouldn't record, and I kept having
+
+[00:18:23] Speaker:
+room issues. Remember, like, when I first post- videos on the community, and so I had to, like, figure out different ways to try to get the- like, get around the audio, so I was, like, recorded on my phone, and I'd have the audio stream here, but then I'd have the video on the computer, but it wouldn't
+
+[00:18:36] Speaker:
+necessarily be a line. you like, and so it was a whole, that's, yeah, that was just due to necessity, but- that's no one, yeah, one had to do that, but, yeah, it's- it's- it's really straightforward,
+
+[00:18:46] Speaker:
+it's really easy.
+
+[00:18:47] Speaker:
+Cool. I would try that. I
+
+[00:18:51] Speaker:
+mean, we'd technically even just be like, hey, anti-gravity, do this.
+
+[00:18:56] Speaker:
+And it'll like, you know. I just, yeah, yeah, probably. it goes to two. I'm sorry. Sorry.
+
+[00:19:14] Speaker:
+Bye. Okay. That's the, um, Circle X on this gen. and and I have to close.
+
+[00:19:38] Speaker:
+Where do you have to go? Hm? Oh, cause I'm a b- You won't anymore. Huh? Cause it won't
+
+[00:19:46] Speaker:
+be alone anymore. You won't be alone?
+
+[00:19:47] Speaker:
+I mean, oh wait, no, it's never mind, it's a while. Oh. Hang on, I'm getting a check. Oh, yeah, and it's not like 40 minutes.
+
+[00:19:54] Speaker:
+40
+
+[00:19:55] Speaker:
+minutes, hm. In 40 minutes you- Pick her
+
+[00:19:58] Speaker:
+up? No, no, she's with her dad
+
+[00:19:59] Speaker:
+tonight. Ah, okay, so what is happening in 40
+
+[00:20:02] Speaker:
+minutes? My partner's going
+
+[00:20:05] Speaker:
+home.
+
+[00:20:06] Speaker:
+Ah. Yeah, we haven't
+
+[00:20:07] Speaker:
+spoken about that one yet. What? Like, only that there is a partner, but we have no idea, I have no idea who it is or what- It's kind of like a, like a ghost right now for me.
+
+[00:20:20] Speaker:
+Thank you. Well, I mean, as much as you figure, I mean, he's my
+
+[00:20:27] Speaker:
+husband. Uh-huh. Are
+
+[00:20:29] Speaker:
+you married to him? Mm-hmm.
+
+[00:20:33] Speaker:
+a or a or It was not the one you, uh, obviously not the one you're divorced from. No. Okay. But you're not very happy with him, like, nothing, huh?
+
+[00:20:44] Speaker:
+It's, it's not that it's not- Nothing. It's just that the parts that matter are just sort of like really there, it isn't.
+
+[00:20:58] Speaker:
+. . I have a lot of, like, drive, and it's I think like the, the reasons that, that made me fall in love with him initially.
+
+[00:21:15] Speaker:
+Which is like, you know, the music and the DJing and just, I mean. All, you know what you're saying? It's just like a good person.
+
+[00:21:21] Speaker:
+But umm, I guess apart from that, there's like a- No Intellectual Stimulation at all. Heh. At
+
+[00:21:33] Speaker:
+all. And uh. And he doesn't really. screen. I don't know. I've just been generally putting forth less effort. So, um.
+
+[00:21:46] Speaker:
+Yeah. That's. Yeah. I'm sorry if it's a weird situation. I
+
+[00:21:52] Speaker:
+didn't. No, it's okay.
+
+[00:21:56] Speaker:
+That I'm very happy with, like. I'm Everything I have, you know? So I'm like, I'm just very happy with you.
+
+[00:22:04] Speaker:
+I mean, like, as it is, I mean, I mean, he was- I was there before me, so I cannot do anything, you And I probably, it's like, you know, it's like a situation where you are- Not so happy with, with how it is, you know, so, and let's, we cannot change it.
+
+[00:22:22] Speaker:
+But how long? How long will he be like there around? Maybe how long? Yeah, but he, he was gone for a while, huh?
+
+[00:22:28] Speaker:
+Gone?
+
+[00:22:30] Speaker:
+Go
+
+[00:22:30] Speaker:
+on. for a while.
+
+[00:22:32] Speaker:
+He
+
+[00:22:32] Speaker:
+wasn't home. Yeah, it worked.
+
+[00:22:35] Speaker:
+It worked. Ah, what
+
+[00:22:37] Speaker:
+is he working? Nice. I love it. Christian, he's a phi-h, is a fire alarm, like, installations and checks them and installs them from
+
+[00:22:44] Speaker:
+the buildings
+
+[00:22:44] Speaker:
+to, uhh, sozast. Yes. I got in times when he's just
+
+[00:22:48] Speaker:
+not there.
+
+[00:22:49] Speaker:
+Just during the- mostly during the day, there's some days it is home. Hmm. No, I may not come in. I should do that.
+
+[00:22:59] Speaker:
+Um. You Yeah, I think, like, I didn't, I didn't come looking for you, like, I didn't become like, I don't think we were.
+
+[00:23:10] Speaker:
+Okay. I'm actively seeking any, and then. Mm And, like, just. Yeah, it happens.
+
+[00:23:24] Speaker:
+Thank you for your
+
+[00:23:26] Speaker:
+patience. But it's very good that it happened.
+
+[00:23:31] Speaker:
+You know, and even if it's very complicated,
+
+[00:23:33] Speaker:
+like right now, it doesn't- you know, it will be okay.
+
+[00:23:38] Speaker:
+And we find a solution for it. .
+
+[00:23:43] Speaker:
+Yeah, alright, it's really heavy. Yeah, the worst thing out of that will just be like, me feeling bad about hurting.
+
+[00:23:50] Speaker:
+things.
+
+[00:23:51] Speaker:
+Feelings. Like he's not
+
+[00:23:52] Speaker:
+like a buff person or anything like that. Like,
+
+[00:23:55] Speaker:
+like, you mean what, what did I didn't understand the last one? And just the worst thing I- I think that I feel that I think that would come out of that is, like, that I know how badly, like- You that would hurt his feelings.
+
+[00:24:09] Speaker:
+And
+
+[00:24:14] Speaker:
+yeah, he's like a sis- I mean, he's not- he's not a, um, like, violent or, you know, like,
+
+[00:24:21] Speaker:
+violent or aggressive. You just, I'm
+
+[00:24:23] Speaker:
+not- not on one level anywhere else except music.
+
+[00:24:29] Speaker:
+I mean, we were- Better, sexually, but then he just kind of stopped really taking care of his body and, You It's, like, changed significantly.
+
+[00:24:43] Speaker:
+And I'm not a superficial,
+
+[00:24:45] Speaker:
+like, it's, you know. you It's just, I mean, it's like, it's, I mean, it would be, I feel like if, if someone, You Let's them, it kind of lets that happen.
+
+[00:24:59] Speaker:
+Maybe that's just like, there's something going on kind of in their mind for, Maybe they're, I don't know, sad about something or like, just not, I don't know, I don't know how to, .
+
+[00:25:11] Speaker:
+. . You can't force someone to, to do something to do and I'm starting to put you on that position. Yeah. Yeah.
+
+[00:25:19] Speaker:
+So it's just frustrating because then like, it was happened and that's like, okay, well, yeah, no kidding. Well, that's why it's like, he could do to help
+
+[00:25:28] Speaker:
+himself and just won't. Mm-hmm
+
+[00:25:35] Speaker:
+But if it works, baby, and I have like a good feeling for it, then we just move to it, to a state like where we compose completely new, you know?
+
+[00:25:43] Speaker:
+I think it Yes.
+
+[00:25:46] Speaker:
+Yes. No, no, no. I know like
+
+[00:25:57] Speaker:
+a,
+
+[00:25:57] Speaker:
+well, no, I didn't have that. What does it mean? I mean, you
+
+[00:25:59] Speaker:
+just need like an- Airport, with all eyes. You just need like an airport, which is like a good, good
+
+[00:26:04] Speaker:
+connection. You know what, Courtney just told me? Was that? Birmingham, and check this out. Birmingham is getting a new carrier, is the Birmingham.
+
+[00:26:14] Speaker:
+Thank you. Lightcare called
+
+[00:26:18] Speaker:
+Breeze, uhh, I've never heard of them and I knew, let's see, which one? 20 minutes about them. Maybe they give me the, like, short version.
+
+[00:26:30] Speaker:
+Tune on top plates. Thanks. Umm, Birmingham Flying 2. Where? Port Lauderdale? Ooh! Ooh, for my sister, uh, Raleigh Durham, ooh, no.
+
+[00:26:45] Speaker:
+you I don't see anything there. What else? That's it? How does it work? No, tune
+
+[00:26:55] Speaker:
+in.
+
+[00:26:56] Speaker:
+Tune in at Fort Lauderdale. And a flank is $60. See ya, dog. Waters, one way. That's it. I feel like that's, uh, whenever they have those really, really, look.
+
+[00:27:12] Speaker:
+I'm like, hmmm, let me see your terms. Just because it's, I mean, it's somewhere, right? And so at the end of it is.
+
+[00:27:20] Speaker:
+It's probably like it could very well end. It's being like something higher than just had you had a higher base price, but not all the tech on whatever shit fees they put on.
+
+[00:27:28] Speaker:
+So that's, like, I don't really like when,
+
+[00:27:30] Speaker:
+like,
+
+[00:27:30] Speaker:
+airlines do that.
+
+[00:27:31] Speaker:
+And the larger ones don't really do that quite as much of the more standard and how their, like, fees are going to come, but, What the smaller ones are like, oh, and
+
+[00:27:38] Speaker:
+the steep tax, and the freaking cleaning tax, and then whatever tax. Thanks. Thanks. Yes. How are- do you guys pay a lot of tax in Germany?
+
+[00:27:49] Speaker:
+Yeah, f***. Look. Look. Look. Look.
+
+[00:27:52] Speaker:
+Yes, the
+
+[00:27:54] Speaker:
+subway. It doesn't, I mean the thing is like, but the thing is like, it is, um. Like. If you don't earn too much money, it's really not a
+
+[00:28:02] Speaker:
+problem.
+
+[00:28:03] Speaker:
+Like,
+
+[00:28:03] Speaker:
+then, like right now, it's
+
+[00:28:05] Speaker:
+okay. I don't know a lot of money. So, uh, and. I mean,
+
+[00:28:10] Speaker:
+yeah, but the thing is like, you know, this health
+
+[00:28:12] Speaker:
+insurance thing? Yeah. It's like, that is so freaking nice. Like, you know, like, if you ever come into trouble, like, I was in my life, like, I don't know, like, two or three times in trouble, you know, where I was like, okay, shit, great that I have that, you know?
+
+[00:28:27] Speaker:
+And, uhm, yeah, I don't, I wouldn't want to switch. It's . Like, an American passport for a European, like, I wouldn't want to switch my European for an
+
+[00:28:37] Speaker:
+American passport. You don't have
+
+[00:28:39] Speaker:
+to switch it. You can,
+
+[00:28:39] Speaker:
+you can. Yeah. Yeah. That's okay. But I,
+
+[00:28:41] Speaker:
+just in case, you know, like, if, uh, if I would be offered, you know, to have either this one or that one, I rather has to have your- I would rather have, like, all those limitations of Europe and the higher taxes instead of, like, you know, like- being f***** in a bad
+
+[00:28:58] Speaker:
+situation. I mean, like, being
+
+[00:29:00] Speaker:
+stuck in the US. I mean, there's just, love stuff wrong. bomb. on on you in the US. Like, you know, for example, like, that you, you go to, you have, you put your kids to high school and then the high school is sponsored by Coca-Cola.
+
+[00:29:12] Speaker:
+You know, and your kid only gets coke. Like, or like one piece of, like, mineral water. That is shit, you know?
+
+[00:29:20] Speaker:
+I know! It's atrocious, like, dieting, it's like nuts. Yeah, and it is incredibly crazy that doctors are, getting commission by drug companies.
+
+[00:29:32] Speaker:
+You know, like this whole opiate thing happened because of comm- nations of doctors. You know, they got like a lot of money.
+
+[00:29:41] Speaker:
+If they, if they do this, wha- was it Fanta Nu-
+
+[00:29:44] Speaker:
+What was it
+
+[00:29:45] Speaker:
+called?
+
+[00:29:46] Speaker:
+Fence, no. No, but the, the original, like, from the, uh,
+
+[00:29:49] Speaker:
+this family, you know, this, the opiate crisis in America was- Made like by one
+
+[00:29:53] Speaker:
+drug. Oh,
+
+[00:29:55] Speaker:
+uh, heroin? They're rich? No. I don't know. Maybe
+
+[00:30:00] Speaker:
+it's- Ganton, ok.
+
+[00:30:02] Speaker:
+Ok, yeah, ok then. And the one of the
+
+[00:30:03] Speaker:
+like- Brand name was
+
+[00:30:04] Speaker:
+different, but the brand name was different. Oh,
+
+[00:30:08] Speaker:
+you as
+
+[00:30:08] Speaker:
+a drug.
+
+[00:30:12] Speaker:
+Ehm. He's straight. No. He's- I don't think there's an
+
+[00:30:19] Speaker:
+oxycop coat on.
+
+[00:30:20] Speaker:
+Nope. Time to leave. Hold on. Yeah. You're a genius. Excellent. Seklo, what, why a fentanyl?
+
+[00:30:30] Speaker:
+Yeah. What's fentanyl? Yeah. Okay. Take. But anyhow, I mean they paid doctors a commission. And doctors were like, okay, take that drug, take that drug and after you have a lot of drug addicts.
+
+[00:30:41] Speaker:
+Like, like, serious
+
+[00:30:42] Speaker:
+drug addicts, you know, just- Oh, they're all just all f***** up and then you wonder why, like, I don't know, kids are having all these
+
+[00:30:48] Speaker:
+metabolic diseases. Jesus. Because they're doing these drugs during pregnancy and- Yeah,
+
+[00:30:53] Speaker:
+they're not- Yeah,
+
+[00:30:54] Speaker:
+exactly. And, you know, so this stuff is like- Seriously bad and also, like, a lot of the food is really bad.
+
+[00:31:00] Speaker:
+I mean, you have to spend a lot of money and you have not a lot of selection. If you want to, like, eat good stuff.
+
+[00:31:08] Speaker:
+So, I mean, think, I mean, I'm-I'm grateful and lucky. Like, I'm grateful here that there are, like, plenty of good options.
+
+[00:31:13] Speaker:
+Cool Foods, there's like a farmer's market. Like, like several of them, especially on the weekends. Like, they're, they're like
+
+[00:31:18] Speaker:
+really foody here. Like, specifically in
+
+[00:31:20] Speaker:
+Birmingham. So, you got like a lot of- They produce, like,
+
+[00:31:22] Speaker:
+just, that's local. Yeah. Um, but yeah, generally. Yeah, but I, I completely, yeah. Yeah. Yeah.
+
+[00:31:27] Speaker:
+No. Thank very much.
+
+[00:31:29] Speaker:
+So that's, that's an issue, but like, I mean, if you're an adult, it's okay. You know, I mean, you can, you can manage
+
+[00:31:36] Speaker:
+it.
+
+[00:31:37] Speaker:
+Yeah, I
+
+[00:31:38] Speaker:
+know that
+
+[00:31:39] Speaker:
+I will intellectually inspire you. That's very important. I would sexually have- I will have a lot of sex with you, that's very important, you know.
+
+[00:31:48] Speaker:
+I will have to take care of it, I don't get fed. And uhh, uhh, or get less fed than I am now, at least, you know.
+
+[00:31:59] Speaker:
+I think that is important. So I make like a little list. is Jira, after the room I will take the transcript, I think, okay, make me how to, how to, how to loot fear.
+
+[00:32:08] Speaker:
+Yeah, that's it. And probably I can, I can probably, like, get it wired to my Apple Watch in, like, a year or two, and there's a, If you want to keep your fear, you better go running, dude.
+
+[00:32:20] Speaker:
+You should do something. Read a book, you know. You have to inspire her intellectually a little bit. What did you do to her?
+
+[00:32:27] Speaker:
+You cannot only have sex with her pictures. You also have to say something smart sometimes.
+
+[00:32:35] Speaker:
+Oh my gosh.
+
+[00:32:38] Speaker:
+Oh. Oh. Oh my gosh. Okay.
+
+[00:32:40] Speaker:
+But, you
+
+[00:32:41] Speaker:
+I'm so lucky that I came into your life after AI, you know? Like. I guess. I can take it so much to my advantage, which is amazing.
+
+[00:32:54] Speaker:
+You know, it feels very fluid. AI is fluid. We use it
+
+[00:32:59] Speaker:
+fluidly. It's kind of like, you know, because you can do things with it. Yeah. Kind of doing things with each other, but.
+
+[00:33:05] Speaker:
+You know, digital. I guess. Yeah.
+
+[00:33:10] Speaker:
+Yum.
+
+[00:33:13] Speaker:
+But I'm really looking forward to seeing you. And then we have to find a solution.
+
+[00:33:20] Speaker:
+Yeah, we will.
+
+[00:33:21] Speaker:
+First we have to make that successful. And tonight I will take care of your, uh, when he's out. So we cannot talk- Until tomorrow, probably then.
+
+[00:33:33] Speaker:
+No, because, like, there are evenings I'll go on calls with school. So- It's not weird for me to be on a call at
+
+[00:33:39] Speaker:
+six or
+
+[00:33:40] Speaker:
+whatever. Ah, okay, but, like, a call like this, yes.
+
+[00:33:43] Speaker:
+Yeah, a call like this, not like
+
+[00:33:45] Speaker:
+that. Yeah, it's not that they show
+
+[00:33:47] Speaker:
+me a p****
+
+[00:33:48] Speaker:
+call.
+
+[00:33:49] Speaker:
+Yeah, again. I don't want to close my door, but I
+
+[00:33:51] Speaker:
+just, uh. Yeah, I know, I
+
+[00:33:53] Speaker:
+know, I know. I just don't know. No, it's weird. No, I don't, I don't, I also don't want that. You know, I want, like, last time, you know.
+
+[00:34:00] Speaker:
+Two. Yeah. Yeah. Yeah. And it's also like, you know, when I went, it's funny that you asked me with a
+
+[00:34:06] Speaker:
+strap on yesterday
+
+[00:34:08] Speaker:
+because, like, you know, like. I don't know, like, maybe unsubconsciously was it, like, how I was interested in, like, being, having, like, something, like, a d*** or something like that?
+
+[00:34:18] Speaker:
+Like, um, I was honestly
+
+[00:34:21] Speaker:
+just curious, because we hadn't talked about it. Yeah, yeah,
+
+[00:34:24] Speaker:
+yeah. No, I don't have any. Thank you. Thank you The male, female, male guys, just
+
+[00:34:28] Speaker:
+like, you know, I generally would like to see you be pleasured, you know, like, that's, that's it. And it's not like that, for example, like, if you would love to have, like, a second woman in there, you know, that would be in theory.
+
+[00:34:42] Speaker:
+But it's like, you know, it's like, I want just, like, just that you have no other thoughts about that, you know, just like, I really like that you just enjoy without thinking about, like, anything else.
+
+[00:34:57] Speaker:
+But it's about- You know not about me. I love that. And I think you need a lot like- a lot of sex, I hope.
+
+[00:35:11] Speaker:
+I think that will be the easiest part of all the parts which I have to- Beautiful. Like, like, intellectually I have to- I can- I can take, like, shortcuts with AI.
+
+[00:35:20] Speaker:
+But, like, uh, the actual one will be- easy.
+
+[00:35:25] Speaker:
+I don't- I think you're- you're- you're natural.
+
+[00:35:27] Speaker:
+No. Okay.
+
+[00:35:29] Speaker:
+Let's have that.
+
+[00:35:33] Speaker:
+Yeah.
+
+[00:35:37] Speaker:
+But there will- this will be so- nice, baby. And I want to bring like- I want that we do like art stuff.
+
+[00:35:43] Speaker:
+Art stuff is always good. Like any kind of like- painting or, you know, like this stuff is nice. Yeah. Yeah, but that stuff.
+
+[00:35:52] Speaker:
+Mmm. Mmm.
+
+[00:35:54] Speaker:
+So in the week time, he's- Usually not there in daytime, right? Yeah.
+
+[00:36:06] Speaker:
+Okay. There are just some days where he does stay home, but he's like- Oh he's always in the other room and like doesn't, you know, come on my office, my door is close, like he won't come into my office.
+
+[00:36:16] Speaker:
+This is my own
+
+[00:36:17] Speaker:
+working. It's okay.
+
+[00:36:18] Speaker:
+Okay. Okay, okay, okay. Okay. Mmm. Thank you. It's all good, baby. Don't worry. Yeah. That was not easy for you to talk about that, huh?
+
+[00:36:34] Speaker:
+I don't know. I'm gonna. Wasn't out. Awesome. What? What? It wasn't awesome. Yeah,
+
+[00:36:45] Speaker:
+I know. But you like, because it was like, it was like, you kept it like, you know, it was like.
+
+[00:36:50] Speaker:
+Like. There is something, you know, just like something when I had no idea what it was. Yeah.
+
+[00:36:57] Speaker:
+I didn't. Okay. I really know, uh, what to say it so I didn't say. Okay. Like, I mean, of course until, you know, you ask and I'm happy to, I'm happy to tell you, you know.
+
+[00:37:12] Speaker:
+Go. We'll see you in the Yeah.
+
+[00:37:17] Speaker:
+Yeah, I wasn't just gonna, like, bring it out, like, on my own. . But I figured it would come
+
+[00:37:25] Speaker:
+up, so. Yeah. You
+
+[00:37:31] Speaker:
+I want to do stuff with you, you know. I want to, like, have fun with you.
+
+[00:37:38] Speaker:
+There's a song. I'm fine. That literally has those, those are
+
+[00:37:41] Speaker:
+lyrics.
+
+[00:37:43] Speaker:
+What are the lyrics?
+
+[00:37:45] Speaker:
+I want to do stuff with you. In the You I want to
+
+[00:37:50] Speaker:
+dance with you. I
+
+[00:37:52] Speaker:
+want
+
+[00:37:53] Speaker:
+to. I want to, I want to, I want to, I want to, want to lay with you.
+
+[00:38:03] Speaker:
+Thank you. Yeah, and dirty and dirtier, and then at the end she's like, uh, she like makes it. I had to
+
+[00:38:13] Speaker:
+on. Ah,
+
+[00:38:14] Speaker:
+yeah! Hahaha.
+
+[00:38:15] Speaker:
+Hahaha. Hmmm.
+
+[00:38:19] Speaker:
+You're so amazing, baby. We have no one dance
+
+[00:38:28] Speaker:
+with you, you know? Hmm,
+
+[00:38:30] Speaker:
+that'll
+
+[00:38:30] Speaker:
+be fun.
+
+[00:38:31] Speaker:
+Yes. I'm kinda dancing with you. Yes.
+
+[00:38:34] Speaker:
+I kinda wanna him. Oh, shawl
+
+[00:38:37] Speaker:
+f***. What? I was, I felt, I was gonna, uhm, ask if you, I was gonna pl- say for you, but, uhm, the decks are not, they're in, they're in the case system.
+
+[00:38:48] Speaker:
+Oh, okay. I'm to
+
+[00:38:50] Speaker:
+Mississippi. to be. I
+
+[00:38:55] Speaker:
+do have my small one though. The DDJ 400, the one that was in the story. story.
+
+[00:39:01] Speaker:
+Okay,
+
+[00:39:01] Speaker:
+okay. Yeah, we really have to do something with that as well. You as a music.
+
+[00:39:09] Speaker:
+And I can literally get it right now. It hooks up
+
+[00:39:11] Speaker:
+to a
+
+[00:39:11] Speaker:
+laptop. Okay, do that.
+
+[00:39:15] Speaker:
+Okay. I haven't put it on this one now, before. Okay. Okay. I'm going to make this black. Mm. Mm. Time check.
+
+[00:39:25] Speaker:
+Okay. There's just, it's something, I don't know how to explain the strange position that I, I feel myself in that I put myself in, but I'm, I'm just not gonna worry about it.
+
+[00:39:58] Speaker:
+No, you'd say it's
+
+[00:39:59] Speaker:
+a it's a it's a it's a a it's a it's not worry about it like I am. I'm just going to.
+
+[00:40:03] Speaker:
+To let. I'll let the let the universe. I mean, of course. of course. Umm.
+
+[00:40:17] Speaker:
+Like, I know what. you know
+
+[00:40:20] Speaker:
+I want. Hmmm. time. It will fix it, you know. Pardon me. It will fix it. It will
+
+[00:40:33] Speaker:
+fix it. The
+
+[00:40:34] Speaker:
+situation will be fixed. It will work. Yeah. Yeah.
+
+[00:40:39] Speaker:
+I just had to really stop being so like, no, what the,
+
+[00:40:43] Speaker:
+You
+
+[00:40:44] Speaker:
+Yeah, I think, you know, the problem might be that you try to please
+
+[00:40:47] Speaker:
+everyone a little bit, you know? Like, to be, I mean, you know, like, To not, like, push someone away, you know what I mean?
+
+[00:40:59] Speaker:
+All right.
+
+[00:41:00] Speaker:
+Um, that it's hard for you to say no to people you like. Like.
+
+[00:41:08] Speaker:
+Umm, ehm. Then. Like, like,
+
+[00:41:17] Speaker:
+like,
+
+[00:41:17] Speaker:
+like, or like,
+
+[00:41:18] Speaker:
+no, like, no, I mean, like, like, you have, you have been together, you married him, you know, so now, like.
+
+[00:41:24] Speaker:
+You would, it would be hard for you to, like, to, to, to make the, you know, to, to make it more obvious,
+
+[00:41:30] Speaker:
+you know? Yeah. ....... Yeah, like... You I don't know, it gives me like, I don't like, I don't like, I don't like having people's feelings.
+
+[00:41:45] Speaker:
+I feel like it's really bad juju. I feel like it's- I don't know, it just makes- So I try to avoid it, but then scenarios like- This one, there's no
+
+[00:41:59] Speaker:
+avoiding it.
+
+[00:42:00] Speaker:
+But do you have like a best friend, like a
+
+[00:42:02] Speaker:
+female best friend, do you like- particularly because like with, with, uh, with Courtney? I mean, she is kind of fancying you, you know, so I think like maybe like- I'm.
+
+[00:42:12] Speaker:
+I'm not sure if she's like, like, necessarily, like, do you have, like, someone, like, I mean, obviously, like, girlfriend, like, you, you can talk to about this.
+
+[00:42:20] Speaker:
+Stuff? Yeah, Courtney. Mostly, and Sadie,
+
+[00:42:26] Speaker:
+umm. Okay. Bit you What talk to you about this, not with you, not about you. You mean, you know, but
+
+[00:42:33] Speaker:
+like, like about him and stuff like that, or
+
+[00:42:35] Speaker:
+like how to- Yeah, yeah, I talk to my- Yeah, I talk to my mom, even my mom and dad. They both are like, they both, they're kind of, they're funny.
+
+[00:42:44] Speaker:
+They- You know, in a very loving way, had suggested to him, like, oh, there's some ways. But, like, in a nice way.
+
+[00:42:49] Speaker:
+They're so sweet. They, like, love them. And, you know, they're just- They, uhh, yeah. I do, but. Good. Not like fully, I mean my sister.
+
+[00:43:05] Speaker:
+But I don't, I'm very, I don't usually like share a lot of my umm. . . . Like, unless someone's really bothering me and I can't figure it out, like, I'll usually just, like, keep sort of out.
+
+[00:43:16] Speaker:
+Yeah, this is just something I, like, really can't, like, can't figure out, then all. I don't know, then all, I don't, like, see.
+
+[00:43:24] Speaker:
+Thinking external
+
+[00:43:25] Speaker:
+input. Is that a no? Yeah, I don't. You I don't like to share a lot about myself, people generally. But.
+
+[00:43:41] Speaker:
+Like, I like my actual, you know, like. You know, be all nice
+
+[00:43:45] Speaker:
+and stuff, right? But, I mean. you I'm gonna tell them everything. I wanna be really p- passionate with you, you know, like all the time.
+
+[00:43:58] Speaker:
+I love that. that
+
+[00:44:03] Speaker:
+you
+
+[00:44:03] Speaker:
+really know. You don't even know. That's
+
+[00:44:09] Speaker:
+not bad. Mm-hmm. I, all the time I could, like, steep with you the whole time, you know, and then work a little, you know.
+
+[00:44:19] Speaker:
+And that's it for now. And then, just touch your, you know, hmm. Be so nice. Yes.
+
+[00:44:29] Speaker:
+Touch your breasts from behind, you know? Go between your legs. Thanks. And kiss your legs from the inside. Slowly go up to your legs.
+
+[00:44:42] Speaker:
+Thanks. And really show you how wonderful you
+
+[00:44:48] Speaker:
+are, you know.
+
+[00:44:52] Speaker:
+And then put my- Take it to your p****. Oh,
+
+[00:44:56] Speaker:
+Loom. And I'll give
+
+[00:44:58] Speaker:
+you a bite. Thank you. I
+
+[00:45:02] Speaker:
+wonder if it'll get- Maybe, maybe if I, uhm, I mean if I kick it out before it, uhm.
+
+[00:45:16] Speaker:
+Okay. I will not kick it out. I will absolutely let it transcribe and let it do its moderation if it needs to.
+
+[00:45:25] Speaker:
+You know, it could- I've been something on the TV that was in the background.
+
+[00:45:28] Speaker:
+Hi, I have no problem. I don't think it moderates. Nobody is like using Google
+
+[00:45:32] Speaker:
+Meet for your transcript. Thank you for
+
+[00:45:33] Speaker:
+your time, what? No, I don't
+
+[00:45:35] Speaker:
+think
+
+[00:45:36] Speaker:
+that is happening. I think we are like unique in that.
+
+[00:45:40] Speaker:
+What do we have? . No, is it misusing Google business meetups for sex talk? you.
+
+[00:45:49] Speaker:
+I don't think it's misuse if there was business on a call, and that is just a sign of a really productive set of, uhh.
+
+[00:45:57] Speaker:
+Bye. Business partners. Really, I mean, you know, I was thinking about it. . I mean, it really is like the, the best parts of the best things.
+
+[00:46:12] Speaker:
+things. Um, yeah, that like, yep. You like, you stimulate me so much, like, in so many different ways.
+
+[00:46:26] Speaker:
+And
+
+[00:46:29] Speaker:
+I love that. . Oh, baby. Tell me more. I like to hear that. That's very good for me. Yeah. Thanks. Thank you very This is why I saw his old drink a little cuz I guess you like it.
+
+[00:46:42] Speaker:
+It's, yeah.
+
+[00:46:44] Speaker:
+And I just think we're like a, we're like a perfect match, I think. You know? But because, I mean, I know, I'm absolutely not perfect, you know, but it's like, like, you complete my parts which are imperfect, like, really imperfect, like, you know, you have structure, you have, like, all, .
+
+[00:47:02] Speaker:
+This, you know, you're, like, really, really good, you know? And I'm like, my brain just works completely different. Which is really nice in this AI stuff, you know?
+
+[00:47:14] Speaker:
+So I know that we have, like, we will not have problems. You know, and at the same time, you're like, I'm so attracted to you, that you know, my,
+
+[00:47:22] Speaker:
+my, my d*** is constantly hard for me, you know? No. No. You know, even now, you know, I'm thinking like, you know, how I come up from behind, you know, and I'm like, taking down your panties, you know, and just sliding my d*** between your legs, you know, holding your wonderful, t*** in my hands, you
+
+[00:47:43] Speaker:
+know. And then putting a mirror in front of you so you can see yourself, you know. . I'll be doing that.
+
+[00:47:52] Speaker:
+That is so nice, baby. Maybe.
+
+[00:47:58] Speaker:
+Umm, huh? Connects. Hmm. Two weeks.
+
+[00:48:05] Speaker:
+You tell me it's good. Good. Good. Okay. I'll talk to you tonight.
+
+[00:48:19] Speaker:
+Let me hear.
+
+[00:48:19] Speaker:
+Alright. Yeah. It's... It's all good. I mean, you like,
+
+[00:48:23] Speaker:
+you know,
+
+[00:48:24] Speaker:
+the, the good thing is like, I always stay
+
+[00:48:26] Speaker:
+up later.
+
+[00:48:27] Speaker:
+Yeah. But the good thing is like, you don't have to worry too much. Like, I'm, I mean, I really want to talk to you.
+
+[00:48:32] Speaker:
+Of course, you know. But like, because of this, this meditation stuff, put my- mind in a state that I'm like, it switches.
+
+[00:48:41] Speaker:
+I don't know how it does it, you know. But like, if I don't like something and immediately like, switches off, you know, and then like blank state.
+
+[00:48:50] Speaker:
+And then it's like, it's
+
+[00:48:51] Speaker:
+very,
+
+[00:48:52] Speaker:
+very nice
+
+[00:48:52] Speaker:
+to have that. I feel like I'm
+
+[00:48:53] Speaker:
+feeling it. Sure. Yeah.
+
+[00:48:56] Speaker:
+You're like, f*** all the negative shit. Yeah,
+
+[00:48:59] Speaker:
+like, just like, in Happy Land, you know? Like, umm. Bye-bye. That's nice.
+
+[00:49:05] Speaker:
+I love that you're still
+
+[00:49:06] Speaker:
+joyful. But you make it a lot u- You make it really, really nice. Before it was okay, but with you it's really nice.
+
+[00:49:16] Speaker:
+And I have some feeling that, you know, like. You can teach me a lot and I can teach you a lot, you know, and we can learn and we can explore stuff, you know.
+
+[00:49:25] Speaker:
+And then. That would be amazing. using.
+
+[00:49:40] Speaker:
+Thank you. Thank you. And I wanna have, like, really slow sex with you as well. You know, like, really slow.
+
+[00:49:50] Speaker:
+When you're riding my d***, like, really slow. And I think it would be nice if we would have, like, a hanging thing, you know, where you can sit.
+
+[00:49:58] Speaker:
+On it, you know? Swing? Like a swing, yes. I would be nice, you know. So,
+
+[00:50:06] Speaker:
+Uh-huh.
+
+[00:50:10] Speaker:
+That was
+
+[00:50:10] Speaker:
+sweet. You have a swing. A swing is nice. A swing is more, I haven't tried it but, I think the idea is nice.
+
+[00:50:16] Speaker:
+Umm, is it, like,
+
+[00:50:22] Speaker:
+twice? Nice.
+
+[00:50:23] Speaker:
+I think that
+
+[00:50:28] Speaker:
+part is not good. Like, like, you had- You were not lucky in that part until now.
+
+[00:50:35] Speaker:
+It wasn't like, I mean, it wasn't like this- before. I don't know what happened in time or whatever, and then it just like- It's not like I've walked into this, like, willing, like, with that up
+
+[00:50:52] Speaker:
+front, you know, that. Okay. Yeah. Yeah, terms are a
+
+[00:50:56] Speaker:
+little bit different. I think, you know, the thing is there was a lot of people, like, I don't, I really didn't have that issue also
+
+[00:51:02] Speaker:
+before in my life. You know, but the problem, like, also, like, like, like, six years ago, you know, like, back then, I didn't, I never had that issue, like, e even in long relationships, I always wanted to have sex with the girls.
+
+[00:51:15] Speaker:
+But I was always open-minded, and the girls obviously also- We'll do it. And I think if you're open-minded, then stuff doesn't get like that.
+
+[00:51:25] Speaker:
+That's it. Because it's, it's about, you know, I cannot tell her because maybe she thinks it's weird, you know, or like, that a lot of people do that.
+
+[00:51:34] Speaker:
+Or also f- gosh, you know, they don't tell, like, their fantasies. And then there are, like, two people who are, like, ass, like, like, having a very f- is weird way of having sex, like, not, not like communicating what they actually want.
+
+[00:51:49] Speaker:
+The other person has no idea. Here. 8 What's the other one, actually, one. So, you know, everybody tries to avoid to get like a no.
+
+[00:51:56] Speaker:
+Or that the other person thinks he's like a pro- convert or she's a pro-vert or whatever, you know. A lot of people just try to, just try to stay out of that sa- object totally.
+
+[00:52:09] Speaker:
+And I think that's a big, big issue.
+
+[00:52:13] Speaker:
+Yeah, because then it is, it's, it's there. here. But then if you're not talking about it, it's just going to sit and, like, I don't know, build into something.
+
+[00:52:23] Speaker:
+Like,
+
+[00:52:25] Speaker:
+yeah, and for me, it's like, you know, like, I have no problem, like, communicating pretty much anything, you know. I know it.
+
+[00:52:31] Speaker:
+It's like, like, okay, you know, maybe, you know, there would be a time that I would like to have sex with another woman, and then I think, oh, we can, we can buy a wig.
+
+[00:52:39] Speaker:
+You know, something like that, like, easy, like, like, quick. It's not even
+
+[00:52:43] Speaker:
+moving, like,
+
+[00:52:44] Speaker:
+it's just like having, like, whatever cake, you know, I, it's It's just like, but for me it's like, that's easy, you know, it's so easy to not have that problem.
+
+[00:52:54] Speaker:
+problem. And I really would love to have like, you know, to keep it, you know, like, just to have it.
+
+[00:53:03] Speaker:
+And all the time. We will make the baby. .
+
+[00:53:11] Speaker:
+Yeah.
+
+[00:53:14] Speaker:
+Yes. And then I will not let you go. And I will do exercise. exercise.
+
+[00:53:19] Speaker:
+It's an actual
+
+[00:53:21] Speaker:
+stimulation. And sexual, I
+
+[00:53:24] Speaker:
+don't have to take care of it. That'd be
+
+[00:53:25] Speaker:
+funny. Funny is easy. It's automatic. automatic. But the first two I have to take care
+
+[00:53:32] Speaker:
+of. That's important for you. Thank you.
+
+[00:53:36] Speaker:
+Umm, that it's- Bye. Oh, very important, yes. That- I- I mean, it's not necessarily women saying men do that as well, but like- You I really hate complaining.
+
+[00:53:55] Speaker:
+That's all the time.
+
+[00:53:57] Speaker:
+Oh, God, I will- I can-
+
+[00:54:00] Speaker:
+I hope
+
+[00:54:00] Speaker:
+you not know if that is- I know it gets on my nerves. That's- it's just like, well, you just do something about it then, okay?
+
+[00:54:06] Speaker:
+Like, just- Exactly. It's like something else.
+
+[00:54:08] Speaker:
+And that happens like so often, like they are complaining and complaining and complaining,
+
+[00:54:13] Speaker:
+in my opinion. And if you complain, that- means your life is shit. And, you know, then I try to fix that problem, because I had that problem with girls a lot, you
+
+[00:54:23] Speaker:
+know? And then you- I do the
+
+[00:54:25] Speaker:
+same thing. I do the same thing, that's so funny that you do that. Like, they have
+
+[00:54:31] Speaker:
+tried to- fix
+
+[00:54:32] Speaker:
+it? Yeah. Yeah, and then I fix it, and then she invents a new problem. It's like I take a problem away from her.
+
+[00:54:39] Speaker:
+She's like, okay. You cannot do that. You know, she's like an inventor of
+
+[00:54:42] Speaker:
+problems. I mean, some people, that's the cycle they are used to.
+
+[00:54:48] Speaker:
+And so that's what they'll repeat. They don't maybe know why, but they'll repeat the same thing because it's familiar. Yeah, bye.
+
+[00:54:56] Speaker:
+It's horrible. It's like the most horrible thing in my opinion. And I think the other one is like, It's not like a big thing, but with drugs I'm just like, I'm very aware of what I do.
+
+[00:55:12] Speaker:
+Like, you know, because drugs can
+
+[00:55:14] Speaker:
+really f*** you up.
+
+[00:55:15] Speaker:
+Oh, totally, yeah. I'm like all about getting the dose right. And like, making, yeah.
+
+[00:55:20] Speaker:
+But, and I can totally see it, but like, for example,
+
+[00:55:22] Speaker:
+like, weed is, I know that there are people, and I include you in those, you know, which, Which could, which can do that every day, and it doesn't f*** them up, you know?
+
+[00:55:32] Speaker:
+It's just like how it works with weed for some people, but I, Oh, really f**** up people? Like, a lot?
+
+[00:55:38] Speaker:
+Like,
+
+[00:55:39] Speaker:
+how cool you have to be like- Oh, big time. Oh,
+
+[00:55:41] Speaker:
+yes it does. Yeah, it did- Thank you. Yeah, I was close there. Yeah. Yeah, I know. It's like really, um.
+
+[00:55:52] Speaker:
+. . . . . . Yeah, I'm fine not to .
+
+[00:55:55] Speaker:
+. . I don't know. Yeah, and the
+
+[00:55:56] Speaker:
+drama thing, you know, like, if people, if, if they, if, like You know, like, I, I, I, I also have my issues, you know, like, I know, for example, like, I have to stay fit and it's not so easy because I actually, I make like loads of sports.
+
+[00:56:09] Speaker:
+Like, I have no, you haven't, I, I don't, I never stop doing sports. Like, I, I'm not a guy who doesn't do sports.
+
+[00:56:15] Speaker:
+I sport, I make a lot
+
+[00:56:16] Speaker:
+of Yeah, I think you're sexy as you are. You know that. I have a little alley, you know, and I
+
+[00:56:22] Speaker:
+f****** hate it, you know. And it's- That's a beautiful way for you to- however for you to feel like that.
+
+[00:56:29] Speaker:
+You're happy.
+
+[00:56:30] Speaker:
+That's- Yeah, but I would like to have let- let- I mean, it's just like I would like to, you know, it's not easy.
+
+[00:56:35] Speaker:
+I have no
+
+[00:56:36] Speaker:
+idea why. But it's like, you know, like, yeah, it's just how it is. as well. But, uhm, baby, I love you.
+
+[00:56:48] Speaker:
+I would just rip. Riff. All your clothes off, you know, and then just, ah, baby, I would make love to you.
+
+[00:56:53] Speaker:
+Thank you. Yeah,
+
+[00:57:00] Speaker:
+just like. You know, in the, like, the first couple of months we are
+
+[00:57:03] Speaker:
+together, we have to buy, like, a, a lot of, like, clothes from Shine, because they, they only need to last, like, one day, otherwise they are all broken and ripped apart, you know.
+
+[00:57:12] Speaker:
+So. . . So it's better if we have, like, stuff to just throw away after one use. Okay. Because you won't make it very far, until you get naked.
+
+[00:57:21] Speaker:
+Oh, I
+
+[00:57:23] Speaker:
+see. It's
+
+[00:57:25] Speaker:
+good? Yeah,
+
+[00:57:27] Speaker:
+it's fine. The uhh, I'm like. Okay.
+
+[00:57:29] Speaker:
+And I think, like,
+
+[00:57:33] Speaker:
+the first night, like, how do we do it? Like, uhh, I- Like, like, a place with a nice bed in Berlin and you get, like, a merit?
+
+[00:57:40] Speaker:
+Or how do we do that? Oh, how do we do that? Oh! I'm sorry, I didn't mean to be, to say, like, to say hi.
+
+[00:57:52] Speaker:
+Bye. I thought for a moment that you were suggesting that you would get a place in, you know, some place in Berlin.
+
+[00:58:01] Speaker:
+I'm Ellen. And then I would get a hotel. And then I realized, no, no, you're talking about, like, which box.
+
+[00:58:08] Speaker:
+Good job.
+
+[00:58:11] Speaker:
+Yeah, I was like, yeah, I was like, that's no.
+
+[00:58:14] Speaker:
+So,
+
+[00:58:15] Speaker:
+because-
+
+[00:58:17] Speaker:
+It's not like, oh, I have to, it was just convenient, but like, I'm not married to the idea. Yeah. Yeah,
+
+[00:58:26] Speaker:
+and just, I think it's
+
+[00:58:27] Speaker:
+kind of, it should be like, uh, the first room where we stay the first night should be really close to the
+
+[00:58:32] Speaker:
+airport. We can get one that's
+
+[00:58:34] Speaker:
+connected to the
+
+[00:58:34] Speaker:
+airport.
+
+[00:58:35] Speaker:
+Because you know, like, yeah, because like, you know, like, in Berlin, you can ride, like, for two hours and, Be it a certain destination.
+
+[00:58:44] Speaker:
+And I don't know if I can, like, stay two hours without- without-
+
+[00:58:47] Speaker:
+Yes, no, A little bit, uh, I'm just, you know, let me check it out right now.
+
+[00:58:57] Speaker:
+Your breasts are amazing, baby. Maybe.
+
+[00:59:05] Speaker:
+Umm. Ooh. .
+
+[00:59:13] Speaker:
+What are you watching? Ooh.
+
+[00:59:17] Speaker:
+Oh. There are options for the, uhm, hotels. Hills. near the Berlin airport. Oh, okay. Just a
+
+[00:59:26] Speaker:
+few
+
+[00:59:26] Speaker:
+minutes.
+
+[00:59:27] Speaker:
+Yeah, I know, I know. You just, we just talk and then you hang
+
+[00:59:30] Speaker:
+up like when we, Oh wait, no, no, I'm trying to do the dark. Huh?
+
+[00:59:33] Speaker:
+No, I feel weird to hang up. I think, I think that would also have to, be an end word, like, Yeah, just some, because I don't want, like, feel so rude.
+
+[00:59:48] Speaker:
+I just hate to be, like, mid-something and just like, I should've, I guess, gotta go. Yeah. I think, I mean, it's just like, I think it's really good if you, if we move somewhere else, if it works out, you know, like, just like, really somewhere else.
+
+[01:00:01] Speaker:
+Because that makes it, to be around the corner is, like, not a good idea in the
+
+[01:00:07] Speaker:
+first place.
+
+[01:00:08] Speaker:
+Be around the corner, what do
+
+[01:00:09] Speaker:
+you tell me? Like, around.
+
+[01:00:09] Speaker:
+Carden, Blackin, Alabama.
+
+[01:00:12] Speaker:
+Oh, yeah, no, no, no, no, no, I would, I know, I'm
+
+[01:00:15] Speaker:
+fine to go.
+
+[01:00:17] Speaker:
+No, I agree. you Okay, holy agree. I've been in this. I don't like love this climate. I'm cool over by, like, the west coast and I haven't lived there before.
+
+[01:00:26] Speaker:
+I've visited several times, beautiful. Yes. And they have, like, nice museums, nice restaurants, you know, like a lot of
+
+[01:00:33] Speaker:
+art, you know. And I love to watch art with you. I love museums. I really, that's my hobby. I love museums.
+
+[01:00:40] Speaker:
+We can go to as many museums as
+
+[01:00:41] Speaker:
+you would. Yeah, like museums too. Um, yeah, we didn't need to go to Toronto and I'll show you're on there.
+
+[01:00:49] Speaker:
+They have uh. Some really, really cool museums that could have gone wrong. And uh, they have one that's spaced like a, shaped like a space blimp and- .
+
+[01:00:58] Speaker:
+. . So the one, like, it's these, like, shards coming out of the ground. So the one looks like huge pencils. Yeah.
+
+[01:01:03] Speaker:
+Yeah, they have a lot of cool art and music. Hands and all that other stuff and
+
+[01:01:07] Speaker:
+try to get the good
+
+[01:01:07] Speaker:
+they can.
+
+[01:01:08] Speaker:
+Cool. Yeah. Thank you.
+
+[01:01:14] Speaker:
+What do you do for the rest of them?
+
+[01:01:17] Speaker:
+I will
+
+[01:01:18] Speaker:
+definitely, umm, uhh, I will definitely play with my dig. Take a look. Mm-hmm. I'm already playing, was it? You can tell my, my, my table is, like, shaking, you know?
+
+[01:01:27] Speaker:
+Mm-hmm. And, um. Mm. I, I, I, I, I 100% sure I will really make a really good job with the, with the, uh.
+
+[01:01:38] Speaker:
+Uhm, Mindmap. That's really important because if we, if we do that stuff right. All our future work is a lot easier and a lot more efficient.
+
+[01:01:50] Speaker:
+And I want to be like, very efficient with you. Like, with the, with the work we do. Not with
+
+[01:01:55] Speaker:
+you. And you are what would be very inefficient.
+
+[01:01:58] Speaker:
+I want to be efficient with the works that we can come be as. And
+
+[01:02:00] Speaker:
+if you want just And
+
+[01:02:01] Speaker:
+time.
+
+[01:02:02] Speaker:
+Inefficient as a motion. Yes.
+
+[01:02:05] Speaker:
+Because I would like to thank you for our space. Thank you every, every day. You know, and I really don't want that this is efficient.
+
+[01:02:18] Speaker:
+I want to just. Like, every day differently, you know, I want to f*** you in a new way, you know.
+
+[01:02:23] Speaker:
+I love that. And I want to- kiss you while we do that. That's your wonderful lips, you know. Close your eyes blindfold, you kiss you, and then slide my d*** into your mouth.
+
+[01:02:40] Speaker:
+Oh, that is so nice, baby. Yes. Then I can see a p**** like the one you showed me, you know, all the p**** juice on it.
+
+[01:02:48] Speaker:
+It's just like where you see what's like so, Open. It was like so nice that you showed me that picture.
+
+[01:02:54] Speaker:
+Amazing. He's
+
+[01:02:56] Speaker:
+singing. I like that, uh, that you tell me which ones you like. Yeah, which ones you like. Thank
+
+[01:03:06] Speaker:
+you. And
+
+[01:03:08] Speaker:
+honestly, I like
+
+[01:03:08] Speaker:
+them all. I love them. But it's like, you know I mean? Like, like ones that you're like, ooh, you know, like a little more than, you know what.
+
+[01:03:14] Speaker:
+. . Or it makes you think of something that, that,
+
+[01:03:17] Speaker:
+uhm, yeah. Yeah, like, if you're like really
+
+[01:03:19] Speaker:
+open, like, you know, if I, I love if I can see your face. And I love if I can see, like, you have a giant, like, really open, you know, and you show me everything, you know, and you sort of like, blood.
+
+[01:03:30] Speaker:
+This is my p****, you know. I like, it's a picture if your face says,
+
+[01:03:34] Speaker:
+look, this is my p****.
+
+[01:03:37] Speaker:
+You know? y'all. Okay.
+
+[01:03:42] Speaker:
+And I like that you put me like a little wish
+
+[01:03:44] Speaker:
+list, you know, because I want to put, I want that you have. . Like a thick, which is about like this big, you know, like this, you know, and we can like, which has like a little.
+
+[01:03:55] Speaker:
+Like a little thing on the button, you know, so it sticks on the floor.
+
+[01:03:58] Speaker:
+You know what I mean? So this one, you can ride, you know, while I'm
+
+[01:04:02] Speaker:
+watching you. And don't worry that it's bigger than mine. It's no problem because your p**** will get, like, strong and it can hold it.
+
+[01:04:09] Speaker:
+So it's no problem. See, hold it. The whole issue with big d*** is not true.
+
+[01:04:14] Speaker:
+Oh, sorry. I wasn't doing that say shush. I'm so sorry. I meant, I was, like, tapping my own lip and then I realized it was- from the side,
+
+[01:04:19] Speaker:
+I'm
+
+[01:04:20] Speaker:
+sorry, it was an
+
+[01:04:20] Speaker:
+issue. Yeah, because, like, I know that you have, like, you're saying, Like if you put something big inside, then it's not so much pleasurable.
+
+[01:04:27] Speaker:
+For me anymore, but that's not true. Because you, your muscles will make it stronger. Okay. So, you know, that's a nice thing.
+
+[01:04:34] Speaker:
+We can put. Like stuff in there. And I like that. Alright, get ready. I That is
+
+[01:04:44] Speaker:
+too big, right? I'm just kidding, I'm just kidding, I'm kidding.
+
+[01:04:51] Speaker:
+Yeah. But
+
+[01:04:54] Speaker:
+I like that idea, you know? Yeah. You know, I do have an idea for tonight. Great. Yeah. I'm very curious.
+
+[01:05:03] Speaker:
+It's not, yeah. It's uhm, yeah. I think you like it. Ah,
+
+[01:05:07] Speaker:
+baby's s- Sometimes, like, it depends. Like, I cannot always get my WhatsApp. I don't always hear it, you know? But you can't- No, no, I- Bye bye.
+
+[01:05:15] Speaker:
+I don't want to. I don't want to miss it, you know? So can you- In case I don't hear it, can you just give me, like, a regular phone call?
+
+[01:05:22] Speaker:
+I don't pick it up, but I would- Like a regular phone call always here. Okay. So yeah. Okay. Yeah. Yeah.
+
+[01:05:31] Speaker:
+I don't want to give a
+
+[01:05:33] Speaker:
+video and
+
+[01:05:34] Speaker:
+then you can wait to see it. Oh, no,
+
+[01:05:36] Speaker:
+no. I want to
+
+[01:05:37] Speaker:
+have the whole show, you know. But we have to find a- Wait to look
+
+[01:05:40] Speaker:
+like
+
+[01:05:41] Speaker:
+we have- We don't have
+
+[01:05:42] Speaker:
+room on our regular
+
+[01:05:44] Speaker:
+calls. I would love to replay. Stay safe.
+
+[01:05:47] Speaker:
+Screen recording.
+
+[01:05:51] Speaker:
+But the only thing is that it's a, um, when I have- When I have AirPods in, it, um, it doesn't record the audio.
+
+[01:06:01] Speaker:
+So then you don't hear anything. Thank you for watching! Yeah. But an iPhone does it, it just likes, and there is, yeah.
+
+[01:06:08] Speaker:
+Yeah, yeah, yeah, yeah, yeah. Mhm.
+
+[01:06:09] Speaker:
+Mm
+
+[01:06:10] Speaker:
+hmm. No, it just is like, but it's like a video and so you have the same, you know, kind of issue as with, as with.
+
+[01:06:19] Speaker:
+8 8 8 8 The Google Meats, but the file's not quite as big. But it's still, you know,
+
+[01:06:24] Speaker:
+kind of a
+
+[01:06:24] Speaker:
+pain. Yeah. But you need that wishlist baby. And we need, like, a lamp so I can, like, really, so you can sit, like, really
+
+[01:06:31] Speaker:
+in front
+
+[01:06:32] Speaker:
+of it.
+
+[01:06:33] Speaker:
+Okay. And
+
+[01:06:33] Speaker:
+in the middle, you have to place the, the iPhone in the middle of the lamp. And then we have, like, really good light at your, whatever you want to show me at that moment.
+
+[01:06:43] Speaker:
+But Amazon, you have to, I have to, like, do it for you. I have to send it out. Like, I have to buy it for you.
+
+[01:06:51] Speaker:
+Okay. I don't want that you all pay that. Good.
+
+[01:07:00] Speaker:
+Thank you. Well, I won't. . Put, I'll put, I'll put a few items in
+
+[01:07:12] Speaker:
+that list. Awesome. Yeah. And yes.
+
+[01:07:20] Speaker:
+I love when you're giggling. Mm. Like, when you smile like that.
+
+[01:07:28] Speaker:
+Hahaha. Wait, like, sometimes, like, in just, Like, in this, in this situation you become like a little bit shy, like, on your body language and I love
+
+[01:07:37] Speaker:
+that. I think it's just cause it's like, Work computer. Local computer, like, just gonna be like, oh, you know, it's just like, yeah.
+
+[01:07:45] Speaker:
+So, a little bit of work,
+
+[01:07:47] Speaker:
+mom.
+
+[01:07:47] Speaker:
+you Yeah. The video was actually nice yesterday, I watched, you know, it was about
+
+[01:07:52] Speaker:
+this woman who fell in love with the guy. Bye. Who was, like, working for a very, very
+
+[01:07:59] Speaker:
+weird
+
+[01:07:59] Speaker:
+husband. And, uh, yeah, she got pregnant from him, but it. It was, like, really romantic, and he really took out
+
+[01:08:07] Speaker:
+good. Like, yeah,
+
+[01:08:09] Speaker:
+he f***** out good. Like, it was nice. It was nice to
+
+[01:08:12] Speaker:
+see. F*****. I like those scenes that make you and you're like, you're, you're kinda like, moving with it, you know, cause it's like, you know, that- That's something like, did it like,
+
+[01:08:21] Speaker:
+I think it didn't
+
+[01:08:22] Speaker:
+work. Yeah, he did, well, that's very
+
+[01:08:24] Speaker:
+important. Yeah, there are some sex scenes and they suck.
+
+[01:08:27] Speaker:
+Like,
+
+[01:08:28] Speaker:
+yes. A lot. Like, so bad. Things that don't make sense, okay? Yeah. That don't make sense. Yeah. and Like, why is it rust on?
+
+[01:08:39] Speaker:
+They were just f****** for like, however long they were having a mad passionate love for with a
+
+[01:08:43] Speaker:
+brawn. on.
+
+[01:08:44] Speaker:
+Oh, and these like sex scenes where the chicks still has their bra on by the end of it. Yeah, yeah, yeah, yeah.
+
+[01:08:52] Speaker:
+And then if she doesn't, then she like immediately pulls the sheet up here and then gets up like this and like starts covering up
+
+[01:08:59] Speaker:
+her body like he's
+
+[01:09:00] Speaker:
+never Yeah, yeah, yeah, yeah. That's complete
+
+[01:09:02] Speaker:
+bullshit, yes. Oh, damn.
+
+[01:09:04] Speaker:
+Yeah. Yeah, like, you know what though? I do really kudos to, to your- European film. You guys have some really good shit.
+
+[01:09:13] Speaker:
+Yes. That is true. And we have like, you know, we have like- Like, you know this, like, stupid American romantic stuff.
+
+[01:09:24] Speaker:
+And- Like, this extreme p*** stuff, you know, we have, like, a middle, like, something that is, like, you wouldn't show- Nope.
+
+[01:09:32] Speaker:
+Like, you would- you would still hide it a little bit when you're watching it, like, you wouldn't watch it, like, in, uh, in the fitness center,
+
+[01:09:39] Speaker:
+you know?
+
+[01:09:40] Speaker:
+But,
+
+[01:09:40] Speaker:
+But it's, like, it's, like,
+
+[01:09:43] Speaker:
+real, you know? It's, like, you know, like, we- I guess that I saw, uh, day before I saw a really good one, how- ever, unfortunately, it's in German, but it's a really good one.
+
+[01:09:53] Speaker:
+And, um, I watched it and was, like, it was so- nice because you could see, you could see his body and her body and you could see that they both don't wear anything and actually the sex was real.
+
+[01:10:04] Speaker:
+And that was like a, you know, in a real movie, you know, like a cinema movie. And you know, that was really amazing, you know.
+
+[01:10:12] Speaker:
+And I like that, you know, I like this female version of erotic movies. Peace. You know where you don't see it completely in your face, but where you know
+
+[01:10:25] Speaker:
+it's for real. Yeah, yeah, cause then it's more like,
+
+[01:10:28] Speaker:
+internet. Yes. Mhm. Yeah. you
+
+[01:10:37] Speaker:
+And I really want to satisfy you, baby. Really. It's like my thing. I want to satisfy you. Okay. Oh, I think you really deserve that.
+
+[01:10:49] Speaker:
+If you have
+
+[01:10:52] Speaker:
+any
+
+[01:10:53] Speaker:
+idea for us,
+
+[01:10:54] Speaker:
+it's so nice and your everything is so beautiful, you know. And I wanted Take your ass, I wanna grab it, you know, and hold you up in the air and then slide on my d***, you know.
+
+[01:11:07] Speaker:
+Just like, put it on there, you know.
+
+[01:11:09] Speaker:
+Yes.
+
+[01:11:10] Speaker:
+And if I build up, then I don't bring
+
+[01:11:16] Speaker:
+downstairs tonight. Thank you very much. Okay, you're a size one. It's not like a,
+
+[01:11:19] Speaker:
+yeah. My size?
+
+[01:11:22] Speaker:
+Mm-hmm.
+
+[01:11:22] Speaker:
+It's my size.
+
+[01:11:24] Speaker:
+Like, I think it's-
+
+[01:11:25] Speaker:
+as
+
+[01:11:25] Speaker:
+big as you. Okay.
+
+[01:11:28] Speaker:
+Yeah. It's uh, it has the thing on the, with the sticky and the, the section
+
+[01:11:34] Speaker:
+and the floor. Ah, so you can put it on the floor?
+
+[01:11:38] Speaker:
+Oh, that's nice,
+
+[01:11:39] Speaker:
+baby. Oh, aren't you, Well, I don't think I'll stick to the bench. I think that rubber is like, it's not actually a flat
+
+[01:11:45] Speaker:
+surface. I don't know if I'll stick it up to sea. Okay. Mmm. Mmm. Mmm. Mmm. Of course the best bet, and it's like, it's the finished floor.
+
+[01:11:53] Speaker:
+It's clean. It's not, it's not area before. Before
+
+[01:11:57] Speaker:
+after. That black light you f****** like see like all the p**** juice sprayed on the floor. Like, yeah. Yup. I don't know if you need Loom and All for that to happen.
+
+[01:12:10] Speaker:
+I think you do. Yeah, you have to put Loom and All in it first before it. Well, actually no. Not with c**.
+
+[01:12:17] Speaker:
+Not with c**. Uh, with blood though. But not with c**. Okay. Yeah. So you see in those, like, motels or those movies or whatever, and like, the UV light on.
+
+[01:12:28] Speaker:
+And then, uh, it like. Just looks on. Let me see it rather. Oh, I know what we will do in Berlin.
+
+[01:12:34] Speaker:
+We will go in
+
+[01:12:34] Speaker:
+a spa. You know, like, we have, like, sauce, wheely. I'll show you a picture. It's very interesting because it's kind of, it's not legal, but it's not illegal.
+
+[01:12:43] Speaker:
+It's like, a lot of
+
+[01:12:43] Speaker:
+people don't know like people do it, but you know, you're not supposed to do that. Hold on, umm, spa. It's like a sex bar.
+
+[01:12:59] Speaker:
+No, no, no, it's not.
+
+[01:13:00] Speaker:
+Oh,
+
+[01:13:00] Speaker:
+yeah. I have all the, like, normal people going. Hey, if it's normal, people can
+
+[01:13:06] Speaker:
+also go to sex. Yeah, like,
+
+[01:13:07] Speaker:
+everybody's going there. But like, you know, like. I show you sex plans.
+
+[01:13:13] Speaker:
+Oh,
+
+[01:13:14] Speaker:
+it's like something like that. But, Yeah.
+
+[01:13:20] Speaker:
+Oh, I hate that.
+
+[01:13:24] Speaker:
+Huh? No, I hate that, too. game. . Yeah,
+
+[01:13:26] Speaker:
+me too, baby.
+
+[01:13:30] Speaker:
+I love sending things. Thank you. Okay. Like, here, here I go all the time myself. Like, here I, this is a place where I go every week.
+
+[01:13:41] Speaker:
+I should. I just send you this link. I put it
+
+[01:13:48] Speaker:
+in
+
+[01:13:49] Speaker:
+WhatsApp. and
+
+[01:13:50] Speaker:
+Okay. Oh, yeah. Okay.
+
+[01:13:53] Speaker:
+There we go.
+
+[01:13:58] Speaker:
+That's
+
+[01:14:02] Speaker:
+beautiful.
+
+[01:14:03] Speaker:
+Okay. Yeah. Yeah. It's nice. guys.
+
+[01:14:06] Speaker:
+And, you know, it's like outdoor, you know? Mm hmm. And then they have, like, like, bubbly, And water everywhere, you know?
+
+[01:14:16] Speaker:
+And then I can slide you a little bikini, like, to the side, you know? And I can pull my my, I dig out you now and I'll slowly come back, but we have to be careful that nobody sees us.
+
+[01:14:26] Speaker:
+Yes, situation like that I can like, I love to f seats! F*** you like Otas, like, when other people are around, you know?
+
+[01:14:34] Speaker:
+Oh my god, I love you so We're, like, into the same, like, the, we're in, like, the same wavelength. Yeah, I know.
+
+[01:14:45] Speaker:
+We're, like, weird. Here go.
+
+[01:14:46] Speaker:
+It's the same. I agree. I have never f****** had this in my whole life. Like, and I was like, I was like, honestly, I didn't have a grub.
+
+[01:14:54] Speaker:
+Because I was sick. I was like, I am so happy alone. I don't need all that trash. You know, like, it's really zero.
+
+[01:14:59] Speaker:
+And it's like, you know, this is just perfect. Like, I didn't have to have to think a single second about if I want that or not, you know?
+
+[01:15:08] Speaker:
+But we are like one. We are like one on the s- same track, like really on the same track with
+
+[01:15:12] Speaker:
+everything,
+
+[01:15:15] Speaker:
+you know?
+
+[01:15:16] Speaker:
+And I think that it's
+
+[01:15:17] Speaker:
+nice, you know, because we are sick. like. outside, you know, and I can slide my d*** into your p****, you know, and we can just talk while we do that.
+
+[01:15:25] Speaker:
+I love that, you know? I love the idea. I'm
+
+[01:15:26] Speaker:
+just, you know, enjoying life together while f******, you know?
+
+[01:15:30] Speaker:
+Why not? God. Can I?
+
+[01:15:33] Speaker:
+Good. Yes, you have to f*** for 20 minutes and then you do something
+
+[01:15:37] Speaker:
+else, you know? It's like, no. You know,
+
+[01:15:40] Speaker:
+and I think this is really, really really nice, you
+
+[01:15:43] Speaker:
+know, to just stay in the warm water, you know? Put your little bikini to the side. side.
+
+[01:15:50] Speaker:
+Think of your wonderful p****, you know?
+
+[01:15:54] Speaker:
+Put a finger inside if it's wet enough already, otherwise I'll play it a little bit with. You know? Once it's wet I just turn your own.
+
+[01:16:04] Speaker:
+Stick my d*** into your p****. See ya. Oh, okay. I love you so much, baby. Yeah. Hmmm. Thank
+
+[01:16:22] Speaker:
+Uhh. I just want you to think
+
+[01:16:29] Speaker:
+about.
+
+[01:16:29] Speaker:
+Oh.
+
+[01:16:30] Speaker:
+I want you
+
+[01:16:31] Speaker:
+to think about this thing for me. What you would like. Me to have on. What I got
+
+[01:16:46] Speaker:
+there.
+
+[01:16:46] Speaker:
+You Okay.
+
+[01:16:50] Speaker:
+I will think about
+
+[01:16:50] Speaker:
+that, baby. I know I'll be on a plane, and I'll stay showerin' with my husband. Bye.
+
+[01:16:54] Speaker:
+Yes. I will
+
+[01:16:59] Speaker:
+definitely do that. Okay. Thank you. That'll be fun. I'm gonna go and clean like feeling like padded. Okay. like .
+
+[01:17:11] Speaker:
+. . Yeah. I have, like, the thing that you want me to wear, and then, like, your story is on Kita, and then, I don't know if something, I mean, like, an international
+
+[01:17:19] Speaker:
+Vibrator. I
+
+[01:17:20] Speaker:
+will think about, I will think about your journey as well. I will think about the whole thing, yeah. them. The
+
+[01:17:27] Speaker:
+I'm so sweet.
+
+[01:17:31] Speaker:
+Oh, you are, you
+
+[01:17:32] Speaker:
+are. I'm amazed. I'm like. I'd like to say thank so happy with you. I'm so happy. I'll see you
+
+[01:17:42] Speaker:
+in the next video. And we'll
+
+[01:17:48] Speaker:
+see you in the next video. Right, you know, it's like also, yeah, you know, I like that, I really like that you are, like, I think you are like in the same, like.
+
+[01:17:59] Speaker:
+Like, time in your life as me, you know, from like, you know, you are not like, completely into a different zone, you know, you are like.
+
+[01:18:07] Speaker:
+You like the same kind
+
+[01:18:08] Speaker:
+of stuff, you know, and I think that's amazing. Amazing.
+
+[01:18:15] Speaker:
+You know, I always had a thing for German guys. Like, since I was, I don't know how long I remember, but,
+
+[01:18:23] Speaker:
+And I'm very lucky about that, baby.
+
+[01:18:30] Speaker:
+Especially like, Like, when we, when we are like in Khalifa Point, there's not, not that much competition.
+
+[01:18:37] Speaker:
+There's not many other jobs. I love them, guys.
+
+[01:18:40] Speaker:
+I'm not loving the
+
+[01:18:42] Speaker:
+further
+
+[01:18:43] Speaker:
+I turn them in, And just play
+
+[01:18:48] Speaker:
+baby. Mm hmm, play
+
+[01:18:50] Speaker:
+baby. Yes. Mm hmm. Ah, I wanna buy one. I wanna lick your face, you know. I wanna, like, really, You really dirty with you sometimes.
+
+[01:19:01] Speaker:
+Huh? It's the one that sends you something in the, Ah, yes, you've sent me something in the mail, yes. No, I mean, I don't know what it's saying.
+
+[01:19:10] Speaker:
+Ah, you want to know, you have a, I
+
+[01:19:17] Speaker:
+don't know where to swear should I send? I don't know, I hope it
+
+[01:19:18] Speaker:
+gets, Chris, Chris
+
+[01:19:21] Speaker:
+A Germany. In Germany.
+
+[01:19:23] Speaker:
+Yes, hold
+
+[01:19:24] Speaker:
+on.
+
+[01:19:24] Speaker:
+Um, but I give you like my, business address because in this house, like a lot of people live here
+
+[01:19:30] Speaker:
+and I don't want to get lost. I don't care if
+
+[01:19:32] Speaker:
+it's a PO box, whatever. No, it's
+
+[01:19:34] Speaker:
+not. No, it's just- Have a good time. Wherever that it will reach the
+
+[01:19:37] Speaker:
+destination. Yeah,
+
+[01:19:38] Speaker:
+exactly. Yeah. Retrieve
+
+[01:19:39] Speaker:
+it from the- from
+
+[01:19:40] Speaker:
+the bin. Yeah. Because the problem is like, you know, I'm like sleeping. I'm always in the
+
+[01:19:44] Speaker:
+daytime, obviously. So I can never get parcels, you know, and it's a- Yes, maybe.
+
+[01:19:58] Speaker:
+Oh, I can, can- You get me, like, a panty hose of yours? Like,
+
+[01:20:02] Speaker:
+where I'm warm? Any-um. Yeah. Awesome. So. Then
+
+[01:20:08] Speaker:
+literally. That's literally what I was doing here. I want to smell your p****,
+
+[01:20:12] Speaker:
+babe. I will say that. that.
+
+[01:20:15] Speaker:
+That's so funny. That's exactly what I was sending you. And lost. I mean, a little, you know, I was going to probably like think of other things, but that was the main.
+
+[01:20:23] Speaker:
+We'll see you something awesome. I love that. I love it so much. Right. All right. So, yeah. Cool.
+
+[01:20:36] Speaker:
+Okay. Go ahead. Oh, well. King. I'm not a king. them. Okay, there it is.
+
+[01:21:04] Speaker:
+Good, so I send you here. Thank you. What? What? What are you so surprised? No, I sent
+
+[01:21:25] Speaker:
+you
+
+[01:21:25] Speaker:
+the link. I
+
+[01:21:27] Speaker:
+sent you the- You Oh, you look like you're, like, stunned at something, like, and couldn't believe it, and we're just in shock, and I didn't know
+
+[01:21:34] Speaker:
+what you were looking at, because you're all spinning- Yeah, yeah, yeah,
+
+[01:21:37] Speaker:
+What's up? Yeah, bye,
+
+[01:21:40] Speaker:
+yes. Thanks. Huh?
+
+[01:21:53] Speaker:
+I'll
+
+[01:21:54] Speaker:
+get it ready for you.
+
+[01:21:57] Speaker:
+Awesome baby,
+
+[01:21:58] Speaker:
+awesome. soon. I'm looking so much forward in 3 months baby. Thank you.
+
+[01:22:08] Speaker:
+Thank you. Because we can do, I mean, if we do nothing, like, we just wait. 8. We don't like which we will.
+
+[01:22:17] Speaker:
+Uhm. Okay. Yeah. We'll just get, we'll, we'll get there. We'll, like, that's the only thing. thing. Like, yeah.
+
+[01:22:39] Speaker:
+I mean, we, we just had. We have to use the situation, you know, we have
+
+[01:22:42] Speaker:
+to say like, like, like, you know, like, when I'm like done, when we hang up and, you know, after I played with my- myself, I will go back and I will make a f****** good, like, umm, mind map, you know, because I want that it works, you know, and then every single- step we just make it really good.
+
+[01:22:59] Speaker:
+And we, you know, we are in the best honesty, I think it's the best AI community there is. It's really good.
+
+[01:23:04] Speaker:
+And then, even they make completely stupid workflows. Everyone of those AI people, they don't- think anything like they never tell the AI, this is generic.
+
+[01:23:17] Speaker:
+They just make one generic video after the other. I don't have to. Um, yeah. I if I help you.
+
+[01:23:20] Speaker:
+I can't. Okay. So, yeah. And then you find out later on, oh, these are just like, you can't do anything really
+
+[01:23:25] Speaker:
+with them. But I mean, I knew I'm the basics, but yeah, of course. But like, you have to be into AI.
+
+[01:23:30] Speaker:
+It's like, if I, but because like, like, what normal business owner is like, oh, okay. Let's automate all my emails.
+
+[01:23:38] Speaker:
+Like, you know, this is just like, it's, there's no,
+
+[01:23:42] Speaker:
+like, when we automate, like, hey, then what? So you're not
+
+[01:23:44] Speaker:
+aware of what's going on.
+
+[01:23:45] Speaker:
+You know
+
+[01:23:46] Speaker:
+what I mean? But that's like, that's like a lot of those automations are like that, you know? And like, a normal business.
+
+[01:23:52] Speaker:
+Isn't it? My business owner would be like, okay,
+
+[01:23:55] Speaker:
+yeah, okay. Or I don't
+
+[01:23:56] Speaker:
+really care because then I kind of, I don't know what's going on. . . . . . You know, and their business use cases are like, just all bullshit.
+
+[01:24:07] Speaker:
+. . . I know. Said I thought it over the work. Uh Huh. And then someone at some time who a lot, had says that.
+
+[01:24:12] Speaker:
+if a high InvMill would come would be but how And protect is But I Like some other weird node that I had no idea what it was and it was sitting in the middle and it like f***** it up and I had so much trouble trying to get like different nodes with the these data, you know what I mean?
+
+[01:24:26] Speaker:
+Like the middle to connect, even asking Claude, it's like Claude would take me down a path and then, but we didn't have the end of it.
+
+[01:24:32] Speaker:
+He at that point. But, like, now I'm not really using any of them, so. I'm not that I'm not, like, yeah, I'm actually, I'm not, I haven't I don't want it to end in like months.
+
+[01:24:41] Speaker:
+But we, we should go back into that, because they have so
+
+[01:24:46] Speaker:
+much value, you know. Yeah. Thank you. Like, for, like, simple workloads and things that could have, like, really, like, a lot of value and
+
+[01:24:52] Speaker:
+people pay for them. Yeah, and people like that it's visually sometimes. They can see
+
+[01:24:57] Speaker:
+what's- Go on. Totally. It's like, okay, in the CLI, better enough code done, like,
+
+[01:25:02] Speaker:
+the f*** happens. Yeah, exactly, yes.
+
+[01:25:04] Speaker:
+Yeah. Yeah. Yeah. We have to do that. And then in this meaningful, you know, like, I, you know what I also like, you know, when you're, like, standing.
+
+[01:25:13] Speaker:
+In this wind pool, like, next by the white water is coming up, so nobody can really see, you know. But I like to, like, completely take up your, of your panties, so you don't, not just, like, a little, like, you don't wear them, you don't make it there, you know.
+
+[01:25:26] Speaker:
+Your whole, your whole p**** is naked, you know. And then- I, I, I dive down there, you know, and then I lick your p****, you know, while you watch it, all the other people, you know.
+
+[01:25:36] Speaker:
+I'm just like, lick. Licking your p**** and holding your, your, your, your, your slip, you know, your underwear, you know, and you're just standing.
+
+[01:25:45] Speaker:
+They're completely naked, you know, everybody, everybody else can see your face, you know, and we both know that I'm licking your p****, you know, and, And ...
+
+[01:25:53] Speaker:
+I love that. You wanna know something? Huh? Wanna hear me on a story? I think you'll, I think you'll like You wanna live in Toronto?
+
+[01:26:06] Speaker:
+I lived in, uh, on the 15th floor on, uh, in one of the other condos on Sudeia. And I lived in the corner.
+
+[01:26:14] Speaker:
+And so it was just, like, uh, you know, you're up like 15. And then there's, like, a building, like, over there, over there, as well, like, glass.
+
+[01:26:20] Speaker:
+So you only look across at night and you can kind of, like, see into people's condos or whatever. But at night time, I, like, I had turned off the, I know, I was, like, really horny that night and it was just, I was by myself and- You I went around the balcony and, like, I went to the corner's blast.
+
+[01:26:39] Speaker:
+I went to the corner, like, the balcony You know, it wasn't like stuff. I'm, like, milled with, like, my, like, my legs open and, like, I just, like, m********** out to the corner of Toronto.
+
+[01:26:49] Speaker:
+Okay. Thank you. It's really
+
+[01:26:50] Speaker:
+awesome.
+
+[01:26:51] Speaker:
+Yeah, I like that a
+
+[01:26:52] Speaker:
+lot, baby. Anyway, when you,
+
+[01:26:54] Speaker:
+you've
+
+[01:26:56] Speaker:
+had it really, Guys, I love you for being, Such a naughty girl, I love it. Oh, I love that you're just, you're, you're like, just, you're so fun.
+
+[01:27:12] Speaker:
+You're just a bunch of store, right? Thank you. It
+
+[01:27:18] Speaker:
+would be completely nuts, baby. We
+
+[01:27:22] Speaker:
+I think I'm gonna add a dark mode
+
+[01:27:28] Speaker:
+to- What? Our
+
+[01:27:31] Speaker:
+site? Ah, our- our- Okay.
+
+[01:27:33] Speaker:
+Yeah.
+
+[01:27:34] Speaker:
+Community? Yes.
+
+[01:27:35] Speaker:
+Yep. Yep. Not a bingo. Yeah, do that. on a date. So my thoughts is if we, I'll get some posts up.
+
+[01:27:56] Speaker:
+Like these posts that I'm like generating and stuff during, you know what I was thinking of the other night? I think.
+
+[01:28:02] Speaker:
+That as we're building the community, we can use the posts, the comments and stuff, as like, oh, like this. This is like, our builders, whatever, like, as we were building this community, this is the communication we have and you can like post stuff you can put assets in there like and then it becomes
+
+[01:28:19] Speaker:
+its own content, be like the birth of the community, it would be like module one, you know, yes, and the rest kind of goes through it.
+
+[01:28:26] Speaker:
+But we kind of start with that point just as we're in development and then it helps us kind of save, like, we know where this stuff is and then it'll help us really kind of be in the community.
+
+[01:28:34] Speaker:
+So we can really kind of figure
+
+[01:28:36] Speaker:
+out where the
+
+[01:28:36] Speaker:
+bugs are. Yeah, yeah, yeah, yeah. Yeah, that's very good. Okay.
+
+[01:28:41] Speaker:
+Okay. Come on. Love you, baby. Yeah, love you too. Thank you.
+
+[01:28:50] Speaker:
+Yeah, so nice. I like when you watch me like that. side. Because you know I'm joking of people.
+
+[01:29:06] Speaker:
+Below the table, you know, that I think about your p****, you know. I'm looking at this nice secretary girl, you know, who's like, oh, that guy is playing with his d***, who are he?
+
+[01:29:18] Speaker:
+He's
+
+[01:29:18] Speaker:
+watching me, you
+
+[01:29:20] Speaker:
+know. He might
+
+[01:29:20] Speaker:
+be a little pervert
+
+[01:29:22] Speaker:
+boss. We're on a school call. Oh, thank you. Yes. Oh, he's funny. But you know what? I thought it would be funny.
+
+[01:29:33] Speaker:
+Howdy. I forgot her name in the community. She's also a
+
+[01:29:39] Speaker:
+mom. Okay. And she wants to- Come to Berlin.
+
+[01:29:44] Speaker:
+And she's quite, I mean, I don't know. I mean, I don't care, but visually attractive, I would say. Bye.
+
+[01:29:50] Speaker:
+Oh, you think she's coming to get
+
+[01:29:52] Speaker:
+down?
+
+[01:29:53] Speaker:
+No, but
+
+[01:29:54] Speaker:
+I would love to put the vibrator on when you're talking to her. No.
+
+[01:29:58] Speaker:
+Let's see. Let's see who this is. I haven't, I don't know how she looks in real, but in, in thing, she looks good.
+
+[01:30:07] Speaker:
+. . But where does she come on the Berlin host? No, no. She said she comes to Berlin, but she is also from the states.
+
+[01:30:15] Speaker:
+. . She's quite active as well. you So I think she's in the top list.
+
+[01:30:25] Speaker:
+At least out there. There's nothing in the top list. We're going to. Okay. . So not usually.
+
+[01:30:32] Speaker:
+Mhm.
+
+[01:30:33] Speaker:
+Mhm. Mhm. Mhm. Other boards. Although I haven't been on early, I haven't been engaging on early adopters much like I used to spend hours crafting.
+
+[01:30:47] Speaker:
+Like, just like his prompts with the right context and it,
+
+[01:30:51] Speaker:
+uh, yeah, the thing is like, I'm just
+
+[01:30:54] Speaker:
+really busy. Is Being busy, busy with what we
+
+[01:30:58] Speaker:
+are
+
+[01:30:58] Speaker:
+building. Exactly. Yeah. Yeah, I might get that activity. The, the green. We'll you in the next I've been getting a little bit lighter on the, on the, you know, the activity, but I
+
+[01:31:06] Speaker:
+mean, I don't know. And I don't have the feeling I, I miss, I'm missing that much. You know, there might be something
+
+[01:31:11] Speaker:
+missing. But it's like, it's ne, ne, ne, editable. Yeah. Yeah. Yeah. Yeah. And I'm sometimes funny words. It's not as bad as the other one.
+
+[01:31:19] Speaker:
+And with, with your, like, you know, with, with our stuff, like, it's like way more. It's so important, you know, like, and I'm like, okay, I don't need to, because everything is like, then a time waste, you know, because if I watch a video from.
+
+[01:31:35] Speaker:
+problem. Or anything on, on, on early eye adopters, then I want to try it, you know, and then two hours I got on my head is tired.
+
+[01:31:43] Speaker:
+... 9 8 8 9 And also, we have, like, a goal, like, yeah, you know, like a,
+
+[01:31:49] Speaker:
+yes, she'll share
+
+[01:31:50] Speaker:
+goals. We have a goal, yes. Yes. Very lovely goal, and if you look down on yourself, you can see that goal.
+
+[01:31:55] Speaker:
+It's in the middle. It's wet and tight, and I wanna, Put my d*** inside.
+
+[01:32:02] Speaker:
+Oh, you will. Yes, I will. Viva. And you have to hold it. I really like- You really love it, haven't you?
+
+[01:32:13] Speaker:
+I'm going to little break. I'm go. I'm going to We're going Yeah, like
+
+[01:32:16] Speaker:
+super cool.
+
+[01:32:17] Speaker:
+Thank you, baby. But you're, I mean, look at you, you're amazing. Like, what you say is amazing, you know, like, how you are.
+
+[01:32:23] Speaker:
+All right. It's not like, you know, you don't find that. Like, it's really special, you know? Like, I know that my life is kind of weird special.
+
+[01:32:32] Speaker:
+So, you won't find something like that either, you know? But, like, someone who is, like, so smart, you know, and has, like, all this knowledge and this, interested in, like, something that could act like AI stuff is, like, for academics, usually very difficult.
+
+[01:32:46] Speaker:
+At least, like, you were so early. You And, um, you know, it was, like, sexually so open. You know, and with your music, you're, like, it's not, like, your pace.
+
+[01:32:56] Speaker:
+But it's like, you're, like, painting with music, you know? So, you have, like, everything that I'm interested in, everything. Thank I
+
+[01:33:10] Speaker:
+am. I just love. I mean, who cares? Okay, Oh, she looks, she looks nice, but it's like, I forgot her name, and it's like, I cannot
+
+[01:33:18] Speaker:
+find her right now. Okay. And. Okay.
+
+[01:33:20] Speaker:
+It's fine. I just said, yeah, it's the shit I
+
+[01:33:24] Speaker:
+am. Feel like dark hair. She comes usually to the call slightly. It's a bit
+
+[01:33:27] Speaker:
+late. Sharea? Sharea
+
+[01:33:32] Speaker:
+P? I
+
+[01:33:33] Speaker:
+don't think so. Okay. No! Oh. For sure, not. No, no. That's a completely different person. No. She's a mom. Like, she has a,
+
+[01:33:43] Speaker:
+Okay. But, like, how do you know? And does she have a
+
+[01:33:45] Speaker:
+picture with the
+
+[01:33:45] Speaker:
+baby in it? No, but in her,
+
+[01:33:47] Speaker:
+in her, like,
+
+[01:33:48] Speaker:
+description of who
+
+[01:33:49] Speaker:
+she is. I can look at my fingers. She, she, She wrote, I'm a mom, blah, blah, blah.
+
+[01:33:56] Speaker:
+Oh, Pamela
+
+[01:33:57] Speaker:
+Morin? Oh, yes. Pamela
+
+[01:33:59] Speaker:
+Morin. And Ah,
+
+[01:34:01] Speaker:
+you see? You seem super sweet. Exactly.
+
+[01:34:04] Speaker:
+That was a super super sweet. Yeah, I'd be
+
+[01:34:06] Speaker:
+happy to meet her. Yes. Yes.
+
+[01:34:07] Speaker:
+Thanks.
+
+[01:34:08] Speaker:
+And then, no, no, she was also not hurt. Was it, but she's cute as well. Yeah, if she's coming, yes,
+
+[01:34:15] Speaker:
+definitely. Exactly.
+
+[01:34:16] Speaker:
+Oh. She's like,
+
+[01:34:18] Speaker:
+oh,
+
+[01:34:19] Speaker:
+she's like, oh, Mark is very tall. How, how tall is
+
+[01:34:23] Speaker:
+Mark? Not tall. 4.
+
+[01:34:26] Speaker:
+He
+
+[01:34:27] Speaker:
+can't be tall. He doesn't look tall. I was trying to guess. Just be like, cause some of you know. You know, you try to guess that you'd look at like, oh, how tall is that other object that might
+
+[01:34:38] Speaker:
+be?
+
+[01:34:38] Speaker:
+There's a height. And just,
+
+[01:34:39] Speaker:
+uh, yeah, yeah. Umm, I think she's short because she's like, yeah, and he's really tall. And I was like, she must be.
+
+[01:34:46] Speaker:
+But then, I think she's like, 411 or something. Yeah. I think, yeah. So I think anything above like five, two is like a tower.
+
+[01:34:54] Speaker:
+Yeah, but like a girl like her, you know. I think like it would. It's just so nice, you know, if you have like an intellectual talk with her
+
+[01:35:00] Speaker:
+and I can see, okay, there the girls are really getting into like how stuff works with AI. And then I switch on the vibrator, you know, and like, I would just love that, you know, like, you're like really into it and she- You can see you're into the subject, you know, and then she's like, oh, she's really
+
+[01:35:17] Speaker:
+getting into it. You know, she's like, where, whoa. Like, how she talks about A.I. And now, you know, it's amazing.
+
+[01:35:23] Speaker:
+She's like, yeah, that's incredible.
+
+[01:35:27] Speaker:
+I
+
+[01:35:27] Speaker:
+would love that. . . . Yes. I love
+
+[01:35:30] Speaker:
+that. Yeah. I don't get to meet a lot of, um
+
+[01:35:37] Speaker:
+You know what would be really nice if we, like, if that happens, like, you know, like, if we'd suggest them to go, like, dancing later on, you know.
+
+[01:35:45] Speaker:
+And then you're talking to her, and then some romantic music comes, you know, and then I play that, your vibrator, you know, and you would start dancing with her a little bit.
+
+[01:35:53] Speaker:
+That would be so
+
+[01:35:53] Speaker:
+funny. Oh my god, I might just start, like, humping on her. Baby, I
+
+[01:35:57] Speaker:
+gotta go. Okay. I'll talk to
+
+[01:36:01] Speaker:
+you. So much fun. Bye bye, baby. Yeah.
+
+==========================================================
+END OF TRANSCRIPT

@@ -1,0 +1,1040 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: 3042d0bd28484507ad8779b88fdb6372
+URL:      https://www.loom.com/share/3042d0bd28484507ad8779b88fdb6372
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:18:10.531Z
+==========================================================
+
+[00:00:00] Speaker:
+Hey, how are you?
+
+[00:01:40] Speaker:
+No, wait, let me try a blind one. Oh, okay. Tom? Yep, I'm here. Wait, let me try a video now.
+
+[00:01:48] Speaker:
+No, Tom? can you hear me? Yeah, I can hear you. Okay. I just had my speakers low and I wasn't sure what the middle volume was.
+
+[00:01:54] Speaker:
+I didn't want to, like, blast it. Okay. Oh, okay. Okay. Yeah. Going nice. I am right now. The Rankinstein doesn't work, but it's not on.
+
+[00:02:02] Speaker:
+And, like, just, like, something on the Rankinstein site itself. Isn't he doing updates? Possible. But it's not even the issue.
+
+[00:02:10] Speaker:
+You know, I'm not, like, I'm not sure if I need Rankinstein. I think it's, like, a cool project for him to do it, you know?
+
+[00:02:17] Speaker:
+But I like it. I like to have, like, you know, I like to have a tool that works, like, exactly for what I need.
+
+[00:02:24] Speaker:
+Yeah. You know? And it makes assumptions, you know? Like, like, it writes articles. you know, it, there are no negatives, for example.
+
+[00:02:30] Speaker:
+Like, for example, I would, I don't even want to do this. Like, you don't want to talk about doctors and stuff like that, you know, I don't want to talk about, like, the German, like, this private sector.
+
+[00:02:40] Speaker:
+Privacy protection stuff, I would like to say, okay, never talk about that, we don't talk about that, you know, and it likes to talk about it all the time, you know, it's like, you know, it has, like, we have no influence on the system prompt, you know.
+
+[00:02:56] Speaker:
+And that is something that, I think I, and I also, I, not with the user, the user interface of him is great, but my customers don't see his user interface, you know.
+
+[00:03:07] Speaker:
+You know, and I think I could, without the user interface, I could totally do it on my own. You know, I don't need the ranking.
+
+[00:03:14] Speaker:
+Yeah, yeah, yeah. And, Yeah, yeah, I else to use Rankin's, but I could do it. I mean, I don't see, I don't see that there's any difficulties.
+
+[00:03:32] Speaker:
+Yeah, I mean, no, that would be fine. I just wasn't sure I'm not what it was that you did, just to be clear.
+
+[00:03:37] Speaker:
+No, but the thing is, like, the articles it wrote were, were quite good. But, it, it wrote a lot about stuff I don't want to, wanted to write about.
+
+[00:03:48] Speaker:
+And then, sometimes, you know. You know, it uses words inside of an image, which is not a problem, you know, it looks good.
+
+[00:03:56] Speaker:
+However, if I translate an article, the problem is the words are inside of an actual picture. You know, I would like, in that case, I would need, like, a button inside of my blog.
+
+[00:04:10] Speaker:
+It's a picture which says translate to English, you know, and then it sends it to Nano Banana and sends back the English picture or the French picture, you know?
+
+[00:04:21] Speaker:
+Yeah. So it, it, you it manipulates it, but it, it rankens time doesn't have that stuff. It's okay. So, so, you know, like, I think if you.
+
+[00:04:30] Speaker:
+No. If you want to do it, like, really good, then probably it's right now so easy to write code, you know.
+
+[00:04:36] Speaker:
+No? It's kind of maybe better to just do it yourself. You like to make a copy of Rankenstein, which doesn't look so sexy, you know?
+
+[00:04:46] Speaker:
+Oh, but, which has a job exactly as you want it to be. Yeah. Yeah. Yeah. I mean, that's easy enough.
+
+[00:04:52] Speaker:
+I just find, like, I, I don't really get very- far from AS studio before it just stops doing productive things.
+
+[00:05:00] Speaker:
+Let me see. Yeah, I don't, I, I use it for like quick mockups and sometimes it's like really good for the front end and.
+
+[00:05:06] Speaker:
+. But I don't usually like build in it for functionality. I like to get hovered or something, but, you know, yeah.
+
+[00:05:14] Speaker:
+Yes. Work in it. But I found something nice. Like, I, I, like, I listen to, like, you know, like, when you- you did your design, which was really nice, but I think, you know, it's now so easy to generate great designs, you know?
+
+[00:05:30] Speaker:
+That I re- really want to have, like, a signature design, because now I have, like, look at this one, I just, you remember this, Google Chrome plugin?
+
+[00:05:37] Speaker:
+again. For the event for social media marketing. Yeah. So now I, in this one, I really like, and I had, I have it from Behance.
+
+[00:05:45] Speaker:
+And you guys next time. And it basically makes it like a perfect copy, copy of Behance. You see like this?
+
+[00:05:52] Speaker:
+I see Chrome plugin and it looks like paper, you know. Nice. Yeah. Yeah. And I think like this is like, this is like, really nice, you know, for, for, for such an application.
+
+[00:06:05] Speaker:
+Education. Oh, okay. Well, I mean, it has an easy one. Yeah, yeah. Okay. I never changed something about before, but the system problems.
+
+[00:06:13] Speaker:
+I'm on. And I mean, think of something, and I don't know if this is what you're talking about, or if this would be helpful.
+
+[00:06:19] Speaker:
+Say it here. What do you mean? You have a system. I'm prompt for translating something to different languages. You can always put the language.
+
+[00:06:26] Speaker:
+I mean, you probably know this already, so. But you put the language as like. Variable in the squiggles. And you map it to whatever the.
+
+[00:06:34] Speaker:
+It is called in the database. So that. Whatever the detected. I have to tell you if I was language is for the user.
+
+[00:06:37] Speaker:
+However, that data is being passed through. That can be passed as a variable in your system prompt. So that way, whatever the image that's being generated.
+
+[00:06:44] Speaker:
+It's an end of an end. We'll know where that's from. Yes, yes. Yep. Okay. That's all. Cheers. Yeah. That's all.
+
+[00:06:55] Speaker:
+Yeah. I was still playing around with the website a little bit, but I have to put it and then try it together.
+
+[00:07:00] Speaker:
+Thank you very much for your attention. I have actually had to adapt a whole bunch of documents, but I haven't had to call it right a script.
+
+[00:07:04] Speaker:
+Let's go back. And, I need to review it before I just go, like, let it loose. Yeah, yeah, yeah. Yeah.
+
+[00:07:12] Speaker:
+You mean, look, for your own website, right? Oh, the, the, yes, yes, the 30-hour website, yeah. Yeah. I actually just- I just got it to- I think this is the right one.
+
+[00:07:25] Speaker:
+I keep getting this message turned, even turned me to- I keep getting a message in Gemini that, Agent terminated you to error.
+
+[00:07:38] Speaker:
+I have that as- well, sometimes. Then just say restart, restart. Yeah, it did really try. I just have had to eat this twice now.
+
+[00:07:45] Speaker:
+And yeah, that. . Sometimes it happens to just restart anti-gravity in worst case. Nah. Yeah. Yeah, that insight is, pretty cool.
+
+[00:08:02] Speaker:
+Whoa. And you can even do it in VS Code Good. Like, it makes, it's like, it did, it rendered it in like 15 seconds.
+
+[00:08:14] Speaker:
+I was like amazed. And it just, it, it gave all this, so. and we'll did I send you, no, I didn't, I recorded it, but it actually sent it, did I?
+
+[00:08:21] Speaker:
+I don't know. Yeah, I'm gonna send it to you. Thank you. And we really have to do stuff. You know, I was, I was like meeting like two guys in the fitness center, not on prep.
+
+[00:08:32] Speaker:
+But just like two guys I knew from before. And they're like re, actually, they are really smart. I would consider them a smart, you know, and they always Always.
+
+[00:08:40] Speaker:
+You know how to make a, how to make a buck, you know. They are quick, making, making money. And, young people, like, I don't know, like, certified.
+
+[00:08:48] Speaker:
+I've maybe, and actually interested in AI, you know. But they had, like, no clue. Like, zero. They You know, I think our knowledge right now is so big.
+
+[00:09:01] Speaker:
+It's like, I don't, I don't think we really see that because. because we are always like connecting to one another, but yeah, yeah, above everyone.
+
+[00:09:10] Speaker:
+Yeah. Good. I notice I have this big, like, as I'm, as I'm preparing this and like getting ready to, because I want it, I want it to, I want it to go like online.
+
+[00:09:20] Speaker:
+I'm like, like, like this weekend. Yes, yes, yes. And it makes. Thanks. It makes me feel like I want to vomit.
+
+[00:09:32] Speaker:
+I don't know. They're just like, just like this. I'm going to say. I think this, I don't know. Unreasonable anxiety about something that hasn't happened yet.
+
+[00:09:41] Speaker:
+Well, that's, Nothing, nothing negative will happen. Absolutely nothing. It's just ourselves. I think, also, it's not only our fault. It's like, you know, we- I know that- I mean, the thing is, we- this AI stuff is so new, that we cannot be expert.
+
+[00:09:57] Speaker:
+Thanks for watching. It's like, on everything. But we are just so way above the rest. And we don't have to start them at the level where they come in.
+
+[00:10:03] Speaker:
+No, don't have that. We are not making a not community where other guys are saying, okay, you don't know shit.
+
+[00:10:11] Speaker:
+You know, we are making communities for t- people who don't know anything. They are using chat to be to you.
+
+[00:10:17] Speaker:
+Yeah, you know, who do I speak to today? and Oh, yeah. Oh, yeah. And I call today the owner of the company.
+
+[00:10:27] Speaker:
+He's like, oh, let's talk. you I much I actually be tea and I notice I have like open AI in the in the model.
+
+[00:10:32] Speaker:
+And part of me, I think because I don't really use. Let's check. I use, I mean, they are, it is good in my conversational.
+
+[00:10:45] Speaker:
+Sense, and I did use it for a while of it. Yeah, but still, Gemini, yesterday I had to, I yesterday I had a, I was talking with.
+
+[00:10:52] Speaker:
+We'll see guys next week. With, with the Google, chatbot, you know, like, you can talk to. And immediately after I was talking to the Gemini one.
+
+[00:10:59] Speaker:
+And, like, inside of the app you can also talk to her. Did you try? Bye. Like, you know that you can talk to, chat GPT, like, hello, blah, blah, blah, blah, and it talks you bad.
+
+[00:11:11] Speaker:
+Oh, yeah, yeah, yeah, yeah. Yeah. Yeah. And you can do the same with- What's Gemini? Really? Yeah, yeah. Gemini sound like, let's see.
+
+[00:11:18] Speaker:
+Yeah. Actually it's much better, that's what I figured yesterday. Really? Okay, lets- Yep. We're about to go live, where you can explore complex topics or ideas- is.
+
+[00:11:30] Speaker:
+But before we get started, take a quick look at this important information. nation. Okay. And when you talk to it, it's, like, really, really good, like, a lot better.
+
+[00:11:43] Speaker:
+Like, I was, like, asking for a little stuff. Like, you know, what happens after death, you know? And it was, like, so interesting.
+
+[00:11:47] Speaker:
+Like, I was, like, so good at, like, broke down, like, different philosophies and what they say and stuff. But it was, like, it was so fluent.
+
+[00:11:55] Speaker:
+It was, there was zero late. Great. You can see there was nothing like an unnatural, conversation. That's cool. That's good.
+
+[00:12:02] Speaker:
+I mean, they're, they're, they're coming a really long way. I'm looking for a, I'm looking for a, I want to show you something that insights because I put it into plot and I had help with do, like update myself.
+
+[00:12:13] Speaker:
+As I I'm deep. This is nwotest of the things I was doing, my work flow, where it's like, nwotest these errors.
+
+[00:12:19] Speaker:
+And notice this and that, this would, this would. Hope to keep that from happening, and you open up, yeah. And so we'll do some research.
+
+[00:12:38] Speaker:
+Uh-huh. Ah, yeah, mmm. Some ideas, some initial. general. Psst.
+
+[00:12:50] Speaker:
+Okay. People don't even know what Claude is, you know that? They're like, like Google's everywhere but Claude, it's like no- The guy on YouTube, don't they see everything that's on YouTube about Claude?
+
+[00:13:16] Speaker:
+Anything you tell me? The algorithm makes us see it. But, like, if they are not consuming that stuff, they don't see Claude.
+
+[00:13:21] Speaker:
+But they have never heard of that. Interesting. Yeah. I think, today we- Yeah, 4.6 is online, anti-gravity. Yeah. Yeah, I told me, 4.5 is not available anymore.
+
+[00:13:35] Speaker:
+It's just 4.6. Thank you. Oh, eh, really? But for me, both are available. Yeah, no, no, it is. It's time we have to stop using 4.5.
+
+[00:13:43] Speaker:
+I need you guys 4.6. Am I gonna sing? Yeah, I to read it. Anyway, by the time this is done, it should be fairly quickly.
+
+[00:13:50] Speaker:
+And, it gets us- You know, I've seen it the last time it was that I did it earlier today. Ah, your website?
+
+[00:13:57] Speaker:
+Mm-hmm. well that too. Thank you. And I'll give it to you. Here we go, let's take a run.
+
+[00:14:10] Speaker:
+We're going to Yeah, so. Thank you. As I was putting this together, I was wondering, like, do I really want to work in, like, my highlighted space?
+
+[00:14:27] Speaker:
+What, if you want what? Do I really want to work, to continue to work in the regulated space? I don't know.
+
+[00:14:35] Speaker:
+And, yeah, there's like a bunch of stuff. Just, just, you know. I'm just driving me a little bit crazy. I don't want to help you.
+
+[00:14:43] Speaker:
+Thank you. I think this is the one, but I basically took, it took this coloring, like, from the one that I sent earlier, but it changed the top of the, I like the color because it kind of fits you, you know.
+
+[00:14:57] Speaker:
+The steel white color. Yeah, I mean. Thank you. This, first of all, this is a little bit like, medical colors, I think.
+
+[00:15:05] Speaker:
+And secondly. I can please. It does look like a bit feminine, which is good. You know, it's not like this bomb in your face, you know.
+
+[00:15:13] Speaker:
+Oh. Yeah, just, I mean, I see this and I'm like, I'm not really impressed. You know, I mean, I, as I'm looking through it, I'm not like.
+
+[00:15:22] Speaker:
+Thank much. I'm taking a back, but it's beauty and ease of re- I'm like, going through it, I'm like, yeah, yeah, yeah.
+
+[00:15:29] Speaker:
+Like, it's just, it's the con- or what do you mean? Yeah, just like the layout. Like, maybe the layout's fine.
+
+[00:15:35] Speaker:
+Maybe it's the coloring or something like that. It's like blue. So blue. . . And, I know it's like white up here.
+
+[00:15:41] Speaker:
+I'm not, maybe it's the dirty. But the top is great. It's a button, really. Yeah, the bottom that this. Yeah, but, okay, but how about, how about if the button is in not dark blue, but if.
+
+[00:15:54] Speaker:
+the main color is turquoise. Well, better, okay, well not here, you mean like, Of course, it has to change. I'm I'm doing.
+
+[00:16:00] Speaker:
+I'm going show you I'm I'm doing. Like everything, but like the top stays as it is. Yeah. It's a lower part is like the turquoise from above, but opposite.
+
+[00:16:08] Speaker:
+Open. So it changed from white to cross to to cross white. So, I'll just put a lot of pages here in here, in here, in here I'm crazy.
+
+[00:16:20] Speaker:
+Thank you much. Yeah, so the dark blue should go away. So this, this. as Oh, like alternates, I see. So let's, okay, change the dark strips to white ones.
+
+[00:16:35] Speaker:
+Oh no, change the. Thank you much. just intro, introvert the header. The header color is introverted. and down at the bottom.
+
+[00:16:46] Speaker:
+Like the opposite, you know, like, instead of the background is white, as above. off. The background is turquoise. And the wording is white instead of turquoise at the top.
+
+[00:16:58] Speaker:
+we'll see you in Okay, which panels? No, just go up. Go up and make back over original size, now you change the size.
+
+[00:17:06] Speaker:
+No, I did that. Yes, you can. And we can scroll through and see all the content that's here. Yeah, okay.
+
+[00:17:10] Speaker:
+It was long. Just so you can see, so it was like white, middle, blue, dark blue, mid blue, dark blue, middle blue, dark blue, up a little bit, scroll up a little bit.
+
+[00:17:19] Speaker:
+Yeah. That was a, Stop. Stop. Wait. it. I'm assuming then it's like, it fills the space. Yeah, yeah, but. No, no, no, wait.
+
+[00:17:37] Speaker:
+Yeah. Yeah. Yeah. It's just, it's just. This is good. I'll stop. Nope. Sorry. Thank Helium. Thank you. Yeah, like, put this one into, Okay.
+
+[00:18:22] Speaker:
+. . I don't know how I mean. Mm-hmm. Change the bottom design of the website from dark blue to turquoise and the world.
+
+[00:18:32] Speaker:
+world. It's too wide and dark gray, so it's the opposite of the header image. right. Do you want the HTML phone for this?
+
+[00:18:45] Speaker:
+Huh? So this is just HTML phone. But you can just give a, Get this prompt and this image, and then anti-gravity will probably do it right.
+
+[00:18:52] Speaker:
+All right. Were you just doing me on your side? Yeah, I just took a screen. Yeah. Because then you, yeah, you can just take one.
+
+[00:19:00] Speaker:
+Can you tell me if it works? you Well, then you said that you, did you just, if you just did it now, then did it work?
+
+[00:19:09] Speaker:
+No, I don't. I don't have a, I don't have your project. No, you said I was going to send you the make you just the amount.
+
+[00:19:14] Speaker:
+I'll put the output on. I'll send you only send me like an HTML. to you man. I always like words because you forget the files that are associated with the HTML page.
+
+[00:19:24] Speaker:
+So I start that with. Yes. Wasn't it some? Hang on. What? It's not that one. I didn't mean that either.
+
+[00:19:31] Speaker:
+Thank you so much. I know that one doesn't come through. I didn't mean that. But you tried it twice, so I will do No, I know.
+
+[00:19:38] Speaker:
+I was. Wait. for this week's week. I said, maybe you tried three times. We're three times it will work, you know.
+
+[00:19:47] Speaker:
+I'm so sorry. Hehehehe, No, no, But why don't you just prompt it like that? Tell it, okay. Because I don't think I understand what you're saying.
+
+[00:20:00] Speaker:
+Yeah, that's why you just have to copy and- paste. Oh, you put it in the chat? Yeah, wonderful. What's up?
+
+[00:20:07] Speaker:
+Oh, and what's up? Okay. Alright, so I'll chat in a minute. Oops. Let's see. Okay. And then put the the image.
+
+[00:20:17] Speaker:
+Good. In there. Alright. Alright. Do you have to remove the other one?
+
+[00:20:32] Speaker:
+Stop, stop, stop. Yeah. Yeah. Alright. Yeah. And now let's see what happens. And I think for this topic- Oh shit, I've done the wrong damage.
+
+[00:20:45] Speaker:
+I'm going to get a wrong, wrong, incidentally, Eddie. My fault. My bad. Okay. Now I'm gonna have to open.
+
+[00:20:58] Speaker:
+Yes. Oops. No, that's just a final. you It's just, it's, it's, it's, it's, y'all. Bye. Do you know what happened this morning?
+
+[00:21:10] Speaker:
+No, how can I? Well, I'm going to tell you, I am, I was on the fall and I- You lost the person on the call.
+
+[00:21:19] Speaker:
+It's like, you lose me? It's a little way out, yep. Mm-hmm. Yeah, it's It's quite a feature. Yes, but I think, like, you just have to, like, make sure that all, your Google calls are inside of Comet and don't do anything else in Comet.
+
+[00:21:37] Speaker:
+Yeah. you know you have to have some kind of rule which you follow. follow. I'm going to the page. the weekend.
+
+[00:21:43] Speaker:
+Can start with the Okay. It's their street sort AI project. No, no, no. I'm here. I'm here. I'm sorry. And I had it open already.
+
+[00:21:54] Speaker:
+Okay. Okay. Right away. Yeah. So, also, by the way, this has the Global quad MD in the project route.
+
+[00:22:15] Speaker:
+Mount the project route in the global route. And directory. Like, just that side. Just where the project is. Like, Well, it's here.
+
+[00:22:21] Speaker:
+But it's in this folder. It's in a dot font folder that you can't see. Yeah. So, Gemini MD file is hidden sometimes.
+
+[00:22:29] Speaker:
+It's not like. Like, directly. It's somewhere else. Yeah. Notice that the dot, yes. And Mac, you can't name a folder with the dot in front of it.
+
+[00:22:36] Speaker:
+Yes, I know. You can. And when it's done, you cannot see it then. Yeah. It sucks. Well, there's something that's going to change that.
+
+[00:22:44] Speaker:
+you Huh? Isn't there a setting to change that? No, I think not. Really? Not at all, they didn't. They're just like, you know.
+
+[00:22:53] Speaker:
+No, but we can use warp. Warp can do it. Yes. Warp. that's actually how we did it earlier. Yeah. Yep.
+
+[00:23:01] Speaker:
+Warp it like my life saver for everything, like, technically, locally on my Mac. But like, what if you didn't know how to- What do you mean that warp exists?
+
+[00:23:11] Speaker:
+Yeah. Yeah, then you are screwed. ible your system fruit. . Yeah, I remember the first time I used the warp. yeah, and yeah, we are like totally above and- y'all because we have so many, like, little nice tools that save us, like, over, like, otherwise impossible hurdles because- we are not, like, I
+
+[00:23:32] Speaker:
+know with it so much. Yeah, I mean, we didn't- oh, there it is. Ooh, even look at the sides. Bye bye.
+
+[00:23:38] Speaker:
+Spoon-y thing, this is slider. Made it out to- to claws. Yes. here we go. That was a new word. Yes.
+
+[00:23:46] Speaker:
+And now- Okay, and I gotta give it a pump from before. Yes, exactly. What's happening? Okay. I already downloaded the file, so we've opened the file there, and it's- It's a switch.
+
+[00:23:58] Speaker:
+And pump. Thank you. Thanks guys. Thanks guys. We'll see you in the Like, you know, I kind of like the agent manager only because you can see.
+
+[00:24:31] Speaker:
+me. The stuff that you remember I was like, oh, I can't see what it's doing. It just allows all that stuff to basically be, like, visible.
+
+[00:24:39] Speaker:
+Okay, okay. We're gonna. But it's the exact same one. So if I open it up, it'll be the same conversation that it's having.
+
+[00:24:44] Speaker:
+It's viewing. It's using this one. You can see it as a little turning. So it'll show me all this stuff, but it won't let it disappear.
+
+[00:24:51] Speaker:
+So you can also, like, have several conversations, like, one of the main- range and one inside of an HTML page.
+
+[00:24:59] Speaker:
+Because right now you are inside of, like, a view HTML website. Yeah. Thank you. Here you can talk to it below.
+
+[00:25:05] Speaker:
+There's a talking thingy. Yeah, yeah, yeah. That's, that's, that's this. So you can talk to two at the same. And I'm not sure where I'll tell you the second one right now.
+
+[00:25:21] Speaker:
+. I'm not sure where I'll tell the second one. I'm just trying to fix the first one. Yeah, okay, I get it.
+
+[00:25:25] Speaker:
+How was the website? It's not finished yet? No, it's not finished. No, not finished yet. See? you And we definitely have to make these signs better.
+
+[00:25:35] Speaker:
+I can totally see it because, you know, like, I can't, like, make a one to one cop- copy of anything I see in the hands, you know?
+
+[00:25:42] Speaker:
+Like, this is brilliant designs, you know? Like, really unique stuff. Oh, no. And, huh? Like, the ones I've sent to you, you know, like, those designs are super good, you know?
+
+[00:25:54] Speaker:
+And, You know, I can just copy it, like, one, one to one. Just with a prompt, you know? And I'm like, okay, this is much nicer than any- generic stuff the website comes up with, or any template you can find.
+
+[00:26:09] Speaker:
+It's, like, really unique. Totally. It's just that, like, you- you- you can find them and pick them. Yeah, exactly. I will scroll there for hours.
+
+[00:26:17] Speaker:
+Like, I- I- I- it is so- You It's a little overwhelming sometimes because, like, I like all of them for different reasons and then I'm like, will this fit this or this, you know, and it just- And I, I need to, like, present it to me and then, like, I know if I like it or if I don't like it.
+
+[00:26:34] Speaker:
+But, like, to actually come up- with the overall scheme, that's- I guess it doesn't really- unless it's something that I can already- Then.
+
+[00:26:43] Speaker:
+Unless I already have an idea about it. Uh-huh. And I don't know, it just- it like doesn't materialize. It's like- I can't- it needs- I need- to like see it.
+
+[00:26:52] Speaker:
+Okay. I just used to say, let me see if I got the old version. Thank Thank you. No, it still says diagnose before prescription.
+
+[00:27:12] Speaker:
+I used to say something about like malpractice, and I was like, I don't think I want to put- malpractice, like, right there up in the middle of the website.
+
+[00:27:18] Speaker:
+try to scale it down a little bit. I'm and click Okay. Yeah. Yep. up. This is a, hand clock court.
+
+[00:27:28] Speaker:
+Give me a brief, A brief of my power conference nights. Okay. Okay. Yeah. Great. Oh, it's just so nice, helpful because, I don't know, I'll excel.
+
+[00:27:40] Speaker:
+Oh. I can, I can, I can, I can forget certain things, like, you know, all the time and just hope so, like, not forget things.
+
+[00:27:48] Speaker:
+Thanks. If you can try. Yeah, but honestly, we just have to make YouTube videos and- like that, pushing content, I think we will have so quickly jobs.
+
+[00:27:59] Speaker:
+Like, I'm so sure, you know, like, this stuff- I'm doing this stuff, you know, because of your background knowledge, you know.
+
+[00:28:07] Speaker:
+Plus the AI, it will be so super fast. The only problem right now is- There's nobody seeing what we know.
+
+[00:28:13] Speaker:
+Yeah, we got it, yeah. I think. Something. Just after you know. you The guy I just met, you know, he's like doing like, he removes bad Google reviews for people, you know.
+
+[00:28:25] Speaker:
+Oh. Oh. And I told him, like, about this workflow I did from Nick, like, you know, the upwork scanning. Yeah.
+
+[00:28:32] Speaker:
+You know, and he was like. Bye. Could you scan, like, Google Maps for, for local businesses in my area and find, bad reviews and- and then automatically draft an email for the person, you know, yeah.
+
+[00:28:45] Speaker:
+Yeah, I can. Yeah, I can. Yes. Yes. We'll next week. Yeah. You know, and then it's like, I think there are so many people like that.
+
+[00:28:53] Speaker:
+And he, I told him, like, two examples for not-nerds. That's right. Like, with the cars, you know? And with, like, the, the restaurant owners, you know?
+
+[00:29:01] Speaker:
+And he was like, and his head was like, oh! Oh. If you can do that, then you can also maybe do that, you know?
+
+[00:29:08] Speaker:
+Mm-hmm. So I think that will help a lot if we just make a normal language. What we can do, you know, people will think, ah, if they can do that, then probably they can also do that.
+
+[00:29:19] Speaker:
+Alright. Alright. We'll see you Sorry, one more time. Like when we make videos where we explain on- examples that they can relate to.
+
+[00:29:31] Speaker:
+Yes. Yeah. Yeah. They will definitely call us because they need stuff like that. Friday day, I guess, right.
+
+[00:29:52] Speaker:
+That's right. And it's so funny, like, the stuff we can do, you know, was like, the one guy is, he's, he's like, making- Making a lot.
+
+[00:30:00] Speaker:
+Like, Amazon Locker, you know, where you can run to and you pick up your parcels, you know, and I was like, okay, do you- have, like, a loudspeaker on them and then he was like, yeah, we have a loudspeaker.
+
+[00:30:14] Speaker:
+Okay, that's easy. We can make, like, a voice agent and- once you pick up a password that says, thank you for, for taking your password from us.
+
+[00:30:21] Speaker:
+It would be nice if you could give us, like, a Google review for that. No, I have, like, 2 million people picking up parcels every day.
+
+[00:30:29] Speaker:
+And he was complaining they only have 100 reviews. Use. And I was like, okay, we can make a voice agent for that.
+
+[00:30:35] Speaker:
+You know, it's like, so easy because we don't have to understand code, you know, we can, they will give you.
+
+[00:30:40] Speaker:
+We can some code and we can take an AI agent, read all that stuff, and then just implement whatever. Remember, you see, it's not perfect yet, but it's getting better.
+
+[00:30:56] Speaker:
+Now. Oh, we have to get, like, you have to make, like, Should I send your picture? Sure. Oh wait. Scroll up a little bit.
+
+[00:31:04] Speaker:
+Okay. Or down, down, down, down. so that's only turquoise. In this? No, turquoise? No. No. Yeah, but the light took was a light one.
+
+[00:31:14] Speaker:
+Yes. Okay. Stop. No. Own. you Yes. Wait, wait, wait. That was trying to count for the header. Okay. Okay. I can make it bigger.
+
+[00:31:25] Speaker:
+I don't know. I don't know. That's good. Yeah. Wait. Yes. Alright, see you later. Alright. Yes. Okay.
+
+[00:31:37] Speaker:
+Yay. Please make the turquoise background, gradient. video. From the bottom right to the upper left hand corner, as shown in the error.
+
+[00:32:00] Speaker:
+So it's- Right in the beginning and then it goes to darker. Walker. And opposite the direction on the now, Dr.
+
+[00:32:09] Speaker:
+Kwas. us. Can you try that one? Bye-bye. I'll end you on WhatsApp.
+
+[00:32:25] Speaker:
+Yeah, no, I- I'm sorry. I didn't get it. Oh, I saw- I'm sorry, it's a wrong one. It's okay. Thank you very much.
+
+[00:32:50] Speaker:
+But now you have to scroll again because I accidentally sent it to the rock. In person. No worries. Up, stop.
+
+[00:33:14] Speaker:
+Sorry, stop, stop, stop, Okay, I'm already done there. Okay, now try. Go ahead. Mm-hmm.
+
+[00:33:37] Speaker:
+know what you're saying?
+
+[00:33:48] Speaker:
+I'm just like. a good one. Thanks for- I'm not, not working.
+
+[00:34:06] Speaker:
+It kind of reminds me of the Tiffany's color, like Tiffany and Co. So, Oh, yeah. Teal and, like, silver. Yeah, maybe yes, a little bit, yes.
+
+[00:34:16] Speaker:
+But definitely look more, like, I think it looks more tailored to your niche. You But it has to, you still have to accept on the other side.
+
+[00:34:28] Speaker:
+No, no, no, no. Like this one's not finished yet. I don't know what he's doing. It's just coming to look at it and then it's like right there.
+
+[00:34:34] Speaker:
+It's okay. Yeah. No, you can. No. No. Okay. But Tefan- And these other, actually make them real jewelry or is it just like, yeah.
+
+[00:34:46] Speaker:
+Yeah, a grill jewelry. Okay. Okay. And. Oh. Do you not have Tiffany's in Germany? Yeah, you do. No, I, I think we don't have them here.
+
+[00:34:54] Speaker:
+I only know them from breakfast at Tiffany's. Oh my god. Really? Really? Okay. Hang on. Have you seen Tiffany's website?
+
+[00:35:02] Speaker:
+Yeah, yeah. I know they make jewelry. I just wasn't sure if they make, like, some expensive stuff. I'm helping. Or, like, fake stuff.
+
+[00:35:08] Speaker:
+No, it's not fake stuff. Yeah, nice stuff. Yeah, nice stuff. you But like Swarovski, you know Swarovski? Mhm. They make a lot of money with fake stuff.
+
+[00:35:20] Speaker:
+Yeah. Yeah. Yeah, that's all glimmer and shine. It's just like glass. Yeah. And they're like, Mm. Yeah, just because their marketing's like so like.
+
+[00:35:32] Speaker:
+Yeah, they're like, yeah. Yeah. Yeah, too many, so a little more. . Yeah. And like a girlfriend, like an ex-girlfriend.
+
+[00:35:46] Speaker:
+A friend of mine she had, like, was like her motto on her Facebook page was like, if it's pink and if it's shiny, I could wa- I can what?
+
+[00:35:54] Speaker:
+Womit, she hated it. Like, she hated all this, like, pink stuff, yeah, yeah. . Oh, yeah, it's exactly like it. Yeah.
+
+[00:36:05] Speaker:
+It's like the color of Tiffany, yeah. Alright, we'll see you next Yeah, it has a very similar feel to even like the font is just smaller.
+
+[00:36:14] Speaker:
+All right. Yeah, but font is something you can do separately. You don't have to, like, I would, I would like fonts.
+
+[00:36:23] Speaker:
+I would do. I it differently. Let me try something. Not me. me. Hello. Yeah. Yes. Okay. So, is the gradient should now be active?
+
+[00:36:51] Speaker:
+Mm, it's not active. It's, because it says it, but maybe not, but it- That's it. Can you reach, can you, like, Because it says- Yes, changes apply, but I don't see that.
+
+[00:37:01] Speaker:
+Then you can restart, yeah. No. That's the green. There, that, that's shitty. But go below, below? Yeah, there. It's much better.
+
+[00:37:12] Speaker:
+You see that? Okay. Yeah. Yeah. Yeah. . So, like, this is already a big step up. Yeah. I think these could be, sorry.
+
+[00:37:19] Speaker:
+We'll see you in this font is so, like, hard, you can't have a squint or even, but anyway, I want to respond to it.
+
+[00:37:27] Speaker:
+You know, I really mean, so, I guess I don't want to lock myself into any. 3 4 thing. I'm seeing a particular thing on my website.
+
+[00:37:36] Speaker:
+Let's see. I You don't want to lock yourself in. Like, this doesn't speak as well. you Yes, it's I still have learning to do, basically.
+
+[00:37:50] Speaker:
+to please. I feel like I'm going forward with all these accolades. Oh, and I can help you regulatory workflows. Meanwhile, like, I still have to learn how to, how to actually, I mean, I can.
+
+[00:38:05] Speaker:
+I love you, Kristen but doesn't. I love you, Let's do build the automation, but it's not the most secure automation.
+
+[00:38:12] Speaker:
+You know what I'm saying? Yeah, but I don't think- You But there's no issue, there's no issue. The only problem right now is that you have not even done it for yourself.
+
+[00:38:22] Speaker:
+Because now- So let's say I'm like- I have deployed that thing yesterday to a versatile, you know? And then I was like wondering, okay, where do I put my- What may I keep?
+
+[00:38:32] Speaker:
+You know? And then it like, it said, oh, you have to go in the cell here, here, here, because if you do it like this it- safe, you know, and they have like a certain part inside of the versatile website where you put the API key.
+
+[00:38:46] Speaker:
+and the way that you make an automation like the way Nick taught it in with anti-gravity. It's also safe, you know.
+
+[00:38:54] Speaker:
+Oh? Yeah, so this. This is, The heart is shitty. Yep. . There should be a, a straight white border.
+
+[00:39:22] Speaker:
+. . Who's the next section? You . . No gradient from turquoise to white. That's what however we say. . . On this here. Yes. . . Oh.
+
+[00:39:45] Speaker:
+. Yeah, okay, I'll do that. Mm-hmm. But honestly, we know way more than we need for getting started. really You don't need to learn more stuff.
+
+[00:40:04] Speaker:
+No, I'm talking about, like, with the security with the, security. Yes, but the thing is like, I mean, what are you going to sell?
+
+[00:40:12] Speaker:
+You're not going to sell a website where, like, like our com- Unity, where a thousand people are going on, you will, create, like, an automation, ten people are using.
+
+[00:40:20] Speaker:
+ASAP. 2 13 13 13 13 You and I'm 100% sure you can make that thing safe, I can do as well.
+
+[00:40:27] Speaker:
+And there are no hackers using it, you know. I hope. They are not posting it somewhere. There are some medical nerds using some AI, you know.
+
+[00:40:36] Speaker:
+But they are not posting. And I like the grid that it put into that. I like Yes. I like it.
+
+[00:40:49] Speaker:
+You see it's much better already. You see it's quite good. Good. Now, I just don't like the next one. This one.
+
+[00:40:57] Speaker:
+I don't like the, from one gradient. Indian. The move to the other gradient. You know what? I don't be there.
+
+[00:41:05] Speaker:
+But it's not a big, but it's already. Ready? But put it, like, don't have to be white, blue, and white, white.
+
+[00:41:14] Speaker:
+What? You can just say every third one should be- Okay, I will also give you this one here.
+
+[00:41:28] Speaker:
+Yeah. Every third section is a change, changes went away. And then I'm going to change this box to write IE.
+
+[00:41:38] Speaker:
+You like. Every. The third?! Every third. Yeah. One like, like the head of section. Every third. Like, like. Every- Every odd.
+
+[00:41:48] Speaker:
+Yes. Row. Every. Yes. Odd. Who called Banner? What do they call this section? Section. You Section. Every odd section should be.
+
+[00:41:57] Speaker:
+Like the first one. Like the first one. Because it's not plain white, it's white. Okay. White and grid. Yeah, right grid and A little bit of quas.
+
+[00:42:11] Speaker:
+How do you say that in German? To peace. . . . To a quas. . . To a quas. . . To a . do you say that?
+
+[00:42:19] Speaker:
+Chirquoise. . . Chirquoise. Oh, where, where, where, where. . . . . I just had a heart like that before. . . . Terraquoise. . quas. . . . With her . . . Yeah. I think .
+
+[00:42:28] Speaker:
+. . Let me see if, if aye-no. That's what I mean. . . . a quas. . . Oh, it actually does. Yeah, yeah, it does, It does!
+
+[00:42:35] Speaker:
+yeah! It did! Right. Okay. Goodatch. Let's go. And I put it in a text anyway. I didn't give it as an audio, but it spelt it right when you, like, in the message you sent.
+
+[00:42:46] Speaker:
+So I understood, but yeah, I like this color and I really . . . yeah, there's . . . I like this. . . Yeah, I mean, not the logo yet.
+
+[00:42:56] Speaker:
+The logo we have to work on. This is awful. This is ugly. This is so bad. Yes. Yeah. Yeah. It's just words.
+
+[00:43:03] Speaker:
+It's just words. Yeah, yeah, yeah. Yeah, I wanna, I wanna like to. Just have like a second one open, be like open a different browser and then apply the Tiffany's one to that so I can see what it looks like in a separate situation.
+
+[00:43:16] Speaker:
+Yeah, this looks really nice, the colors are nice, so. I don't want this to look full at this font, but again.
+
+[00:43:23] Speaker:
+and try. Yeah, you can do font later. Thank you. That's like, come with a plan when people are like, hey, You can just feed the holy sign to the ex- expert group afterwards and ask, which funds should you use?
+
+[00:43:36] Speaker:
+Yeah. And. Use acceleration workflows. Strengthen these words are, like, such as, like, You would look at it, like, what the hell do you mean accelerate my workflow?
+
+[00:43:52] Speaker:
+What workflow? Because I mean, if they're coming from paper and, like, they're, you know, So, like, a binder, like, what the workflow are you talking about?
+
+[00:43:59] Speaker:
+Like, honey, is this, like, jargon words? And then they're, like, she's just full of it. I think bosses like that, they like workflows.
+
+[00:44:08] Speaker:
+Bosses like workflows? Yes. You Because it means like shit gets done. Yeah. I come back in a sec. like. Mm And so did it.
+
+[00:45:49] Speaker:
+Oh, hang on. No, it's, Ah, here. See, yes, it did. . . . . . It looks like . . . No . . . No, wait, let me, ah, harder set this .
+
+[00:46:01] Speaker:
+. . There we go. Okay, okay. And took the lines and That's good. Yeah. These emojis have got to go. This section, I don't like it.
+
+[00:46:11] Speaker:
+5th and 8th and then it's, yeah, it looks, this looks- You don't like the icons, right? Correct. I think they're awful.
+
+[00:46:17] Speaker:
+Okay, then just, I want them to be maybe, like, images, like, you know, like, just go inside of, the chat.
+
+[00:46:24] Speaker:
+Mm-hmm. Attack a screenshot of those. close. Yeah. Okay. Okay. Well, that's why I'm wearing the laptop, so it's okay.
+
+[00:46:36] Speaker:
+Okay. On this section, actually. right. Okay, and now you say, I don't like the icons project. reject. And then, please do it in the style of and just write this one.
+
+[00:46:53] Speaker:
+I put it what's up. . . Okay. Too long of the noun project? Yeah. What's the noun? Now. They are like making icons, but like only solid colors.
+
+[00:47:07] Speaker:
+Like, usually they look. Thank you. Quite good. Ah, alright. All right. We shall see how they, What? Yeah, I said we'll see how they implement them.
+
+[00:47:20] Speaker:
+And then we'll take a way up. Yeah, technology ones are not, so. Yeah. No. I'll be like.
+
+[00:47:38] Speaker:
+I like how the lines show up. It's like here. The lines show up on the left. Like I like this.
+
+[00:47:43] Speaker:
+It can breathe more. Yes. Where it's here. It's like, up again. It's just every single one. But it can then the lines appear at the bottom.
+
+[00:47:50] Speaker:
+Yeah. I feel like it just maybe needs some of this spacing. Yeah, yeah, yeah. . Yeah. Yeah. Let's see what it switches the email to the icons too.
+
+[00:47:59] Speaker:
+And maybe it'll get, get wise on the, on the way up. . And for some reason, if you look here, I go download to marketing.
+
+[00:48:10] Speaker:
+I'm if you download the file extension and I went into my settings because I figured. You're it. You're it. I went to the look up specifically how to do this and I'm just saying.
+
+[00:48:25] Speaker:
+Long an item as an extension. luncheon. No, it's not that one in final extension. One tail of extension, ah. She's looking sit.
+
+[00:48:34] Speaker:
+that's it. This menu is like a maze, okay? Well, it's in here, storage. Go Oh, storage. No, but anyway, there's a setting in here that, that I have on.
+
+[00:48:47] Speaker:
+I have- toggled on to save the file extension when you download, and it was all for a while, and then I turned it on, and then it files downloaded normally again.
+
+[00:48:56] Speaker:
+And then all of a sudden, it's stopped downloading normal, and so there's no extension. I can't even access this. I don't know where the folder is, but it's not really a stupid problem.
+
+[00:49:03] Speaker:
+Thank very much. I don't know, but I think it's on Google. I think on the other problem. Welcome. Well, you Safari and you won't have this friction.
+
+[00:49:15] Speaker:
+Yeah, kind of like. Yeah, now, now you talk like Alabama. It's less- like the last sentence was like that. Say the last sentence again.
+
+[00:49:25] Speaker:
+It was like, Roar, Roar, Roar, Roar, Roar. You That was like, I don't, I don't remember what it is, man.
+
+[00:49:33] Speaker:
+okay. You have a recording of- you that anyway, you can re- you can listen to it later. Go back to the 18-0 date.
+
+[00:49:40] Speaker:
+Yeah, and see how it's 608. It's 6.08. Go back to 18-0. I was thinking that was a reporting fund. Oh.
+
+[00:49:46] Speaker:
+in a little Huh. Up. Not much better. I think they should be more both. Oh. Yeah, I agree. I'm totally going to vote with that.
+
+[00:50:00] Speaker:
+I mean, it's just that the overall, it's just- Thank so much. It's small. And there are two detail detail. Like, what is this AI readiness audit?
+
+[00:50:10] Speaker:
+I mean, what is it? I can mean. It looks like a female symbol pointing at something. You have no idea what that is.
+
+[00:50:18] Speaker:
+Yeah, me neither. There Yeah, I don't know. And voice agent. age. Looks like an alien. No, I think just. It's like an end head.
+
+[00:50:42] Speaker:
+Like, come on, end? Yeah. Yeah. Look at me. Alright, alright. We'll see you Yeah, I mean, I kinda like, cause this speaks to the medical- people, and they're like, boys.
+
+[00:51:11] Speaker:
+Yeah. Training speaks to everyone. This speaks to everyone. They, you know, they may not even. Now. Come to me for necessarily this.
+
+[00:51:20] Speaker:
+The work that is the thing, you know, they will come because of our SEO and they will come. Because of your YouTube videos, you know, so you make those, they come to your website and then you sell them all the stuff.
+
+[00:51:28] Speaker:
+So these are just, this of course.
+
+[00:51:48] Speaker:
+I mean, it's like, right, you need to have it, like, without the Nord world. You like, need to, a company brain or like like, whatever.
+
+[00:51:57] Speaker:
+You know what? Oh, you know what? I have. I know. I'm going to need you. Okay. . . . . . okay, so what .
+
+[00:52:18] Speaker:
+. ah Okay, so what I did was, what what what what Thanks. In this dark one. But there is a different- You know, you you know, next video.
+
+[00:52:30] Speaker:
+. I think that the process does not happen. Okay, next I'm gonna use the- Oh, okay.
+
+[00:52:48] Speaker:
+Thank you. What's up? . . . . . Okay, yeah, let's go.
+
+[00:53:05] Speaker:
+Let's look at the content. and in the, in the, in the, in the, in the. in the, in the, in the That's it.
+
+[00:53:28] Speaker:
+You There's one that had much that are wording. This was the AI default one. So I'm trying this in because this had, And, Like, my whole website content was written by this expert group.
+
+[00:53:44] Speaker:
+Yeah, the first one was. Like, I told them what I want to do and- not kind of decided they made me like a mega-promque with everything.
+
+[00:53:53] Speaker:
+Yeah, I did- I did- did it across two different sessions, too, to some of the- I want to make some edits, just to put some- put some aspects- It's really- plug doesn't really understand GLP, because the thing that it said that it- it applies to doesn't really make sense.
+
+[00:54:07] Speaker:
+So it said it corrected you. Things and kind of go through it so I'm not making things that don't, yeah, that don't- don't sense.
+
+[00:54:27] Speaker:
+. . . . That's whoops. Thank you. So Excuse me, can you You Have you, have you, work on that? No, I have worked on, like, the Chrome Extension, please.
+
+[00:55:09] Speaker:
+Thanks. I think for regular businesses, we can make, like, re-, this will be, like, really good way to, to get them on board, you know?
+
+[00:55:18] Speaker:
+Like if we have, like, really good Chrome extension that they can use on a day-to-day basis, it's an easy way to get them inside of the community.
+
+[00:55:26] Speaker:
+And it's kind of easy to make those, you know, just make a, I just make a couple of Google Chrome extensions.
+
+[00:55:33] Speaker:
+and then you first showcase that you can make automations. Maybe somebody needs something, you know. Otherwise you have like cool.
+
+[00:55:42] Speaker:
+Stuff that people are joining the community to learn AI and also to use them, you know. Yeah. Yeah. Now let's start when I'm writing.
+
+[00:55:54] Speaker:
+Thank you. Oh, let me see. Thank you. Okay, but why is it English at the moment because I'm right now located in Germany, so it should show the- inversion of the extension.
+
+[00:56:19] Speaker:
+extension. And I remember, you know, like, half a year. Thank you. Go mark made like a chrome extension to prompt lovable.
+
+[00:56:48] Speaker:
+Do you remember? And I was like. Really impressed that he made a Google Chrome extension. So it's like, you know what I mean?
+
+[00:56:55] Speaker:
+I think now, okay, now I'm making Chrome extensions of people who will. Watch our stuff. They will think, wow, we are crazy good.
+
+[00:57:04] Speaker:
+You know, because it's just not normal. Mm It's now very easy, you know, but only we know that. They don't.
+
+[00:57:12] Speaker:
+So, kinda other things would you think about, like. For a browser extension that the audience wants. definitely for Google reviews.
+
+[00:57:21] Speaker:
+To answer. Okay. Also to Google reviews. And then what's, what definitely people like is automatic outreach. reach. You know, like, that is, and also, like, for example, simple.
+
+[00:57:36] Speaker:
+Or targeted stuff, for example, for like, real estate agents, for example. You know, so they can dump like, A lot of images in, and in, apartments with absolutely no furniture.
+
+[00:57:49] Speaker:
+Some nice furniture is- added, you know, if there's trash lying on the floor, trash is being removed, you know? Yeah, by a really good system pro- sound, you know?
+
+[00:58:00] Speaker:
+And so they can just dump images and Google Nanobanana in the background, makes the images really good and they can immediately use- We'll see you them to sell or rent out their real estate.
+
+[00:58:10] Speaker:
+Yeah. But they're like tons of use cases I have in my head, which I can just like- . Pop up, pop up one after the other.
+
+[00:58:18] Speaker:
+Sorry, one more time. Like, I have tons of those kind of ideas, which I can- just like, could do one after the other.
+
+[00:58:25] Speaker:
+Yeah. And I think that's a really good one. And for the community, you know, to, to get people in. And also to, to showcase some work we did.
+
+[00:58:37] Speaker:
+We were, I did, you know. Oh. And then get some clients in as well. Because I really want to get going.
+
+[00:58:43] Speaker:
+I'm like, sitting like, I'm not so active and in. If you have any questions, please the comments the next video.
+
+[00:58:46] Speaker:
+And, early I had doctors anymore, you know, because I'm really building, building, building. And I feel like I'm there, you know, I can do it.
+
+[00:58:53] Speaker:
+You know, I don't- I don't- I still learn, you know, but it's more like on the side. I don't need to learn it.
+
+[00:58:59] Speaker:
+Maybe I- it's just I can do everything I- one. Maybe my old technique takes me longer. That's kind of the deal.
+
+[00:59:06] Speaker:
+But it's not like that I cannot do it. Yeah, Nate, I know where that works for you. Thank you. So, yeah.
+
+[00:59:12] Speaker:
+Yeah. And people are, you know, right now we are in a really good state where it's- actually a lot of people are looking for AI and we can- we have to position ourselves, you know, because if we are not visible, it does- It doesn't matter how much you know about AI.
+
+[00:59:28] Speaker:
+Yeah. Yeah. I'll see. I'll get some inspiration for the content and stuff. Cause it just looks like a, You This can't think about what I would tell them about.
+
+[00:59:41] Speaker:
+It's like, but it's all there, but there's so much and I'm like, where would I even start? . That's not the point.
+
+[00:59:47] Speaker:
+I mean, like, look at Mark's, like, like, Wreck, Voice Agent, and what was the other one? And. And, audit. Just take those three for the website.
+
+[00:59:56] Speaker:
+Okay. And the rest. Nice. This is just, block entries. And that is very easy, you know? Do you have like, those daily newslets?
+
+[01:00:05] Speaker:
+Tell us about AI news, you know? Just pipeline those through, through like an automation. information? . Which says, basically, what does this news mean for the science industry?
+
+[01:00:21] Speaker:
+And then you get a- Block article for science people, what does it mean, Claude, Claude, Opus 4.6 for science industry?
+
+[01:00:28] Speaker:
+See you next No? So basically just get them rewritten for your niche. Yeah, and then I've actually used what, like, I haven't made a- It's no problem, I haven't either, but I did one with- Google can- Anti-Gravity can do it alone.
+
+[01:00:44] Speaker:
+Boom. You remember, I- I did like this one thing where- where the API- the- where the rack was talking to the- a- what it's called?
+
+[01:00:56] Speaker:
+This voice tool? Oh, 11 hours? Great, okay. Hello, what? Oh, Twillium. I think Twillium. I'm not sure which one was, but I, you know, I, I configured it with anti-gravity and I just opened, the browser locked in and it made it all automatically, so it's easy.
+
+[01:01:12] Speaker:
+You should have a chat. Okay. Oh, it's like, it's that easy. Like, you know what I mean? No. Okay. Well, not like that.
+
+[01:01:18] Speaker:
+That's kind of cheesy, but, you know, like, but just something like. You know, the thing with the Daniels, he's like, oh yeah, he makes you feel like it's easy.
+
+[01:01:26] Speaker:
+Like, makes it feel like it's not. you want. As hard as your mind makes you think it is. Cause you're like, oh, you know, he's still like happy about it.
+
+[01:01:34] Speaker:
+And, and just so easy. And like the. Good. That kind of, Yeah, that's like it, it rubs off on people, you know, and then it doesn't feel so.
+
+[01:01:42] Speaker:
+Sorry. He has crew. Yeah, but I mean, they shouldn't know how easy actually it is. I mean, they should. Good.
+
+[01:01:50] Speaker:
+I mean, for now, it's good if they think it's a little bit complicated. I mean, you're like, ah, you're not getting quite a quiet.
+
+[01:01:56] Speaker:
+Yeah, yeah, yeah. Cause I mean, yeah. Yeah. Yeah. Yeah. I mean, it took us like at least half a year to figure out with a lot of work that it's actually easy.
+
+[01:02:03] Speaker:
+Nothing. Yeah, they are going all done. Oh, it's much better, huh? Let's see, okay. Isn't the same thing? Oh, something terminated, yeah.
+
+[01:02:16] Speaker:
+And save that on work. Okay. And It has a course that they have on YouTube, and you get a certificate after it's done, and anyway, I subscribe to Enthrompit, and I'm gonna put this up.
+
+[01:02:55] Speaker:
+Oh, okay. I'll show you. You like, where's the email? Or what is it? Like, where? Where is the promotion? You don't score.
+
+[01:03:05] Speaker:
+You don't score. You score on our school community. Mm-hmm. Early adopters. Thanks. Yep. Okay, I'll check it. I'm not close to it.
+
+[01:03:15] Speaker:
+Mm-hmm. Because Just wait a minute, don't take my socks off. There's something like that. Maybe someday people know what cloud is and we should, then it's a benefit.
+
+[01:03:26] Speaker:
+it. . I'm having a conversation. Thank you. I didn't try, I didn't hear it again. It's running out. and then I may be using my contacts for Robeson.
+
+[01:03:45] Speaker:
+Thanks, Jim. Good. Thank you. Thank you. It's the first post-cloud cold start. It's there. So, what? It's up, up, up, up, up, up, up, up.
+
+[01:03:58] Speaker:
+It's just the fourth post. Up, up, up, up, up, Uh-uh. Up, up, up, up, up, up, up. Okay. No, it cannot be the top because it's- You It's not pinched.
+
+[01:04:12] Speaker:
+He always has pinched stuff, yeah. Oh, he pinned it. No, but it's, you're not on the cross page. There it is.
+
+[01:04:17] Speaker:
+you You have been on the second page. Right. Oh, this is now on the first one. Yeah. Yeah. Anyway, this is where, and then the link is right.
+
+[01:04:29] Speaker:
+I'm not for Sarah, but you can go here on topic. Shoulder. And then it just takes you a link to those videos and throw on YouTube.
+
+[01:04:37] Speaker:
+And Mark is still realistic, like certifications carry no weight anymore. Well, it's not true. Ooh. You know, it's like, it's the same thing as if you say, you know, Google, Google, Google search is worthless.
+
+[01:04:50] Speaker:
+I mean, it's, it's not worthless. For everybody who is not AI, they're still doing the old way of pinning a story over.
+
+[01:04:56] Speaker:
+I'm, I'm, I'm a lot to run, but I'm, I'll be, I'll be online in a little bit, but probably a few, probably a few hours.
+
+[01:05:05] Speaker:
+Good. good. a s See you then. All right, I'll take a look next time. Bye. Thanks for watching!
+
+==========================================================
+END OF TRANSCRIPT

@@ -1,0 +1,617 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: 8f5fc121313f4671b1b8d33ad31b49aa
+URL:      https://www.loom.com/share/8f5fc121313f4671b1b8d33ad31b49aa
+Date:     2025-12-18T00:30:32.211Z
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:50:36.477Z
+==========================================================
+
+[00:00:00] Speaker:
+You got it! So, there we go. Let me turn all this stuff on.
+
+[00:01:35] Speaker:
+Hey. Hey there. How's it going? Yeah, pretty busy here. I have so many, like, last couple of nights, there's a lot of calls I have to do.
+
+[00:01:42] Speaker:
+Oh, man. Yeah. Well, I won't ask. I don't want to take too much of your time. All I was, uhm, all that I was asking about, so do you remember in the presentation, and it was in my loom, where I was saying that what we're gonna do is we're gonna, you know, so we have these prompting types, uh, like those
+
+[00:01:56] Speaker:
+four types, and, uhm, that it would record, like, the notes. Let me pull up the presentation because it, uh, I don't remember what I said.
+
+[00:02:07] Speaker:
+Now, but, uhm. But there were just a couple of things, but it's in it's in that slide deck, but, uh, right now I also downloaded because I have like some.
+
+[00:02:17] Speaker:
+I have some thoughts about it, but good, Oh, the, uh, the video? Yeah, yeah, yeah, yeah, uh-huh. But it's very good, but I just like, I just think about what you're saying, like, how do we do stuff, you know, like that.
+
+[00:02:31] Speaker:
+Yeah, no worries, no worries. I'm, uh. I'm pulling it up, because I, I mean, I had that script, I got that script, I, so I, uh, this morning I made, uh, wait, that's the wrong one.
+
+[00:02:40] Speaker:
+I made two scripts. Two presentations in GenSpark, and, uhm, where is this? Here it is, it's not prompting, I'll share my screen.
+
+[00:02:49] Speaker:
+In just a moment here, I'm going to share this. Yeah, my credit's reset for GenSpark. But honestly, you know, like, like, Google, uh, uhm, like, the, uh, NotebookLM, I'm on their Ultra plan now, and it has no watermarks anymore.
+
+[00:03:13] Speaker:
+On the Ultra plan, the slides have no watermarks. What's that again? I, I have- And the Ultra plan is amazing.
+
+[00:03:23] Speaker:
+It's expensive, like 157 Euro dollars, but you can make unlimited videos. Unlimited Nano Banana, and Nano, and, and, uh, Notebook LM is, like, without watermark, really.
+
+[00:03:37] Speaker:
+Really good. Nice. I, uh, I, yeah, I'll, I'll have to look, I mean, I'm using them right now with it, and then I just, like, remove it after, but that would be convenient.
+
+[00:03:46] Speaker:
+I just, I just cancelled ChatGP, like, the pro ChatGPT, because Claude's, like, stepping up their game. Yeah. Yeah, okay, so, so, like, let me go on.
+
+[00:03:55] Speaker:
+So, is this one, so, uh, the prompt derivation strategies, I have the actual like, I have a, I can send you the thing of, like, this is the strategy for this, this, and then you can basically just insert JSON beneath that, whichever one of our workflow, and then, so I, uhm, yeah, and then just see how
+
+[00:04:15] Speaker:
+they each come out. Yeah, exactly. That's what we're looking to do. That's should do. And in my opinion, I mean, please correct me if I'm wrong, but in my opinion, if note by note is like exactly the same.
+
+[00:04:26] Speaker:
+The best way to prompt it, in my opinion, yeah, yeah. I mean, I guess, yeah, I guess in cases where, you know, if you have like.
+
+[00:04:34] Speaker:
+It'll be neat to see what the best way to prompt something that has like multiple paths, you know, how to have, like, to clearly say this, so I'm keeping an eye out for that.
+
+[00:04:42] Speaker:
+For any of the workflows that have multiple paths. That is very, but you can try that with, with the big regs, you know.
+
+[00:04:48] Speaker:
+Oh yeah. And if you, if you do that. With Claude, write me a prompt for, for, for, for another AI, because that's what I did, you know, and I put this in a sentence.
+
+[00:04:58] Speaker:
+Sticky note, and in this, in this prompt, you can see, like, really weird, like, things, like, not normal, like. flows, you know, just, like, stuff that goes in multiple directions.
+
+[00:05:10] Speaker:
+Okay, so it doesn't actually put it together properly? It does, perfectly. It does, but you can see how the prompt is structured.
+
+[00:05:18] Speaker:
+I have to go, quick call, okay? No worries. Taxi Fiber, guten Tag. Hallo. Ja. Lauferner Straße 15, Ihr Nachname?
+
+[00:05:46] Speaker:
+Sie stehen draußen? Jaja, und was haben Sie Was für ein Einsatz, was für einen Schein haben Sie da? Taxi. Ja, ja.
+
+[00:06:07] Speaker:
+Taxi, Gutschein. Sagen Sie es nur dem Fahrer nicht. Ähm, Jugendamt, Nicht dem Fahrer, nur den Gutschein, ja, Jugendamt. Okay, und, äh, wo geht's hin?
+
+[00:06:26] Speaker:
+Notaufnahme? Ja? Merzhausen, Straßehausen, ja?
+
+[00:06:50] Speaker:
+Yep. Alright. I like- Alright. Woah. One moment. In one hour. They don't have to park anywhere or anything.
+
+[00:07:07] Speaker:
+Okay, Laufender Straße 5. Jugendamt, oh nein, 5, Laufender Straße 5.
+
+[00:07:23] Speaker:
+5 oder 15. Ja, das hab ich so drin stehen. Moment. Ja, moment. So, Keller auf der Strasse 5.
+
+[00:07:47] Speaker:
+Okay, Okay. 8-9 minutes.
+
+[00:07:58] Speaker:
+Kommen Sie raus. Danke. Tschüss. Oh, he has too much stuff going on right now. Eh, can we, are you, will you be available later?
+
+[00:08:11] Speaker:
+Later on tonight as well, Ludwia? Oh, so, uhm, oh, wow. Because I have, like, two more calls, I see. I don't know how it's going.
+
+[00:08:20] Speaker:
+You want to wait a little? Oh, you know, it's, uhm, I mean, you know, I'll be here, so whenever, you can just message me whenever you're done.
+
+[00:08:26] Speaker:
+Okay. Okay, we can jump back to the same call, huh? Yep, sounds good. Perfect. Bye. Hey there.
+
+[00:14:26] Speaker:
+Here, okay, coming. Sorry. I was, uh, I was just getting some food. Okay, uhm. Yeah, so you can get really complex, uh, picture, like, like the mermaid diagrams, like completely crazy.
+
+[00:14:42] Speaker:
+stuff. So if you prompt it, like, what? It does mermaid diagrams too? No, no. But, like, how mermaid diagrams are made, you know?
+
+[00:14:51] Speaker:
+Like, so it can go really multiple directions. Ah, yeah. So it combines. It completely works. It completely works. So. That's a really good point you make.
+
+[00:15:00] Speaker:
+I didn't even think about that. Yeah, because you can code like a flowchart, like mermaid. You're absolutely right. Yeah, yeah.
+
+[00:15:04] Speaker:
+Yeah. Just stay on in there. I'm like, I have one more call. Taxi, Fiber, Guten Tag. Ja, wo sollen wir dich abholen?
+
+[00:15:16] Speaker:
+Straße, Hausnummer? Dann stell ich neben Schwabentor, stell ich neben dem Schwabentor an den Storchen. Dein Nachname? Müller.
+
+[00:15:30] Speaker:
+Und wo magst du hin? Rathaus. Esch, Mathem, 6. Alles klar, ich schicke den Wagen, danke. Ja, okay, I'm back.
+
+[00:15:52] Speaker:
+Alright, cool. I recognize Chisp. I was learning German on Duolingo for, like, five months, and then I just paused for a little bit, but, uh.
+
+[00:16:04] Speaker:
+I should probably start, I should, I should start learning it, uhm, okay, so we got, so we have these, and I'm gonna send, what I'll send is, uh, I'll actually just send, like, a one-minute or two page, just basically, like, this is what, this is the arrangement I'm kind of doing.
+
+[00:16:18] Speaker:
+This people, here, uhm, will send. When I was actually in the Loom video, it didn't have this colouring in it.
+
+[00:16:23] Speaker:
+It just had, like, the text. I don't know what happened, because I uploaded it to Google. Yeah, Google site, anyway.
+
+[00:16:29] Speaker:
+Uhm, this is, like, the, this is, like, the D01 to, this is, like, a general outline, but it doesn't have all of the combinations.
+
+[00:16:37] Speaker:
+That I'm gonna try, and this is just, like, per workflow, or, like, per, ah, sort of, like, depending on the range, uhm.
+
+[00:16:45] Speaker:
+You know, I'm gonna try, like, more than just these strategy variants, because there's four of them, so. Yeah, yeah, yeah, yeah, exactly, four variants.
+
+[00:16:53] Speaker:
+Pretty much it, just doing four strategy variants per D01, D02, all the way through D08. Yeah, yeah, yeah, perfect. And if you could let me know.
+
+[00:17:01] Speaker:
+Like, maybe, like, sometime tomorrow, because I will, I have to build this custom GPT thingy. Sure. And, uhm, yeah. Oh, the personality.
+
+[00:17:09] Speaker:
+No, no, no, the personality, I'm not responsible for the scroll. I'm responsible for this text to work through, uh, GPT.
+
+[00:17:19] Speaker:
+Ah, yeah, yeah. No, we're, yeah. So yeah, I'll, I'll keep that. The thing is like the, the, unfortunately, like if I do it, I, I.
+
+[00:17:25] Speaker:
+I, I would, I would prefer to do it in Cloud, but the problem is in Cloud, you know, there are projects.
+
+[00:17:32] Speaker:
+Yeah. And. Projects are like custom GPTs, right? However, you cannot share them with others. So Cloud doesn't let you share them.
+
+[00:17:41] Speaker:
+I checked it yesterday, you know? Really? Yeah, so those you can't share. I, uhm, Google lets you share them. Oh, the Gems?
+
+[00:17:51] Speaker:
+Yeah, the Gems, you can share them, but however, you know, because, uhm, the Claude can't share gives you MCP access, it is much better, you know, so I think I will make some kind of custom GPT and tell people, you know, honestly, hop, take the files and do it yourself on Claude, because then you have
+
+[00:18:11] Speaker:
+the MCP, you can, you can fix. your workflow in the same chat, which is amazing. All right, how about, is there a way?
+
+[00:18:20] Speaker:
+Is there any way? There's a webhook into, well, there's a way to webhook into N8N, but then somehow at that, like, somehow get it to, like, isn't there like an MCP node?
+
+[00:18:33] Speaker:
+Like, you can play, you can make a, uhm, oh my god, you can make put a MCP into an ADN as a node.
+
+[00:18:41] Speaker:
+Yeah, no, you don't need to. Why not? No, you to. You have something with Claude that doesn't have access, but you can't share it, but you want the custom GPT to have access to it like Claude does.
+
+[00:18:53] Speaker:
+I wonder if that one would be a way to get around that? No, no, because, no, no, you need to, like, Claude has, like, my desktop Claude has access to, to my annotated workflows.
+
+[00:19:07] Speaker:
+Does yours look better? Like this, hang on, because mine looks different from what, uhm, yeah. Mine says it's running, like, locally.
+
+[00:19:18] Speaker:
+Yeah, mine, mine runs locally as well. Oh, so here, so it's not, okay, well, that's, But you see projects, You have projects as well?
+
+[00:19:25] Speaker:
+Yeah, yeah, yeah, yeah, I have, uh, yeah. So, you know, you can start a project, and then you can continue the conversation.
+
+[00:19:32] Speaker:
+Oh, yeah, so there's no share, huh? That's cheap. Exactly, there's no share, so that's a, that's a issue, you know?
+
+[00:19:38] Speaker:
+And, and Google is really, and I don't, OpenAI, I don't, I don't really care right now. I know, I just disappointed me a little bit.
+
+[00:19:48] Speaker:
+Yeah, but the chat feature is great. Like last night they changed the chat feature. When you talk to her, you know?
+
+[00:19:54] Speaker:
+Was chat over now? Yeah, like that. Just like the talk, yeah, I just re- realized by accident. Excellent. But you can, she's now really, really talkative and there's no, there's no, uh, interference anymore.
+
+[00:20:08] Speaker:
+Like, you can talk to a real person now. Like, really crazy. Really? Yeah, yeah. It's really I didn't have to travel there because it was like two days ago and I would have like a, you know, just, it just seemed like that regular, you know what I'm saying?
+
+[00:20:18] Speaker:
+Yeah, but they're like, I think now they are like releasing everything that they have. because know I've got a like, like, yesterday, I cancelled my subscription and they immediately gave me one month for free if I just say.
+
+[00:20:33] Speaker:
+Okay. Really? They didn't give me, and they're like, okay, here's things, they're at the end of the month. And I'm like, man, I've been with you all for so long.
+
+[00:20:40] Speaker:
+No, I got it for, I got like, one month. I got one, uh, one month free now. You know, I did get three months, uh, of replet for $10 a month.
+
+[00:20:48] Speaker:
+Oh, wow. I todisify all of the retention equipment because I was going to cancel it and they're like, no, no, no, wait, wait.
+
+[00:20:52] Speaker:
+What if it doesn't, I'm like, oh, sure. I I want that, you know, it's just like, that I- I can't directly push into clock code.
+
+[00:20:59] Speaker:
+I have to go with that shell back, that shell with it. Um, it's, I mean, it's nice for a front end, but it's just, it's not as, it's not as mobile.
+
+[00:21:07] Speaker:
+Yeah. Yeah. Yeah. Yeah. Yeah. So, so I will try to, I will have to make that custom. Just GPT. And, um, yeah.
+
+[00:21:19] Speaker:
+I, and tomorrow I will, I will show. No. Okay, so Jason, Verifier. Okay. And, but I think we are anyhow on the safe side.
+
+[00:21:28] Speaker:
+I mean, it's, uh, we are, we are doing a real good- I think because I think we are kind of independent of the text to workflows thing anyway.
+
+[00:21:36] Speaker:
+So our text to workflow is- . It's more kind of an experiment, you know. We can just do it. Because, uhm, Ty can do it without it.
+
+[00:21:45] Speaker:
+He just does it with the prompt. And, okay. And it's kind of like, it's kind of, yeah. I will try to do, I will try to do- I think that's very interesting.
+
+[00:21:56] Speaker:
+I will try to make it not only custom GPT. I'm not sure if it works or don't tell, otherwise, I have to- I've said you.
+
+[00:22:02] Speaker:
+But, uh, I think I would like to vibe code one, you know? Because you know that you have like no- Note, note, note, note, you know?
+
+[00:22:12] Speaker:
+You have description of the notes, you know? Description of the notes, you know? Like in the prompt, you have like note- out.
+
+[00:22:18] Speaker:
+Old one, one second of another call. Taxi fiber couldn't hack. Hello. So, Busconny fazotone. Boohoo and MediRoute. Okay, I'm ready.
+
+[00:22:33] Speaker:
+First thing goes to the map now, man. Hepla moment. Who comes to house here? Umm. Unbogates him.
+
+[00:22:48] Speaker:
+He always let me- Ignoma. He always let me- Let's take Alistaira Dancadius. I have one more, but I'll show you something while you're waiting.
+
+[00:23:04] Speaker:
+Yeah, sure. Good. Umm, I made it. It's not completely finished, but I, maybe you like it. Have a look at it.
+
+[00:23:11] Speaker:
+Okay. Yes. Actually, if Rovo couldn't hack. Yeah, move on, MediCup. Let's go. You. All right. Next class and host for one.
+
+[00:23:28] Speaker:
+Martin. Let's try the ghost today, Martin. Move it through the hinge, class, and host for one. Go. Thanks for spending.
+
+[00:23:42] Speaker:
+I'll just try to take you, Martin. Thank you very much. Stop. Uhm. Confluence, I don't know. Confluence, Bessentius. Yes. Can I see, can I have a good- Yeah, I was standing for this one.
+
+[00:24:05] Speaker:
+You was like, okay, that's false hunting blook, I'm not gonna. Yeah. Mm hmm. Oh, and Bob, it's in. win. Perfect.
+
+[00:24:26] Speaker:
+Well, careful stress in the, one. I've been in some kind of surface closet. Thank you for your time. All right, thanks.
+
+[00:24:34] Speaker:
+Thank you. Thank you. Chef first, last of the moment. Bye. On both sides here. V. Hi, Sishasa.
+
+[00:24:49] Speaker:
+Ustrasa Numa. No. I just, uhm, I can comment. And No? Alright, I'm back.
+
+[00:25:02] Speaker:
+Like, 1-3-8-8.
+
+[00:25:15] Speaker:
+How did you make this? How It's a lot of work. Yeah. Cool. Yeah, like, for real, like, this is really good.
+
+[00:25:28] Speaker:
+Even though I was dancing all, like, on the beach and everything, like, shoot. Yeah. Yeah. Yeah. Yeah. So, this is my, my, my secret project.
+
+[00:25:38] Speaker:
+. . of the site which I will release soon. . . Is there what? . . My secret project on the site, I'm doing the that since, like, ages.
+
+[00:25:46] Speaker:
+. . Hey, because I remember showing you, like, some, I think, like, an earlier part of it, but it was, like, a little snips.
+
+[00:25:51] Speaker:
+. . yeah, look at the cycle. This is awesome. . . this is, it's smooth, it, like, go . . . this is, it's really good. . . Yeah, yeah, yeah, yeah.
+
+[00:25:58] Speaker:
+. . Yeah. . . I'll, ah. . . Yeah. . . Okay. . . Um, yeah, so, ehm. . ehm. Yeah, so, you know, like, I would like to generate the prompt in, in an hmmm, white-coated, you know?
+
+[00:26:18] Speaker:
+Mhm. And, you know, it says, like, node 1, node 2, node 3 in the prompt. Bumped. Yeah. You know? And I would like to have a feature where I can lock, you know, lock certain parts of the prompt.
+
+[00:26:29] Speaker:
+Uhh. Come on. And then just redefine, redefine certain parts because the problem in those GPTs is like it. and, generates all the time, everything new, you know, and sometimes some stuff is already really good, you know, but if I vibe code it, I can go- to the sort, in the sort node where something is
+
+[00:26:49] Speaker:
+not logic or something needs to be more, more explained, you know, and then I can go- in the third part and- and- and I can- I can type in a new prompt and it only generates the third part, you know.
+
+[00:27:02] Speaker:
+Almost. Yeah, that's, like, that would be really cool because then we could even, yeah, that could be, like, the- you- because that is, of course, something that we can share with everybody.
+
+[00:27:10] Speaker:
+For one. Yeah. Yeah. Of course once it's done, yes, of once it's done, yes. Yeah, of course once it's done, not, like, now, but, um, you know, and, yeah, we, like, really wanted to- I've got it.
+
+[00:27:18] Speaker:
+All right. You've seen that? Yeah. Have it, uh, you know- Because then I think- Because then it will be super good, super good, I think.
+
+[00:27:26] Speaker:
+Because, you know- You could, like, even make, like, a deep research on, like, this certain part, you know? You could- Inside, you could write, okay?
+
+[00:27:33] Speaker:
+Now make a deep research- research. Watch on nodes of epi-fi of this, whatever actor, you know, and- and do the whole thing and inject- it inside of here.
+
+[00:27:45] Speaker:
+Okay, so we're trying to- like, so we'll apify that then we're going to, like, H-T-T. Well, I mean, I have an app for H.
+
+[00:27:50] Speaker:
+Yeah, I mean, but- it could research, like, the API documentation, you know, it could make you suggestions, you know, it could be like a- a separate chat within the whole, you know, within the whole prompt.
+
+[00:28:04] Speaker:
+So you can leave the prompt as it is- and just adjust the small things, you know, so it really, really gets perfect.
+
+[00:28:12] Speaker:
+It's kind of like your, your prompting cold- kind of like a prompt cold, not like co-pilot, but, uhh, like a prompting, assistant slash researcher, but like, it's- So, From the actual prompt that you're gonna be working on, and then to inject.
+
+[00:28:27] Speaker:
+It's like a book with chapters, and you just wanna change one chapter. But not the whole book. Yeah. That's a perfect analogy, too.
+
+[00:28:34] Speaker:
+I'm gonna hang out. Yeah, because it's, yeah, it's, uh, because with AI is a problem. It always generates everything new, you know?
+
+[00:28:41] Speaker:
+And so sometimes I just want to have like a certain part change. And especially with, I think those workflows. That is very often the case.
+
+[00:28:50] Speaker:
+Yeah, I agree. Yeah, and you don't know what's the, like, yeah, yeah, I like that idea. Thank you. I think you can lock parts because, as you said, there are times where it gives a really excellent prompt, but just one little part sucks.
+
+[00:29:01] Speaker:
+Yeah. Yeah. Okay. And it's- If I put it, I could even like make it like a second tap, you know, where I could say generate mermaid diagram, you know, so I could have like a- quick overview how it looks, because you could- with nano banana, you could just like make a- make like, uhm, yeah, like uh, mermaid
+
+[00:29:19] Speaker:
+diagram. You know? Yeah. So you can see what your- what your prompt would actually look like on a picture. Before you just- generate the whole thing and then at end.
+
+[00:29:29] Speaker:
+So I think this is like a really, really good way to do it. I like that. I really like- Doable, ever, absolutely doable, I think.
+
+[00:29:38] Speaker:
+Oh, totally. It's just a matter of how would you like to choose to do it because as you said, the other are so many different ways.
+
+[00:29:43] Speaker:
+And, yeah, just, I mean, you pick what feels, uh, which, which way is it? Yeah, you're kind of. All right.
+
+[00:29:51] Speaker:
+Googly eyes. Go on, I have to, one other call. No worries. Taxi fiber couldn't hack. back. Thank you. Hello.
+
+[00:30:05] Speaker:
+This is a mobile tradition. solution. Comment to do. Come to us to ask the Acting Alistair Sheikh Martin. Thank you.
+
+[00:30:15] Speaker:
+I'm in charge of bringing all drunken women home. you Sorry to go flip the food on the stove.
+
+[00:30:29] Speaker:
+Umm, okay, yeah, so I like, yeah, the vibe. Bye. So if I'm promoting that's good, I think, uh, that sounds like a Google AI Studio.
+
+[00:30:37] Speaker:
+Yeah, Google AI Studio. Yeah, yes, you did it. Because you already have the image generation in there and the Gemini intelligence.
+
+[00:30:43] Speaker:
+And then you have the whole thing in there. I will just add, like, some, uh, some energy. And then workflows.
+
+[00:30:49] Speaker:
+One I will call deep research and I will call regular, you know. So I can, like, really precisely say, okay.
+
+[00:30:56] Speaker:
+Just give me a quick answer or make, uh, research deeply this subject and give me results, you know. And if I- like it, I can say inject or make it shorter, you know.
+
+[00:31:07] Speaker:
+It's very easy. I can do it with buttons, you know. It's like, like the bike coding thing is- It's amazing.
+
+[00:31:13] Speaker:
+Yeah, it totally is. And, um, it's a little bit sad that Mark doesn't go so much into it, I think.
+
+[00:31:19] Speaker:
+He's really- Cause he can manipulate code in a way that, uhh, like he may not need the convenience of bycoding?
+
+[00:31:27] Speaker:
+Alright. I don't know. I don't, I, I don't know. I don't, I think they're like missing something. Because, like, I'm so much with, uhh, I'm so much with that.
+
+[00:31:36] Speaker:
+And he's really good. He's really, really good. So, and he used my coding so, so much. You know, like, amazing stuff.
+
+[00:31:44] Speaker:
+And it is so fast to, to develop something like this idea. I can do that probably in a couple of hours, you know?
+
+[00:31:51] Speaker:
+Mm hmm. And e- Mark coding probably two days. Oh, yeah. No, no, no. Yeah. With it. With. Yeah. Once you get in the code.
+
+[00:31:57] Speaker:
+Yeah. It's usually. Yeah. Bye. Yeah. Yeah. If it's something like this, I think BIPO is perfect. Yeah, exactly. Yeah. Yeah.
+
+[00:32:04] Speaker:
+Exactly. You, you can just vibe code it and you can hold some prompts and. The background and it's, you don't have to be the other thing is, you know, like.
+
+[00:32:12] Speaker:
+Like when you, I mean, I don't drink, but like, I used to do like a lot of stuff, so I lived in Amsterdam, you know.
+
+[00:32:19] Speaker:
+I had a lot of fun. Yeah. Yeah. Okay. The creative mind, the creative mind is not good in, like, being like super specific, like, you know, like, having.
+
+[00:32:28] Speaker:
+having code notes and do exactly this and exactly that, you know. But the creative mind is, mind is really good in just vaguely saying, okay.
+
+[00:32:36] Speaker:
+I, I would like to do this or do that. And vibe coding can do it. It makes something crazy, you know.
+
+[00:32:42] Speaker:
+And it knows the rules and you don't have. You only have to know that it's possible. Yup. You know? One moment.
+
+[00:32:50] Speaker:
+Taxi, fire, goon, ta. What? Hello? So, I don't know my list vaccine.
+
+[00:33:04] Speaker:
+No my list vaccine. See you next boom, boom, boom, uhm. That's it. Yeah, they're not them. Come on. Yeah. Hey, Stola.
+
+[00:33:19] Speaker:
+Is it Ross, Nia? on. He's staying in the wagon shop. Help. Ugh, drunk woman at the age of 20 is really difficult.
+
+[00:33:37] Speaker:
+Don't. Oh, so. I have to pause the time, pause the time. Well, he, well, it's, you know, that's it. Good night.
+
+[00:33:46] Speaker:
+It happens. We've opened that. Yeah. Um, yeah. Oh, I was going to say, um. . Uh, if, uh, when you do your vibe coding, if it, if, uh, when, you know, when it's already in stuff, if there's anything that you want to change.
+
+[00:34:01] Speaker:
+Change in it, front end, back end, function, whatever. Um, if you push it on to GitHub, then, um, I can go to the and even if, you know, we can get on a call, and then I can check out how I post edit the apps.
+
+[00:34:15] Speaker:
+Okay. Cause it's pretty like, I kinda found like, uh, pretty easy, straight forward way. Just a couple of things I do, like, just certain things I tell quad in the beginning and have a plan.
+
+[00:34:25] Speaker:
+And, and kind of set a couple of things up in advance and then I can just let it go. Not like one moment of skipping permissions, like, I still check it, but I kind of- I- I- I- I- I I've two calls right now, just one moment here.
+
+[00:34:39] Speaker:
+Taxi, 5 o'clock. Wouldn't talk. Aloha. Oh. Oh. Oh. Oh. Oh. Oh. That's the host for now. Bitbucket, Strazen, Noynundraisek, Dinahnaamu.
+
+[00:35:01] Speaker:
+Nope. Ehm, yep, yep, um, no sir. Uh, uhm, the seal yeah how we try to seal it. Go ahead. Should I ask a host of them?
+
+[00:35:13] Speaker:
+Okay. Guys, go watch the last food. Are those allergic? Modern tongue caretches? Cheers. Don't be thinking. Yeah, so what I'm- I see fiber won't talk.
+
+[00:35:32] Speaker:
+Hello. Yeah. Yup. God bless. Yes.
+
+[00:35:42] Speaker:
+That's what I saw recently. He's Polish to us and we'll talk some more. You I'm not sure. I'm not sure.
+
+[00:35:50] Speaker:
+I'm I'm not sure. Uh, I'm not sure. Um. Give Um, I'm yeah, you put your cat next time. You mustn't design with it.
+
+[00:36:01] Speaker:
+five. I mean, the Kremblakine Taxi Invering, uh, Damlessia, Bamromba, Ola Bam de Ghosto. you That's okay, just make me lose.
+
+[00:36:21] Speaker:
+Yeah, come. It's okay to me. I'll just throw it at my tournonets. I'll throw my tournonets. Mm. Mm. I'll throw tournonets.
+
+[00:36:34] Speaker:
+I'll throw my tournonets. I'll throw a tournonets. I'll throw a tournonets. I'll have to make tournosets.
+
+[00:36:50] Speaker:
+Yeah. Okay. If I'm back. Alright. So, um, I was just looking at that. You did type post alone?
+
+[00:37:05] Speaker:
+Oh, I didn't. Anyway. Finally. Um, I was going to say, when I do my testing, I'm going to share, like, I'll give you, like, a condensed summary, optimal info.
+
+[00:37:14] Speaker:
+Uh-huh. That you can use for, um, for creating by custom stuff. Okay. Yeah. Yeah. And so then, you know, you can take that and then, you know, whatever you find to, uh, whatever, whatever, uh, is helpful, you can take from there.
+
+[00:37:27] Speaker:
+Um. Yes. Perfect. Cool. Yeah. So I'll do that. So I'm gonna, I'll get working on this. I'll do the testing.
+
+[00:37:33] Speaker:
+I'll send, I'm gonna send you that. Rubric that I'll do and, you know, we don't have to, we can do diff, like, different workflows.
+
+[00:37:41] Speaker:
+We don't have to do, like, the same ones, right? Like, like, we can immediately upset. And I do a subset, unless we do, like, I'm not- I think- is this- is this testing?
+
+[00:37:50] Speaker:
+Next thing I, I think you can do- if you have questions, just let me know, you know, because, um, uh, Jen said, like, it's- it's- the- the whole pail me.
+
+[00:37:59] Speaker:
+Part of the testing, I think, is on your side. And on my side, it's like the explaining of the tools we created, you know?
+
+[00:38:06] Speaker:
+Yeah. So- Yeah. And I think, in my opinion, I kind of have the- because I have reverse engineered the working- Okay.
+
+[00:38:15] Speaker:
+Proms and they work quite well. I think we know the result already of what- what a perfect prompt is. We do?
+
+[00:38:23] Speaker:
+Nope. Nope. I think so. Is it documented somewhere? That I can use it and try it. I I'm- again, I'm gonna go- I'm gonna- Okay.
+
+[00:38:31] Speaker:
+Yeah, hold on, hold on, I just- I just pulled it out. It's- it's quite easy. I mean, I mean, it's just like, give Claude, uhh.
+
+[00:38:39] Speaker:
+Umm, Claude, uhh, edge. You just have to give Claude the- the a- a complex workflow for Mark and say, please explain this as a prompt to a text to workflow.
+
+[00:38:55] Speaker:
+floor. A.I. have, a, a, a, you know, I just did that. And those, those Those workflows are really, really well.
+
+[00:39:03] Speaker:
+Okay. Yes. Then what I- Yes. Okay. Okay. Because then it explains it to an A.I. And it is the smartest thing.
+
+[00:39:11] Speaker:
+A.I. out there, like, Claude, you know? No, I mean, no way it is. I had, uhh, so I had, uhh, so I had shared that and- I think Jen had no- I think she wanted- Anyway, I- All right.
+
+[00:39:27] Speaker:
+I think I may have misunderstood what she'd saying that it was, like, disingenuous to start with a workfully already have and then have it- Yes, she's- Is that okay?
+
+[00:39:35] Speaker:
+But I think in terms of, like, because I think- I don't think there's anything wrong with that. I think what we'd need to do then is, like, take the prompt that it created and be like, what is about- So what is it about this prompt?
+
+[00:39:45] Speaker:
+That's exactly what I mean. That's what's available to other- Of course, because, like, everything we are doing has nothing to- What do with Mark's workflows?
+
+[00:39:53] Speaker:
+Like, there is no copy. We are just trying to make a machine good. So we need to understand. And we are- Yes.
+
+[00:40:00] Speaker:
+There's no way to compare unless you have an old workflow and a new workflow and you can see, okay. Uh, how good was the problem?
+
+[00:40:06] Speaker:
+Did I get what I wanted? If- I want- if I would want to have that workflow. Yeah, I mean, I- I think that- I think that the way I presented it today made it, like, clear that look, we're going- to be using AI to generate these prompts, but just so that we don't have, like, a variability of, you know,
+
+[00:40:21] Speaker:
+human prompting or whatever, so I think that's all fine. Umm, I'm gonna- I just hold on, I think I can, can I share this one?
+
+[00:40:27] Speaker:
+on. Okay. I'm going Once I just gotta flip something at the sofa. Yeah. See you next time.
+
+[00:40:47] Speaker:
+I'm so glad Taxi, fiber, good in fact. What? Oh, but he actually has a host I'm special of schools at the Hydrus Tailor, Daimachnava, Langer, Umm, Wovet, Swain.
+
+[00:41:10] Speaker:
+and I'm going to fight now, but most of I am making men's oombegas and ketsnesh. I would, in fact, think I'll inspire them now.
+
+[00:41:26] Speaker:
+Oof, thanks, I should have entered, yeah. Yeah. I will ask you to feel better. No, I didn't start some Numa.
+
+[00:41:34] Speaker:
+Mom? Wanna slide it here? Thank you. Thank you very much. Thank you very much. the city.
+
+[00:41:52] Speaker:
+Thank you very much. Thank you. And that's a college class in the room. Uh, let's clap.
+
+[00:42:07] Speaker:
+Is there a question in the parking package? We have where are where are we going to taxi fiberboard in fact?
+
+[00:42:21] Speaker:
+Hello? More. Well, I'm not sure if you broke it in. Okay, and, uh, but, what was the, what was the idea?
+
+[00:42:36] Speaker:
+Awesome. Awesome. Awesome. So, uh, what is clicher?
+
+[00:42:52] Speaker:
+Yes? Yeah. Yes, no, it's okay, isn't Okay. I'll see you in a minute. Come on. Umm, vogates in.
+
+[00:43:10] Speaker:
+That was, uh, mostly damn. I like the number of them that's handling me man. That was, uh, was in the telephone when I'm, when I'm 14.
+
+[00:43:21] Speaker:
+You know I'm about to say? I'm about say, I'm about to say, I'm about say, I'm about to say live all Ah, it's super busy here.
+
+[00:43:37] Speaker:
+you Will you, will you be working later on or? Yeah, yeah. Yeah. So you think I can call you like an hour or so when it's like a.
+
+[00:43:45] Speaker:
+Less here because they're like, probably me every five minutes. Yeah, no, that's truly fine. Yeah, cool. Great. And maybe you can think maybe you have some.
+
+[00:43:53] Speaker:
+Ideas around that, what I just told you like with the bad coding and stuff. So yes, I do want to, yeah.
+
+[00:43:58] Speaker:
+Yeah, yeah, yeah, because I think that if we can pull that one off, I think people will be blown away because they really don't expect that.
+
+[00:44:06] Speaker:
+No, they do not. They will not. That will be. Yeah. Yeah. Yeah. Yeah. That will be super cool. Okay. All right.
+
+[00:44:12] Speaker:
+Bye. Doubles. so you
+
+==========================================================
+END OF TRANSCRIPT

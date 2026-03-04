@@ -1,0 +1,1562 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: 18f2c64d0a7d44a888b039abe8ca48da
+URL:      https://www.loom.com/share/18f2c64d0a7d44a888b039abe8ca48da
+Date:     2026-01-24T18:07:05.434Z
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:41:13.189Z
+==========================================================
+
+[00:00:00] Speaker:
+Thank Oh, wait one second, I, these are different AirPods, so let me reconnect to these ones so I can hear you.
+
+[00:01:28] Speaker:
+Bluetooth, connect, excellent. Okay. What was the last sentence? I didn't get that.
+
+[00:01:43] Speaker:
+Uh-huh. I'm using different AirPods. Oh, what you wrote, this duration is purely for availability? when I put the Loom note taker in, it left after an hour.
+
+[00:01:56] Speaker:
+And so I was like, well, it's just, cause that was for when it was scheduled. Cause like, it'll either leave, or like, the meeting, I'm surprised the meeting didn't actually end.
+
+[00:02:04] Speaker:
+But, yeah, as you know, I was saying, like, if for availability. What? No, it's cause I made it for six hours, so I was just saying, it was just for availability.
+
+[00:02:12] Speaker:
+Ah, okay, I get it, I get it, yeah, yeah, yeah. It was very interesting. I apologize. I put like, you know, this pacha guy, this music guy, I put like a notebook with all of his videos.
+
+[00:02:25] Speaker:
+And then I– I asked him, okay, give me, give me ten questions you would ask him, okay? And I just showed– And the funny thing, I made, like, those videos.
+
+[00:02:34] Speaker:
+Those questions I just put in Notebookalab. And then I made an, I made, a gem, also. And I asked, okay, use the Notebook and also use your creativity.
+
+[00:02:46] Speaker:
+So Hallucination, obviously, okay? And I said, come on. Come up with the answers. So I asked this question, the Notebook LM gave me, okay?
+
+[00:02:56] Speaker:
+And then, I answer, the gem answered the thing this way, like, it's very interesting, hold on. Response. Okay, you got it?
+
+[00:03:08] Speaker:
+Because now it's, Yes, I got it, yeah. Yeah, I read the question. Okay. Okay. That's a long response. Yeah. Okay.
+
+[00:03:44] Speaker:
+and We have one that's left.
+
+[00:04:00] Speaker:
+Number three. This is super cool. Yeah. I know that. I mean, the thing is, it kind of. Connects dots where there have not been any dots.
+
+[00:04:09] Speaker:
+You know what I mean? Like there are like 30 videos inside or 20 or 30 videos. Videos in total. So it kind of makes sense to the whole thing.
+
+[00:04:20] Speaker:
+And that is crazy. You know, you can like, yeah, it's completely nuts. That's incredible. I need to do something with that real quick.
+
+[00:04:29] Speaker:
+Yeah, yeah, I mean, you can really hack a brain like that, you know, you're like, absolutely. It's, it's completely I changed my screen sharing strategy, but I also don't want to be, like, switching over, like, this consistently.
+
+[00:04:50] Speaker:
+Okay. So, yesterday, so, I haven't allowed to do much on the left, here. Middle monitor is where I was putting, GSD, like, the, the terminal on.
+
+[00:04:59] Speaker:
+And then the right side is where I was, well, yeah, I was kind of moving things in and out. But then you said that it was, you had had your development Thank you.
+
+[00:05:06] Speaker:
+stuff in the chat, all on one thing. And then you had a screen for Gemini and then it's, yeah, like I have, like, yeah.
+
+[00:05:14] Speaker:
+You are in the middle and, like, if I, if I would have more than I could, like, squeeze it there.
+
+[00:05:20] Speaker:
+But I have, like, one microphone. Coding development is on one side. You know, like, Gemini is on that side. And on this side is the browser Gemini is using.
+
+[00:05:30] Speaker:
+So I think. I don't touch it at all. So the area where Gemini opens a browser and uses it. I don't touch it.
+
+[00:05:37] Speaker:
+Okay. Okay. There should be no windows over it or anything. Okay. I'm just going to move a couple of things.
+
+[00:05:46] Speaker:
+Here. Get situated. And then, wait, so I'm going to go put, yeah, at least in the middle, but not on big.
+
+[00:05:58] Speaker:
+And I'm going move Claud over here. So I'll leave this here for anti-gravity. Docker came on the left. And what else?
+
+[00:06:10] Speaker:
+I think that's it. And I don't, in anti-gravity, I don't open any other windows. I can, like, because I saw it, I you open sometimes some extra windows on anti-gravity and then this, this continuous communication kind of goes away.
+
+[00:06:27] Speaker:
+I have no idea where. Okay. And I never had that issue because I just leave anti-gravity always on the main screen and that's it.
+
+[00:06:34] Speaker:
+Okay. All right. I will do that this time. So what I'll do then is set up my loom working just fine so I can record.
+
+[00:06:41] Speaker:
+It's recording on this middle one, but I'll do is, I'll change it so that it does that one, the one with the anti-gravity, and then I can share this one which is already recording on, Loom.
+
+[00:06:50] Speaker:
+So, let me change my Loom situation. Actually, I can record two Looms at once. Can I? Let's see if it will stop it or create a new instance.
+
+[00:07:03] Speaker:
+I think I can. I can record two awards. Sweet, sweet, by the way. Okay. Huh. What do you know? Looks like maybe I can.
+
+[00:07:16] Speaker:
+You can? It looks like it. It's my entire screen. Okay. That one. Okay. And then, It looks like both are recording.
+
+[00:07:28] Speaker:
+Awesome. It looks like both are recording. And then this one's gone now. Okay, so, I'm going to share, let me make this one bigger, I'm going to share the middle screen.
+
+[00:07:38] Speaker:
+I mean, what would be- interesting, you know, to take his brain and say, okay, imagine he's a logo designer, how would he do that now?
+
+[00:07:44] Speaker:
+You know, like, you know, from his music part to different subjects, you know? Yeah. Yeah, I'll take that in a moment.
+
+[00:07:51] Speaker:
+Thank you. Okay. Oh. Ah, okay, I got it. Take a picture. a picture. I think there's some money. Hang on.
+
+[00:08:03] Speaker:
+Oh, there. No, my thing had picture and picture. I think had picture and picture. so just. Turn it off. Okay.
+
+[00:08:10] Speaker:
+So you can make this bigger. Here. Perfect. So. And. And, I'm going to- Oh, you have more questions, huh? Yes.
+
+[00:08:19] Speaker:
+So the question is, yeah, I'll just see what the question is. Okay. Yeah. Yeah. Yeah.
+
+[00:08:29] Speaker:
+So, we should have search problem, and we have always visible. Always. Always visible. Yeah, okay. Thank you. It's more simple that way.
+
+[00:08:50] Speaker:
+You know, it's like, you know, it's like, hover state. And if they're, you know, it's okay. Okay. Okay. Okay. Yeah.
+
+[00:09:02] Speaker:
+Navigate on enter. Yeah. You Usually the first ones, like, they're, you know, they put first for a reason, I guess.
+
+[00:09:09] Speaker:
+Yeah. Is, is Command-K. and does that do anything on Apple? Yes, should there be a keyboard shortcut to focus on?
+
+[00:09:18] Speaker:
+. . Yeah, you'd just do that. Yes, Command K. That's all good. Yeah. Yeah. Yeah, search, search is fine. But this one, I mean, yeah, yeah, this will be like- Later, we have to change stuff anyhow for translation stuff, so it's- Right.
+
+[00:09:46] Speaker:
+That's search for now, yes, because then it's something they can- it can replace later. So, one. Yeah. Yeah. More questions about search.
+
+[00:09:55] Speaker:
+We will see you later. Watch my next area. I'm sure results will be later on. A single column list result stack for the full-length scan.
+
+[00:10:04] Speaker:
+Single column lists that, That's usually how, like, Google a single column list. Thank How much information should you show? Oh, I was looking for members.
+
+[00:10:14] Speaker:
+first. This is, I think, I know that search result, like, a little bit of the title and a little bit of what's inside.
+
+[00:10:21] Speaker:
+side. Yeah, compact. Yeah. It's very great. I can't see my screen. Al should much text be highlighted in snippets. minutes.
+
+[00:10:33] Speaker:
+Oh, I see, I kinda like the, the yellow. Okay, it doesn't necessarily be bold. You know like. Like when you're doing a control ever in the browser.
+
+[00:10:42] Speaker:
+Uh-huh. And then you can see it. Yep. It's a result of a story type indicator. I come in there now.
+
+[00:10:54] Speaker:
+No. It's only on the post member, of course, they won't. Okay, I come in. Yep. Yeah. Let's minimize this for a second.
+
+[00:11:08] Speaker:
+I don't know, I might just make a smog cause I'm gonna get my chrome. Great. Yeah. Yeah, well, go ahead.
+
+[00:11:14] Speaker:
+Okay. Let's pump that up. We'll aside and we'll be comparing it now. Next area. Yeah. Go to the search bar.
+
+[00:11:33] Speaker:
+It's a type of search bar. It's a type of search bar. Below the search bar, yeah, left side bar, that seems kind of, Yeah, below search bar, I think.
+
+[00:11:44] Speaker:
+Yeah, that's like, standard. I don't know, left side bar, where's the pipe? No. So, yeah, uh-huh. One order should.
+
+[00:12:06] Speaker:
+Good. What tips appear? Yeah, I think so. Yeah, I think so. There's one. Yeah, one, yeah, Change is Gentlemen. Yes, I feel like I'll be reflected in the U.L.
+
+[00:12:24] Speaker:
+You It doesn't matter. You decide, Claude. You decide. Yeah. Yeah. There you Nope. Next area. Nope. Next area, Okay. Any questions?
+
+[00:12:38] Speaker:
+But the thing is, it made some- Okay. What should the empty search pressure show before any query? very Clean page, just the input, I think.
+
+[00:12:50] Speaker:
+Just input, yeah. time. 7 7 7 7 8 Which is a number of alt stateship. It results for, Text and illustration.
+
+[00:13:04] Speaker:
+Except there's one on it. What should the no results take? Sure. Yeah, it's like when if you search something that hasn't come up.
+
+[00:13:15] Speaker:
+Okay, okay. You know, like Amazon. is on. And I have that, like, oh, no search results and I have a dog.
+
+[00:13:20] Speaker:
+Yeah, yeah, number one. Number one, I think. You know what I'm gonna pick? Teachers. Yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah.
+
+[00:13:29] Speaker:
+I'll see Oh, that's for the UI. Bye. You know when you search and then it shows you the empty, like, outline of, like, this, the results that are to come, but there's all- turn in it.
+
+[00:13:48] Speaker:
+Yeah. And versus, like, something spinning. Go to be loading. settings. Spinner. Okay. No post sound.
+
+[00:14:08] Speaker:
+Yeah. Easy. is it? Done? Done. Thank Awesome. Now it does rest. Yeah, I think that's right. Create context. Create context, yeah.
+
+[00:14:20] Speaker:
+I'm going to I don't know what Loom could do. Thank you. multiple recordings at once. Yeah. That is awesome. Yeah.
+
+[00:14:32] Speaker:
+That is really awesome. So yeah. Yeah. Okay. Mm-hmm.
+
+[00:14:54] Speaker:
+A Plan, Phase 13, okay. All right. You wanna see something you made? Everything will work really well. Yeah, yeah, show me, show me, show me.
+
+[00:15:41] Speaker:
+Okay. You're gonna make a song. You're gonna have a webinar with us. Yeah, yeah, yeah, yeah, yeah. I was- I was able to hear around that song.
+
+[00:15:57] Speaker:
+No, I didn't. Oh, okay, that's fine. so anyways, after I left it, she was a really good, good, all. And, I don't know if you can hear this or not.
+
+[00:16:04] Speaker:
+Yeah, I'm not just gonna add some, but a, That's okay. Let's go. Good. I was just gonna tell her, like, good job.
+
+[00:16:16] Speaker:
+Awesome. Yeah, it was cool. Okay. I'll close that. Okay. Alright, so what I'm gonna do, Just be very careful with Gemini.
+
+[00:16:35] Speaker:
+Oi? Bye. Oh, like for the, cause it didn't finish the, the task yesterday. Ah, yeah, yeah, yeah, yeah, yeah. Yeah.
+
+[00:16:43] Speaker:
+You mean anti-gravity. Yeah, what do I say? It's okay. It's okay. Thanks for I'll see you in I know what you mean, but yeah, you have to like, let her do her thing.
+
+[00:16:57] Speaker:
+Thank you. I'll leave that screen completely. I'll do all the browsing over here on this. Yes. Yeah, I'm like, you're in the middle and out there, I don't touch stuff.
+
+[00:17:11] Speaker:
+If it's running, you know, like only in the middle where you are. That kind of makes for me easy, because then I can look to the left, what's going on, I can look to the right, what's going on, but I never touch any- anything left and right, if an automation is running.
+
+[00:17:27] Speaker:
+So, you know, I own- I switch away sometimes you and then you- go into, like, a little corner and I can do something on my main screen, but that kind of work yesterday really well.
+
+[00:17:36] Speaker:
+Yeah. Yeah, that picture and pictures. Moving it, there should. It would be nice to have ShareT screens and I'm kind of surprised.
+
+[00:17:43] Speaker:
+Like, like. Five screens would be nice now because now the agent needs two screens and I'm left with one. Oh, what, I want to eat shit.
+
+[00:17:51] Speaker:
+I'm if we can. Well, I meant like, you're a miniature boy. What I mean is, that meat should allow you to share more than once.
+
+[00:17:58] Speaker:
+Ah, yes, yes, yes, yes, yes. I mean, you probably can make two life calls at the same time. Oh, and then turn off the audio on one.
+
+[00:18:09] Speaker:
+on. Yeah, of course, because we only need one audio, but you could in theory, in theory that would be possible.
+
+[00:18:16] Speaker:
+It's a little bit like an I, Do you want to try it? Yeah, sure. Okay. Set me a second one.
+
+[00:18:25] Speaker:
+. . Yeah, I'll get any request. closed. Okay. And here's the other one.
+
+[00:18:59] Speaker:
+You yes, folks, put in this chat and pop it. And, Okay. You And there I can turn off.
+
+[00:19:14] Speaker:
+Off. The microphone. And I'm going to turn off the camera. First you need to send me a, like, a. Oh, I did it.
+
+[00:19:22] Speaker:
+I did it in the chat. All right. Oh, you did? Mm-hmm. I didn't get a new one. The Google Media?
+
+[00:19:28] Speaker:
+Yeah, it's the old one. I only have the one which you already have sent. And not a second one. Oh, I see.
+
+[00:19:34] Speaker:
+I said, oh, okay. Well, no, no, no, this, this is one that we're in right now. No. Right? That is, I saw it in one.
+
+[00:19:43] Speaker:
+And where's the first one? We're in it. Okay, but. . That doesn't work, I think. I need, like, a new link.
+
+[00:19:51] Speaker:
+This one I sent you in the chat is a new link. Thank you. That's the one I said you see the name is monitor 2.
+
+[00:20:00] Speaker:
+Oh, no, I don't have monitor 2. You Yeah, I put it in for some reason. And what's that? Yeah, no, no, no, no.
+
+[00:20:07] Speaker:
+I don't know what's happening in this chat. But I'll see you in a minute. Ahhh. . Okay, yeah, yeah, no, I get it.
+
+[00:20:13] Speaker:
+Here, there. So what's that also? Yeah, yeah, no, I have it. Wait, let me join that meeting. Thank you. Okay, I also put my microphone off on that one.
+
+[00:20:22] Speaker:
+Yeah, and, for buffering, I'm turning off that camera because that one's just going to be in the background. Yeah, yeah, of course.
+
+[00:20:26] Speaker:
+I don't know. I guess Loom only goes into one meeting at a time. Here. Okay. I don't- I don't need my camera.
+
+[00:20:35] Speaker:
+Yeah. Yeah. Yeah. This- this one'll be- the monitor two, one. I know what I'm going to do here. The screen, and it will record that.
+
+[00:20:45] Speaker:
+Or share the one over the quad here. So that's it. Perfect. Wonderful. Yeah. Okay, so what is the switch? Please.
+
+[00:20:59] Speaker:
+Show me, show you anyway. So there's this one. And then, yeah, this screen. Wonderful. Go. Okay. Awesome. Awesome. Let me close this email thingy here.
+
+[00:21:13] Speaker:
+This is. This is, Hold on. Okay. So. Yesterday I did not. Thank you Mmm. Thank you very much. You still don't use the With the floor, huh?
+
+[00:21:46] Speaker:
+No, no, not on this computer, I don't. Okay. I use it, and yeah, I use it for a little while.
+
+[00:21:51] Speaker:
+Well, And then, and then the d***, can I just basically use it for this creation and chat GBT, but, like, I will sa- Sometimes use the audio, but I kind of look like, like, it's the same of a type.
+
+[00:22:03] Speaker:
+Okay, okay. Mm And the words come at all different things. Mm . We're going to talk a little over here.
+
+[00:22:27] Speaker:
+Okay, all . Because, this will be the Gemini area. Maria. Mhm. . . . . . . . . . . . . . . . . . . . You I think, ah, 180 MD files. Wow. Oh, looks id Beatbucket.
+
+[00:22:54] Speaker:
+Oh, okay, so I cannot So do you want to do something of those? Yeah, yeah, we will. I will definitely put them in a notebook and we can talk with them.
+
+[00:23:03] Speaker:
+Okay. Oh, you can, I mean, I think that's the best way. But the thing is like the older ones, it didn't get, but also it likes the way- Thank you.
+
+[00:23:11] Speaker:
+Cool works, you know? Like, if somebody replies, it goes up again in the feed, you know? So stuff that's really at the end only has like one end- entry.
+
+[00:23:20] Speaker:
+Like, those are like, more of the stupid ideas. Like, you know, like on the first 18 pages, that's already a lot.
+
+[00:23:27] Speaker:
+Mmm, nope. But, I mean, it's amazing that you can make kind of like this kind of agent, because it's completely anonymous and doing stuff for you.
+
+[00:23:35] Speaker:
+Totally, totally. New implementation plan, I don't want to open that in work. It's not It's fine. You I can't go further.
+
+[00:24:06] Speaker:
+Good. Good. Good. Good. Oh, the other thing, I have a word space. Please. So, oh, can you phone turn?
+
+[00:24:19] Speaker:
+Thank you. Weeeeee.
+
+[00:24:37] Speaker:
+We'll be right back. I don't want you to get enough. How do I get, I'm just going to pause this for a little bit.
+
+[00:24:47] Speaker:
+I'll hop here. mhm. That, of course, won't we? Yes, the whole looks nice. Yes. Okay, so, that's one day of yesterday was- You for one, so, I'm gonna tune in real .
+
+[00:25:36] Speaker:
+. . . . . . Haha, haha, Cool. Excuse A lot. We're going to do X-Q base 13. Oh, yeah, execute. Thank you. It's just for Dad, I kinda like to… because my head I'm like, well I'm gonna see how long it took after each time.
+
+[00:26:01] Speaker:
+time. Oh, both. Nice. Okay, so I can see both here. One in picture and picture and another on the… forget that one.
+
+[00:26:09] Speaker:
+Yeah. Okay. And you should really… we should… me also. We should really watch this one video I sent from Nick, because what I did yesterday was like a very… Like, a Stone Age version of what he's doing.
+
+[00:26:31] Speaker:
+Like, what I did yesterday… It was great in school. Then it was really like a very, like, it worked, but it was… Like, like, like, Nick made a much more sexy version of that.
+
+[00:26:48] Speaker:
+Like, yeah, yeah, I send you this video. What I look where it is, but it's like he, because he told me that you can use anti-gravity as an agent itself.
+
+[00:26:57] Speaker:
+So. So, He, I knew that it worked because of the video I saw from him, but I didn't follow any instructions.
+
+[00:27:04] Speaker:
+I just kind of like opened the browser and, you know, but he did it in a very sexy way. No, we definitely have to.
+
+[00:27:14] Speaker:
+I send you the, I think, again, I'm just like, Is that the long one? Like the, Yeah, yeah, it's the long one, but it's really, really good.
+
+[00:27:21] Speaker:
+I don't have to be, Like, maybe a build session video and just go through the video because, otherwise they're over here.
+
+[00:27:28] Speaker:
+Yeah. Yeah, I've had a long time to sit. but I can send you a jam and you can ask it, you know, you can say, I wanna have an, I want to have- I want to have, like, an agent that does this and that for me and that it explains- in his style what you have to do.
+
+[00:27:44] Speaker:
+You I think my one better one.
+
+[00:27:54] Speaker:
+and Which is, doesn't have wrote what happened. and Okay. Thank you. Wait, who will tell us about the browser first?
+
+[00:29:01] Speaker:
+Huh? I'm gonna tell- I I'm in, in Gemini. It's not harder, huh? with, the SKC Restart update.
+
+[00:29:13] Speaker:
+I'll you in We'll you. Thank you for joining We'll in the update this first. I think I should maybe should.
+
+[00:29:17] Speaker:
+Or were there any relevant updates? Oh, I have done that. Yes. Yes. I don't know if there was something relevant.
+
+[00:29:25] Speaker:
+Okay. I just did it when I started again. Okay. Bye. Oh, there's a really useful make-up you should, I say it's free, I think, but you should have it amongst also using it.
+
+[00:29:38] Speaker:
+It's called, what's the name? I think it is. as well. It's in the App Store.
+
+[00:29:50] Speaker:
+It's in the App Store. for a second. As far as I know. Okay. It's like each time I've looked for an app, I've gone to the here they are.
+
+[00:29:57] Speaker:
+I know it's at the bottom of like the apps. They move. Yeah, yeah, that's kind of weird. You never know on which- Green they are.
+
+[00:30:05] Speaker:
+Why don't they just be on all of them? I have no idea what the option is to take space. Well, you can.
+
+[00:30:12] Speaker:
+And you could pin it or not pin it. Yes, or have it like hover, like come up when it's like when you go.
+
+[00:30:19] Speaker:
+Yeah, you know that. The funnies. We'll see you in it's like, for example, like this, this is my mouse for my Mac.
+
+[00:30:23] Speaker:
+It's like the most stupid thing ever. Like, the charging pin is on the backside. I like, if you want to charge it, you cannot use the mouse.
+
+[00:30:32] Speaker:
+It's completely ridiculous. And on my Mac. Look, you have to, the on and off switch. You have to lift the complete Mac Mini.
+
+[00:30:41] Speaker:
+It's on the bottom. Below the Mac. Like, on every device they make something that's so incredibly stupid. I saw, like, in YouTube.
+
+[00:30:51] Speaker:
+You know, videos that they do it on purpose. They have, like, a development team for that to make, like, one stupid gimmick on every device.
+
+[00:31:00] Speaker:
+guys. Why? I have no idea. Maybe it sticks in your head. Awesome. Yeah, it's kind of like, yeah, like. Like, how do you, why do you make a loading cable on the button?
+
+[00:31:13] Speaker:
+Like, I have to literally put it like this. And then I can't- Use it. Like, this is the mouse, okay?
+
+[00:31:20] Speaker:
+And the loading goes in here. There. They didn't make that very convenient for the user. Yeah. Mine has another, like, on the side.
+
+[00:31:30] Speaker:
+I could have done it on the side, you know? No, no problem. It's not nice, but at least it works.
+
+[00:31:35] Speaker:
+But they make it impossible to use. So this one charges in the front, but I don't think you can use it when it's charging.
+
+[00:31:44] Speaker:
+Okay, I don't know. I don't know if you can. Usually, everything you can use while charging. I could be wrong.
+
+[00:31:52] Speaker:
+Actually, now that I think about it, I've never seen great- So, wait, so this link, I just tried in a browser and is not valid.
+
+[00:31:58] Speaker:
+So I'm gonna just re- me. Well, it's a it's a schooling. It's a schooling. Oh, no, I know. I know.
+
+[00:32:04] Speaker:
+Okay. But, I didn't want it to go to a pay- page and say, like, if it rotates the profile, like, every.
+
+[00:32:11] Speaker:
+No, it doesn't. I'm see, I'm just gonna see the same. . . . Yeah. 9-0-4-8. Yeah, it's different today. Look. But I, oh, it's cause I, cause I came from A.
+
+[00:32:21] Speaker:
+I film in marketing. Gooding. Look. Let's see here. Yeah, yeah, yeah, yeah. It's different. Definitely. Yeah, yeah, yeah, yeah, yeah.
+
+[00:32:29] Speaker:
+You know, we just see if. Okay, and here, and I'm going to with profile. Okay, and now it's now just for a couple of seconds ago.
+
+[00:32:43] Speaker:
+It won't. Yeah, so I think this one is incorrect. I think that was just, I think just to go away with.
+
+[00:32:54] Speaker:
+The earlier doctor thing, I think you cannot type it without the, A do. Community, you know, you have to use it with a community.
+
+[00:33:04] Speaker:
+Really? Maybe. Try it. NASA Jet Propulsion Laboratory, California Institute of Technology I don't know how it works. But then you don't get any of my contributions.
+
+[00:33:12] Speaker:
+No. Because, so then, okay, so it's yeah, so I haven't been early adopters. Because then, because these are the, I guess I do per community.
+
+[00:33:20] Speaker:
+Because these contributions are different from the other community contributions. So, what do you want to do, actually? What do you want to do?
+
+[00:33:29] Speaker:
+Reminds telling yesterday that it would, like, scrape the crap. Comments, learn how I, learn how I talk and post. And, I just, I just want to try it and then have it- Autumn.
+
+[00:33:38] Speaker:
+Yeah, well, not necessarily like, that I just want to see what it would come up with. Cause I know it's like you should go all the like, spend, you know, I mean, not that I would necessarily need it all the time, but just sometimes it's, see like for it and just- making a head for like, if you have,
+
+[00:33:55] Speaker:
+you know, for a larger community, it would, yeah, make sure nothing gets lost. That's... Okay. And I think this one, Well, I'll just change the R on that.
+
+[00:34:07] Speaker:
+Okay, yeah. Let me change this rotation point. I don't know know this. We'll see you I should prompt just this one.
+
+[00:34:18] Speaker:
+Separate. I want to give you that one. Okay. Thank you. Oh, he can bully this, I guess. Rarely does. Huh?
+
+[00:35:00] Speaker:
+I just noticed this bull. I didn't know if that was the session I Yeah, this is the session I was talking about today.
+
+[00:35:07] Speaker:
+Okay. Oh, wait, I'm this. I don't really have it. Okay. Okay.
+
+[00:35:18] Speaker:
+Let's see. Command Line. And go back All right. So, going to This is the lock. Let's do password. is Okay.
+
+[00:35:47] Speaker:
+All in case. Okay. Does not be direct. All right. That's an interesting guy. Bye. Oh.
+
+[00:36:27] Speaker:
+Nook a lot isn't running. evening. . Yeah, this is this. Ah, woah. I didn't. I was on a different screen when you did some.
+
+[00:36:38] Speaker:
+them. Oh, yeah, no, I just You have to tell me. It looks awesome, kind of. Oh, cool. Yeah, it was just, it was the my peanut, on this.
+
+[00:36:45] Speaker:
+Yeah, of course it's a mark, but it looks great. I think it looks awesome. Keep going. And of the next comments.
+
+[00:36:52] Speaker:
+Okay. Let's see. All right. We will have to fix the text. Hey, I wonder in a separate, it couldn't I- And does she accept like a get like a separate, like a good one?
+
+[00:37:08] Speaker:
+Or tree to fix the font and, you know, I don't wanna, I just don't know. I'm just trying to think what I'm talking about.
+
+[00:37:15] Speaker:
+the, the, why is Start today is wide. Mhm. Yeah, of course you can just, just do it like you, you, you, you're using anyway.
+
+[00:37:22] Speaker:
+Anyway, And, anti-gravity, or is it in anti-gravity, or in, in- B.S. code? B.S. code? Okay. Go on, then we're building.
+
+[00:37:29] Speaker:
+Mm. Mm. Okay. I would, you know, I would just, it would be super easy. I would just, like, if I, if it would be on my end machine.
+
+[00:37:37] Speaker:
+We'll see you next I would just open it in anti-gravity and I would make a screenshot of that thing. And I would say, hey, can you switch, can you change the font?
+
+[00:37:45] Speaker:
+To, to dark gray instead of white because I can't see it and it would switch it. It's super evil. Okay.
+
+[00:37:56] Speaker:
+Afterwards, it's like, no, it's like zero problem. And I think, you know, this like. This is like, well, you know what, what tie and gend it, you know, they, they wrote down all the bucks and then they just did one after the other.
+
+[00:38:08] Speaker:
+I think that something. Like this. We should, we have to do that stuff. Anyhow. Okay. No? Yeah. I think we leave.
+
+[00:38:16] Speaker:
+I guess I, and it's, it's met. Do you, it doesn't matter if, like, the, yeah, I don't know, but I'm not, I'm not.
+
+[00:38:24] Speaker:
+Have a nice day. Super, like, I don't know what the best practices are for, like, fixing bugs. Like, if there's, if, like, how they should be, the like, stiff, it should be done in parallel, except, you know, the sub-agent is a, like, cuz I don't know, yeah, that's where you- actually look like a mess-up
+
+[00:38:40] Speaker:
+, or something like what get into a bug, and then it, like, f**** up whatever code I already had, and so this in terms of keeping it separate, like, so if we're gonna fix Thanks for watching.
+
+[00:38:47] Speaker:
+I don't know if all of a sudden want all the other font somewhere, like, to be, like, some weird font.
+
+[00:38:53] Speaker:
+Not at all because we just gave it a screenshot of it. Exactly that page. And then it knows exactly where we are.
+
+[00:39:00] Speaker:
+more. Like, if you take a screenshot now, you know, if you take a screenshot of this page and it knows, okay, you're on the feed page.
+
+[00:39:09] Speaker:
+Right now. And you can't read the text on the where it says, add and post. And if you say, just.
+
+[00:39:16] Speaker:
+Yes. Change the color there. It will only change the color there. It won't change it anywhere else. But it doesn't need to be changed in a few places.
+
+[00:39:25] Speaker:
+Yeah, yeah, yeah, of course. But then, that's like where, like, you can, you can, like, take screenshots of all the places where that happens.
+
+[00:39:33] Speaker:
+And give it, like, five screenshots, and then we'll replace, does it on all of them. Oops. And these are just, I used to get saved.
+
+[00:39:54] Speaker:
+The one's good. That's the command option. Shift 4. more. Yes, I promise. Like, this is cool. I showed you yesterday solves this whole problem, you know?
+
+[00:40:03] Speaker:
+The one? The tool I showed you. Yeah. Like, open the next code. No, no, not that one. Like, I bought the one I bought for 30...
+
+[00:40:13] Speaker:
+$9 one time fee. I'm like, I got this problem out of my way forever. forever. Is that it? Because, Huh?
+
+[00:40:22] Speaker:
+Okay, well, what was the input again? Thanks here. but the thing is, cross before I give you the link, okay?
+
+[00:40:29] Speaker:
+When you subscribe it, you immediately- You immediately have to cancel because otherwise they will charge you in a year. Okay.
+
+[00:40:37] Speaker:
+Okay. In my opinion. . charge for the air for me. Exactly. Exactly. Yeah. So that's why I'd say that's so, like, demanding.
+
+[00:40:46] Speaker:
+Thank you for I know, I know. That's, you know, that's perfectly alright. And, really, I'm just now incentivized. Like, I'm gonna go on the calls.
+
+[00:40:53] Speaker:
+I'm gonna see what the hell the community's about. out. Because normally I don't forget stuff like this. And so, that I did.
+
+[00:41:00] Speaker:
+Maybe I subconsciously wanted to, I don't know, I'm gonna- Yeah, and I'm like, also I'm like, oh, that is awesome.
+
+[00:41:06] Speaker:
+She now really wants to get into community videos because that thing is basically only about community videos. Well, you know what though?
+
+[00:41:13] Speaker:
+They're boom. Benefit already. So it's, it's awesome. It's awesome. It's awesome. It's awesome. awesome. It's awesome. I also think like the amount of effort we both put into this, this is amazing.
+
+[00:41:25] Speaker:
+You know, I think it will be really successful. That's I agree. These screenshots. So where am I going to put them?
+
+[00:41:32] Speaker:
+Yeah, hold on. I'm getting the deal for you. and we'll see you next week. where a bundle was called bundle.
+
+[00:41:38] Speaker:
+It's a screen, it's a screen, like, capture. Sure. It's a screen, it's a screen capture and annotation and video as well.
+
+[00:41:48] Speaker:
+So, this is a link, and it doesn't have multiple monitors. Because if so, then I don't need Loom anymore. on.
+
+[00:41:56] Speaker:
+No, you still need Loom. Really? Why? Because it doesn't save it online. Like, Loom is nice because you can take two hour video and you- I'm not crashing your own hard drive with huge files.
+
+[00:42:09] Speaker:
+And that's saying does everything locally. And just- Finally. Clean Shoxing is amazing. amazing. So we'll go boys. Oh, oh. Is that it?
+
+[00:42:18] Speaker:
+We love voices the same as, as, what's it called? Whisper flow. Whisper flow. So it's, it's the same as with Buffalo.
+
+[00:42:24] Speaker:
+Do you think this, all this comes in with it? All this included. Everything is included. Shit. Alright. Oh, one year, but that's why I've- So you- like this one, you can just buy it.
+
+[00:42:36] Speaker:
+That's okay. Yeah. I will do that now. Different leisure. Thank you for your attention. Wait, do you have an account already with Epsomol?
+
+[00:42:45] Speaker:
+actually, no, I don't. I do not. Okay, then get- Oh, I don't care, and I do profile. Okay. yeah, I do.
+
+[00:42:53] Speaker:
+Good. Okay. I do. Okay. Okay. Yeah. Yeah, I'll do that thing over here. Thank you. You can put it on a screen like, I thought, yeah, but you need to put your haven for some.
+
+[00:43:09] Speaker:
+Mm-hmm. Nice, okay. Go ahead. Succomie. Thank you. Nice scrolling.
+
+[00:43:49] Speaker:
+It feels weird. I think I changed it. you I just changed it the other direction, but I thought it was because that was weird.
+
+[00:43:57] Speaker:
+Okay, you have to go to a setting. Oh, yeah, yeah, I'll go change it back. I, I decided to do the dealership.
+
+[00:44:03] Speaker:
+Yeah, that's it. Because I initially thought that that scrolling was weird, but this feels, super weird. And you have to make sure that you have fast mouse movement.
+
+[00:44:12] Speaker:
+The regular mouse movement is really shitty. Because you can change the speed. Oh, goodie. I'm gonna change that. There we go.
+
+[00:44:20] Speaker:
+Okay, confirmation and, Goodie. Got it. Ooh. I'm move on to the Okay.
+
+[00:44:34] Speaker:
+Let me get it now. Let me. Okay. Good evening. Thank you. Thank you. I got it. Like, I paid for it and then we're Do you have any oil products?
+
+[00:45:02] Speaker:
+No, hang on a second. I just lost that window. Thank you. Now that I just closed the window.
+
+[00:45:13] Speaker:
+Thank Let me end. I'll be in a little bit. See you soon. Good morning. Yes, yes. I'm sorry. I did manage to set Chrome to my enemy.
+
+[00:45:32] Speaker:
+Default. Thank you. All right. I see you You Remember, you closed the browser. Yeah, I closed it. Did you use?
+
+[00:45:40] Speaker:
+I can see your Chrome. Yeah. Yeah. Thank you. So what was your question? No, no, no, I was saying that I, I set it as my default for Hello.
+
+[00:45:50] Speaker:
+Love. Oh, okay, yes, yes, yes, okay, good. Yeah. Anyway, it's starting. That's it. Okay. Thank you Anti-Gravity Agetic Workflows.
+
+[00:46:16] Speaker:
+close. So. Products got it pretty now. Anti-Gravity. Gravity, Agentic, Workflows. close. Your job is to help the user create the genetic workflows.
+
+[00:46:39] Speaker:
+We'll see you with anti-gravity using the knowledge base provided. divided. Sure you give detailed instructions how you do everything in anti-gravity.
+
+[00:47:06] Speaker:
+gravity. What the user should do in anti-gravity. You Hit just the user to use anti-gravity as a workflow builder. It's a three-jinder, a base pot break.
+
+[00:48:09] Speaker:
+Okay. Okay. Sure. Which is the third. Oh, boys. Ah, work.
+
+[00:48:21] Speaker:
+Mhm. Mhm. You have to go, yeah, redeem that, copy that code. There's, like, seven of them. Like, everyone? Okay. Only, no, no, not to paste them, go up, go up, go up.
+
+[00:48:29] Speaker:
+you I want to- Yeah. cogh-dugh-duh, down, down, down, down, down, don't, down, don't. Dosh, publishers. Clean shot? Okay, is this one?
+
+[00:48:36] Speaker:
+It's no- a clean shot pro- That's what we want right now? Yeah. Go down, go down, go down. Yeah, turning.
+
+[00:48:42] Speaker:
+That code. Yeah, no, first, it copies the code. Yeah. Yeah. Okay. And then now redeem. Okay. Oops. and let's, . Mhm.
+
+[00:48:58] Speaker:
+Ye Ye- you just ain't, Mhm. It's, it's new. Create an account below. No click on Create an account. Ok. Alright.
+
+[00:49:05] Speaker:
+Stop. Go. Stop. Stop. First. I'm sorry. I'm sorry. Can you go back? I, we have to read what it actually says.
+
+[00:49:12] Speaker:
+It's a product page before logoing. Yeah. Like. Bye. How the, how we, how we should read the image. Go up a little bit, please.
+
+[00:49:19] Speaker:
+Yeah. I mean, I just didn't need to talk to the code. Click. Thank you. Click on redeem partner edit. Yeah.
+
+[00:49:26] Speaker:
+Create account first and then click register. Okay. Okay. And then start. time. . . Subscription. Okay. Yes. Thank you Now come from, Okay, now you need to, Go next.
+
+[00:49:55] Speaker:
+Then you have, You have to, wait, no, that's something's wrong. No, three, yeah, three. Okay. Do today zero. Okay, so this is okay.
+
+[00:50:02] Speaker:
+Okay. It's just that you have to cancel afterwards. Yeah. Yeah. Yeah, Cool. That's done. Was that just that one? . Yeah, that is the one that is really, really good.
+
+[00:50:16] Speaker:
+The other ones I also use, but this one I use, like, a lot. In the pace of, the cool depth.
+
+[00:50:21] Speaker:
+This one I just download. Yeah, I mean, no, on pace, you don't do anything right now. You use the other one.
+
+[00:50:27] Speaker:
+Yeah, download the app, yes? Yes. Yes. And I think you have to, like your email address, you have to, like, go in your email and, approve your email.
+
+[00:50:35] Speaker:
+Okay. Okay. Done. Yeah.
+
+[00:50:44] Speaker:
+Okay. I also don't want it well now. you There we go. Continue the applications of your link to, You Okay, copy link.
+
+[00:51:08] Speaker:
+Done. Okay, perfect. Now I send you another link. Thank you. Okay. You Okay. Okay. Okay. Go ahead. All right. I'm sorry.
+
+[00:51:19] Speaker:
+No, you did it. And I think what you should do, like, I sent you, like, a Gemini link now. And what's that for in that chat?
+
+[00:51:27] Speaker:
+And what's that? Okay. And it would be interesting if you tell Gemini what ex- Thanks. Exactly you want to do on school and what's the school URL and tell it to tell you how, how do I make that workflow in Antigra- because it's like, it has all the videos from, from Nick inside about that stuff.
+
+[00:51:46] Speaker:
+Okay. It should, it should give you, like, detailed instructions. How to do that in anti-gravity. Okay. I will wait. Where's this?
+
+[00:51:53] Speaker:
+You have to, you have to put the clean shot to applications. Okay. That's That's it. I did already, though. Okay.
+
+[00:51:57] Speaker:
+Okay. Okay. Perfect. Oh, sorry. Ah, stop. Hello. Okay. No. Okay. No. You Oh, man, that's cool. No. No. No, no, no, no, no, no, no, one of that here.
+
+[00:52:15] Speaker:
+Yeah. Ah, it was it was a, Hang on, I saved him.
+
+[00:52:35] Speaker:
+and Mather Window. It is, it's inside of a clean shot, it's not a one. . Don't forget to subscribe Okay.
+
+[00:52:48] Speaker:
+Okay. The website from clean shot. I'll one. And, then. Okay. Good. it's a, it's a cop. Mm-hmm. It's where your name is.
+
+[00:53:10] Speaker:
+Yeah. Mm-hmm. no. Then just, oh yeah, they're, wait. Mm-hmm. I think it's that redemption code. Boy, it's your email. No, no, I don't think so.
+
+[00:53:23] Speaker:
+It's a licensing code. It should be- Maybe it's in your email. Can you check your email if it's there? Sure.
+
+[00:53:28] Speaker:
+Oh, oh. you I have another hand. You should find your license key in the confirmation- email you received after purchasing CleanShot.
+
+[00:53:40] Speaker:
+You have received another email. move. I did. Yeah, go back in the email. Yeah. Can you re-refresh maybe? Yeah. No.
+
+[00:53:53] Speaker:
+Confirm you. . . . . Mmm. You know, that was a confirmation page and then, you can print, oh, you said. You did you confirm the email?
+
+[00:54:07] Speaker:
+You did. Sure did. Okay. Yeah, you found it on this. This one. And then, I think from the camera. And now it's going to send me another one.
+
+[00:54:16] Speaker:
+hahahaha Eventually. To this club. Oh, I can't go and activate this cloud pro. Go. What? Activate this cloud pro. Okay.
+
+[00:54:27] Speaker:
+we're going ahead and we're Thanks. Go. Sweet. We'll see you in the next time. This is you. Yes. Yes. Okay, open settings.
+
+[00:54:40] Speaker:
+You have to do that. Yeah, yeah, yeah. Because you have to. Happy meet you. Last week. Make we have at.
+
+[00:54:46] Speaker:
+Kill the, the fold ones. Okay. Keyboard. forward. Keyboard, shortcut. Yeah, there's a button in the middle of the screen. Okay.
+
+[00:54:58] Speaker:
+And we just, And untag the turn of all shortcuts. Like, deactivate all of them. . yick click-imps? No, no, no, Click-imps?
+
+[00:55:08] Speaker:
+there. Oh, yes. Okay. Do. Thank you. And now it's there, okay, perfect. And now click, source, command. You know, like, You know, like commands- the shift port thing?
+
+[00:55:34] Speaker:
+Shift commands. Shift three and shift command four. Shift. Like those. Okay. Got it. Ooh. Ooh. This one, this one and three and four.
+
+[00:55:44] Speaker:
+Three to allow it to do the acting shot. Okay. Okay. at the end. That's fine. Could we open it? Thank Okay.
+
+[00:56:00] Speaker:
+Starting to do this, yeah. Yeah, so. is Can you clean shot? And I'll try Command Shift 3. Okay. I like a picture.
+
+[00:56:12] Speaker:
+Perfect. And now go, no, go back on it with a, with a, with a, with the- I'll be safe. Mavos?
+
+[00:56:18] Speaker:
+And I can- You know, it's, You can edit. You can edit. Just click on edit. And now you can do, like, stuff.
+
+[00:56:24] Speaker:
+I'm going to stop. Now I can do stuff. I'll show you. Ollie. Yeah, look.
+
+[00:56:36] Speaker:
+Look at that. And now click, click, yes, you take, like, like, like an arrow at the top, at the top.
+
+[00:56:40] Speaker:
+You have, like, stuff, no, no, yes, this one. And I'll put it, like, where exactly? Oh, okay, let me- I'm there.
+
+[00:56:49] Speaker:
+Okay, and z- And you just click on Done, for example. And now it's back down there and then you can just copy it, copy it.
+
+[00:56:56] Speaker:
+Okay. And now you can- Put it inside of a chat. Okay. So it's really convenient. Like, it's, you know, it's very convenient without saving stuff, you know?
+
+[00:57:04] Speaker:
+Hello? In my opinion. Yes. That's, 2.
+
+[00:57:27] Speaker:
+Thank you. Mwah! Thank you very much. Mm. It's nice.
+
+[00:57:59] Speaker:
+Thanks for It is all black. I mean, I think we didn't specify any colors. There were no color specification. certification.
+
+[00:58:07] Speaker:
+We did not like that. We can change that. Yeah, that would be easier. Bit? Hit. Yeah, we have to, yeah.
+
+[00:58:15] Speaker:
+Oh, I find that. You know, a lot of new, harder set. Are you ready Honestly, I would open that. I mean, the, the, the, the, the project actually is finished or not.
+
+[00:58:27] Speaker:
+Oh, good. Thank you. 9 I don't think so now. No, it's not. Editor in to check my verification required check search application.
+
+[00:58:36] Speaker:
+education. . Oh, I don't know. Oh, is it done? on. We've won. Spinal Asia? What's way for one?
+
+[00:58:48] Speaker:
+Oh, one out of one. An auto task complete. Church burned to greet and to header, okay. Okay. Are we fresh yet?
+
+[00:59:06] Speaker:
+Yep. you I mean, refresh won't do it. it's not gonna after that close it and then npm run dev to reset the dev server.
+
+[00:59:12] Speaker:
+Okay. and Nope, okay, never mind. I'm all done. You know what saying?
+
+[00:59:36] Speaker:
+No is that 3? 3? Sorry. Answer, wasn't it? where's things from? No, is it? Yeah, three cells were one, one, one, one, one.
+
+[00:59:45] Speaker:
+Please. I didn't look like it did a real refresh. Yeah, I know what. developing a system that All in But is, is the get shit done?
+
+[00:59:56] Speaker:
+Not done? Or is it done? Like the whole plans went through I think or not? I love it. I'm not sure.
+
+[01:00:02] Speaker:
+It looks like it is. I, Hey, testing it. Yeah, I think at this point, You I can just ask, like, what is left to do, right?
+
+[01:00:18] Speaker:
+Yeah, ask it. What is left to do? Is there anything left to do from the getchet done thing? Thank you.
+
+[01:00:40] Speaker:
+Cuz if not, I'll commit this to GitHub and then I'll open it in gravity. Yeah, and I can also open it and you can see my workflow.
+
+[01:00:48] Speaker:
+Oh, I designed that thing finished. Okay. complete plan 3203. three. Complete plans. Others, after you verify and improve, commit to fix, text color fixing.
+
+[01:01:00] Speaker:
+and also say approved and then we can fix the font and stuff with, cuz it's more like a cosmetic thing.
+
+[01:01:05] Speaker:
+Yeah. Yeah. Okay. Okay. Okay. Okay. You know, this is already committed in mind. Okay, but is it uploaded in- in Gitapno.
+
+[01:01:31] Speaker:
+Yeah, yeah. It is? Yeah. Okay. Yeah. You should be able to get the repo. Thank much. Well, I'll get shipped in and start here.
+
+[01:01:45] Speaker:
+Yeah. You right here. It was public. No, no, that's for you. Oh, no, no, it's fine. Oh, then this one.
+
+[01:01:50] Speaker:
+Sorry. This is, Uh-uh. Yeah, yeah, cuz I, yeah, I cloned. I, this is my, my, my fork. So this is- Okay.
+
+[01:01:59] Speaker:
+So that's a community sh- I haven't, I haven't pushed to dig it, have you? Oh, yeah. Yeah. Yeah, I guess it'll remind you that when it's done.
+
+[01:02:14] Speaker:
+So I wonder that every time you use this, this repository, you know, actually not icon. vehicle. it gets done. I can call it.
+
+[01:02:24] Speaker:
+I could have called it anything. So I just have to remember that this isn't- Yeah, I'll be out. I will.
+
+[01:02:30] Speaker:
+Doesn't want to catch it down community. I will just, like, upload it to- I would make a new one, you know?
+
+[01:02:36] Speaker:
+Make a new repository? Call it, get shit down community, leave it empty, and give, the IDE. You the new L and say push it into this guitar.
+
+[01:02:49] Speaker:
+Oh, I'll just tell it to push it into a new GitHub repository. It's a great story. You can also do it like that.
+
+[01:02:56] Speaker:
+I usually don't go in here and, like, make a new thing. I usually just let it, like, brilliant. Get it?
+
+[01:03:01] Speaker:
+Yeah, yeah. I do that all the time. What, went for what kind of projects? Because I want to meet, I want to- be able to name it, you know?
+
+[01:03:09] Speaker:
+I want- because I would like this if it would be my repository. I wanted to- I don't want it to create just another repository.
+
+[01:03:16] Speaker:
+And put it in there. I want to call the repository, get shit done. Minus community, for example. And then I- takes URL and give it to, my IDE.
+
+[01:03:28] Speaker:
+And say, push it into this GitHub. Goodbye. But, . . Bye-bye. Oh, but now you're renaming your old one. Another thing is, so this is, this is a, this is a fork.
+
+[01:03:40] Speaker:
+Like, this is Yeah, yeah. Okay, I see. Okay. I see what you're saying. Yeah, I'll just have this one make a new repository for it.
+
+[01:03:48] Speaker:
+Okay. Yeah, I haven't, I haven't really been around in like, get up a whole lot. You Yeah, me neither. I'm like, I'm not super safe with that.
+
+[01:03:58] Speaker:
+I'm just like, that's how I do it. It's not like, that's really the way to do it. And it's just, like, how I do it.
+
+[01:04:04] Speaker:
+Because that way I can kind of, like, I have several times the same project and I can have it. But once like this and once like that, you know, and this way I can like.
+
+[01:04:15] Speaker:
+For example, in Google Air Studio, when you push it- to get home, you can enter whatever name you want for your release, right?
+
+[01:04:23] Speaker:
+And then the same thing, the same thing for any time you push it to- Yeah, yeah, yeah, yeah, yeah. And then it'll just push it there, and it'll be in your release so you don't have to have, like, an empty folder waiting because it'll- make one.
+
+[01:04:37] Speaker:
+Mm-hmm, yeah. Mm-hmm. Okay. Mm-hmm, This.
+
+[01:04:58] Speaker:
+Okay. that's how you I'll just we'll a look the you I'm in, Another one, Tom. Thank I'm so happy to be here.
+
+[01:05:08] Speaker:
+Ooh. . . . You . . . Oh, are you having fun? . . . Okay. . . You don't want to run out of that. We're getting Yeah. so I was, preparing to find with it.
+
+[01:05:20] Speaker:
+but I was wondering if I could watch it or my job. I'll see you out there. That would be fine.
+
+[01:05:25] Speaker:
+Honey, that would be fine. Yeah, yeah, yeah. I hope you guys have fun. I was actually thinking about that. I'm like, why, why wouldn't you know if you, if you guys are going to the castle?
+
+[01:05:32] Speaker:
+Have a good day. Oh, yeah, no, no. how are you? good, I'm glad you're having fun. Oh, you're so welcome, honey.
+
+[01:05:46] Speaker:
+You're so welcome. Yeah, you're welcome to get, get you up. Love you and good luck with your game. Love you.
+
+[01:05:54] Speaker:
+Bye. Bye. Let's get a break. Okay. Make the implementation plan. and Just, Okay.
+
+[01:06:06] Speaker:
+Okay. I'm not gonna, I just, so it has a folder. It knows through the step. It has the re- you around.
+
+[01:06:20] Speaker:
+It's gonna be very funny. Mm You Yeah, that's the right one. And it goes to early adopters. Yeah. And with the link I gave you in, what's up?
+
+[01:06:34] Speaker:
+I'm here. Don't. Like that one is connected to Nick's videos about exactly- Please.
+
+[01:06:45] Speaker:
+So it would be just interesting if you tell it, you know, this is my school community. I want this and that to happen.
+
+[01:06:53] Speaker:
+Okay. What should I do? Okay. Oh, and let me see as well because I'm very interested to see. Sure, sure, sure.
+
+[01:07:02] Speaker:
+Wait, she has this complete and all the way up to the anti-craft thing over, I'll do it in this middle wall, put it here for now while we're doing this, and then I'll bring it in here.
+
+[01:07:25] Speaker:
+I love that. Okay. That's fine. There we go.
+
+[01:07:49] Speaker:
+Okay. Thank Thank you. Thank Wait, so is this way?
+
+[01:08:16] Speaker:
+This is for the new- community for, like, t- or this is for the- So, I- This is what you wanted to do with, with anti-gravity.
+
+[01:08:23] Speaker:
+Thank you. Something I tried from yesterday, you know? No, I got you, I tried. Let's try it. Okay. And it's the lungs right here.
+
+[01:08:46] Speaker:
+. That doesn't matter. Sky is fine. Intimate. I don't know. It's fine.
+
+[01:08:58] Speaker:
+I don't understand much. Thank you. No, no, no, I'm sure this is a gem. How would I go between this?
+
+[01:09:48] Speaker:
+So this is just to get, like, the feedback of how. Mm Okay. Okay. Okay. Let me see what's wrong. You should have.
+
+[01:10:01] Speaker:
+On the other hand, in hand. That's Thank you. That is weird. It's very weird. He actually want to see that wide again.
+
+[01:10:32] Speaker:
+Okay. I will do this. I will- I will- I- I'm gonna paste the content there, see what- I know what that- What is I think?
+
+[01:10:42] Speaker:
+I think so. Sorry. I'm just going with it. Yeah. Yes. Yeah, yeah. Yeah. Yeah. That's exactly what we have. Yeah.
+
+[01:11:00] Speaker:
+Exactly, you know. So, it's kind of, It's only me to do this stuff. Oh, okay, and that's what I'm gonna Okay, and I screwed my pulse.
+
+[01:11:07] Speaker:
+I used a brother stuff I can do. I want it done. That's what I'm starting to eat. Sweet. We'll see you in Oh, look, okay, awesome.
+
+[01:11:17] Speaker:
+He needed work space, I got it. . . . . Did you push it to get up? Because then I can work on that at the same time.
+
+[01:11:26] Speaker:
+Do you want me to push this as it is now? Yeah, yeah, I mean, it is finished or not? No, there's a, Ah, okay.
+
+[01:11:33] Speaker:
+Okay. Yeah, once this is done, we'll, I'll push it, so you get that pink. Thank you. So, oh, maybe. We'll see you in Just.
+
+[01:12:18] Speaker:
+But what you could do is you could give me access to your notebook of ABS because- And I can take a- What is it?
+
+[01:12:26] Speaker:
+And AWS. Uh-huh. Oh, yeah. Because then I can make the gem for ABS- B.S. while the stuff is working. You have to give me, like, editorics.
+
+[01:12:38] Speaker:
+Thanks. Yeah, I will get them now in the final window. them. us. There we go. To work with those gems is amazing, I think.
+
+[01:12:54] Speaker:
+Don't you think? I mean, yeah, that you have that. It gives you, like, directly, like you don't even have to watch the whole video.
+
+[01:13:00] Speaker:
+You just, if it's in there. Well, this is amazing. Isn't that kind of like what this is? Like, no, because, ok, and other stuff you can do.
+
+[01:13:13] Speaker:
+Thank you. Exactly, and, also you can upload images, you can upload videos. Okay. I put on loads. It's over there.
+
+[01:13:23] Speaker:
+Hello? I said I put our notes and stuff in there. clear. You just hear this. Share. wait, wait, wait. Mm-hmm.
+
+[01:13:32] Speaker:
+Pull notebook. Pull notebook, yes, but- Oh, yes. Oh, okay. You're- You're- You're- I know, Yeah, you can, but you don't need that.
+
+[01:13:42] Speaker:
+You can just say everybody was at a link. Okay. No. Yes. Yes. Sorry. you don't know before, but you didn't, try it.
+
+[01:13:49] Speaker:
+Give it in like, yeah. Yeah. Yeah. I'm gonna put it in, join. What's that? No, put it here in the chat.
+
+[01:13:54] Speaker:
+No. Okay. Okay. Okay. Now this, floating. Here we go. Okay. Let me see if I can open that. And I'll see you in minute.
+
+[01:14:08] Speaker:
+I know, I don't- you still have to- it didn't work. You- you have to give it editor access and it didn't- .
+
+[01:14:15] Speaker:
+No, I don't have- wait, how that wouldn't- what you know. Okay, yeah, click see .de. Thank you. .de at gmail.com.
+
+[01:14:26] Speaker:
+Here we go. it's not a pro. So. So, Ah, it's like your company thingy? Oh, no, no, no, this is for, it's not for Enertex, like, oh, it's for a 30i.
+
+[01:14:36] Speaker:
+But, hey, I can add a, I don't mean for you on my, on my thing. It's included for my, like, at 30i.
+
+[01:14:41] Speaker:
+Okay, oh, yeah, yeah, Wait, how do I, let me s- not there. That's not what I want to do. No, I'm just having this.
+
+[01:15:28] Speaker:
+Okay. Okay. You Gonna pace that for you. Thank you. And then you can change to our view.
+
+[01:15:40] Speaker:
+what? That pass. Yeah, so you're, you have this email. Hold on, I have to, I have to get like my, Yeah, I try to wait.
+
+[01:16:07] Speaker:
+Alright. No go away with the mouse, because I'm like, I have a text sniper. Sorry. Chris, at 30, I was going to copy it for you.
+
+[01:16:17] Speaker:
+You wanna? Ah, you can also do that, yes. Yes, I didn't copy it from here. I was using, I have like a sniper.
+
+[01:16:24] Speaker:
+I put a tool for that. Of course you do. There you go. And it's a Gmail. Sorry, I didn't put it twice.
+
+[01:16:30] Speaker:
+It's a Gmail account. So I would log in with that or what? Yes, so just basically, so you have the second inbox.
+
+[01:16:38] Speaker:
+So you go to it and it's a Google account. Even though it's 30i, it's just called, it's just a custom domain.
+
+[01:16:43] Speaker:
+So it'll have the same functionality as your other regular general accounts. So you can switch between your f browser profiles and all that stuff.
+
+[01:16:50] Speaker:
+Okay, so I, I can log in with that. Okay. Okay So I log out and log in again. Oh, but that doesn't- No, no, no, no, you don't have to log out of your Gmail.
+
+[01:17:02] Speaker:
+You can just go- Go to- Go to Google, like, just go to, go to your Gmail. Like a new Gmail.
+
+[01:17:08] Speaker:
+Like, actually create a new, to like- Like, sign into a new account. Uh-huh. And then use this email when you sign in.
+
+[01:17:16] Speaker:
+Yes? Yes. But then I still have to put this password, which is in the chat. Yeah, but I still have to create like a new.
+
+[01:17:24] Speaker:
+You'll, Notebook in my old Gmail, because I- I need to get the data inside. you know, we cannot talk to the AVS- Yes.
+
+[01:17:34] Speaker:
+In- I have to- the- the notebook and the gem has to be on the same account. No, but I talk to you- you and now you're- this is so you can, I see.
+
+[01:17:43] Speaker:
+Oh, okay. So the thing is, you have to- Hold. Change it to me, kind of. How do I do that?
+
+[01:17:51] Speaker:
+But I mean, the thing is, okay, look, like you- if you- if- You if you have access now, I think- just- just log- just try to charge you my login because then you can at least have access to- and Jigalia, I will like this and will work.
+
+[01:18:06] Speaker:
+Okay. Thank you. So. I think, yeah. Are we done here? I think, because that, because then we can just go into anti-gravity, and what the state is going to push.
+
+[01:18:19] Speaker:
+I'm going to, I'm going to push it to help. Thank you very much. Okay, let me try it.
+
+[01:18:37] Speaker:
+All right. Mmm. . Right, right there.
+
+[01:18:51] Speaker:
+Okay. no. But I can log in, but now, but there's no- Pokemon is completely empty. Like, I don't get your notebook, I just can- I- I just get, like, a sub-account of use- but it's not- I don't have access to your stuff.
+
+[01:19:33] Speaker:
+No, no, no, but now you're my organization. Yeah, but it doesn't matter. Dr. because look, I show you the link, I said, oh, did he click on the link?
+
+[01:19:40] Speaker:
+Yeah, yeah, look, look. That's more. Show me. Mmm. Like you see, I'm here, I'm here, but the notebook is empty.
+
+[01:19:49] Speaker:
+Thank you. No, I know, I know. So if you are go to your, but did you click on the notebook link in the gmail?
+
+[01:19:56] Speaker:
+out. chat. Now that you have that e-mail. I get it. I get it. I get it. I should open gmail.
+
+[01:20:04] Speaker:
+Yeah. No, no, no, no, no, no. The here, the link. No, I think I. Yeah, yeah. If you open this from here.
+
+[01:20:12] Speaker:
+No. Well, yeah, at the login first. But you want a login first. Yeah. You're logged already in. No, but I'm not looking at someone else and notebook in this one.
+
+[01:20:20] Speaker:
+Come on. Welcome. We'll see right now. Okay. No, but it's not in there. You see? You know, I know it's not there.
+
+[01:20:29] Speaker:
+Click on the link. But download in this one. you Okay, yep, good. Now click on the link in the gmail that chat that I just sent you.
+
+[01:20:37] Speaker:
+That, just click on the notebook, I'll unlink. Now, in our chat. We'll see you in our, in our Google Meet chat.
+
+[01:20:42] Speaker:
+Yeah, I do that. Wait a second. And, It's the same. Ah, wait, I have to- Oh, you know what, hey, let me add- Now that you have, I can, add you from here.
+
+[01:21:04] Speaker:
+Because- Yes. And you are now editor. And I'll send you a welcome note. and See. Here is this one on the book, and then there's- And there you go.
+
+[01:21:34] Speaker:
+I should get a notification that I just sent to you. Cause I updated all the- permission, so I added you your 38 email.
+
+[01:21:42] Speaker:
+And then I sent it to you and made you editor. So you should have her email. mental. tunnel. so yeah.
+
+[01:21:49] Speaker:
+Ah, the AWS, yeah. It's all gonna pop up. It's still the same. you Ah, what the frickin'? Because you're that one.
+
+[01:21:59] Speaker:
+I have to lock, oh, here, okay, now I got a diamond. Here you go. Okay, okay. Okay. Okay, then now I got those.
+
+[01:22:07] Speaker:
+Yeah. Now I have to put them over to mine, and then we have it. Please. Put it over to yours so you can save, you can copy it to yours, right?
+
+[01:22:14] Speaker:
+The whole notebook. No, yeah, yeah. No, I can't. I think I have to- There's, like, 98 sources in there. Yeah, I know.
+
+[01:22:24] Speaker:
+Let's ask- Can't ask into gravity if there's a way to do it. Faster. Yeah, of course you could do that.
+
+[01:22:31] Speaker:
+I think this is quite- I'm quite fast wizard, I think. Okay. Thank you. Actually, hey, wait, let me see. I wonder if I have all those as actual files.
+
+[01:22:38] Speaker:
+and.mybeth.com. And we We'll see Thanks No. Yeah, just like search on your computer for 098, underscore AVS. Okay. Okay. Yeah, that would be much better.
+
+[01:22:53] Speaker:
+Just saying absolutely I didn't even think that I, cause I, I remember I was copying Linkson, but I may actually have the thing that we're a peaceful URLs cause I was like, this is a lot of URLs.
+
+[01:23:04] Speaker:
+I'm gonna see that. Yeah, yeah. Okay. Yeah, this is time time to, You know, I will say, please create a- a new-kid-hub-pository for this workspace, and name it- JST Community.
+
+[01:23:27] Speaker:
+Yup. Hey. I think you can hit your button. that's I'm thinking. Alright, it's just a community game. And push it, and come in and push.
+
+[01:23:38] Speaker:
+– – Push it. Good. Okay. This is So push it. Okay. Here it is.
+
+[01:23:51] Speaker:
+This file. See. So, What was the search string you said to look for? Huh? The search string for that file so that I could see if I- A-W-S underscore, 9-8-9-0 for example.
+
+[01:24:09] Speaker:
+Boom. Boom. But you can just A-A-V-S underscore, I-I'm looking at it right now. No. I can tell you it's not in that computer.
+
+[01:24:17] Speaker:
+No, it's-no, no, it's different. 094 underscore A-V-S. Okay. No, not one might be honest with Peter because my drive is locked and is connected on this one.
+
+[01:24:36] Speaker:
+Ok, I'll have a second. Finder. Ok, I'm going to make a smaller one. There we go. Ok, now I can see all my ad records.
+
+[01:24:49] Speaker:
+not apps, I need it. . . Taste. Ah, there. Let me see file, folder location. Showing and closing folder. AWS W-S. Transcripts for RAG.
+
+[01:25:11] Speaker:
+There you go. Okay, now where is that folder? It's fine, I'll just, Join me to put it in- To, Google Drive?
+
+[01:25:18] Speaker:
+No, you can just, like, wow, yeah, you can just put in Google Drive, yeah. Okay. Thank you. All right. But, you know, I've been having Google Drive since your, Yeah, and send me the link again for that.
+
+[01:25:39] Speaker:
+Yeah. you I'm just going to move it forward. Sorry. It's a coffee. Thank you. Thank you. Oh yeah, you know what I did?
+
+[01:25:48] Speaker:
+I ran a script, to fetch all those. Yeah. Yeah. I used to, I used the whole thing. Perfect. Wait, there's missing.
+
+[01:25:59] Speaker:
+I'm here, 2021, 22-25, 26-30, 40. Oh, wait, no, it's not. because I'm not to bother the challenges. I'm not going for heat.
+
+[01:26:11] Speaker:
+I'm sure . . . . . . . . . . . . And I'll paste the link. Here as well. Anybody email what I'm going to paste it. here we go.
+
+[01:26:37] Speaker:
+You have 99 transcripts that have- I don't know what that middle word would be.
+
+[01:26:50] Speaker:
+Yeah, of course. of course. Pardon us, no, it's the only word we know. So we, We only know one single swear word, it's a bad one.
+
+[01:27:03] Speaker:
+One is just one John, and one swear word. In English, like, we only default to the worst swear word we know.
+
+[01:27:13] Speaker:
+Oh, from here. I'm going to wait, it's just me. It's not you. You need to make sure you're like- Yeah, yeah, yeah.
+
+[01:27:20] Speaker:
+No, I think- No, I'm locked into the oven. You weren't- Yeah, yeah, I know. I can only get access with this one.
+
+[01:27:26] Speaker:
+12. That's okay. I'll try to- Oh, no, no, no, no, no, no, wait, I'm gonna add that for email. Oh my god.
+
+[01:27:31] Speaker:
+Sorry, I both- I both for emails. plus. I'm going because it's easier. Yeah, yeah, yeah. Switching profiles and everything. Yeah, yeah, yeah.
+
+[01:27:39] Speaker:
+Okay, you should work now. If thank you. I don't share anybody. Okay. Yeah, I know how to share this. That's good.
+
+[01:27:47] Speaker:
+Okay. All right. I guess it's just the notebooks. I don't have external sharing. Yeah, this is much better because now I can.
+
+[01:27:55] Speaker:
+I'm just going no pugalem. So much better. Take that one. But that guy, the one you sent me is seriously interesting.
+
+[01:28:05] Speaker:
+Yeah, yeah, yeah, I'm, Of course, his approach. The actual AI is completely different than the other people. And he kind of doesn't even know, I mean, he only knows in his world what he does.
+
+[01:28:15] Speaker:
+And you can totally use it for a lot of other stuff. like this, which actually sketch it dot. And it's like awesome for making marketing campaigns, you know?
+
+[01:28:27] Speaker:
+Like re-write it not for making software, but for making ads and making like a m- Arctic strategy for XZ, you know?
+
+[01:28:35] Speaker:
+And it does, like, all those questioning stuff. And after you have, like, a brilliant strategy. It's incredible. Yeah. Like, I'm excited to use all this stuff.
+
+[01:28:46] Speaker:
+Let's do it. All right. We're. . Or so that we're using and we'll use. Yeah, Justin, it's all the way as it restrives.
+
+[01:28:55] Speaker:
+Yes. Share with me. If we ask transcripts, okay? Okay. Okay. Oh, why is it empty?
+
+[01:29:08] Speaker:
+What? wait. For whatever reason the notebook doesn't get- It doesn't matter, I just don't know them. them. It all connected.
+
+[01:29:39] Speaker:
+Or it could help. So that'll push in just a second. And then you can open it. Thank you. You What?
+
+[01:29:47] Speaker:
+I just authenticated on GitHub from here. So it's pushing. Okay, okay. Have you ever, have you authenticated and get from, your GitHub from Cloud Code before?
+
+[01:29:57] Speaker:
+free. No, but I, I only did it from, anti-gravity, but that is enough because I can, I can pull them from anti-gravity.
+
+[01:30:05] Speaker:
+Oh. You yeah, I think it's global, like, if you, like, I think each program needs. But it doesn't matter how you pull it.
+
+[01:30:16] Speaker:
+I mean, you can use a cloth, cloth coat to pull it. Unpush it, or you can use anti-gravity. I mean, the pushing won't make any difference in the quality.
+
+[01:30:25] Speaker:
+Okay, quite. This is a private one. But this link, I mean, you get public so you can- access. Thank you.
+
+[01:30:35] Speaker:
+I mean, this is, did you download some magnets? not yet. I can see that. Look at this. Look, this is what it does.
+
+[01:30:48] Speaker:
+Do you see, you see it up here? Yeah. Okay. Mm-hmm. Yes. Very small. So I can say, okay, this one I want to have on the right.
+
+[01:30:58] Speaker:
+And this one I want to have on, the left. Or you can say, I want to have it in the top left, you know.
+
+[01:31:04] Speaker:
+So you can, like, organize your screens, like, really nicely. Okay. Okay. It's very, very useful. Especially, like, with overlapping windows, which I can see a lot on your computer.
+
+[01:31:15] Speaker:
+Mhm. Yes, so you have, it's just public now, so, This is the, Jira, Loom, MediRoute, Answer this question.
+
+[01:32:16] Speaker:
+and from, from a web search, not necessarily from what he says because he didn't speak about this specifically. Quickly. Modified in that way.
+
+[01:32:29] Speaker:
+Okay. Yes, trust your author? Okay. Okay. We'll see Don't make your task well.
+
+[01:34:08] Speaker:
+Okay, we'll see you next Great.
+
+[01:34:26] Speaker:
+I used to have a tear up. . Was it, well, it's just about the tears. Ah, that is a get up.
+
+[01:34:31] Speaker:
+Okay, perfect. . . . Okay, thanks. . We should type Trello. I think that's Like, a second.
+
+[01:35:30] Speaker:
+Thank you Thank you. I don't Thank you. The thing is it is connected with- with your, super based stuff, I think.
+
+[01:36:19] Speaker:
+Thank What is it? I'm not sure if, because it doesn't have, I had the same problem with mine because it doesn't copy the E and V file, obviously.
+
+[01:36:29] Speaker:
+I mean, it's hard, but super bass. Thanks. We'll go back. Oh, I said, save it and mark down here, like on my computer house.
+
+[01:36:45] Speaker:
+Yeah.
+
+[01:37:07] Speaker:
+But you see this, those are missing so- So we are not working on the same file. You see what I mean?
+
+[01:37:14] Speaker:
+What do you- Wait, this is for the school scraping- Yeah, if I spin it up, it won't work because we are- we don't have the same super ba- I sing it.
+
+[01:37:26] Speaker:
+keep your soul- Those, I can just- Yeah, just give me yours. If you just give me yours, I can just make an ENV with- So it- It uses the same database, you know what I- I mean?
+
+[01:37:36] Speaker:
+Yeah, yeah, yeah, It's that database that I took in a copy in the chat, who I showed me. Yeah, copy.
+
+[01:37:43] Speaker:
+Yeah, I like- Just see what happens. Whatever it says in your in-v. Thank you. And now what's out. Art is easier here, yes.
+
+[01:37:54] Speaker:
+Doesn't matter. Better. Okay. Select. Oh. He said it doesn't matter. Yeah, yeah, yeah, yeah. I can't touch Is it like this?
+
+[01:38:43] Speaker:
+Is it? It's in yours. That's your ENV look like that. Yep, yep. This is just explain it. Sorry. Okay, yeah.
+
+[01:38:55] Speaker:
+Please, Spent it up in the browser, Localhost 3002. Ooh. Pissing, Pissing, Pissing, Pissing You No, something not.
+
+[01:40:24] Speaker:
+Thanks for working. Thank you. Ah, okay. I get this arrow, can you fix it? And, First, I'm a client.
+
+[01:40:46] Speaker:
+Hey, P.I.K. Yeah, what you have in your E&V now. Thank you. Huh? I'm sitting there. Yeah. And do you have an EMB.local?
+
+[01:41:12] Speaker:
+Go. Yeah. No. But now it wants to do something, maybe it generates it, I have no idea. Thank you. Yeah, now it's- It's working okay, you see this?
+
+[01:41:36] Speaker:
+Okay, and now I show you how I Now I first have to sign up, okay. Oh no, it comes again, okay.
+
+[01:42:07] Speaker:
+Let me put some back. Okay. Amen. Why?
+
+[01:42:58] Speaker:
+Bye! Typing is almost invisible, can you fix it? Good. It's too long. I mean, I think, ah. Ah, you're doing that.
+
+[01:44:03] Speaker:
+See? Thank you. I'm going to dash on this. Thanks. Okay, now it fixed it. You see? Thank you. Nice, nice, nice, nice.
+
+[01:44:29] Speaker:
+Yeah. them. Thank you. Ah, it's working, huh?
+
+[01:45:49] Speaker:
+Let's do three-hour initial size, let's switch. See you. That's what Thank you.
+
+[01:46:02] Speaker:
+Thanks. . . For some reason the processing, the account doesn't get processed. Can you check that? and fix it? Thank you.
+
+[01:46:59] Speaker:
+Do you like it, huh? Yup.
+
+[01:47:10] Speaker:
+I can see it by your face. You like what you're seeing. Thank you. You And this is totally amazing, you know, with this one gem?
+
+[01:47:51] Speaker:
+Just describe what you want and it- generates you like the whole automation. Thank you. I don't know. It's over on the other screen.
+
+[01:48:03] Speaker:
+Huh? It's opening over here. Thank you. Oh. Mm-hmm. I've got something. It doesn't want to be anything. It won't just be the other one.
+
+[01:48:16] Speaker:
+Thank Yeah, well, thank you, Rosie, for staying different. I think different communities. Next. I'm not sure. Yeah, totally.
+
+[01:48:40] Speaker:
+you. It's too fast. Let's see. It's not, you know, it's worth a combination. nation. Can't you use as a model, Opus 5, 4.5?
+
+[01:49:58] Speaker:
+life. Yeah, click on it, click on that. Ah, nope. 8 Yeah, because this is much far, I think it's better for that stuff.
+
+[01:50:14] Speaker:
+And please understand what it has to do. You Okay. I'll get to my moment. Mm-hmm. Mm-hmm. oh. Oh, Okay, we have red.
+
+[01:50:31] Speaker:
+It doesn't work because, It's designed to work with Superbase and the Cured ENV has local Prisma Postgres.
+
+[01:50:43] Speaker:
+. I'll put my Superbase in there. Yeah, well, that's what the ENV file is, so it's up to the ENV. I did the ENV file.
+
+[01:50:52] Speaker:
+And, but I didn't know it was designed to work with Superbase. Oast! Okay. Cress, no post-cress local host. URL. L That came in there.
+
+[01:51:00] Speaker:
+That was already there. Yeah, but that's from your link. Yeah, that's the access token to my, Superbase. But that's like local, I think.
+
+[01:51:10] Speaker:
+Local host. You see? Oh. No. Can, I just see if it can fix itself. Oh! What do you, Because if you cannot access something on your computer, obviously, that is a little bit of a problem with those database, cases, you know?
+
+[01:51:33] Speaker:
+If we work on two computers, I think that is very difficult. Like, we cannot do anything, That's local, because otherwise, yeah, like, I'll have it updated to push it to a single base.
+
+[01:51:44] Speaker:
+So, Yeah, yeah, the whole complete thing has to run in super base. Let me see it actually. I'll come in tonight.
+
+[01:51:55] Speaker:
+Okay. mister. . What about a new feature? Well, not feature, it'll be like, up in the back end. Thank you. Unfortunately, I have to go in like half an hour, I have to go to work.
+
+[01:52:41] Speaker:
+ooze. Thank you very But we are really moving forward now. Like the last three days was amazing. Yeah, no, this is awesome.
+
+[01:52:53] Speaker:
+I love you. So on the days you work, are you, like, a strip? You're building up? I guess on the days you work.
+
+[01:53:01] Speaker:
+Like in the days the days you work. I do. It depends, like, today, like, Saturdays, like, actually really busy because a lot of drunken people out there.
+
+[01:53:09] Speaker:
+So, actually, I cannot- work at all on that time. Maybe I can watch something on Netflix a little bit. and on all the other nights, I- usually I can do whatever- Bye-bye.
+
+[01:53:18] Speaker:
+I want, so I usually have a laptop open. But, right now, some- on some nights, we have, like, a new, somebody's- learning the job, you know.
+
+[01:53:26] Speaker:
+because I will not be there forever as well. So, someone, if that guy- If that girl is there, then I can also not work, like, on- I can watch videos, but I cannot open my laptop and start, like, building stuff, you know.
+
+[01:53:39] Speaker:
+Yeah, yeah, so that I can only do when I'm alone. one. I'm gonna rip back and use the super back.
+
+[01:53:49] Speaker:
+Yeah, it's not, don't worry about it. It's like. I'm not doing, don't do it now. We, but we have to make sure that when we work, that we don't do anything locally in Postgres.
+
+[01:53:59] Speaker:
+So hope. The whole thing has to be a super base, on a, like, on the, on the web. Yes, sir.
+
+[01:54:06] Speaker:
+Let me chat with this. Okay. Okay. But maybe I can do that. Maybe like. Alright. Like I'll just look if I can change it to super bass.
+
+[01:54:46] Speaker:
+Then it will work. work. Well, if I had a cloud project, then you should be able to, Yeah. done. Yeah, next one.
+
+[01:54:57] Speaker:
+Mm-hmm. It didn't make one already. It's already gone. This, now it's almost great. Yes. No, I didn't, actually. Super. Okay.
+
+[01:55:14] Speaker:
+Okay. It's okay, I think I will do it.
+
+[01:55:32] Speaker:
+I think it will do it automatically. quickly. Just, I opened the super bass in the browser, go in there and do it yourself, please.
+
+[01:55:46] Speaker:
+please. I think it'll be good if it's, well, I guess, yeah, if you're gonna push it on the cloud, then, then I'll be, then we- and you push to get how they'll be.
+
+[01:55:55] Speaker:
+So, I should just do it by the cloud. Okay. So, how does that work? And if the, if the backend data- .
+
+[01:56:02] Speaker:
+. Like, I say it's unlike my instance or your instance. If other people want to access it, I guess I should need the .env.
+
+[01:56:09] Speaker:
+therapy. 10 No, I think if, uh, yeah, I think is, I think if we just let it loose, it will just sink your lixi only demi- developer and it will store local files while doing that, you know, and that is the issue.
+
+[01:56:24] Speaker:
+And you have to tell it like always, you see, We'll see external online super bass and never do anything that is only local because I want to work with external developers.
+
+[01:56:34] Speaker:
+the prescription. No, no, no, no, no. That's my quad indeed. That's a global one. We'll see you in I just have a swim for some products I didn't want local but, uhm.
+
+[01:56:48] Speaker:
+Yeah, but that stuff, yep. I'm sure Thank you. Umm.
+
+[01:57:14] Speaker:
+. . . . Cool.
+
+[01:58:35] Speaker:
+All right. Umm, ehm, Ehm, . . . . . . . . . Umm, What?
+
+[02:01:18] Speaker:
+Thank watching. Okay, nice. Isn't it? Mhm.
+
+[02:01:29] Speaker:
+Okay. Umm. Thank you. Thank you.
+
+[02:02:03] Speaker:
+Thank you. Mhm. Mhm. Mhm. Umm, ehm, ehm.
+
+[02:03:57] Speaker:
+Okay, this is not working right now. I have to get going. Uhm, but we- I don't want to continue there somehow, but we have to make sure that we are working somehow with everything external so that we can both work on the same approach.
+
+[02:04:13] Speaker:
+It's the same time. Okay. I would think also about how we do that the best way. Okay, I'll do some digging streams.
+
+[02:04:21] Speaker:
+Thanks. See what I can find, see what it can concept. Yeah. And you have some fun on the school community.
+
+[02:04:26] Speaker:
+I will see when you're, like, leading on every board that I- No, okay. She figured out the whole thing. Yeah.
+
+[02:04:33] Speaker:
+She told Mark so. Yeah. Okay. Well, yeah. More likes Mark. More likes Mark. Then I know it's go, you made it.
+
+[02:04:43] Speaker:
+We'll see. All right. So how do you work? The Thank you. Thank you.
+
+==========================================================
+END OF TRANSCRIPT

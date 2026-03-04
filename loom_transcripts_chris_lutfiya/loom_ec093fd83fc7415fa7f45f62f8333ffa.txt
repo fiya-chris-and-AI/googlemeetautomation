@@ -1,0 +1,1127 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: ec093fd83fc7415fa7f45f62f8333ffa
+URL:      https://www.loom.com/share/ec093fd83fc7415fa7f45f62f8333ffa
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:15:46.467Z
+==========================================================
+
+[00:00:03] Speaker:
+It's,
+
+[00:00:04] Speaker:
+I have a meeting at Vanessa Lee put it on go okay whenever she be among it.
+
+[00:01:30] Speaker:
+It's closer. I feel like this movie is happening, er, it's like the movie is that things, no, the little , That's the largest dis-way that just goes wooow, that's it.
+
+[00:01:45] Speaker:
+What the hell is the sheet full of hair? I don't know. She has touched that hot rod. They've decided that that's what they have to do with their next step just to survive.
+
+[00:02:53] Speaker:
+Okay.
+
+[00:02:55] Speaker:
+Hey. How's it going? Good. How are you? Good. Good. Good. You look great. Oh, I think you too. Oh, yeah, here you get to this one for me, hello.
+
+[00:03:11] Speaker:
+Yeah, she's the one that gave me shoe we're working on. So she just prevent a system administration, which is like, you know, she's kind of like the, you know, like the computer admin for the software that is used in the non clinical data collection labs.
+
+[00:03:27] Speaker:
+So that when they go collect the data, that's the system they use. So she was a system administrator of that one when we worked at the lab together in in Burian.
+
+[00:03:35] Speaker:
+And so we both know what the pain points are, right? We both know that why the why the system kind of sort of what we really need to fix, like what we want to see, and I was like, we should just make this make this prototype.
+
+[00:03:45] Speaker:
+She's like, yeah, you should have to show the data on the side. And so you're actually, I'm going to show you quickly when it's like we open it up.
+
+[00:03:50] Speaker:
+I'll show you what I did because I'm going to show this, I'm going to show this tomorrow to a friend of mine who works at a CRO who is going to lose his shit when he sees this.
+
+[00:04:07] Speaker:
+So here is the, okay, so it's called study monitor. This is just for one right now. Oh, I know up to it, so you can basically like any of the studies that you've selected.
+
+[00:04:17] Speaker:
+It'll show, it'll show all the data and like right now you can't see the data like this in the system.
+
+[00:04:23] Speaker:
+It's like you go it's tables and you see them on tables. You don't see anything that it was showing hematology and clinical chemistry and everything before.
+
+[00:04:38] Speaker:
+Anyway, it just shows like a summary. This is all mock data, but it's just to give them an idea of, like, look, and then you can also even write up the final study summary, which, I mean, that's much shorter than is but then you can actually save it and yeah cool yeah and you're doing that together now
+
+[00:04:59] Speaker:
+yeah she's given the idea and so I was just I was I was adding some pictures to you as well I mean your teacher a little bit AI huh I am trying to yeah it's a little bit yeah I'm trying to yeah so I'm trying to figure out how to Amazing.
+
+[00:05:15] Speaker:
+Honestly, it's the most amazing experience you can have yeah, yeah, yeah, honestly, you know, you're still early if you Yeah, good fear is like an amazing teacher.
+
+[00:05:24] Speaker:
+She knows everything. Yes Yeah, I don't know yeah, there's definitely a lot of applications where it would be helpful and useful in just different ways And yeah, yeah, if she can get like Provanis The company that owns it is instant.
+
+[00:05:44] Speaker:
+Yeah, it's instant and they have basically bought up the other Competitors, and so if you could develop something that works with them for like AI Ground breaking only at least in our fields The only thing is like, you know if like a computer program is like deployed already and you cannot access the
+
+[00:06:06] Speaker:
+files anymore Then it's kind of okay, then you have a problem Well, maybe you were right because they had API.
+
+[00:06:14] Speaker:
+But so what? So OK, so I spoke to a couple of the labs when I was at the AC team meeting in November and what they had said, because they used Pervannis.
+
+[00:06:21] Speaker:
+And so they had to work with a team of people who basically set up an API and inbox like in between.
+
+[00:06:29] Speaker:
+So you have Pervannis and then you have this middle thing and then the actual thing that's requesting the access. So setting this like middle ground up where they do the like API requests and all the OK like you can get this data is done through this middle ground sandbox and I don't know how they do
+
+[00:06:46] Speaker:
+that yet but with all the AI as long as they have an API you know and if you have some kind of documentation oh they have plenty of documentation and then you can feed an AI you know the only thing is like if somebody doesn't want their software, for example, like a dope Photoshop, you know, they don't
+
+[00:07:15] Speaker:
+want someone to access them, you know? Fair. But I think in the case of Provantus here in the use case that we're using it, they would want the clients to be able to see because it will make from a much better user experience.
+
+[00:07:28] Speaker:
+And then probably additional labs would then want to be like, yeah, Provantus has this cool feature to visualize it. There's really no one else that's available to offer it anymore.
+
+[00:07:36] Speaker:
+It doesn't really matter. they could, they could just make it like totally shitty, but they don't have to. Yeah, and people who use Kubernetes, like if you don't have any other choices, so yeah.
+
+[00:07:45] Speaker:
+So this is the rest of the issues that are like things that people regularly want, regularly complaint about regularly, you know, and we're just going to have some just in the quicker way would honestly be like amazing.
+
+[00:07:59] Speaker:
+Yeah, yeah, so it'll be another, it'll be a side, It'll be one of one of my side hustles. Yes. Cool.
+
+[00:08:08] Speaker:
+I like hustle, but you know, it's just, I mean, it's a very like specific thing, I guess. Yeah. And say I, I mean, nothing is really a hassle.
+
+[00:08:17] Speaker:
+It's kind of like, if you know, if you know the subject and it's kind of like you just have to prompt it all the time.
+
+[00:08:24] Speaker:
+Yeah. You know, it's great. Right. For you. After a couple of days, you know, it's great, probably. Yeah. Okay, so I think what I may have done, I think I pulled up, I think I may have lost track of the most updated version of the community.
+
+[00:08:41] Speaker:
+Is it, is the one, is it my report yours? It's on mine because I couldn't yours. Okay. I couldn't upload it to Versel with, with if I don't have access to the GitHub, maybe I was stupid, I don't know, but that's why I put it on CD like the one I gave you.
+
+[00:08:58] Speaker:
+Okay. Okay. All right. I think what I did I pulled up a older folder one because there were some issues in it that I know we're already fixed and yeah.
+
+[00:09:09] Speaker:
+So if it's just that one and you know what I was thinking because you were talking about like if you were to have, you know, say something like this right that has, well, you have America, they have this set of rules and you got like Europe and they got this set of rules.
+
+[00:09:20] Speaker:
+Like then you make the whole thing as strict as the strictest region. So why not just make the whole thing as like no that would not be a good idea why because I mean the thing is you you are actually lucky to be in a in a in a country where the where the rules are so low because it's not illegal to
+
+[00:09:43] Speaker:
+to join an American community okay okay you know but if there is however however you're right in one thing like if we if If we develop apps for science people, you know, those apps, they should be possible to work on the most strictest laws because they have to apply, they have to use the strictest laws
+
+[00:10:12] Speaker:
+because their patient data, for example, you know, but if a lawyer, if a lawyer, if a dentist from Germany joins your community or the science community, you know, then, you know, it's much better if he can just post his videos, if he's on a live call, you can record it, you know.
+
+[00:10:33] Speaker:
+And afterwards, he can't say, oh, please delete my video because that in German, because it was a American server that he signed on to.
+
+[00:10:41] Speaker:
+Yeah, exactly. And you're, he paid on a Even if he doesn't matter, I got the rules applied like if his data, no, he's a German.
+
+[00:10:51] Speaker:
+No, imagine I'm in Iran. Okay. And I'm Iran doctor. And now I'm in a life called with you. And you don't wear it.
+
+[00:10:58] Speaker:
+You don't wear a hat singing on your hair. It's like, yeah, it's not illegal. You know, it's like, yeah, it's not punishable.
+
+[00:11:06] Speaker:
+There's no problem. It's easy. I see. So that it's only if the data were being served in that country only if I if I make a platform if I'm the owner of the platform like you are the community it's true but if I'm like the owner of the community and I record all your data you know then I have to give
+
+[00:11:30] Speaker:
+you the option to opt out however I don't like for example So if I have a bottle of whiskey on my table and I drink some whiskey here and your daughter is watching as well, that is no problem because in Germany we don't have to hide that we are drinking alcohol.
+
+[00:11:49] Speaker:
+No problem. Yeah. I mean, that's the same. You could not sue me because your daughter saw me advertising alcohol. Okay.
+
+[00:11:58] Speaker:
+Okay. Yeah. the ins and outs of like where the data live, where the people are, what it's served. I don't know, but I'm getting a sense that it's based on, purely just I guess based on where the actual service is being provided from.
+
+[00:12:13] Speaker:
+You only have to follow United States rules with a United States community and I can work on the United States community as a German.
+
+[00:12:25] Speaker:
+I can make advertisement for you, we can do whatever, you know? But I cannot hold it officially. You are the owner of the community.
+
+[00:12:34] Speaker:
+Oh, that's fine, man. You have makes a rules for the community. Oh, so we use agents. Okay, okay. And everything else would be impossible to do.
+
+[00:12:46] Speaker:
+I mean, imagine like somebody from, I don't know, like China, you know, otherwise you have to think about every regulation in the whole world and what's absolutely legal there it is yeah of course in China Russia as well but don't they have like other rules going on yes they have like other strange stuff
+
+[00:13:10] Speaker:
+but like you don't like it's like for example, I think TikTok is banned in some countries. Yes, it is. And yeah, and so yeah, you don't have to, so otherwise it would be impossible to make any kind of community, especially in like something like a science field that you just have to make stuff out of
+
+[00:13:36] Speaker:
+your perspective. Yeah, but they're like, you know, yeah, I mean, they're so, yeah, I guess they're, I mean, And there are a lot of, I guess, not that I think about it, they're American.
+
+[00:13:45] Speaker:
+I guess there are a lot of American scientific societies. There are global ones. Yeah, a lot of them are actually based in America, not that I think about it.
+
+[00:13:54] Speaker:
+Yes? Yeah. Okay. All right. You don't have to worry about, like, drum and loss or something like that. Okay. Well, what's here?
+
+[00:14:05] Speaker:
+I'm sorry. I'm sorry. I'm sorry. I'm sorry. Okay. Well, good. Yeah. So, um, yeah. Thanks for sending the outline. Do you want to do you want to do that?
+
+[00:14:18] Speaker:
+Yeah. I mean, I think we should start with your community, because I think it will be easier to set up.
+
+[00:14:23] Speaker:
+The only thing is we need what we really need is a domain name, and then we needed the very first, because the domain name.
+
+[00:14:30] Speaker:
+Yeah, let's do okay. All right. Okay. Let me get some do a little bit of a little bit of active research care for a moment.
+
+[00:14:38] Speaker:
+Yeah. If I can open this, I'll share my screen just a second. Uh-huh. I'm going to share that right there.
+
+[00:15:03] Speaker:
+All right. I'm going to optimize this, don't worry. It's the same at the same time. Yeah, see what I also check for names like Yeah, okay, no we can And then we get this I won't let me get this You know what I've noticed do you notice this font here on perplexity?
+
+[00:16:25] Speaker:
+It looks different It's like looks like that age and time is in Roman. Do you know talk about yeah, yeah, yeah, yeah, yeah, yeah, it has some weird spacing in it Please check out our notes and get creative in finding possible domain names for the science community.
+
+[00:17:06] Speaker:
+A little bit some interesting stuff, hold on. Okay. I don't have the screens that are covering, I don't see what you got there.
+
+[00:17:49] Speaker:
+No, I have to share it first, wait. Okay. So I'm sure mine. So I asked the expert community people. You're kind of the circle of excellence.
+
+[00:18:04] Speaker:
+I know what you mean, is the expert network. We should really just call it an expert network. I mean, the name's taken, but like at least only on one platform, but yeah, you call like the expert, you know, network of excellence.
+
+[00:18:19] Speaker:
+Yeah, so this one I mean you have to say I mean we just we generate a science Compliance engine Not rigorous.
+
+[00:18:28] Speaker:
+Yeah, I know D. A. B. T. Adote. I'm not going to use you know talk to validator. Nope Science interact intersection the top cloud regulated intelligence.
+
+[00:18:39] Speaker:
+Yeah, I want to be careful. I kind of like clear. rounded labs kind of sounds interesting. Grounded labs sounds like a developer studio.
+
+[00:18:47] Speaker:
+Like if I saw that as a scientist, I wouldn't think that has anything to do with me. So we need to be careful, like I said, like I want to use words that will indicate.
+
+[00:19:00] Speaker:
+I want that you say that inside of this one. Let's see if you can, if you can talk, if you can, Okay.
+
+[00:19:10] Speaker:
+Because it can immediately generate new ideas. Okay. Yes, sir. I'm ready. Okay, gotcha. There's still a- There's still a How much blood do I have to That's definitely an album blood.
+
+[00:19:27] Speaker:
+It doesn't look good on you. Where's the other one? She probably fell in my bowl. She probably did. Okay, sir.
+
+[00:19:33] Speaker:
+Here it is. I'm watching this movie that we put on in the book. background and um these girls made really bad decisions like throughout the whole movie and they're still continuing to make these bad decisions and we're like yeah I'm not getting no wonder you're in a pickle right now yeah I will put the
+
+[00:19:52] Speaker:
+here we go continue this chat. So you're watching other gods dramas. I'm told. Well let's say you know what they did they climbed up this thousand foot uh what utility pole?
+
+[00:20:03] Speaker:
+It looks like a pole like some utility I thought it was a movie about climbing, but they climbed to this really light high pole and um, I don't know, yeah, I died in the beginning and now I think one of the other girls is dead.
+
+[00:20:15] Speaker:
+I don't know. Yeah. Oh, no. Yeah. Yeah. That's what they just showed. All right. You see that. And they didn't actually say why they were even going up there to do all these things.
+
+[00:20:27] Speaker:
+So it's. You see the worst body? Vultures, flew into the scene, and here we go, OK. I am warned. Yeah, you have to get in your shower so I can't see them.
+
+[00:20:40] Speaker:
+Yeah, I'm going to show them in a second. So as I find, if I'm typing in an initial prompt, if I know that someone's watching it, the prompt's not going to come out the same.
+
+[00:20:53] Speaker:
+But maybe we'll see. Maybe I just have to get over this. All right, here we go. Okay, let me see what that does.
+
+[00:21:40] Speaker:
+Is that Tweety on your pole over? Say what? Is that Tweety? You know, Tweety? It's the birdie. Tweety bird? Yeah.
+
+[00:21:49] Speaker:
+Like, Tweety. Is that Tweety? Oh, no. Oh, no, no, no. This says boats and hoes. Oh. Okay. It looked like he was selling this because it was one of the shows that he put on this weekend and so we bought some shirts to support him.
+
+[00:22:11] Speaker:
+I guess you can't really tell the wording okay let me see what it came up with here. Okay 20 globally brandable multi-lingual community names to evoke innovation connection.
+
+[00:22:24] Speaker:
+I only can see myself. Oh, my bad. Okay, one second. I'll fix it. Oh, because I did the window. I didn't share the, I'll present something else.
+
+[00:22:34] Speaker:
+Share, screen. There we go. Is everything? I'm still seeing that. Okay. Perfect. Okay. Okay. So we have these sound like drugs names, Lexora.
+
+[00:22:50] Speaker:
+That sounds like a pill. Yeah. Sinvia. Yeah. Conversia. That's no. No, there's lingora. That no, no. Virion, Nexara, Avra. What are these words?
+
+[00:23:02] Speaker:
+I know. Viray in Luma, Colora. Oh, you know what they're doing? Because you know how when each time you translate the page, the actual community name will also change.
+
+[00:23:13] Speaker:
+And so I remember when I had first made it like Pangaea and I put dots in the middle of it.
+
+[00:23:18] Speaker:
+I translated it to French and it wrote out all six words of like what Pangaea actually stands for and so that's when I realized okay we have to have something that like we need yeah we I know that you we also like for example for something like um skills you know like the word skills mm-hmm not be translated
+
+[00:23:37] Speaker:
+because skills is like inside of AI has a meaning, you know, and you know, if you translate skills to French, and you're talking about Claude.
+
+[00:23:47] Speaker:
+Yeah, it's not a, it's not like a Claude. I don't know if she's saying like a, like a, island, whatever, or something, or something like something that would actually translate to that word, but that we have, we have to have like a blacklist and those those words don't get translated.
+
+[00:24:06] Speaker:
+That's a good point. That's a really good point to make. Okay. We didn't have to give like the option like up for our members if they make something in quotations, for example.
+
+[00:24:18] Speaker:
+Okay. That it doesn't get translated. I'm sorry, I'm sorry. Yeah, that's the worst words that don't get translated. And then we have if user enters content in quotes, it will be as it is, like not translated.
+
+[00:24:38] Speaker:
+Yeah, not translated. Yeah. Yeah, I don't like any of these ones. Yeah, something that it's, um, yeah. I'm not going to execute this in here.
+
+[00:25:03] Speaker:
+What else? I'm going put some in notes actually. That way I can have on my phone. Okay. So I'll keep on waiting until it's near.
+
+[00:25:24] Speaker:
+Okay. Okay. They're the same ones. Huh? No these names are the same wrong try try the chat I I put on or try new chat okay I mean this was the one that oh wait was it no no yeah it was this was the one that that I got from you and a second oh no I didn't oh I'm sorry And then what did I say in there
+
+[00:26:10] Speaker:
+that I wanted to say here just copy paste Yeah, so I'll have one monitor connected at the moment. So this is yeah, my one screen is my one screen No authentic historical language like old English I think this is the old conversation.
+
+[00:26:58] Speaker:
+Yeah, oh here he's a new one But they become a little bit complicated, oh. I mean, it has to be, they have to be accessible for everyone from like, and they have to be very international, you know, like that's the thing.
+
+[00:27:23] Speaker:
+Like somebody from Italy and France and United States have to understand the word. And it has to be understood by someone like a nurse and someone like a doctor or someone like a toxicologist.
+
+[00:27:36] Speaker:
+toxicologist. You say like life sciences AI like just I mean I know it's so like simple but sometimes I guess it you know maybe over complicating yes over complicating things.
+
+[00:27:51] Speaker:
+I have one but I think it was medical medical it's not good And something like AI science experts, you know, science experts dot AI something like that science experts dot AI.
+
+[00:28:11] Speaker:
+Is that available? Probably not available, but but I think something like this is a good name. If that's available, but awesome.
+
+[00:28:21] Speaker:
+I don't mean it just says it's a camp on the server Supposedly, yeah. Science experts. Yeah, because I mean it's broad.
+
+[00:28:27] Speaker:
+And then science could be really like any science could be Computer science could be life science could be. Okay. Yeah.
+
+[00:28:35] Speaker:
+Okay. I just checked. Go to any. Science experts. Yeah, take it. It's available. It's amazing. That's a really good name.
+
+[00:29:01] Speaker:
+Yeah, science expert.ai. That's amazing name. So, so how happy? Where did you go so you can see if it's like actually available or not?
+
+[00:29:09] Speaker:
+Okay, sure. Yeah, I don't buy it there. I give you a cheap option. Okay. Because you have like the first is a second year costs $170.
+
+[00:29:23] Speaker:
+Okay. Yeah we will I'll keep these in so we'll know what that, but that, um, that, that's across from the domain and I agree, um, what's the name?
+
+[00:29:39] Speaker:
+Uh, spaceship, I see my second question. Oh, wait, I was a bit blurry. Pardon me? Today's a bit blurry, your background.
+
+[00:30:09] Speaker:
+I cannot read it. See it. Yeah, you know what they hear. That's a setting on the, that's just a setting on the video.
+
+[00:30:15] Speaker:
+Apple turned it off. I don't know. I'm telling you to keep it clear. Okay. Yeah, science. Yeah, that's much cheaper.
+
+[00:30:46] Speaker:
+What's it there? Oh, wow. No kidding. So how did you find like one that's just less expensive than the first one?
+
+[00:30:53] Speaker:
+Yeah, just deep research, but I did before because I bought a couple of domain names, so I know where it's the cheapest.
+
+[00:30:59] Speaker:
+Okay, if you go on spaceship.com, I can also do it, but you can buy it, it's, you can, you can do it.
+
+[00:31:07] Speaker:
+I mean, other one, yeah, however, we'll. Yeah, yeah, however, whether it's a. Yeah, either want to say it's fine. It's fine.
+
+[00:31:17] Speaker:
+Let me. Thank you. Okay. Can I turn up in spatial? Spaceship and I'll turn on my blur. You know, it's like I'll show you.
+
+[00:31:28] Speaker:
+So I think this should try. Do you want me to buy it or you want to buy it? If you buy it, how can I send you?
+
+[00:31:38] Speaker:
+Like, so do I need your PayPal, right? Yeah, I just want to make sure we keep it like whatever, even if you get something, then I want to like send you I mean, we share anyhow, that's a matter, like it doesn't matter.
+
+[00:31:49] Speaker:
+Yeah, I know, I just want to be, so we, like, both split it, I guess, so we can, so I don't want it to be, like, all, like, just one, you know, like, you buying all the stuff and no, no, but we oppose anyhow, it doesn't matter.
+
+[00:32:02] Speaker:
+Okay, here's background, so I'll take that off there. Clear now? Huh? He's, I, I, background. Okay, okay, hold on. um oh no rush i was just i was just saying that i unborted yeah yeah yeah yeah yeah no i can see yes i don't mean i'll say okay yeah uh smells experts don't mean experts throw experts.ai
+
+[00:32:30] Speaker:
+science experts you have to make sure it has to you? Yeah, I got it. It's $70. Yeah, no, it's $58.
+
+[00:32:41] Speaker:
+You have, I think it's $1. No, the yours said like $170. Oh, it is a pound, though. You're in a different currency.
+
+[00:32:46] Speaker:
+You're a euro. It's euro. You're okay. But mine gives it in US dollars. I'm going to share Okay.
+
+[00:33:02] Speaker:
+We minimize this. I'll just put here. That's a really amazing domain name. There really is. Okay. Thought AI. Yeah, take it.
+
+[00:33:23] Speaker:
+The steeper the roads, probably is the same. Just continue. Yeah. Oh, that was for a new part, okay. They have to sign up, all right.
+
+[00:33:47] Speaker:
+Oh, sorry, sorry. Awesome, that's an awesome name. He's here now. Okay. What the hell? So great. That's so loud. Oh, like I'm right.
+
+[00:34:24] Speaker:
+You know, you're dogs or one mom? No, I don't know. I was saying I'm getting my, the TV was very, very loud.
+
+[00:34:32] Speaker:
+I just had to turn it off. They were like screaming. I'm just getting an email. It sent me a verification.
+
+[00:34:37] Speaker:
+Let me see if we can find some of the shots here. Here we go. Space ship. Okay. Three. Three. Three.
+
+[00:34:53] Speaker:
+Three. Three. Three. Three. Three. Here, I'll add this on there. Don't I have Apple? No, I guess not. This isn't Safari.
+
+[00:35:16] Speaker:
+Stop cheering for a bit because you're, Okay, I'm gonna stop hang on. I'll stop it. Hang on a second. Let me find our window.
+
+[00:35:28] Speaker:
+I didn't lose it. I just, It's European language Where's the f****** window you adopt to the German language? I just don't know where it is now though.
+
+[00:35:48] Speaker:
+Yes, we had an issue before I'm okay. No, I'm sharing You have to be in here because I see the red thing this here oh here tub hey okay so click on the thing okay so I'll have to just click on it all right so I stopped sharing this and I'll let me go that dummy okay it was good for you pardon me the
+
+[00:36:25] Speaker:
+holiday was good for you oh this weekend yeah oh yes yes no I love I love going to I love going to Mississippi, it's like yeah, they're a lot of fun, it's a lot of fun and then yeah There's like always music and and then you know, it's like the creek back there and so it was really nice You can you just
+
+[00:36:42] Speaker:
+go out and like go for a walk along the water or go like rocks or something and it's like I was gonna look totally relaxed Uh, here wait, I got sad distracting Okay space.
+
+[00:37:07] Speaker:
+Oh, here we go. Okay. Check out. And I'm so happy that we won that thing. Oh, my God. Okay. Me too.
+
+[00:37:20] Speaker:
+Me too. I remember I was thinking like I think I would have felt really depleted if we had come second only because I knew that we had like we'd like down the shit out of it okay and then and then Alexander's was good but then like you and initially I thought that she really was gonna like you know possibly
+
+[00:37:45] Speaker:
+win but then you pointed out all the all the things like actually there's some things that she doesn't really have there so I just it yeah but I mean I think for the success of our stuff it is amazing you know I mean you know if we are in their in their channel and we can say we want an NAD and hackathon
+
+[00:38:14] Speaker:
+that is really good you know I'm so proud of us yeah me too okay here we go I don't know.
+
+[00:38:23] Speaker:
+I don't need anything else. Select the tax. Oh, actually, this may, if it's going to be for business, I'll leave.
+
+[00:38:37] Speaker:
+It's optional. I'll leave it for the time being. Two. Two. I don't have a fact number. Oh, sir, I, I had the wrong screen, and it made some things disappear.
+
+[00:38:59] Speaker:
+Ah, three United States, two. Save. Save. No number. I think I'm putting it in the wrong way. Let me get my shoulder.
+
+[00:40:07] Speaker:
+Remember, I almost started taking so long. I think I got the number wrong, I didn't put it in the right way.
+
+[00:40:43] Speaker:
+He said to get that good for me. Did I see more stress last week and more relaxed now? Is it?
+
+[00:40:59] Speaker:
+I don't know. You didn't look stressed, but now you look extremely relaxed. Okay, here we go. I mean, there's a lot of, yeah, it's just, it was, it was very, very, um, it was good.
+
+[00:41:19] Speaker:
+Oh, it was very good. Oh, that's why? Because I put them in my pocket and then it's okay. Got it.
+
+[00:41:58] Speaker:
+There we go. It was added and painted. Wait, there's some extra info before you can continue. Oh, domain contacts. Okay, I got to put them in.
+
+[00:42:09] Speaker:
+here we go it's just doing it's it's really worthy thing okay I also said Okay, let's do a lot of those, see my items, I'll kind of select it.
+
+[00:43:31] Speaker:
+Okay. Oh, invoice details. Okay, I got it. That should be good now. Let's see. I better not get charged twice for this.
+
+[00:43:55] Speaker:
+No, you don't. No, because I keep hitting pay now. And my info is in here, and then it does a circularly sorely thing, and I see no error messages.
+
+[00:44:07] Speaker:
+Don't you get like an email or like a notification on your phone when something is paid? I mean, you know, I think it's my own.
+
+[00:44:15] Speaker:
+Oh, here we go. Yes. Sir, no, my bank actually, they're like, hey, was this you? It's like we tried. Okay, yeah, let's go retry it now.
+
+[00:44:23] Speaker:
+I just blocked it for security, you know Because at something good fear doesn't usually do buying domain X. Yeah, yeah, exactly Exactly, but it's still not Running through though I wonder if it's six.
+
+[00:44:49] Speaker:
+Oh, I'll wait for a second because I got that email just two minutes ago and then I said yes I authorized it but I may have done this one.
+
+[00:45:06] Speaker:
+Oh I have to click it. Yeah, I just keep staying at this, sorry, it keeps staying at this, don't worry, I can just buy it.
+
+[00:45:51] Speaker:
+Okay, and let me show you what it's doing, hang on, I'm going show you because hang on, So put everything in here.
+
+[00:46:01] Speaker:
+It's all good. I clicked all this stuff. Yeah. And each time what I got, I got an email from my bank.
+
+[00:46:08] Speaker:
+They're like, Hey, verify it's you. It's okay. It verifies me. Yeah. And this is like the fourth time. But let go pay now.
+
+[00:46:20] Speaker:
+and press only a press and yeah it's a circley thing yeah and then something I'll briefly show up there and then it won't then use a little brief pop-up that appeared and then it stays here and it doesn't do anything else yeah I'll stop sharing everything yeah it doesn't seem to be it doesn't seem to
+
+[00:47:10] Speaker:
+be doing this for me. But if you get it on your end, let me know how much that must, let me know that it's no send over that to offer it.
+
+[00:47:24] Speaker:
+Just a moment. Yeah, well, good. Well, the sun's out. Yeah, I haven't seen sun for a long time. So you haven't seen sun for a long time?
+
+[00:47:36] Speaker:
+No, it's temporary in Germany. We don't have sun. We have You know, I was trying to get my Amazon bedrock setup today on AWS, and it's still giving me that same account validation error or something like when I'm trying to use the AI models.
+
+[00:48:20] Speaker:
+And yeah, so it's been like a week or so, but I sent a, I took a screenshot of it. And like there, there's something that isn't set up properly in there and I just need to get it set because basically I'm going to use that so that I can upload like these These files that I can't just put on a regular
+
+[00:48:41] Speaker:
+clawed or whatever I can't just have it out and open. So I want to put them as three but then have an AI access it from my Amazon and the files are all there.
+
+[00:48:50] Speaker:
+Just the AI is not activated to do it and it's, you know, I will have to google science experts and see what comes up to me.
+
+[00:49:58] Speaker:
+Science experts at AI. First, the intersection of leading AI researchers, application of AI at the time of the, Oh, no, it's not even that thing.
+
+[00:50:08] Speaker:
+Someone has like slight.AI is nothing. We're like taking the first one. Oh, Yeah, there's nothing. We're good. Did a market back to you about when they're doing, uh when they're going to go right I figured no okay they have no idea for whatever all you say let me know yeah yeah I'm just checking why
+
+[00:50:38] Speaker:
+I don't hey so I think that Mark's gonna give away a Mac like a Mac Mini and I'll say oh yeah that's what I think he's gonna do because based on the way he described it It's going to have like the whole Mac mini set up everything else that up for you.
+
+[00:50:55] Speaker:
+Here you go. Give really good feedback and we'll send it to you. So I'm going to be like on that.
+
+[00:51:00] Speaker:
+I mean, honestly, like, the is a chance to win are extremely high with this community. I mean, I want. Like X times what I pay for it, actually, it's like really lucrative to be in this community.
+
+[00:51:17] Speaker:
+Very funny. I like being called an antidote, that's a very, I like that, that's a very special term in toxicology.
+
+[00:51:31] Speaker:
+It's like we're going to fix whatever the f*** you did here, we'll fix it up. Why, I think they have an issue right now is a spaceship website.
+
+[00:51:44] Speaker:
+Okay, so you're seeing that same thing too? No, no, but I can't log in and I don't get them What's it?
+
+[00:51:51] Speaker:
+It's called like are you gonna be here? What are you going to VPN right now? No, no, no, no Sometimes I miss me up at the password.
+
+[00:52:42] Speaker:
+Oh, that's interesting. Did you do your touch thing? No, but it looked like yep so it was science experts yeah science experts dot AI just told the microphone I was talking to the microphone you know it's for me you know like if you do it I know I know I know I know it's very I'm sorry.
+
+[00:54:16] Speaker:
+Thanks for the day. Okay. Oh, shit. Hey, said I ordered it space. What order summary? I got a order summary from spaceship.
+
+[00:55:16] Speaker:
+But didn't work, I think. Okay. Well, hang on. Let me see what it said, because I just got an email that said two of them.
+
+[00:55:24] Speaker:
+One, one, three, four of them. Yeah, because they didn't work. Okay. Okay. Order. I don't want to fail. It failed.
+
+[00:55:32] Speaker:
+Okay. Yeah, I feel okay. Why did it feel though? Why? Okay, I signed up. Come on. Oh, hey, here's a order summary.
+
+[00:55:46] Speaker:
+Almost. I'm done. You. You. What? I'm done. I'm. I have. Hello. You finished it. Oh, good job. Yeah, yeah, I'm just like I'm putting in my details and that's it.
+
+[00:56:01] Speaker:
+Okay. John, I call you back one second because I have to buy my mobile phone. Okay. Okay, we got it.
+
+[00:59:43] Speaker:
+Oh, nice. Okay, awesome. Good. Good. again. So now what we need is I'll show you first information here. Oh, it's exciting.
+
+[00:59:56] Speaker:
+And this is an amazing domain, honestly. So 140, so six, four, oh my god. 70 70 right and yeah now what we need is we need an email address of that domain so we need to host it somewhere okay so so I'm not sure like with this AWS if it is hosted that they are, maybe they also do the domain thing here
+
+[01:00:36] Speaker:
+. That is cool. I mean, I think you can do the domain anywhere. I think it can be from anywhere. It's just like question of the name service we are using.
+
+[01:00:44] Speaker:
+Like we have to tell the name service what we're doing. However we need. We need name service. Sorry, like, what do you mean?
+
+[01:00:51] Speaker:
+Like, when I, like here, I show you, you can see this one here. So let's say, OK, we have all products.
+
+[01:01:02] Speaker:
+domain. So those are the domain names which I have in here. Okay. Library, I would just have to check where they are.
+
+[01:01:20] Speaker:
+I can see if my Google business domain can support an traditional domain. Yeah, you want to get me like as the Brazilian users, you know, then I can just see if it can like support another domain that we can add this one in there to show that that we own it.
+
+[01:01:35] Speaker:
+Yeah, domain manager. Okay. Let's show the other one. Yeah. So it's the same as I always do it. You see all of them.
+
+[01:01:50] Speaker:
+Oh, I already have. That's not very smart Because like you you thought about these things now knowing in advance. Okay, these are gonna be like big-time People are gonna want them later.
+
+[01:02:04] Speaker:
+Okay, so then if somebody so unless they okay somebody comes like hey I really want this website to say you own it like can they email you?
+
+[01:02:11] Speaker:
+Is there a way that they can like it? As the domain owner? Because let's say you're not using it right?
+
+[01:02:16] Speaker:
+Let's see you reserve it. Yeah. Yeah. I show you how usually it's done. It's like easy No, it leads to men's.
+
+[01:02:29] Speaker:
+Like here. I'm like loving notebook alarm right now. Yeah. It's amazing. Like it's seriously like. Okay. Because so there's an I and D that we're writing at work right now.
+
+[01:02:58] Speaker:
+And whenever you have, you know, you'll have like you're actually like drug-related stuff. But then you have you'll have publications that they will have shared or included in their pharmacology summary, say, like, okay, well, the drug, you know, does what it's supposed to do.
+
+[01:03:14] Speaker:
+This is what it does. And here's the research that supports that this is the mechanism, whatever. And so I just got a bunch of those papers.
+
+[01:03:21] Speaker:
+And because they're probably available, I can just put them to notebook LM. And like, the way that it describes some of these things is just, it's so, it's just so much.
+
+[01:03:38] Speaker:
+I sent a couple of PDFs today to a colleague of mine. She's a senior colleague. She's been working in drug development for 17 years and has been done it all by hand.
+
+[01:03:50] Speaker:
+And so a lot of this stuff is new for my group. But I've been slowly like, hey, I have someone to show you.
+
+[01:03:57] Speaker:
+Let me show you something. I'll see a little video recording and I'll show them a walk through something. I'll show them like a, I'll send them a PDF of like, hey, this is like the ICH guidance summarized by like Nopakallan.
+
+[01:04:06] Speaker:
+And it does such a good job of like, because I read through to my shit. And I know that they're thinking the exact same thing.
+
+[01:04:14] Speaker:
+So I just think that she doesn't really know what to do with that right now. Mm hmm. Yeah. But I think honestly, honestly, with your knowledge and with the science background, I think you can make so much money in the next couple of months.
+
+[01:04:27] Speaker:
+It will be completely nuts. Well, I think we will and yes, we will, yeah, but look at look at I like like here I have this domain, for example, and then open a new tab and then it's just like this, you know, they do everything for me, you know, you just, you just have to click fire, like what, what,
+
+[01:04:49] Speaker:
+what made you like even start doing that, like how did you come to know like, oh, let me get domain, then people are going to do it for me, and then I'm going to contact you.
+
+[01:04:59] Speaker:
+2004, I was like really good in SEO, like search engine optimization, and the way to do it is like if a website, like Google is like, it's a robot, right, yeah, it's like a crawler.
+
+[01:05:16] Speaker:
+But Yahoo, Yahoo, Yahoo, Yahoo, Yahoo was like, like there were editors working for Yahoo, you know and they were actually looking at a website and if there's eight content you had to pay $300 or $900 to Yahoo and then Yahoo yeah because Yahoo was the number one Google was the number two in the beginning
+
+[01:05:41] Speaker:
+I mean Google was for a while Google sought okay every domain name that is listed on Yahoo is really good.
+
+[01:05:54] Speaker:
+So if you get a link from a website that is listed on Yahoo, then you, then your, then your website is great.
+
+[01:06:02] Speaker:
+Okay. So that's kind of, so what we did, we bought, we, I had a developer friend and he programmed a robot.
+
+[01:06:11] Speaker:
+And that went through Yahoo, Nate, that day and night all the time. And it was looking for domains which were expired, you know because you have to pay every year and then we got an email and then we bought the domain names okay you did and we had like we had like two thousand domain names like really
+
+[01:06:33] Speaker:
+a lot so great so many do you have like do you still keep like getting domain names for no not not many I only have like 50 or so.
+
+[01:06:43] Speaker:
+Yeah, but that's not a lot. Okay, well, maybe yeah, maybe it's like the level that you normally work, but like 50 is a lot for anyone who owns zero domain names.
+
+[01:06:54] Speaker:
+Yes, but domain names are going to do that. Yeah, but with domain names, most people in the world don't own zero and then there are a couple of people who own like two domain names or three and the other people own like 1000 domain names.
+
+[01:07:09] Speaker:
+They are kind of like in the game for that stuff. Okay. So for that, I'm very small. Like I'm not a, I don't deep research on other subjects.
+
+[01:07:21] Speaker:
+It's just because I'm in the AI space right now. There you do. There's so many good domain names which are available.
+
+[01:07:29] Speaker:
+And I'm like, yeah, for example, I mean science experts dot AI. I mean, that's amazing. Okay. Okay, that is a man.
+
+[01:07:36] Speaker:
+I'm so happy that we got this domain right now. And by the way, you need some of your PayPal info.
+
+[01:07:40] Speaker:
+Yeah, yeah, the problem. And you know, like, I'm gonna forget. AIS experts also really good. AIS logistics expert I got.
+
+[01:07:52] Speaker:
+AIMedicalexperts.com I have. So it's like I have so many like really good. These are good. Yeah, those are like, those are like good.
+
+[01:08:03] Speaker:
+Yeah, yeah, yeah, yeah, it's a I revenue experts, you know, yeah, so they have an expiry date. Like, do you have an option to be like, well, I want to keep it past.
+
+[01:08:14] Speaker:
+Yeah, you don't have to do anything. Like, say, stay on you. Yeah, but it's just like, you know, it's just like a sight thing.
+
+[01:08:23] Speaker:
+It's more like I buy them for myself, you know? And then I think, okay, maybe I want to use it.
+
+[01:08:30] Speaker:
+I'm trying to get you around. And a .com domain name is like .tip, it's like 8 bucks. Yeah, the .com, yeah, but we, yeah, the other day, it was only like $5, you know, like my job once is $5.
+
+[01:08:45] Speaker:
+Yeah, that's in good prices. Yeah, but it's amazing. I love it. I'm going to share this with you. I stopped sharing, yep.
+
+[01:09:03] Speaker:
+That's fine. That's fine. I just wanted to get this one to be back. How do you find on your Sunday quest?
+
+[01:09:31] Speaker:
+Do you use your click CD email for? Yeah, you can use it. Yeah, you can use it. There we go.
+
+[01:09:44] Speaker:
+Okay, so this is you. Wait, I don't see I don't see. Yeah, yeah, looks great. Yeah, there's no there's only one.
+
+[01:09:54] Speaker:
+This is at 60. Kristi. Okay. Lixie dot e at gmail.com. Now this here. So this said. This is you, right?
+
+[01:10:03] Speaker:
+Yeah, with me. Yes. Okay, sorry. Okay. Awesome. Okay, so what is it, uh, what's the conversion rate but so what is it, what did you, I just want to send you, what do I need to pay, what do I send, what I need to send you.
+
+[01:10:22] Speaker:
+What was the amount. It's easy. It told me in US dollar. Oh, you, okay, so there's one force of 70 US.
+
+[01:10:30] Speaker:
+Yeah, like one. 1737 U.S. Okay, I saw some 70 for you, okay? I'll send it to you. Here you go.
+
+[01:10:44] Speaker:
+More time. Awesome. Thank you for getting that. I don't know like any issue. Yeah. So we have our official domain.
+
+[01:11:00] Speaker:
+them. That is a badass domain. And I also like that we didn't really plan that. Yes, it was just like spontaneous.
+
+[01:11:11] Speaker:
+Yeah. Yeah. It was crazy that that's available. Like, you know, when I see my, like I really admire Mark for a lot of stuff.
+
+[01:11:22] Speaker:
+But Mark for his not being like sometimes he's really not creative. like, you know, like this AI, like his early AI doctor.
+
+[01:11:34] Speaker:
+What's the f*** is that? Like, like, it's like ad doctors, but you add the eye. So it's like really, yeah, eight out of years.
+
+[01:11:45] Speaker:
+But for domain names, it's like, you know, you have to be able to tell somebody who is drunk. And he has to go home and still remember.
+
+[01:11:55] Speaker:
+You know, and like this name is you have to print it on a paper and give it to someone because you you have to make like a lot of explaining when you tell the domain name.
+
+[01:12:11] Speaker:
+Yeah. Yeah. And you don't necessarily want to have just go on early AI adopters, but not that name is crazy.
+
+[01:12:19] Speaker:
+I mean, he was there like one year earlier and I'm like okay why would you I mean you know which did did give him cloud now now it's like that's his face like that that's his domain like we know it's early age or whatever the weirdness is it's okay like yeah no it's okay but in the beginning it was but
+
+[01:12:35] Speaker:
+in the beginning it was like I couldn't get the original what I wanted I just made one up say what you couldn't what like in the beginning he was like I couldn't get the domain name.
+
+[01:12:51] Speaker:
+I actually. Oh, he's original one. So I don't. Next up, let's on the letters. One minute. I will. Let's check it.
+
+[01:13:20] Speaker:
+If you have time for a moment. We're here. Is it actually got a little bit warmer? Let me show you something.
+
+[01:13:32] Speaker:
+So last night. So Courtney was here. She was washing the dogs. and then we're just like just like well okay you know my hair got a little bit long and I just wanted to be you know like like even it out and so just take this elastic and put it the other hair and pull it down to the end so it gets even
+
+[01:13:47] Speaker:
+and then just snip it off and then I just snipped it off and it made it even. Is that from Courtney?
+
+[01:13:56] Speaker:
+Yeah yeah this Courtney's hair from last night yeah we termed it. Do you cut her? No, no. She wanted me to do that.
+
+[01:14:08] Speaker:
+I didn't do anything outside of the question. I hope so. I hope that you wanted you to do that. Of course.
+
+[01:14:17] Speaker:
+What do you think? What am? What do I think? So, so, since we have the domain, And then we have the community.
+
+[01:14:31] Speaker:
+So how do we get that stuff actually so now that we have the domain. How do we get the domain to be the community address?
+
+[01:14:41] Speaker:
+Okay, so like the thing is we have to put the domain name either on. And we have to host it somewhere, okay?
+
+[01:14:58] Speaker:
+So for example, if we have to host it, like, if we, I show you, I'm still showing, right? You can see me as we know it.
+
+[01:15:07] Speaker:
+Yeah, yeah. So I click here, and then I just say, connect. And then I have the ms and custom name servers, you know, so if you, for example, if we go on Versel, you know, then I can put your name servers for yourself.
+
+[01:15:33] Speaker:
+Oh, yeah. Okay. Okay. So then you'll deploy this. Then we have. I just, I just typed in whatever Versel tells me is the name servers.
+
+[01:15:45] Speaker:
+Okay. So yes, it's okay, so this will be deployed anywhere like like your German server. I Just want to make sure Yeah, yeah, it's no problem.
+
+[01:15:59] Speaker:
+It's just like if you have a cell account or if you have a WS account You know, I both Did you want to you want to deploy it from yours like is is that the goal is that what we want to do is that is that the So if there's a US one and a German one, yeah, we can't both have the same domain, can we?
+
+[01:16:27] Speaker:
+No, this is you like we only use this domain for you but nobody knows that this is in my account.
+
+[01:16:33] Speaker:
+It's just pointing to your whole thing. Okay, it's just pointing to you, you know. So you just have a host thing either on AWS or on the no, okay, and I point it's you are whole thing is either one easier for you on other end because that both of AWS and for so I don't know how easy it is on those two
+
+[01:16:59] Speaker:
+. I mean, okay, we have to make sure that we We have to email maybe from a sort party.
+
+[01:17:11] Speaker:
+I don't know, we can probably use Google. Oh, yeah, the emails don't work. Like your Google domain, like your workspace.
+
+[01:17:18] Speaker:
+Yeah, here's a minute. I'm going to go and I'll go work. But there we have to add the name service, you know what I mean?
+
+[01:17:25] Speaker:
+Which you're saying so the email would then be at scienceexpertsai.com or like into the email and then what do you ask people to write?
+
+[01:17:35] Speaker:
+Yeah, because like, yeah, it's professional. I mean, you we should have email addresses that are connected to that domain name.
+
+[01:17:42] Speaker:
+Okay. Okay. Yeah. Let me see. So good. Yeah. Miller and I don't want to. Okay. Honestly, I would prefer that name is not the easiest right name spell.
+
+[01:17:53] Speaker:
+I would prefer that it's be like an al miller or like something because the whole. It's just, it's, you know, I don't want to do it.
+
+[01:18:02] Speaker:
+Let me get to here. Let me see what I'm doing to the email here admin. user's filling. Oh, update user's name.
+
+[01:18:14] Speaker:
+Create an alternative email address. Okay. Enter that. See, if I were you, I would just go into anti-gravity and tell it to do that.
+
+[01:18:24] Speaker:
+Do what? Open a browser, I'm going to make Google add to my new web page. Okay, I'll go on to any gravity one second.
+
+[01:18:38] Speaker:
+Because it knows already what you want. And it kind of takes forever to click yourself towards the school thing. And the gravity is very quite quick with that.
+
+[01:18:51] Speaker:
+Okay, I'll check it out. I'm just opening up a new window because I have a new window. Wait, so ask it what?
+
+[01:18:57] Speaker:
+And I still show you right now. Okay, hang on, I'm going to make any folder. Okay, this is just okay.
+
+[01:19:05] Speaker:
+Indigrapity is going to be some problem, but I'm going to sign on, let me make any folder for this. And this will be signs.
+
+[01:19:28] Speaker:
+Okay, I'll share this. I can share. I'm just getting this for the full. I mean, it's share this. Yeah. Okay.
+
+[01:19:42] Speaker:
+And here you are, and share the screen, because it's just the one we go. So I got, I have the folder here, say, open the browser, I'll open the browser, open the browser.
+
+[01:20:03] Speaker:
+Open the browser. Nothing. Just open the browser. That's it. Okay. All right. Fine. We want that it opens that browser.
+
+[01:20:21] Speaker:
+Okay. Allow. Okay. Now go on. Wait until he's finished. Now go on Google workspace on that browser window. Log in.
+
+[01:20:43] Speaker:
+It's okay. It's okay. It's fine. It'll, uh, here. I'm going to go. You go. That's what I wanted to say.
+
+[01:20:52] Speaker:
+Here. This YouTube situation is great. That's where I, like, I have no idea what my password is, but it saves in my key and just it opens each.
+
+[01:21:04] Speaker:
+Oh, yeah. So you're fine. Now go back to, no, no, no, no, no, okay, you know exactly what you have to do, yeah, you can also do it.
+
+[01:21:16] Speaker:
+I wouldn't know what it is. No, no, no, no, no, I like this. I like to see how you, okay, just go there.
+
+[01:21:24] Speaker:
+I bought the domain name science experts dot AI. it. Which shouldn't I be in the refill? Actually, no, sorry, sorry, sorry.
+
+[01:21:35] Speaker:
+Okay. And now I want to add the domain as an email domain to to my Google workspace. And I want to see no domain, as you know, I mean, Miller.
+
+[01:21:54] Speaker:
+Miller at science expert dot AI. Okay, I already opened in the browser. Opened in the browser, my Google workspace account for you.
+
+[01:22:19] Speaker:
+please set it all up and give me the name service which I have to put into my domain name provider.
+
+[01:22:34] Speaker:
+Okay, that's good. Okay, Yeah. See now if you didn't know like domain name servers or whatever like a new or name server or something to like tell it.
+
+[01:22:48] Speaker:
+Like I would never have asked and she gravity this. Yes. us. Which is a bit spanish. Okay. Oh, I see.
+
+[01:23:03] Speaker:
+Do it like this. Oh, you close the dressing. It's fine. It'll open in this one. Trust me, it's there it is.
+
+[01:23:08] Speaker:
+There's the blue. It finds it. It learns. I didn't know that this would do this. It says pretty awesome. All the time, like, this is amazing.
+
+[01:23:44] Speaker:
+This is amazing. Because, for example, if I want to do something in super bass or in fire bass or something like that.
+
+[01:23:52] Speaker:
+And I have no freaking clue how that stuff works. It takes me forever to make sure. If I only theoretically know how something works, I just had an integrity to do it for me.
+
+[01:24:01] Speaker:
+Yeah, but just even the fact that you even know to do that, to even ask it to do that, right?
+
+[01:24:06] Speaker:
+Like even because you can, that's not something that, because one is it's like, if you don't know, it's going to work, you're taking a risk, right and then but it's like you you must have had some understanding or some of that it will work this way because I mean obviously it's working yeah okay domain
+
+[01:24:31] Speaker:
+host select okay it will ask it will ask No, no, of course it doesn't know, but it has to do.
+
+[01:24:44] Speaker:
+We have to do it with. Yeah, I'll give I really see. Space ship. Did you just stop him? Stop him.
+
+[01:24:57] Speaker:
+No, the red button. Okay. Yeah. that it is on spaceship.com. There you go. Oh, okay, there actually it says already.
+
+[01:25:18] Speaker:
+I mean, I wrote it there. No, we could, we could have, I think. It's okay. Yeah. So I'm just doing this, doing the same.
+
+[01:26:44] Speaker:
+Okay, now let's say something. Oh. Did you know that notebook element has downloaded as pptx? No. I just saw that now.
+
+[01:26:57] Speaker:
+I literally did because it was like dial pdf or dial pdf. Let me see if it actually makes it like elements.
+
+[01:27:03] Speaker:
+I just saw that now. But unfortunately I cannot make Disney movies with it anymore. They have deactivated that feature. You can set up your own system prompt to make Disney movies.
+
+[01:27:18] Speaker:
+You don't need a notebook. For fun, like always, I've made them like always. And they made it impossible because Disney suits them.
+
+[01:27:29] Speaker:
+Well, I mean, you can always make your own system prompt for whatever. Yeah. And it doesn't necessarily say I was going to like a, you know, like a.
+
+[01:27:35] Speaker:
+It's not hard to bypass if I wanted to. Yeah. Yeah. Okay. It says how it's done, probably, and it makes sense.
+
+[01:27:44] Speaker:
+It's doing something. I'm not touching anything. No. But I think we already have the answer. What? That's exactly what we have to put in domain name.
+
+[01:27:54] Speaker:
+Oh, great. Wait. Wait. What? Sir, you can. Absolutely. Don't make it up. Okay. Okay. This one here. I want it to do it.
+
+[01:28:04] Speaker:
+Okay. I want it to go and do it. No. Yeah, but we are you cannot because it's my on my log in for Okay, you do it then Okay, you need this stuff Yeah, I think so.
+
+[01:28:17] Speaker:
+Okay Don't have to scroll down after and allow say click on allow click on allow. Yeah. Sorry. Sorry. Sorry I have my work computer here and then this one here.
+
+[01:28:41] Speaker:
+I just this is running something else I haven't really impressed with Ah, you don't f*** up. Can I open this PowerPoint?
+
+[01:29:12] Speaker:
+I swear to God. Notebook is the best tool I have. Yeah, you know what? It's incredible. It's incredible. I mean, it is.
+
+[01:29:20] Speaker:
+The point is that I can put all knowledge inside of a notebook and then from someone else in one notebook.
+
+[01:29:28] Speaker:
+And then I can put everything in Germany and ask questions about those two notebooks. That is completely crazy. Yeah. Yeah.
+
+[01:29:37] Speaker:
+OK. Okay, so what I just noticed that it did, it will. If I don't make, okay, so that's this for you.
+
+[01:29:41] Speaker:
+If I don't make it overshadowed. I'll be right, set stuff into the shed. You got it. Okay. It's coming here.
+
+[01:29:55] Speaker:
+Okay, if it gets f***** up with formatting, just on me. There. That table, it's awful. I'll just leave this on my screen.
+
+[01:30:17] Speaker:
+Sorry, I'll leave this on my screen for you. Any stuff like copy whatever? Just uh, one moment. Mm-hm. Who worries?
+
+[01:30:28] Speaker:
+Here we go. Shh. That's all you need. Oh, I'm sorry. Sorry, sorry, sorry, sorry. Sorry. Yeah. Yeah, the PowerPoint is just an image in the PowerPoint file.
+
+[01:30:49] Speaker:
+It's not actually like individual look. It's not a text and image didn't like separate the components. But I mean, it's kind of like what Jen Spark does.
+
+[01:30:57] Speaker:
+It just like downloads the image of the slide. But at least it's in PowerPoint. And really, there will come a point when it can just recognize and like pull out that components.
+
+[01:31:06] Speaker:
+Like, I don't know why it doesn't do that now. One second, I have to focus a little bit. Sorry. I'm sorry.
+
+[01:31:13] Speaker:
+No problem. I show you what I'm doing that used to me like what I'm there. No problem. Okay. Host. Okay.
+
+[01:32:16] Speaker:
+Now you should be able on Google to say, okay, I verified it. I verified the domain on our ship.
+
+[01:32:31] Speaker:
+Uh-huh. Please continue. Yes. Let me. I stop sharing. Where is it? All right. I'll show it. Yeah. Oh, sorry. It's sharing to share something else.
+
+[01:33:00] Speaker:
+Okay, now say we have verified the domain name. I did. I did. It's doing a thing. Perfect. Yeah, so setting up the workspace.
+
+[01:33:13] Speaker:
+Oh, yeah. That's awesome. Yeah. Oh, you want to see a website of me yesterday? What? I do want to see a website that I made yesterday.
+
+[01:33:33] Speaker:
+Yes. Yeah, I made it. It was a friend of mine. He was playing at Sadie. His name is Mark. And that's where he sent it.
+
+[01:33:42] Speaker:
+Yeah. And so I used your martini racing style. Yeah. Yes. You say. And he gave the intro bio. And yeah, I just like added the worst of them, you know, awesome.
+
+[01:33:59] Speaker:
+Well, thank you for that racing style, because I never heard him. He's a DJ. Yeah, yeah, yeah, he did just really nice.
+
+[01:34:06] Speaker:
+Yeah, the whole group, the whole group of people that come there, the other usually if they're in New Orleans and some other parts of Mississippi and like ocean springs or social and a couple are from Texas too.
+
+[01:34:21] Speaker:
+And so just depending on the time of the year and depending if there's like a show that we're going to play or something, then we'll all like a different group of us will like come together or come down like at in Mississippi it's always a lot of fun, just like it's a lot of fun.
+
+[01:34:33] Speaker:
+It's like the friends who became family when you get to chose them, like get to choose them, you know. So, um, this is going to do Miller at Miller, that's, We do have to do something.
+
+[01:34:55] Speaker:
+No, I don't think so. No, it doesn't. Yeah, I think gone are the days when it's like, OK, go into the browser and you open the browser now.
+
+[01:35:05] Speaker:
+Do it. Exactly. You just have the browser to do it. You know, it's like what I mean, you know, when we have like been in the in the in the talk with Mark and was a whole group What anti-gravity is amazing.
+
+[01:35:18] Speaker:
+It does everything You know just open the browser lock Actually, I don't really want to use it right now. Like okay Whatever you want you come back and talk to me once you've used it tongue-witch thing One, two, three.
+
+[01:35:42] Speaker:
+I'll pause you. I'm still doing this thing. Yeah, making me so I got so I downloaded that was down on these PDFs that like I said we're writing I and D and so that the client included some references and they're these are the publicly available ones.
+
+[01:36:02] Speaker:
+and so I put the publicly available ones in snowpeg alone and it just made this beautiful, beautiful slide deck describing the mechanism and yeah I started sharing this with some of my colleagues just when it would be helpful because I knew that they were like asking me about something but they don't
+
+[01:36:26] Speaker:
+one they don't ask how did you make this to they don't really seem excited. So anyway, I mean, I I know they like it will get excited.
+
+[01:36:41] Speaker:
+They will get excited. They just, I mean, they the point is that everything you do looks like it took you a week to make those graphics.
+
+[01:36:52] Speaker:
+And it's like, so yeah, so I get like questions, I get audited. It's like how much time do you spend on this?
+
+[01:37:01] Speaker:
+Because you know, like, if you're going to build someone out at a certain hour, they're like, we didn't build for like 12 hours.
+
+[01:37:08] Speaker:
+Okay. So like how long to take you? And so that's I think just going to wear the different, that's where that shift is happening right now.
+
+[01:37:15] Speaker:
+And yeah, just but like honestly, like during the time when I was really really like diving into AI and like learning about this.
+
+[01:37:26] Speaker:
+I was also and I knew this and I knew that I was doing this and I knew that I would accept the consequences of whatever came and it was okay and everything's fine.
+
+[01:37:36] Speaker:
+But I knew that I wasn't putting as much of my like 100% effort into like my day job. Like I just wasn't.
+
+[01:37:43] Speaker:
+It was like I was putting it into AI, that's where it was, but I was trying to balance it, but then it got to a point where I was like, okay, now I have to pick it up and give back into this because they just do things very slowly.
+
+[01:38:01] Speaker:
+And so what I've started doing now is just being a little more aggressive, like I will send Bruce, I'll send him a short recording, just to walk through of one of the prototypes.
+
+[01:38:13] Speaker:
+And then so he just sees it and like he knows what I know he knows what it is and like I don't have to really say anything else for the right He won't come and then ask me about it.
+
+[01:38:22] Speaker:
+I there's like a whole bunch of Like so our company got bought by a larger global company like Ten years ago or something so originally was a small consultancy all flexible He's moved around but then like intertech global bought them Well, and so anytime there's like an IT change or any kind of process
+
+[01:38:40] Speaker:
+change you have to go through the whole globe, I mean this whole process. And I don't want to do on that.
+
+[01:38:53] Speaker:
+It always says the same check on your website what it says. Say what? Google website what it says. Because it says all the time the same stuff could not be completed.
+
+[01:39:04] Speaker:
+is very quick. Wait, and there's something's wrong. Let me see a little bit. But this can take half an hour.
+
+[01:39:22] Speaker:
+I read somewhere. Okay, one possible. As you see, I want to go to work. Okay, there's I mean I'll let this run and I'll let you know what yeah, it's all good, I know can make a second account, but it should be let me just check that I did every And I see again this how it's written there in these.
+
+[01:40:37] Speaker:
+which one move up a little bit in integrity. Here, yeah. Just so I see how that more more more. Yeah, wait, wait, wait, wait.
+
+[01:40:47] Speaker:
+Yeah, go over there for time. I'll open the option. I want to see how option B looks. Okay, the CD record.
+
+[01:40:56] Speaker:
+Name host. Okay. Hosted that. You're all go copy and base for it. I already have it. I already have it.
+
+[01:41:03] Speaker:
+Okay. Yeah, we just want to see how they wrote it because the table was like damaged. Target is. Okay. One of us will.
+
+[01:41:37] Speaker:
+Okay, I added the second option as well. We actually need only one, but you know, whatever. And now it says step two activation Gmail add.
+
+[01:41:52] Speaker:
+Activate this MX record. We have to do that as well. Okay, sure. Activate and this MX record. Well, that's on the other page.
+
+[01:42:07] Speaker:
+That's what's right here. Yeah, but I have to add it as well. I think yeah, I'm sorry, sorry, I believe in there.
+
+[01:42:24] Speaker:
+All good. Um. Set. On. Priorities. One. Symptopic. One hour. And. Okay. I think now everything is included. Probably it will work.
+
+[01:43:45] Speaker:
+We just have to wait a little bit. Okay. What does it say next step? After you add this. Browse. I'm sorry.
+
+[01:43:59] Speaker:
+Here. Yeah. You. I have a text or C name record on spaceship. No, no, no. I'm sorry. Next up after you add.
+
+[01:44:10] Speaker:
+It's okay. It's okay. Go up again. A little bit only. Yeah. And it takes us. Okay, now it should just say stop and say just click the red button, oops, sorry, start.
+
+[01:44:33] Speaker:
+Do it again, we have added all the, we have added all three DNS records. Okay. Okay. Good. Good. I mean, it's hard to mention that it's about.
+
+[01:46:16] Speaker:
+So all right. There's a lot of, I mean, they're building a new. I guess the storage. I don't really know how to describe it.
+
+[01:46:25] Speaker:
+Like that. For Dave or physical then. Yeah, because we have all of this, we have what's called the substance right now, but I think the background technology like cold food or something is working.
+
+[01:46:42] Speaker:
+I don't see it. I don't see anything. I just see the bird. I don't see one. It says verify. Still verify.
+
+[01:46:50] Speaker:
+Okay. Where if I don't main link not found for science expert dot oh it's just thing to say is something verifying for oh it's telling us what to return let's set up your domain let's verify you own you may need to I thought you but I mean if it's done on your side maybe because I'm on a different IP
+
+[01:47:11] Speaker:
+you've done this on your end but how does it almost link to mine well because I have edits I have It should know it.
+
+[01:47:25] Speaker:
+Damn, an anti-gravity. Sorry. Spaceship. Spaceship.com. Allow, just say allow. Okay. Okay. I just know it's going to be the right thing.
+
+[01:47:47] Speaker:
+Yeah. problem. Get an element. It's probably not. If it does, I'm going to, okay, I'm just going to start. I'm going to stop this and tell it station.com.
+
+[01:48:01] Speaker:
+Yeah, no, wait. Just say yes, you have to scroll down and say yes. Okay. All right. Okay. I'll have to do it.
+
+[01:48:17] Speaker:
+You know, I learned about what DNS records were and about like IMS and security keys and how it's basically like, you know, envelope with like your return address and then the address in the front and then you make sure it's for them and then one of them's like you got to like sign forward and it's extra
+
+[01:48:42] Speaker:
+like equivalent to like an analogy, but it made a lot easier to understand because there's no idea what those things were.
+
+[01:48:50] Speaker:
+I don't know what that makes sense now. I really have to get going and I will be later on online.
+
+[01:48:58] Speaker:
+We can do that as well later on in my workplace, okay? Sure. Okay. I'm sorry. Bye. Bye.
+
+==========================================================
+END OF TRANSCRIPT

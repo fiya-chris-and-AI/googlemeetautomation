@@ -1,0 +1,65 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Streamlining API Workflows with Code-less Solutions 🚀
+Video ID: d34eeea7d6dd49e880deb6210711dd32
+URL:      https://www.loom.com/share/d34eeea7d6dd49e880deb6210711dd32
+Date:     Unknown
+Duration: [01:13:57]
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T19:40:50.395Z
+==========================================================
+
+[00:00:00] Speaker:
+So if you build workflows and end it in, you know the pain of API communication, edders, JSON bodies, query parameters.
+
+[00:00:07] Speaker:
+It's been half your time just reading the API documentation, and getting this shape of the request to direct. Or the generic workflows that pay in pretty much disputes.
+
+[00:00:15] Speaker:
+Because you just say what it's called one up next to you. So, you know, it gave my Firefox transcripts and I'll push that in the clip up, but then send me a Gmail sub.
+
+[00:00:22] Speaker:
+All you need to do then is go in and go graduate of the IDs, and then the agent figures out with us.
+
+[00:00:26] Speaker:
+And instead of do you have any of those 10 days to get back to the agent? Can you search for that?
+
+[00:00:30] Speaker:
+Or even though you are a given researcher? Now, MCP is basically like a app store for applications. So tools that are pre-wrapped up, do not manage the agents know what's available and how to use kitchenware products.
+
+[00:00:41] Speaker:
+If a tool doesn't have an MCP, yeah, then the agent is, yeah, if you are in our conversation you can make the request there.
+
+[00:00:47] Speaker:
+And because it's all code-less, take it ahead, things, don't be sure how it's great, but there's really good information. But all of that stuff that can help you You can do it.
+
+[00:00:55] Speaker:
+Of course, you still need to go grab great values. You will wrestle with like bubble bubble tight for details that come on.
+
+[00:01:01] Speaker:
+Your energy now is going to go well. You actually have to understand how to do things that come on. So now that you have four main changes, let's actually just go with a quick step to pull it forward.
+
+[00:01:11] Speaker:
+Okay. So four of the actual live majestic workflow, I thought that we would be what would be a generation target.
+
+[00:01:16] Speaker:
+It's one of the most common types of automations that I get, the quest for, and you're going to see how this actually works.
+
+[00:01:22] Speaker:
+So before we actually hop into the pod code which is what we're going to do today I just wanted to familiarize everyone with what we're actually going to be putting out because otherwise I know it's going to be little bit silly.
+
+[00:01:30] Speaker:
+So basically we're going to be in this but we're using the pod to do what I'm going to be doing all of the time.
+
+[00:07:04] Speaker:
+Oh. Oh, you it, you did it. Did he talk to you? Oh. Oh. You. You. You. You. You.
+
+[00:12:31] Speaker:
+You. You. Thank much. Thank you.
+
+[00:16:33] Speaker:
+Thank you. Chocolate.
+
+==========================================================
+END OF TRANSCRIPT

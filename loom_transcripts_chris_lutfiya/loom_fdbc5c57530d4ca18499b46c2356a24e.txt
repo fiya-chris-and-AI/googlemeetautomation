@@ -1,0 +1,245 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Agentic Workflow: HCD Queries for DART Studies 📊
+Video ID: fdbc5c57530d4ca18499b46c2356a24e
+URL:      https://www.loom.com/share/fdbc5c57530d4ca18499b46c2356a24e
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:09:46.228Z
+==========================================================
+
+[00:00:00] Speaker:
+Okay, uhm, basically, bye. Read it in a year and fetched a bunch of historical data.
+
+[00:00:18] Speaker:
+It's already written that stuff. And then I've got So this is, what I did is, uhm, I started out with the HCD, uh, idea, and then there were a bunch of historical control data sources available online, and so I had, uh, I went through, and I had, uhm.
+
+[00:01:44] Speaker:
+IntoGravity fetched them all. So, they're all fetched here, in this, uh, DartHCD raw. So this has all So where it was available, you know, ICHS 5R3, you have any of the, uhm, some of the main, for example, this may just be a portal page, so I'll have to go drill into that, but.
+
+[00:02:07] Speaker:
+For any of the ones where there's a PDF, then it fetched the main historical data for that particular page. category.
+
+[00:02:17] Speaker:
+So we have a good bit of raw historical data which are from the published literature. And so this is actually a usable set of data because this is what people will reference when they don't have their own historical data.
+
+[00:02:28] Speaker:
+They will look up this data from the literature online that's published from some of the larger labs. Alright, let's see what Now on the other one, here.
+
+[00:02:53] Speaker:
+When we did this yesterday. So I put in this, you know, I would like to create this automated report, but I do it in a visual form.
+
+[00:03:00] Speaker:
+Right here. Yeah, so I'm going to use here. For today. This is the one we did yesterday. This is today's.
+
+[00:03:08] Speaker:
+So I used that same one, although I didn't add any gravity to the picture, but I put the project outline.
+
+[00:03:15] Speaker:
+Maybe I do need to put that But it gives me the same thing. You need the DO orchestration to recognize that.
+
+[00:03:22] Speaker:
+Build a prompt. And so the prompt's a little bit different, but, uhm.
+
+[00:03:40] Speaker:
+I don't trust what that's gonna happen. Yeah, because it's the directive that, uhm, anti-gravity's gonna be building, so it just wants to offer to make it for you, even though.
+
+[00:03:53] Speaker:
+It may not be as good. That's not the right one. How about This one. Here we go. I'm just gonna make Okay, so read the implementation plan, build a knowledge base, create a CD, okay, direct the orchestration.
+
+[00:04:32] Speaker:
+And then I don't know. 🎵 Hey! Get up, eh? Oh, that's fine.
+
+[00:07:33] Speaker:
+It's honestly, like, it just has been running on its own, uh, since last night. So, I just let it run.
+
+[00:07:39] Speaker:
+I, uh, I didn't Don't, I'm not gonna stop it. I'm not gonna stop the, uh, run. No, I'm just gonna let it, uh, Hang on, hang on, wait, wait, hang on.
+
+[00:07:52] Speaker:
+Should we let it play right? Okay, I got it. Oh, okay, Morning. How are you? Mmm, good, I'm good. I, uh, I was just working on one of the automations and recording a video in parallel.
+
+[00:08:10] Speaker:
+And it, uh, actually worked out pretty, pretty good so far. I had to do it, I'll tell you, yeah, I'll tell you about it today.
+
+[00:08:20] Speaker:
+I said, so I built one of the automation workflows, one of them for the, for gathering the historical control data.
+
+[00:08:26] Speaker:
+And, and what I did is I, I went on to Claude, and I was at Claude. Um, there's a bunch of historical data available, you know, optimize a project.
+
+[00:08:34] Speaker:
+It's called Dark Comp for Perplexity Pro to, to research all of the available, publicly available historical control data for DART studies, specifically for DART studies.
+
+[00:08:43] Speaker:
+And then it got a table, and then I was like, well, I'm not looking all this up on myself. So I optimized another prompt to have Antigravity, uh, find them, like, spin up various sub-agents, and then Download them and save them to the workspace.
+
+[00:08:58] Speaker:
+And it did that. And so now I have a bunch of these sources. And then I put that into the HTML.
+
+[00:09:02] Speaker:
+And then I had Gemini write the prompt to get it, ah, you know, to write the directives and the stuff.
+
+[00:09:10] Speaker:
+And right now it is writing, it's writing them. So right now, yeah, so just, it has a lot more actual, like, context.
+
+[00:09:18] Speaker:
+Because, like, this particular data that I just pulled from online is the exact same data that even we have cited, I have cited.
+
+[00:09:26] Speaker:
+Whenever a lab that doesn't have publicly available historical data, you'll cite that particular data. So having this is, uhm, like, is, is very useful and applicable, and it's, like, not mock data.
+
+[00:09:39] Speaker:
+It's, like, the actual, data that we, that we would use. So this is, like, Yeah. Mm-hmm. Oh, yeah. Yeah. Yeah.
+
+[00:09:53] Speaker:
+Yeah. Yeah, so, yeah, so I'm going to see what the output is, because this was a bit of a tall ask.
+
+[00:09:59] Speaker:
+Uhm, so I'm going to try a few of the other ideas. So I'm that I had kind of swirling in my head this morning.
+
+[00:10:06] Speaker:
+And, uhm, I really, I do, I find I'm coming to like this folder structure. What I do is just come to the, like, master folder and like everything's kinda like in there, it's its own project directory?
+
+[00:10:17] Speaker:
+So it's-it's-it's I know it's a small thing, but something's, like, having either have a comic card folder or in, like, my root, like, you know, C colon slash, Then you use your name, and then slash, and then that folder.
+
+[00:10:28] Speaker:
+Like, that user's folder is where I let all the cloud core work ones are, but then, anti-gravity is, is it with a project's folder in that main directory.
+
+[00:10:36] Speaker:
+And so, it's just different locations, but with this one, I know, like, once I go to projects and I go to Master Fight, it's all in there.
+
+[00:10:42] Speaker:
+And so it doesn't have to get spread across. It's just a lot easier. I like it. A lot. Yeah. Yeah.
+
+[00:10:50] Speaker:
+Love about you. Okay. There it is. Yeah, totally got it. It's all good. Oh, oh, that noise.
+
+[00:11:12] Speaker:
+Yeah. Okay. Actually, um, well, you know what? I'll be free again. Uhm. No, no, no, no, no, I can't. I can't right now.
+
+[00:11:27] Speaker:
+I have to find, um, same as probably, uh, in- I mean, I'll be, like, around today, like, free today. So, um, yeah, I'd like to get, you know, again, some, you know, all day.
+
+[00:11:39] Speaker:
+If you like. You know. Cool. Go. Wait, what? Bye.
+
+[00:11:54] Speaker:
+Six a.m. for me? Oh, for you. Thank you. It's too late. You're 7-20 or 7-30?
+
+[00:12:15] Speaker:
+Oh, yeah, yeah, yeah, yeah. Yeah. so Oh, yeah, yeah, cuz that was all my full of dude stuff.
+
+[00:12:29] Speaker:
+Yeah, I didn't quite go to sleep right yet. I just went- to go lay and live this room and stuff.
+
+[00:12:33] Speaker:
+Umm. Oh, this morning! This- yes, no, I got- okay, no, no, this morning! Okay. . Oh, yeah, so what I sent you was a link from that early ad upper school.
+
+[00:12:43] Speaker:
+Umm, the school page. . Umm, oh, sweet. All 23 pass. All 23 test pass in 0.06 seconds. Sweet. Okay, so it was a link that Michelle posted, and it's an open source code.
+
+[00:12:58] Speaker:
+It's a swift code, but it- . . I'm gonna use it, uhm, I'm gonna get you some more. I don't think it's a video.
+
+[00:13:06] Speaker:
+What do you think? Do you know how Do know how capture, or order, or transcription with every one of our screens?
+
+[00:13:13] Speaker:
+Uhm, it's where I applaud you for more evidence that you have. Umm, ehm, ehm, Umm, ehm, ehm, So we can switch that up.
+
+[00:13:37] Speaker:
+Umm, ehm, ehm. . 8 Good night. Hehehe. You Umm.
+
+[00:14:47] Speaker:
+Umm, ehm, Thank Umm, ehm, ehm, Umm, ehm, ehm, ehm, Umm, ehm, ehm, ehm.
+
+[00:18:22] Speaker:
+All right. And Peter, too. Okay, fair enough. Okay. Yeah. Bye. All right.
+
+[00:18:50] Speaker:
+Yeah. Yeah. Yeah. Yeah. I absolutely agree because I don't have, like, code running out of their code, or running out of their code.
+
+[00:18:56] Speaker:
+No, that's fine. Yeah. Yeah. Nothing, yeah. I'm, uhm, you know, I like this single, single task one. Dude, you can just kind of see how it runs.
+
+[00:19:18] Speaker:
+And let's see. Okay. Walk through the system architecture queries test results pass current data coverage extension instructions. Thank you for your patience.
+
+[00:19:27] Speaker:
+Okay. So, okay. The H.E.D. right system is built, all systems passed. I'm going to that. Now what I'm going to go with you is go to Gemini and you're like, can you give me?
+
+[00:19:39] Speaker:
+So I have the Gemini chat open like the original one that you've got. And then I made another one just so I can kind of copy the way that we want about it.
+
+[00:19:48] Speaker:
+Bye. And so far, but I am gonna try optimizing. I'll try a few different ways to optimize those prompts and see which ones get like, you know, result that I really like.
+
+[00:20:00] Speaker:
+And umm, yeah. So I'll, I'll, this probably, Yeah, I'll run this prompt and then umm, yeah, I'll go do some, do some activity for an hour and then I'll come back online.
+
+[00:20:13] Speaker:
+And I have a call at, umm, in a nine o'clock? Nine or ten my time. It's for an hour. For more information, visit.beadaholique.com No, it is at, uhh, week.
+
+[00:20:24] Speaker:
+Actually, no. It's a number and it's at one o'clock. I have a fifteen minute call at- at nine, at like nine fifteen this morning.
+
+[00:20:30] Speaker:
+Just a quick one. It's about my own. It is, umm, it's about- Not my taxes. But, umm, and then just one at like one o'clock.
+
+[00:20:39] Speaker:
+So then I'm free in between-between them, so. So. So. Yeah. Uh, no. Uh, between-it'll be-it'll be between nine th- 30 and one o'clock my time.
+
+[00:20:53] Speaker:
+So. Yeah. Not a bad Yeah. Cool. Alright. Yeah. I'll, uh, I'll send you an invite and then just you have to let me know whenever you're back.
+
+[00:21:04] Speaker:
+It doesn't have to be like at that time. I just want to be around. Alright. Alright. I'll talk to you in bit.
+
+[00:21:10] Speaker:
+Bye-bye. Keep. Oh my god, Livia. I swear, like, I'm just gonna- I keep putting this- this thing. I keep propping it here, okay?
+
+[00:21:42] Speaker:
+And obviously, this- no, this is just- It's way too accurate. It's right there. Right there. Right there. Yeah. Or you could just- It's not as good, though.
+
+[00:21:56] Speaker:
+It doesn't time. Well, I mean, like, I need it, like, immediately. I mean, it's pretty chart. . But, uh, I heard it when I was in the shower.
+
+[00:22:09] Speaker:
+I thought. Well. I know, it's just What? Juney! Okay. Okay. Mhm. Mhm. All right. Hm, hm, hm.
+
+[00:23:58] Speaker:
+Hm. Hm. Hm. Hm, . Hm, hm, hm, hm, hm, hm, hm, hm, hm.
+
+[00:25:11] Speaker:
+Thank you. Thank you. Thank you. And, She's actually a That's it. Flex con mapper execution script, yep. Flex con matt payment.
+
+[00:25:43] Speaker:
+We'll you in the next mapper. Thank Umm, hm.
+
+[00:27:22] Speaker:
+Thank you very much. Umm, hm. You Mm-hmm.
+
+[00:27:54] Speaker:
+Okay. The notebook source is a YouTube video from Nick Sayerov, which is a, uh, about agentive workflows. In it, he talks about using these workflows to automate his school community.
+
+[00:28:10] Speaker:
+I would like you to focus on this- this out. I identify any and all features that he automates in his school community, explain how, and point to the time stamp of the explanation where he provides the response.
+
+[00:28:23] Speaker:
+Please be detailed so that this can be walked through for someone trying to- replicate this on their end. Okay. Act as a prompt engineer and optimize the following prompt for Google Gemini.
+
+[00:28:38] Speaker:
+Are they? Ehm, ehm, ehm, If... ehm, Hehehehehehehehe.
+
+[00:29:23] Speaker:
+that's to do. Okay. All right. All right. Nice. Nice, nice, nice, nice, nice, nice, nice. I'm gonna see the database.
+
+[00:29:40] Speaker:
+base. That's awesome. See you soon.
+
+==========================================================
+END OF TRANSCRIPT

@@ -1,0 +1,1433 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: eae81c9d341c4be2aae5cd1deb75e36f
+URL:      https://www.loom.com/share/eae81c9d341c4be2aae5cd1deb75e36f
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:17:11.391Z
+==========================================================
+
+[00:00:32] Speaker:
+Thank you very much. Thanks. Thanks, ciao.
+
+[00:02:12] Speaker:
+Thank you for watching. Oop. ¿Cómo se llama Yeah, I mean, still.
+
+[00:04:09] Speaker:
+. Hey. Hey. How's it going? I care, how about you? Very good. Good. Good. Good. Good. You Like, it's nice. The, you know, the, the development goes, like, really fast now.
+
+[00:04:20] Speaker:
+Like, I'm really, I'm- Really in the flow now. We're just super, super nice because now I can start to be like, you know, I can just get creative.
+
+[00:04:30] Speaker:
+Ideas and immediately do them, you know. I don't have to ask anyone. I don't have to look. I don't have to watch a tutorial.
+
+[00:04:37] Speaker:
+We'll see you for it, you know. It's just, it's just like that's blowing. Yeah. And it is so nice because like this way.
+
+[00:04:46] Speaker:
+Wait. You know, because AI cannot do everything. It can do a lot of stuff really good. Mm And some things it can't, you know.
+
+[00:04:54] Speaker:
+But. It is nice to just bump back and forth all the time so you actually know all that's possible. That's not possible.
+
+[00:05:02] Speaker:
+That's possible. That's not possible. And that is just really, really good. Because this way you become, like, really, very valuable.
+
+[00:05:10] Speaker:
+yep You know, it's, it's really good. Yeah. Yeah. So, yeah. What, so, what have you got, what have you got, got for again?
+
+[00:05:17] Speaker:
+Oh. I have done, like, I have done, like, this DJ, DJ thing, which is, which is okay, it's, it's, it's no way perfect, but it's like, it's, it's nice to have tried that, you know?
+
+[00:05:29] Speaker:
+Mm And, I'm doing like a lot with this expert network, so I try to, understand my- my repositories. Okay, you know, and then give me feedback on what we should add or what- should we change, you know?
+
+[00:05:44] Speaker:
+Okay. And now I'm like on this, what I really like is now this project with the- You YouTube videos, because I think that's an amazing value for our communities.
+
+[00:05:53] Speaker:
+You know, like, if we have a YouTube video and I- I put you in the back. It's not done yet, but it's on the way.
+
+[00:06:02] Speaker:
+And I say, okay, you are, because, like, when you join the community. You can say, what's your field? So you could say, okay, I'm a toxicologist.
+
+[00:06:13] Speaker:
+Okay. Okay. Okay. And I speak French. So let's say, let's pretend you would be French only. Okay. And then there is this, I'm sorry, some cool working thing coming from, or from anthropic inside of God.
+
+[00:06:28] Speaker:
+Okay. And now we put in an. and inside of our AI news inside of the community. Like the anthropic guy introducing the co-working thing.
+
+[00:06:38] Speaker:
+Thank you. Okay. And then you can just press a button and why does it matter to me, you know? And then he- you will, there's like a system prompt that says, okay, if somebody is introducing a tool, okay?
+
+[00:06:52] Speaker:
+put it- put yourself into the perspective of keyword toxicologist. What could a toxicologist? list. Do with co-work. And then it spins up like the create, then the hell and the possibilities and stuff.
+
+[00:07:08] Speaker:
+Yeah. I'm up5. We're going, right? I say this It's one You know, it's great that they hallucinate because he did some examples about what you can do with co-work.
+
+[00:07:17] Speaker:
+And now the AI I knows what the toxicologist is and it would say, oh, as the toxicologist with co-work you can do AB.
+
+[00:07:26] Speaker:
+babies. like real examples, you know, and then the toxicologist, oh, I have to try a co-work, you know, and then.
+
+[00:07:35] Speaker:
+Yeah, that's really, really nice. Yeah, I mean, co-work's good, it's it's good for like making artifacts. I, I think two certain, it's like a, you know, you wouldn't build a full-blown production app with it, but that's not really an expectation.
+
+[00:07:49] Speaker:
+It's just an example, you know, there are like so many AI news coming out every day. Like stuff we don't.
+
+[00:07:57] Speaker:
+Actually care, you know, like, they are not big AI for building stuff. For example, there's a lot of different AI, you know?
+
+[00:08:05] Speaker:
+But it is great, you know, if we can, if we can translate that to the, to the person. Thank listening.
+
+[00:08:13] Speaker:
+First in the language and then also in the use cases. I think that's very high value for the people. Oh, totally.
+
+[00:08:20] Speaker:
+And I can just see that would just be like an. Very simply like in terms of the data transfer to get that to go, you just need the persons, the other industry and then the.
+
+[00:08:29] Speaker:
+The. did. Yeah, their industry and then, you know, for their use case and then, and, and their, yeah, then, yeah, that shouldn't.
+
+[00:08:36] Speaker:
+Yeah, and then it's super. Whoopers. Simple, you know, and then, like, I say, yeah, and, like, if we are, like, let's say, in the, in the science community.
+
+[00:08:45] Speaker:
+You're in the beginning, we have 10 apps which they can use for free if they are members of the science community.
+
+[00:08:53] Speaker:
+You know? No? So this is like a big benefit. Plus, you get like, like, I try to do the same as Mark, you know, like, delivering way more- than you you paid for.
+
+[00:09:02] Speaker:
+Yeah. You know? So we give them 10 really useful apps they can use for science, like, like. Bye. fact checking, you know.
+
+[00:09:11] Speaker:
+Then we have, like, AI news for your field in your language. We're going to We'll see you next week, next week.
+
+[00:09:16] Speaker:
+You know, they are getting, like, they're trying to learn AI and now they are learning it in French for their field.
+
+[00:09:23] Speaker:
+So, if they're- They go to work tomorrow as a toxicologist in France, you know. They can say in French language, blah, blah, blah.
+
+[00:09:30] Speaker:
+You know what I learned. Blah, blah, blah, blah. You know, he looks like an expert because he gets that stuff, like, pre-digested in his language, and then he has a commute.
+
+[00:09:40] Speaker:
+He can ask everybody and people will answer back. So I think this is, like, really, like, really perfect community for those.
+
+[00:09:48] Speaker:
+People. Totally. Yeah, I think there's a lot of opportunity there. And then it's, yeah, it's just. Right there. Just doing it.
+
+[00:09:56] Speaker:
+Yeah, yeah, yeah, I'm just, yeah, I'm just like flowing, you know, and it's like, it goes really well. Good. And I'm about, it's all so smooth.
+
+[00:10:04] Speaker:
+I feel like it's like about time, kind of, you know, because there was just like so much of the uphill.
+
+[00:10:10] Speaker:
+So so I feel like, you know, it is deserved, I think. Finally, like a little time of, like, respite, probably before some, I don't know, some other.
+
+[00:10:18] Speaker:
+Major update will come and just flip everything, but even if it does, I think that we, like, haven't still to be dangerous.
+
+[00:10:25] Speaker:
+Yeah, yeah, we are definitely really- good, I think. Yeah, I'm gonna show. And with our community, we are really very good, you know, I will also get back to it more, and like, I- as the early adopters, you know, because if we have a community, you know, like, they are so keen on getting- jobs as well
+
+[00:10:43] Speaker:
+, you know, and I think it would be really good if we have, like, a YouTube channel, you know, and we introduce or if we have on our community and we introduce people in there, you know, and they will have a talk about stuff.
+
+[00:10:54] Speaker:
+And we are like basically at the source of AI experts. Yeah? I'm not, I'm not, I'm not, I'm sure, I'm not showing you, I'm not sharing this with you, I was listening to you.
+
+[00:11:04] Speaker:
+I was just, I wasn't looking, I had to find it here. Shouldn't know. Okay, so remember? Bye bye. So yesterday, a guy shared on the early A Adopters, community, I sent you the link.
+
+[00:11:15] Speaker:
+Thanks. And it was for, that it was a Python script. It was just scripts that basically you could just type in a link to, Mm-hmm.
+
+[00:11:23] Speaker:
+A playlist or video on YouTube. And I'll get you Definitely. Oh, that's cool. Play this is cool because then you can add, like, your own.
+
+[00:11:33] Speaker:
+. All of it. Wait, and then the wrong keyboard. I have, like, two situations going on. . . . and then we just keep it a little.
+
+[00:11:42] Speaker:
+you two. What's doing more cash-f? Yes. Or I'll just unplug code. Or a sample video. Okay. Yeah. Alright, Leonbans. and Leonbans.
+
+[00:11:55] Speaker:
+So this is just a video. See you at the transcript. It's okay. Okay. And it does, it uses OpenAI API key.
+
+[00:12:06] Speaker:
+And then as you get them, it will save them here. You can favorite them. Mm you can put them into folders.
+
+[00:12:12] Speaker:
+you can chat with them. So you can select which ones. And- Can a good one. And we'll see like, hey, what?
+
+[00:12:17] Speaker:
+Let's go, let's do takeaways. Here. Thank you. This might be a little, nope, okay. Fine, no times. Well, I guess I can do the, I can do the timestamp one.
+
+[00:12:31] Speaker:
+Anyway, it gives you this, then it does even like bias check. And I was thinking because these are basically automated prompts.
+
+[00:12:37] Speaker:
+You can, Very well, do something like this where you have that circle of excellence automated prompt, you know, kind of set up.
+
+[00:12:42] Speaker:
+And then you can, yeah, like have, any different, like, like, additional things in it that you, like, after that first one, right, I was thinking it would be like a UY, it's like, enter the- of excellence, and there was this big button, and basically what that first button would do is just, like, execute
+
+[00:12:57] Speaker:
+the prompt, and then behind the scenes, that prompt gets executed- Thank And then, you know, what you see comes on is, like, the first council appearing their name, and they're in, like, their picture.
+
+[00:13:06] Speaker:
+and then as we're talking to you- like, comes out in, like, in their voice. And, and then you can ask, like, individual- and the thing is, like, each person would be- spun up by a different- I don't know how it can be done, like, in parallel, so it's not the same- the same thing.
+
+[00:13:21] Speaker:
+So I guess maybe you would, like, execute that- same- well, anyway, after that. So each one would have, like, their own context, but then you can ask individual questions- to either, to any of the members, or have them, or you can have, like, one of the prompts say, like, debate, you know, like, debate
+
+[00:13:36] Speaker:
+. Each other, or, like, do whatever other things you want them to do, or, like, any other kind of analyses or evaluations you want to do.
+
+[00:13:43] Speaker:
+That can come up in, like, that'll be, like, in this panel to try to get, like, the most out of, out of, the conversation that- that should be able to, like, generate assets.
+
+[00:13:52] Speaker:
+Well, that might be nice to have at the end, but yeah, like, to generate, ask, kind of, like, club coworkers.
+
+[00:13:56] Speaker:
+okay. Okay. Okay. Okay. Okay. Cool. Yes. Nice. That's a cool tool. Way cooler than I thought. no, sir. Well, this, Originally what he sent was, but he's not this one.
+
+[00:14:07] Speaker:
+And he put it. It's, He's here to go out with it. You two transfers.
+
+[00:14:22] Speaker:
+Take care. This- Is what it was. Oh yeah, here, I got the GitHub repo. I think. Yeah. Yeah. I did.
+
+[00:14:30] Speaker:
+No, I just spun it up. I don't think I have a picture of what it used to look like, but it was just like a blue.
+
+[00:14:34] Speaker:
+Blue. Like a single like extract transcript. And then I added the other stuff and I had clawed. I was like, be, you know, be an expert software designer and like, telling what other features can be in here.
+
+[00:14:44] Speaker:
+And, yeah, this didn't take- much time at all to get this, to get this ready so it's cool. And then, what I did for work for- well, too, they'll show you the two things, but this, I made- this is completely mock, but it basically would give them- an idea of what the system would look like if we wanted
+
+[00:15:02] Speaker:
+to put our study reports in to have the generator and ease or at least I haven't organized. And so you see it, it just mimics like some studies already going in and then lets you say like, oh.
+
+[00:15:14] Speaker:
+Hold on. Plow to report and you click it here and then, you know, you pick one and then it'll process and then go through this whole thing.
+
+[00:15:22] Speaker:
+It'll, you know, demo like it's doing something but it's like updated with the time. And then- Okay, and what is it supposed to- So what- what this is supposed to mimic is us taking a final study report or like multiple study reports.
+
+[00:15:36] Speaker:
+Go into the it works. And then it uploading them here. And those study reports are the basis for the written and tabulated summary.
+
+[00:15:42] Speaker:
+Come on. That, that are written in the regulatory documents. Like, you basically have to take, you have to take the study report data and summarize it for the regulator.
+
+[00:15:50] Speaker:
+You have to tell, Yeah, yeah, yeah, yeah, yeah. That's what you call like, that's like, very lot of manual work you told me, I think, right?
+
+[00:15:57] Speaker:
+Yeah, you gotta like review? You all the study reports, you have to see, okay, what effects are in one species?
+
+[00:16:02] Speaker:
+Did they see them in another? Was it at the different dose? What were the exposures? How did they relate to, so all that stuff?
+
+[00:16:06] Speaker:
+Yeah. And, yeah, we do it all manually. We're using, like, word and all that stuff, right? So we don't have anything like this.
+
+[00:16:14] Speaker:
+And, I just wanted to give them an idea of like, what that would look like. And so say we uploaded our reports, they'd be here, they'd be classified by SteadyType, and you can get like.
+
+[00:16:22] Speaker:
+In, data visualizations as the study's going on based on the data that we have, and then you can get like an overall program.
+
+[00:16:29] Speaker:
+And and view of like where all the studies are along the course of the year or their development program. And then.
+
+[00:16:37] Speaker:
+And each one has like a just mock section of like information that would be in it. And got a table written.
+
+[00:16:45] Speaker:
+Thank you very much. written table, and then got a camban board for any of the tasks that are tracked in here and ongoing, like for any reviews or whatever.
+
+[00:16:51] Speaker:
+60. 7 7 8 8 8 8 They're in, and just having a calendar. This also acts like any upcoming events with like meetings and sponsors or something.
+
+[00:16:59] Speaker:
+time. And then review alerts and what's back here, sending us the, auto trail. Yeah. So. on. Yeah, built that. I mean, it's completely fake.
+
+[00:17:08] Speaker:
+you know, it's not. Yeah. But, you know, but this is actually really good for. a warm. 2 For really complex programs.
+
+[00:17:16] Speaker:
+I think it's much better to, or much easier, you know, to just make a visual. I'm going them. Talk up.
+
+[00:17:21] Speaker:
+And then I'm seeing the AI to make the real stuff with that mock up because it can see what you actually want.
+
+[00:17:27] Speaker:
+And. and then you can think about models, you can see about procedures, how stuff should be done, you know, but this way I think it's very easy to to.
+
+[00:17:36] Speaker:
+Oh, to teach say, easy L. So, let's take on each one of that. in the raw account. Let me swap this.
+
+[00:17:46] Speaker:
+Very well. Cause I made it, I'm not sure. Nope. Build. I'm gonna build. Yeah, here. Thank you. This is for a friend of mine, I don't tell anyone this company.
+
+[00:18:02] Speaker:
+No, I don't even know. Okay, now they're a non-clinical app, they're zero. arrow. So. This is taking so long.
+
+[00:18:17] Speaker:
+Oh, you can- You can as well. What? I wish you can sing as well. No, but you have good voice.
+
+[00:18:25] Speaker:
+Oh, thank you. Like that? Cela Cruz! Make sure you hear me, maybe think cuz I have, like, 12 tabs open here.
+
+[00:18:33] Speaker:
+Thank your You know what I have, Club Corps do for you today? I had it, write this beautiful summary. summary.
+
+[00:18:41] Speaker:
+Talk to the city table. And I realized what, this is. Yeah. I'm going to get small first. and Okay. Well, a little, come up when it comes up.
+
+[00:18:55] Speaker:
+Yeah, but you should pro, You I put it, I'm gonna make it public, but I pushed it to GitHub, and so I'll change it, and I will push it, and I'll share it because- The guy shared the, he shared the one at the original.
+
+[00:19:10] Speaker:
+Uh-huh, Rico, so I don't know how to- You Oh yeah, I guess I don't have to fork it and do that, but I don't want to do that.
+
+[00:19:21] Speaker:
+But I'll have to figure- Yeah, just upload it to another GitHub repo. Yeah, then you can pull changes. Okay. Mm We can, open it up so I can make a public and you can have it.
+
+[00:19:32] Speaker:
+He's usually able to spend it up, like, right away. Yeah. Yeah. You should be able to spend a lot longer settings and change this visibility to public.
+
+[00:19:42] Speaker:
+Like. But I really wonder, like, I'm now in this $100 plan. I really wonder how you spend 200 or- how you- how you're on the 200 because, for me, the 100 is- even like, with using, like, agents, that is cool.
+
+[00:19:59] Speaker:
+I think it's quite okay. I don't really reach my limits. I mean, that's good. 7 7 9 9 9 I've come close before and I don't want to receive it.
+
+[00:20:12] Speaker:
+But what happens sometimes, but nothing happens if you if you are. Reaching your limit, then you are just on a pause for half an hour, for a couple of hours.
+
+[00:20:22] Speaker:
+. Yes, I tried it. No one am just saying, it's like I don't want to be on past a couple of hours, I want continuous onintra Tape.
+
+[00:20:30] Speaker:
+I did work environment. Yeah, yeah, okay. If this happens like a lot, yes, of course, but if it happens It's like one time a month you know I'm like, okay, that's not worth quite a euro.
+
+[00:20:42] Speaker:
+Well, I'm, you know, but I mean, I, I, we just put this. Yes. I'll just do it again. That is so sometimes, yeah, studi- Yeah.
+
+[00:20:51] Speaker:
+No. That's okay. I'll just make it again. We'll see what it looks like. Okay. Okay. But yeah, it made a really nice table of this table I have to do for work.
+
+[00:21:02] Speaker:
+And then I chatted with Matt yesterday about AWS. And, let me say I was just, I have to, I was doing this stuff right.
+
+[00:21:09] Speaker:
+I just have to upload my data to the S3 buckets, but then I have to add right now I'm logging in.
+
+[00:21:14] Speaker:
+AWS is a root user, just what the default is is like my account. But then he says, to create an admin user for my.
+
+[00:21:21] Speaker:
+Self like an admin account, to keep it separate from the billing. And I guess, it makes, it makes things easier.
+
+[00:21:28] Speaker:
+here. Down the line and I guess Claude can get families with you if you, if you, if you working with it via a root account in AWS.
+
+[00:21:35] Speaker:
+So. No. I didn't know any of this. And then, yeah, just to check, make sure that when I'm saving the, when I'm saving the.
+
+[00:21:42] Speaker:
+I'm saving my stuff for, like, using Amazon Bedrock, or with any of the models to make sure that I saved that I'm in the right region.
+
+[00:21:50] Speaker:
+Cause if there's a Mitch. Of the region with Bedrock versus the region that my history buckets in. Your club, like, they can't see each other.
+
+[00:21:57] Speaker:
+This Donald Trump. That's the one. and feel this. Okay. Okay. Wow. Yeah. Yeah, that's, that's that I have a. Yeah, I, I, I set, oh yeah, Quad Court put some really nice, like this nice AI audit stuff together that I.
+
+[00:22:14] Speaker:
+That I shared with, that I shared with my friend who works with this company and, and then this I and D think I'm actually going to show.
+
+[00:22:21] Speaker:
+To another contact of mine who's in pharma who, like, writes I and D's by himself. So, Yeah, I'm gonna try to push this because I realize that when you're, when, if you're, if you're trying to sell something to people, like.
+
+[00:22:36] Speaker:
+Especially if it's something that's a bit more complicated. Do you want to sell them the, the drink? You want to sell them the, the, like, what it can be?
+
+[00:22:43] Speaker:
+Not like, oh, come dude. You this in quad code and we get all these modules and blah, blah, blah, blah.
+
+[00:22:48] Speaker:
+They don't, you know, it doesn't, no. And I just thought at first I was like, that's so cheap skate to just- do it for like, you know, to show the real thing.
+
+[00:22:54] Speaker:
+But sometimes it's cleaner and more impactful. I mean, you know. I just closed, of course, this is a prototype. This because it's not connected to anyone's data, right?
+
+[00:23:06] Speaker:
+But it shows them what it can do because then you can connect. That functionality into it already. Yeah. So, yeah, I started making it, like, I've been, like, just joined- Join me in down these ideas for these prototypes to put together, that would be, I mean, shoot.
+
+[00:23:19] Speaker:
+Like, good for a lot of, good for a variety of things. Even for, like, video demos and stuff like that.
+
+[00:23:27] Speaker:
+Yeah. Cause, you know, I remember I watched one of Nate's, and then I saw in the script- Ripped. That is like, this is a user demo.
+
+[00:23:34] Speaker:
+Like, I thought it was like, I didn't know that that's how it, like, that it was- Coded that way. Yeah, yeah, yeah, yeah.
+
+[00:23:43] Speaker:
+Thank Yeah, but I really have the feeling we are at the same, we are, we are very close at being able to.
+
+[00:23:52] Speaker:
+To do whatever we want. Who did you, did you try? I sent you the repo link to get up. Ah, yeah.
+
+[00:24:00] Speaker:
+Yeah, yeah, hold on. Yeah, you just need your opening eye key, opening eye, API key, and the rest is and the rest is all done.
+
+[00:24:10] Speaker:
+It, it, originally the app had like a entry field for the API key because it's local, right? So it's like, oh, whatever.
+
+[00:24:14] Speaker:
+I don't care. But, but I actually, and I was like, no, no, no, no, like, make an ENV file. I take that line out and then you can put it in via the ENV.
+
+[00:24:21] Speaker:
+And, then it did. But it's just, like, I don't, I need a line in one of the, one of the global MD files to- Like, don't read my A&V.
+
+[00:24:30] Speaker:
+Okay, again- And let me- And then let me know- If you can send it up. Yeah, wait. I just forgot.
+
+[00:24:36] Speaker:
+You'll be able to get the transcript right away. You don't need the OpenAI API key for- That is just for the chat.
+
+[00:24:41] Speaker:
+Mm Yeah. But I was amazed that he got that. Just like- I mean, it makes sense. I'm- Transcript is easy because YouTube shows the transcript.
+
+[00:24:51] Speaker:
+On YouTube, there's a button show transcript. It's good. I know, they just make it a pain in the ass to get.
+
+[00:24:56] Speaker:
+Yeah, yeah, yeah, yeah. You kind of off, yes. So you kind of just like, skirt skirt that whole situation. Yes.
+
+[00:25:04] Speaker:
+Yeah, yeah, I had a chat with you. But the crazy things, the crazy, the really crazy. Great. The crazy thing is, you know, like, like half a year ago or one year ago, everybody who's a developer was like.
+
+[00:25:17] Speaker:
+Bye. Like, not meant in a bad way, boring mathematical brain. Yeah, because I had to be. Yeah, exactly. The only way to get that stuff working is to be like, very, very, very boring and precise like that.
+
+[00:25:31] Speaker:
+And I'll keep you know. And now people like us, you know, like somebody who's creative can do like whatever he thinks.
+
+[00:25:38] Speaker:
+If I can imagine it, I can. You know, and you can do all your science stuff, you know, which you are where you can see, oh, there's a workflow.
+
+[00:25:46] Speaker:
+There's a workflow. Look, Look, there's a workflow. The menu will workflow science people do, you know, and you can just automate it.
+
+[00:25:53] Speaker:
+Yeah, and you know, like that the- and I'll see you in the I find that, the, like, so, so doing these like- You Having it- Having the AI, like, build up the whole thing, even though you're not sure what it might look like.
+
+[00:26:07] Speaker:
+Well, it helps me see what it can look like, cause I may not have- Even envisioned it like that. Or I may not even know what it would look like.
+
+[00:26:13] Speaker:
+And so then I see it, I'm like, oh, okay. Ooh, we could do this, this, that kind of thing. You know what?
+
+[00:26:18] Speaker:
+Yes. When it gave something to start from. Yeah, yeah. Yeah. Yeah, I'll just share it when it's actually up because it's like, yeah, yeah, maybe all the same thing.
+
+[00:26:28] Speaker:
+Very nice. A.I. Studio has a problem right now. It's also possible. Why? Just they updated their choices. Sometimes they have problems.
+
+[00:26:35] Speaker:
+Sometimes Claude has- Don't you have that when you're logging in, it says, oh, I'm not ready right now. Come back later.
+
+[00:26:41] Speaker:
+Okay. We'll see you I have said it was cool. I mean, it doesn't work. Other, you know, I don't usually get a- It's a service message.
+
+[00:26:52] Speaker:
+Is there a- Did you get a service message? I got nothing. This is showing like it's trying to do something.
+
+[00:26:57] Speaker:
+Hey, I studio. Or with Claude. With Claude, I have service messages all the time. Oh yeah, no, yeah, no, it services can go down.
+
+[00:27:07] Speaker:
+Now. And I just, it's not usually, in the habit of, like, giving me- At least spin up this project in the browser.
+
+[00:27:12] Speaker:
+That I'm gonna write something down for it. Forget it. Thank you very much. You know, as much as I'm all digital all- I still need to, like, write stuff.
+
+[00:27:39] Speaker:
+As I go, even if I'm gonna, like, do something here, I'll still, like, just jot it down, so, like, be- visualize a, like, overarching, like, what I have, like, in my brain right now, because windows get overlapped, and things get forgotten, so I'm like, oh no- this is here, and then I went to Claude,
+
+[00:27:52] Speaker:
+and I put this in here as a co-work, and this is, like, yeah, otherwise I'm, I still have a mess.
+
+[00:27:58] Speaker:
+Yeah. I'll then. I'll just start dropping things. And feel free to change, add, update, whatever. You want to do that repo.
+
+[00:28:05] Speaker:
+may. It's a rule. Yeah. It reminds, I wonder if, do you know how Daniel's app has the data for SEO in it, but then.
+
+[00:28:13] Speaker:
+Google Analytics came out with their API key and I wonder if something like that could be cool to throw in there to make some really good competitive information.
+
+[00:28:21] Speaker:
+Good video content. Yeah, yeah, definitely. Okay, it's already there. I have it. Great. You know what's nonsense is that I'm like, Okay, I still have the issue where, even though I have the setting on to download files with their extension name, it just- Yes.
+
+[00:28:44] Speaker:
+Download them is nothing, so I have to- I have the same issue, but I only have that issue with Chrome.
+
+[00:28:51] Speaker:
+With Comet, I don't have- I have the problem. Oh, with Comet? What about Safari? Also no problem. No problem? Okay.
+
+[00:28:59] Speaker:
+What's that? I think in general- Because we use anti-gravity, you know, we have some issues. Thank With Chrome. Also, like, you know, when I try to down some websites, think I'm a robot, whatever I do, like.
+
+[00:29:13] Speaker:
+I will not pass the capture code. Yeah, no, I find my time. I Chrome. Yeah, because they have like. I installed anti-gravity, like you have this little icon in Chrome of anti-gravity, and I sing some websites, check if z- That thing is installed.
+
+[00:29:31] Speaker:
+Yeah, and then they go hook-o. Yeah, because once you get out of a different browser, then it's, that's fine. Yeah, exactly.
+
+[00:29:41] Speaker:
+And I think probably you can use it on a different browser. Hold it. Yeah, yeah, I, I, I just took the link and put it in Safari and it worked.
+
+[00:29:50] Speaker:
+Okay. Well. know, this is still not, maybe that was too big of a, and boy. We'll see you in the one.
+
+[00:29:59] Speaker:
+Okay. Okay. Okay. Okay. Did it, did it open up, right? Yeah. I'm running it.
+
+[00:30:10] Speaker:
+Oh, awesome. Awesome. Awesome. I can show you. There it is. Still. All right. You see on my screen, I'm doing it.
+
+[00:30:22] Speaker:
+You know what also would be really a good idea, maybe you find something that would work. book. You know Ted, Ted talks, right?
+
+[00:30:36] Speaker:
+Mm Okay. . And they are usually about something that is like, life saving for whatever. Yeah. Like. Like, really good for a large group of people.
+
+[00:30:47] Speaker:
+Usually, like, not commercially, blah, blah, blah, you know, or not directly commercial. Thank you, Marshall. Yeah. And we can do so much with AI, you know.
+
+[00:30:57] Speaker:
+I mean, I don't think, like, to complete. Please. Completely put a program out, but just inspire people what to do with AI, and what you can do.
+
+[00:31:08] Speaker:
+. . Besides killing jobs, because, like, a lot of people are only, you know what, AI is so bad, it's so bad, it's so bad, you know?
+
+[00:31:16] Speaker:
+Yes. And we could totally make, like, okay, what could we actually do with AI in the science field, you know?
+
+[00:31:23] Speaker:
+And then you make a little video- of how people can do something in their local community, for example, to do whatever, you know?
+
+[00:31:31] Speaker:
+And I think that is really- really good for maybe, maybe, you know, something goes viral because it's a great idea.
+
+[00:31:39] Speaker:
+And if you don't have a commercial- Marshall. It is for newspapers and stuff like that. Way easier to, to get you on, on the front page.
+
+[00:31:48] Speaker:
+As if. you you are trying to sell something, you know, but if you're trying to make like a good change with something, that would really put us like.
+
+[00:31:57] Speaker:
+On the, on the map for AI, on a big audience. Is there a wonder if you look on YouTube and there, there's a playlist.
+
+[00:32:05] Speaker:
+Of like, all the tent talks across some, Oh yeah, we can do that. Industry. strength. Cause I haven't actually tried the Playlist feature in that yet.
+
+[00:32:14] Speaker:
+Okay, I'll do that right now. And I will, I too will. Oh. no. But I think that would be a great idea.
+
+[00:32:23] Speaker:
+Which the Ted talks? No, too much. I love you. Like, to, to make like, use AI for something like, say, use on, on Ted, as a Ted talk, you know?
+
+[00:32:31] Speaker:
+Just like, you know. Oh, AI. Yeah, so if we have something for that, that would be amazing. I think, safe to play list.
+
+[00:32:38] Speaker:
+Yeah, I Ted talk channeled in a style playlist. Yeah, I just make more like this. There we go. Ah, do they have, like, They have different, they have different language ones.
+
+[00:32:51] Speaker:
+Yeah, but I don't think they have playlists directly. I think I have to make, one. Okay. Let's see if you can try it here.
+
+[00:32:58] Speaker:
+There. Okay. I'll let Claude do it. And, ,these create playlists with all those TED Talks on this website. side. That's not all.
+
+[00:33:16] Speaker:
+And name's a, playlist tag. That talks. folks. I I realize I like to use Claude this extension. Ah, good. It's getting 25.
+
+[00:33:36] Speaker:
+It's, yeah, it's doing the toilet. Bye That's just fine. Oh, okay. Yeah. It's doing like a 25 in there. It's, it's fetch as I'm also, you put a.
+
+[00:33:46] Speaker:
+Yeah. So you can basically take whatever mega playlist and consolidate everything you want, and you stick it in here and you got your transcript.
+
+[00:33:53] Speaker:
+Let's go. Awesome. Yeah, that dude, Opie, I think his name is- huh. huh. Oh, yeah, Opie's. Yeah, yeah, he's the one that made that.
+
+[00:34:04] Speaker:
+Okay, we'll see you that had the, you know, it just like upload a link and then you could, there wasn't any persistence.
+
+[00:34:11] Speaker:
+You couldn't save the f- things and, you know, just, it gave like an output of the transcript and you could, So yeah.
+
+[00:34:17] Speaker:
+Copy it manually. Yeah, yeah, yeah. But I mean the code, the code's like, it's rocking. It's like, pigeon code. I'm not going Totally, it's, yeah, it's getting them.
+
+[00:34:28] Speaker:
+We'll see how the, Yeah, and then it lifts all the, Whoa, yeah. Download all amazing. Download all amazing. Look at that, another of my librarians.
+
+[00:34:36] Speaker:
+I've of them. Amazing. Mmm. Amazing. And you can put them in your folders. Whoa. Hello. Night, dark. Yeah. And so I mean, yeah, just, I guess if you think of any, any things like, out.
+
+[00:34:49] Speaker:
+Cause let's see how this folder, right? Like, I'd like to have a kind of like, multi-folder view or something like that, but like, cause it just seems kind of like spread across- But I mean, I like the- the functionalities here.
+
+[00:35:00] Speaker:
+yes. Just how it's- how it's organized and how displayed can be improved. that. I can't stop. Yeah, yeah, yeah, but it's amazing.
+
+[00:35:08] Speaker:
+It's amazing. I mean, just forgetting that stuff, it's amazing. Yeah. Thank Especially, I mean, you know, like, if I can make my own playlist, like, let's say I wanna learn MCP, whatever, you know, I can just, like, put- 10 videos in my playlist, put them in there, get all the transcripts, put them all
+
+[00:35:26] Speaker:
+in notebook LM, you know. Oh. It's like the workflows. It's, it fits very well in my workflow. Yeah. And then you can even.
+
+[00:35:35] Speaker:
+then. Like, set up a, well, Nupokalom doesn't have, you don't even need an API and point to Nupokalom. You can just have it do the stuff itself, I guess.
+
+[00:35:42] Speaker:
+Like, I mean, with Gemini's, like, now, Banana, you can put, you know, the thing, same way, like, Mark did, like, the presentation, like, kind of, it was Nupokalom, but, like, with the, kind of, crap.
+
+[00:35:51] Speaker:
+Yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah. I mean, yeah, I can imagine doing something, kind of, like, that. That's it.
+
+[00:35:57] Speaker:
+But not just with, like, YouTube transcripts. It would be, like, any sources, whether it's any loon- or you update or you upload your kind of, like, notebook LM, but it would also- have other features that notebook LM doesn't have, that maybe, like, merge in some of those, like, the transcript and script
+
+[00:36:19] Speaker:
+generation. And, maybe some other cool stuff that helps, things go- much faster, like, generate, like, downloadable content for viewers on you, whatever.
+
+[00:36:31] Speaker:
+If don't have and I'll add it is, but, like, to add other things and so it, so it's like a supercharged power up.
+
+[00:36:40] Speaker:
+I just don't I don't know what I'm going to be what do people watching these things? Cause I think that's where I sometimes get, I'll have to brainstorm and then sometimes Claude's good.
+
+[00:36:48] Speaker:
+And, because I mean Claude came up with this- Actually, I could just ask Claude again, you know, he implemented this and then, like, what, I mean what you can do, you know, what you can- do is look at this, look at me, for a second, you can take a video, like a screencast, and- and those through the
+
+[00:37:04] Speaker:
+whole- like, like, do everything you can do with the app, okay? Yeah. And then start the expert network in- JEM and I, okay?
+
+[00:37:16] Speaker:
+See expert group, okay? And then after- after you start that- just show them the video which you made. Because then they can see what you can do with the app, and they should come up with new a- videos.
+
+[00:37:30] Speaker:
+Alright. I'm gonna start. I'm gonna do a different play. I'm going ahead and open. Shh, Thank you. Okay, and two here.
+
+[00:37:53] Speaker:
+Okay. So. That's it. And one, two, you can report us. Yes. I'm gonna click through these as it's doing them.
+
+[00:38:25] Speaker:
+Thank Okay. Good job. I think it's like duplicate.
+
+[00:38:40] Speaker:
+Okay. Oh, just for all of me. Oh, yeah, yeah, I guess I'm a select multiple. I'd like this top part, like, shown that- This is kind of ugly here at the top.
+
+[00:39:25] Speaker:
+Mm most interesting tetraps. Mm Okay, I will, One. But that is super interesting. thing. I'll save that for, game and I.
+
+[00:39:39] Speaker:
+Thank you. Okay. I need to find the snow. I'm gonna take the I'm gonna the two. Let's see.
+
+[00:39:53] Speaker:
+Uh-huh. Before ya. Okay. The clothes this one deserves. So many too many. I have a business.
+
+[00:40:13] Speaker:
+I need to call it something. . . You mean, I aint,. Oh Jenna, I can take a look at you. Let's see how big it is.
+
+[00:40:26] Speaker:
+. . I mean, it's crazy! . . . . . . It's so nuts! It does- it, it doesn't it, it doesn't do it with any API key.
+
+[00:40:34] Speaker:
+I say YouTube won't like that stuff. Because it's like, this is like, auto, like, I'm right now on a playlist with 200 videos.
+
+[00:40:42] Speaker:
+And it's getting it all, huh? It's just- and it's just code. It'll run. It's nuts. Yeah. I know. I don't think it makes any, like, actual- I didn't even look at the code, actually, so I'm not sure how it's actually called- I'm telling it.
+
+[00:40:53] Speaker:
+But, I just said it's Python based, so I think it's just actually getting it from the site. I mean, yeah, yeah, must be- Thank crazy stuff.
+
+[00:41:20] Speaker:
+Yes, you just kept this. What we do is. . All of that stuff. All of that stuff. Yeah, like, what we do with those tools.
+
+[00:41:29] Speaker:
+I mean, it's amazing, you know, where there's- What? Do you use them to make what we got to make? Do you use that circle of excellence in a faster thinking?
+
+[00:41:35] Speaker:
+In Gemini, usually I do it in syncing mode. Usually I don't do it in fast. lost. . Because I usually have time.
+
+[00:41:45] Speaker:
+Good. All right. No, I, I, this is fine. I wanted, I wanted thinking. I just didn't want deep research because when.
+
+[00:41:50] Speaker:
+Thank you. M and I goes on deep research and you give it some. Very narrow thing, but it has to fill in everything.
+
+[00:41:58] Speaker:
+It's. It starts bringing in, like, a background of the thing and what it is and what it's like a whole lot of extra stuff that just is not, Yeah.
+
+[00:42:08] Speaker:
+Oh, I yesterday I found a very good way of the- for everything. You tried, you tried, Behance, right? For, like, making the- for your design inspiration.
+
+[00:42:17] Speaker:
+Mm We'll see you right? Right? And Behance has a problem, I show you. And I show you how to fix it.
+
+[00:42:25] Speaker:
+Wait. Because that- it's- it's ex actually really good to do it with Behance. But, like the screenshots doesn't- don't work.
+
+[00:42:33] Speaker:
+Okay. Like, okay. Yeah, I'm on this And now, Okay.
+
+[00:42:45] Speaker:
+Perfect. Yeah. Mood ports, okay. So let's say I'm on, Let's say I like, yeah, I use this one yesterday.
+
+[00:42:59] Speaker:
+You see when I, I'm on this page, okay? And if I scroll down, It all looks nice, right? That's beautiful.
+
+[00:43:08] Speaker:
+Oh, yeah, yeah, yeah. The N22s that I, I, I, Looked at that one, yeah, yeah, I got, I got some inspiration from that one, actually.
+
+[00:43:18] Speaker:
+Yeah, but the problem is if I click on screenshot, it doesn't matter. Which tool you use, but if you use this.
+
+[00:43:23] Speaker:
+Yeah, it blocks it. This is- Thank you. The same thing with Sora. Yep. Same thing with Sora. Exactly. You have to do it for- You have to f- Basically take, like, a phone and take, like, take a separate device and take a picture because it's on the- Yeah, but I've tried reporting it on Loom.
+
+[00:43:39] Speaker:
+No, no, it has a different way, but it's very, it's very- It's stupid trick, but it works. yeah, okay, this one, more long.
+
+[00:43:44] Speaker:
+See? You see that? Yeah. Like, I'm just making it smaller. That's the whole thing. Thank you Because then I can actually take a screenshot.
+
+[00:43:57] Speaker:
+No, you just did the print. Did you like a print? No, no. Or do you make it smaller? No, Okay.
+
+[00:44:00] Speaker:
+You have, I mean, like, this is a regular- regular size. Yeah. If you just make it small, you can take a screenshot of the whole thing, and then you got it.
+
+[00:44:10] Speaker:
+Ah, so I guess it- goodbye. It passes whatever security they have when you're, like, zoomed in for the resolution, whereas if it's out, maybe they're, like, it's low enough resolution that it's thumbnail quality, so whatever.
+
+[00:44:19] Speaker:
+But then it- Yeah, I mean, you can use a different tool, you don't need that thumbnail tool, you know, you can just do it with this one, and then you can just say cap- Hit.
+
+[00:44:27] Speaker:
+Yeah, and if you want to even go down your scroll to get the whole thing. And then you have the whole thing.
+
+[00:44:33] Speaker:
+Next slide We're going to So now we have something out here. You see, this is the screen shot. Yeah, yeah, yeah.
+
+[00:44:42] Speaker:
+Yeah, and you can just use the, the one which we use like the, you know, like, to annotate. . You know?
+
+[00:44:48] Speaker:
+And, this way we can get, like, the bigger things as a screenshot. And I was, like, all the, I was, like, half an hour busy because I- I was, like, how do I get that thing into anti-gravity because it always blew up my screenshots.
+
+[00:45:01] Speaker:
+shots. Yeah. Just a small thing. Yeah, it's just small. No, I mean, that'll, that'll be a very helpful thing. E, because I'd run into this issue before where I couldn't take some screenshot of something, and so I, like, took my phone, took a picture of it in my house.
+
+[00:45:17] Speaker:
+Yes, yes. I that's- That's much, much cleaner. Yeah, it's very easy. Just command minus, and then you make it smaller.
+
+[00:45:24] Speaker:
+And command plus- Is make it bigger. Okay. Oh, yeah, there's a minute. Yeah, yeah, yeah. Yeah, yeah. Super. Bye Super.
+
+[00:45:31] Speaker:
+Yeah, I'm okay. Awesome. Yep. Yeah, I'm, I will share a screen of him. And I will see you next time.
+
+[00:45:39] Speaker:
+That is crazy. But this YouTube transcript thing is really cool. of really nice. Yes. I'm glad it works, so I see a lot of them ops.
+
+[00:45:52] Speaker:
+Yeah, I think what we need is like, we need to put the ideas to take, for example, like the Ted Talks.
+
+[00:46:00] Speaker:
+box. Okay. Put them in one notebook Lm and then put one a- Yeah. Nice strategy, for example, from, from, from, what's his name?
+
+[00:46:12] Speaker:
+my name's, we got- A- The, Nick. Nick. Nate. Yeah, Nick. Nick? Nick. Nick. Nick. Nick as those- Yeah, he has those- I'm thinking, We can over it for several you get creative work flow.
+
+[00:46:29] Speaker:
+I'm I'm stuck and to put those in a different notebook and then to make one, one Google gem. I'm, with all the Tetox and also with, with the anti-gravity from, from Nick, you know.
+
+[00:46:43] Speaker:
+No. And then say, then use the expert network to read, to start the expert group, I mean. in. And then say, okay, we want to make an AI automation, the style of notebook one.
+
+[00:46:57] Speaker:
+have a look of it in order to if have any unique and do something that is, intellectually on in. you just in the style of, of the chat talk.
+
+[00:47:06] Speaker:
+And then it thinks the, the expert. I'll in the one. The group should think about anti-gravity, authentic workflows combined with chat talks.
+
+[00:47:17] Speaker:
+What. What? What could we do? Mm That's good. I mean, you could technically even do that with, Oh, no, that's what the- Yeah.
+
+[00:47:34] Speaker:
+Yeah. I think that very- it's a very interesting- thing with. It's something we have to try, I think, if that works.
+
+[00:47:42] Speaker:
+I think it's a really cool way to create. We will see you ideas for AI or create ideas for YouTube videos.
+
+[00:47:51] Speaker:
+To get the expert network on the technique and on- what on the outcome and then let's a mix it. Yeah, I like it.
+
+[00:48:00] Speaker:
+you Yeah, I'll, I'll try it out today and see what, see what I come up with and I'll send you the outline.
+
+[00:48:06] Speaker:
+And then let me know what you come up with if you- I'll try it in, like, a different, different sources or something, like, outside of, you know, I'll try it a few different ways and see how else.
+
+[00:48:14] Speaker:
+Yeah. But I would like it as well. Because I think that is a very, that's a cool way of doing stuff.
+
+[00:48:18] Speaker:
+Like, it has the brightest people in the world, you know, doing stuff. without AI, and then just add, like, one specific AI, picnic.
+
+[00:48:28] Speaker:
+On all those, tat talks, you know, I think that could be totally crazy. Easy. I agree. Yeah, I will, I'll dig into it and report back.
+
+[00:48:40] Speaker:
+Then I'll- you know See, yeah, I'm gonna, I'll, this afternoon, I'm gonna add some of the features to, to this.
+
+[00:48:47] Speaker:
+Just some of these little- You Quick features, I'll, I'll share them in the chat here. This is, some of the things that was sent.
+
+[00:48:53] Speaker:
+Thank you. Do. Ah, there. There's a bass. Please. He's saying it, like, it feels like a tool and not like an experience, and so it's like making a big, change to the UI.
+
+[00:49:08] Speaker:
+But you're welcome to take it in a different direction. I realize I probably should have called the circle of excellence first and then uploaded the video with my Yes, it's what I said.
+
+[00:49:17] Speaker:
+It's like, you know, I did it at the same time. Yeah, yeah, the video is just like after. I You know, and I've done that before, too, and I was like, the thing comes out wrong when you give it any context at all in the beginning.
+
+[00:49:30] Speaker:
+You like totally because it doesn't work. You have to first activate them, and then they say, hi, we are here.
+
+[00:49:35] Speaker:
+What do you want to talk about? And then you can do it. Yeah, I like, yeah, the- I am going to, noodle and enrich that idea of the UI for the circle of excellence.
+
+[00:49:47] Speaker:
+We'll see next time. Because I think that's a, it's a simple, it's such a simple piece thing and it's really just for convenience but also for very quick insights.
+
+[00:49:55] Speaker:
+sites. Customizable ones so that you don't have to keep recreating your prompts all the time or finding where this prompt is or what would these incentive like?
+
+[00:50:03] Speaker:
+Hey, how's haven't saved, haven't saved in certain things that can then like generate say action items for you that then get assigned.
+
+[00:50:11] Speaker:
+fine. 2, whatever. Some agents to work on it. That's something like that. I definitely, I will, I will get our one.
+
+[00:50:20] Speaker:
+Tools, we have to, I hate to spin them up all the time. I want to have them like online to use, you know?
+
+[00:50:27] Speaker:
+Oh, yes, why? It's okay, like, the deployment takes like just a few minutes at the end and I guess like, but I see what you're saying because it might look different.
+
+[00:50:36] Speaker:
+And, like, when it's deployed. So then just deploy it and then you can always, like, take it off. I mean, it's, you know, it's, it's not just that, it's just, you know, if I deploy it, you- you know, I can also say, okay, because yesterday I did something with Firebase, as it's free, you know, like,
+
+[00:50:51] Speaker:
+for- very big amount of stuff. So, you can use it like Superbase, you know, and it saves your stuff. So, let's say- I, because right now I ran into the same problem as you that on my Chrome browser, I cannot download with the extension, you know?
+
+[00:51:07] Speaker:
+And if I have f- If I have it on a local installation, if I change the browser, the content is gone.
+
+[00:51:14] Speaker:
+Yeah, you know. Nope. So, yeah, it's just much cooler if it's online, you know, and I have everything saved, you know.
+
+[00:51:22] Speaker:
+Like all my research before. Yeah, it's so simple to make like, to make like a memory where it has- All the history, you know?
+
+[00:51:31] Speaker:
+Yeah. And I want to have that. Yeah, I guess you want like my, I own control brain center where like all my teleconference notes, all of my, all of my projects, all of my whatever, all of it.
+
+[00:51:43] Speaker:
+Ok. Okay. Is like your index in there some way so that it's Yeah, the future would be so horrible, you know, like, remember, like, when I was, when I was like.
+
+[00:51:51] Speaker:
+2020, we could do whatever we want because there was almost no social media, and digital cameras were not inside of us- smartphone.
+
+[00:52:00] Speaker:
+They were like separate devices you have to carry around. Yeah, we could go in the nightclub and we were like- You know, we were like dancers, you know, we got paid for that, you know, but we didn't have to think about if people ever ruin our career.
+
+[00:52:15] Speaker:
+Because they have some crazy video or picture of us, you know, and it's a very near future, but for us it's already- now true because you're- we are recording all those looms, you know?
+
+[00:52:27] Speaker:
+Yeah. So, it's like you can- later on you can say, okay- You It he or she say that, you know, and it's just a basic request.
+
+[00:52:36] Speaker:
+You know, imagine this is everywhere. wear. 8 8 Yeah, I'm gonna, yeah, I'm gonna try a few things. I'm really, pleased.
+
+[00:52:46] Speaker:
+released. Yeah, I'm gonna make some huge playlists. I'm gonna make some big playlists. Yeah, and, yeah, we're gonna get some serious- You're an serious insight.
+
+[00:52:57] Speaker:
+Yes. I mean, also on the side of all of this stuff, you know, there's, like, so many things you can- .
+
+[00:53:03] Speaker:
+You can hack brains with, like that. Oh, big time, you know, and like, I'm telling ya. Yeah, there Yeah, there was.
+
+[00:53:11] Speaker:
+I had like saved like 4 hours of a task that would have taken 4 hours and spent like an hour on it.
+
+[00:53:18] Speaker:
+But honestly. I'm not kidding. I really think long I would have probably maybe taken closer to 7. but just took like an hour using using firework and it is Like, yeah, it's one of those times where like, you know, it just feels like so incredible that.
+
+[00:53:34] Speaker:
+Work the way you wanted it to. So, yeah, that was cool. Cause I had some other failures. players. The last few days, sometimes like the mock-ups it would make.
+
+[00:53:43] Speaker:
+I'm like, yeah. Like, a lot of the time it's just how I'm prompting it. But like, I like these m- mock-ups that it- it still didn't- it still not make- it still didn't build that, Yeah, Studio, I always- I- I- Studio, something.
+
+[00:53:56] Speaker:
+If it worked before, if it's just spinning, you know, it's usually appropriate for them. You know what? I usually- Usually you'll, Open it in Safari, so let me try that.
+
+[00:54:05] Speaker:
+Because maybe it's like, no, Google detects Google. Can't do it. And Yeah, possible because it's maybe it's thinking AI is doing AI.
+
+[00:54:14] Speaker:
+I am. Let's see if it opens as far. Yes, it does! It, yeah, it opened up right away. Wonderful. Let me go back here.
+
+[00:54:23] Speaker:
+Yeah, it's Chrome. Chrome Chrome, just causing all these problems. All these problems. It's anti-gravity. Have a good day. It's the anti-gravity.
+
+[00:54:32] Speaker:
+Sorry, not Chrome. I mean, anti-gravity. But they're the ones that like, Put it in. Yeah, but I think the AI in general, they have a prop, AI doesn't like, I mean, not ne- Similarly, but sometimes AI doesn't want it to be used by AI itself.
+
+[00:54:51] Speaker:
+I hope you video. Yeah, I know, I hear you, yeah. I know, I get it, I drooling them. Bye bye.
+
+[00:54:58] Speaker:
+Ops completely explode in that case. Yeah, cuz who's who's stopping him, who's tapping on the, you're like, that's enough. So I'm going little bit a shot.
+
+[00:55:06] Speaker:
+I'm a shot. Exactly. Yes. Okay. Like, you know, AI is like, after five days, some a- AI shows up and say, okay, I saved the whole internet.
+
+[00:55:17] Speaker:
+I saved the whole internet. It was like, prompting himself to save s- We hold internet in case it's offline. Like, have everything now.
+
+[00:55:24] Speaker:
+That's it for me. Let me share this here. Okay. All right. Safari. I don't understand. We'll see next week. Today, I could not have lost you, and there's nothing maximized.
+
+[00:55:47] Speaker:
+And I put you in Safari. far. I'm here. I know. I don't see. I check this out here. so there you are.
+
+[00:55:59] Speaker:
+Oh, I know what it's okay. I see what I did there. Let me open it up again, cause I closed it.
+
+[00:56:07] Speaker:
+Yeah. And. You know, I was going through an email this morning and there was a.
+
+[00:56:18] Speaker:
+I was looking for a file that I'd sent myself like six years ago. But then I came across this, old, Six years?
+
+[00:56:24] Speaker:
+Six years, yeah. they're just present, but they're, and I looked at the slides and like, they're so ugly. They're so ugly.
+
+[00:56:31] Speaker:
+And, So, I ended up the end build. So, I put it in a book I love and I haven't even seen the output yet.
+
+[00:56:37] Speaker:
+Thank you. Now that I will present it again, but it's just nice to see that, I don't know, like, what it couldn't begin.
+
+[00:56:45] Speaker:
+Here You Yeah, definitely slide decks are no longer a problem in my world. Work for anyone. I wanna. Okay, share, share, share, share.
+
+[00:56:57] Speaker:
+There we go. So this is. is what it looks like. And so his chief complaint was that. So they have.
+
+[00:57:06] Speaker:
+Have a good day. a lot of historical control data, which basically is just a data from the control group animals in these.
+
+[00:57:13] Speaker:
+please. Talks Quality Studies that they run. And so all this control data, you know, you amass over time so you get like a historical control.
+
+[00:57:21] Speaker:
+So you know when you see, like, weird effects in a litter, or something like that, that, like, okay, well, this is within the range of a story.
+
+[00:57:29] Speaker:
+Vocal, incidents, and so it's considered background. Cause the last thing that you want is to have a weird effect in your high-dose group.
+
+[00:57:35] Speaker:
+And you don't have in your historical database, then it's going to be considered flag, and then you got a liability on your, on your compound.
+
+[00:57:42] Speaker:
+So, so what I did that- and he's like, because every time they have to go reference historical data, they have to go pull the data from each individual study, go put it together, make the means, there's a whole several- hour long process.
+
+[00:57:53] Speaker:
+And I was like, no, no, no, no, no, you need to have your data centralized and-and the thing is their data's already It's already in an electronic data collection.
+
+[00:57:59] Speaker:
+Collection System, and that has an API that can gate into it. So basically this, I was showing, like, if you, you know, it's still like a hundred and forty-seven.
+
+[00:58:07] Speaker:
+all of your historical studies over the course of the years, and what species they were in, and then this is if you wanted to look at any, like, any of your data, say, by root of ministration, if you wanted to look at all the studies that were done, in New Zealand, White Rabbits.
+
+[00:58:23] Speaker:
+I guess there was not a lot of mock data for those, but, and then the study monitor, You is like if you want to look at, yeah, just like regular ongoing updates as the study is ongoing because they collect data regularly.
+
+[00:58:35] Speaker:
+They have known intervals, but then the study director is to go into preventus, and I've had to do this for years, and it's a pain.
+
+[00:58:41] Speaker:
+You have to go in, you have to go select it. Let's study, select the data, go export the table, get it in Excel, format it, go put it in, it's whole, it's a nightmare.
+
+[00:58:49] Speaker:
+And so had we had this, this would have made a wh whole, like it would have made things a lot easier.
+
+[00:58:53] Speaker:
+This is actually the older one. The first one I made is from a YouTube video about that. Well, it doesn't actually work, they are not with real stuff, like not with real names.
+
+[00:59:04] Speaker:
+Oh yeah, this is totally, I'm just- Because this is like something- Sorry. Here we go. This one has all of it.
+
+[00:59:11] Speaker:
+Then I- Cause I added- I added some features in here. I just asked AI Studio to do it. And, and honestly what I really could do.
+
+[00:59:19] Speaker:
+What I- what I think I may do if- if I'm ever gonna be talking with clients, is I'll make like a mock like this, and I'll push it to GitHub, and I will make a plan in anti-gravity to just like- Soup this up, like, really, really nicely, and have a really solid demo with, like, all the mock data in it
+
+[00:59:35] Speaker:
+so that they can really see, like, as I added this, this component in here, like, the report writer, because they had, like, the reports are always the same.
+
+[00:59:43] Speaker:
+You go from the study protocol, and then it gets, can convert into their study report, and you got to input all the data along the way that came along, according to the protocol.
+
+[00:59:50] Speaker:
+And so this is showing, like, well, if you have your study that's all done. It'll summarize your stuff for you.
+
+[00:59:56] Speaker:
+Here's all the sections in the report. I don't know what is keep circling. It's an effect that has been there since it was built.
+
+[01:00:01] Speaker:
+And then, say, for example, if, you know, because it has a historical data in it, if it flags, like, hey, your value is, like, much higher.
+
+[01:00:09] Speaker:
+And then for QA tracker is when QA comes in, if it's a GLP study. ready. Like if the study that they're doing at the lab is done to GLP compliance, which is typically they have to do that if they're going to be using it.
+
+[01:00:24] Speaker:
+To support a safety program, like if they're going to submit it to FDA and be like, this is the safety of the drug.
+
+[01:00:29] Speaker:
+It has to be done to GLP. Otherwise, they're like. Because it's basically at you document everything so they can go back and retrace it so they don't need to make shit up.
+
+[01:00:37] Speaker:
+but right now when they have auditors that go in and do- their audits, they just basically go and SharePoint, take a template, write it out, print it, sign it.
+
+[01:00:47] Speaker:
+Give a copy back on SharePoint and then hand a physical copy to the study director. And so, really anything would be- be better than that current workflow.
+
+[01:00:57] Speaker:
+But this is a page that will basically show, like, for QA, when they come in, how many audits did they have open- how many open files?
+
+[01:01:02] Speaker:
+it'll do it over the course of life. But This is really good. But the thing is, what I don't have, but I don't understand this when you- You know, I should make, when I talk to clients, a mockup, I like, like, want to show them.
+
+[01:01:16] Speaker:
+and you should make a YouTube video. Because, let's say, you know what doesn't that, oh my god, that's a point.
+
+[01:01:22] Speaker:
+Yes, yeah, exactly. Let me finish. What? Then I guess I just have to then build it, yeah. But I mean, no, that's an L, of course.
+
+[01:01:30] Speaker:
+First. If you have to build it, but the thing is how many people are watching it and then look, we are having a community, okay?
+
+[01:01:36] Speaker:
+And it is- I can. If you look- Stop, stop, stop, stop, stop, stop. Let me finish. And then you have this, you have this, you made this tool, right?
+
+[01:01:44] Speaker:
+Yeah. And we just say, okay, make- make it internationally in every language. And then you just film whatever you say we are using in in Hagen.
+
+[01:01:54] Speaker:
+So you change the language and we take we have a video of the same tool in French in Italian or whatever.
+
+[01:02:02] Speaker:
+F. And people come to us and they want to use those tools. We can scale that much bigger. Pastor!!!! Pastor!!!
+
+[01:02:10] Speaker:
+Oh, that's a great idea. Yeah, and it keeps out of the US. There's no conflict, not keeps out of the US, but, you know, expands beyond.
+
+[01:02:18] Speaker:
+You in the United States a lot. Also, no, the thing is, if other people are doing it, it's on their risk, not yours.
+
+[01:02:25] Speaker:
+You are teaching them how- to use tools, and if they use them, they- it's their responsibility to use them correctly.
+
+[01:02:31] Speaker:
+But this tool doesn't work, though. This isn't a f- functional tool. It is literally hard-coded mock data. Like, NIH in a mockup.
+
+[01:02:40] Speaker:
+We have a- you could do it in for real. We'll see right as well. Yes, yes I can. Yeah. Yes.
+
+[01:02:46] Speaker:
+I, yeah, this will be really good to- just sometimes when there are features- But this is, like, a perfect YouTube video because this shows, like, like, this shows your, your, your ins- Thanks.
+
+[01:02:56] Speaker:
+the science world, you know, it shows like the whole thing. That's a brilliant idea and I really don't even know why I didn't think about that.
+
+[01:03:04] Speaker:
+I'm gonna beat up. I take the company name off and I'll put, like, you know, ACME, whatever. And, yeah, I'll start making, this will be great because then I can- basically, like, envision all the things that I know I want to build, that I know will help.
+
+[01:03:18] Speaker:
+Except- Except, See, even with a personalized medicine, with a personalized AI for the doctors. Yeah. And you, I'm- I'm listening to you and you're like, we spend, like, so much time doing this manual.
+
+[01:03:32] Speaker:
+It took, like, forever. And I'm like, yeah, you should tell people, you know, like- I'm like, not like one who actually use it, but if you put that on YouTube, you know, and people from your niche are waiting for you to see the second program.
+
+[01:03:41] Speaker:
+You can completely relate and then they want to have it and if we have a community, they will join. I'm Yeah.
+
+[01:03:52] Speaker:
+Okay. I'll, I'll leave 30i off of it other than outside, maybe the name of the channel because really. the end.
+
+[01:03:58] Speaker:
+Anybody in any industry can go and get their own YouTube channel and it doesn't make any difference. It's really just if I'm saying like, I am in business with that and not in.
+
+[01:04:05] Speaker:
+So I'll. I don't get into that stuff. I'll just literally talk about like, like, I'll just say like, I'm a, I'm a.
+
+[01:04:11] Speaker:
+Yeah, I'm a tough. I'll just, you know what this. Yes. You know about mine. I don't worry so much about that stuff.
+
+[01:04:17] Speaker:
+Yeah, I know. I know. I know. Just don't take, don't take names of us. I know people. And then just make, we have a community and we have a channel.
+
+[01:04:27] Speaker:
+You know, I also thought, you know, maybe we could have like, like, I have a drum channel, you know, like, to get some drum clients and to get them into the community.
+
+[01:04:36] Speaker:
+And you have like a toxicology channel. You know, or like a science channel. Let's put it science channel. It's better.
+
+[01:04:45] Speaker:
+And I thought, maybe, you know, for our B2B community, you know, we are like, we could have a channel which we have together.
+
+[01:04:53] Speaker:
+But not for science. Bye. Well, the business stuff, you know? Yeah, yeah, I think for the business stuff and like the using AI stuff for really any kind of beneficial Perfect.
+
+[01:05:04] Speaker:
+Yeah. Yeah. And also, like, you know, like regular business, like, which is not science because I cannot talk science, obviously.
+
+[01:05:09] Speaker:
+Sleeved. Sleeved. But if it is just like for making stuff with, you know, like using AI tool making workflows, you know, but I think that would be not- Nice because like, very often, you you have like this one guy talking, you know, and we could do this a lot more, like, in for- it's like, it's, it's
+
+[01:05:28] Speaker:
+nice to talk to, to listen to, you know, and I think we, like, we have a channel together that would be great.
+
+[01:05:34] Speaker:
+. . I agree, yes, we can go, yeah. Cause then it'll satisfy all the different, like, curiosities and Creativities. Cause like, yeah, making these I loved.
+
+[01:05:46] Speaker:
+What I would love to do would even be cooler, isn't it? If, then I just had, say, not Thai, but, Thai, be like, okay, here's, here's the mock-up, go build it.
+
+[01:05:57] Speaker:
+But the thing is, I mean. Anti-gravity, I'm gonna, I'm gonna try that and have anti-gravity be my, be my builder and be the tester.
+
+[01:06:05] Speaker:
+But then I think. Thanks. The security parts, you know, I mean, that'll, that wouldn't be like, that wouldn't come the next day after someone reaches out to us.
+
+[01:06:12] Speaker:
+It would just, it would be like a discussion. And all of it's still like talking about things and showing them things.
+
+[01:06:18] Speaker:
+But there's no actually, like, connecting into their data and it's not even expected yet either. So as long as, like, the conversations go smooth and they always do.
+
+[01:06:27] Speaker:
+At least the nice thing is I know that I can, I can speak. The language, even though I don't necessarily know all the details about behind why.
+
+[01:06:36] Speaker:
+Bye. Or, you know, and that would be, like, if they're more like a meeting with, like, the head of IT at some company, then they can.
+
+[01:06:44] Speaker:
+Could be, like, a developer person who, who would have a good idea, but I always think that. And then the next thought that comes to my mind is like, wait, if I could just- you prepare the prompt- the appropriate prompt and system to teach myself, to get the AI to teach me to be this- to be- to basically
+
+[01:07:01] Speaker:
+, like, get it to have- to have that. Like, what I need it to be and be certain that what it's giving me is, like, not bullshit.
+
+[01:07:08] Speaker:
+Yes. Yeah. So. But for example, like this security thing, like you said before. What? That is not an issue. It's, you know, it's, it's, if you have $5,000 to spend on an apple, then you can.
+
+[01:07:23] Speaker:
+You can install, really good AI models locally. Yeah, I'm gonna spend $5,000 on this. No, no, of course not. Bye bye.
+
+[01:07:30] Speaker:
+But if, like, if a company, like, if after your talk, they're totally interested, you know? Yeah. And if they would like to spend $5,000 on- because they need to, because they- they need to have it safe.
+
+[01:07:42] Speaker:
+As you said, you know? The solution is super simple. They have to have, like, a $5,000- Help. It's a,000 computer.
+
+[01:07:48] Speaker:
+You install anti-gravity. You download all- all the- No, no, no, no, anti-gravity is okay for that. Let's not go for that.
+
+[01:08:00] Speaker:
+Then you install, like, the local- LLMs, and then you create with anti-gravity is a tool locally, but not using open AI or anti- gravity, but using the local LLM.
+
+[01:08:13] Speaker:
+Yeah, yeah, yeah. You know that you can pick out anti-gravity, it doesn't matter anymore. More. But the software runs locally and it uses a local LLM model and then it's safe.
+
+[01:08:25] Speaker:
+Yeah. and Yeah, I'm not sure. I don't know how much I'll have to look at how much space I might need, but for now I'm just gonna play an AWS for a little bit.
+
+[01:08:34] Speaker:
+Cause, It's just like, they're an easy and they already set up a bunch of these things that I'm still learning to use.
+
+[01:08:40] Speaker:
+I us it's not necessary for us. It's not necessary. It's just like, If you have a clinic or something like that, you know?
+
+[01:08:45] Speaker:
+Yeah, it's fine. I want to know that I know how to handle their data. That's all I mean. I know for my stuff.
+
+[01:08:51] Speaker:
+For these things, but even for like my work, I have to use AWS. And now they don't know that I'm using AI to do stuff, but that's.
+
+[01:08:59] Speaker:
+That's why I want to keep it on AWS so it stays like, doesn't go anywhere. And then I don't feel as worried about.
+
+[01:09:07] Speaker:
+I using, okay, but, but the models, they are training on your data. You know that, right? No, no, no, there are, I'm glad.
+
+[01:09:15] Speaker:
+So there's, the episode that rock, they don't turn on your models. No, I bet you have to, like, change when you- when you- when you open a Bedrock, Matt walked me through yesterday and he said, yeah, if you have this setting on, it will- it can train the model.
+
+[01:09:28] Speaker:
+But you turn this off and then it's shut down completely, but that's the whole point I guess of setting up this one certain thing that you would turn it off.
+
+[01:09:34] Speaker:
+Oh, okay. Yeah, but- I mean, if you are using right now any AI model like Gemini or OpenAI- Oh, yeah, totally.
+
+[01:09:41] Speaker:
+It's all out there. Yeah, okay. Yeah, I don't know. I don't put anything in there. but yeah, that's why I was kind of just really, I think what gave me a lot of frustration with my day job before is that, I wasn't able to use AI to help me in it, really.
+
+[01:09:55] Speaker:
+I had to be very cagey, had to be very like, go spend just hours redacting stuff, done. And, like, it became more of a hassle than it was worth, but it's because I didn't know how to handle it in a secured environment, and my computer was shitty at the time anyway, and I didn't have enough space or-
+
+[01:10:08] Speaker:
+but even now just learning how to use AWS and put my stuff on there and get stuff out of it that I need.
+
+[01:10:15] Speaker:
+It's like- This whole- Wait, this whole- This whole concern that I had of not being able to manage- energy. Both?
+
+[01:10:25] Speaker:
+It's, like, gone. It's, like, totally gone, and it's really just a matter of then having a chat with, like, I'm gonna show- I'm gonna- show this, like, a couple of these, prototypes to my boss and to the team.
+
+[01:10:36] Speaker:
+And- because I have this Friday, we have a- I don't know about any of the performance review. And so that's the point that I'm- you know, we talk about our goals and kind of where we want to go.
+
+[01:10:44] Speaker:
+Are we still liking what we're doing, change stuff, whatever. And so I want to present this to you and tell him like, look, like, and I know he will buy in.
+
+[01:10:51] Speaker:
+It's just- I don't know that the team will, but that's- whatever, but then if they don't, then I'll know where they sit, but then they'll know where my intention is, and I'll feel a lot better when they see what- What?
+
+[01:11:03] Speaker:
+Is possible since I've put it in front of them in a way that hasn't actually, like, I haven't used any of their data to make this.
+
+[01:11:10] Speaker:
+It's just like- Look, at what you could do, you want this? Do you want something easier than what we're doing right now?
+
+[01:11:17] Speaker:
+I think your boss will want it, the pro- Loom with everybody else, it's all, everybody's scared that their job is gone.
+
+[01:11:24] Speaker:
+That is a problem. I don't know. This is- I will literally propose this- like, these- these prototypes are being pitched as, like, basic pro- like, data and project managers.
+
+[01:11:35] Speaker:
+measures. Like, so that way you don't- you don't lose something under the- like, nothing slips under for you. It's like a tool to help.
+
+[01:11:43] Speaker:
+The person keep on their stuff because in a- it's true. You can't outsource. That's true. But they are scared in the moment of AI.
+
+[01:11:54] Speaker:
+Something in their head doesn't work. Like a boss is different because he's actually paying, paying. being a pain. employees, blah, blah, blah.
+
+[01:12:01] Speaker:
+He generally is open to AI, you know, and the people who are working, they are. You know, if it's just helping them, you know, they are like completely, blows up to a.
+
+[01:12:13] Speaker:
+I, because they are scared of the, of, of, yeah, they are just scared. I understand. I mean, those things will be baked into whatever I share with them when I tell them.
+
+[01:12:25] Speaker:
+because I really just want to show the, the upsides and not. Like, and that's exactly what I will add in the prompt is, like, make sure that that doesn't focus on it.
+
+[01:12:33] Speaker:
+It takes, like, shows the good sides of AI, not just that they're gonna lose their job. But know that the audience is like very hesitant.
+
+[01:12:39] Speaker:
+Still going carefully, I think. Yeah. Yeah. Yeah. That's how I mean. Yeah. Yeah. Yeah. I'll have a call in 11 minutes that I'm just got a couple of things together for.
+
+[01:12:49] Speaker:
+But I'll be, I'll be around this later this afternoon. If, if you are up in the building and stuff, but I'll do these, I'll do this TED Talk stuff and I'll, I'll let you know how it's going and send you the, yeah.
+
+[01:13:00] Speaker:
+Yes, and I think that would be very interesting. Yeah, yeah. And today's the last day I have to work and I have, I have three days off again.
+
+[01:13:07] Speaker:
+Ooh. So from tomorrow on, we can have, we can have chats again. Yeah, I actually live to more, to more Thursday.
+
+[01:13:14] Speaker:
+Yeah, more Thursday. Okay, cool. Yeah. Friday, I'm, Friday we're going to Mississippi. it's a couple of, well, it's, is the next we're gonna- Yeah, it's a couple of our birthdays and so we're gonna go, go hang out with our friends there.
+
+[01:13:28] Speaker:
+and and jam a little bit, she's got, she's also a DJ, she, she has like, the black version of the decks that I- Bye.
+
+[01:13:36] Speaker:
+of here, but they're like the larger one, and so she- so we go there while it's s- so we brought them once before, but I never actually like- and end up taking them out and use the four, but, very just- usually go there.
+
+[01:13:47] Speaker:
+She's got a creek and the whole- in the back, where she lives like really out like- out in the forest, but, like, the land.
+
+[01:13:55] Speaker:
+Lots of land around, around where she lives, but in the back. Bye. There's this really large creek that runs all the way down, like me, for like a mile, like a mile and a half or two, and you can just go like walk along the creek.
+
+[01:14:05] Speaker:
+There's like a little water. And then I ended up using the rock tumbler more than she did, cause I didn't re- I realized that the rocks look so pretty afterwards, so I mean, I think I did for like a month, and I was like, I don't know how to get rocks, but any time I'll go throw up the next summer, they
+
+[01:14:21] Speaker:
+have like, you know, summer s- I don't know really pretty ones, because they can look really beautiful. I mean, I thought that they, I didn't know that they came out looking like that.
+
+[01:14:28] Speaker:
+Like, these beautiful colored st- homes. I'm like, cause it was all just gray and brown going in. Yeah, I didn't know.
+
+[01:14:35] Speaker:
+So I was like, that's beautiful. by the time. Yeah, so I hang out there this weekend and Monday. Do you guys have family day?
+
+[01:14:43] Speaker:
+Is that a holiday for you? No. yeah, I don't know anything. So it's in Canada. we don't have it on Monday.
+
+[01:14:48] Speaker:
+We don't have a holiday here. They do in Canada. It's, The office is closed. And then I'm still working. Working.
+
+[01:14:55] Speaker:
+Working. Yeah, yeah, yeah. Just on my computer. Yeah. Yeah. So on. Yeah, that's not right. Right. I can't be not working.
+
+[01:15:01] Speaker:
+I'm like always working. When I'm awake, I'm working. Same. Right. Now I get up. Well, first. for it You're like the only person that is as crazy as me about AI.
+
+[01:15:11] Speaker:
+You know, like everybody else is like, some way less. Yes, we're. Sure. You know, yeah, it's like, yeah, they just don't know.
+
+[01:15:19] Speaker:
+And I'm trying to teach my friend Courtney. you very, very smart. She's she just hasn't been around it very much.
+
+[01:15:25] Speaker:
+And I think of all the people. So. And just who should, like, I don't know, I'm just surprised that she doesn't, I just need to show her.
+
+[01:15:32] Speaker:
+I need to show her the cool stuff that she- can do. Cause then I think she'll come out of whatever, this is the common mindset in, like, this standard f- entered.
+
+[01:15:42] Speaker:
+Population is. So, It's very hard for them to get out of that. Very hard. Well, you got to, you got to shut up something.
+
+[01:15:49] Speaker:
+I think that's it. I don't know. I have no idea. Like, for me, we have no problem. I don't really know why.
+
+[01:15:57] Speaker:
+But, for example, like. And you have a kid. I mean, if I would have a kid, you know, I think my mind would be different maybe because I can- only say like, you're raising kids, yeah.
+
+[01:16:09] Speaker:
+You're raising kids, you send them to school. And in my opinion, right now is like- Why? It's even worse if your kid is- You gotta teach them how to meet the people too, still, and like, learn social skills around other kids and everything.
+
+[01:16:19] Speaker:
+Yeah, yeah, yeah, yeah, of course. We see you in the We'll see the same. Of course. Of course. Yeah, yeah, of course.
+
+[01:16:25] Speaker:
+But let's say even worse if your kid is like 20 years old and now one. Come on. You have go to college.
+
+[01:16:31] Speaker:
+Okay. And now college, especially in the United States, you, you have a lot of debt after- I mean, I didn't go to college in the States, but yeah, I didn't go to college.
+
+[01:16:43] Speaker:
+If you do that, you have a lot of debt. And- The thing is like, after college, whatever you learn right now in college, maybe that's different in five years, but whatever you- learn right now in college, that is completely stupid in my opinion.
+
+[01:16:57] Speaker:
+I don't I don't know. I don't know. See, here's the thing. Here's the thing. Look, AI is great and I can teach you everything and you can get all your s- stuff written and it'll do it for you fine.
+
+[01:17:12] Speaker:
+But, like, for anybody to actually have, like, to really want to, like, On understand something, it's like the question that, oh, that is going to become the creator of material.
+
+[01:17:22] Speaker:
+Are they actually going to be the ones to, like, understand? and understand it, like, index on it, and then apply it.
+
+[01:17:30] Speaker:
+And so I still think the kids need to learn from. from like, we've been learning from parents and older teachers and other caring people, right?
+
+[01:17:41] Speaker:
+Now in the All right. Because of, and I mean, you know, there's some shitty teachers and some good teachers and maybe there will be a time where there are these virtual teachers and it looks like real ones and they're better than the real ones find.
+
+[01:17:49] Speaker:
+Bye! But that's, we're not there yet. And I think kids still need that interaction of like the adult and then like, them, you know, correcting them when they do something wrong and- because it's not just like the books, right?
+
+[01:17:59] Speaker:
+It's like them learning their skills with their friends. It's them, you know, dealing with problems once there's a disagreement. I kind of, they just- I'm not rounding out, like, who they are as a person, I think.
+
+[01:18:08] Speaker:
+And so, even, you know, she's like home, and I'm not saying this about all homeschool kids, but some homeschool kids- cool kids just on average.
+
+[01:18:16] Speaker:
+They're just generally, like, a little less, socially adjusted. Like, I mean- take them a little bit longer. Not that they won't adjust ever.
+
+[01:18:25] Speaker:
+They just didn't get the exposure at the time when their brain's neurons roll fire. And growing and taking shit at me, you know what I'm saying?
+
+[01:18:32] Speaker:
+Yeah, definitely. I think, like, peaceful education things. I totally agree. Like, the social part. Go. For sure. Also, there will, it's necessary to learn, and absolutely.
+
+[01:18:41] Speaker:
+But the point is, the process of, Learning books, you know, to get just stuff from a book into your grade.
+
+[01:18:50] Speaker:
+Oh, yeah, no, no, totally done. No. There should be- See you. Well, I should have, you know, really used, like, animations with the words going by, and then they can interact with it to, like, I mean, really make it an engaging experience, not just like- Yes, mean the way- We are learning, the way we
+
+[01:19:02] Speaker:
+are learning is intense. Like, really good. Like, every week we are making, like, a beautiful- out. We jump forward because we improve the technique, you know?
+
+[01:19:11] Speaker:
+But at least in Germany, it's like, you know, like, you know, the- the teach- just have to teach exactly what has been decided two years ago, kind of.
+
+[01:19:20] Speaker:
+No, yeah, no, I'm fine. I think they're maybe gonna have to- yeah. And- I think they want a core curriculum, so they don't have some kids, like, on one total end of the spectrum, and other kids, like, just, you know, they just kind of keep them balanced, but I hear you.
+
+[01:19:31] Speaker:
+I'm not- I'm not all about keeping into this certain standard, because you've got other kids that are way above it, others that are way below it, and I mean, it's, yeah.
+
+[01:19:39] Speaker:
+That's, like, been an ongoing debate, I think, for decades about the education of our children, and the upbringing of the, of the next society.
+
+[01:19:46] Speaker:
+You know, like a bunch of, Yeah. Yeah. So, we'll see. Yeah, okay. Well, I, yeah, yeah, I gotta hop off, but I'll, message you, when I'm, when I'm back.
+
+[01:19:53] Speaker:
+Okay. Bye. Bye-bye. Bye.
+
+==========================================================
+END OF TRANSCRIPT

@@ -1,0 +1,689 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: 529d3ed9b3e744cf8ccb5d5e8a6f5a09
+URL:      https://www.loom.com/share/529d3ed9b3e744cf8ccb5d5e8a6f5a09
+Date:     2025-12-16T20:09:18.417Z
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:51:43.751Z
+==========================================================
+
+[00:00:00] Speaker:
+I don't anything they were talking about, and so I kind of just thought the school was like, uhm. Anyway, yeah.
+
+[00:00:05] Speaker:
+So,
+
+[00:00:06] Speaker:
+uh. You have to do me a favor, you have to tell me. Well, Jen, somehow, you cannot use the word, this squirt name, you cannot use it.
+
+[00:00:16] Speaker:
+Oh, how come?
+
+[00:00:18] Speaker:
+It's, uh, like a complete squirt. Sexual
+
+[00:00:21] Speaker:
+thing to do.
+
+[00:00:22] Speaker:
+But, like, you cannot,
+
+[00:00:24] Speaker:
+like, just tell you. Well, here, let me send her a little note. Hang
+
+[00:00:27] Speaker:
+on, I'll send it. Yeah, like, I, I don't want to say that, but, like, do it, like, I don't know, like, I don't even know if it's written correctly, but, you know, like, just don't use that name.
+
+[00:00:36] Speaker:
+I
+
+[00:00:36] Speaker:
+Don't
+
+[00:00:50] Speaker:
+say it. I don't think neither Ty nor me want to
+
+[00:00:56] Speaker:
+say that. Okay.
+
+[00:01:08] Speaker:
+Uhm, yeah, so for, for, uh, yeah, I wasn't – so, I just wasn't maybe clear on exactly what I needed to do outside of going into Comet, showing that putting a prompt in that is over 5000 characters doesn't work.
+
+[00:01:30] Speaker:
+But that prompt, should that be sourced? Yours. Like, is that, like, a specific prompt that was supposed to have been pre-optimized?
+
+[00:01:36] Speaker:
+Like, I'm just trying to get the, um, what type of what? What? What? What I'm supposed to be, is it like, are we looking for the prompt?
+
+[00:01:45] Speaker:
+Like the best, are we testing like the prompting or? . . Are testing that out? Put all of it? I can go through our old notes and see if I can, like, pull together while- what we had agreed to
+
+[00:01:57] Speaker:
+do. Because I have- think, like, what you, what, what, what, like, you're talking about the script, right? All right.
+
+[00:02:04] Speaker:
+Uhh, well the script, the script I got, isn't that where I just put, oh, uh, yeah. Yes,
+
+[00:02:10] Speaker:
+yes, yes I am. Yeah, because the script kind of- describes what you
+
+[00:02:13] Speaker:
+should do. Oh, okay, maybe I just need to read it in more detail. Okay. Uh, but interrogate- So for the script, okay.
+
+[00:02:22] Speaker:
+Then for, um. There it is.
+
+[00:02:28] Speaker:
+I mean, um. Boom. Boom. What we need to do is, uh, one second. Okay.
+
+[00:02:34] Speaker:
+Yeah. So I got, like, simple one, no prompt engine. Engineering, it looks like nonsense. Not finished, no it's missing, blah, blah, blah.
+
+[00:02:40] Speaker:
+Yeah, it's exactly this one.
+
+[00:02:43] Speaker:
+Okay. Okay. Or lucky, I don't have to do anything naughty. I just have to, if I type this into Google, it exactly tells me- immediately.
+
+[00:02:56] Speaker:
+What did it tell you? What did you
+
+[00:02:57] Speaker:
+type in? Just type in
+
+[00:02:59] Speaker:
+squared in Google. Oh! Oh. Okay, you know what?
+
+[00:03:02] Speaker:
+Yeah, if there- Then you can just, like, copy that over to her.
+
+[00:03:07] Speaker:
+I will take a screenshot. shot. of what comes up with sport. Yes. Okay, wow. Got it. What? Oh, that is funny.
+
+[00:03:22] Speaker:
+Okay, I'm gonna send the
+
+[00:03:23] Speaker:
+screenshot in the chat. Yeah. .
+
+[00:03:25] Speaker:
+You have to do some mad re-SCO if we're gonna use squirt like that without coming out with a
+
+[00:03:30] Speaker:
+p*** message.
+
+[00:03:31] Speaker:
+Yeah. Alright. All right. There we go. We'll There we go.
+
+[00:03:50] Speaker:
+So
+
+[00:03:51] Speaker:
+I think it's probably Squash Court, Squirt, and I'll come with a different name. time.
+
+[00:03:57] Speaker:
+Okay. Um, yeah, I think like in your, uh, what we need to do is, uh, we need to. you you I think in your script you need to test what works, what doesn't,
+
+[00:04:12] Speaker:
+kind of. Yep. yep Okay. Okay.
+
+[00:04:15] Speaker:
+Just, just like, you know, uh, take, like, uh, if I were you, I would do a- like, you know, take, like, uh, uh, workflow
+
+[00:04:26] Speaker:
+for Mark. Okay. Let's check out all of them, which
+
+[00:04:29] Speaker:
+are on the- Okay, like, larger than 5,000.
+
+[00:04:32] Speaker:
+Well, I mean, I think
+
+[00:04:35] Speaker:
+you- You We only have- We don't have too much time, you know? So, just, uh, eh, no, Jan, it's
+
+[00:04:44] Speaker:
+funny. Okay. No. Good night. Ha, ha, ha, ha, ha. Okay. Okay. Yeah. I'm mixed. Um, sorry.
+
+[00:04:59] Speaker:
+Alright. So I guess it's so, so what? What kind of, what, what testing have you, like, outside of the sticky
+
+[00:05:04] Speaker:
+notes? No, it's not sticky. Yeah, it's like, you know, like, if I, I will just take, like. like. Like, Mark's workflow, you know?
+
+[00:05:12] Speaker:
+And tell the AI, tell me in, in five lines, this cri- I have this workflow to me in four sentences as a prompt.
+
+[00:05:23] Speaker:
+Because then it has, or in three sentences as a prompt. Because then you have like a really short one where it can't put all the details
+
+[00:05:30] Speaker:
+in. Okay, so that, okay,
+
+[00:05:32] Speaker:
+gotcha. So then you- You can see, okay, look at this one now, and it doesn't work. It looks completely different.
+
+[00:05:38] Speaker:
+It's a different thing, you know? And, uh, then- and you- you do it in more detail, you know, like, where you describe, like, like, how I- I do it, you know, and then you have, umm, like, proper prompt.
+
+[00:05:56] Speaker:
+Okay. Okay.
+
+[00:05:57] Speaker:
+Then I- Yeah. Okay. This- I was overthinking
+
+[00:05:59] Speaker:
+it. Okay. Yeah. I mean, it's honestly, it's anyway kind of like, like, we- make it look scientific, but it's not really
+
+[00:06:07] Speaker:
+scientific. Well, I mean, yeah, the pieces that will put together, it'll be like, there's a lot
+
+[00:06:11] Speaker:
+behind that. Yeah, it looks- It's like, look, we did it like this, and then we have the agentic browser. It looks completely wasted, you know?
+
+[00:06:20] Speaker:
+And then we have our version, which is nice. Also, the, there's a little problem with this AI
+
+[00:06:27] Speaker:
+studio thing. Not,
+
+[00:06:29] Speaker:
+not. The real problem, the problem is more if I share an app with you. And then you update the design.
+
+[00:06:37] Speaker:
+Fine.
+
+[00:06:38] Speaker:
+You have, like, your own version of Scab, so I cannot change the back end anymore. You know
+
+[00:06:43] Speaker:
+what I mean?
+
+[00:06:44] Speaker:
+Oh, okay. So we are working se- Yep. Apparently, it's the same time at two different
+
+[00:06:48] Speaker:
+ones. Well, the same code though. The only thing that changes is styling.
+
+[00:06:52] Speaker:
+I've shared this good- more in the background. Oh, you know, and then, uh, your version is not connected to my version.
+
+[00:06:59] Speaker:
+Okay, so maybe what I'll do then is just take the- I'll use- the original version you sent me. Even though it's not branded, it's fine.
+
+[00:07:05] Speaker:
+We can use that one for, like, the purpose of, like, uh, uh, I'm assuming- do you want us using- the same one?
+
+[00:07:11] Speaker:
+Yeah, of course, like, uh, I'm changing, yeah, because it gives the wrong data, you know? It gives, like, I- try to manipulate it in a way that it, like, gives us visually nice data for our
+
+[00:07:25] Speaker:
+video. You
+
+[00:07:26] Speaker:
+Okay. You know, and the one you are using, the one you have designed is not connected with the NIDN1, you know?
+
+[00:07:33] Speaker:
+Okay.
+
+[00:07:33] Speaker:
+Okay. Yeah, I'm not married to the other, like
+
+[00:07:37] Speaker:
+the one that I read. I'm happy with the design. It's more like, but we are married to the, function. The function has to be kind of right.
+
+[00:07:45] Speaker:
+And for sure, it has to say working with and at the moment, you know, and then in the video, I can say, look, the N and N workforce.
+
+[00:07:53] Speaker:
+Yes. Yes. We want to get, you
+
+[00:07:55] Speaker:
+know, that's what we want.
+
+[00:07:56] Speaker:
+Yeah. We want that say, see, oh, then. time. Made like an N and N workflow for
+
+[00:08:00] Speaker:
+validating it.
+
+[00:08:01] Speaker:
+Mm hmm. Okay. You know, so that is important, but also the design is important. In the moment where you make a video
+
+[00:08:08] Speaker:
+with it, you know? Yeah. So
+
+[00:08:11] Speaker:
+I, I kind of, I, uhh, uhh, uhh, what's the time plan? When do we, when do you need to use it on video?
+
+[00:08:18] Speaker:
+Umm, I mean, I was going to do it today. Uh, but probably later today. I'm going to do the testing and get the stuff set up
+
+[00:08:27] Speaker:
+now and then
+
+[00:08:28] Speaker:
+watch my hair and then just do the videos. Yes.
+
+[00:08:30] Speaker:
+Yes. Let's do it this way. I share
+
+[00:08:34] Speaker:
+you this app. Okay.
+
+[00:08:36] Speaker:
+And, um, I. I put it in. Here. Okay.
+
+[00:08:41] Speaker:
+Okay. Thank
+
+[00:08:44] Speaker:
+you. . .
+
+[00:08:46] Speaker:
+So, does this use your API key or can I change in mine? Because I don't want to, like, use up all your
+
+[00:08:54] Speaker:
+stuff. Have a great day. It doesn't matter. Like, in Google, it has no API key. It's in, and it uses, like, I don't, I don't care, like, one,
+
+[00:09:02] Speaker:
+one. Is this a- You can use this one.
+
+[00:09:06] Speaker:
+It uses, like, an API key, in my NN
+
+[00:09:08] Speaker:
+instance.
+
+[00:09:09] Speaker:
+Uh, which one cares if, like. We'll see you next one call on, uh, OpenAI, it costs nothing. I mean, it's like, maybe three
+
+[00:09:16] Speaker:
+cents, who cares? Oh, yeah, I won't be slamming this.
+
+[00:09:18] Speaker:
+No, no, it doesn't matter. It's, uh, only if we gave it to the whole community and everybody would do it, you know, like, yeah.
+
+[00:09:25] Speaker:
+But. I'd like to thank it's not relevant. It's really not relevant. It's more important for me that we are right now using using the NNN version, and maybe you can update to this.
+
+[00:09:34] Speaker:
+Sign on this one, and then send it back to me. Okay. Because we have to make sure that, uhh, Yep.
+
+[00:09:43] Speaker:
+We are all using, like, uhh, at least the end and back end, you know, and you can make this, uhh, this side.
+
+[00:09:51] Speaker:
+And changes on this one because this one
+
+[00:09:53] Speaker:
+works now. Yeah.
+
+[00:09:55] Speaker:
+But it's not final. The, the back end is not final.
+
+[00:09:58] Speaker:
+Final Right. So, but if I change the front, then it's going to do that same thing. It's going to decouple it from
+
+[00:10:03] Speaker:
+yours. So, no, no, no, no, no, you just have to send it back and to my. Or I have to work on that one.
+
+[00:10:10] Speaker:
+You know, we are like moving like versions, but we have to send each other the. the one original one back because otherwise I'm stuck because I cannot like your design is now not connected to.
+
+[00:10:23] Speaker:
+with you. the other than, you know, it's, it's an all AI studio app you designed.
+
+[00:10:28] Speaker:
+Oh, so, um, you're seeing what I'm going to do. So do you remember? Or the, let me, I'll have to download it.
+
+[00:10:34] Speaker:
+I got the branding JSON for BrazilNot, for BrazilNot.ai, like on the website I fire. I called it. That's all I did.
+
+[00:10:41] Speaker:
+When I, when you sent me your app, I uploaded the branding JSON, and I was like, please update the stuff.
+
+[00:10:47] Speaker:
+Yeah, I know. And then it did. So I mean, yeah, that's, that's, that's, that can be at any point leader for video purpose.
+
+[00:10:52] Speaker:
+It doesn't,
+
+[00:10:53] Speaker:
+uh, we can use that. I don't want that we- use copyrighted internet and stuff, you know, it's like, like right now my version is the one I just send you.
+
+[00:11:01] Speaker:
+Doom.
+
+[00:11:01] Speaker:
+Oh, I know, but what I'm saying is like, using the Brazil nut branding JSON will
+
+[00:11:08] Speaker:
+rebrand the front. Yeah, yeah, I know, I know. Just do that. Do that to the one I just sent to you.
+
+[00:11:15] Speaker:
+Okay, I will do that.
+
+[00:11:17] Speaker:
+So you're using the NN and back end because. It says while it's loading, it says, uh, che- going blah, blah, blah, something with NN.
+
+[00:11:25] Speaker:
+Okay. Alright. All
+
+[00:11:26] Speaker:
+right. I'll update this and, uh, I'll update it now. I guess, and I can send it to you. And so we
+
+[00:11:31] Speaker:
+will try that so we can do it via NNN. And that's
+
+[00:11:34] Speaker:
+great. Oh, it's page not found.
+
+[00:11:39] Speaker:
+Oh, I have to, I have to, I have to allow you. Okay. Thank you. Umm, uhh, Ush publish, Advanced. advanced.
+
+[00:11:57] Speaker:
+Okay, now do it. Please. Okay. Yeah.
+
+[00:12:07] Speaker:
+Perfect. Got it. Okay. I'll update the branding and send this right back to you. And, uhm, yeah, I think then that's good.
+
+[00:12:13] Speaker:
+Okay. Y'all run this. Is there? There. Uh, yeah, everything. Yeah, I guess that's all. I guess that's all. Okay. I'll, uh, I'll update this burning sent it
+
+[00:12:23] Speaker:
+back to you. Yeah. So I mean, like, what it does for me, like, I'll show you. Mhm.
+
+[00:12:27] Speaker:
+Thank you.
+
+[00:12:28] Speaker:
+Okay. You see, like, here I- So here I- I did one.
+
+[00:12:42] Speaker:
+Okay.
+
+[00:12:44] Speaker:
+And, uhm. Muh. So this is, like, it made a prompt. This, so this, it's kind of like, I think it should be- It would be good if it's above 90%.
+
+[00:12:59] Speaker:
+Okay. If we did it in our, uhh, you our way, like, you know, like, probably very precisely.
+
+[00:13:08] Speaker:
+Okay. Like, that's the target we kind of want to
+
+[00:13:11] Speaker:
+meet is about. But, Yeah, and I would, I think it would be nice if, I have not, uh, if, if we do anything else, it's like, if it looks completely off.
+
+[00:13:20] Speaker:
+Then the percentage is down. Okay. Like it can still work, you know, but we just want to make sure we- .
+
+[00:13:28] Speaker:
+This looks kind of scientific and I like that. Yeah. You know, and, and, um, yeah. And, but, but it's kind of meaningless,
+
+[00:13:39] Speaker:
+but, you know, it's all the, it's all the data there. there. So if you have ever technically did want to, like, export it and do anything else with it to look at the
+
+[00:13:48] Speaker:
+differences or
+
+[00:13:49] Speaker:
+whatever, you know, it's still there. So technically,
+
+[00:13:52] Speaker:
+so yeah. But I mean, you could probably make like a re-ranking right because that's what we did there, you know, which looks completely different.
+
+[00:13:59] Speaker:
+and And just because it says 20% doesn't mean the wreck doesn't work. Right.
+
+[00:14:05] Speaker:
+It's just because the workforce may not
+
+[00:14:06] Speaker:
+be. It just doesn't look- like it, you know? So, yeah.
+
+[00:14:11] Speaker:
+Okay. I wonder if there- if there is another metric that we can add. I'm just like, uh, you know, maybe simple.
+
+[00:14:18] Speaker:
+So, because right now we're just going by like sheer similarity, I'm assuming. Does it- does it- is there a way- or maybe- do you think it might be helpful if we add also like, uh, no types and then, you know, you say you have like- .
+
+[00:14:32] Speaker:
+Umm, you just show the actual like, nodes, cuz let's say for example, a re-ranking rag versus a regular rag, you know, you have the cohere and maybe a couple other- nodes that are different, but overall the other structure is the same.
+
+[00:14:43] Speaker:
+So it may come back as super low, but then if you look at the like, the node identity match, Thank you very it might be higher, but maybe there's configured differently because actual code inside the node, if there are code notes, if they're different, you're gonna get a totally different match anyway
+
+[00:14:58] Speaker:
+, so I guess they're gonna have a buzzy match for the node, just to see node identity match, and then also keep that, that current person.
+
+[00:15:04] Speaker:
+So that we can evaluate things like that, where that workflow may not be. We'll see all that different things coming in at, like, super low.
+
+[00:15:17] Speaker:
+Yes.
+
+[00:15:19] Speaker:
+Like, so what else? What I can do, I can just alarm. And I'll just, I'll just
+
+[00:15:24] Speaker:
+a little something. This is, this is only for, this is our, this thing is. It's only for, for, uhh, uhh, reverse engineering marks.
+
+[00:15:36] Speaker:
+Foxwood. Oh,
+
+[00:15:37] Speaker:
+okay, then I'm just going too far. It doesn't
+
+[00:15:40] Speaker:
+mean any, it's just like, we want to see, you know, if. All right. If, how do we prompt to get exactly the same result as Mark?
+
+[00:15:50] Speaker:
+That's kind of what we want. Because we know Those are good. Okay. And then we know how good prompt is.
+
+[00:15:58] Speaker:
+And then the next step is like the. because system GPT where we
+
+[00:16:03] Speaker:
+see that any rent that I know that, um, use of that video. Hmm. That's one. Wild. What, uh, what he, uh, what, what Mark posted about the
+
+[00:16:12] Speaker:
+N-N-N-N-N-N-N-N-N-N-N-N-N-N-N-N I mean the, I'm really a little bit s*** said that, like, you know, like, we could do really crazy stuff with that but it's like our creativity.
+
+[00:16:24] Speaker:
+Pivot to you. It's, like, locked in this free A.I.ators h, you know, but I, like, you know, like. Like, We can upload, like, all the, all the internet and workflows from, from, What's
+
+[00:16:41] Speaker:
+this Asian guy? I forgot a voice. Oh, Native? Yeah.
+
+[00:16:48] Speaker:
+You can, you can upload. Up. all, all workflows from, from Nate, all of them, you know, and from one single chat GPT.
+
+[00:16:56] Speaker:
+You You can interact with all of them. Really? Of course. That is a crazy- Crazy.
+
+[00:17:08] Speaker:
+Where's all-
+
+[00:17:09] Speaker:
+Where does it all go? Where's this- Oh, you're talking like in a rag? No, it doesn't matter. Like, just put a cha- and chat, what is it called?
+
+[00:17:16] Speaker:
+weapons? mode in the beginning and, and activated for uhh…? or custom g- for this custom
+
+[00:17:23] Speaker:
+GPT thinking. Yeah. Nope.
+
+[00:17:25] Speaker:
+And then if you create custom GPT and NNN, you can- interact with all of them. You know, so, um. I'm not about to
+
+[00:17:36] Speaker:
+do. I want to- I want to get- I want to, I want to like see what we can do with that.
+
+[00:17:40] Speaker:
+And maybe it's something we
+
+[00:17:42] Speaker:
+can do now. That is completely crazy, you know, because- because you get no wild stuff. Like, I would, like, I can just talk with the custom GPT and then if I want to have- whatever cool function he uses in one, I could do that like, okay, do now this, you know, and if I- if I- like a little cheat sheet
+
+[00:18:02] Speaker:
+with all the, uh, uh, workflows which are interesting, you know, I can inside of- my custom GPT, I can say, okay, now make me of whatever, like, uh, like, if he- Like, uh, like an illustration, you know, if he makes an, uh, an N-A-N workflow for, like, uh, like, uhm, presentation-style day- thing, you
+
+[00:18:30] Speaker:
+know, you can make your whole, you can talk to your custom GPT all the time, and say, oh, now I like, okay, please make me a presentation.
+
+[00:18:37] Speaker:
+And then you send it to this, um, custom GPT, to this NNN workflow, which gets executed and sends you an email with
+
+[00:18:49] Speaker:
+that thing. and
+
+[00:18:50] Speaker:
+you know, and you're like doing something completely different, but in that moment you think, oh, that would be awesome. Awesome.
+
+[00:18:57] Speaker:
+And then you say, okay, send it to this and then work flow. You know, and then it executes the work flow and send.
+
+[00:19:05] Speaker:
+And then you send it to your email like a presentation about whatever you were chatting at that moment.
+
+[00:19:11] Speaker:
+It's incredible.
+
+[00:19:12] Speaker:
+Like, just, yeah, it's completely nuts. But the thing is, I have the feeling that it's like, uhh, our brain is not, my brain is not capable of, like, connecting all those thoughts.
+
+[00:19:24] Speaker:
+Because they're, they're, This thing is really, really, really amazing, I think. And also, you know, you can, you can switch, The models, you know, for example, like, Rock is, like, really aggressive, you
+
+[00:19:38] Speaker:
+know. What do you
+
+[00:19:39] Speaker:
+guys, It's, It has no, it has no hard boundaries, you know. It's like, you can do, like, it's very good for brainstorming.
+
+[00:19:50] Speaker:
+And, you know, I haven't used Grunk all that much. Do you use it?
+
+[00:19:54] Speaker:
+Not much. I just know why, for what it's good. Like, I don't care about the s- stuff where it's good.
+
+[00:19:59] Speaker:
+You can make, like, deep fakes of famous people and stuff like that. Yeah. Like, it has no boundaries, you know.
+
+[00:20:05] Speaker:
+It- Everything is okay for Grok, you know. And, uh, for example, like, a open AI is like- very, very limited.
+
+[00:20:16] Speaker:
+And for example, you can never ask, uhm, Gemini for- legal response- legal questions. Yeah. Is there always a don't do it?
+
+[00:20:27] Speaker:
+It's very dangerous. Like, I try to- register a domain name and say, oh, you should not do it. You know, someone made one time, uh, tweet about that- same insight, completely irrelevant, you know, and Gemini says, oh, you should not register that domain name.
+
+[00:20:46] Speaker:
+Because they could sue you and like, no, they don't sue me. Head like one, like, it's completely
+
+[00:20:51] Speaker:
+irrelevant. Yeah, you know, they're fairly
+
+[00:20:53] Speaker:
+nice. Because, but you can switch models, you know, like, for example, you can use for brainstorming, you can use Grok, you know, and then- and you can use, erm, er, plot for thinking because it's really, really good in thinking.
+
+[00:21:09] Speaker:
+Thank you. And then you, you want to make a logo and you want, ah, okay, now we, let's make a logo and you can use a create.
+
+[00:21:22] Speaker:
+You know, so that is amazing. In one chat, you know, in one chat, you can use whatever models is, it's really.
+
+[00:21:26] Speaker:
+Any good
+
+[00:21:26] Speaker:
+in that. That's awesome. And I'm going to try that because I still haven't figured out the logo yet. I think it's getting a little closer, but it's still not there yet.
+
+[00:21:32] Speaker:
+And I haven't gone- Don't video. And just, like, branded everything and put it in
+
+[00:21:36] Speaker:
+that way and, uhm. Yeah, but, you know, and then you can use agentic browsers because you don't have all that knowledge.
+
+[00:21:42] Speaker:
+Which, to use in which moment, and you can use an agentic browser to use a custom GPT in an- and I mean, the stuff you can do is, like, really, really
+
+[00:21:55] Speaker:
+wild. Stack it on and just stacking it on to get- these different connections. Yeah, that's cool. That's wild.
+
+[00:22:01] Speaker:
+Haha. Yes.
+
+[00:22:03] Speaker:
+Okay. Alright, cool. I'll get to testing and I will, uhh. I'll send some screenshots and
+
+[00:22:07] Speaker:
+stuff. Um, yeah. And just so you, you're on your way because I, I, I, like, you know, the, the, the.
+
+[00:22:14] Speaker:
+The The The The The . The, the, the checker is, was on my part. So I have to give it to you a correct one, you know.
+
+[00:22:20] Speaker:
+So this one you can use. Yeah. Just change the decision. Sign and then you can, you can keep testing. Just when you, when you change the design, send it back to me.
+
+[00:22:28] Speaker:
+So I have a version of it as
+
+[00:22:29] Speaker:
+well. You got it. Yeah, I'll do that now and then I'll send you
+
+[00:22:31] Speaker:
+the link so that we can. Okay. And I think
+
+[00:22:33] Speaker:
+that's it. All right. Cool. Sounds good. Yeah. Great. Thanks.
+
+[00:22:37] Speaker:
+Good. Thank you. I. All right. We are in a good shape or like everything like from our part is we are doing okay.
+
+[00:22:43] Speaker:
+Oh,
+
+[00:22:43] Speaker:
+okay. Totally. Yeah. No, I mean, I, I. I wanted to go test Brazilin' it again, uh, this afternoon and, uh, did the test return, sent little screenshots, then it got stuck, and then Ty said he's fixing it.
+
+[00:22:54] Speaker:
+And I didn't hear anything back yet, but I mean, as soon as he's done, we'll go testin' again. But yeah, so far, so good.
+
+[00:23:01] Speaker:
+Umm, I'm. We'll make a post. I'll make a couple of posts today. I think I just didn't want to give away too much of anything.
+
+[00:23:08] Speaker:
+I really wasn't sure what to post about,
+
+[00:23:10] Speaker:
+but. No, I think it's also okay, you know, the other people are not posting much in my
+
+[00:23:14] Speaker:
+opinion. No, they're really not. I think, um,
+
+[00:23:17] Speaker:
+and I'm trying to- I'm Bye. I think only Alexandra, Alexandra, she's posting.
+
+[00:23:24] Speaker:
+Yeah, no, but I mean, I do want to post more and I think what'll- do is I'll find something to post about that's, that's, that's, like, adjacent, not direct.
+
+[00:23:32] Speaker:
+Like, I mean, it's about the hackathon, but not anything that, like, gives a- like, anything, but that's interesting to watch.
+
+[00:23:37] Speaker:
+Like, it's the opponent of
+
+[00:23:38] Speaker:
+something. Yeah, yeah, yeah. Okay, good. Alright. I hope
+
+[00:23:41] Speaker:
+you this video. Talk to you later. Chew up, bye-bye. Bye. Bye.
+
+==========================================================
+END OF TRANSCRIPT

@@ -1,0 +1,551 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: 7fdad1586002464a87b0256948d0b20e
+URL:      https://www.loom.com/share/7fdad1586002464a87b0256948d0b20e
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:18:48.479Z
+==========================================================
+
+[00:00:44] Speaker:
+which we call 4Ds. All these interactions into a simple picture of a much narrower world.
+
+[00:00:56] Speaker:
+Then, we look at each component in more detail. In brief, these are the 4Ds. Then, validation, which asks, when should humans be Then, we which asks, how do we deal with Perceive, which asks, how do we interact with AI as a human responsible for its current right now?
+
+[00:01:17] Speaker:
+Each section includes focused videos, travel exercises, and materials to better teach the understanding of AI. I want you to spend much of your time during this course trying what you're good at.
+
+[00:01:27] Speaker:
+You'll also do directing for a few months, but importantly, figure out what makes today's AI different from previous technologies, the real capabilities and limitations of these systems, and how to continue to mix them by the very end.
+
+[00:01:39] Speaker:
+Most AI training focuses solely on technical skills, not specific tools, such as settings graphics, or old systems I'm John Nutter.
+
+[00:01:47] Speaker:
+And these skills can quickly become outdated. Let's take a little time to touch on focusing on core competencies and deep understanding.
+
+[00:01:54] Speaker:
+So, let's get prepared not just for today's AI, but for the changes to come. For a little more time together, we have a framework to guide your own interactions with AI.
+
+[00:02:03] Speaker:
+Confluence and Asylum really helped engage AI effectively. How could we see this through this platform if it weren't for the AI collaboration?
+
+[00:02:10] Speaker:
+Thanks for listening. What is this playing? There. Hey. How are you? Good. The volume is so low on here, hang on.
+
+[00:02:31] Speaker:
+Okay, talk now? Okay, can you hear me? Oh, yeah, yeah, yeah, yeah, that's good. Yeah, my, my, speakers were low.
+
+[00:02:37] Speaker:
+Okay. yeah, the call went really well, I, actually put the notes into CoWork, and, and I was like, and I'm just reading what it came out with now, but, Yeah, he, so, I'm still waiting on the data from the client who said that they were going to share, you know, they had to get the approvals and stuff
+
+[00:02:52] Speaker:
+. I was like, well, I don't want to rush them. Because it's their data and their timeline, but I also don't want to stall the evaluation, and I have mock data.
+
+[00:02:59] Speaker:
+So, I propose to use the mock data to during this initial phase where I can kind of feel out the platform and get an idea of how it works and what the outputs are looking like, and then tweak first.
+
+[00:03:09] Speaker:
+And then when we get authorization from the sponsor to use those INDs, like, the actual client data, then we will have already done kind of an assessment and kind of know where the, the bugs are or whatever, where to look, and then, yeah, and then go from, go from there.
+
+[00:03:23] Speaker:
+And I, like, I, I very nicely deferred, well Claude actually suggested about deferring the, the discussion of like payment and like the financial arrangements.
+
+[00:03:31] Speaker:
+Because if I'm going to be doing an evaluation of someone's software, there should be no indication of like I'm getting paid to give a good evaluation.
+
+[00:03:40] Speaker:
+Yeah, yeah, So, yeah, and that also gives me more time to look into what I have to say on that front because, yeah, I'll have to do my research.
+
+[00:03:47] Speaker:
+But so far, yeah, Claude in the, like, circle of excellence has been, like, really cool in guiding me through some of these conversations.
+
+[00:03:54] Speaker:
+Because I didn't, you know. They're, like, out of my, really, I've never done them before. Yeah, I feel we have that a lot, like, I've never done them that before, like, with all this AI stuff, you jump, you hop in at the highest level all the time.
+
+[00:04:09] Speaker:
+I know. And never done that before, like, OpsGenie. Okay, now what, you know? Yeah, it's so good. It's great. Yeah.
+
+[00:04:17] Speaker:
+Yeah, hey, I pushed, you should have the pull request in your GitHub. Ah, cool, cool, cool. Yeah. But which one is it now?
+
+[00:04:26] Speaker:
+Mine. Okay. Actually, wait, no, no, no, sorry, I take it back. You will not have it in yours. It is on my branch.
+
+[00:04:32] Speaker:
+I authorize it already. When you, when you pull. When you go into here, when you go into any gravity, you can pull the latest, changes.
+
+[00:04:38] Speaker:
+Okay, good. Yeah, and I like, so you like that website design for this morning? Yeah, yeah, yeah, I love the colors.
+
+[00:04:50] Speaker:
+Yeah, some of the content is fresh, you know, they are like, a little bit like, they are not like Google.
+
+[00:04:56] Speaker:
+Coffee, but they are in a way, like, fresh, you know, like, I don't know, like, let's say you're a you know, you're a New York business, or you are a business from, I don't know, Why?
+
+[00:05:11] Speaker:
+From Nitza, you know, and the niece, like, in South of France, you know, like, fresh colors, like, you know, that is nice.
+
+[00:05:18] Speaker:
+It looks a little bit like it. and all that. You yeah, it's good. Yeah, the dark ones. Yeah, just the dark ones weren't resonating.
+
+[00:05:27] Speaker:
+I'm like, I'm just. I mean, it's cool as I think it looks. It's so, like, it's so much darkness. And I didn't like the change.
+
+[00:05:34] Speaker:
+I wouldn't use this con. Because this is, like, literally, you know, values that they're, like, giving off based on the discussion that they're having with people.
+
+[00:05:42] Speaker:
+And that's not between my website but- But I'll use the same styling, though. Yeah. Which is very helpful because I literally have never landed on- I've never looked at something and be like, yeah, I can see it.
+
+[00:05:55] Speaker:
+Like, this one works. And, yeah, this one does work. And- It does, and I like how it's- I mean, I want it sick.
+
+[00:06:04] Speaker:
+Yeah, prescription. Yeah. Yeah. Yeah, I mean, I like this whole part because when you talk- it's prescription, it is, but if you're talking about, like, in terms of, like, an AI prescription.
+
+[00:06:14] Speaker:
+You know, same thing, like, analogous to, like, an actual prescription. And I'm, like, totally comfortable saying all that. Yeah. It's all about prescriptions and- I'm gonna, I'd end that in the- in the actual medicine part.
+
+[00:06:25] Speaker:
+Cool. So, Although I just try to push, please pull the latest version. I'm you. One question. The is, did just so I can see it.
+
+[00:06:34] Speaker:
+Yep. Yeah, there should be images now and you can upload a- update your profile image, course images, and I think that's it for where- Thank you for just go.
+
+[00:06:46] Speaker:
+Maybe in events, maybe in a check of events, images, I don't know if that was updated or not. Yeah. Yeah.
+
+[00:06:52] Speaker:
+Do you want to share a screen? Yeah, I will just second. I'm just- like, pulling it and then I have to, I got it, and now I have to- spin up the project in the browser.
+
+[00:07:09] Speaker:
+Closer. It was nice and it does the, the language stuff yesterday, you know, like- from the- from the Rankenstein thingy.
+
+[00:07:19] Speaker:
+Mm-hmm. Yeah, yeah, yeah, yeah. Show me that I want- show me what you did. Ah, yeah, yeah. Yep. Wait, I'll show you, You know, that'll probably be the same fix on E2 Apply to the AI consulting- It's all thing.
+
+[00:07:30] Speaker:
+Playbook. Yes. Because I had a problem adding the rag to it, and it's in the end of the workflow isn't any done, it just wouldn't, Okay.
+
+[00:07:38] Speaker:
+Okay. You see, like, this is like a regular, like, this is, article I wrote with Rankin's time. Okay. I'm going start the video Okay.
+
+[00:07:43] Speaker:
+Okay. So, English and French. Very good. Nice. And it makes each one. Yeah. Yeah. And, yeah. I guess it's, yeah, it's good for, so yeah, like, one of each of the languages.
+
+[00:07:54] Speaker:
+Yeah, yeah. Exactly. One. Yeah. Every, every article it writes, it, it's supposed to translate automatically in the other language. Okay.
+
+[00:08:02] Speaker:
+That meaning, like, is that? Like, actual, content that is there on the page, or is that base content that is being translated by something on top of it?
+
+[00:08:10] Speaker:
+Okay. Okay. it's, the base, is the first article is written in Germany by Rankenstein and sent to my website. Okay.
+
+[00:08:16] Speaker:
+Okay. And then I have an open AI API key inside of yourself. Okay. And then it gets. It's true. W******* by, by.
+
+[00:08:26] Speaker:
+Yeah. By, by, GitHub. Because it all- All right. It runs through GitHub. And then it gets, the translation gets triggered.
+
+[00:08:36] Speaker:
+out. Okay, so it's translation. Okay. The reason I say that, do you remember when you were talking yesterday about, the SEO pages and the guy was talking about how you had- like, 66 pages he had to- he had to make because there were, like, he did the same landing page, but in a bunch of different languages
+
+[00:08:52] Speaker:
+, but each of them- had, like, four pages, and so we had to get, you know, some- it was, like, six pages, and there were 10 of them kind of languages, and so we had, like, 66 pages, and I was first gonna be like, oh, why don't you- the translation layer, these, like, because the native language pages
+
+[00:09:04] Speaker:
+, then you won't- you won't get the SEO, like, it doesn't see- no, I- I- yeah, because, like, over here, you see, like, where is it?
+
+[00:09:11] Speaker:
+yeah, I mean, it has a little- And we'll see you in the later seconds. Is there a different link for the language?
+
+[00:09:18] Speaker:
+Like, when you click on one language versus the other, does the URL change? Yeah, yeah, the URL. for else. Changes.
+
+[00:09:23] Speaker:
+But the slack, doesn't change yet, but it was, me see. Oh, I see. Okay. And this is okay. Yeah, you see here, agents here dance less, blah, blah, blah, blah, blah, sprench.
+
+[00:09:35] Speaker:
+Thank Yeah, that's cool. Yeah, yeah, so it does the whole thing. So that's kind of important. So I. I have to, you have to fix, like, it has to make, like, translations of absolutely everything, not just, like, words of s- so it has to translate, like, the whole structure.
+
+[00:09:56] Speaker:
+Yeah, so, like, how are, and that's, that's awesome that I can do that, can I change the URL? I'm. so, currently in France, what, what, what are they getting taught now?
+
+[00:10:06] Speaker:
+I mean, do they. Hey, cause then I, like, is just a, like a social media platform that they don't have?
+
+[00:10:10] Speaker:
+Like, are they actually like pushing AI hard? Or are they, like. What's, what are they doing? You know? yeah, I mean, it's like, you know, the thing is, it's, you have to see it like this.
+
+[00:10:21] Speaker:
+You know? Like, all the knowledge comes from United States. Yeah. So, You know, it's, it's basically all the AI companies except an, N-A-N is, are you starting an, I'm stopping recording.
+
+[00:10:38] Speaker:
+No, I realize, cause I have my Loom note taker in here already. And then when I get from Loom, it gives me the transcript and the link to the video, whereas if I do it in Google Me, It's the actual full video that's like 600 makes, okay?
+
+[00:10:49] Speaker:
+And then try and I gotta split that with, like, a Python script and then I gotta put it into AS.
+
+[00:10:52] Speaker:
+It's a whole runner. So Loom's a lot easier post meeting to extract insights from. So I was thinking about that and as I put it on, I'm like, ah, no, I'm gonna turn it off.
+
+[00:11:02] Speaker:
+So anyway, sorry for the disruption. So here this way. I mean, there is a, the This international thing is this.
+
+[00:11:08] Speaker:
+Like in America, we have, let's say, we have a source, the sources and Tropic. And. Yeah, releasing some new software.
+
+[00:11:18] Speaker:
+Okay. Okay. Now there are five or ten smart e- ses like Mark, and they actually do something individually intelligent with it.
+
+[00:11:28] Speaker:
+Okay. Okay. So. Nope. What we have, let's say, of this news, we have 10 actual use cases. Okay. Now comes one.
+
+[00:11:38] Speaker:
+One. German guy, or one French guy, and he sees Mark's video, and then he translates kind of. Mark's video. They are not, they are not creative themselves.
+
+[00:11:50] Speaker:
+They are just copycats in their language. Okay. Oh. . . What do they do? Yeah, that's pretty much what happens all the time.
+
+[00:11:58] Speaker:
+So it's very boring. Like German AI, there, there is It's AI stuff, isn't YouTube, doesn't YouTube have translation? Yes, but that's not the same thing.
+
+[00:12:09] Speaker:
+Because the, the boy. What's going on? Nice are kind of monotone and it's kind of hard to understand. Well, they haven't quite, they haven't quite cracked that one yet, eh?
+
+[00:12:17] Speaker:
+No, not good, real. Thank It's, it's alright, it's okay-ish, but it's not like- I'm really surprised. There, you know what?
+
+[00:12:24] Speaker:
+There's some business arrangement that has to happen and then- Once it does, they're gonna snap right in there and be like, auto-transital sounds just like whatever, and then you can pick a voice like right there- yup, I don't know.
+
+[00:12:33] Speaker:
+But you can do this, but you can- then it's the same thing like you're a toxic- toxicologist, and somebody from the medical or science field would rather listen to it- You, then to Mark.
+
+[00:12:43] Speaker:
+Yeah. And in the AI space, somebody would rather listen to a native German guy than to a, American guy, you know?
+
+[00:12:53] Speaker:
+Because if he actually wants to go on a life call and he has his questions, he don't, He doesn't want to speak in his funny English, he wants to speak in proper German.
+
+[00:13:03] Speaker:
+Yeah. So, the thing is, you know, like, So one guy from Germany copies Marx's videos, and then another guy is copying the other German guy.
+
+[00:13:14] Speaker:
+Bye. It's slightly different. So the whole thing is like super boring. Yeah, it's like, it's like not unique at all.
+
+[00:13:22] Speaker:
+all. Well, this will be unique then. Yeah, and the smaller the language, the smaller the language, like Dutch, for example.
+
+[00:13:30] Speaker:
+Awesome. Well, who's like, you know, they have maybe 10 million people or 50 million people, not a whole lot. You know, eh, it gets worse.
+
+[00:13:37] Speaker:
+Thank listening to However, the smaller the country or the language, the more the better they are in English automatically. That is kind of, it's like Bye.
+
+[00:13:46] Speaker:
+Two way thing, you know? Yeah, yeah, yeah. But what we are doing, like, I'm always like, I'm never trying to copy.
+
+[00:13:54] Speaker:
+I always- I don't even think the original is good because it's not language. I think it should be always like not.
+
+[00:14:02] Speaker:
+Not nerd language. Okay. Don't, don't you agree? I, I, I, I really like one thing. Thank you. You're talking of language and, like, to the point, like, they don't- Yeah, exactly.
+
+[00:14:15] Speaker:
+I mean, they want to have more people in the restaurant. That's it. They don't want- That my email gets read- read- read automatically and it automatically sends an answer because they don't- they are not- creative either.
+
+[00:14:28] Speaker:
+You know, they cannot make, ah, what Mark says means this to my restaurant. They cannot do that. Yeah. Yeah. You really have to tell them, oh, look, this is in terms of restaurant.
+
+[00:14:41] Speaker:
+And then they say, ah, okay, I have a- restaurant, okay, I understand, you know? But, like, this whole nursing is not working- working.
+
+[00:14:51] Speaker:
+It was anyone except other nerds. So, the nerds that go and do this stuff with it, you know, but- That's why they are all like, I don't know how to access it because they have businesses and they don't know how to use it.
+
+[00:15:07] Speaker:
+He's what? Oh, he's- Yeah, I mean, I'm getting all this cool. For example, people are writing bad reviews on my restaurant.
+
+[00:15:16] Speaker:
+Okay, what do I do now? You need something that automatically answers and put them back on track and get them- like in the restaurant.
+
+[00:15:23] Speaker:
+You need an automation for reviews, restaurant reviews. But in the moment where he says you can- and so everything with AI, make an automation with it, it doesn't click with the guy.
+
+[00:15:36] Speaker:
+Now, I want to see, I remember what they were talking about being careful but- Thank you. and everything because there's always that 20% that, like, you just won't cover, there's edge cases and all this stuff, and then you're gonna get the scope, it's like, well, you never know what- I've done is done
+
+[00:15:47] Speaker:
+, and then you define kind of like, you know, you get these categories, you're automation you're going to cover these. The other 20% is going to defer to you.
+
+[00:15:54] Speaker:
+And that way you can actually scope it and have a good defined end point. Otherwise, you're like going to keep trying to get every single different edge case if you're trying to reach 100%.
+
+[00:16:02] Speaker:
+Would you? Ever. No. Cause every business is different, so you just kinda get a spooked set of calls that have like a- Yeah, yeah, yeah, yeah, yeah.
+
+[00:16:09] Speaker:
+And then define the answer. But that is like the thing with the international, but you know that also, I mean it's not like, only, and you also see Okay.
+
+[00:16:18] Speaker:
+Okay. That you know, there are like a million of markets which are not AI. You know, you can do like, great stuff, just ignoring it.
+
+[00:16:27] Speaker:
+AI as a subject altogether. Yeah, just automations. I mean, if you have knowledge about, I don't know how it's called, like.
+
+[00:16:34] Speaker:
+like. like psycho, not psycho, physio, physio, physio, physio, therapy. There we go. Physiotherapy, you know. Like, there are a lot of, like, my mom watches, like, videos where they get, like, where they- they- where they like the, where like this stuff?
+
+[00:16:53] Speaker:
+Elville, tonight is how like in general, like this, this, the pieces that, you know. Help. In the middle between votes.
+
+[00:17:00] Speaker:
+Oh, the ligaments. Yeah, exactly. So, yeah, for example, you know, like, people have a lot of problems with that stuff when they get- Solar, you know?
+
+[00:17:07] Speaker:
+And, you know, so that's a huge market for that stuff. For that stuff. Yeah, for that stuff. Fix that stuff.
+
+[00:17:16] Speaker:
+Yeah, yeah, I mean, this is the pharmaceutical. Yeah, I'm all watching YouTube videos and get, like, lessons of what to do with it, you Yeah.
+
+[00:17:22] Speaker:
+You know, there's, like, so- No, I'm not giving advice about how to treat elbow pain. Yeah, I-I-I won't. It's not my business, you know?
+
+[00:17:28] Speaker:
+It's just like, I'm just saying, you if you are, you know, if you are into that, you can make like, really.
+
+[00:17:36] Speaker:
+See you later. Good videos and, SEO pages in every single language because there are millions of- Really old people who want to get their, this stuff fixed.
+
+[00:17:48] Speaker:
+And they are online and they are searching the internet like old people. Do not with AI, you know. And then they say whatever detail, you know, you could have a problem with that in that one.
+
+[00:17:58] Speaker:
+Okay. I mean, what's the goal here with the elbows and the finger fixing? I mean, my mom watches like this.
+
+[00:18:07] Speaker:
+See you soon. Got this German couple. It's like an older couple and they sell, like, all kind of strange equipment you can put on the floor and you can make, like, Thank you.
+
+[00:18:15] Speaker:
+You can maneuver over it, you know, you can- it's like exercising gear. Oh, okay okay okay it's like 3D pre- printed whatever, you know, and they can use it on their bones, you know.
+
+[00:18:29] Speaker:
+So, if that would be interesting. I'm stressed. All I'm saying is that what we are doing right now, you could do that like for every single language.
+
+[00:18:38] Speaker:
+Thank much. And because you don't have to actually do the stuff anymore, like even this funny little bone in there, like this thingy, you know.
+
+[00:18:47] Speaker:
+You could make a whole website about that thingy. Because someone has a problem with exactly that one. Oh no. Like you'll get some traffic by it.
+
+[00:18:57] Speaker:
+Yeah, you get traffic and you get like, you get people in and everything is completely automatic and you can. You can it like in every language automatically.
+
+[00:19:07] Speaker:
+You know, you can spam the whole world with, with everything. Thank you. About that subject. So it doesn't have to be AI, you know, it doesn't like AI is just like right now.
+
+[00:19:17] Speaker:
+No. We are trying to teach AI and thinking about AI. Yeah. You can do everything with those tools, everything. everything.
+
+[00:19:25] Speaker:
+Jona, show me that, yeah, so how did you have, so when it's here, generate a mouse, then how did- how I got- how I got it on the website?
+
+[00:19:40] Speaker:
+Yeah, I mean, I just- like, it didn't work and then I- all the time showed- screenshot to anti-gravity and I said, okay, this sucks, this sucks, this sucks, this sucks.
+
+[00:19:48] Speaker:
+. . So, for example, those- those ones, they have not been in French. They had- been in always- they always stick in German.
+
+[00:20:01] Speaker:
+Okay. And then I just took a screenshot, I put an arrow to it and I I said, Anti-Gravity, look, this is not how it should look.
+
+[00:20:09] Speaker:
+The slack has to be always in the same language as the article. people. And then it made a new plan inside of Anti-Gravity.
+
+[00:20:17] Speaker:
+And it changed something. I don't know exactly what, but. We see you next time. Like, after, like, you know, going back and forth with Anti-Gravity for a couple of times, it worked.
+
+[00:20:27] Speaker:
+Oh, so this is embedded in, the page, like, you don't use Rankinstein to make it? Yeah, I make Rankinstein push it here.
+
+[00:20:33] Speaker:
+Yeah, but Rankinstein push it through GitHub. up. Okay, and how did you do that? Huh? Oh, push, okay, alright, I see, okay, so you push to get help, and then, So, it didn't work, I tried to make a webhook with the cell.
+
+[00:20:51] Speaker:
+But, then it- Didn't work properly, like images were missing. And then I told, anti-gravity to check that because it sucked.
+
+[00:20:59] Speaker:
+Box, and then it opened Vercel, you know, it opened Vercel, and it went in the error logs of Vercel, and then- We can't do that, you know, with Vercel, but it immediately came up with, okay, we can push it- Thank you.
+
+[00:21:16] Speaker:
+Directly through GitHub, but then we don't make the, the, we, we don't try to push it to, Burssel. We. You immediately push it to GitHub, from Mirankenstein.
+
+[00:21:27] Speaker:
+When Nick came up with that, did it have, did it have, did have a clot and. D, or Gemini MD.
+
+[00:21:31] Speaker:
+Wait, what was that? Did it have the, did it have, did it did you have a quad MD? B. file for that agent or that Gemini MD file or is this before them?
+
+[00:21:42] Speaker:
+you, are you talking now about my website? side. When, yeah, like, when you did, when you call these fixes, type anything, like, no, no Gemini and no, Other Style.
+
+[00:21:53] Speaker:
+Okay, yeah, I'm pretty excited to try them today because I put both of those. those. M.D. files in their appropriate folders.
+
+[00:22:02] Speaker:
+Uh-huh. And I'm gonna see how it, how it does. Yes, sir. I'll have to restart into badly. Yeah, let me see.
+
+[00:22:12] Speaker:
+I just checked if it has one. No. It has no MD file. I'll see you No, no, yeah. I also think, you know, sometimes, this is very w- I truly think like Mark and everybody tries to make our life easier, you know?
+
+[00:22:28] Speaker:
+Oh. But sometimes, since I'm working with anti-gravity so much, I don't use Claude Code like a whole lot. . . At least not on my project, I don't know why, but I'm just using, anti-gravity, you know, and I'm not using much skills either, you know.
+
+[00:22:44] Speaker:
+I'm just, and my designs kind of look good in my opinion, you know. I'm just using like, the thing is maybe if you're- good in one area already, I think that stuff slows you down more than it pushes you.
+
+[00:23:00] Speaker:
+Because like, you know, if I go through really complex workflows in, in Claude Code or if I just make like… the couple of very direct prompts for anti-gravity.
+
+[00:23:13] Speaker:
+They kind of work better for me. Yeah, I mean, there's definitely a lot less- friction. And I notice I have been using anti-gravity more unless there's like a specific reason to- People in a Quad, or if I'm, like, limited on my limit or something, which I haven't yet in Gemini, but We're coming.
+
+[00:23:31] Speaker:
+Thank you. Thank you. Then I thought, yeah, I mean, I-I have been using Gemini more frequently. I do find, though, that, like, the issue that I was having with it was that it was hard coding and things and doing- and these, like, making these stupid changes in the code that I'm like, why would you make
+
+[00:23:44] Speaker:
+it that way? Like, why? And so it just, I was like, I didn't have, it's, it's Rules to tell it, like, hey, you're going to do the year helpful assistant.
+
+[00:23:50] Speaker:
+Okay, you're not. Because otherwise, I mean, I know that it has its system prompt. But just. Just, like, kind of guardrails of things that I wanted to look out for.
+
+[00:23:58] Speaker:
+Like, don't just take the shortest path to, like, to make something appear like it's- there. You know, like, actually build, like, the functions and build it modularly.
+
+[00:24:07] Speaker:
+Don't, don't, like, hard-code things and where they shouldn't be. like, I'm- Thank much. I specifically ask for, like, mock data or something.
+
+[00:24:14] Speaker:
+Just some other rules that, I'm gonna see if it actually, I'll see. See if it works. So. I will, I have a call in.
+
+[00:24:23] Speaker:
+In. 11 minutes. Yeah, I have a call in 11 minutes. It's, it's an hour ago. Yeah, yeah, yeah. And I'm done.
+
+[00:24:29] Speaker:
+I have to- Do some exercise anyhow, it's good. Okay, perfect timing. Yeah, yeah, yeah. Alright, so I'm okay. Bye. I'm, I'm, I'm quite happy.
+
+[00:24:37] Speaker:
+Like, I'm happy that we are like, you know, we are developing just more. Whoa. It feels more like we are just using common sense instead of just following procedures.
+
+[00:24:49] Speaker:
+There is. Yeah. And I think that this is like way better. You know, we see sometimes stuff doesn't work, you know, and if it doesn't work after sweet time.
+
+[00:24:59] Speaker:
+Bye. Sometimes we're like, okay, who cares? And we are just doing it this way, you know, like with a kiddie for example, we're not trying to like You know, like we if we find a solution that works, it works.
+
+[00:25:12] Speaker:
+It doesn't matter if it is the taught word But, You know, or yesterday I had the issue with, with, with, with the, with the cell, you know, and then I, We, I made it with skit up, you know, it's kind of like, you know, the AI is way, it has all the knowledge, kind of.
+
+[00:25:30] Speaker:
+We have a little bit of knowledge and- The AI is open for knowledge. And then one way doesn't work, you know, and it immediately comes up with a different way, you know, and okay, let's go.
+
+[00:25:39] Speaker:
+this way. You know, yeah, and because of that non-determinism, it's okay that there's like, it's not like we're gonna go and be like, hey, we're gonna code.
+
+[00:25:47] Speaker:
+And we're gonna build that and, like, be sure that that's, I mean, I guess because, because of, you know, signs of the AME, do whatever, and may take a little bit longer, or You know, we just, like, find some error that happens because of the way someone's built before, but, I mean, it's, it's, oh, it's
+
+[00:26:02] Speaker:
+overall in the grand scheme of things, taxi- like, build a thing. I mean, it's not, like, it's, like, months long anymore.
+
+[00:26:08] Speaker:
+You know what I'm saying? Like, if you really get out of it, you can do it in, like, a- Harry short period of time.
+
+[00:26:13] Speaker:
+Yes. So. And I feel like we're modeling it like Mark himself. I'm, I'm quite sure when he's doing that. You know, he tries to do A and then the AI tells him option B and he's like, all right, that works as well, you know?
+
+[00:26:27] Speaker:
+And he's probably doing. I'm doing that a lot, because I do that a lot as well now, you know. And then, but afterwards, you know, he has like this perfect video, and then he says, oh, then I did- A, and then I did B, and B is because of that, you know.
+
+[00:26:38] Speaker:
+He can reason why the AI said it, you know. But we are, like, stuck in this, oi. Like, you know, we are like, it's, it's, we cannot grasp it like that, you know?
+
+[00:26:50] Speaker:
+Like, and also like, you know, when I saw an- next video about like, the automation, you know, it kind of makes sense, but if I would have to write it down on a- and then I have to do it one by one, I would be busy all day long and my brain would like, explode.
+
+[00:27:06] Speaker:
+Oh my gosh. It's, you know. No, there, there's just, that's not the fastest way anymore. I think there used to be a time when learning at that pace was, was, was par for the- course, and that's where everybody was.
+
+[00:27:17] Speaker:
+But now if you do it like that, I mean, there are just others that will learn faster than you. Yeah.
+
+[00:27:22] Speaker:
+And like, now it's like- Like, you know, like, put it in, I put it in notebook LMM and I say, okay, yeah, that's, you know, and it's like, do the bum, bum, bum, bum.
+
+[00:27:30] Speaker:
+It gives me, I- I should understand the concept. Like, I did, like, this lesson with, with the expert console. I, I gave you this prompt, you know, how, how.
+
+[00:27:39] Speaker:
+You need what told me to do it. But instead, okay, you have to be careful that you're not just following, that that you're actually learning, okay?
+
+[00:27:47] Speaker:
+Okay, so, because if it gives me like, only prompts to put over there, you know, I kind of, I'm like a robot in the middle, but I didn't un- understand how it actually works.
+
+[00:27:58] Speaker:
+So, it's very important. Like, that's what they say and I, I, I rekind of. You know, like, when Nick puts out a video, I kind of fast forward should understand what he's actually doing there without getting.
+
+[00:28:11] Speaker:
+In the details. And afterwards, you know, doing it with a prompting thing. Because otherwise you're. Of missing context, you know, if I, if I do it immediately, I only get prompts from Mark, you know, which I put into my, project.
+
+[00:28:28] Speaker:
+I don't understand what he's actually doing. Like, you know, last time I was like, oh, we have to use core.
+
+[00:28:34] Speaker:
+Okay, you know, I wasn't expecting core worker. I was expecting cloud code, you know? Like, I, I didn't watch the video at all.
+
+[00:28:41] Speaker:
+Oh, it's super easy. It's literally like a tab over. It's like basically working in chat. Like, the same thing as in, as in the chat mode of cloud, except it just, it can create.
+
+[00:28:50] Speaker:
+Assets, and you can open a folder to work in. That's quarterly. There's no, I mean, but I mean, it's really good, and it's like a really fast, it's like a quick and- It's like a quick version of quad code or something you want to spin up for, like, say, like those websites or something like that, and
+
+[00:29:04] Speaker:
+it can make some really cool stuff. It's like AI studio with Claude. Sure. Yeah. It's like, it's like a quick and bloody way to do stuff.
+
+[00:29:14] Speaker:
+Yeah, I mean, I still do like the document generation and all that stuff I can do in the regular chat.
+
+[00:29:19] Speaker:
+and it can do the like, like front end apps to make, you know, so you can see the UI and it's, and it's like, interactivity.
+
+[00:29:26] Speaker:
+you But, yes, design is as you said, yeah, something different. But I mean, I'm, I'm, I'm still trying it out, it seems like it has a bit more- It's better than AI studio, that's not the same.
+
+[00:29:40] Speaker:
+But it's- Like, you know, like, anti-gravity is like their pre-new model, and AI studio is, like, say, quick and dirty from Google, and cl- art is like, Claude Code is like their premium stuff, and, co-work is like their quick and dirty.
+
+[00:29:56] Speaker:
+That is what I- I mean, it's like, of course, yeah, yeah, it's just like, if you just wanna quickly try something out on the go, yeah.
+
+[00:30:05] Speaker:
+Yeah. You know, if you are in a project and you really wanna develop it, you are probably working I mean, some kind of a you know, even if the stuff in co-work works well, it creates some files and I for my pa- I would take those files and open it in anti-gravity and then continue working over there.
+
+[00:30:24] Speaker:
+It's not a fellowship project. No. But it stays to get a really good base of it. Yeah, yeah. And then go from there.
+
+[00:30:29] Speaker:
+Yeah. Yeah. Definitely. Alrighty. Okay. Well, have a good exercise session. And, yeah, I'll be around you later. I hope you, you later, huh?
+
+[00:30:38] Speaker:
+Yeah, yeah, yeah. Yeah, sounds good. Right. Bye.
+
+==========================================================
+END OF TRANSCRIPT

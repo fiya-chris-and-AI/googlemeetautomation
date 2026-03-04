@@ -1,0 +1,800 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: 3ac661b55ba3491fadeb8de7dd21b962
+URL:      https://www.loom.com/share/3ac661b55ba3491fadeb8de7dd21b962
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:19:27.506Z
+==========================================================
+
+[00:00:05] Speaker:
+Hey, how's it going? Good. How are you? Good, good, Good. I made a few, I made a few changes and I did, made a few mockups.
+
+[00:00:16] Speaker:
+That we can look through. to see what kind of style. Some of them. Here, let me share my screen. So I'll show you what it looks like right now.
+
+[00:00:23] Speaker:
+The actual app. From the local host. So, right now we have, oh, okay. Like a landing page. And this'll change, this is just what, what it did, like, first, upon its first, iteration.
+
+[00:00:37] Speaker:
+But so you have a landing page, so when they first come, they're like, hey, welcome to the community, let's get started, guidelines, blah, blah, blah.
+
+[00:00:42] Speaker:
+And then when you click, so you go to the next this'll take you to the members, this'll take you to the community, and this'll take you to, actually, wait, no, those won't.
+
+[00:00:50] Speaker:
+These will. This'll take you to the members. Uh-huh. Yeah, and, et cetera, the other ones will take you to the other areas.
+
+[00:00:57] Speaker:
+And then, for the admin one, I have that in another, It's much nicer than that school thing. You like it?
+
+[00:01:06] Speaker:
+Okay, cool. So, okay, so what I did, I I, I, I was like, make it look like Apple's Swift design.
+
+[00:01:12] Speaker:
+I just wanted to see, I wanted to see what it looked like. So I did one of Apple's design. You open a folder, and then it outputs the year.
+
+[00:01:19] Speaker:
+So, yeah, if you haven't used Cowork yet. Wait, do you, can you use Cowork? Yep. With 100? Yeah, it's, Yeah, it's really good.
+
+[00:01:27] Speaker:
+It's really good. Let me open that. I'm trying to open this. Okay. Not that one. Not that one. Not that one.
+
+[00:01:37] Speaker:
+Yeah, this is the Apple one. So it just has, like, a bit of a different aesthetic to it. Okay, and then, this is the, I think it's, whoops.
+
+[00:01:50] Speaker:
+I hate you. Oh, I, I'll preview in here. And, ah, yeah, HTML, the Dashboard.
+
+[00:02:09] Speaker:
+Or Notes, which one? No, this one's ugly. This one's ugly. That one was so ugly. Ah, true. There's one I didn't Google.
+
+[00:02:18] Speaker:
+Here. Ah, well. This one was a little bit too rainbowy, okay? I wasn't, ah, I wasn't too thrilled. With this.
+
+[00:02:28] Speaker:
+Oh, Jesus, yes. It kind of looks like, like a pride community. Yeah, that's not a problem, but it's, it's just like, like, not that serious, you know?
+
+[00:02:38] Speaker:
+Yeah, yeah, yeah. So I was like, nah, nah, yeah, I'm not, I'm not a, I'm not a big fan of that one.
+
+[00:02:42] Speaker:
+Yeah. So, yeah, this is currently what it is. Each of the posts now, a few comments. Let's see. It should have the full, yeah, so I put in the Giphy API key, because originally we just had, like, four, like, the preview, and so this is, it's working now.
+
+[00:03:01] Speaker:
+I'll send, yeah, it's free. It's, yeah, free to sign up, so right now it's connected to that key, which, either you could, we can use, I guess, you know, depending on that key, or you can use one, whatever makes, whatever's easier.
+
+[00:03:11] Speaker:
+So, and, yeah, the emojis. are there. The account, okay, let me go to the admin, Admin, here we go, Admin Dashboard, goodbye.
+
+[00:03:23] Speaker:
+Admin. Next one. Silence. What do you mean? This is the one I saw before Yeah, I I don't listen to that every Since the last push was the Giphy API key.
+
+[00:03:47] Speaker:
+Uh-huh. Okay. So, you have a pull request already waiting. And, And, I don't, do, are you planning to work on this now?
+
+[00:03:54] Speaker:
+Or, like, as soon as today? I mean, because I could, Yeah, there's one other thing I want to do, but, yeah, it's like, the website, the community, and, Accelerated Learning.
+
+[00:04:04] Speaker:
+That's kind of what I'm working on. Okay. Okay, cool. Oh, I know where the other ones were. These, I left them open.
+
+[00:04:11] Speaker:
+Oh, that's nice. Yeah, here's the settings one. So this is actually what's in the app right now. And, like, these outlines and stuff.
+
+[00:04:21] Speaker:
+Where's the other one? I had another one. That was in a browser that had a really nice, had a really nice sidebar.
+
+[00:04:31] Speaker:
+And I'm going to close all these pages that I'm not using right now, so I don't get lost amongst them.
+
+[00:04:39] Speaker:
+It's in one of these, or open in probably And then there is, let's see. Where did you go?
+
+[00:05:03] Speaker:
+I swear it's in Qwad. That's where I made it. Down there are some, Some windows you made, like, little. You see the little next to the trash can?
+
+[00:05:15] Speaker:
+Yeah, that's a Word file. This is a text, this is SMS, and that's my, That's a temp folder. This is Cloud, maybe Cloud?
+
+[00:05:22] Speaker:
+Was it Cloud? Like regular Cloud? No, this is the one over here. I would definitely, definitely work on it, like.
+
+[00:05:34] Speaker:
+Okay, oh, that's fine, if you did, if you, did want to, work on your website, I'm saying that, like, that's fine, because then I'll, I'll, I'll just keep applying updates, It's just like, sometimes, you know, right now, I'm, I might be working on it, but I might just delete it on my folder, because.
+
+[00:05:55] Speaker:
+I'm like, you know, I'm learning all the, the new content mark pushes out of whoever. I just learn my files.
+
+[00:06:02] Speaker:
+Yes. Whatever files they are. You just what? like, I found, like, I think I found a way to work good.
+
+[00:06:09] Speaker:
+with YouTube videos. So, I put a YouTube video inside of NotebookLM. Yeah. I put the NotebookLM inside. Yeah. And then I give Gemini my GitHub.
+
+[00:06:23] Speaker:
+And then- And I say, okay, teach me the lessons from the video with prompts for my GitHub. up. What do you mean, like?
+
+[00:06:35] Speaker:
+No, I have, I have, I have anti-gravity open. Okay. With the project. Okay. Okay. I have. I have Gemini open with Mark's notebook.
+
+[00:06:46] Speaker:
+So whatever he's teaching about, and Claude Code. Okay. And inside of this Gemini I am, I put the, GitHub link inside.
+
+[00:06:56] Speaker:
+side. Okay, to the repo for our community, for example. Oh, okay. Alright. All right. Okay, and then I say, okay, this GitHub repo is open inside of anti-gravity, and I have, clock.
+
+[00:07:10] Speaker:
+. It could open. Now teach me the lessons of the video so I can apply it inside of the community. You Okay, and then what did I do?
+
+[00:07:22] Speaker:
+No, I'm just like, we'll do that. Like, that's like, I think I can, I can pop. Just forward my learning, because I can just tell, tell Gemini to take the lessons Mark is doing right.
+
+[00:07:34] Speaker:
+Bye. Right now, it should give me the prompts for my community and it can read. It's a GitHub and it knows the video from Mark.
+
+[00:07:45] Speaker:
+So then it gives me the pr- ons, which I can put into a cloth code inside of anti-gravity. And then I can see whatever Mark was teaching of like plugins.
+
+[00:07:55] Speaker:
+Gives whatever, but I can actually see that on my live project. That is awesome. And I want to try that, actually.
+
+[00:08:05] Speaker:
+oh, here. So, I'm gonna, I'll, I'll show you this and I'll quickly, try that. I think that's it. It's small sample of videos.
+
+[00:08:10] Speaker:
+so this is the one that Claude co-work made for the Admin Dashboard. So right now, right now, the Admin Dashboard.
+
+[00:08:15] Speaker:
+Dashboard on our app looks like this. And I will say that I do kind of like this secondary bar so that it does- like you're in one spot.
+
+[00:08:25] Speaker:
+It's not because here's like a totally different panel. Yeah, panel? What's- I mean, you know, if it's admin, then it's like really clear that it's admin, but I- I do kind of- Yeah, I don't know.
+
+[00:08:38] Speaker:
+I'm not really sure. What do you think? it depends. I think if we have like a lot of stuff to do inside of the admin, then- You know, a new one might be better.
+
+[00:08:47] Speaker:
+Otherwise, the other one is, like, more quick and fast and dirty, you know? It's- Yeah. Yeah, I think this one is more, like, more style-aligned.
+
+[00:08:56] Speaker:
+yeah. It's kind of like, I think this one is fast. Awesome. Like the, the small one is fast to maneuver in.
+
+[00:09:03] Speaker:
+The other one is more like, if you, yeah, yeah, this one is fast. Like, let's say how- I want to go to the- I want to go to the members, I want to change roles, you know.
+
+[00:09:11] Speaker:
+It looks very fast because I'm in the same kind of hierarchy. Yeah, yeah, yeah, yeah. Cause this doesn't switch and then you don't have to reload that fight.
+
+[00:09:20] Speaker:
+Like, it doesn't feel like a whole reload because it's- yeah, yeah, yeah. I hear you. Okay. And, you know, this actually only has seven components where this one has eight.
+
+[00:09:27] Speaker:
+Although this one has dashboard on it, which is like the home, which is kind of the- Yeah. Okay, so we'll leave that for now.
+
+[00:09:33] Speaker:
+And then, let me move this here and- I think I already have a notebook in a second. That's Learn. There's a bunch of marked stuff in it.
+
+[00:09:47] Speaker:
+But you should take justice. It should only- Have a single video inside. A single video. I mean, the point is like to not watch the video.
+
+[00:09:56] Speaker:
+The point is like- ... It should make your lessons you can apply immediately from whatever he was teaching in that lesson.
+
+[00:10:04] Speaker:
+Let's do this in general, Nappa. We're gonna- I have to actually- I have a new YouTube. I will go this YouTube.
+
+[00:10:10] Speaker:
+And- and I'm still, l- I just have plug-in super-paw- plug-in super-paw-ins. Yeah. This thing's really new. you. Just copy it.
+
+[00:10:23] Speaker:
+Yeah. Yeah. Okay, then call it lesson video, for example. I'm cool. Okay. Yeah, and now go in Gemini.
+
+[00:10:38] Speaker:
+I'm an A. And now just make a new gem. Oh, sorry, I'm a gem. Yum. I don't know.
+
+[00:10:50] Speaker:
+Oh, yes. You know this gem? This just appears. If you want weird, like, do you remember before I showed you know it wasn't here?
+
+[00:10:58] Speaker:
+The gem wasn't there? Yeah, it's here now. Okay, new gem. Okay, you want? We'll back. Give us SHEA Yeah, just click on the new gem.
+
+[00:11:08] Speaker:
+Okay, and now, You what's that? I don't have even any sources. Where did the sources go? . . . Now, on mine I can, I can source her a noble villain in Gemini, but not in a gem.
+
+[00:11:21] Speaker:
+let me s- That's just really odd. That was the point of the gem. Yeah, yeah, yeah. Oh, it's for building.
+
+[00:11:26] Speaker:
+It's like a mini app that you all know. Yeah, yeah, yeah, but it should be d- Yeah, I'll show you what mine looks like.
+
+[00:11:35] Speaker:
+I'll show you what mine looks like. And you know what? I could change my surf shark and- I'll put my VPN to, anywhere else.
+
+[00:11:42] Speaker:
+If I was, maybe, maybe you have VPN you have- Yeah, okay. Okay. Okay, just take- This is the- Wait, I'm in that difference.
+
+[00:11:49] Speaker:
+Ah, you're in the right- It's. All right. So gonna do we're gonna show you I think the notebook is in the wrong account possible.
+
+[00:11:55] Speaker:
+It is in the wrong account. I'll just say save it in there again. Okay, okay. 3 3 3 2 3 4 .
+
+[00:12:00] Speaker:
+3 and here and here and copy it. It is really weird because my gem lets me completely do that. Good.
+
+[00:12:08] Speaker:
+Yeah, it's out. Can you say, Jeremy, P.N.? Sorry, Kidnart. Yep. Now that's all you need I talk a about a little like here, when you look at mine, where is it?
+
+[00:12:18] Speaker:
+Okay. Okay. Oh, you can see it? Yeah, yeah, you have to. Yeah, and I can put here like here, I can put my notebook.
+
+[00:12:26] Speaker:
+book. . Yeah, I mean, I can put mine just in, yeah, just like here. here. In the chat directly. Oh yeah, let me actually put the video in there.
+
+[00:12:36] Speaker:
+Lesson video. This is the old one. And this is the, yeah. Yeah. Yeah. Yeah, perfect.
+
+[00:12:50] Speaker:
+And now give it your, Mm. Get up. But I think the, it is much better if you can get it somehow into a gem.
+
+[00:13:00] Speaker:
+Because then- That way, you know, I could, I could even- Well, this can actually get up there. Yeah, yeah, just okay.
+
+[00:13:08] Speaker:
+But no, no, no, no. And do that, or does it? No, it does. Okay. and you just say it inside of Ask Gemini.
+
+[00:13:13] Speaker:
+Okay, yeah. Mhm. Mhm. Just takes a whole link. Yeah. No, no. No, this one.
+
+[00:13:24] Speaker:
+Well, no, that's a local. That's it. Yeah, yeah, yeah, yeah. Yeah, it doesn't have shell access. Yeah, just. And then.
+
+[00:13:31] Speaker:
+And then say, I have this project open in, in, cloud code. vote. Or in, anti-gravity. I'm using anti-gravity. Anti-gravity using cloud code.
+
+[00:13:41] Speaker:
+Hi. Bye. I wasn't using cloud code. No, but that's what we are. But oh, the video of the video of mark is cloud code.
+
+[00:13:52] Speaker:
+So we. You want to learn cloud code using cloud code. So please make me prompt from this video specific. specific to my community and give me prompt so I can learn the lessons from my- the lessons from my- the lessons from was inside of a notebook LM is Fox video, and he is teaching us something, and
+
+[00:14:22] Speaker:
+I don't want it. I- Yeah, I'll see one that he teaches me stuff about my community. So the prompt he uses, or whatever he does, there's a skill to use this.
+
+[00:14:30] Speaker:
+I'm ahead and going on. They should be applied to my community, which I have opened. One. This community. Yeah. I guess.
+
+[00:14:40] Speaker:
+Yeah. Yeah. And I applied them specifically to rebuild the goal of building that is. Thank you. If you're into Cloudly, you can add them at these MG files.
+
+[00:15:01] Speaker:
+Ooh! Plug in our skills. Okay, start at least in a video. Plugins are coming from so it won't determine how to use Cloudly.
+
+[00:15:07] Speaker:
+Trust commands. It's wrong to ya. you I have similar grades for all of you. Multi-lingual engagement for the platform. It's a totally such a- It's a totally such a- It's a such a It's a totally such a See you.
+
+[00:15:25] Speaker:
+You see, it generates a- It kind of gives you, like, the lessons that- He teaches in the video, but we can apply them to start that actually matters to us.
+
+[00:15:39] Speaker:
+And that way I think- on spatter into the brain. Totally. One hundred per cent. I'm just gonna call this gem, cause I'll know what it is, even though they're not- It's not actually a gem, but, okay.
+
+[00:15:52] Speaker:
+Based on the Rovo plug-carry manifest, this community is on rebuild. There go. What does the man dole look like? Okay, generate the plug-carry manifest.
+
+[00:16:00] Speaker:
+Create a slash. Thank you You know, it's not for when it's, like, active or community. You northeastern, like, Great a Markdown for Slash Command Audit Health, which the current repositories, issues, and discussions, categories.
+
+[00:16:18] Speaker:
+Oh, oh. Okay. By showing community growth and toxic sentiment levels, I think that's for when you have a community and you have data and then you're auditing the health of that community.
+
+[00:16:27] Speaker:
+So that's like. At the end of the month. Hey, partnership. We're gonna. Thank you very much. If you're a member of Success, if you don't want any member to interact, I'm after your pot to check to see if they can put it.
+
+[00:16:43] Speaker:
+You know, I'm a rush. You're actually really taking advantage of hooks and like these slosh bands, and they are powerful.
+
+[00:16:48] Speaker:
+Like, I really- That is a point. That's why I want to do it like that. Because now I have projects I actually care about, and I want to get this knowledge from Mark, which is so theoretically often, and I- I don't want to start more theoretical projects, because I think it's like, I'm over that, you
+
+[00:17:05] Speaker:
+know? So I try to get that like- But I think we should have not used the word anti-gravity, because it's only- he's working on Claude Coates.
+
+[00:17:15] Speaker:
+Thank you. Oh, let me try it again then. If we come with the prompt with the word anti-gravity, I'll take that.
+
+[00:17:22] Speaker:
+Yeah. Yeah. I think our IDE gets mixed up. Yeah. I'll just do, I'll do with that and you can see if it makes a difference, in each hand.
+
+[00:17:31] Speaker:
+But you have, yeah, you have to put the, yeah, no dilemma. I love you, yeah, exactly.
+
+[00:17:46] Speaker:
+Exactly. And we will do split view. You know what I'm saying?
+
+[00:17:59] Speaker:
+I have to say- and I love the split view. This is, like, a fairly recent thing, I think, within the last month or so.
+
+[00:18:04] Speaker:
+Yes, yes. And it's, yeah, it's great. Great. I don't know how he knows now this toxicology stuff where that comes from.
+
+[00:18:12] Speaker:
+Oh it must be something made memory because, but it must be some memory from Gemini because inside of your notebook was old.
+
+[00:18:21] Speaker:
+D-L-L D marks video and it was not inside of the prompt. Yeah, it looks like it's pulling, it's pulling more context that I find.
+
+[00:18:28] Speaker:
+my and doing that makes it, it can, like, when applied properly, it's not mixing up stuff. Yeah, it can, totally, like.
+
+[00:18:36] Speaker:
+Oh, like, it's awesome. Yeah, yeah, yeah. But this way, like, like. In this way, we can, everything we are learning now, we can put, like, fully into, like, into, like, our.
+
+[00:18:50] Speaker:
+Hello. Own context, you know, and we can say, okay, my strength is this, my weakness is this, you know, focus 60% on design and.
+
+[00:18:58] Speaker:
+I'm trying 20% on skills or whatever, you know, and you can push like really like whatever you need to push.
+
+[00:19:05] Speaker:
+Yeah. And then you know, we are working. No. On, on, I, I have a community open all the time. We just have to make sure that we don't commit those stuff because there will be a lot of unness.
+
+[00:19:15] Speaker:
+The necessary trial and error stuff because we're just trying to learn stuff. But this way, I mean, it's not a problem.
+
+[00:19:22] Speaker:
+Just don't push it. Because if it gives you a prompt and you change that prompt into anti-gravity, for example, like not an, like, inside of the community, something with design, and you don't necessarily, we don't want to change that design.
+
+[00:19:38] Speaker:
+You just, Right now, only trying to learn the skills mark gave us, you know? Yeah. So, I mean, if you, if you just have an experiment- here in May.
+
+[00:19:47] Speaker:
+It's a pace. Just delete the project afterwards and keep it on, on, on, on GitHub as, as it was. Because I don't- Otherwise you're committing, we're committing strange changes, but it doesn't- but it's not a problem.
+
+[00:20:00] Speaker:
+Oh, so, okay, so what I did, Yeah, I- I will need to know a little bit more about it, and I- and I think what I'll do is post a question.
+
+[00:20:09] Speaker:
+Ahh. A general one. And, ask, ask Mark how he- how he, and works with people on, on another part of the world if he's a building with him.
+
+[00:20:22] Speaker:
+I wouldn't have asked Mark because he's not the- I'll see you in that, you know, what I wouldn't- I just do that.
+
+[00:20:27] Speaker:
+Okay. he wouldn't understand what we are doing now. Like- Oh, I'm not even gonna- No, no, no, no. Let's not the point.
+
+[00:20:34] Speaker:
+It's not about telling him. It's about for him. What we are doing is weird. Off go! You know, he is in this, I teach people, and we are like in the process of, how do I get your brain into a notebook, a letter, and teach me Thank you.
+
+[00:20:47] Speaker:
+Oh, no, no, what I meant was, I was gonna ask him like, hey, have you ever worked with another developer who lives in a different way?
+
+[00:20:55] Speaker:
+A region, like a different data server region. And I did look at Claude, and it isn't a problem. Apparently said it's not a problem.
+
+[00:21:02] Speaker:
+that I can push it to super vase, and it can- you can access and it shouldn't be an issue. I didn't do that yet.
+
+[00:21:08] Speaker:
+Yeah. But, because I just, I didn't want to let go do it and then it f**** up something on your end.
+
+[00:21:14] Speaker:
+so, whenever, I guess just maybe whenever, Remember, it makes sense to be done. That's not the issue, but for example, like last night, what you did to the commune- was actually changes you want to make.
+
+[00:21:28] Speaker:
+Great stuff. Okay. now if I take Mark's video- Thank you. And he, he, he teaches me some skills or some plugins or some hashtags, you know, I might make the website in neon- on.
+
+[00:21:39] Speaker:
+Orange, because it was just something I want to try out, you know. And, you know, he, I, I try some, like.
+
+[00:21:47] Speaker:
+Middle-aged language, because it was something the prompt told me to try it out. You know, I'm, I'm like, using our community.
+
+[00:21:55] Speaker:
+community. for learning AI stuff, but not necessarily something that we actually want to change. Yeah, I hear you. So, I mean, you can always just- the if you know that you're going to be just doing it to, like, try out some things, just open it, like, re-clone it in a new project folder and then don't
+
+[00:22:11] Speaker:
+push it. Yeah, yeah. Yeah, exactly. That's what I mean. Yeah. Yeah. Okay. let's teach what either you're, like, worked on a real, like, a re- Yeah, on real features we want to change or am I right?
+
+[00:22:26] Speaker:
+Bye. Right now, just learning something, you know? Yeah, yeah, yeah, Okay, Just a quick version. direction. Okay. We're going You know what?
+
+[00:22:37] Speaker:
+This is what the hell? Okay, no fairness. It defines our community values. Okay. I don't- this makes a bunch of stuff.
+
+[00:22:44] Speaker:
+This is really weird. I think because the notebook has a lot of leak, like, I have a lot of notebooks.
+
+[00:22:50] Speaker:
+And I wonder if it- It just leaks the context across it. Oh, I think it's a gem. I- I think the problem is if you- it would be much better if you couldn't use- it's like a real gem because they- you have, like, a system prompt.
+
+[00:23:02] Speaker:
+And you can say, you know, only focus on the notebook. book. Okay, it makes much more sense because, like, I can- I can show you my screen quickly.
+
+[00:23:13] Speaker:
+Yeah, you can- yeah, I do in yours and see what comes up on your- Yeah, I'll make mine small so it is a real time.
+
+[00:23:19] Speaker:
+Okay, so. you Okay. I'm coming out. Can I click on a new gem? say okay, Mark Claude Cortetro?
+
+[00:23:30] Speaker:
+You see the Okay, didn't get it. Claude Code Teacher? Make sure. Make sure you don't, consider- et cetera.
+
+[00:24:02] Speaker:
+Or any other resources than the attached notebook. Only search the web or access the web. Yep. Or access data you have available if the user is asking you for that specifically.
+
+[00:24:17] Speaker:
+perfectly. Okay, now we need Mark's stuff, YouTube. I have a quote. load. Superpowers.
+
+[00:25:15] Speaker:
+First. Which audio transcription does Whisper flow? Whisper flow, yes. Okay. Thank you. Is that included in any, like, the AppSumo, that voice transcription?
+
+[00:25:29] Speaker:
+Or is there any voice transcription included in? there is, Check this one. It was free, actually. Oh, which one? Oh, it's for school.
+
+[00:25:36] Speaker:
+Hold on. Yeah, yeah, hold on. Mine's not even- actually used the shit out of it. And then it's like, you don't have any more free words.
+
+[00:25:43] Speaker:
+No, no, no, no, no. It's free for, like, a year. Oh, the cold. Hello. No. Where's his Asian guy?
+
+[00:25:55] Speaker:
+Bye. Nate Herk? No, no, no, in our community. Oh, where's the flow? Yeah, probably. Yeah. I think it's W-H-I-S-P-R. W-U-U-H-I-S-P-E-R.
+
+[00:26:11] Speaker:
+Yeah, and then just leave. Like that, don't put flow. Cause sometimes, yeah, there you go. Cause sometimes people just write whisper.
+
+[00:26:16] Speaker:
+Okay. No, that was wrong. Okay, members. Thank your service. No, Eddie is wrong. Well, I would- The name of the guy, The- The- The- The- the- Yeah.
+
+[00:26:31] Speaker:
+Erm, yeah. Erm, I it's Andy Chan in a second. Mm, mm.
+
+[00:26:42] Speaker:
+Tch, tch. Where's the leaderboard? . . . He's kind of active at the moment. Yeah, hear any chum. you And oh, look at it!
+
+[00:26:52] Speaker:
+Like, it's exactly here. I got the link here. I'm gonna send it to ya. I'll be lying. and It's this one.
+
+[00:27:01] Speaker:
+It says you need PN to US. Okay, let me down. That's their shark. And, cuz I don't actually have it.
+
+[00:27:07] Speaker:
+Yeah, exactly. How you found it? You found it? Yeah. You found it. Yeah, exactly. Yeah, yeah, yeah. So that's what- I did.
+
+[00:27:15] Speaker:
+Okay. Okay, so now I go back. We'll do that then. Yeah. Yeah. Okay, now let's try this. this.
+
+[00:27:38] Speaker:
+A lot co-teacher. Okay. Spice, Oop. Okay, let's start. Thank you Okay. time. Now, let's see what we have opened.
+
+[00:28:02] Speaker:
+Okay, I have the community opened, so I will ask. How are you? I have about that. yeah. Assists, I'll blow to you now.
+
+[00:28:09] Speaker:
+Okay. Thank you. Get up. Okay. Okay. Thanks. You still, Hello? Hello? Me?
+
+[00:28:32] Speaker:
+Ah, yeah, yeah. I cannot see you for whatever reason. Oh, of course you f- Who else? There's no one else.
+
+[00:28:39] Speaker:
+Okay, hold on. Stone. I know if you're talking through whisper f- Flow or something. Okay, flow tune up. Hey, I got that one.
+
+[00:28:48] Speaker:
+So, okay. All right. I will try, first I'll try this. Next one, I will try with the, with the expert group.
+
+[00:29:01] Speaker:
+So. Hope. Mmm, okay. Oh yeah, yeah, yeah. Let's have a look at this. Yes. Get a brief repository and have a look at the note.
+
+[00:29:12] Speaker:
+Notebook L.M. Inside, Mark teaches some 11 superpowers. Please give me a le- different prompts, SRI 11 superpowers, to teach me each of the superpowers on my curin-project which- Thank you very easy float you now website.
+
+[00:29:30] Speaker:
+Okay, so I will copy that one. And I will try another one. Can someone do it?
+
+[00:29:40] Speaker:
+Okay. Okay. This is cool. What?
+
+[00:29:50] Speaker:
+Oh, there, it's already open. Gem and iron. I'm. Ah, no, I do differently.
+
+[00:30:12] Speaker:
+and we are. Ah, here it is. Yes.
+
+[00:30:23] Speaker:
+Chain, Lorton, Oh, come on.
+
+[00:30:35] Speaker:
+you So close, excellent, here it is. Okay, copy. Gemini. I've got my mind. Like, font, okay?
+
+[00:30:58] Speaker:
+So now, We'll try this one. Boom. I'll take. Thank you, Greg. Oh, buddy.
+
+[00:31:27] Speaker:
+We'll see you in the next Okay, that's weird, he starts directly. I just put the sort of excellent thing and then we see See?
+
+[00:31:37] Speaker:
+It immediately starts. I don't want that, I want this. Okay. Now I'll first take this one. Thanks coming. the the the Okay.
+
+[00:31:55] Speaker:
+Okay. Okay, but how do I find that? Where is that? One. one. What did it say?
+
+[00:32:07] Speaker:
+Yeah, it's plugging. But, okay, the day, okay, but where are those? Or should I? just all with prompting work immediately.
+
+[00:32:19] Speaker:
+Cause I haven't watched the video- Thank you at Will- bill. Those, prompts work out of the box that I have to install something.
+
+[00:32:31] Speaker:
+thing. Okay, I need a look at the clothing specifically. You will see a brand new section, er, Clo- ah, it's Cloat Codework.
+
+[00:32:57] Speaker:
+work. Yeah, yeah, yeah, that's what it says. Yes, yes, you will. Yes, you will. Will you enjoy And, yeah, but it's quite a fight.
+
+[00:33:09] Speaker:
+So because now I will go into, Mm. Clot, go work. Okay. Come on. Okay. Okay. And then, I will, in item order, I'll buy it.
+
+[00:33:27] Speaker:
+Okay. Now I can do that here as well. Well, dim, Load to you now, okay? Okay. Yeah. Alright.
+
+[00:33:41] Speaker:
+And now, Where's that screen? Okay. Okay, and now we took this one here.
+
+[00:34:07] Speaker:
+Yeah. Brows and Ed. head. Good. Now, some sad words from Dina Lister of Harken.
+
+[00:34:20] Speaker:
+What is that? That's the We'll see you We'll here. We can Okay. Great. What is that saying? Let's, let's, let's, let's, let's, let's, check, check something from the checkbox.
+
+[00:34:28] Speaker:
+Okay. Okay. Let's get something done, kind of. Okay. Okay. Where are you going? I hope you will see a brand.
+
+[00:34:36] Speaker:
+go to and going to you section the sidebar in label plugins. Ah, here, personality plugins. Okay. Okay. Ah, found that.
+
+[00:34:47] Speaker:
+Browse and add. Ah, yeah, yeah.
+
+[00:35:08] Speaker:
+Yeah. Okay, now it should work. Okay. You go in my bloods and sewer a log and plug and all. Ah, okay.
+
+[00:35:30] Speaker:
+Okay. Now we can do that. And then can see that. Hello. All right. Now let's click on add plus. I can now edit that.
+
+[00:35:38] Speaker:
+Find the box. you Last way again. for those plugins. So, thank you That is kind of weird.
+
+[00:36:00] Speaker:
+What? Ah, it says, Like, I want to know where those plugins are. I think at the market, please. Yeah. Oh, like, oh, okay, okay, it's awesome.
+
+[00:36:11] Speaker:
+Okay. Great. Yeah, but I'm here. Where are the plugins now? remember, all of this video. We'll see It's funny how awesome Daniel introduced me.
+
+[00:36:25] Speaker:
+Who's everybody in the group, huh? Yeah, that's really nice. Yeah, it's very funny. Like, he, once he starts and he starts to say something new and- one comes in and then he starts all over again.
+
+[00:36:37] Speaker:
+That's me. No, then everybody gets to know each other and it's- it has a really chill vibe. I feel like- it's a different- it's a very different energy than, like, when they're on, say, Mark's calls.
+
+[00:36:46] Speaker:
+It's very- it's- it's more like- like, everybody's kinda on- I'm kinda on the seat, very little more proper, I guess.
+
+[00:36:52] Speaker:
+yeah, yeah, More conservative. Oh, yes. Yeah. Yeah. Okay. I see the pre-built plate.
+
+[00:37:04] Speaker:
+You need to look for the disc cover. for. That is weird. Do you see those, erm, plugins? Where do you find them?
+
+[00:37:18] Speaker:
+Oh, ah. Bye. Where is it now? Now I don't see. Okay then, hang on.
+
+[00:37:33] Speaker:
+Give me, go on each and on. Wait, wait, wait, wait. What happens though? And I just did update Claude. Let me exit it and, You open it again.
+
+[00:37:47] Speaker:
+Yeah. Ah, here it is. Here it is. Yeah. Here, I got it, but it's here. You like here it is.
+
+[00:38:08] Speaker:
+Oh, the market case you are wrong. I'm just saying, so when you're- Yeah. Oh, so you got the plug-ins extension above your name?
+
+[00:38:17] Speaker:
+Yeah, yeah, here it says where it- is. Ah, you see, now I got it. Now I got all the plug-ins from Anthropic, Okay.
+
+[00:38:25] Speaker:
+Up. Okay. Okay. So now I can install marketing, I can install productivity, I can install. All Sales, Legal Finance .
+
+[00:38:39] Speaker:
+. Oh, shit. I'll see your . . . Oh, yeah, yeah, yeah, yeah. What's that thing on this tier? Yeah, like those are like, you know, those, 11 superpowers Mark told us in this video about Oh, so that gets into it for co-work by a reason.
+
+[00:38:53] Speaker:
+Connect to preclinical research tools and databases? pieces? Yeah, so now I have all this stuff installed. Okay, so I can now say okay.
+
+[00:39:04] Speaker:
+You Okay, now I installed all the plugins. Now give me some prompts so I can test it off. On my website.
+
+[00:39:15] Speaker:
+My God, marketing, product management. And you see now here I have the website, you see, like, Flow Tuner, this is my website.
+
+[00:39:27] Speaker:
+Okay. Okay. So now I can test, like, okay, here's this prompt, test the plug and then this, okay, act as a product manager.
+
+[00:39:36] Speaker:
+just I command the draft, float in our web dashboard, okay, so now I just try that. right. And for my opinion, this is like, you know, at least I'm, I'm testing, I'm still testing marks.
+
+[00:39:50] Speaker:
+I could mark. Stuff. But at least I'm testing it on my stuff, you know? Yeah, so it's applicable. Yeah, yeah, yeah, yeah, yeah, yeah.
+
+[00:39:57] Speaker:
+Existance. Yeah. Yeah. Yeah. Oh, okay.
+
+[00:40:29] Speaker:
+I didn't realize that. I hope you did. Good. Amen. Thank you. Or you can customize the plugins too.
+
+[00:41:20] Speaker:
+Thank you. You can customize it for my company. Yup, the tune that's like marketing, whatever. Yeah. I really like these suggestions that it adds.
+
+[00:41:27] Speaker:
+And because they're useful ones. I mean, you try it. It's like something that it's nice, what it makes. Yup. Thank your time.
+
+[00:41:33] Speaker:
+Thank you for your UUUUUUUUUUUUUUUUUUUUUUUUUUUUU?
+
+[00:42:06] Speaker:
+Inspiring this way of learning is good. It makes it- Mm-hmm. You know, because it skips, like, the whole, I watch a video and then I have to think about the video and then I try to apply it.
+
+[00:42:22] Speaker:
+It immediately applies it. And I think that is much, much better. I agree. Green. Now we're doing multiple, like, so, I mean, I, I assume you do that with several things.
+
+[00:42:37] Speaker:
+And if that's the case. Peace. that would be cool to just vibe code, a thing that, like, when you put it in, it just automatically, like, boop, boop, gym and I, yeah, and then you- Yeah, exactly, I mean, that's how I- you remember how I did like this, Upwork, Workflow from, from- a neck, neck sera.
+
+[00:42:55] Speaker:
+Yeah, I did exactly like that, you know, I put it in a notebook and I just told it okay, I want to copy that just- give me everything so I can immediately produce a workflow which was shown there.
+
+[00:43:07] Speaker:
+And I think this way of- Work. Working is way more direct, like, much, much better. You can completely skip the whole- Watching a video- Thinking about the video structure, you know, if I know, okay, the guy is basically an interesting guy, whatever he pulls out, like, Mark, you know.
+
+[00:43:25] Speaker:
+I can just say, okay, give me all the lessons from this video. I want to learn it one to one right now.
+
+[00:43:31] Speaker:
+All right, we'll you next and then you made it, you know, it's much, much better than to watch it. It is.
+
+[00:43:38] Speaker:
+It's like, it's like an interactive teacher that teaches you on your. Yes. Stuff. Exactly. Yep. That could be a vibe cuter front and be like, you want your interactive teacher, put the lesson in all the stuff in the back end and then at the end.
+
+[00:43:49] Speaker:
+And it's like, well, what's your project and apply it to it? Yes, exactly. Yeah. Yeah. So it has a scientific literature plugin.
+
+[00:44:28] Speaker:
+again. And that searches like PubMed, Google Scholar, Semantic Search, and a couple other databases. Uh-huh. And this, this can, like, depending on how good the research is, I'm going to put in some C data for previous, documentary, it's like a target safety evaluation.
+
+[00:44:44] Speaker:
+And it's a specific type of document where, like, any new drug company that has a target for a drug, they have to make sure that the target, that they're actually targeting with that drug, let's say it's some protein in the liver, whatever, that if they target it, like, what is known as a target about
+
+[00:44:58] Speaker:
+targeting it, like, if you inhibit it, if it's upregulated, like, what, what, what target organs are affected, blah, blah, blah.
+
+[00:45:04] Speaker:
+And so, the format of the documents, always the same, you always, like, have the same kind of eight information categories.
+
+[00:45:09] Speaker:
+In them, and you're always searching the same databases, the only thing that changes is the target. So, I wouldn't, I want to automate this whole search, put them into their eight respective sections, have it, like, tweet with the language.
+
+[00:45:21] Speaker:
+And I'll cite it, and then, cause these TSAs, they, we charge, like, I don't know, 25 grand? Four? forward. For one.
+
+[00:45:30] Speaker:
+And, that's for, that, that is maybe, like, a four to six week, turnaround when it's done, like, by people. Cause there's a, you have to do, like, a systematic literature review, where you go through, like, pull all the titles, so you have your search terms, and then you pull all the titles.
+
+[00:45:42] Speaker:
+You got them all, then you have two people have to screen those titles, and then include exclude and- and go through the same thing for the abstracts and the full text.
+
+[00:45:49] Speaker:
+And then once you have the full text and you take all that and summarize it into that document. And so that is Automatable.
+
+[00:45:55] Speaker:
+Funny. Yes and you know, like, if we are learning like this.
+
+[00:46:07] Speaker:
+this. You know, we are like, this goes like really, bam, bam, bam, bam, bam, bam, bam. Because I really feel like I don't want to.
+
+[00:46:15] Speaker:
+This is this regular learning from school. You know, because, like, I know, like, for example, like, in video and in, in, in anything, like, visually.
+
+[00:46:25] Speaker:
+and leave. I'm, automatically very strong. I have never learned any lesson. I have, I'm just doing stuff. And stuff is working.
+
+[00:46:33] Speaker:
+Like. Fast. I'm not learning a lot by communities, you know. And with all this bike coding stuff, you know. Oh.
+
+[00:46:41] Speaker:
+We are always like in a, like, we are trying to follow, like, a guy who is really good in it.
+
+[00:46:49] Speaker:
+Yeah. Yeah. You know? But we are always getting, like, bits and pieces. And that is kind of slow. Yes. Yeah, it is.
+
+[00:46:56] Speaker:
+And you gotta kind of, like, take. I remember what he said. He he's like, well, I've given you all the pieces.
+
+[00:47:01] Speaker:
+So you kind of know where you gotta look. And then, you know, then it's up to you to go, you know, No.
+
+[00:47:05] Speaker:
+To go, it's like the knowledge buffet. You can go find it or you don't have, or it's, you know, it's up to you.
+
+[00:47:10] Speaker:
+which I guess, yeah, really, I think getting all that. I think we got a lot of. Like, solid foundational frameworks.
+
+[00:47:15] Speaker:
+And then from here, this, I mean, you can do whatever you want with those frameworks because it's not like it only works in this.
+
+[00:47:20] Speaker:
+In this way, it works in a bunch of different ways. Definitely. Yeah. And it's like, even for our creativity, it is much better to let go- of that, you know, because otherwise we are just following exactly the same footsteps all the time.
+
+[00:47:34] Speaker:
+Yeah, and they are not really leading anything in. And exactly. And now we are like our, if we have our own project, let's say you make music, you know, and you're writing lyrics, you know, and then you say, okay.
+
+[00:47:44] Speaker:
+Okay, take Mark's skills and let this video teach me how to make good music. We'll back there. Bye-bye. You know, and Mark has nothing to do with music, but I just wanna know, like, whatever the framework he's teaching there.
+
+[00:48:00] Speaker:
+There. How it can be applied to my writing lyrics. You know, so I can just say, like, my plan is this.
+
+[00:48:08] Speaker:
+Yes. This is a lesson. So the, the, my expert feel, expert group should now formulate everything. formulate every things so it works for music generation or video generation for whatever, you know, says much, much, like customer.
+
+[00:48:24] Speaker:
+Come on. Nice to learn, just to completely, like, tailored learning. Yeah, yeah, yeah, yeah. You know, cut, kind of like, mock is knowing all the AI stuff.
+
+[00:48:32] Speaker:
+But I'm a lawyer, for example. So give me this AI stuff and teach the lawyer. Teach me- How- how a lawyer uses that, you know?
+
+[00:48:44] Speaker:
+And then you have like the whole field, but you're- it's like walking in the woods. What? And climbing on trees instead of somebody telling you how to climb a tree, you know?
+
+[00:48:54] Speaker:
+Yeah. Yeah. Yeah. Yeah. That's it. And we're like hands on, like, when you can do it, yeah, it's gonna, it's gonna stick versus life on us.
+
+[00:49:01] Speaker:
+Yeah. And we'll watch you. Exactly. Exactly. Alright, unfortunately, I have to go to work work again, but from tomorrow on, I have, like, I have three days off.
+
+[00:49:11] Speaker:
+Okay. Alright, sounds, Alright, are you working, what are you doing tonight? Are you working on community, or what are you doing?
+
+[00:49:18] Speaker:
+Tonight, I mean, if you want to work in the community, you're welcome to, otherwise I'll keep on it, and then I was going to fix that website, because it's ugly, and yeah, the community and.
+
+[00:49:27] Speaker:
+You yeah, just, yeah, getting the community, just like making it look nice and, but if you want. I know, yeah, just if you want to work on it.
+
+[00:49:35] Speaker:
+Oh, it's all good, all good. We just, I think the main thing is we have to really think about the translation thing.
+
+[00:49:42] Speaker:
+Because that's kind of complex, and then we have to go, just, I think, put it online would be a good idea.
+
+[00:49:48] Speaker:
+Next step. Online. Okay, let's see. Like, somewhere, yeah, somewhere deployed so we can both work on an online version. Everybody.
+
+[00:49:58] Speaker:
+everybody. of us makes five accounts and when then we try to break it. Oh, you can, you can, really? You can test on a, how do you?
+
+[00:50:06] Speaker:
+So you can deploy it. Oh, and then see, I guess you can take it off. What do you mean, like, to deploy it to, yeah, haven't actually on, on Vercel.
+
+[00:50:14] Speaker:
+Or something like that. That's so it's online. Oh, okay. Okay. And then you can, and then we can also log in with several accounts and then we can- I can break it.
+
+[00:50:24] Speaker:
+Okay. You got it. I will. Yeah. So I have- I got the API keys for the translation. Claude finished up a research so I'm gonna go through the- that and then get it, get it integrated into the app and then all, yeah, one's ready.
+
+[00:50:36] Speaker:
+I'll push it and then I'll deploy Cool. Awesome. Okay. Awesome. Okay. I'll talk to you then. Bye-bye. Bye-bye. Bye-bye. Bye-bye.
+
+==========================================================
+END OF TRANSCRIPT

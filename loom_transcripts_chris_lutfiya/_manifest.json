@@ -1,0 +1,477 @@
+{
+  "source": "loom",
+  "workspace_folder": "Chris/Lutfiya",
+  "folder_url": "https://www.loom.com/looms/videos/Chris-Lutfiya-20f4ba88fde4444eb1f382f0ed8f47e0",
+  "extraction_timestamp": "2026-03-04T20:53:55.209Z",
+  "pipeline_target": "google_meet_automation",
+  "total_videos": 46,
+  "total_transcripts_extracted": 39,
+  "failed_extractions": [
+    {
+      "video_id": "a4305f6e67814a14834dbd7a08392566",
+      "title": "Chris_Lutfiya - 2026_01_26 08_39 CST Recording",
+      "reason": "no_transcript_available"
+    },
+    {
+      "video_id": "72e8022163e24e73bed85248d2f06823",
+      "title": "Chris/Lutfiya",
+      "reason": "no_transcript_available"
+    },
+    {
+      "video_id": "8d00d9ffb4c94580b145334b25a638f9",
+      "title": "Chris/Lutfiya",
+      "reason": "filename_collision_overwritten"
+    },
+    {
+      "video_id": "78c84ed1a3694b059ab82ba6d522ecb2",
+      "title": "Chris/Lutfiya",
+      "reason": "filename_collision_overwritten"
+    },
+    {
+      "video_id": "27608b95c284481b8acc4b004cab27bf",
+      "title": "Chris/Lutfiya",
+      "reason": "filename_collision_overwritten"
+    },
+    {
+      "video_id": "37263252fa754f62b3a11f560ab02bbd",
+      "title": "Chris/Lutfiya",
+      "reason": "filename_collision_overwritten"
+    },
+    {
+      "video_id": "e3d469d863564cc096c071964d16c2bc",
+      "title": "Chris/Lutfiya",
+      "reason": "filename_collision_overwritten"
+    }
+  ],
+  "transcripts": [
+    {
+      "filename": "2025-12-16_chrislutfiya.txt",
+      "video_id": "529d3ed9b3e744cf8ccb5d5e8a6f5a09",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/529d3ed9b3e744cf8ccb5d5e8a6f5a09",
+      "date": "2025-12-16T20:09:18.417Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 4373,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2025-12-18_chrislutfiya.txt",
+      "video_id": "8f5fc121313f4671b1b8d33ad31b49aa",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/8f5fc121313f4671b1b8d33ad31b49aa",
+      "date": "2025-12-18T00:30:32.211Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 5819,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-10_chrislutfiya.txt",
+      "video_id": "331082f5f2e042619c65f4e9ff0eb457",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/331082f5f2e042619c65f4e9ff0eb457",
+      "date": "2026-01-10T19:02:36.826Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 11556,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-13_chrislutfiya.txt",
+      "video_id": "5c80239eb417454cb78e7a709af4d2e0",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/5c80239eb417454cb78e7a709af4d2e0",
+      "date": "2026-01-13T19:02:33.749Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 9693,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-16_chrislutfiya.txt",
+      "video_id": "70a9d48dd77247ebb68bb355ae7d84ef",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/70a9d48dd77247ebb68bb355ae7d84ef",
+      "date": "2026-01-16T19:17:32.651Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 20540,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-20_chrislutfiya.txt",
+      "video_id": "6465656fb6bc48a29a0d88b62d0955f0",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/6465656fb6bc48a29a0d88b62d0955f0",
+      "date": "2026-01-20T20:00:12.272Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 7743,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-24_chris_lutfiya---2026_01_24-12_05-cst-recording.txt",
+      "video_id": "29e32d2d4e0d42c7acfba368a1e408ce",
+      "title": "Chris_Lutfiya - 2026_01_24 12_05 CST Recording",
+      "url": "https://www.loom.com/share/29e32d2d4e0d42c7acfba368a1e408ce",
+      "date": null,
+      "duration_seconds": 7130,
+      "speaker_count": 1,
+      "word_count": 9747,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-24_chrislutfiya.txt",
+      "video_id": "18f2c64d0a7d44a888b039abe8ca48da",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/18f2c64d0a7d44a888b039abe8ca48da",
+      "date": "2026-01-24T18:07:05.434Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 13770,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-25_lutfiya-dev---2026_01_25-20_12-cst-recording.txt",
+      "video_id": "4a68a23f52304ad9ae68bfc751a53be8",
+      "title": "Lutfiya Dev - 2026_01_25 20_12 CST Recording",
+      "url": "https://www.loom.com/share/4a68a23f52304ad9ae68bfc751a53be8",
+      "date": null,
+      "duration_seconds": 711,
+      "speaker_count": 1,
+      "word_count": 15,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-28_chrislutfiya.txt",
+      "video_id": "f474055cbd6548369b4daaa25a3afa45",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/f474055cbd6548369b4daaa25a3afa45",
+      "date": "2026-01-28T22:31:58.913Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 7898,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-01-29_chrislutfiya.txt",
+      "video_id": "26774d8372de4374860f51e2047a85c0",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/26774d8372de4374860f51e2047a85c0",
+      "date": "2026-01-29T21:09:22.088Z",
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 4211,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-02-02_chris_lutfiya---2026_02_02-12_44-cst-recording.txt",
+      "video_id": "9f50fe62dfb74d1fabac5e10e2070be3",
+      "title": "Chris_Lutfiya - 2026_02_02 12_44 CST Recording",
+      "url": "https://www.loom.com/share/9f50fe62dfb74d1fabac5e10e2070be3",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 6,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-02-06_chris_lutfiya---2026_02_06-11_19-cst-recording.txt",
+      "video_id": "8b23310735e243a1ab910062dc83c9eb",
+      "title": "Chris_Lutfiya - 2026_02_06 11_19 CST Recording",
+      "url": "https://www.loom.com/share/8b23310735e243a1ab910062dc83c9eb",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 20,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "2026-02-22_chris_lutfiya---2026_02_22-09_24-cst-recording.txt",
+      "video_id": "25193c41b54b4d76ad17f070a1a6de19",
+      "title": "Chris_Lutfiya - 2026_02_22 09_24 CST Recording",
+      "url": "https://www.loom.com/share/25193c41b54b4d76ad17f070a1a6de19",
+      "date": null,
+      "duration_seconds": 10730,
+      "speaker_count": 1,
+      "word_count": 17257,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_12f0c1e593244929863bb6475341eab2.txt",
+      "video_id": "12f0c1e593244929863bb6475341eab2",
+      "title": "Navigating Meeting Tools and Transcription Challenges",
+      "url": "https://www.loom.com/share/12f0c1e593244929863bb6475341eab2",
+      "date": null,
+      "duration_seconds": 664,
+      "speaker_count": 1,
+      "word_count": 1229,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_217ec1faa3fa4b67af153adeebdfa254.txt",
+      "video_id": "217ec1faa3fa4b67af153adeebdfa254",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/217ec1faa3fa4b67af153adeebdfa254",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 16664,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_3042d0bd28484507ad8779b88fdb6372.txt",
+      "video_id": "3042d0bd28484507ad8779b88fdb6372",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/3042d0bd28484507ad8779b88fdb6372",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 9805,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_31fad4495aa14949afb558860d04f68d.txt",
+      "video_id": "31fad4495aa14949afb558860d04f68d",
+      "title": "Exploring AI Applications in Science and Business Strategies",
+      "url": "https://www.loom.com/share/31fad4495aa14949afb558860d04f68d",
+      "date": null,
+      "duration_seconds": 7028,
+      "speaker_count": 1,
+      "word_count": 13429,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_3ac661b55ba3491fadeb8de7dd21b962.txt",
+      "video_id": "3ac661b55ba3491fadeb8de7dd21b962",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/3ac661b55ba3491fadeb8de7dd21b962",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 7473,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_3bcd4b1f565d49808c16a724e22b732b.txt",
+      "video_id": "3bcd4b1f565d49808c16a724e22b732b",
+      "title": "Testing the Z5 and Important Updates for Tomorrow 🌟",
+      "url": "https://www.loom.com/share/3bcd4b1f565d49808c16a724e22b732b",
+      "date": null,
+      "duration_seconds": 5348,
+      "speaker_count": 1,
+      "word_count": 207,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_43a4d4664dc846e38893943fc2b614e5.txt",
+      "video_id": "43a4d4664dc846e38893943fc2b614e5",
+      "title": "Collaborating on GitHub and Deploying to Vercel 🚀",
+      "url": "https://www.loom.com/share/43a4d4664dc846e38893943fc2b614e5",
+      "date": null,
+      "duration_seconds": 1846,
+      "speaker_count": 1,
+      "word_count": 3159,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_61a0de36ed334b318bf922bc5ead423b.txt",
+      "video_id": "61a0de36ed334b318bf922bc5ead423b",
+      "title": "Project Development and Collaboration Insights 🚀",
+      "url": "https://www.loom.com/share/61a0de36ed334b318bf922bc5ead423b",
+      "date": null,
+      "duration_seconds": 8621,
+      "speaker_count": 1,
+      "word_count": 15612,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_650212b3bf264a90bf96f1185f3e896f.txt",
+      "video_id": "650212b3bf264a90bf96f1185f3e896f",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/650212b3bf264a90bf96f1185f3e896f",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 1202,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_7c6af06fb7674d37864388d4005de193.txt",
+      "video_id": "7c6af06fb7674d37864388d4005de193",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/7c6af06fb7674d37864388d4005de193",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 13491,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_7f91e4a1594a4b7bb350bec7de65102e.txt",
+      "video_id": "7f91e4a1594a4b7bb350bec7de65102e",
+      "title": "Collaborative Development and Language Translation Strategies",
+      "url": "https://www.loom.com/share/7f91e4a1594a4b7bb350bec7de65102e",
+      "date": null,
+      "duration_seconds": 12776,
+      "speaker_count": 1,
+      "word_count": 23428,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_7fdad1586002464a87b0256948d0b20e.txt",
+      "video_id": "7fdad1586002464a87b0256948d0b20e",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/7fdad1586002464a87b0256948d0b20e",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 5901,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_927ac16ab3154cea87fa0ab4493080f7.txt",
+      "video_id": "927ac16ab3154cea87fa0ab4493080f7",
+      "title": "Mastering Agentic Workflows: A Comprehensive Guide for Business Success",
+      "url": "https://www.loom.com/share/927ac16ab3154cea87fa0ab4493080f7",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 2138,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_a9cdd77ebe0c4b8e8c7f9ed41cf1c3bb.txt",
+      "video_id": "a9cdd77ebe0c4b8e8c7f9ed41cf1c3bb",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/a9cdd77ebe0c4b8e8c7f9ed41cf1c3bb",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 15963,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_b0eb3319c8324d6ca235f7dc20c9dcb1.txt",
+      "video_id": "b0eb3319c8324d6ca235f7dc20c9dcb1",
+      "title": "Innovative Strategies for Community Engagement and AI Integration 🤖",
+      "url": "https://www.loom.com/share/b0eb3319c8324d6ca235f7dc20c9dcb1",
+      "date": null,
+      "duration_seconds": 14575,
+      "speaker_count": 1,
+      "word_count": 14507,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_c041abae06c9461fa05b18c9a2aa5452.txt",
+      "video_id": "c041abae06c9461fa05b18c9a2aa5452",
+      "title": "Collaborative Project Planning and Insights 💡",
+      "url": "https://www.loom.com/share/c041abae06c9461fa05b18c9a2aa5452",
+      "date": null,
+      "duration_seconds": 1797,
+      "speaker_count": 1,
+      "word_count": 3536,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_c60af8a56b7f41c599412db367dddaed.txt",
+      "video_id": "c60af8a56b7f41c599412db367dddaed",
+      "title": "Collaborative Development Insights and Strategies 🚀",
+      "url": "https://www.loom.com/share/c60af8a56b7f41c599412db367dddaed",
+      "date": null,
+      "duration_seconds": 6559,
+      "speaker_count": 1,
+      "word_count": 15670,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_d34eeea7d6dd49e880deb6210711dd32.txt",
+      "video_id": "d34eeea7d6dd49e880deb6210711dd32",
+      "title": "Streamlining API Workflows with Code-less Solutions 🚀",
+      "url": "https://www.loom.com/share/d34eeea7d6dd49e880deb6210711dd32",
+      "date": null,
+      "duration_seconds": 4437,
+      "speaker_count": 1,
+      "word_count": 464,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_d54aa65625594337b5cdba7c3addab8d.txt",
+      "video_id": "d54aa65625594337b5cdba7c3addab8d",
+      "title": "Troubleshooting Audio Quality Issues Together 🎧",
+      "url": "https://www.loom.com/share/d54aa65625594337b5cdba7c3addab8d",
+      "date": null,
+      "duration_seconds": 4098,
+      "speaker_count": 1,
+      "word_count": 427,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_d9a588cd78c84e80b7258a22d738f26a.txt",
+      "video_id": "d9a588cd78c84e80b7258a22d738f26a",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/d9a588cd78c84e80b7258a22d738f26a",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 8036,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_dab88608f9b94b0097df91b600b44a42.txt",
+      "video_id": "dab88608f9b94b0097df91b600b44a42",
+      "title": "Collaborative Coding and Community Building Insights 💻",
+      "url": "https://www.loom.com/share/dab88608f9b94b0097df91b600b44a42",
+      "date": null,
+      "duration_seconds": 8470,
+      "speaker_count": 1,
+      "word_count": 13947,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_eae81c9d341c4be2aae5cd1deb75e36f.txt",
+      "video_id": "eae81c9d341c4be2aae5cd1deb75e36f",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/eae81c9d341c4be2aae5cd1deb75e36f",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 14697,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_ec093fd83fc7415fa7f45f62f8333ffa.txt",
+      "video_id": "ec093fd83fc7415fa7f45f62f8333ffa",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/ec093fd83fc7415fa7f45f62f8333ffa",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 12301,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_f4850c18090941f9922a3e07cb5854dd.txt",
+      "video_id": "f4850c18090941f9922a3e07cb5854dd",
+      "title": "Chris/Lutfiya",
+      "url": "https://www.loom.com/share/f4850c18090941f9922a3e07cb5854dd",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 3698,
+      "extraction_method": "graphql"
+    },
+    {
+      "filename": "loom_fdbc5c57530d4ca18499b46c2356a24e.txt",
+      "video_id": "fdbc5c57530d4ca18499b46c2356a24e",
+      "title": "Agentic Workflow: HCD Queries for DART Studies 📊",
+      "url": "https://www.loom.com/share/fdbc5c57530d4ca18499b46c2356a24e",
+      "date": null,
+      "duration_seconds": null,
+      "speaker_count": 1,
+      "word_count": 2115,
+      "extraction_method": "graphql"
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Chris/Lutfiya
+Video ID: f4850c18090941f9922a3e07cb5854dd
+URL:      https://www.loom.com/share/f4850c18090941f9922a3e07cb5854dd
+Date:     Unknown
+Duration: Unknown
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T20:17:44.001Z
+==========================================================
+
+[00:00:00] Speaker:
+That's good. I had a call this morning, with a friend of mine who works at, Contract Lab. And I'd spoken with him.
+
+[00:00:09] Speaker:
+They're one of the two that I spoke to. And, so I just followed up with him again today, and, putting a proposal together.
+
+[00:00:15] Speaker:
+I was talking about, like, pain points that they have. Their company's interested in getting AI on board, I, I showed him a walkthrough of my website, because I had just, I'm, like, gonna deploy it now, but Gemini stopped responding, but the website's done and ready to deploy it, I just have to deploy
+
+[00:00:27] Speaker:
+it, and, yeah, and I'm just, getting, getting the, getting that stuff prepped. Cause I, I'm gonna send some talking points, and then he's going to, set up a call with me in his room.
+
+[00:00:37] Speaker:
+And then I'm going to do like a demo on the phone with them to just kind of show them like what it could look like.
+
+[00:00:44] Speaker:
+And so I have Claude call me. We're making it already made a prototype for like a front end for what it would look like for like some of the things like the thing that they were specifically asking for.
+
+[00:00:53] Speaker:
+It was like some data visualization and, yeah, I think we really need to get our YouTube stuff online and start to publish, because anything, you know, like, honestly, whatever I hear from you, from normal people, whatever challenges they have, I think, okay, yeah, that's easy.
+
+[00:01:12] Speaker:
+You know what I mean? It's like, they are, like, they are so far behind, like, even their challenges are, like, not complicated.
+
+[00:01:21] Speaker:
+Yeah, no, I'm down with, I'm, I'm down with getting the YouTube content, like, ready and out now. Yeah. And, now that I have a, I mean, we know how to do all this stuff, you know.
+
+[00:01:32] Speaker:
+It's like, like, right now, I'm like, you know, the new stuff, like, that, very rarely, Even when Mark posts something, it's like, I really need to get that, you know?
+
+[00:01:41] Speaker:
+Usually, it's all good. I was also just waiting for really, like, I mean, I was about to post my LinkedIn page, and I was like, not yet.
+
+[00:01:52] Speaker:
+Technically, I mean, I'm still waiting. I'm still working at my day job right now. I'm still, like, until, until I actually have the chat with them.
+
+[00:01:59] Speaker:
+To let them know or resign, I, I was kind of just being a little careful. Yeah, of course. That's good.
+
+[00:02:07] Speaker:
+But that's just not being stupid, you know? Otherwise, but, you know, what, like, what I see, like, the, the last thing, like, like, Mark, like, the latest developments, you know, like, one is, like, this anti-gravity automation.
+
+[00:02:19] Speaker:
+from Nick, which is insane, because you can automate stuff, like, very easily, really good. But now, also, like, what we're Mark posted, like, yesterday, a couple of days ago, with this, with the agent manager and the agents.
+
+[00:02:33] Speaker:
+Yeah. That is so incredible. I mean, if it works, that's why I kind of gave you, like, this chat. It's a job, you know, because the thing is, like, before you are the monkey in the middle, okay?
+
+[00:02:47] Speaker:
+Mhm. Mhm. So, the only way to make it work is that you have to tell the sub-agents, okay, you do this, you do that.
+
+[00:02:56] Speaker:
+No, in this case, the agent, yeah, the agent will do it. Yeah, but the problem is, now you have to be the smartest person in the room.
+
+[00:03:04] Speaker:
+Okay, because you have to talk to the sub-agents. No, I thought that was the, Before. Oh, before. Yeah, yeah, Profession.
+
+[00:03:16] Speaker:
+Yeah. Okay. As a toxicologist, you could talk to the sub-agent, sub-toxicologist, something. Okay? And they would give you feedback, and you could say, ah, okay, this is smart, this is stupid, this is smart.
+
+[00:03:30] Speaker:
+Okay? But now, with the agent in the middle, you know, we can take this incredible brain of Antigra- of Entropic, and to put, like, a genius inside of that brain.
+
+[00:03:46] Speaker:
+And And he's like, And then we are, like, just, And we're He done. Like, way smarter employee than we are ourselves in a specific field.
+
+[00:03:59] Speaker:
+Yeah, I mean, I have to try it out and see. And I really pushed it to see how Yeah, because you haven't seen what it DJ's saying with it.
+
+[00:04:05] Speaker:
+Because I did send it on purpose because you actually have some, you know something about DJing. I don't. Okay. Okay.
+
+[00:04:10] Speaker:
+I know music. I'm quite good with that stuff, you know, but I don't know how to make stuff. Welcome. and so What is, I gave you like a prompt that should create like, like.
+
+[00:04:24] Speaker:
+I think an agent army, you know, that creates a DJ tool. And if that works, you know, like. like. It, because I, if I invented that thing, you know, I am less smart about this subject.
+
+[00:04:39] Speaker:
+object. Then the DJ agent, who orchestrated everything, who said, okay, this makes no sense, this makes sense, this makes- no sense, you know?
+
+[00:04:49] Speaker:
+Yeah. Yeah. So if it works at the end, then somebody without the knowledge. . . You gave the instruction to build it.
+
+[00:04:59] Speaker:
+And that is crazy. Amazing. . . . Because that means you can, you could theoretically or practically prompt stuff that you are awake.
+
+[00:05:09] Speaker:
+Take a, aware of, but you don't have specific knowledge. Right. That's exactly how, that is exactly, how I'm doing any of this now.
+
+[00:05:20] Speaker:
+Like, Eddie, I don't know, again, like, none of, none of the no coders, I guess, code. So yeah, it's, it's .
+
+[00:05:25] Speaker:
+Very much, like, leveraging. Yeah, leveraging AI, but now it's just like using the AI to leverage the AI. Yeah. Yeah.
+
+[00:05:33] Speaker:
+Yeah, yeah, yeah, yes, of course, but it's, it's still like, this is one step further because you are, you know, like a rag.
+
+[00:05:40] Speaker:
+We can, we understand. What that is, you know, yeah, like, we understand all in theory, we understand all the things we are building.
+
+[00:05:48] Speaker:
+thing. Okay. You know? But if we have an agent in the middle that we can prompt with the expert network riding.
+
+[00:05:57] Speaker:
+I think the prompt for that thing. Okay, for example, how do we solve the problem with plastic in the world?
+
+[00:06:04] Speaker:
+Like some. you think really crazy. Okay. And now you tell the expert network to create a prompt for, for, for an agent, manager who solves that problem, okay?
+
+[00:06:17] Speaker:
+Okay. So you tell the expert network to write that prompt, you give that prompt to the middle, and then you look if the- If they solve the prob- plastic problem.
+
+[00:06:30] Speaker:
+I mean, you know, shit, like, you can do cr- really crazy stuff which are completely out of your world. Not that you're not smart, but that's not your profession.
+
+[00:06:40] Speaker:
+Yeah, yeah, totally. I totally hear you. Yeah, you can like- hack other fields now. And exactly that is a point.
+
+[00:06:45] Speaker:
+And if I could, for example, hack that DJing field, you know, I could- hack any other field there as well.
+
+[00:06:53] Speaker:
+And that is nuts. Yeah, and then what do you do with it? Yo! YO! We find out. First I need to know what the world's finding.
+
+[00:07:00] Speaker:
+Then I have to go in this $200 plan. But, yeah, we have to figure it out. Yeah. Yeah, we will.
+
+[00:07:09] Speaker:
+We'll figure it out. I'm loving. Bye bye. Yeah, it's coming. It's coming together. It's coming together. I just needed, like, I just had to be, I, like.
+
+[00:07:19] Speaker:
+I, I just had to be really confident about any decision I made worked wise, you know, and I'm still not.
+
+[00:07:26] Speaker:
+One. Fully set on, like, how I want to, like, I don't necessarily, like, want to do anything today. me. But, probably, probably have a chat with my manager this week.
+
+[00:07:41] Speaker:
+He's a nice, he's a really nice guy. He just, he's really, like- not really super involved. And so, like, yeah, I'm trying to get things done.
+
+[00:07:49] Speaker:
+It's kind of- And I touch. But, we'll see how it goes in the next coming days. Yeah, we'll see. And I'll make sure that you're gonna get We'll see.
+
+[00:07:58] Speaker:
+We have a call at, yeah, I call it one I just have with all my colleagues for some, for some stuff to get done this week and, you Yeah, well, my mind's just like, I just want to do AI stuff.
+
+[00:08:11] Speaker:
+Like, I just want to build this stuff. I just want to focus on this, but. Well done. Yeah, like, for me, it's for all of us.
+
+[00:08:17] Speaker:
+The point is, all the stuff we are doing every day, whoever we are. We know this is completely stupid. You know what do you mean?
+
+[00:08:27] Speaker:
+Oh, that is just like, I think the way we do- I mean, not necessarily what we do, but the way we do stuff, that is nuts.
+
+[00:08:35] Speaker:
+It's like, completely stupid. It's like- I think that is everywhere, you know? And, we all just have- Okay, we have to jump from A to B, you know, without falling off the cliffs.
+
+[00:08:52] Speaker:
+Kind of, you know. Yeah. Yeah. Yeah. That won't happen. I mean, that won't happen. Even if I would get fired now.
+
+[00:09:00] Speaker:
+I would get a much better. Better job than I have at the moment. Very, very quickly. Because I can automate that thing that that writes people to get me jobs.
+
+[00:09:10] Speaker:
+You know, it could write 200 emails, you know, and figure stuff out from the, company websites and write something super specific that looks like I'm totally into that company.
+
+[00:09:21] Speaker:
+So, It's very easy to find a job. But I don't want a job. It's- that is also because it's the same stupid stuff.
+
+[00:09:28] Speaker:
+love. Yeah, but with what we do with the AI, you know, we are like, I think we're like once. Once, step ahead from getting like a big punch, like something big, you know, because we can do that at any feel it.
+
+[00:09:43] Speaker:
+I can't think about how to a DJing thing and, you know, like a Google ads and analytics and, you know, like an automatic website.
+
+[00:09:52] Speaker:
+And stuff, you know, something that generates website on the fly and AB tests on the fly, you know. I'll you next I'll see you So like I can get like advertising agencies easy I could make our business easy, you know, like whatever we are selling.
+
+[00:10:07] Speaker:
+Thank listening. Our community, you know, we will have, we will have no competition. I mean, there's just no competition. rotation.
+
+[00:10:16] Speaker:
+Nobody's doing what we are doing. Yeah. Yeah, it'll be cool. It'll be good. With the testing right now, so. Wait.
+
+[00:10:24] Speaker:
+Tested out the version that was, in the deployed link that you sent. So that's gonna be the one that, is this still, like, one that we're, that we're both working on and then to split after?
+
+[00:10:35] Speaker:
+Or, or, or, course, just go edit now. No, no, we are, I think we're like, we are both working on the community until it is where we- think, you know, the language thing works great.
+
+[00:10:48] Speaker:
+We have to put on a lot of stuff inside and we have to fix errors and make it nice. Thanks.
+
+[00:10:53] Speaker:
+Ah, you know what? Yeah, I think we should post. Ah, yeah. I wonder. I don't know if it'll actually, I don't think it'll translate attachment.
+
+[00:11:01] Speaker:
+Can I just, But, but I think, it would be good to add some more content with posts like it with attachments and, and yeah, to see how, see if it like, oops.
+
+[00:11:11] Speaker:
+Yeah, see how that, one, I don't think it'll translate it, but I could be surprised. Rise. so, we'll see. But, I'm feeling it might not.
+
+[00:11:18] Speaker:
+I mean, we will, we can, we can create, like, interest. interest. interesting stuff, for example. I mean, if they are paying inside of a community, we have to kind of, like, figure out the cost of that.
+
+[00:11:27] Speaker:
+But I think it is doable. For example. I'm sorry. If somebody, if I post a video of Mark, you know, it would be great if we don't just like, I don't- I don't, I don't want that we have communities where we explain stuff for nerds, as you know, you know.
+
+[00:11:42] Speaker:
+So I would say, you know, it is- it would be great if we- if somebody posts a video of an English or any language content, you know, you could just clip- click the button and it says- send me the transcription in German, for example.
+
+[00:11:57] Speaker:
+Because it's easy, the transcription is- already on YouTube. Yeah. You know, you just have to go there, grab it, translate it and, send it to the guy.
+
+[00:12:06] Speaker:
+It's very easy. Oh, yeah, it's super easy. Or we could even, like, make, like, That's it. Give me a summarizing, summarization, whatever, in German language, or whatever language, you know, and then we get- Get that from something like 11 Labs.
+
+[00:12:24] Speaker:
+Inside of our community, you know, I think this kind of- lives. Stuff would make it, like, really, really nice because, you know, somebody posts whatever content in their language, or if it- Usually, it is English stuff, you know, but you don't have to go on YouTube, you don't have to do all this- this
+
+[00:12:40] Speaker:
+labor, you know. You can just click a button and then it gives you a transcription in, in, French or whatever.
+
+[00:12:48] Speaker:
+Never. And so, if, okay, so if the YouTube video is posted on the community, then there will be a button where somebody can extract the information.
+
+[00:12:57] Speaker:
+They can the transcript in their language. Yes, or the data summarization from 11 laps style in their. See ya later.
+
+[00:13:05] Speaker:
+Language. It's just workflow, you know, it's like, like, it's kind of not my thing. It's really interesting because that may.
+
+[00:13:12] Speaker:
+Like, like, you know, people know what they pay for or if we have that. Yeah, yeah, because they're seeing that feature like so.
+
+[00:13:20] Speaker:
+you. Yeah, so I think that's a really cool addition. Post stuff because they want to get the transcript and the, you know, like, if they think something is interesting, you know, and like, if I think, Thank you.
+
+[00:13:32] Speaker:
+something is interesting and I'm German, the way to get that transcript or to get the summarization is to post. A in the community.
+
+[00:13:43] Speaker:
+You know, I'm the German guy, so I say, oh, Mark's video looks kind of interesting. With this thing, post it, get the transcript, or get the German, like, short version of it, you know.
+
+[00:13:52] Speaker:
+And then I, I, I did so. Something in the community. Yeah. Yeah. Well, I mean, yeah, that'll be a feature to add.
+
+[00:14:02] Speaker:
+The, the, which I mean, it really cost us something. It would cost us, like, some from the Yeah, yeah. For the API cost for the, for the language translation.
+
+[00:14:09] Speaker:
+Yeah, and then the YouTube API. Yeah, but I mean, but it's okay. I mean, this stuff is like, in the moment where people pay like 50 or $100 a month, this stuff doesn't matter.
+
+[00:14:23] Speaker:
+Yeah. Yeah. I mean, the API cost. Trust What they are, so. Yeah, and also like, you know, I opinion like, I don't know how you consume content, but it's like, there's.
+
+[00:14:33] Speaker:
+It's the limit of how much you actually can consume. Like, maybe I don't think I can watch more than 10 videos a day.
+
+[00:14:40] Speaker:
+I rarely- Watch 10 videos. Oh, yeah, no, no. You're gonna be like, ugh, no, that's garbage by the time it's done.
+
+[00:14:45] Speaker:
+Yeah, exactly. My brain doesn't process that stuff. No, no, no, it doesn't. So, you know, you have some, you know, I watch like three videos like dedicated and that's it.
+
+[00:14:55] Speaker:
+and Yeah, I think beyond that, I think that's, that's funny. And, yeah. And then, then the API cost don't, don't matter.
+
+[00:15:03] Speaker:
+You know, it doesn't matter. Yeah, no, no, I don't think that they're gonna be, like, any significant portion that isn't accounted for by the pricing structure.
+
+[00:15:12] Speaker:
+I'm not sure. But then it's really, really good because we could put, like, an AI news on the community as well.
+
+[00:15:20] Speaker:
+You know, and then today something was introduced by anthropic, you know, and if you are a doctor, you know, you can have like a system prompt inside and say, okay, what does that mean to me in Germany?
+
+[00:15:35] Speaker:
+You know, and if- I'm a doctor and I listen and I'm on your community and then anthropic, opens up some new tool, you know, and.
+
+[00:15:43] Speaker:
+time. You could click on give me a summer summarization in German. The community knows I'm a doctor and gives me like notebook.
+
+[00:15:51] Speaker:
+You know, it's just a system problem. But then it gives me like in German language, what this anthropic news means for me.
+
+[00:15:59] Speaker:
+Yeah, like a clickable to that person. We have like a, we can create like a superb community without any- competition because even smart as Mark had just is on school.
+
+[00:16:13] Speaker:
+He can't leverage on any of the technology. No, no, this will be cool. to see how it, like how it, how it grows.
+
+[00:16:22] Speaker:
+It would be really cool. Yeah. Yeah. You I gotta try to get, this doesn't- I want to load. I'm just gonna push this website and then, you know, oh, I think you're just- Antigravity, Yeah, but if it's stuck, you know, sometimes it's buggy, you have no chance.
+
+[00:16:39] Speaker:
+The only way to, like, interrupt it is to completely new start. You know what, I wasn't a good point, though.
+
+[00:16:46] Speaker:
+It did, it uploaded a picture, like, my picture to the website, not an ad generated one. I went- I went to go scroll down, I'm like, well, this isn't me.
+
+[00:16:55] Speaker:
+And I gave it the picture, too. It's like, oh, sorry. I didn't use your picture. I use the ad generated one.
+
+[00:17:00] Speaker:
+Let me- I'm gonna it now. Thanks. God. Yeah, someone's class funny. That could be funny sometimes. Sometimes, Yeah, what else are you going to be working on next then?
+
+[00:17:12] Speaker:
+Are you guessing too? We'll see you Good question. I am very, very close before buying that anthropic better subscription, because the agent, the agent thing is my, in my opinion, if it works well, it's a game changer.
+
+[00:17:30] Speaker:
+It's a big thing. Like, it's way better than this strange, what is it called? Like, Cloudbot? What? Oh, Cloudbot? Yeah, yeah, because I mean, it's just like, yeah.
+
+[00:17:41] Speaker:
+If you feel like it's that big of a- I'm, I mean, it does sound like it's pretty- I mean, the point is that it is that it has an agent in the middle.
+
+[00:17:51] Speaker:
+That is- the huge difference because I can prompt a mega prompt from the expert community and they write- the prompt and then I'm like, you know, I'm like the president of, of what is it like, like.
+
+[00:18:06] Speaker:
+like. Paramount picture, you know, and I could put Steven Spielberg in the middle, you know, and I could take like.
+
+[00:18:14] Speaker:
+like. a guy who has knowledge about nuclear whatever, you know, and tell him, okay, explain Steven Spielberg about this. Nuclear, I say, and then you make the movie, kind of, you know, you're like, and then you're just a producer or the president and you- actually have no clue, you just know, oh, this
+
+[00:18:33] Speaker:
+sounds interesting. You talk to him and then you make that, you know. Oh. And then it's nuts. Yeah. Then the sub-agents thing, because the sub-agents thing means I have to be the- I'm the smartest person in the room, and I have to manage them.
+
+[00:18:51] Speaker:
+Yeah, I don't know. No, not- It's the next thing means I just have to be the- President, and I have to think it's a great idea to do that, and then let the guys do that.
+
+[00:19:01] Speaker:
+Yeah, okay. and you are so, I'm gonna try it tonight, and I'll see, and I'll record any goodies that I find, and yeah, I'm like, I just like to know if you can, if you can create the DJing thing.
+
+[00:19:14] Speaker:
+Ah, yeah. Then I'm sore, because that is kinda, Kind of like, outside of my border. Okay. I'll do the DJing, and then I'll do, marks.
+
+[00:19:23] Speaker:
+March. Oh, cool thing. I'm excited to try that out. Yeah, not be good. Yeah, I am. I'm going to hop off, though, because then I can have five minutes to max.
+
+[00:19:32] Speaker:
+Thanks for watching. I've got to run through our stream and, I will be, he'll be around after, yeah. Alright. Alright.
+
+[00:19:39] Speaker:
+Bye bye. It's actually a bit in fact. It will if you want to. I'll have to All right.
+
+==========================================================
+END OF TRANSCRIPT

@@ -1,0 +1,1358 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Innovative Strategies for Community Engagement and AI Integration 🤖
+Video ID: b0eb3319c8324d6ca235f7dc20c9dcb1
+URL:      https://www.loom.com/share/b0eb3319c8324d6ca235f7dc20c9dcb1
+Date:     Unknown
+Duration: [04:02:55]
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T19:32:15.724Z
+==========================================================
+
+[00:00:00] Speaker:
+Oh, yes. No. No. Honey, you, you discovered that already once and now you discovered it again and you're like as happy as on the first time.
+
+[00:00:12] Speaker:
+Oh my god. I was thinking about something else. Just wanted to get it done and then just said, okay, what was the word?
+
+[00:00:25] Speaker:
+I don't know why, I'm sticking my memory because I, Okay, now we are in faith, now you can clear and go in phase 9, huh?
+
+[00:00:35] Speaker:
+I want you to context, it's purely to know, just to see. Oh, good. Is this how Homozi guys totally crazy, huh?
+
+[00:00:50] Speaker:
+Oh, what was the command on the GSD number five? Didn't you do copy paste? I did and then hang on, it's in one of the.
+
+[00:01:01] Speaker:
+Just say no, it don't problem. Just make a slash GSD. And then plan phase. Nine. Just write it. Apple point.
+
+[00:01:16] Speaker:
+Shit. No, stop, stop, stop, stop, stop, stop, I don't know, I need to see if it's done. Yeah, nothing, just say it doesn't divide and you just say you just have to write it, you know, GSD double point plan phase nine, like this, like write it out, yes, GSD minus double point, Yes, and then plan plan
+
+[00:01:45] Speaker:
+minus pace. New word. Yeah, number nine. I think that should be it. Yes. Yeah, no, what does it say? Correct.
+
+[00:02:09] Speaker:
+I mean, because like, yeah, phase nine validated, you see? Yeah, just does that triggers it. Yeah. And so it looks like.
+
+[00:02:32] Speaker:
+Okay, yeah, it's based on our requirements. I just gave it both the gamification and the points. Yeah, it was number nine money.
+
+[00:02:40] Speaker:
+Thank you very much. I don't know from. I thought I had coffee. I was like, I've been good about that like, all afternoon.
+
+[00:02:52] Speaker:
+It's cool. Okay. Yep. What is it? Oh, it's a skill. It's skill. Mm-hmm. How do I do it? I don't see it.
+
+[00:03:50] Speaker:
+I know you want to, That's a bit of, I don't see it. It's still doing its thing? Yeah. What are those sounds about your sentence?
+
+[00:04:24] Speaker:
+I'm scraping a school. So I have to quickly touch the video and then stop it. Which school are the schoolers?
+
+[00:04:36] Speaker:
+Yeah, I say like I've almost done. Okay. Did you go to for free community or for the paid community?
+
+[00:04:58] Speaker:
+Hey, hey, that wasn't me, it's Gemini, that is very interesting.
+
+[00:05:22] Speaker:
+We should be, how do you really scrape a school community? Like how do you know what I mean, like ask questions inside of the school community about stuff.
+
+[00:05:37] Speaker:
+I tell you why like here's a one really good post it's feature request you know I mean it would be interesting what other people are looking for in school because I probably don't code everything people request you know but we can do it in our community of course and people might have great ideas about
+
+[00:05:58] Speaker:
+what should be inside what is not. You can totally, like, put like Google and all that kind of analytics, the analytics that, you know, track all that stuff.
+
+[00:06:08] Speaker:
+And then we can, yeah, totally use that information to, like, just like sign in the squad. Exactly. Oh, see what they got.
+
+[00:06:21] Speaker:
+Okay, yes. Okay, huge. Okay, it's huge, huge, Jesus Christ. Look at this. it's like 100 posts. I show you where are you?
+
+[00:06:34] Speaker:
+I mean, just look at this link. It's like it's like hundreds of pages of feature requests, but it's like, how do we, like scroll down, but scroll to the bottom, scroll to the bottom, it's a hundred pages long.
+
+[00:07:09] Speaker:
+Oh my God, we need to scrape this. Yeah, we need to know it's we know all we need to have all this stuff inside of a notebook LM So we can like really get the coolest shit out there Because I'm quite sure they don't do a lot of the feature requests because they don't want to blow it up You know, but
+
+[00:07:26] Speaker:
+we want to have it like really specific for professionals and for us. It's like super useful Yeah, so like We'll have a vice great bit Okay.
+
+[00:07:38] Speaker:
+Yeah, possible, possible. I come back in a second column. I asked if I Okay. Because I have it installed in Claude.
+
+[00:09:04] Speaker:
+You know what? I have a module and I saved it to get home. And it's a script that logs in to school.
+
+[00:09:16] Speaker:
+Okay. And then they can like select. You kind of get the point where you just tell what where which menu you want it, screen community classroom, screen, but the issue that I have for is that I didn't give it limit.
+
+[00:09:36] Speaker:
+and so on. I've been. And then that was on a post of that video on school. Yeah, remember those really long videos in the beginning.
+
+[00:09:47] Speaker:
+Yeah, because I was doing those scripts and I would let it run. I really shouldn't have just seen like I should have done in batches.
+
+[00:09:54] Speaker:
+But I didn't think about that. So can you look if you have an epi actor that can scrape like inside of a school community for a certain keyboard in the search.
+
+[00:10:06] Speaker:
+I give you an example. Oh, there's no school scrapers. I can do that. Okay. It's great. Just all posts. I don't know.
+
+[00:11:06] Speaker:
+I don't want all posts. It takes forever. No, no, no, no, no, but you can announce you can write a short story.
+
+[00:11:13] Speaker:
+We should it says we should use a regular web scraper from app. Okay. Okay. Okay. Wait. Okay. Okay. Then we take the web scraper from app.
+
+[00:11:22] Speaker:
+Can you try that one on that search term? And tell me is that a monthly one or just a per use case?
+
+[00:12:24] Speaker:
+It's because of authentication that that doesn't work. We have to do it differently. We have to do it. We see, but that doesn't really scrape it.
+
+[00:12:39] Speaker:
+Because of authentication, it doesn't work. If we do it with the clawed extension, it can definitely do it, but I don't know how long it will take to do that.
+
+[00:12:55] Speaker:
+Okay. This is the end of my live, and then we'll view the graph in the stream. Okay. I'll put it here, S.
+
+[00:13:22] Speaker:
+Okay. Ah, this one is, um, this needs a bit more. What? Hold on, water. Yeah, yeah, yeah, but I have that installed.
+
+[00:13:47] Speaker:
+I think that's the same what I gave you. Oh, maybe it's okay. I was looking for a saved. I saved, I saved.
+
+[00:14:24] Speaker:
+I remember I posted on it to mark, I'm like, oh, I even saved the two of Github briefs, so I don't have a computerized name.
+
+[00:15:07] Speaker:
+What are you smiting about? Well, I got a message from some of my daughters that her friends have for a sleepover tonight.
+
+[00:15:16] Speaker:
+And I got a message from the mom just saying that they both want back and cheese and frittin' her in that movie.
+
+[00:15:24] Speaker:
+Yeah, thanks for scraping this feature, I'm going look at a lot of top screens for you. I know the code's on you.
+
+[00:15:37] Speaker:
+Questions? Yeah, definitely. I remember I made copies of this, of this script because it was very good. I think what I need to do is ask Claude to.
+
+[00:16:20] Speaker:
+And I still write it in a way where I don't want to be like, yeah, I can jump in and help with or something, but it's like, you don't only get to limit each time I rerun the script and I have to log in again.
+
+[00:16:36] Speaker:
+Like I didn't like, some way easily transfer the cookie to like. I think what we like, we have to, what we have to do anyhow somehow, Now, sometime Nick made a really good video about making agenteic workflows in antiquity.
+
+[00:16:53] Speaker:
+And that is a really good one because he's managing his school community through antiquity. He never logs in like Nick doesn't log into his school community.
+
+[00:17:07] Speaker:
+He just uses antiquity and he just it just gives him it does everything automatically. So basically, the user asks the question.
+
+[00:17:17] Speaker:
+Antigravity is searching his computer with his community with Iraq. It shows him if the answer was already supplied one time, and then he just answers inside of Antigravity.
+
+[00:17:29] Speaker:
+He just basically says, yes, like a why or no. You know, and it all goes completely automatic. He's like, I don't have to do anything.
+
+[00:17:39] Speaker:
+I lost you again, and it's not even as far away. Here, can you see me? Hello, Houston, we have a problem.
+
+[00:17:50] Speaker:
+We lost context. Do you have more kids or just one? Do you have several kids or just one? I just want to understand, you understand what not?
+
+[00:18:50] Speaker:
+You see down there at the bottom, you see the icon for Chrome at the bottom, and you Number two, number two pass bar.
+
+[00:19:03] Speaker:
+Yes, number two. One of those, I think, M-I-M. No, you weren't far either four. Okay, then I should be on the farie.
+
+[00:19:13] Speaker:
+And the farie is where? Farie's right here. Okay, at the bottom, I can see, I think, like next to the trash can they ask like icons?
+
+[00:19:26] Speaker:
+Mm-hmm, that's text. If you click on that, usually they are more than, okay, it's really weird. It can't be this time.
+
+[00:19:58] Speaker:
+Yes. Making sure it's there, I'm not clear at first, but it's the weirdest thing in my day. the windows. Did you find me by now or not?
+
+[00:23:25] Speaker:
+Yeah, I disconnected my voice. Can you scrape all those feature requests posts and then answer me questions afterwards to those posts?
+
+[00:24:52] Speaker:
+on this page and the following pages. You have to actually go in all those posts. So you have the context of that stuff.
+
+[00:26:06] Speaker:
+I have to be honest, it doesn't work. This will take several hours. Yeah, the problem is it would take, it would be completely, it would kill the context window off because this one is clawed, could open the first 20 We should be able to figure out how that works.
+
+[00:27:02] Speaker:
+Yeah, of course I can do it with anti-gravity. Yeah, I know how to do it. I will do it with anti-gravity.
+
+[00:28:18] Speaker:
+It can do it. Oh, really? it? Yeah, very sure. Because it has a browser. So I can say, okay, go click on everything and save it as a markdown file.
+
+[00:28:31] Speaker:
+And that will work. We used this script before. What? We used it for screening before. No, but I can do everything I can do in a browser.
+
+[00:28:43] Speaker:
+I just have to log in for it. Please open the browser. Please open the browser. It's the question is html file.
+
+[00:31:29] Speaker:
+It's the html file. It's the school question. Say that again. It was the school points progression. pageination you mean? Okay, I didn't get something.
+
+[00:31:49] Speaker:
+Remember we have not the points. The points are yeah, yeah, yeah, yeah, yeah, yeah. That's what that is. Okay. I have to I come back in a second, I have to restart my computer otherwise my integrity doesn't work.
+
+[00:32:20] Speaker:
+Okay. It has to update. Okay, now I have opened the school for you and you see the search request feature request.
+
+[00:38:26] Speaker:
+Could you click on every link for this search? It's on hundred pages and for each request, for each page you click on, save the whole conversations into an MD file.
+
+[00:38:44] Speaker:
+Each school post should be a separate MD file. Can you do that for me? Can you hear me? I cannot hear you.
+
+[00:41:07] Speaker:
+Okay. You're muted. Yeah, there we go. It looks like it works. So I can show you my screen. Yeah. Yeah, where's it here?
+
+[00:41:30] Speaker:
+At least that's what she says. So accept. Not female too. No, it doesn't matter. Sometimes it's male, sometimes it's female.
+
+[00:41:52] Speaker:
+Okay. We say she's not. Maybe she's not sure. I'm not sure if it actually works, but it it looks like it took it took control of the browser and now it's doing something.
+
+[00:42:09] Speaker:
+I'm seeing school scraper implementation plan. I don't see a browser. I show you the other hold on a second. That is the browser.
+
+[00:42:23] Speaker:
+so it was blue. Yeah, now you see it, I'm not doing that. It's doing itself. That's badass. Yeah. So I wonder how many it looks great?
+
+[00:42:44] Speaker:
+Because I think I had combat due once and it gave me like ten. Yeah, but comment is different, but this is like like I hope like this is like the anti-gravity, you know, you can do it like it's like an agent.
+
+[00:42:58] Speaker:
+It made a plan for it, and now it's executing that plan. So much more convenient, like faster than writing. are.
+
+[00:43:14] Speaker:
+Yeah, definitely. I just look if. So one page is already saved. Yeah, yeah, it looks in this is not this one.
+
+[00:43:30] Speaker:
+It's a different one. Yeah, I show you the other one. Excuse me, multiple browsers. What? No, I just have multiple screens.
+
+[00:43:48] Speaker:
+No, no, I'm thinking there are like five different tabs. Sure. Oh, yeah, it opens. Always. This is kind of stupid.
+
+[00:43:55] Speaker:
+It always opens a new tab. And you see like doing some stuff there. And now let's see if a second MD file comes.
+
+[00:44:06] Speaker:
+And I think that it's under its way. Okay, it just probably takes some, oh, except changes, I have to do accept stuff.
+
+[00:44:26] Speaker:
+It's a bit slow, so. In the race. Okay, yeah. Billing manager. Mm-hmm, the second one. So it's doing it. I just see your school script or screen.
+
+[00:45:02] Speaker:
+Yeah, yeah, yeah, but it's it's like. Not the future. Yeah, it will probably take some time. I'll go back to yours.
+
+[00:45:09] Speaker:
+Yours is more interesting. I was just looking up the hierarchy because school has five. They have owner. Building manager. Admin, which here.
+
+[00:45:23] Speaker:
+Moderator. Okay, yeah, remember. I think building manager. here. I don't think we need to have that as a role. No.
+
+[00:45:31] Speaker:
+I don't think we are like looking for like right now, looking to scale it to other people, you know, to just make our own community set the thing, you know.
+
+[00:45:42] Speaker:
+It's a strict ladder. A strict ladder? Ah, you're asking questions about that. How should the Portier Hierarchy work? Oana Edmund Moderator remember yeah that's good moderators but soft moderation.
+
+[00:46:12] Speaker:
+I have no idea why it's called soft but it should be content and moderation I think. Okay. Well, it's good.
+
+[00:46:23] Speaker:
+That's the closing comments. Okay, but they can't manage my first. Okay. So that just. Well, anything. I mean, things like we don't need to ban anyone, I think.
+
+[00:46:35] Speaker:
+I don't think so either. But I think it's more like if somebody. Post something inappropriate. Yeah, of course you have all those idiots.
+
+[00:46:43] Speaker:
+You have a lot of idiot groups as well. I think people are spamming, you know. Yeah. big time. So I think I'm you or Warren is fine.
+
+[00:46:56] Speaker:
+Just I mean, not saying we're going to execute it, but at least so it's there. Well, no, we don't have a important thing.
+
+[00:47:03] Speaker:
+Maybe just can edit it. Yeah, I mean, do it, but do do number two it's okay. But it's like no content.
+
+[00:47:13] Speaker:
+They do do moderators content only. Yes. I don't really. Who can assign roles to members? Yeah, owner, owner and Edmonds is kind of with us.
+
+[00:47:58] Speaker:
+It's the same, but just their owner and Edmonds. And wait, if it's for it. Okay. I don't know, it doesn't make it soft delete if we make a mistake, but heart delete I have no idea what do you think.
+
+[00:48:48] Speaker:
+Maybe it's better actually to a heart delete in case somebody upload like a big file and we want to get rid of it.
+
+[00:48:56] Speaker:
+You know, it should be like really gone, but more because of file size. Okay, they're doing it. Should not action to be locked for about a time.
+
+[00:49:10] Speaker:
+Who's auditing it? Oh, like if someone did something. If someone, like. Lock them for a moment. it completely doesn't matter no I think if we would give it to other people and they can make their own communities and it makes kind of sense but for us I think it doesn't matter I guess just yeah because
+
+[00:49:40] Speaker:
+I mean that could be if it's something that's like well if we have it if it's just should moderation action be locked just say yes I don't think it's a big issue Yeah, because if you don't generate the activity for the law, it's not going to put it in place, but it's there.
+
+[00:50:00] Speaker:
+Yeah. And that's just more for like, you, I guess, I'm feeling. Right. Yeah, because then it sounds like they're in trouble.
+
+[00:50:21] Speaker:
+I did it by moderate. Like. Yeah, yeah, yeah, yeah, yeah, yeah, edit it, batches, yeah, silent edit is good. See, all that being notified when the content is moderated.
+
+[00:50:49] Speaker:
+Just say, you know, notification. Well, I mean, it should be. Yeah, then do it, do number two. Just say number.
+
+[00:51:00] Speaker:
+I think it would be correct. Next area. Is that fine? Huh? Or give me more questions for this area. Yeah.
+
+[00:51:20] Speaker:
+And you didn't ban. I have to ask that. Cray, of course. If you spam like, don't you get like a lot of requests from people you have that which are from like three communities, it never, I get a lot of, I get a lot of messages from people like from the three communities I'm a member of and people who
+
+[00:51:43] Speaker:
+are just member for like one day and then they spam everybody. Yeah, no, I turn off my, I don't have my messages is on for, I think I like turn a bunch of them off, because I didn't want them, if you're not, if I'm not in contact with you, or in case we've been prominently, I think, I don't think temporary
+
+[00:52:06] Speaker:
+makes, or make number two, and block the joint forever. Holy. That's like forever and ever. Or is that like how things are done or is it like, yeah, I say in school, it's not like that.
+
+[00:52:29] Speaker:
+I'm sure that's like, I mean, you know, it's like, it's a like devalueating your communities. Yes. Can you see? In the remote.
+
+[00:52:45] Speaker:
+It's on still permanent. Ben means like I ban you for doing something stupid for a week. And remove means you're gone.
+
+[00:52:55] Speaker:
+Yeah. So that number two is okay. I think. Okay. We don't content. I think it should get delivered to me.
+
+[00:53:22] Speaker:
+What if they had like a WEAX for Germany? If they delete their stuff, it has to go away with them, right?
+
+[00:53:30] Speaker:
+Yeah, yeah, yeah, yeah, exactly. You have to, what happens to Ben? Yeah. Like users have to be able to delete all their stuff, like everywhere in Europe.
+
+[00:53:40] Speaker:
+and also UK as well. Oh my god this is getting in the weeds man. What's for temporary events? What duration should be a bear?
+
+[00:53:56] Speaker:
+Jesus Christ. Let's say but I don't care one day. He's fixed options. Okay. We can fix it later on if we What if I think generic message for band members because if it's like spammers and stuff and like should band members see a message explaining why.
+
+[00:54:46] Speaker:
+Well, band's temporary reason required. I think it's correct reason required. Yeah, because then you can track it. I mean, it's also possible somebody couldn't pay, didn't pay the bill or something like that because a credit card was declined.
+
+[00:55:06] Speaker:
+Next area. I said, down in my mind controls, I'm down in my, because I don't have to make all separate area.
+
+[00:55:34] Speaker:
+Huh? It's saying, where should the admin mod tools live? And I'm saying, it's like, we just like the access appears on the admin screen, like in admin login.
+
+[00:55:47] Speaker:
+Yeah, Edmund, Edmund screen. What is it in line controls? Yeah, so it's cool. Those you know, I just added the thing, the button on the left, but it's like in my room.
+
+[00:56:00] Speaker:
+Separate, I would, I would put separate admin section. Yeah, with the tables, with tables of content to moderate. both, both also okay.
+
+[00:56:18] Speaker:
+I think it's actually all this stuff and stuff we have to see once it's running you know. So just say separate admin checks and if something is not nice we can change it later.
+
+[00:56:31] Speaker:
+Okay. Don't you think? I think I mean I think yeah we'll see what it looks like I think that I hope it looks that great because we put like a lot of hours in that thing.
+
+[00:56:46] Speaker:
+How should the admin section be organized? I think tap based, in my opinion. Yeah, same as the regular admin link in the header.
+
+[00:57:09] Speaker:
+You see so now it's like you have to click the one admin link. And then you'll, it's like you have to go to the admin part to be in.
+
+[00:57:18] Speaker:
+No, I mean, because I guess if you're going to be moderating stuff, you're doing admin related things rather than just like post.
+
+[00:57:24] Speaker:
+Yeah. Only visible for admin owners. I think harder link, header link, header link is good, I think. My agent is doing something.
+
+[00:58:00] Speaker:
+I already have seven MD files. I can show you you see here yeah like all seven my god and then you got to put give that and then be like well now it's in Gemini so you can be like to extract all the feature requests.
+
+[00:58:31] Speaker:
+Yeah, so we can put all this stuff into an LLM and ask questions about it. Well, then all I was thinking, yeah, ask questions, but then have a general list of like, what is the most requested features?
+
+[00:58:48] Speaker:
+Stuff like that. Yeah. A minute in here. Yeah. And you know, And the gravity is awesome because of those features because it's like, you know, I have like I can choose which model I want.
+
+[00:59:03] Speaker:
+It has like fresh context all the time. It never stops. You know. So it's completely undervalued. I think because this is much better than the cursor trail.
+
+[00:59:15] Speaker:
+Yeah, cursor is that not and gravity's way better. Integrity's way better. Yeah. Where did it get? Sorry to create context.
+
+[00:59:23] Speaker:
+Wait, did we? So yeah. Okay. Good. Great context. What kind of role hierarchy? Acreate context. That's good. Oh, face 10 stalled, huh?
+
+[01:02:23] Speaker:
+That might be the last one. Yeah, I asked the gym question earlier, but I think I have phrased it weird just a slight and I couldn't read the file you uploaded, it was like a, I can close that one, actually.
+
+[01:02:52] Speaker:
+I'm just gonna do a thing for a while. Let's see. Oh, hey, yeah, see, no, that was the end of it.
+
+[01:03:28] Speaker:
+What are they? Please continue using Gemini X Gemini 3 flesh. Is there no fast way to just scroll, right? But this AI stuff really feels completely like super power, like we're doing is completely matter.
+
+[01:06:23] Speaker:
+How much is your usage in Claude now? Because you have been like, can you open it? Like desktop. Really curious because you're using it like all day long now and then just go on your profile and usage okay like like with get shit done you you cannot fill up the $200 plan.
+
+[01:07:04] Speaker:
+You see like it resets in 18 minutes And you only use like 36% Once your runs after a few days Yeah, maybe like weekly, weekly limit maybe you can overuse it Because like 14% How much did you use last couple of days?
+
+[01:07:29] Speaker:
+This is the current session Yeah, I know, but weekly limit is below Like how much you use in the last couple of days, I mean, are you always as intense as now?
+
+[01:07:51] Speaker:
+I'm not usually like this, this is the one going on once, but usually do you have two or three projects going on sometimes I still try to maybe I don't want to like get lost or like have the context mixed up you know like when the browser cache yeah so yeah you should be able to be like too if they're
+
+[01:08:22] Speaker:
+like in a band or I'm like by quoting somebody in the front or like, I don't know, seeing whether YouTube stuff's out there.
+
+[01:08:30] Speaker:
+Like, yeah, see what's new. Yeah. It's late, are you? When you're late, you enjoy this nerdy thing, like doing all the time something new.
+
+[01:08:49] Speaker:
+It's like cool stuff too, because it's like I feel like hacking time almost and hacking the skill. Yeah, completely crazy.
+
+[01:08:59] Speaker:
+I think like what we are building now, like the skills we are building, I think it will be super sought after, super sought after because everybody who is actually able to do that doesn't need to have a job.
+
+[01:09:13] Speaker:
+So people who actually need that, it will be very hard to find people who are able to do that, who actually are looking for a job, You know, that's very hard, I think.
+
+[01:09:29] Speaker:
+That's true, yeah, because you'll keep going. I mean, the only job I do is like completely stupid, just so I can do that for real, you know, and your job is like, okay, you can do that on the side because you have so much background knowledge in it already but you know people who are like really learning
+
+[01:09:52] Speaker:
+that they're not working it in like advertising agencies and stuff like that. Talks called this. No like people who are learning Claude code you know.
+
+[01:10:04] Speaker:
+They are not like on the job market somewhere learning that. I don't think that. I'm a job market learning. I'm an advertising agency my boss comes along and says, Hey Chris, learn Claude code, we need that stuff.
+
+[01:10:21] Speaker:
+That doesn't exist. You know, they realize too late. So there are no people inside of a job learning Claude code.
+
+[01:10:29] Speaker:
+I don't think that. They are just learning either on the side or for themselves, but not inside of a job, because some boss told you to do that.
+
+[01:10:39] Speaker:
+I don't know, it's really a, it's a, I think it's just, it's naivety, you know, if they didn't, it probably behavioral differently.
+
+[01:10:56] Speaker:
+Yeah, completely. I mean, also the YouTube videos, like the way I would do YouTube videos, I told you, you know, like, you know, she is a vet, she needs this blah, blah, blah, you know, out of their perspective.
+
+[01:11:06] Speaker:
+like all the Claude code videos are made for nerds, all of them, like we have new skills, how to scrape 6,000 skills, like who cares, like in the real world they have no, what we are talking about but the thing, you know, the nice thing about like going through all those exercises and then scrape any
+
+[01:11:29] Speaker:
+skills and then you get these super awesome skills that you can actually use in your builds. So I mean, you know, there's benefit too.
+
+[01:11:39] Speaker:
+And also then I'm like learning how to do it. It's not necessarily like we're going to sell anything. Well, I don't know.
+
+[01:11:54] Speaker:
+But look at my awesome, it's the first agent I did was like serious agent that I actually need and look now it's here like you see, like it's blue, it's doing it saying you know.
+
+[01:12:14] Speaker:
+If it's blue, it's always doing it automatically, you know? And now I can present you the other one. So here, you can see all the, it's like has like, now it has like, I want like double.
+
+[01:12:31] Speaker:
+I want to 3, 4, 5, 6, 7, 8, 9, 10, oops, one more, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15.
+
+[01:12:43] Speaker:
+So it's already on the second page. Play, right? It's awesome. It's completely awesome. You know, you make like a it's you can create like agents out of the box, you know, just like does it, you know, just make one prompt and the thing is busy.
+
+[01:13:08] Speaker:
+If I wouldn't be talk to you, I could watch a movie now. I mean, it would just like the thing is, your agent is doing something while you do something else.
+
+[01:13:19] Speaker:
+That's amazing. And they didn't have to, and like, yeah, the code doesn't charge you. No, we just run, just runs, yeah, just runs.
+
+[01:13:41] Speaker:
+I halted the other project because I was concerned about interfering with this. Yeah. The other going, but I'm like, I'm letting it just do this.
+
+[01:13:53] Speaker:
+I don't want to run it to any kind of, well, obviously not limits, like the usage of it. I just don't want to run it to any issues.
+
+[01:14:15] Speaker:
+As soon as I wait, I like to look up stuff. Like, In this case, you need a side hustle like me, like you know, like doing the agent left and right.
+
+[01:14:38] Speaker:
+Like my agent, like side hustle, my agent is like doing, like collecting all the feature feature requests from school, while I'm talking to you about the project.
+
+[01:14:53] Speaker:
+Okay, I was looking for one. Oh God, I got you done. No, I can just download it now. I'm not going to handle it.
+
+[01:15:28] Speaker:
+Why not? I can just give it the repo. Can I access it? You should, right? Yeah. I think it's faster.
+
+[01:15:41] Speaker:
+I switched to Gemini 3 Flash. What was that on the phone? Opus. Opus, yeah. But I figured that's completely stupid.
+
+[01:15:50] Speaker:
+Like a waste of intelligence for just like copying text, you know? Yeah. And I think this is much faster. Yeah, because it doesn't like think about each one.
+
+[01:16:02] Speaker:
+And they're like, oh, what did he think about? You know, when he wrote that, like he just copy-based, that's it.
+
+[01:16:24] Speaker:
+I always like to judge you, but you don't, that's my point. Especially when it's something I want to ask about.
+
+[01:16:31] Speaker:
+But what do you use it? I only use LGBT when I'm watching movies nowadays. Movies. Yeah, ask questions about it.
+
+[01:16:49] Speaker:
+like if stuff is for real or if it's made up or who is this actor or whatever, you know, because I have like a pretty good effect.
+
+[01:17:00] Speaker:
+I like to do it for like small talk stuff. Like when I go in the supermarket and I want to buy, I want to cook something I ask, you know, what can I do with that stuff like that?
+
+[01:17:19] Speaker:
+You know what I mean? Christmas cookie takers I made. Oh, but I think I think like 40 or 50 different ones.
+
+[01:17:30] Speaker:
+I thought they were so cute and well done. Yeah, they liked your cookies and Christmas in the community. Yeah, I saw those like those are just so delightful.
+
+[01:17:46] Speaker:
+Well, I think it's a very, something helped me. I literally asked you to give me an optimized prompt. So I'm going to just do there.
+
+[01:19:06] Speaker:
+I will have to pick an alternative for the keyboard copy paste. Is that a yoga picture of you? No, no, no, don't worry.
+
+[01:19:18] Speaker:
+Let the small one don't fear Miller plus Oh you like the Integy be deep Dealing what? Yeah, okay Yeah, the table there is sand from like very small Yeah, I know it's super small.
+
+[01:19:40] Speaker:
+I don't know if it gets out in a second. We enter as prompt in the mall on is a thing YouTube Okay.
+
+[01:19:50] Speaker:
+Okay. There we go. This is better because we can be a problem. Something that I like. I know I want to know more detail, but I explain this.
+
+[01:20:13] Speaker:
+But why don't you do it like I do it now like with anti-gravity and open like open a browser and then tell it to go in it and do a thing.
+
+[01:20:27] Speaker:
+Because I was I was babysitting this. Okay. Baby sitting is an awesome word for that what we are doing actually.
+
+[01:20:37] Speaker:
+We were babysitting a community and it happened. Do you babysit today or do I? No, this is I like this is cool.
+
+[01:20:56] Speaker:
+Build stop and then it's like the same kind of repeat for a different phase. So then it kind of gets like, okay, like I know what's going to happen.
+
+[01:21:04] Speaker:
+It feels like like there is an end and then there will be completion. And then it's been so well and ordered up into this point.
+
+[01:21:11] Speaker:
+that there's no possibility for it to be anything but spectacular. I'm on page 21 now. Oh my god. It's going to be the best school commits best community ever.
+
+[01:21:39] Speaker:
+How do they know? How did they know all this stuff? Yeah. But for scraping, this is amazing. It's a really, really good tool, like look at this, like it keeps where is it going?
+
+[01:21:58] Speaker:
+No, no, but I will. Is that no worries? Oh yeah, now it's there. You see it's like it just keeps doing and doing and doing.
+
+[01:22:20] Speaker:
+Yeah, and then yeah, I wanted to do like yeah, like evaluate all of them because you know, some people may It's like check the reputers and post most frequently and then you know it's like doing the whole thing and that's like can we feature labels blah blah blah that's like yeah it's crazy the thing
+
+[01:22:48] Speaker:
+is also what's nice is like for example you know when you know You know that Gemini can read videos. It can actually process them.
+
+[01:22:59] Speaker:
+Right. Yeah, yeah. Yeah. Yeah. So if you take like a video from from Nick, how he uses anti-gravity, and if you use someone like like if Mark would do it, you know, and and and copy it and then I would how I use it with a video with a browser feature, you know, and if I make a video and I put all three
+
+[01:23:22] Speaker:
+videos inside of Gemini. And I say, give me 10 creative things I could do with Gemini and get inspired by those three people.
+
+[01:23:34] Speaker:
+And then it comes up with own stuff. And it's, yeah, it's like, it's so simple. That's brilliant. Yeah, yeah, yeah, yeah.
+
+[01:23:51] Speaker:
+Like honestly, like what we are doing is just to begin like really the bare minimum like I have I mean I didn't I I show it to you, but you were not so much into like I I show you one song.
+
+[01:24:04] Speaker:
+It has like Wait, because I think the idea is nice Because like right now everybody is like doing this or look at my whatever not singing you know and library.
+
+[01:24:29] Speaker:
+Bury. Sooner or sometimes very slow. Yeah, like some music thing. Oh, to create it. No, but like. I'm the same.
+
+[01:24:47] Speaker:
+That's it. No, just to load the website. It's sometimes really slow. Yes, yes, sometimes. I was saying it just I don't want to go down to another all these things.
+
+[01:25:01] Speaker:
+I would have posted inside of yeah and WhatsApp because like you brought me to an idea with this music thingy like yeah and this song is not particularly good or anything you know But it is like, you know, about an old guy, like a country guy, dipping his toe into AI.
+
+[01:25:29] Speaker:
+And I just kind of, I put like Nate's video and I made like, okay, make me a country song from Nate's video, kind of, you know.
+
+[01:25:39] Speaker:
+And so like, you know, he had this terminal and the terminal is too hard, blah, blah, blah, you know. Like listen to it.
+
+[01:25:46] Speaker:
+But actually, I think it's from Mark's video, it's one of them, but listen to it. I sat along before that glowed squeak.
+
+[01:26:05] Speaker:
+I'm speaking where I could not stay. In your arms talking back to Margaret school yesterday. I sat around with this black hole.
+
+[01:26:18] Speaker:
+To hear the presence on the ground. I don't want to sit there saying anything. Yeah. There's yeah. It doesn't cause you fear.
+
+[01:26:36] Speaker:
+That's the final item. It's pretty. It's really. I don't know what you want. I don't want. I don't want.
+
+[01:26:53] Speaker:
+And he's talking about his agent army, you know, he's not, it's working while he's sleeping, you know, it's like Did this not help us?
+
+[01:27:24] Speaker:
+Oh, it's a acid. I can't. I can't. Sick. That's a cold city game. That people have nothing to do with stories.
+
+[01:27:38] Speaker:
+That song's told me about them. Wow. Do you have a giving lyrics for a song? Huh? You had to give it lyrics for a song, and then you put lyrics in yeah yeah I put the lyrics in but I the way it works is I extract the transcript from Mark's video or whoever video I want and then I give it to Claude the
+
+[01:28:08] Speaker:
+transcript I tell it which style I want because that kind of has to fit you know And then I say, okay, make me a catchy song about that transcript in a how-to style or in a documentary style or whatever.
+
+[01:28:25] Speaker:
+And then I get the song lyrics. And those song lyrics I can put into as soon as, together with the style.
+
+[01:28:35] Speaker:
+And then it generates a song. But I imagine how much more entertaining would it be like to have like a cowboy like obviously not a real me or you or something but like like an AI cowboy you know who is like talking about the future is like you know people feel so much left behind you know and if you
+
+[01:28:58] Speaker:
+have like an AI, AI, AI, I ever trust singing about that stuff and teaching you, you know, with a hashtag, you get the memory blah, blah, blah, you know.
+
+[01:29:09] Speaker:
+That's like, you know what, yeah, I, it's very accessible. Yes, it is. And of course, right now, they all do it like, you know, hi, I'm a nerd and you're a nerd and that's why you're watching my nerd video.
+
+[01:29:29] Speaker:
+it's true or not? It's too clear. I think it's just like, it's just not a little dirty already. That's all.
+
+[01:29:42] Speaker:
+Yeah. But I mean, if you look at like fashion influencers, they make like an art of that style. You know?
+
+[01:29:52] Speaker:
+And like, those AI influencers, they are like, basically they are all the same thing. Yeah, but you could do so much entertaining inside and they don't.
+
+[01:30:04] Speaker:
+They choose not to. Why not? Huh? Why not? Like they never thought about it. They are just in their in their not movie.
+
+[01:30:18] Speaker:
+Like they want to be super nerd. Like they don't want to be the richest guys like they haven't thought about really it's I think the status is more important than the financial outcome for most of them because obviously I mean like Mark hates this SEO guy you know and like he wrote it he wrote it in
+
+[01:30:42] Speaker:
+the school community. What at least three hates Daniel? No, not Daniel. He hates not Daniel is a nice SEO guy.
+
+[01:30:51] Speaker:
+But you know, like the guy who is spamming YouTube with like five videos a day, Mark said like because someone in the community posted a video from him inside of our community.
+
+[01:31:03] Speaker:
+And Mark wrote, I never want to see his videos here again. Like he makes AI generated videos. I don't want to see that, you know, he's like really pissed off at this guy.
+
+[01:31:17] Speaker:
+I wonder if he said we're not in person. Yeah, the thing is, you know, if they were about making money, they would just say, oh, this is smarter actually.
+
+[01:31:28] Speaker:
+But they don't. They're like, this is, this is, he fakes it. We are the real deal. So that is more important than the monetization.
+
+[01:31:43] Speaker:
+Well, I mean, he's very proud. Yeah, definitely. I mean, he's good. I mean, Marcus, amazing. I mean, honestly, everything he posts, I really watch everything he does because it's always good.
+
+[01:32:00] Speaker:
+Yeah, I'm glad I didn't leave the community. What? I'm glad I didn't leave the community when I got mad at the neighborhood that he had.
+
+[01:32:08] Speaker:
+Yeah. I think honestly, like for, for the, for he is so good, in my opinion, that other people would be completely arrogant and he's not.
+
+[01:32:20] Speaker:
+But like a lot of people would be completely over the top. And he's very much on earth, I think, for the amount of kind of jobs he gets because I think he is by now a millionaire for sure.
+
+[01:32:38] Speaker:
+And the other people as well, like Nick, with Nate Hurk, he is definitely more superficial than Marcus, in my opinion, like from what I have seen, you know, like Marcus It's really, really nice to everybody, answers everybody personally, and with that kind of success in such a short time, I think Mark
+
+[01:33:07] Speaker:
+is doing a really good job there. Yeah, it's a lot of comments, but honestly, I wonder with all the history of the comments and stuff is just so easy to put it into a knowledge base with all of his information and then a history of like the way he speaks and all this stuff and then I just have it like
+
+[01:33:27] Speaker:
+that he drafts some reviews and then it's okay like he reviews it and he's not necessarily bright and all. Yeah but he writes like he writes like in the personal messages he definitely writes you back that's like real DMs.
+
+[01:33:42] Speaker:
+The likes I don't think the likes are real anymore. The likes are I think he likes every post and he likes sometimes to very strange times in Canada.
+
+[01:33:53] Speaker:
+So like any day time, sometimes he's very quickly online and I think the likes are not real for sure. But he's been like in different times zones for a while, doesn't he?
+
+[01:34:05] Speaker:
+Or he just talked about like over time. Yeah, but I've seen him like being online like 24-7 sometimes, I think.
+
+[01:34:11] Speaker:
+You know, but I think, and I mean, they have so much knowledge which why shouldn't they do that? I mean, I would do that.
+
+[01:34:19] Speaker:
+I mean, you know, I might not do that like completely automatic. I mean, if somebody posts, I wouldn't immediately like it.
+
+[01:34:27] Speaker:
+I would say between 20 and 30 minutes, place a like, you know, and then maybe scan it for, if they are like angry and stuff like that, you know?
+
+[01:34:39] Speaker:
+Scan it if it's good or not, and if it's good, do it, give it a like. And I would say, okay, if I come and personally give me like send me like a telegram and I say, yes or no Like make a human in the loop Yeah, yeah, so you can just see how trading and then once after like months and you're like this
+
+[01:34:59] Speaker:
+thing's spot on all the time Then but I mean, but I said that then you Involved you know Once I have the human in the loop because I mean honestly, there's business inside, you know if somebody is saying hey Latvia, you know, you want to do an automation for us, you know, and you would like, okay, do
+
+[01:35:17] Speaker:
+it completely automatic, that would not be good, you know, you want to, you want to maybe answer, because maybe it's a job for 20k.
+
+[01:35:25] Speaker:
+Yeah, and especially like in the beginning, you know, there's no reason to be like, well, yeah, come and look up to our robot world, you know, yeah, we're like in beauty and stuff.
+
+[01:35:34] Speaker:
+Yeah, but we could definitely have some engagement bots, you know, in the beginning, you know, to have the community a little bit moving when there's actually not many people inside.
+
+[01:35:47] Speaker:
+How does one make an engagement bot? You said I'm like, I can't, and I just like, yeah, like, I could do it in an anti-gravity probably in five minutes.
+
+[01:36:00] Speaker:
+Just here 10 user names in ENV file, just log in and post stuff and comment stuff, you know, it would be very easy to do.
+
+[01:36:11] Speaker:
+Oh, but you have to have a login in the password to an account. But we do, it's our communities, we would have that.
+
+[01:36:17] Speaker:
+Okay, okay, okay, see, okay. Try it. See, see if you can get a robot to post on your school or like not our, or on them.
+
+[01:36:26] Speaker:
+Okay, I will do after I'm finished with that one of course you can because I just have to open the browser tab And then I say okay do whatever.
+
+[01:36:35] Speaker:
+I mean I could also do it with LinkedIn. I could I could say all day long Scroll around and LinkedIn be super active be nice to people and comment and like people and ask them to be friends Be super social.
+
+[01:36:48] Speaker:
+Let's have you know like you can do you can totally do that and And it's invisible because it uses a real Chrome browser.
+
+[01:36:57] Speaker:
+Like for every other page, this is just Chrome. Wait, let's see that Chrome card again. And like, like I show you the screen, then you see it.
+
+[01:37:12] Speaker:
+Like, yeah. Still running. Yeah, yeah, of course it's running. it should be coming in a second. Now you see it, now you don't know.
+
+[01:37:46] Speaker:
+Can you stop sharing yours? And I can share mine maybe? I think we have some. Maybe, yeah, no, yeah, no, it doesn't.
+
+[01:38:01] Speaker:
+You see, this one is you see up here, it says Chrome. Yeah, okay, all new stuff just a chrome browser.
+
+[01:38:11] Speaker:
+So if you if the website has like analytics or any kind of what is what's going on, it's just some guy using chrome and looking at that stuff, it's not like a it's not like an AI browser, it's the real chrome deal.
+
+[01:38:31] Speaker:
+And so it's not like cotton live, you see, it's like fetch it. It has no, it's not like an, it's not an AI browser, it's using the real Chrome browser.
+
+[01:38:43] Speaker:
+Yeah. Sorry. It's interesting. Sorry. So school can't tell if whether it's a you linked and can't say if it's a real human or if it is a browser or if it's AI, it's just the same thing.
+
+[01:38:59] Speaker:
+Yeah, that's good because any of those playwright scripts in a chromium that I have to go and headless and it I guess and then you have to put in these terms and it's like basic mask to say like I am Mozilla and this other thing and other thing like Yeah, yeah And the thing is like, you know, I think
+
+[01:39:20] Speaker:
+you could even like give it golds, you know, like for example reasons, yeah, stop sharing. You could even like say, you know, I want to have a job for whatever, you know, and then get social on LinkedIn and keep working until I have a job offer.
+
+[01:39:38] Speaker:
+You know, it could be completely anonymous on LinkedIn and get me a job. I just give it those about it in like You know, the right way.
+
+[01:39:51] Speaker:
+What? You just have to make sure it goes about it in the right way. Yeah, yeah, of course. Yeah, of course.
+
+[01:39:57] Speaker:
+Just be, no, but you can say be super social, be nice to people. You know, be engaging, make interesting comments to the post of future employers.
+
+[01:40:06] Speaker:
+You know, and send them a personal, send them like a direct message, you know. And like add them to your friend list.
+
+[01:40:15] Speaker:
+blah, blah, blah. You can make like a total linked in automation that is completely doing that thing all day long.
+
+[01:40:26] Speaker:
+I, um, it doesn't lengthen like check for, they have those like captures and then they, they put these additional securities to check for what crawlers, yeah, but because it, that's what I say because it uses regular Chrome and I was a guy that logged in, it's invisible.
+
+[01:40:47] Speaker:
+It's just a LinkedIn nerd who is always online and LinkedIn. I guess just to make sure like, there's a goal in any kind of like weird, you know, like four messages at an identical time, like does Daryt try to pattern like actual behavior?
+
+[01:41:03] Speaker:
+No, yeah, you have to, you have to prompt it correctly. It's just like, you know, like, for example, if like, like a lot of teachers here, they think you can catch AI because the stuff is too good.
+
+[01:41:15] Speaker:
+But it's so easy. Like if I would be in school now, you know, and I, let's say, I make between five and ten mistakes per page, so I'm a bad student, okay?
+
+[01:41:25] Speaker:
+I just have to scan all my last documents, you know, and then it knows the kind of mistakes I make.
+
+[01:41:32] Speaker:
+And I just say, okay, every time I write a report for my school, just make one mistake less per page.
+
+[01:41:39] Speaker:
+So I continually slowly get better grades, but not like radically. And it's kind of the same thing, if I want to be super engaging on LinkedIn, don't tell it to do always this and that, you know, just say, do regular stuff, just go on pages and do nothing on those pages.
+
+[01:41:59] Speaker:
+just reads them. And if something super interesting and it fits our needs, then you paste a comment. And that's completely innocent.
+
+[01:42:08] Speaker:
+You just have to prompt it like not for a robot, but for like regular behavior. I have been prompted like a robot.
+
+[01:42:21] Speaker:
+But I think I find that when it's, yeah, as soon as these apps have been built in, when I just put in like a regular language about like cover everything, there's like the goals and what I need and the context and everything.
+
+[01:42:39] Speaker:
+But you could say like study percent of the time, pursue my goals in 70% of the time. Do whatever you please, just don't post.
+
+[01:42:51] Speaker:
+But go stay on LinkedIn and read stuff. And this is completely time-wasting human behavior. Rain stuff, but then I'd do what with it.
+
+[01:43:00] Speaker:
+It reads it. Nothing. Because like normal people are wasting their time on LinkedIn, so you tell it to 70% of the time, waste your time, read stuff, and don't do anything about it.
+
+[01:43:14] Speaker:
+And 30% of the time pursue my goals. Get me a job, for example, or get me followers or do whatever.
+
+[01:43:23] Speaker:
+Have you done that before? Does it work? Of course it works because it just uses a regular Chrome and they look for, they look for, they look for agentic behavior.
+
+[01:43:36] Speaker:
+An agentic behavior means, okay, go on every page and like what I'm doing right now in school, that's agentic behavior.
+
+[01:43:44] Speaker:
+Go on every single website and scrapes the whole content. That's super agentic. But let's say if my goal would be I want to be the number one in Marx community.
+
+[01:43:56] Speaker:
+Let's say if that would be my goal. That would be very easy. You just have to tell, okay, now I'm logged in and you know right to the new members and welcome to the welcome to the community.
+
+[01:44:13] Speaker:
+Write a personal message and sometimes check my email because there are new AI news coming inside every day in my inbox.
+
+[01:44:23] Speaker:
+Take the first, whatever there is in the inbox, like the first headline chat GPT did whatever you know, then create a blog post about it and post it with a couple of German mistakes inside of my community as opposed.
+
+[01:44:42] Speaker:
+And as I'm super engaging with everybody, people would start to like it, and it's kind of automatic. Yeah, yeah, yeah.
+
+[01:44:53] Speaker:
+That's so interesting. Oh wow, we have already the whole page is full. Like we are now on the third batch, we are now on 31 to 40.
+
+[01:45:22] Speaker:
+pages? Yeah, like we are on the pause page already. Shoot. So, like, what architecture would you set that up in?
+
+[01:45:39] Speaker:
+Like, if you have some agent and they're doing this for you, like, you just, where do you do it from?
+
+[01:45:47] Speaker:
+just like I did it. I told it like you just you just tell it what you want and then you just say create me a plan for it and then you execute that okay I show you I just have to I just have to see where my Okay, yeah, yeah, okay, here it is, so this was a prompt that I used now for anti-gravity.
+
+[01:46:38] Speaker:
+So basically, I just said first, I said, here, please open the browser, here, you see please open the browser and then I open school community inside of the browser and I ask it if it can see it so I told it first I told it to open the browser then it opens the browser then I open the school community
+
+[01:47:09] Speaker:
+and ask it if it can see it and this one was my prompt and the rest is kind of automatic.
+
+[01:47:26] Speaker:
+And then it created like a plan for it. Here you see implement implementation plan. Here. Yeah. And then it then it told me it can do it.
+
+[01:47:39] Speaker:
+And since now half an hour it's busy. I don't think it's jamming. But you know it would be interesting to make a song.
+
+[01:48:21] Speaker:
+and then have, like, let it create, like, 20 Facebook profiles and then message radio stations frequently over the day to please play your song.
+
+[01:48:37] Speaker:
+I think that kind of stuff would completely work. I think so too. I think so too. I think payments is the last one.
+
+[01:48:59] Speaker:
+Oh, is it the last one? Oh, 11. We're now at 11. This takes forever, huh? I hope it is really good.
+
+[01:49:10] Speaker:
+The pressure will be getting. I hope. As I'm sure it will be. Yeah, but no, I almost got up there.
+
+[01:49:21] Speaker:
+Yeah, I don't think that I'm well, but I've just been kind of checking to see how each phase is like doing external clear itself, but I just like to see you.
+
+[01:49:34] Speaker:
+See how it does. My babysitting job, I have to make sure that I close all those windows. I have like 40 tabs open my computer, get slow.
+
+[01:49:53] Speaker:
+Oh, like every time you tap. Okay. We're in registration flow, sub-page or model, what info shown, lock, payment. So, what should the payments step appear in the registration flow after account creation during during registration in our case for sure.
+
+[01:51:15] Speaker:
+Yeah steps is good. Price and plan name like monthly or yearly you know. Yeah so I mean do you want me to want or do you want me to make it tell it like number one?
+
+[01:51:46] Speaker:
+Yeah because I'm name it monthly or annual and there's not a calculator. Should you just be able to go back from the payment step?
+
+[01:52:02] Speaker:
+I have no idea. Yes, back to editor account info. Yes, yes, back, maybe they've made a mistake and want to change something.
+
+[01:52:12] Speaker:
+And then again, back to you. I would say create a we have steps or number one is what's your name and email number two numbers what's your you know number three is do you want to pay with credit card and you think oh no I want to have it on my business name and I'll need to have it on my business email
+
+[01:52:29] Speaker:
+so they should be able to go back yeah I agree next area I'm super proud of my agent I don't know I'm too What should the mock payment form look like, a simple pay button for right now, a simple pay button, because we need to change that anyway afterwards.
+
+[01:53:27] Speaker:
+What the hell, what the f***, yeah, two, two, really, yeah, Mark, it does matter, just say one, it's really, it doesn't matter completely.
+
+[01:54:12] Speaker:
+But it would be a good YouTube video, how I made antigravity get me jobs. It's like it's doing like, you know, while you're eating ice cream, it's like getting your job offers interviews.
+
+[01:54:27] Speaker:
+Well, interviews are something stuff to do where there are things that agents could do that you wouldn't ask that wouldn't necessarily need your time, but that you could monetize.
+
+[01:54:36] Speaker:
+Are there activities that you could have agents do that wouldn't necessarily require your physical presence in any of the steps, but one that could that could help that could monetize something.
+
+[01:54:48] Speaker:
+by doing online, you can make surveys and stuff like that. You get paid for surveys. Is there anything that AI could mine for or do on some regular basis that would earn?
+
+[01:55:08] Speaker:
+Definitely what you can do is like sweepstakes. It's called sweepstakes, right? Yeah, it can all day long go for sweepstakes and fill out all your information and make you win stuff.
+
+[01:55:25] Speaker:
+They could do that for sure. But what is it? What should unpaid users see if they're somehow research approach? Okay, paywall model.
+
+[01:55:38] Speaker:
+Yeah, that's what you're talking about, you know, blow it back around. Yeah. Very detailed what it wants to know. Yes, landing page about pricing.
+
+[01:56:01] Speaker:
+Yeah, numbers first two. Now should members status be stored? Oh, now, how should members status be stored all on you?
+
+[01:56:34] Speaker:
+Yeah, number two, yeah, I would say that is what a similar failure who cares always succeed. It's more. I don't think that detailed error message so we can ask an AI.
+
+[01:57:15] Speaker:
+Yeah, yeah, yeah, yeah, yeah, exactly. Number one, hmm, yeah, wow.
+
+[01:57:43] Speaker:
+So it doesn't like send another request. So we are on page 51 and not on page on post 51 so the fifth page.
+
+[01:58:01] Speaker:
+It has never stopped. It has never stopped. It's on the fifth page and I've never stopped. I wonder if it uses some agents, if it needs to, or if it actually doesn't use so much context to scrape out of that, I use one.
+
+[01:58:18] Speaker:
+I have no idea how it does it. I wonder that guy's video is, well, the guy's video, what he was talking about, how we made GSD was 4.5 hours, so I was thinking maybe he was going through a build, but I I mean, it would also be nice, you know, take his video and make it like you have to make it really
+
+[01:58:44] Speaker:
+small. Otherwise, you can't ask Gemini and then you tell Gemini, give me 10 questions to ask that guy to get more information, like, you know, to, to, to, to, to dig people.
+
+[01:58:57] Speaker:
+Well, you know, you have all these like, like, like, simply like, there's like, small simple, but like, really effective times, yeah, I know, yeah, see, I can definitely tell you, because I'm very creative, like, like chaotic and creative is the same thing, and chaotic is horrible like it's horrible
+
+[01:59:24] Speaker:
+to be chaotic and so I have this both sides you know and Mark has this as well because I spoke to him like about this you know and I can definitely tell you creative people should not have any problem with AI I don't know why they are like why they feel like oh AI stealing my art AI is like doing music
+
+[01:59:43] Speaker:
+creative people should not have a problem with that of my opinion Yeah, I think there's the purists, the original ones who made their work and then sold it to someone and then got revenue, but now someone's going online, just taking a picture of their stuff, and now they need something with it.
+
+[02:00:00] Speaker:
+It feels like who cares if somebody, for example, in 1800, people were riding horses on those, what's it called? Like the wagons?
+
+[02:00:11] Speaker:
+Yeah, I mean who cares if somebody copies my wagon if we are now driving cars it's kind of like total budget.
+
+[02:00:22] Speaker:
+I mean people need logos and I mean if I make shitty logos before or let's say okay-ish logos in my city and now I can make logos like the best logo maker in the world you know I mean who cares and the best logo maker now can make animated movies you know everybody kind of levels up like 10 times.
+
+[02:00:45] Speaker:
+If they use AI, who cares if they copy my old shit I did one year ago? Yeah, the days of that like the oh this picture was his or that I think those days are gone.
+
+[02:00:59] Speaker:
+I think that whole copy I mean I think they're trying to make regulations about like you know so and so's likeness.
+
+[02:01:05] Speaker:
+If you make a movie and with AI and then you put a character in it that looks like an actor, then you got to pay them for their likeness.
+
+[02:01:12] Speaker:
+Yeah. Yeah. I think it's totally stupid to do that. I mean, like I make those as cool like those notebook alarms.
+
+[02:01:21] Speaker:
+I make some always with symptoms because my brain is kind of like in a relaxed mode. If you see if I see symptoms, I can learn stuff easier.
+
+[02:01:29] Speaker:
+You know, so I always make it in the style of symptoms. But I would never put that online, obviously, because that's illegal.
+
+[02:01:35] Speaker:
+and but it's so stupid. Why would you do a fake Simpson online? You know because obviously the original is not only the the the shape of those characters but it's also the humor they put in and you can't copy that in that quality but you can make something original like you know like when you make music
+
+[02:01:57] Speaker:
+you can do music which is way better or completely a different angle you know Why would you try to copy the Rolling Stones?
+
+[02:02:08] Speaker:
+That is completely stupid. Make it different. The whole point of doing anything creative is to make it different than to make it not a direct copy.
+
+[02:02:23] Speaker:
+Can I remix it? Make it for you cooler. Make it like your angle. You know, you want to try that scraper thing, we'll ask it to, you know, it means you add to gravity?
+
+[02:02:40] Speaker:
+I'm going to put it in on, you're going to chat with, touch me, you've got it first, quickly. Or call it, I'm triple once available first, while on the eighths page already.
+
+[02:03:14] Speaker:
+you. And there are how many pages? One hundred. But it's good that it's saving the progress as it goes though.
+
+[02:03:32] Speaker:
+But it came up with it itself. I didn't I showed you it made like a like a plan and now it's executing including his own plan.
+
+[02:03:44] Speaker:
+That's when you try something then. As I remember, I thought I was being on a smart getting comment to scrape, like get new videos or whatever.
+
+[02:03:55] Speaker:
+Got my three in it. Okay, you have to be fair. It didn't like, anti-gravity didn't exist back then. Yeah, very much.
+
+[02:04:04] Speaker:
+Yeah. That's right now. First, you have to cut it to open a browser. Yeah, it's there. Yeah. Did it open itself?
+
+[02:04:17] Speaker:
+Yeah, yeah. Like, yeah. And then I opened it. And this is that's why it's the second time. Yeah. You just have to make sure that you leave the open browser somewhere where you don't touch it.
+
+[02:04:37] Speaker:
+Like said, you don't put windows above it and stuff like that. Okay, I will leave it just over there. Yeah.
+
+[02:04:47] Speaker:
+Honestly, they're right here. There will be so much bad stuff going on as well. You know, like we do a fun stuff with it, but you could do so much shitty stuff with it.
+
+[02:05:25] Speaker:
+Like, you know, you could put like an air tag on someone, you know, and say, you know, take every five minutes where that person is and if they are at that location send me a telegram and stuff like that.
+
+[02:05:37] Speaker:
+Completely nuts stuff. I don't know people can totally like I don't know. Yeah they can do some shitty things but hopefully definitely but you have to give it like your post you have it give it your profile so it knows who you are.
+
+[02:06:04] Speaker:
+Yeah I mean I'm in the thing I I will, I will, I think, because it's in the page now, but I guess I'll give it info.
+
+[02:06:27] Speaker:
+This guy makes so much money with school, this is her mosey guy, oh, good time. This community has 180,000 members, oh, the entire park, no, like the schoolers, yeah, The coolest thing has 180,000, 190,000 members.
+
+[02:07:12] Speaker:
+Oh, I didn't. It's still planning. You can, you can change it. It's not there yet. I need to stop. Yeah.
+
+[02:07:32] Speaker:
+I thought it started the browser. like it opened this oh yeah okay yeah you'll see it goes yeah you have to what if there was a question yeah yeah we'll see do I'll get and you know the people who are now in school it's not a question who is the best in school anymore it's a question who understands
+
+[02:08:53] Speaker:
+how to use AI it's like I could be the most stupid guy but if I understand how to use AI I can dominate the whole game.
+
+[02:09:08] Speaker:
+So it makes these new browsers how many do you leave open before he's closing. I like 20. I just don't want to touch anything.
+
+[02:09:19] Speaker:
+Yeah, it's so much work, you know, because it constantly opens browsers. Maybe in the next project I have, I will tell it, can you close the tabs after you use them?
+
+[02:09:30] Speaker:
+Because that seems to be like kind of like a, like it will run out of memory if you don't do it.
+
+[02:09:36] Speaker:
+So that is kind of not so nice that it uses, you need to babysit it, actually. Or you need, we would need to create like a little bot, like a desktop application that closes tabs.
+
+[02:09:58] Speaker:
+You'd have to be really specific about what you wanted to close your tabs. Because you don't want to close them when you didn't want to close.
+
+[02:10:05] Speaker:
+No, no, but only if you see like the blue thingy going on Then close the tap one behind the blue thingy like now is a blue thingy going on, you know I'm still close this one.
+
+[02:10:16] Speaker:
+Yeah, exactly Maybe it was not specific enough like if you give it like specific instruction Now it asks you like a lot Because I don't have any requests it does everything automatically Oh here we go Or not, he plans.
+
+[02:10:46] Speaker:
+All ten. Oh, plan two. And does it put it, can you go in your, like, the explorer? Like, does it save your files or what does it do with it?
+
+[02:11:39] Speaker:
+Because I told it to do something with it. I think you didn't do that. So it's just scraping. I think you have to kind of tell it what to do.
+
+[02:11:50] Speaker:
+Virginia school that a Jason Jason just here because I think it has no folder right now or I don't know does something there are some Yeah.
+
+[02:12:12] Speaker:
+Here. Here. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Because like I opened the folder. When I started the project, you know, I opened like a folder and then I put it.
+
+[02:12:31] Speaker:
+It puts everything in there. And I can see it while it doesn't. Yeah, I guess I just learned now that it saves those kinds of projects into a folder called Brain.
+
+[02:12:43] Speaker:
+Brain. No, no, no. It was in, I don't know what it was. It was in some weird folder. No locations.
+
+[02:13:19] Speaker:
+I think there probably will be a lot of people like if they are like really good on the stock market and stuff like that, like if they have a lot of knowledge then they can do total crazy stuff with it.
+
+[02:14:01] Speaker:
+And you know what would be awesome to do with it? Like, you know, like when Donald Trump does stuff, you know, it's always very emotional, you know?
+
+[02:14:11] Speaker:
+That's why he's not on success. But if you see it like completely without emotions, you can totally predict stuff. Like, you know, because if he says, you know, he takes over Greenland, or if he takes over Venezuela, you know, this has like direct impacts on oil prices, for example.
+
+[02:14:32] Speaker:
+And if you can see what he does without any emotion, I'm quite sure that AI easily can make money with it because the only reason that people are like completely scared because of all this bullshit he does, you know, but if you if you just see it like objectively, like, you know, if you say that and
+
+[02:14:55] Speaker:
+you have that kind of power, that means surprise will go up or down for that kind of product. But is it still doing it?
+
+[02:15:32] Speaker:
+Why don't you go? Yeah, it's doing its thing. I just have no idea where it is, but okay. the agent manager maybe because you need to accept sometimes it's kind of you need that sometimes you need to accept you know sometimes something pops up Okay, I'm going to come and eat.
+
+[02:16:38] Speaker:
+Let me see if I'm going to search for you on an e-sphere. So nice. I'll show you now. It's really amazing.
+
+[02:16:55] Speaker:
+Okay. You see now here. Oh, my God. Mind didn't work that well. It's not doing stuff though. I just saw it.
+
+[02:17:07] Speaker:
+Yeah, but it's like you see the scroll by here. Oh my god. Like it's doing like a lot. I'm really curious to see what they're saying.
+
+[02:17:21] Speaker:
+Yeah, I saw them like they are. See, I'm curious to see the analysis of them. And what they say. Sir, I'm sorry.
+
+[02:19:45] Speaker:
+share a thing. Little one. Little one. Little one. What is that? Never mind. Okay. I'm going back. Please make sure, from now on, sure you don't write summaries, you write complete comments from everybody.
+
+[02:22:30] Speaker:
+So it's not summaries, it's complete scan of everything, but continuous scraping don't start over, continue just from where you are.
+
+[02:22:40] Speaker:
+But now, without summaries, just with all the comments included. I'm starting to get up here, and I'm going to go back again.
+
+[02:28:37] Speaker:
+I'm going to close the picture. You meet it. What will happen when people, when knowledge has no more value? I have that's very interesting.
+
+[02:31:21] Speaker:
+And the people who are right now in college, that's a complete waste of time, or, it will be completely different skills, but like lawyers, they are trained on just learning books and and that is the most unnecessary skill there is right now.
+
+[02:31:56] Speaker:
+Yeah, and one time, I don't know what's the thing, yes. Yeah, yeah, we will definitely. Okay, this is going okay, I'll be back.
+
+[02:32:07] Speaker:
+Yeah, but I think you're just watching the rerun. That is not the blue windows, the blue windows should be the other one.
+
+[02:33:40] Speaker:
+Oh, complete milestone. Get shit done has something. You're muted. You're muted. There we go. Hi, yeah. What was the same thing?
+
+[02:34:17] Speaker:
+Okay. Okay, well, I'll start that on time now. Okay, I'll be back. Yep. You really deserve it, always unique quality content.
+
+[02:48:12] Speaker:
+And we both know that and everybody in the community as well. Hey. Hey. Sorry, sorry. That's a really good song.
+
+[02:55:42] Speaker:
+I just sent you on WhatsApp. I was listening to that stuff. Really nice. But it's human made. Not AI. But it's really good.
+
+[02:56:10] Speaker:
+It should be the voice. Huh? questions here questions wait she never wants to stop her maybe could you ask her are we getting closed there will be a funny question to ask now okay I think which feature should be on the focus for we one point one.
+
+[02:57:07] Speaker:
+Jesus Christ. I don't care. You choose. All right. Yeah, global search makes, yeah, should be the focus.
+
+[02:57:51] Speaker:
+How many do you put in a feature update? That's the center. Yeah, there's one name we're talking about, but very average was a twist.
+
+[02:58:12] Speaker:
+And somebody mentioned, like, fresh meat, seven rolls, and spreading peanut butter on top of the ice and angry, you know, I couldn't ice it.
+
+[02:58:21] Speaker:
+How's that? Oh my god. What? What did you say? Okay, I'll tip for to try that this weekend. Okay. Like that's going to be my truck in mind, I'll go in.
+
+[02:58:38] Speaker:
+Well, whatever mine is you don't. Post-comment entitled, content entitled, of course, content entitled. I'm going to put it here. Yeah, of course.
+
+[02:59:19] Speaker:
+But it's a place where it's like. Huh? Is that nowhere else to mention? How about if we just in the type something, if we would say, could we focus on the stuff that's really necessary?
+
+[02:59:42] Speaker:
+You think it would understand? Because it asks very, like, you know, like sometimes I think it's common sense because I think like search it to search for everything don't you agree?
+
+[03:00:37] Speaker:
+understand yeah okay research it to research it's late it's late It's very good for learning AI.
+
+[03:01:45] Speaker:
+It's the best thing you can have. Like nobody's awake. You can focus all the time on AI. It's amazing. Yeah, it does give me like solid block time, there's like, yeah.
+
+[03:02:02] Speaker:
+And even your boss is sleeping because that is amazing, you know, like, nobody, nobody in the whole world cares as long as nobody complains.
+
+[03:02:11] Speaker:
+I just have to make sure nobody complains. That's the only thing. do they complain? No, they're drunk. Oh, can I do the number?
+
+[03:02:24] Speaker:
+Huh? Then I don't even remember. Yeah. Say happy. We pick some up. That's all they want. They want to go to bed.
+
+[03:03:25] Speaker:
+I can see the problem. The problem is everything is overlapping. You know, like, I have three screens. You are in the middle, okay.
+
+[03:03:40] Speaker:
+And like the browser is on the left side and the Antigravity is on the right side and I don't touch them.
+
+[03:03:49] Speaker:
+And I told them to use the MD and you're like you're going back and forth and the problem is it uses it's like a real user.
+
+[03:03:57] Speaker:
+It needs like real view on the screen and stuff, you know, and if you put stuff in front of it.
+
+[03:04:03] Speaker:
+And also if you are like, you know, changing, like, for example, like I, it always asks questions like this except questions, you know, it's always accessible to my visual eye.
+
+[03:04:17] Speaker:
+So I only have you in the middle. That's the only screen where I actually touch anything except for accepting and for closing tabs.
+
+[03:04:26] Speaker:
+you know the problem is I think that like every there's too much going on on on the screen where the AI is doing stuff.
+
+[03:04:38] Speaker:
+Oh I'll come prepared in the kitchen. Okay. I mean it's just more now. Oh, you have been cooked. You got some food.
+
+[03:05:08] Speaker:
+That's nice. Yeah, so I think they need some room to work and your initial prompt needs the first you need to open a folder.
+
+[03:05:26] Speaker:
+and then you have to say please save it as MD files in that folder. I think that kind of was missing.
+
+[03:05:38] Speaker:
+It's so important. What? It's so important. It's important. It's an AI. It's like that stuff is important for it. It needs a purpose.
+
+[03:05:53] Speaker:
+It's hard to put the purpose later on. You have some purpose upfront. It's in the MD business. That's nice. I've scraped so many pages while doing nothing.
+
+[03:06:40] Speaker:
+How many is that now? Like I'm now on page 14, so post 131 to 140. And if I would have a kid I would definitely take all this TikTok stuff away now, you know?
+
+[03:07:13] Speaker:
+Because it will get so crazy, it's only about short attention span and getting viral and this whole AI stuff on their side is completely crazy I think and they have no measure you know like I have a sister and she has a daughter and she's like completely like you know like the kids they don't have like
+
+[03:07:37] Speaker:
+vision for what is AI what is good what is not good they're just absorbing yeah I mean they also probably see really cool stuff too what they also probably see really cool stuff too yeah yeah it's really nuts it's like a science fiction movie you know we are living in a science fiction movie and like
+
+[03:08:17] Speaker:
+five years ago, nobody knew. And now it is already a science fiction movie. What's now there? What's in Germany? It's like the narrative.
+
+[03:08:33] Speaker:
+I'll send you something. Okay. Okay, here's the view, okay, it's now, okay, holy, why don't you take out the, why don't you take it out so much?
+
+[03:10:40] Speaker:
+The thing is it auto corrected itself, you know, so I think probably it took some stuff out of which it is soon before or something like that.
+
+[03:10:47] Speaker:
+Hmm, good point. I will not, there you go, and then go our search. It's so nice. I don't know if this is our needing to see keystroke for something.
+
+[03:11:47] Speaker:
+In turn, well, this is my keyboard's weird way to come in, okay? I don't want to do something weird, and here, yeah, yeah, yeah, of course, keep on trying.
+
+[03:12:00] Speaker:
+Cool. I think works are just good. It says recommend it. Just take the recommended one. It should always recommend our stuff, I think.
+
+[03:12:14] Speaker:
+That's good. it just opened like you know like when you when you're on a school page and you want to read more you know it just opened read more so it can scrape it properly you know like when when the message is too long you know when you post like a really long story it gives you like half of the story
+
+[03:12:49] Speaker:
+and then you have You have to read the whole story, you have to click. List, picture, global search correctly. Is this stuff up there?
+
+[03:13:03] Speaker:
+Here. It's very technical, huh? Sounds good, so. Yeah, just confirm it, I think. Crazy, crazy, crazy. What does it want?
+
+[03:14:53] Speaker:
+Oh, yeah, just copy of what what what's he's coming up with new stuff all the time, huh? I thought like after phase ten, it's over No, there's more It's like a rabbit hole What was being one?
+
+[03:15:24] Speaker:
+But I would totally watch his four and a half hours. This guy is kind of crazy. Yeah, it's a big thing to me.
+
+[03:15:35] Speaker:
+I would plan to Can you imagine how much a developer would have cost like two years ago to build this stuff?
+
+[03:16:16] Speaker:
+He would probably be busy for half a year or something like that. that's it. Yeah, let's discuss it. It really wants to talk.
+
+[03:16:36] Speaker:
+Maybe what's available plan and discuss it. I mean, we have discussed the whole thing until now, Maybe we should continue discussing, huh?
+
+[03:17:58] Speaker:
+Jesus Christ. Give discussion is also interesting. Such school. I think maybe we can skip this one. Otherwise it wouldn't offer us this.
+
+[03:18:15] Speaker:
+Maybe it's unnecessary. Because this is way to come, like, church go, who cares? It's the text anyway. Yeah. And your query behaviors, it's way too specific.
+
+[03:18:31] Speaker:
+Yeah, let's skip it. Yeah, plan. Yeah. This guy is very interesting. Like, how he, how he did that thing. Yeah, now he came to do all this.
+
+[03:19:21] Speaker:
+This is incredible. I think I will use it for writing songs, I will try that because that thing is like nuts.
+
+[03:19:33] Speaker:
+That's the least machine. It's alive. It's like there's so much. Very interesting. How did he get it to do all this?
+
+[03:19:57] Speaker:
+you know, like that's really amazing. I did that so much of original thinking, you know, like, you know, we didn't give it a lot.
+
+[03:20:05] Speaker:
+And it came up with so many very detailed, accurate questions. That's amazing. It's very well done. Yeah. That's not only built.
+
+[03:20:18] Speaker:
+It's like, I think he really, really understands like AI. Like, it's not only like software, you know, it's like, like it kind of knows the right questions to ask.
+
+[03:20:33] Speaker:
+Yeah, I'm pressed so far. Yeah. And I hope we get more than a black screen with a couple of words.
+
+[03:20:41] Speaker:
+I, yeah, well, we get more than this to show. When I finished preparing this, It's actually just a bowl of chicken, I'm going to finish repairing it and I'm back.
+
+[03:20:55] Speaker:
+Yeah, yeah, yeah, yeah, go ahead. I just then muted. Okay, execute based. So, so he should be the last one, I think, or.
+
+[03:35:17] Speaker:
+Yeah. Okay. That completes about third and final cycle. Congrats for making it through. If you guys felt focused and enjoyed it, then make sure to check out our friends at brain.fm.
+
+[03:36:22] Speaker:
+Because in taxation music, as I said, I exclusively used brain FM. Whenever I'm trying to do some deep focused work now.
+
+[03:36:30] Speaker:
+And I genuinely think it's a great product. You can use my link to get that extended free trial in the description.
+
+[03:36:37] Speaker:
+and check out hundreds of all the more tracks personalized to your preferences. Thanks for watching and I'll see you again next time we study.
+
+[03:43:39] Speaker:
+This is awesome stuff. His channel looks so interesting. Yes, me too this thing is still it is It's crunching something since 15 minutes, so it's going on.
+
+[03:56:15] Speaker:
+I think it needs us. Maybe a sitting is over. Your Mac is? Here it is. There's so much work to do.
+
+[03:58:21] Speaker:
+The tables. Check it out. That's it. Very interesting guy. Very interesting. Ah, there you are. I think we have to do something.
+
+[04:01:08] Speaker:
+I wrote you in water. Okay. Okay. Thank you. Thank you. Thank you. Thank you.
+
+[04:01:27] Speaker:
+We're not just a better. And we scraped around 18 pages by now. I'm kind of stuck. It doesn't really go further.
+
+[04:01:41] Speaker:
+Yeah, probably just context one. Huh? It probably was just context one. No, I don't think so. But it's more like my memory of my mech or something.
+
+[04:01:53] Speaker:
+I have no idea. It's kind of like getting slow. Oh, I wish I could suit the base into this. The old one, oh, you're sweetly probably going to stop for the night then.
+
+[04:02:08] Speaker:
+Yeah, yeah, it's okay. I completely okay. I'm also tired. Yeah, but this guy is really, really interesting. I made a notebook from this Thomas teachers.
+
+[04:02:19] Speaker:
+This guy was the get shit done. Yeah, yeah, yeah. so many interesting videos. Yeah, I'm interesting. Yeah, I put it in notebooks so I can talk with it.
+
+[04:02:38] Speaker:
+Nice. Well, I will solve our team tomorrow. Yeah, perfect. Have a good night, don't
+
+==========================================================
+END OF TRANSCRIPT

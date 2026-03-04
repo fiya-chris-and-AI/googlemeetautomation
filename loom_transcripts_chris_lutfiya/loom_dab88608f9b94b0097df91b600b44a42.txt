@@ -1,0 +1,1217 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Collaborative Coding and Community Building Insights 💻
+Video ID: dab88608f9b94b0097df91b600b44a42
+URL:      https://www.loom.com/share/dab88608f9b94b0097df91b600b44a42
+Date:     Unknown
+Duration: [02:21:10]
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T19:38:34.291Z
+==========================================================
+
+[00:00:00] Speaker:
+Alright, cool. And I think after a while this problem goes away because I also had that problem in the beginning of having like a lot of, uh, calls, you know, like.
+
+[00:00:10] Speaker:
+And I used to max all the time, but it didn't do all the time so many like video calls. make a video call.
+
+[00:00:31] Speaker:
+Z screen in the middle is not touched. Okay. All right. So yeah, I need. Okay. Well, it's like the rule for me.
+
+[00:00:39] Speaker:
+I don't know. You know, no, I mean, you know, I think it's because I put the WhatsApp because I put WhatsApp and I really don't move the WhatsApp.
+
+[00:00:44] Speaker:
+That's why it's usually whenever I go to WhatsApp and moves this, it moves this video side. So I'll just need WhatsApp is out of the way, except I really need to use it.
+
+[00:00:52] Speaker:
+But it has its own icon. So it's not a problem. Sure. Okay. Yeah. I'll leave this on this screen. I shouldn't go anywhere.
+
+[00:01:00] Speaker:
+Yeah. What we'll do is I'm going to pull up the thing about the poll work bus. Do you want to go to GitHub?
+
+[00:01:12] Speaker:
+If I want to, yes, wait. I guess yeah, you should have a poll work bus for me from earlier. Very interesting.
+
+[00:01:20] Speaker:
+I never had a poll request. Where should I see that? Let me see. Maybe your notifications or we'll be going to have them.
+
+[00:01:29] Speaker:
+See if I can give them some. Oh, I have not pull requests. I don't. I'm right. Yeah. Just. I'm actually right.
+
+[00:01:42] Speaker:
+Cool. I should there is a button for pull requests. But there is no open one. But actually I found a pull request button.
+
+[00:01:52] Speaker:
+So it actually exists. Yeah, I have. Oh, you know, maybe I didn't push it. I said too open. Yeah, I'm going to share my screen tire screen That is funny Because I don't see There's not here Maybe you have to like I don't know because I can't better.
+
+[00:02:25] Speaker:
+I can see it on mine now. Yeah wait no no I show you my screen I cannot see anything. Really?
+
+[00:02:33] Speaker:
+Yeah. I don't see any kind of like here. You see? Yeah. Like this is this is pull request here. Yeah.
+
+[00:02:48] Speaker:
+Yeah. And if I click on it there is nothing. Okay. So I have one here on my end, but then I'll have a check to decide it.
+
+[00:02:58] Speaker:
+So that's probably why. It's just that pushing the last time because this is like the feature is also working in the feature branch.
+
+[00:03:34] Speaker:
+and do I have access to that each of branch? You did that thing? Not yet because I'm going to push it now.
+
+[00:03:44] Speaker:
+I'll get my blog on status. I'm going to request to the one that's going to be Yeah, because the one yesterday that pushed the wolf figure out how to get me up wants to march to yeah, that is weird.
+
+[00:04:30] Speaker:
+So it can you still not see my screen? I can see you let me do it wait wait. Picture and pictures.
+
+[00:04:42] Speaker:
+Oh, you can just make that bigger. You can put it on the arrow. That goes my top left. I don't know why, but you see it like I stopped presenting me up.
+
+[00:04:58] Speaker:
+You see mine? Who requests of what? So you do see it? Yeah, commit into Chris main. Chris main. What is Chris main?
+
+[00:05:11] Speaker:
+Where are you looking? No, you you push something to Chris main but I don't know what Chris main is because it should be in my community like a community sign that should be the folder that is updated right?
+
+[00:05:28] Speaker:
+Yeah, community design. That's where I pushed you. But oh yeah, community design. Okay, okay. But the last thing that happened there was two days ago.
+
+[00:05:41] Speaker:
+It's never you here. Finish my review. Oh, you know, what? So then how, if you can't see it, then how is it supposed to get pulled no clue but let's just try if I if I can pull it and if I have the changes huh oh yeah go ahead hey can you please pull the latest version thank you oh you know me okay I
+
+[00:06:23] Speaker:
+know I was going to say if you wait a second, I'm pushing this and then you'll get updated. I should not do it now.
+
+[00:06:31] Speaker:
+Yeah, just wait a second. Wait till this is finished because it's pushing today's feature branch back to the main branch.
+
+[00:06:37] Speaker:
+Okay. Stop it for a moment. You sit. Stop. Yeah, but did you read that book scary smart? I told you about no, but I will.
+
+[00:06:50] Speaker:
+Yeah, because then you know why I talk like that. What do you mean? Like it says you should be really nice to AI because it will find out later on and it will harm you.
+
+[00:07:01] Speaker:
+Oh, yeah, I remember. I don't know. You should always be on the side of AI, otherwise you know, you get into trouble.
+
+[00:07:11] Speaker:
+You should read it, it's so entertaining, it's not work, you will not write down notes and stuff. It's like something you can do like while working out or so.
+
+[00:07:27] Speaker:
+It's an audio book, just listen to the audio book, that's awesome. And it's as hard as I mean he worked at Google, he was responsible for AI at Google, he was a head off AI.
+
+[00:07:45] Speaker:
+That's, that's, that's awesome. Yeah. Here's a current set of your main design. No floor plus. There are no open one current branch.
+
+[00:07:57] Speaker:
+You're on a feature branch. Fixed in page. This is the translation one. But then what about the Diffie? They're like here.
+
+[00:08:40] Speaker:
+I think our project is really cool and I can totally see also that we make like a YouTube video explaining how stuff works because it's so interesting for people you know like everybody's writing their own weird language, you know, and we are like putting it all together.
+
+[00:09:08] Speaker:
+Yeah. We should also have like a mode where it says like native, you know. So it shows like all the posts in original language, one after the other just to have it, you know.
+
+[00:09:19] Speaker:
+So people can actually see how it looks in without AI. That's awesome. I think yeah, that is a good feature.
+
+[00:09:28] Speaker:
+to add, I wonder. Well, the one I already have on a branch one. Okay, push, push the feature grant, create a full request to merge a translation line back and stuff.
+
+[00:09:40] Speaker:
+Where is it pushing it. It looks like it looks on my branch but I but I forked from yours so it knows what about from the original I submit okay that's what you roll.
+
+[00:10:08] Speaker:
+Oh you know what okay so this is also a claw set if it's just two people working on this then we don't even need two different versions Once ago that we can work on a single branch and whenever we do stuff work on a feature branch All you have to do is tell it like hey, I want to work on a feature branch
+
+[00:10:29] Speaker:
+to do blah blah blah And then basically it just adds a new subfolder so that it doesn't touch your other code Okay, so then that way we don't have to because I think that's the issue here is that I cloned it So you have your main branch.
+
+[00:10:42] Speaker:
+I have my main branch and then I'm pushing back to my main branch. So So I think I'm not sure if my main branch actually gets your changes.
+
+[00:10:56] Speaker:
+Yeah, so that's why I shouldn't have cloned it. I shouldn't have forked it. I should have cloned it and started working in a new feature branch from your main.
+
+[00:11:07] Speaker:
+But right now my branch is more up to date than yours. So we can keep working on this one because you have all the same keys and this and it's already on super base and so what once we I guess we can do.
+
+[00:11:24] Speaker:
+I'll check today that it can deploy and that you can access it on your on your sign. But we can also just see how, if there's a way to actually update yours as well, like just so that we know because this shouldn't be like a big block.
+
+[00:11:41] Speaker:
+Just tell it, tell it to do it. Yeah. Oh, there's an argument for this yesterday too. All this like get stuff, it's like, Okay, it's really important and good to know.
+
+[00:12:10] Speaker:
+And I feel like there's a feeling of like slight discomfort whenever I'm like, where is my weight? I don't know, is that right?
+
+[00:12:16] Speaker:
+But it'll, let's see. Okay, your PR to the upstream repo is open and waiting for a view. My fork has no PRs to local data, no, would you like me to push at upstream remote?
+
+[00:12:30] Speaker:
+Yeah. Okay, do it. Yes, both. Okay. I'm done. I left streamer modes. Which feature branch. So. It's on yours. in your future branch now.
+
+[00:13:17] Speaker:
+I'm going to have creative peer. Yes. So you think I can pull it? Oh, no. It's doing it now. It's going to create a floor.
+
+[00:13:27] Speaker:
+Yes. So you. Honestly, I can totally see that we would get jobs just because we did the translation thing of the of this community because there are like so many international customers that have to do that, you know.
+
+[00:14:05] Speaker:
+every coolest and it's like we want to buy your platform for yeah like sweet honestly they are like completely behind they are like what you told me like the other day you know like somebody's posting below marks video are those images AI generated you know they are like they are like that they don't
+
+[00:14:24] Speaker:
+want a system problems they don't know what a system prompt is that one that their website is in any language yeah like to them they just and the funny thing is you know you usually like because you know they are smart people and they are dumb people and the funny thing is now they are smart people who
+
+[00:14:42] Speaker:
+are actually really dumb people which is really ridiculously funny like there are some smartasses who are not really smart you know but actually get how AI works, you know.
+
+[00:14:55] Speaker:
+But there are a lot of smart people who just don't get it, like not get it at all. Yeah. Oh, I know.
+
+[00:15:01] Speaker:
+I work with a bunch of them. Yeah. Yeah. I can see them everywhere. Yeah. Well, it's fine. It's there. They're their choices.
+
+[00:15:10] Speaker:
+Yeah. They're choices. They're karma. You know, the UI, I feel like the UI needs something. It's, it's very, it's, there's organized it's it's consistent and easy to read and that's great but it needs like life and I'm not talking like this big display of whatever it's something just like some element
+
+[00:15:34] Speaker:
+some something that in a name but I mean I know like this so okay so obviously our communities our communities our individual communities would be their own names.
+
+[00:15:48] Speaker:
+And then for this back-and-platform, is this like a purely admin back-and-no-front display from here at all? Or, and then we're just hosting, like we see it's like our hosting service.
+
+[00:16:00] Speaker:
+And then all the people see are like the two front-ends. I mean, you have to see, I think you'll see it complicated.
+
+[00:16:07] Speaker:
+It's less complicated than you think. You know, it's just like, there is just no make baby school communities. It's just like all grown-ups, one single community on each domain name.
+
+[00:16:20] Speaker:
+And we both have log-ins for each others. You know, so I can see everything you do. You can see everything I do.
+
+[00:16:29] Speaker:
+I can see all the money that comes in on your side. You can see all the money on my side.
+
+[00:16:33] Speaker:
+But it's there's just. You're saying, oh, that we can like log into each others. But I was thinking wouldn't there be like a consolidated like there is just no reason for us to make it like okay make baby school communities now you know we can just deploy a whole new community onto a new domain if we
+
+[00:16:55] Speaker:
+wish to okay no but it all I mean for me it makes just like like I'm just trying to get at the least business stuff in my head as I can okay yeah I'm like really not into that I'm not trying to do get any what is my what is my what is advantage or what's your advantage I'm just trying to get the out
+
+[00:17:19] Speaker:
+of that stuff okay so the thing is we you decide okay now I want to have you have a science community okay and then we say okay now let's clone our website the community on to your science community.
+
+[00:17:36] Speaker:
+You can make it, it has its own back end. You can tell, okay, PayPal put the money there, you know?
+
+[00:17:43] Speaker:
+You can say, okay, now we, Italian customers do your payment over here, you know? And I can do on the business community, I can do exactly the same on the community that I host in Germany.
+
+[00:17:59] Speaker:
+It's also a legal thing, you know? Like whenever I make a community, I have to make it like an imprint you don't I have to tell everybody where actually live It's like a time when we live.
+
+[00:18:10] Speaker:
+Yes, that's a European law Like your house home address. Yes. Yes. Yes, exactly like office address or home address whatever you have But it is like a jail.
+
+[00:18:20] Speaker:
+It's a German law like on every German website on every single one You will find something that is called impressive or an English.
+
+[00:18:28] Speaker:
+It's called imprint And you can click on that link and you will find the address of every single website in Germany everything else is illegal The web address.
+
+[00:18:39] Speaker:
+Yeah, like I show you I show you. Hold on Okay, so you're like your home address. Yeah, it is a home address.
+
+[00:18:46] Speaker:
+I mean for most people that is a home address Google all the Google needs is like another email Like I go on Google Okay, and I type in anything search and search machine.
+
+[00:19:03] Speaker:
+I type in a German word, okay? Search machine, search machine, that is search engine optimization, okay?
+
+[00:19:18] Speaker:
+So I go on to any kind of, let me see like a German Android Hilfer. So that's a German thing.
+
+[00:19:24] Speaker:
+dot the E. Okay. Okay. I go on this website, whatever it is, I could go on any other one as well.
+
+[00:19:33] Speaker:
+Okay, let's wait. Okay. And now I scroll down, imprint, impressive here. Okay. Yeah. And that's a guy address. Okay. Okay.
+
+[00:19:51] Speaker:
+So it's a business address. Yeah. Yeah, yeah but it needs like it's a law you know like we have those crazy laws and the other thing is like you know we have to have like if you're on if if you're on my website you can send me an email and then I have to delete all your data it's completely weird you
+
+[00:20:13] Speaker:
+know like we have like really weird weird stuff there should be inbuilt in it like a delete account so that if the person does want to get their stuff or like pull that's a reason I could not do a school community and we can pretty much kill any competitor from Germany who is trying to do a school community
+
+[00:20:37] Speaker:
+because they're actually breaking the law. I'm not the kind of guy who does that but there are people who do that stuff.
+
+[00:20:45] Speaker:
+Yeah, that's not true. That's so risky. It's like, yeah. I think, yeah. Do you know how to do the poll records, or is that just something?
+
+[00:20:54] Speaker:
+Because I mean, that it would be, I think, good to, if that's something that would say that again. If it would be something useful to have to be able to pull record, like say, pull someone's record, if they're like, I don't want to be on this platform.
+
+[00:21:08] Speaker:
+I mean, they can delete their own account. But it should be such that, you know, like when they delete it, it'll delete everything that they post in.
+
+[00:21:18] Speaker:
+Yeah, exactly everything they ever posted. Yeah. But you, of course, you get like very strange issues like, for example, if they are on Google meets, you know, like if they are on a live call and then they And then afterwards, they say, I don't want to have that anymore, so that will not be an issue
+
+[00:21:38] Speaker:
+on your community. Because you are on the American side. And I'm on the stupid German side. But it doesn't matter.
+
+[00:21:49] Speaker:
+The thing is, I think the way we are doing it is It's generally really fair to both of us, you know, because everybody, and also there's very little risk, you know, you can just say, okay, there's one community, it's owned by Latvia, you know, there's one community with it's own by me, and we can have
+
+[00:22:09] Speaker:
+a contract, that's not an issue for me, you know, we can just say, okay, we share whatever we have, and you get mine and I get from yours, you know, and if you say, okay, now I would love to have like a DJ in community you know and yeah it's a boom you know just copy the whole thing on the DJ in community
+
+[00:22:30] Speaker:
+you know and start it from there you know but you don't have to take care of the stupid regulations that I have to take care of and I can say okay I'm legally doing it you know like I can say okay look there is my imprint if we delete people then they get deleted you know or do it?
+
+[00:22:51] Speaker:
+Yeah, and I can say, okay, if I make a life call, they are not allowed to show their face because otherwise I could, for example, that's just an example, you know.
+
+[00:23:01] Speaker:
+No, no, I hear you. I'm just saying that that puts the risk that that was the choice in the person's hand to turn their camera off.
+
+[00:23:08] Speaker:
+So instead, yeah, but the problem is different. In Germany, it's like this, I can be totally stupid today. and tomorrow I can make a new decision or whatever I did stupidly today I can I can reverse yeah that is a problem yeah I mean the group calls I think maybe if they're like you know how marked as
+
+[00:23:32] Speaker:
+like webinar style and then people just put the questions in the chat I know it's not as and I guess this would just be for like the German community and it wouldn't be necessarily as interactive but You can always put a statement like in it.
+
+[00:23:45] Speaker:
+Like if you do put, you know, it just, I think we just don't, we just don't, it's like the recording is for the Daniel, you know?
+
+[00:23:55] Speaker:
+Like the cool thing with Daniel's group calls is you're either there or you lost it. That is kind of cool, you know?
+
+[00:24:03] Speaker:
+The thing is like in it's not a German thing actually it's a European thing everywhere you are but it's like that, you know?
+
+[00:24:09] Speaker:
+So if they come to our calls and they are listening to it, their eyes are there and listening to it, or they lost it.
+
+[00:24:18] Speaker:
+There is no recording. You know, so that is kind of like, We have to think about it, but it's doable, and it's not necessarily bad.
+
+[00:24:30] Speaker:
+It can be good. I think you can always take a meeting transcript from a call and then have it processed so you have the key takeaways But that way, you don't have to have that video or at least just keep the audio, but if they're there and it then it's the same thing, it doesn't matter.
+
+[00:24:48] Speaker:
+Like in their input, it's like their brain knowledge, whatever. Okay. Yeah. So then then that I think would be worth some deep research to identify what kind of infrastructure can go into your community to keep to make that like easy and not make it like a step process that's that much of an issue, you
+
+[00:25:09] Speaker:
+know, because let's say if someone types something into the community, that can easily be deleted. Like every single person ever said in the community.
+
+[00:25:20] Speaker:
+That is easy. The only thing is a life call. And I honestly, I don't think that life, I think, we are both very nerdy.
+
+[00:25:30] Speaker:
+You know, we are going to Marx community calls. We want to learn how to how to do that our all our self, you know the people who are having a restaurant.
+
+[00:25:41] Speaker:
+They don't give a shit. They just want that the people there are more people in the restaurant. They are very basic brains.
+
+[00:25:49] Speaker:
+maybe we maybe it's not about the like why these are I think what really makes us different like really really good different not besides the language thing is that if I for example I make a Chrome plugin so they can make social media posts for their local businesses.
+
+[00:26:15] Speaker:
+If they are locked into our community, they can use the probe features of that Google Chrome plugin. Because Google Chrome plugin locks automatically into our community.
+
+[00:26:29] Speaker:
+And it's an active membership. And we can make 50 or whatever amount of cool plugins or software, AI software that those local businesses can use if they are a member of our community.
+
+[00:26:48] Speaker:
+And I think what they mostly say, okay, they want to learn how to prompt, they want to learn, how can I feed my rack, you know, how can I do all that stuff?
+
+[00:26:59] Speaker:
+But they are more like, how do I use the software which you guys build for me? So then there could be a section of like prepared or like ready to go or like more like okay how are you Holger I show you now how to use that rack okay and he's like okay now show me and then I'm like going every week the
+
+[00:27:21] Speaker:
+same boring stuff going through how to use the software but they're not how do I build the software how how can I do vibe coding you know that's not our I don't think that this is our business you know because I mean certainly doctors don't have time to finish it yeah but if you have to go into their
+
+[00:27:42] Speaker:
+mind in their mind they are f***** AI has overwhelmed them and now they have to use it and they don't want to become vibe coders they want to keep their job or they want to keep their restaurant running.
+
+[00:28:01] Speaker:
+You know, it's, it's, they don't want to become Vibecoaters. They don't want to, they have, they did not want to create their websites two years ago when it was also easy.
+
+[00:28:11] Speaker:
+They don't want to do that stuff. They have to use it and it's, they are forced to use it. Like environment forces them to you, to use AI.
+
+[00:28:23] Speaker:
+Yeah, I know, being the best interest to know how. Yeah, and we just give them the best tools they can because we are able to write code them but it's not so I think this whole live call thing with mark.
+
+[00:28:37] Speaker:
+I don't think that this is a big thing for us. It's more get them on how to use AI and then you know, get them to use our tools but not teach them how to use Cloud Code.
+
+[00:28:59] Speaker:
+I don't think that's the thing. Oh no, I agree. That's totally, we could have, you know what? Okay, here's what we can do.
+
+[00:29:07] Speaker:
+So we'll you know, our own individual communities, okay? And then I want to do one, we can keep it in the US just for, well, no, no, no, no.
+
+[00:29:18] Speaker:
+Once we figure out the whole, the whole German law rule thing, you know, then we should have a third one where we do it joined, but it's not all about regulatory compliance and like all the kind of dry stuff, it'll be all about the fun stuff, like the, whether it's like the videos those or the other
+
+[00:29:39] Speaker:
+stuff that's fun and useful, but not necessarily about hippocompliance or sucked you from life. So you're, can you open your account and say like, I don't want to be, I mean, honestly Mark earns a lot of money in, yes, in terms of money, I like to be in his shoes, yes, but in terms of intellectually,
+
+[00:30:07] Speaker:
+I don't like to be in a show that's horrible. You have a lot of people who are already pretty smart, who are always challenging you, you know.
+
+[00:30:16] Speaker:
+And what do you have to say I have them too? Like, there's no way that he's sitting there writing each of these individual responses with, I'm telling you, an AI model has been trained, okay?
+
+[00:30:27] Speaker:
+On all of his stuff, that knows all the stuff he does, that knows how he talks. I feel it in my bones and I know he is like there in the like falls and he messages and stuff.
+
+[00:30:37] Speaker:
+And maybe sometimes he will go and just be like, ha, ha, ha, I ran no message of it's funny. But I think the ones where they're like kind of long or explanatory, well, like really just kind of wealth and there's like a lot of them.
+
+[00:30:46] Speaker:
+Man, I'm pretty sure that if anything technical and stuff, I feel like a lot of them. But he's right, he's responding back himself.
+
+[00:30:53] Speaker:
+You think so? Well, yeah, add himself. Yeah, the likeness of himself. No, no, he is, he is. You think so?
+
+[00:30:59] Speaker:
+You know, yeah, yeah. And I can get insecurity, you know? Like, in the last life call, I told him you know, like why I like to use integrity, you know, it uses my browser.
+
+[00:31:10] Speaker:
+And then he has he has questions about it, you know, and he's like, Oh, it always uses like a new context window.
+
+[00:31:16] Speaker:
+That's interesting. You know, the problem is there is so much stuff that his brain and not he cannot learn everything.
+
+[00:31:26] Speaker:
+It's impossible. You know, and but he would like to, and he gives the best advice from his own what he can, you know, but he knows maybe it's not the best advice.
+
+[00:31:40] Speaker:
+You know, he knows, okay, Nick, which is a close friend of him, he's doing exact opposite. He's using anti-gravity all the time.
+
+[00:31:51] Speaker:
+And I think that's planned. I think that they like, Okay, think about it. All the lead guys who are in Cape Town right now, they very well can just have like a discussion council amongst themselves and be like, how are we going to play it so that all of us can like leverage each other and what we say
+
+[00:32:12] Speaker:
+one goes this way, one goes that way to have what this we throw in some little bit of something you spend this one a little bit later.
+
+[00:32:17] Speaker:
+And you know, I'm just saying it would I would be surprised if they did it. It would be a very smart one.
+
+[00:32:23] Speaker:
+They take advantage of it. Yes, but yes, yes, but that's not the thing. The thing is, Mark is investing. I would say 60% at least on doing stuff, 40% of teaching stuff.
+
+[00:32:38] Speaker:
+He likes it, but he likes it, but he likes it, he likes it, and in his private time he is using cursor because he thinks cursor is better, otherwise he wouldn't ask stupid question about antigravity.
+
+[00:32:55] Speaker:
+You would know it already, but he doesn't go. Yeah, and the thing is like now since Nick already came out and he's got all this stuff and people already put videos out and if Mark comes out and he's not all up to snuff and showing bullshit, which I mean, I don't think he would, then it would make, I
+
+[00:33:09] Speaker:
+don't know, he probably feel like an idiot. So you probably need to get like really, really good before he posted anything about integrity.
+
+[00:33:16] Speaker:
+Yes, which I mean, yeah, I love it. I love it. I know, like, I rather have like, you know, like, let's say I have regular business customers, like real estate agents, lawyers, you know, they are coming to my community and they are asking kind of like easy AI questions and we are answering those and it's
+
+[00:33:35] Speaker:
+some crazy as wants to wipe code you know I say hey you know what I know a really good community here's a link join it you know we get referral for you you know but let's mark handles the idiot who is really smart and wants to learn that stuff because he is a really complicated customer yeah I mean definitely
+
+[00:33:56] Speaker:
+I'm like all down with like getting their referrals and so like you're like you what you're doing like with this science stuff, you know, of course, the science stuff itself is completely out of my brain.
+
+[00:34:07] Speaker:
+I don't get it. I have never been there. But the AI stuff, I understand. You know, example, yeah, yeah, of course, it's all the same stuff.
+
+[00:34:17] Speaker:
+It's all the same basically, you know, it's just like we put it in a Latvia r***** and that wrapper is silence and then it's like regular business owners and stuff.
+
+[00:34:30] Speaker:
+Yeah it's just the tailored use cases that you get the example that you do. It's tailored use cases you know, but if somebody wants to learn how to be a bytecoder, we don't, I don't want that guy.
+
+[00:34:42] Speaker:
+I think that guy is complicated. And you would ask a lot of questions and he is disappointed because at And one end, I don't know the answer.
+
+[00:34:52] Speaker:
+Yeah, and then the science guy, you know, he's easy. He wants to make a reg. He wants to be compliant.
+
+[00:34:58] Speaker:
+You know, he wants to ask basic questions about AI. You know, to know how to prompt it. It's all simple stuff.
+
+[00:35:07] Speaker:
+Can you just give me a few minutes? I'll call you back in five minutes, OK? OK, all right. Is that from Pryor Copenhof?
+
+[00:39:52] Speaker:
+The total price is about 2.5 euros per hour. Okay, what costs the total price.3 hours for the vehicle class?
+
+[00:45:48] Speaker:
+Here is the first German television with the Turkish show. Today in the studio, Susanne Daugner, a nice evening. I am very happy to you again today.
+
+[00:46:06] Speaker:
+Three goals start in three days. The Bundeskanzler Merz is the first race in the region and is currently in great importance.
+
+[00:46:15] Speaker:
+Merz will be a new start in the relationship to the countries in the Persian Gulf. They will definitely have enormous potential but will be automatically carried out.
+
+[00:46:24] Speaker:
+What is the beginning of the competition? Hey, are you listening to news? What? Are you listening to news? Yeah, yeah, I was listening to a new sound tone of the way they talk.
+
+[00:46:37] Speaker:
+It's important. Huh, it's important. No, that's fine. I'm not sure if it's important. It's just bullshit. Anyway, you need to, you are sponsored for reviewing now.
+
+[00:46:55] Speaker:
+So you have the floor question now. Oh, I cannot see that, but I will just pull it, okay? Yeah. Thanks for merging with the cursor view and merge PR1.
+
+[00:47:27] Speaker:
+Please pull the latest version from the commute from. No, it's not pulled, it's not pushed or it says it already had it, but I'm sure it can't have it.
+
+[00:47:54] Speaker:
+Because there should be like translation stuff inside, so I cannot see anything of that. Oh, I know, that's um. Oh, there's two.
+
+[00:48:07] Speaker:
+There's, yeah. It's different. It has more languages, not the English one. It's like a lot of stuff. But it didn't pull.
+
+[00:48:48] Speaker:
+It's not on my it's not on my get up. Okay. The peer, there's the middle line. It works main to the upstream main.
+
+[00:48:57] Speaker:
+You're not seeing it, maybe the experience and show up on a usual program. They show up on our previous course tab, try visiting directly.
+
+[00:49:06] Speaker:
+I showed this screen and then I go away with this, go away with that screen shot. Okay, now you can do it again.
+
+[00:49:19] Speaker:
+And this is one from earlier. Look at this screen and you need to pull that. That is interesting. Look, I did it and like I showed it the screenshot, I show you what I have.
+
+[00:50:02] Speaker:
+Okay. Okay. You see here? Ah, here yes. It's not there for you. You see? There's a pull requests from you with blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, let me merge that PR for you.
+
+[00:50:32] Speaker:
+I don't know. Okay, I'm not going to do this then. It hasn't done an emerging. You can do it on your end.
+
+[00:50:38] Speaker:
+Yeah, that's fine. Yeah, I'm doing it on my end. But I could not see that and has to merge something.
+
+[00:50:43] Speaker:
+What I don't understand. Okay. You're going to you're going to emerge it now. and then create a new period of stream, create a new, yeah, it's fine, I can't merge it because I'm merging into my my fork, my branch, your fridge?
+
+[00:51:28] Speaker:
+My branch, I emerging, but it's into my branch. Yeah, I'm going to need to get a look at tutorial about how the and the commands and actually got one.
+
+[00:51:45] Speaker:
+My cloud cohort has frozen twice. Like, it stopped. I remember it an earlier, I took a screenshot. It was like, I put one prompt in.
+
+[00:51:54] Speaker:
+And then you know in the beginning when it's like, oh, I'd take a little longer to think, 39 minutes. And then I got nothing in our first, but the timer works, the timer keeps working.
+
+[00:52:04] Speaker:
+Yeah, that's annoying, because anything something's happening. Okay, I think I have to add this, both are upstream, both the Earth's upstream are waiting review from you.
+
+[00:52:19] Speaker:
+Yeah, yeah, I think I have to, I have to, you put this local EMV signal. that has the Giffy and I have to look at it.
+
+[00:52:34] Speaker:
+Oh, it's in WhatsApp. Yeah, yeah, I know. Oh, because it's okay. Hey, I can put it on the drive on the Google Drive.
+
+[00:52:44] Speaker:
+I think, I think, well, I think for API keys will, I think, I mean, WhatsApp is like encrypted. Yeah, I'm not sure the I'm not sure the secures waste actually if I know we send it in what's that but then I think because it's encrypted then it's like it's not going anywhere.
+
+[00:53:09] Speaker:
+Yeah, so yeah, I'm not sure if I can drive as like Gem and I all up in it. Please try again, I updated the local ENV version.
+
+[00:54:24] Speaker:
+Please spin up the project in the browser. You did what? I see clouds. How cloud is feeling now? Can you please change my password in the back end?
+
+[00:56:49] Speaker:
+Spinning a project sometimes it works great and sometimes it doesn't. Yeah, yeah, I don't know what you mean. So, did you see what model this is?
+
+[00:57:02] Speaker:
+No. Opus 4.6. Oh, really? It was just released like a couple of hours, maybe within that last two hours, or something on the call in the chat history.
+
+[00:57:14] Speaker:
+Someone's like, oh, they just dropped Opus 4.6, and then I looked it up, it was like five minutes ago from Anthropic.
+
+[00:57:19] Speaker:
+Wow, let me see if I can recall. Please spin up this project in the browser. No, you know what? I'm asking I used to learn about GitHub develop GitHub best practices when working with other people on the code base to build.
+
+[00:58:30] Speaker:
+Yeah. Okay, somehow it messed up my password. Can you please for this username change the password too? Is that working?
+
+[01:01:07] Speaker:
+No, I'm trying. Okay. It's pretty good if they get some stuff. Yeah. Yeah, this took like four hours yesterday. It was like going back and forth trying to fix different things.
+
+[01:01:48] Speaker:
+I'm just trying to get I show you what I'm doing but oh you are you see what I'm doing yeah I'm trying to get it running oh my user is now Chris it's weird but can you please spin up a project because it's right now I cannot reach the website.
+
+[01:02:15] Speaker:
+Honestly tried yourself, you can see it anyway. It's not funny how I just mean like, yeah, I get it. So why don't you try it?
+
+[01:02:38] Speaker:
+It's like, you know, So try it first before you tell me. That's very funny in any way. I think a lot of people are talking very funny to the AI.
+
+[01:03:01] Speaker:
+Like also like Daniel is talking really funny to it's AI. Really how? Yeah, he's like Mr. Claude and La La La.
+
+[01:03:08] Speaker:
+He's like always doing that to you. And like you know, also like this other guy is this. Um, the guy from Australia, I forgot his name.
+
+[01:03:18] Speaker:
+Oh, Ming. No, the tri-tri-tri-tri-lit AI voice agent guy. No, no, no, no. This guy from like he was in the heck, he was in this and an, uh, um, event with Nate Herk, the other guy likes a competition, remember?
+
+[01:03:35] Speaker:
+Oh, yeah. Um, I send you a lot of videos from this guy. I remember I watched the whole thing. Yeah.
+
+[01:03:40] Speaker:
+Um, what is that guy's name? Jay something yeah and he's like always oh the nice oh this is a really beautiful how the antigravity is doing that again you know like he's like like totally like saying like beautiful and you know like all these words for like black screens with like numbers you know and
+
+[01:04:01] Speaker:
+he's always like oh this is really beautiful how it does it you know and like yeah he don't always talks like that.
+
+[01:04:07] Speaker:
+Very funny. Does it change? I guess it impacts the output. I don't think so. But maybe what it does is it impacts your attitude towards AI.
+
+[01:04:20] Speaker:
+You want? You attitude towards AI. And then you actually like to use it. Yeah. Yeah. I mean, there's no need to be like, hey, you piece of shit.
+
+[01:04:32] Speaker:
+I think it doesn't do it. Like I didn't do it yet. I couldn't pull it. So it doesn't have the translation files for some reason.
+
+[01:04:50] Speaker:
+There's an error. Please fix it. But there is I think in this case now it's better if you we have to find out how to properly do that with AI with GitHub for now maybe it's best if you just make a new folder and just uploaded everything there.
+
+[01:05:18] Speaker:
+So it's an old fault that I'm sorry and you just say it community design slash one or community design minus zero two or something like that.
+
+[01:05:30] Speaker:
+Why? Because it didn't work. I thought of some reason I can't pull the risk repository. Can you go to GitHub like the user interface?
+
+[01:05:42] Speaker:
+Yeah, yeah, but it does like, wait, do you try command shift R just to make sure that it's not pulling all the yeah, but it can't pull it from what are you doing?
+
+[01:06:06] Speaker:
+Me? No, no, of course not. Yeah, I it is doing strange stuff. That's funny. Yes. That is weird.
+
+[01:06:26] Speaker:
+It doesn't, I don't get it. The problem is right now it's not, it's not doing it. Yeah, change the model.
+
+[01:06:34] Speaker:
+Sometimes they get a little tired. Yeah, sometimes it just doesn't want I feel sometimes it has like it's like almost human like, you know, I know it's like I don't want to do this, so stop it, kind of like that.
+
+[01:06:49] Speaker:
+Yeah, I had to tell AI like four different times yesterday not to hard code, it's actually especially clawed on the website, like clawed inside of the application, just to check, you know, And then it starts coding.
+
+[01:07:07] Speaker:
+You're like, to stop coding, it was such a question. Yeah, it's like a kid that goes through there, like, you know, and wrinkles, and you're like, ah, can we crazy here?
+
+[01:07:17] Speaker:
+Yeah, look, I made it already. The borders are gone. You know, because they don't have the same guardrails, because then it's not the same system problem.
+
+[01:07:24] Speaker:
+Yeah, it's different. Yeah, so that's, oh, we're good. Let's see if you see. Just a screenshot for some reason I can't get that login right now Well, how about I mean do you want to continue having two separate branches, or do you just want a clone mine?
+
+[01:07:47] Speaker:
+Yeah, we just like like to clone yours so we can continue So find out why stuff is not working Which yeah, we We'll find another branch, something, and then just give me the URL and just download it from there.
+
+[01:08:08] Speaker:
+No, no, no, what I'm saying, you don't have to do that. All I have to do, either you create a new integrated window, or maybe it fixes it, no.
+
+[01:08:18] Speaker:
+Okay. I mean, it should. It's okay. That's for dependencies. these. Yeah. But I could not see in the breed moment where I couldn't see that.
+
+[01:08:34] Speaker:
+I couldn't see the. No, it looks like it's fixing it, checking it. Yeah, try it. Yeah, I cannot see. There's no translation on my end.
+
+[01:08:47] Speaker:
+I show you my I show you this. Wait, wait, wait, wait, go to your terminal. You need to run something you need to because it's not you won't see it yet yeah wait wait yeah yeah go to your terminal run that because you that has to update first before you're going to see anything Yeah, I still don't see
+
+[01:09:08] Speaker:
+that. Yeah, it's not done. Yeah, yeah, yeah, yeah. I want to go down. Hmm. Cool. You see what I'm making a.
+
+[01:09:24] Speaker:
+And get and get a collaboration guide. There we can use and it's an interactive one. So I can just send you the download it and send it and then you can.
+
+[01:09:39] Speaker:
+Yeah, it'll be a reference. We'll see it. I show you a screenshot. So, I have, I think the problem is that I have, well, you know, now I lost you, I think.
+
+[01:10:03] Speaker:
+No, no, very briefly. Okay. Okay. Now, I show you the community, how I got it. Now, let's see if it's working through.
+
+[01:10:14] Speaker:
+What's that yell? Oh, that's mine. Yeah. You'll see like, it's all mixed up now. Yeah, it's not updated because you don't even have the language button at the top.
+
+[01:10:24] Speaker:
+Yeah, exactly. Yes, okay, here's that I recommend. Then maybe if you close the other you can close that answer gravity window and close that.
+
+[01:10:33] Speaker:
+Or just create a new integrity window depending on how much space you have. Yeah. And then make it a new.
+
+[01:10:42] Speaker:
+Well, open at first and then we'll get there. Here I'll close this one for a second. So I stop this anti-gravity and I open a new one, okay, clone repository, right?
+
+[01:11:12] Speaker:
+Which one? My one. your one is which one here it's uh here oh but then the chat okay the browser's sorry and I'm gonna get you the computers I come back in the second you send it somewhere yeah in the chat what's up you know in the chat in this meeting chat.
+
+[01:13:23] Speaker:
+Okay, wait. No, no, it doesn't matter. You got it. Yeah. Now I get it, why it wasn't in mind, because you have it under your username and minus pulling from my username.
+
+[01:13:45] Speaker:
+That was my fault. I shouldn't have forked it first. I should have just worked on one. I didn't know about the feature branch business, but now that I grew, we can just work on.
+
+[01:13:57] Speaker:
+We can keep continuing to use both, but there should be. Yeah, I get, well, maybe that's easier because then you, if you have additions that you have to yours for the, for the, you know, your rewards and stuff.
+
+[01:14:31] Speaker:
+Okay, so the only thing is now I'm obviously missing all those local files. Do I actually only need the local or do I need both?
+
+[01:14:48] Speaker:
+Let me see if I have here because I don't have, yeah, I don't even, they're not even there. Yeah, hang on, I'll send you the other one.
+
+[01:14:59] Speaker:
+I just updated the actual stuff, what else is GBA? Not the GBA here too. So I have another thing. EMV local I have.
+
+[01:15:20] Speaker:
+And you have another EMV as well, right? Yes, I'm going to be out and listen to this student. Actually, you know what is the exact same content?
+
+[01:15:29] Speaker:
+as ENV way, way, way. Yeah, is it? Yes, they're identical. So I'll send you this over five. Yes, send me several anyway.
+
+[01:15:39] Speaker:
+Do you want it in one side for the chat? Yeah, just what's up? Okay. Oh yeah, I can't see you here.
+
+[01:16:03] Speaker:
+Oh yeah, I did. So I did. That's how I did that. You're sending me? You're sending Turn around. What's it have?
+
+[01:16:53] Speaker:
+We're just. I was at service. We're here. We're here. We're here. We're here. Okay. Okay. You should do it. Please spin it up on the browser.
+
+[01:18:14] Speaker:
+Oh, okay. This looks like it. Huh? Before you leave the library, get me something more. I don't know if you're going to commit.
+
+[01:18:24] Speaker:
+Okay. Maybe I should have specified it in the cloud code. I will clarify that from this little. I'm going to turn it over there.
+
+[01:18:57] Speaker:
+Just reply that one. Nope. I did not. I didn't say quad code once. Let's see. So I should have just following in.
+
+[01:19:33] Speaker:
+We don't have to worry about the commands. and so one branch. I want, yeah, I want be easier, but I think having to it would be.
+
+[01:20:23] Speaker:
+Can we just make a copy of whatever the first version is, like a clone of it at that point? It's not what you did I could did I pull the wrong one check the arrow Sometimes I don't know how to stop the guy you know he's like into a sinking of something and I want to just hard stop it and it doesn't want
+
+[01:20:57] Speaker:
+to stop it yeah No, it's like you're just gonna go anyway. Yeah, that's how it's that is like stop it and start.
+
+[01:21:07] Speaker:
+Yeah, I don't know why it sucks. Sorry, okay, so did you. Yeah, but it's right now, it has, it always has the same issue with Prisma in the beginning.
+
+[01:21:30] Speaker:
+Okay, I don't know why, and then I had to fix it, but for some reason, there for some reason, right now, it's in the process of running and I cannot stop that running thingy.
+
+[01:21:43] Speaker:
+Where's the front end? Okay, I got you. Okay, it's an error statement. Yeah, yeah, exactly. I think it was there to see it.
+
+[01:22:13] Speaker:
+It was almost exactly what he gets. Fix the error. Well, okay, no, it doesn't. Yes, the guy Leon Benziel, I sent the video over there.
+
+[01:22:52] Speaker:
+Then you made that front end. It was a, he took a demo. Oh, cool. Now it looks awesome. You got it?
+
+[01:23:00] Speaker:
+Yeah, yeah. Well, let's see. At one moment. Okay. You'll see it. There you go. Yeah. And then go to other pages and see if it, um, and see if it translates.
+
+[01:23:24] Speaker:
+Like, and especially across the calendar, um, the calendar dates, like the days of the week. What So since you have the updated one, why don't I close mine and then I'll close yours and then I'll work on like if then if there are separate features that we want to add, then we can work on work as features
+
+[01:24:08] Speaker:
+that way we know we won't touch the. What I think is funny, I cannot see French, I can only see those.
+
+[01:24:18] Speaker:
+There it is. Yeah, see that see the days of the week those those ones aren't aren't correct. Yeah, but it was saying that because it's such a short string, it doesn't pick it up, but I think that there should be some way to just send the packet to it to let it know like, hey, This three letters, these
+
+[01:24:44] Speaker:
+three letters represent like the day of the week. Yeah. Cool. Cool, cool stuff. And right now it's doing it with a deeper, right?
+
+[01:25:01] Speaker:
+Yeah. Yeah. Good. Why? But if I put it to English, so on deep, I'll give you 500,000 credits or tokens to you.
+
+[01:25:25] Speaker:
+And so I think with all the testing from yesterday, I'm at least at like 5,000. So there's like still a long runway of room.
+
+[01:25:33] Speaker:
+Yeah, yeah, yeah, yeah. Cool, cool. Yeah. So now what did you say about the design, what to make it more personal, right?
+
+[01:25:45] Speaker:
+Just like if you go to a community. Yeah. It looks nice. It's just like so. But you know, I think like we can make it totally much better.
+
+[01:25:57] Speaker:
+Like, you know, like right now, it's, this is English, yes, it's English, okay. Like, for example, like, you know, when we have like a speaker in our community, or if you have like a weekly call or whatever, you know, we could have here like a banner, like a big one, you know, like going all this area
+
+[01:26:19] Speaker:
+, you see? For example, we could have like a picture of you, for example, or whoever is a speaker of that week and we can make like a graphically you know this week on Monday blah blah blah you know the next event we can really push in this one or in this one you know we have like big areas where we
+
+[01:26:40] Speaker:
+can actually put like big banners for our upcoming events. Yeah yeah because yeah then you got even like three technically around the categories you'll have like three space where whatever I'm not, I just if you keep them, keep those things.
+
+[01:26:55] Speaker:
+Yeah, this one is really huge, you know, like in here we can make like a whole lot of seconds. I mean those categories could even go along the top.
+
+[01:27:09] Speaker:
+Yeah, I mean we could do it in school. Like here, and here we can make like upcoming events and like really nice design stuff, You know, yeah, yeah, yeah, yeah, what about a mobile mobile is different mobile we have mobile Like on mobile this On mobile this and this is not visible um Like anyway, yeah
+
+[01:27:44] Speaker:
+, I mean not know because you have to You know Banners in mobile, which just appear and then they disappear like after login, you know, they come like in the middle and it says, you know, like a like when you open like smartphone apps.
+
+[01:28:03] Speaker:
+And then you know, and we can make the same thing on mobile, whenever you log into the app, it says, oh, yeah, it's not in this week, you know.
+
+[01:28:14] Speaker:
+That's smart. I haven't ever done that before, but that'll mean it's trying. But that's very easy. I could even do that without AI.
+
+[01:28:25] Speaker:
+So it's easy. What's that? I can even do that without AI. I don't need AI for that. Yeah, so I think on one side, we can have like life calls and on the other side, we have like all the tools that people can use when they are member in our community.
+
+[01:28:52] Speaker:
+Because I think like if we have a lot of great tools, people will not be able to cancel the community.
+
+[01:29:02] Speaker:
+Because they are dependent on some of the tools we give them access to. Yeah, and then we just have to make sure that we enforce a way that they can't just have access and keep it.
+
+[01:29:13] Speaker:
+No, it's very easy. We just have to wipe code our app and say, always log into our community. And if you don't have access, you have to put the user to use user name and password.
+
+[01:29:27] Speaker:
+And if they can't, then it's not working. It's a real advantage of having like a real school community because you couldn't do it.
+
+[01:29:36] Speaker:
+You know, because we control both, then it works. So the image doesn't under in the, yeah, because they are locally on yours like your So fear image because we haven't, we haven't taught you how you're disappointed sometimes.
+
+[01:30:38] Speaker:
+It's. Like that. Yeah, that makes sense. Yeah, like, yeah, we have to deploy it on a website somewhere. Okay. Well, Claude said you didn't have to do that.
+
+[01:30:55] Speaker:
+What? So they didn't have to have it deployed to share it. It was certain permissions. They have to give, I'll have to pull it up because I have nothing to actually back this up with right now.
+
+[01:31:11] Speaker:
+It's in the closet. But whatever it is, I'll bring it. We just have to put it on a website somewhere and we both have a login, so nothing really can happen.
+
+[01:31:21] Speaker:
+My opinion. whatever Claude said. I'll pull it up. Okay. So I actually went ahead and I called. I called the repo.
+
+[01:32:36] Speaker:
+So if we want to work on different things like on different pages. Like things like that, then we can do that without, like, just as long as we make sure we tell it to start a new future branch.
+
+[01:32:53] Speaker:
+Yeah. Before we begin. Okay. Okay. We try. We try and see if it works. Yeah. We don't have a problem with overriding each other's stuff.
+
+[01:33:11] Speaker:
+We are having an issue with actually seeing what the other person was doing. Right. But I think now it's not a problem because we'll be working on the same main branch.
+
+[01:33:21] Speaker:
+Okay. But on features. So it will automatically go into your director or will try to do it in mind. If I save it now, will it go, am I actually able to save it into your directory?
+
+[01:33:41] Speaker:
+No, you don't have to. You can save it back to yours. You can just work in it like normal. And so basically what will happen now is that so you have your repo open and I call yours and it's open.
+
+[01:33:52] Speaker:
+So if I work on anything and I'm going to say I'm going to add a new feature for banner color or something, whatever the feature.
+
+[01:34:03] Speaker:
+And then it will create a new folder on my directory in a subfolder within the repo. It will work all of its stuff in there.
+
+[01:34:12] Speaker:
+And then only ones is basically the playground. Like you can f*** up. If you f*** up there, you can like have it remove it there and it won't touch anything.
+
+[01:34:19] Speaker:
+But you basically work there, and once it's all ready and good, you can, I can push it back to a lot of push it back.
+
+[01:34:26] Speaker:
+I have to submit a request to you to. Do we see haven't, haven't, haven't merged? Okay. But I don't think we necessarily have to merge to remain all the time and we'll see.
+
+[01:34:47] Speaker:
+I'm going to share. I'm looking at your GitHub screen. I'm looking at your GitHub screen. Okay. Is that good? I thought you'd have the app open.
+
+[01:35:00] Speaker:
+I wanted to see what it looked like and then we can see what we need to fix so we can do it.
+
+[01:35:05] Speaker:
+Okay. I can't make it more central. That looks better. Yeah. Like that. What if I also send the export component with the HTML, I don't want to send you this.
+
+[01:35:36] Speaker:
+What are you sending me now? It's the GitHub collaboration guide. Okay, so I sent the the react component along with the exportable, so Having that hopefully should work in your browser.
+
+[01:36:18] Speaker:
+Oh, yeah, okay, here it comes. Well, you know, yeah, we should what was a bottom D? We don't have a bottom D Well, if we're using Gemini, we should down.
+
+[01:36:32] Speaker:
+We should probably give it like its own agents dot nd file. Yeah, Gemini dot nd. Oh, it's Gemini dot nd, that's like it's called an dot nd.
+
+[01:36:47] Speaker:
+Yeah, I think that this is I think we need to. Yeah, let me get one going because my cloud has a lot of context about this project.
+
+[01:36:58] Speaker:
+Okay, okay. I see what you build there. It's funny that we are having issues with GitHub, but we can create such a complex explanation how to use GitHub.
+
+[01:37:14] Speaker:
+It's just because we haven't done it before, it's just new, that's all it's not like it's but it's very funny that you can make such a professional instructions without actually you know it yeah it's like no but like that then it teaches you like it teaches me right like I like like well it's like my
+
+[01:37:32] Speaker:
+own learning material yeah like I'm not going to be one for that in the same amount of time yeah okay I totally see students in school now submitting papers and they have never read and they don't understand it.
+
+[01:37:49] Speaker:
+It's there. It says my name so it's my school industry has to rethink how they're doing the system because essentially what's going to happen is that all they're doing is submitting A.I.
+
+[01:37:59] Speaker:
+work. Yeah. I think the all those elite universities, they are completely losing their reason of existence. Could be very funny to see you.
+
+[01:38:16] Speaker:
+Well, I mean, yeah, I don't know, they're going to do both the numbers. So how, well, what kind of name do you think?
+
+[01:38:54] Speaker:
+So this, this, what we're hosting on, And it doesn't even, this, whatever, this name of this domain is, is this community?
+
+[01:39:06] Speaker:
+Well, no, like the, why are we building the community? No, no, no, no, hang on, I haven't even gotten to it.
+
+[01:39:13] Speaker:
+I was asking, because right now this is called GSD Community. Right. I'm saying is the name of this ever going to be externally facing such that matters what the name is.
+
+[01:39:26] Speaker:
+Yes. Okay. It will be like science community dot com. No, no, no, no, no, but that's that's the that's the whole.
+
+[01:39:41] Speaker:
+Those are the domains generated by the. the main host, like one of the terms, by the human, by you or me.
+
+[01:39:54] Speaker:
+Okay, it'll, it'll flush out. I saved my A and B's and do you have on what?
+
+[01:40:52] Speaker:
+No, last week you had, if you were able to open it. Yeah, yeah, yeah. Do you mean the community or the, you're in front?
+
+[01:41:00] Speaker:
+No, the community. Yeah, yeah, community here. So it's perfect. Like it loads slowly and I don't know why. But it's there.
+
+[01:41:11] Speaker:
+Are you sharing your screen? I am. You're watching my screen. Look, you can see that. Yes, he's again. Yeah, so it's me.
+
+[01:41:24] Speaker:
+But you're also doing something there? Yeah, yeah, it's just, I was just saying it locals. Oh, okay. Got that same person, the client.
+
+[01:41:37] Speaker:
+Care. Huh? You're the same man, yeah. Yeah, yeah. Always says the same issue. I have no idea why. This doesn't.
+
+[01:41:44] Speaker:
+Oh, you know, does not have the language. We're in the language, we're the language stuff. I think you took an old one for me.
+
+[01:42:04] Speaker:
+But you updated yours and you can see it on your side. I just took yours without updating mine. and I just pulled it.
+
+[01:42:16] Speaker:
+Oh, you're in mind. I pulled it. OK, I pulled yours. OK, right, you pulled my updates to your main branch.
+
+[01:42:28] Speaker:
+So you are in my, I pulled your update to my main computer. But not by ignoring GitHub. I didn't push it to GitHub.
+
+[01:42:36] Speaker:
+I pulled from your GitHub. Ask, ask what branch you're working on, which main branch you're working on. Okay. What branch am I working on?
+
+[01:42:54] Speaker:
+Main branch. I mean, like, what, what, what main branch? I mean, what main branch? It's working. It's really strange today, the antigravity thingy.
+
+[01:43:08] Speaker:
+It's really strange. Strange, strange, strange, strange. Strange. Well, you know what? I really think we need to give it an agent's file.
+
+[01:43:18] Speaker:
+I've literally, It's not possible. Yeah. Yeah. I mean, I know this has all of its agents and stuff in it, but if it doesn't really have instructions for how to, What main branch, am I working on?
+
+[01:43:39] Speaker:
+I think there's the problem is, you know, it's running on some, it's running all the time. And right now, anti-gravity is like really strange for me.
+
+[01:43:50] Speaker:
+Oh, then just open cloud, run a terminal open cloud. Inside of anti-gravity? Yeah, just for running the terminal and open in the middle.
+
+[01:44:01] Speaker:
+or use a clot extension. Yeah, I do. Yeah, I do that. Yeah, it looks like these are the big foundations.
+
+[01:44:23] Speaker:
+And what can you give me the whole URL I'm working on? I'm working on yours, okay, so I'll put it back in my name.
+
+[01:45:06] Speaker:
+Like this, you see it? Oh, that is crazy. You know why it took so forever because it checked every single website we have created in this community.
+
+[01:45:42] Speaker:
+It was like I'm seeing a film right now of every single site. All the languages, all the different sites in every language.
+
+[01:45:52] Speaker:
+You know, it's spun up and then it controls everything and everything with 40 languages means a lot of time. But what's the everything?
+
+[01:46:05] Speaker:
+What's why it doesn't have to? I show you. Like I said, control why it's not working or how it's working and now you see here.
+
+[01:46:20] Speaker:
+It looks like, oh, I see, I think it's in the language, it's the pages, yeah, it takes like everything. And that takes forever, of course.
+
+[01:46:31] Speaker:
+But now, luckily, it's over. Okay, but But you see in WhatsApp, I've seen, I've sent you like, what my stuff is working on.
+
+[01:46:44] Speaker:
+Okay, let's make a V's back in here. No, I don't. Yes, if you've sec loaned it, my local from one, I'm cloning it from there.
+
+[01:47:06] Speaker:
+Yeah, I'm trying to, okay, I have the repo on GitHub and a lot of the folders on my computer, and it all should be updated.
+
+[01:47:14] Speaker:
+Oh, yeah, because I'm going to try opening up one again and then open the drawing line. Am I? Is that what I'm going to write?
+
+[01:47:30] Speaker:
+You know, because I saw a step from here, right? This is still dry. Oh, what? This load here is German or something.
+
+[01:48:32] Speaker:
+I don't see your screen. Oh, sorry. I'm not going to go make. Oh, yeah. What does it do that picture and pictures?
+
+[01:48:55] Speaker:
+There you go. Yeah, it's, it's not English. I think this. So, let's pull Gary in. Okay, so, okay, so with this here, okay, this isn't that we're looking to admit.
+
+[01:49:20] Speaker:
+That's Dennis. Thank you very much. So I'll do some of the videos to start with. Okay, no problem. What is that?
+
+[01:55:37] Speaker:
+Yes, I think we should have like a lot MD and also like a memory, so we don't have to start all over the get all over again with all the instruction.
+
+[01:58:39] Speaker:
+So for your community, you'd be thought about names and content, or do you want to come up with that? I haven't thought more about your community than all mine.
+
+[01:58:49] Speaker:
+But I think, you know, like it's more like a general for every kind of business community. It's just, I think like Marx or Nick's community, but without nerd language.
+
+[01:59:07] Speaker:
+Yeah, it's just basically, you know, like when I did like the like explain rag to scientific, like, you know, when I typed in all those YouTube things from this redhead guy, and then it gave us scientific headlines for the automations.
+
+[01:59:30] Speaker:
+I think something like that, you know, so regular business people So when they read it, they think, oh, okay, that's me.
+
+[01:59:40] Speaker:
+Yeah. Yeah. Password. Password. Can it be that? Can it unhashed? Unhashed? No, yeah. That's a problem. Yeah. It cannot read it.
+
+[02:00:00] Speaker:
+It cannot get the user as a password. But if it's hatched, you have to say, make a new one, and then you have to give it a That's why it isn't where you're working with microdentials.
+
+[02:00:13] Speaker:
+That is funny. That's why that's why that's why That's the one that's the one that integratively login into yeah, that's why I always have to change my password because my old one doesn't work because you make a new one I'll make a new file make a new admin You just have to say make me an admin, just
+
+[02:00:32] Speaker:
+give your Latvia email and say please change my role to admin. That explains a lot. I was like, 20 minutes changing my father's, why is it possible difference?
+
+[02:01:00] Speaker:
+I don't even know how old I got in and I don't know. Yeah. Yeah. Yeah. Yeah. The test one, are you told he was like password one two three?
+
+[02:01:07] Speaker:
+I don't know if it was like an actual password. I'm sorry. Well, I'll use my now. It's okay. It's okay.
+
+[02:01:21] Speaker:
+Sorry about this. You don't exist there yet. It said, did you read it? So you read like the user doesn't it didn't exist.
+
+[02:01:40] Speaker:
+What's that? No, down, down, down, down, down, down, down, down, yes, there, yeah, doesn't exist, you see? Okay. That's something about them.
+
+[02:01:52] Speaker:
+Right. Instead of that database reset, that is, I don't know. It doesn't have the language. Yeah. No, it has. You see?
+
+[02:02:24] Speaker:
+Oh, you're all good. Oh, yes, sweet. But if you make it small for mobile, then it doesn't. Oh, well, that's kind of a, we're going to change.
+
+[02:02:39] Speaker:
+We just have to say, look what happens, screenshot one, screenshot two, as I fix it. No, no, no, I'm saying it's like, But we have to change that of course.
+
+[02:02:52] Speaker:
+Yes, I can do that as a feature now. We'll just change the firmware. Let me find my future. Just say mobile view.
+
+[02:03:56] Speaker:
+Okay. Then it knows what you mean. Okay. Okay. And the base language should always be did data mind by the IP address where we are located.
+
+[02:04:39] Speaker:
+The base language, for example if I log in from Germany. Oh, yeah, let me try. Yeah, you know what? Yeah, because now this work, let me try my surf sharks and see if I can do it.
+
+[02:04:53] Speaker:
+It wasn't working yesterday, but then you know what? So I said it last night, like, before I went to bed.
+
+[02:04:58] Speaker:
+And it was like doing its like update. And it was like the last one that I was going to do was like, well, I'll just have to see it in the morning.
+
+[02:05:04] Speaker:
+And then I woke up and it was like, all translated and already and I did it for me. But I want it by the time I woke up, so let's go.
+
+[02:05:12] Speaker:
+Let's see. Not running anything as it is. Well, I can't even do this. Just a second. I don't know if it works.
+
+[02:05:49] Speaker:
+No, you have to tell it to. The system prompt has to say like always check. Like this plays a language that is connected to the IP address of the user.
+
+[02:06:05] Speaker:
+So we have to tell the IDE first to change that in the system prompt. Wait, so do you want to use on your end in the future?
+
+[02:06:17] Speaker:
+Oh, you can just tell it all. No, no, you're right now in the chat if you just tell it. So what I'm saying is the reason why I'm saying try it as a feature is to try it so that we can get in the hang.
+
+[02:06:38] Speaker:
+I'm doing it that way. Oh, okay. Is okay? Is that why? Is that why you did this? Please change the settings in a way that if I'm logging in from Germany by Piedras, the German version of the community is loaded first and whatever if I'm if I'm logging in from another destination obviously that language
+
+[02:07:01] Speaker:
+destination has to load first okay so that's just not even okay what will that just update the prompt for the for the AI role that actually change anything like that will change the community.
+
+[02:07:23] Speaker:
+The change you just made. Say. No saying that the change that you just made is going to change like not just the system prompt but it'll change like parts of the code.
+
+[02:07:36] Speaker:
+Yeah. Right. So sort of saying, did you open it on a future page? No, I just did that, like, like, I just.
+
+[02:07:47] Speaker:
+Oh, that's fine. You know, that's like one of the things we want in there anyway. Yeah. Okay. Yeah, I just didn't.
+
+[02:08:00] Speaker:
+But maybe I can also say just upload it to a new feature branch. Maybe that works as well. Oh, no, no, once, like I just, yeah, I was going to.
+
+[02:08:12] Speaker:
+I think it's very funny, I think we are doing highly complex things, and at the same time asking highly beginner style questions, like you know it's the same time we are doing very complex stuff, and not knowing what we are actually doing on a very basic level with other stuff.
+
+[02:08:29] Speaker:
+Well, I mean, this is like this is new for both of us. So it's okay. It's It's just because we're in the same repository.
+
+[02:08:50] Speaker:
+Yeah. Or that we're working in, you know, that if we push anything back, that any of the cheat that all the changes get captured in there.
+
+[02:08:59] Speaker:
+And that's what you want to fish. But you also work now a lot with anti-gravity directly, and not so much with Cloud Code, right?
+
+[02:09:23] Speaker:
+I mean, I still use Cloud Code, but I'll first start it out with Integrity, and then if I run into, I mean, now I would rather be like GSD in Cloud Code, You got something more I turn it into governing.
+
+[02:09:39] Speaker:
+How cool language it has. The language bubble, the ball, the Earth's perfect. Yeah, that was quick. So the design, what do you think about it, or maybe we shouldn't?
+
+[02:09:56] Speaker:
+I think it's generally just good. I think in general it is good, but I think like color wise I think the science community we can change color wise I think that would be cool.
+
+[02:10:12] Speaker:
+You know instead of like like grade maybe have a light mint or something like like you know how those medical people or science people are like like like their vibe.
+
+[02:10:30] Speaker:
+Yeah because this is them to. Wonderful. So now wonder if I push this and then you ask for it to be able to see it anyway.
+
+[02:11:00] Speaker:
+I have no idea but now I'm like doing also my thingy. Like if I'm logging in from Germany, then it should be show me the German website.
+
+[02:11:14] Speaker:
+But maybe we can just give that prompt also to you because then on yours is both already installed. Because if you tell it this is the prompt I gave it, then we don't have to do both.
+
+[02:11:28] Speaker:
+Okay. We make changes and if one of us makes changes, then we shouldn't both have to need to make it if we make it in such a way that we can easily push it back and then pull it onto what we're working on instead of like you tell it you're prompt it is one thing I tell it my prompt then we're modifying
+
+[02:12:01] Speaker:
+the exact same things so I think that's gonna create some complex. Yes. So yeah, I think I'll wait. I won't do anything with that since you've already updated it.
+
+[02:12:16] Speaker:
+And then I'm not pushing anything right now. I'm just like trying because you told me to ask my integrative and then I ask my integrative.
+
+[02:12:25] Speaker:
+But I'm not asking to pull it push it upwards. I think it didn't even work. I'm like, like, it's for some reason.
+
+[02:12:35] Speaker:
+I was in another idea just even for, like, to the short term until we feel really comfortable.
+
+[02:12:45] Speaker:
+I know it's good, you know, get in the pattern of like using GitHub and stuff. We could just initially do like one just one of us were kind of at a time yeah and I'm not saying that we don't need to learn how to both do that it's just I think yeah and I think it makes sense you know we can do one at
+
+[02:13:07] Speaker:
+a time yeah and the thing is you know like when I see now I see now we are like working a lot together you know and I think you You know, we are having the same issues on several issues, occasions.
+
+[02:13:20] Speaker:
+So for example, we are both right now making a website. We both need to create videos. We both need to make REC, you know?
+
+[02:13:28] Speaker:
+So maybe it's just better if we can work like this together, you know? But let's say you work on community and ask me questions, you know?
+
+[02:13:37] Speaker:
+And I work on REC or whatever on the website, you know? And I can work on that. So we are both working on each other's project kind of, you know, but it's maybe better than if we are like working on the same stuff at the same time or one is just looking at the screen of the other.
+
+[02:13:56] Speaker:
+Yeah, you know what, yeah. Yeah, nice huge thing. Yeah, I think that's, I think that's a good. because I can totally see that we are doing that, you know, and like when I make my website, I made it like in German and English and French and I don't speak a single word in French, you know, and then possibilities
+
+[02:14:14] Speaker:
+that somebody from France asked for a reg on my website is not that big, you know, but it's possible, you know, if you are if we are working any way together, you know, why why not you take over that guy, you know, and so we are working on all this stuff together and now we have a rag and we want that
+
+[02:14:34] Speaker:
+the rag looks professional and stuff and we need to make videos and we need to kind of make the same kind of videos just once with you and once with me, you know.
+
+[02:14:43] Speaker:
+I think it would make all the sense if we are just like all the time like this and then we can work together so we can answer all our questions but we are on a different project at each time.
+
+[02:14:58] Speaker:
+Yeah, that sounds good. Yeah, that's good like that. Okay. So you want me to do the community then? Yeah, do continue for now today on that one.
+
+[02:15:14] Speaker:
+And I can continue on. Website logo, whatever we have. So from the website like the one I made, did you like the one I made better or the one you made better?
+
+[02:15:42] Speaker:
+Did you show me one yesterday? you made one yesterday? Yeah, I made a lot of them yesterday. I made a lot of them yesterday.
+
+[02:15:55] Speaker:
+I just want to see which one. I said to you and I can't do that. And I opened mine at the same time.
+
+[02:16:20] Speaker:
+Spin ups a project in the browser. Yeah also I think like we will save a lot of time for example like let's say if I if I upload my website to this rail whatever it was called for you and you know and then I do the same with yours you know it's like it's like very quickly you know I did it once now I
+
+[02:16:56] Speaker:
+do it twice you know so I this way we can get it done a lot quicker. I think certain, depending on who the client may be, depending on what their data may be, the only difference I think just for any of the pharma or regulatory clients would just be that the back I need to be on something secure and
+
+[02:17:18] Speaker:
+the rest of is the same. Yeah, we just do not know. Okay, I'll show you my screen of this was the capacity I have.
+
+[02:17:36] Speaker:
+Where's it? Oh, you see it. Okay, yeah, that's so this is one I made. And I was going to like put it like online.
+
+[02:17:47] Speaker:
+I want to have it online. And then I want to connect to this, what is it called, the Frankenstein.
+
+[02:18:02] Speaker:
+Yesterday he told us to do how this, how it works with the web hook. So we can just publish articles inside of our own website.
+
+[02:18:16] Speaker:
+So I think this is a good like project because we kind of need that it will give us free traffic, you know So we should do that for sure and we need a website, you know if we have like a video, you know One thing is to send people to community and the other thing is some people don't want to learn, you
+
+[02:18:35] Speaker:
+know If they see your videos, they say, oh, look here's good and this stuff I want her to make a do do do whatever you know and then they get to your website and say hey good fear I saw your video I want you to make me whatever you know so I think like this website plus community is anyway necessary
+
+[02:18:57] Speaker:
+this then is is what necessary necessary like you know some want to join a community and they want to learn more about AI and some people they like to rule the world and say I need somebody who makes that stuff for me.
+
+[02:19:13] Speaker:
+You know, they don't want to learn, they just want to have somebody who does it for them. Yeah, they need to lay up between them and the integrative.
+
+[02:19:31] Speaker:
+So this one thing, what do you need to, is it ready to go? Is that ready to go or are you still updating it?
+
+[02:19:41] Speaker:
+I mean, it has to know, it has to just, I have to deploy it on a web host. And then I have to integrate it with Rankinstein.
+
+[02:19:53] Speaker:
+So I want to write articles in Rankinstein and they should be published on the website. And then they should be always in German English and French translated the articles like that is the mission So when it was so when do you when do you have to deploy that like does that have to be deployed first or
+
+[02:20:11] Speaker:
+you can do run it in local Play you can test it online I don't want local. I want to have it online Because it's like it causes so many issues, you know like Like you see that like That's probably why I That's probably why I had I had I could never get my love hooks to connect great But I have at times
+
+[02:20:33] Speaker:
+I knew like something would work, but it was always an adrenaline Very possible That's probably why Yeah, yeah Yeah, yeah, I probably have to go somewhere, but I will be back in like half an hour or one hour And then I will deploy it and I come back to the call and then I work on that you work on the
+
+[02:20:55] Speaker:
+community and we can ask questions in between.
+
+==========================================================
+END OF TRANSCRIPT

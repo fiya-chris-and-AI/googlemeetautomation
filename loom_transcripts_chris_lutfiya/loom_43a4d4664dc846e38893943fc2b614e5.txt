@@ -1,0 +1,320 @@
+==========================================================
+LOOM TRANSCRIPT
+Title:    Collaborating on GitHub and Deploying to Vercel 🚀
+Video ID: 43a4d4664dc846e38893943fc2b614e5
+URL:      https://www.loom.com/share/43a4d4664dc846e38893943fc2b614e5
+Date:     Unknown
+Duration: [00:30:46]
+Folder:   Chris/Lutfiya
+Source:   Loom Workspace → Sciencexperts.ai Pipeline
+Extracted: 2026-03-04T19:40:50.596Z
+==========================================================
+
+[00:00:00] Speaker:
+Okay, sorry, I realized I wasn't recording anything. I just didn't want to miss anything that we said we're gonna, um, yeah, yeah.
+
+[00:00:07] Speaker:
+Okay. So, well, Colin, I'm just saying no. No, I call it the same community, CDS, community design or whatever CD is good.
+
+[00:00:37] Speaker:
+That way I'll know because I don't have any other shoulder called CD. Okay. So what we're going to do is deploy it to Versel and then put the connective science experts.
+
+[00:01:00] Speaker:
+Yeah, I think Versel, you just have to log in and tell it what your GitHub repo is. But you have to upload that one to your GitHub repo because that was my problem I had, you know.
+
+[00:01:11] Speaker:
+That's why I couldn't, because I had to verify my GitHub account inside of herself. Okay, so right now and I can't do that with your account obviously.
+
+[00:01:27] Speaker:
+So only the owner of the GitHub can deploy on herself. That was a problem in across place. So is that I mean okay so I cloned yours like initially what I did is no sorry no I didn't clone yours I initially cloned yours which then put it into my repo but at that time we were still early.
+
+[00:01:52] Speaker:
+Are you saying that you want me to do that now or should I just like because right now I just like well I said I cloned your repo.
+
+[00:02:00] Speaker:
+Do you want me what do you want me to do? I want you to say to to anti-gravity please upload this to my GitHub repo Lutfea slash whatever or via whatever like something because you have to go into the cell and connect your own GitHub to the cell and then I will make changes on your GitHub repo, which
+
+[00:02:29] Speaker:
+you just create. Okay, so we'll just give it my, I know it can, I can connect to the CLI. I don't know.
+
+[00:02:41] Speaker:
+I don't know if it is. Is it, is this repo private or public on yours? Check. Public. Okay. Keep the name.
+
+[00:03:20] Speaker:
+Yeah, keeps the name, but put it in my repo. Yeah, no, that's fine. Yeah, it's going to go into my thing.
+
+[00:03:27] Speaker:
+Yeah, you just want to have the same name. Yeah, it looks healthy. What did you drink? This is how fancy it looks like, John, it's a protein with, there's a banana and strawberry and some powders and a nice peanut butter.
+
+[00:04:01] Speaker:
+There go. Going forward, he was getting pushed off to fly out of push to my copy, or if I were to make my attempt to default the origin, okay, so this is online, it created a new one for me.
+
+[00:04:17] Speaker:
+Pushed all objects to the main branch. Added a new remote going into my account. I have two remote origin. The original origin is mine and this one is yours.
+
+[00:04:28] Speaker:
+That's all good. So going forward you say that's the issue. Okay. So mine is going for what should it should use yours.
+
+[00:04:36] Speaker:
+Okay. the possible version. Please sign them. Let's go. That's yours. Okay. I already got it. Hey, got it. Okay, come.
+
+[00:05:10] Speaker:
+Yeah, from you. Perfect. So do you want me to, do you need to spin anything up before I deploy or just deploy it to yourself?
+
+[00:05:23] Speaker:
+Yeah, you can deploy to Brazil. You just have to make sure that you put the ENV stuff in there, but inside of Brazil.
+
+[00:05:30] Speaker:
+Yeah, that's fine. Actually, it has my, it will be fine. I don't know, I'm going to write keywords. And when you fork it, do you have a check mark at copy the main branch only or not?
+
+[00:05:55] Speaker:
+I show you what I mean. Okay. Because this is start like we're kind of challenged with GitHub. It's okay. Like here, like my screen.
+
+[00:06:09] Speaker:
+So I created a fork of yours. Now I want to know, do I have to keep this or not? I created a fork.
+
+[00:06:21] Speaker:
+A fork is a code for your own experience. Because contributing back to by adding your own branch. I don't know.
+
+[00:06:29] Speaker:
+Copy the main branch. Contribute back to if I have been adding your own. Oh, no, no, no. That's that's. That is for if you want to make a fork, meaning like if you want to work on it, like say like a future branch, you would fork it.
+
+[00:06:46] Speaker:
+But you'll basically get, I don't know how come you're doing that. Okay, because I want to fork it so I can also do it.
+
+[00:06:55] Speaker:
+Great. Yeah, yeah. Okay. Yeah. So you should. Okay. So my account. Yeah, you're sure. Okay. Yeah. I mean, you can make a, Because if I make the landing page now, you know, I want to test it.
+
+[00:07:07] Speaker:
+You know, now we are like in early stage. So if I make landing page and we can say, okay, we can check, do we get it now or not?
+
+[00:07:16] Speaker:
+Like you make the changes with Stripe, right? it. And I make the changes with the landing page. And if I upload it to GitHub, you know, does it work because we have worked on completely different things, but I would like to know if that's the right way to do it.
+
+[00:07:32] Speaker:
+Oh, then you know what? No, no, no, no. In that case, yes. Since mine, mine is the origin main, and we're working on mine, you'd want to fork, you'd want to use that fork because that we didn't contribute back to my mean.
+
+[00:07:43] Speaker:
+So I click on fork. Yes. Okay. And then I wait. You say, okay. That's fine. Yeah. I have to change the name because I already received.
+
+[00:08:00] Speaker:
+Okay. And then I switched this off on. Um, maybe. Can you ask Claud about that? I usually leave that on.
+
+[00:08:08] Speaker:
+I think it's just because I think it's whenever there are other feature branches and maybe other people are working on it's it's it's it'll hold on actually if you want to put them in as well but I'm I'm really not sure no problem we just do that hey we want to work with two people on this GitHub and
+
+[00:08:38] Speaker:
+I'm forking her repository and there is a checkmark should I leave that on or off because we're both working on the same read on the same project and I want that if I upload to GitHub that the changes are published on hers as well right okay I know why it enters in German but Okay, I know, but wait,
+
+[00:09:23] Speaker:
+I put this in English. It's interesting. Oh, yeah, that's funny. Yeah, yeah. Oh, do you mean I will? No, because it says like a fork pushed me out of the manchander and to him repo is always a pull request that's how it works.
+
+[00:09:53] Speaker:
+It's different, Latvia. Can you read it? Yeah, this is so workable. Fork your work and your fork and when you want your change to appear, you better pull over because that's what we were doing back and forth.
+
+[00:10:05] Speaker:
+We did originally that we made two origin branches. Yeah, but you should do it differently. You should not you should put me as a collaborator.
+
+[00:10:14] Speaker:
+That is a collaborator directly in her repository. Okay, I'll do that now. I didn't know that that was a thing.
+
+[00:10:21] Speaker:
+Exactly. We need them. Okay. Well, I guess I'm going to have settings. Oh, I know we can totally be collaborators because I, okay, I just, I never needed it before.
+
+[00:10:40] Speaker:
+I didn't realize that this was, yeah, this will be good because then we'll be still have authorization and get him.
+
+[00:10:53] Speaker:
+Okay, collaborators. Which repository, oh, nicotis general. Is it peripository? I think so. I would assume so. Okay. For sure. Yeah.
+
+[00:11:12] Speaker:
+You are applied globally. Okay. Collaborators. This is required to provide the public direct access. Yeah. Only on platform. And you are always a CHR.
+
+[00:11:27] Speaker:
+Chris 54. Okay, that was it if that's all that we had to do to mind you I don't know about it being like if I need to release or deploy on my sell versus one in your region?
+
+[00:11:56] Speaker:
+Oh, no, no, we have like, we have to make sure that the stuff is on yours because like, it's illegal stuff, you know, you have like, everything is United States, that's good.
+
+[00:12:09] Speaker:
+Okay. Yeah, so you have to invite now. And since this will be Tell it now, I can tell it now, but the expert science, science experts, dot AI.
+
+[00:12:32] Speaker:
+If you say that, like now, we're to wait till after. I don't think it needs to know. Okay. Cool. I mean, the thing is you just need to log in to Marcel, connected and then we, you can give me, that's actually a good idea.
+
+[00:12:48] Speaker:
+Go in the cell now. No, this can do it. but it can go into, okay, I'll go into. I'll show you how I would do it.
+
+[00:12:57] Speaker:
+I mean, it's possible that, but maybe it's a CLA. Okay. Yeah. But we need to go in Versaille anyhow, because you know, we need to have like the, the same stuff from yesterday, from the email, it would just be more simple.
+
+[00:13:12] Speaker:
+Because I have to connect the domain to Versaille. Yeah, that's no problem. Let me change this to lightning. Okay. But here's what I'm still going to do because it needs to be deployed anyway.
+
+[00:13:33] Speaker:
+Okay, I'm going to let it deploy it and then we'll get the values from here. And I have to open the thing anyway.
+
+[00:13:41] Speaker:
+Of course this I will come back to that and come back to this. I just wanted this to be the only browser that is perfect.
+
+[00:13:48] Speaker:
+Yes, now I push access to your. That's what we needed all the time. Okay, I'll change it. That's okay, change it to more games.
+
+[00:14:07] Speaker:
+Okay. That's not what I want to connect. I want to connect to my radar. All races connected. I'll do it here.
+
+[00:14:29] Speaker:
+Because it's not. It's open. It just add new. Okay. Yeah. Like exactly like that. I will do it. Yeah. Perfect.
+
+[00:14:45] Speaker:
+Any board enabled. I think you just have to stop it first. Yeah. I'm just going to shut up with this.
+
+[00:15:37] Speaker:
+Oh, environment variables. Which I do not mean something. There's no super base. Yeah, I will. Get the English. Should I give them to you and chat?
+
+[00:15:58] Speaker:
+I think I have a content that but if you if it's. Actually, if you can send that because it's on my drive that's connected to my other laptop.
+
+[00:16:12] Speaker:
+Yeah, yeah. I mean, I'll just save in here and then I don't do it. Oh, but we have to be careful because now, I mean, it's okay.
+
+[00:16:40] Speaker:
+But the other community, we have to create the new, like super based and stuff, you know, because otherwise. it's all going indifferent.
+
+[00:16:55] Speaker:
+It's all in the same, all communities safe in the same community in the same super base, you know? We should keep them separate.
+
+[00:17:03] Speaker:
+Right, so the one that's connected right now, isn't it mine? Where's it on yours? Yeah, it's just, it does matter.
+
+[00:17:08] Speaker:
+We just developed. So it's something we just have to think, we just have to think about that. I mean, I have my, I have a get help back and for this.
+
+[00:17:22] Speaker:
+Yeah, but we have a super base. I have a super base. Yeah, but we are using the same super base.
+
+[00:17:29] Speaker:
+So this one was a super base. We have developed a community all along, you know. Yeah, which is on my, my thing.
+
+[00:17:35] Speaker:
+Yeah, exactly. So now it's also I have one copy on my versatile and you have one copy on your sell on and yours we actually use for your community.
+
+[00:17:47] Speaker:
+So whenever I make the other community available, I have to use different supervases. Yes. Here are some chats, right? Do I put everything in here?
+
+[00:18:09] Speaker:
+This is all chat. Oh, yeah, it's all like that. It probably won't be on the text one. Is that a dot?
+
+[00:18:21] Speaker:
+Dot ENV. Yeah, just don't even be OK. It had to. It had a dot in ENV local, but it told me it only needs one, actually.
+
+[00:18:31] Speaker:
+So you just need to have an ENV. Yeah, I'm just going to. You sure you want to use a name that begins the end of the period.
+
+[00:18:46] Speaker:
+Yeah, what a question. All the resunds have my resundee API key. And we haven't configured it, but I'll get it in there.
+
+[00:19:03] Speaker:
+So that, uh, what is it? Okay, two, API keys, through it somewhere. Okay, copy and put this into I'm going to move this over here on this laptop and just a second else from you.
+
+[00:20:04] Speaker:
+Now, I'm going to get a little better eyes. Here we go. Do you want, do you have this API key for recent?
+
+[00:20:40] Speaker:
+I do not want me to send it to you. which one? The recent data. No, I don't have that. No.
+
+[00:20:44] Speaker:
+Do you want me to send that to you, sir? No, because it's okay. If you, I'm just doing that part.
+
+[00:20:50] Speaker:
+Just do that now because I can, No, I actually, Actually, no, recent? That one is, I have to, I'll put it in now.
+
+[00:20:57] Speaker:
+But I will have to do some configuration on the recent side to change the, You know? But for now, I can put it there.
+
+[00:21:03] Speaker:
+Never change that. The recent should be connected to our, To your, Yeah. Yeah, so maybe I'll do that science experts remain.
+
+[00:21:14] Speaker:
+Yeah. Okay, so I want to go to recent. I mean, I'll have anti-gravity, try to pitch in for that. So I'll only go save.
+
+[00:21:26] Speaker:
+I think it's going to be a good one. That's how you do it. Oh, instead of doing it here. I just added, I just clicked on add environment variables.
+
+[00:22:23] Speaker:
+Yeah, you can do it that way. Yeah, both works. Yes. Oh, now it's Gemini 3.1 Pro. Oh, I guess. Gemini.
+
+[00:23:00] Speaker:
+Is it the change the actual name of API key? No, but Gemini 3.1 was just released. That's what I said.
+
+[00:23:08] Speaker:
+Ah, yes, yes. Oh, I thought you wanted me to change something in the variables. Yeah, I thought it was really semi-tried.
+
+[00:23:13] Speaker:
+Have you tried it? Not yet. Not yet. Just as covered in. Yeah, I'm happy when we have those communities online, you know, and we're just developing tools.
+
+[00:23:24] Speaker:
+It's nice. Yeah, yeah, and that's fun too. CD, blood cell. only in one, that's what you're seeing. Where's the AIS Studio for?
+
+[00:24:22] Speaker:
+Oh, what? Was it API key? No. No, no, no. That's what Gemini 3.1 knew. Oh, this for chat or is that separate from?
+
+[00:24:36] Speaker:
+It's in entity as well, it's an empty entity as well. That's why I found it out. Yeah, yeah, just click on Opus, the model at below.
+
+[00:24:48] Speaker:
+And there on. It can probably do some cool shit. We'll figure out a little later. Yeah, this summer. I'm going some look-in.
+
+[00:25:06] Speaker:
+Oh, sweet. Okay. There we go. Blonde 7. We're the deployment URL. Okay. Inspec. So production URL. And then what's production URL?
+
+[00:25:18] Speaker:
+I'm going to start sharing with me. Inspec. More than. Okay. And then there's almost a. Okay, what's what's the difference?
+
+[00:25:33] Speaker:
+Deployment, I don't know either. Oh, okay, just is, no, I have no idea. Yeah, because they both go to the same thing.
+
+[00:25:42] Speaker:
+Yeah. So I'll call on to me what's that? But we what we definitely need to do now is connect it connected to our domain.
+
+[00:25:53] Speaker:
+Okay. Okay, so that's that space. Constriping probably won't work until we have a real domain connected to it. Yeah, so it's two hours of space, well, space ship, I did a space mail, or whatever, or you have to do it.
+
+[00:26:11] Speaker:
+Oh, I have to do it, but you just have to go in the cell and connect, like going to cell directly?
+
+[00:26:16] Speaker:
+Yeah, oops, no, that's yes. What do you need here? Okay, let's go up. Okay, can you go on, do you have Claude installed on Comet?
+
+[00:26:37] Speaker:
+Claude on Comet. I have Comet and I have cloud like the comment comment not like it not like it's cloud the extension now you should have that I told you why I show you why because this is something I would know actually you can I know I can see already how it's done I just click on domains actually
+
+[00:27:01] Speaker:
+but you should be you should do it at some point because it's nice to have okay now it just Addix existing at the top next to the buy button.
+
+[00:27:12] Speaker:
+Yeah, and now put it in. Yeah, yeah, production is good. Yes, now we have to do an sr. Yeah, yeah, this is good, that's good.
+
+[00:27:37] Speaker:
+Okay, first. Wait a second. Can you copy that one for me? This one? Yes. Sure. One moment. I did the maximise thing again.
+
+[00:27:56] Speaker:
+There we go. I'm going to have to go in just about five minutes because I've got to go pick up bar, pick up my lunch and school.
+
+[00:28:23] Speaker:
+Yeah, of course, but maybe we get to really fast, okay, custom DMS, is a DMS, yes, okay.
+
+[00:29:35] Speaker:
+Okay, A at the IP address, values A, okay, and then the one below, one second, one second, one second.
+
+[00:30:06] Speaker:
+Okay. And then we have seen in a copy that for you. I'm sorry, I didn't need to put that much base on it, okay.
+
+[00:30:20] Speaker:
+And then we have that long thing here. I put in the chat. Yeah, yeah, it's all good, okay, I can take off.
+
+[00:30:29] Speaker:
+All right, okay, cool, I'll talk to you in a bit then, yeah, bye bye.
+
+==========================================================
+END OF TRANSCRIPT
