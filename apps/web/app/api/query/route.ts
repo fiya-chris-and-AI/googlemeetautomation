@@ -53,15 +53,42 @@ export async function POST(request: Request) {
             similarity: number;
         }>;
 
+        // Fallback: if scoped to a specific transcript but RAG returned no chunks,
+        // fetch the raw transcript directly so the user always gets an answer
+        if (matchedChunks.length === 0 && transcriptId) {
+            const { data: rawTranscript } = await supabase
+                .from('transcripts')
+                .select('meeting_title, meeting_date, raw_transcript')
+                .eq('id', transcriptId)
+                .single();
+
+            if (rawTranscript) {
+                // Take first 6000 chars as context — enough for most questions
+                const excerpt = rawTranscript.raw_transcript.slice(0, 6000);
+                matchedChunks.push({
+                    id: 'fallback-raw',
+                    transcript_id: transcriptId,
+                    meeting_title: rawTranscript.meeting_title,
+                    meeting_date: rawTranscript.meeting_date,
+                    text: excerpt,
+                    similarity: 0,
+                });
+            }
+        }
+
         // Step 3: Build context and call Claude
         const context = matchedChunks
             .map((c, i) => `[Source ${i + 1}: ${c.meeting_title} (${new Date(c.meeting_date).toLocaleDateString()})]\n${c.text}`)
             .join('\n\n---\n\n');
 
-        const systemPrompt = `You are a helpful assistant that answers questions about meeting transcripts.
-Use ONLY the provided context to answer. If the context doesn't contain enough information, say so.
-Cite your sources by referencing the meeting title and date.
-Be concise but thorough.`;
+        const systemPrompt = `You are a knowledgeable assistant for ScienceExperts.ai, a transcript analysis platform used by Dr. Lutfiya Miller and Chris Müller.
+
+You answer questions about meeting transcripts using ONLY the provided context. Structure your response clearly:
+- Use markdown formatting (headers, bold, bullet points) for readability
+- Be specific — reference actual names, tools, features, and dates mentioned in the transcripts
+- If the context doesn't contain enough information to fully answer, say what you can answer and note what's missing
+- Cite the meeting title and date when referencing specific information
+- Keep responses concise but thorough`;
 
         const userPrompt = context
             ? `Context from meeting transcripts:\n\n${context}\n\n---\n\nQuestion: ${question}`

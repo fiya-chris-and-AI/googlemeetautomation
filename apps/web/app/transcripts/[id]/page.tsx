@@ -1,19 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import ReactMarkdown from 'react-markdown';
 import type { MeetingTranscript, QueryResponse, ActionItem } from '@meet-pipeline/shared';
 
-/** Color palette for speaker highlighting. */
-const SPEAKER_COLORS = [
-    'text-brand-400',
-    'text-accent-teal',
-    'text-accent-violet',
-    'text-accent-amber',
-    'text-accent-rose',
-    'text-emerald-400',
-    'text-sky-400',
-    'text-orange-400',
-];
 
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
@@ -32,6 +22,8 @@ export default function TranscriptDetailPage({
     const [asking, setAsking] = useState(false);
     const [actionItems, setActionItems] = useState<ActionItem[]>([]);
     const [extracting, setExtracting] = useState(false);
+    const [summary, setSummary] = useState<string | null>(null);
+    const [summaryLoading, setSummaryLoading] = useState(false);
 
     // ── Editing state ────────────────────────────
     const [editingTitle, setEditingTitle] = useState(false);
@@ -81,6 +73,17 @@ export default function TranscriptDetailPage({
             .then((data) => { if (Array.isArray(data)) setActionItems(data); })
             .catch(() => { });
     }, [params.id]);
+
+    useEffect(() => {
+        if (!transcript || summary !== null || summaryLoading) return;
+        setSummaryLoading(true);
+
+        fetch(`/api/transcripts/${transcript.transcript_id}/summarize`)
+            .then((r) => r.json())
+            .then((data) => setSummary(data.summary ?? 'Unable to generate summary.'))
+            .catch(() => setSummary('Unable to generate summary.'))
+            .finally(() => setSummaryLoading(false));
+    }, [transcript, summary]);
 
     const handleAsk = async () => {
         if (!question.trim() || !transcript) return;
@@ -139,13 +142,7 @@ export default function TranscriptDetailPage({
         );
     }
 
-    // Build a speaker→color map
-    const speakerColorMap = new Map<string, string>();
-    transcript.participants.forEach((p, i) => {
-        speakerColorMap.set(p, SPEAKER_COLORS[i % SPEAKER_COLORS.length]);
-    });
-
-    // Highlight speakers in the transcript text
+    // Split transcript into lines for rendering
     const lines = transcript.raw_transcript.split('\n');
 
     return (
@@ -201,8 +198,8 @@ export default function TranscriptDetailPage({
                     {/* Save status indicator */}
                     {saveStatus !== 'idle' && (
                         <p className={`text-xs mb-3 transition-opacity ${saveStatus === 'saving' ? 'text-theme-text-muted' :
-                                saveStatus === 'saved' ? 'text-emerald-400' :
-                                    'text-rose-400'
+                            saveStatus === 'saved' ? 'text-emerald-400' :
+                                'text-rose-400'
                             }`}>
                             {saveStatus === 'saving' ? 'Saving…' :
                                 saveStatus === 'saved' ? 'Saved ✓' :
@@ -234,34 +231,114 @@ export default function TranscriptDetailPage({
                         </div>
                         {answer && (
                             <div className="mt-4 pt-4 border-t border-theme-border">
-                                <p className="text-sm text-theme-text-primary whitespace-pre-wrap">{answer.answer}</p>
+                                <div className="text-sm text-theme-text-primary prose prose-invert prose-sm max-w-none
+                                    prose-headings:text-theme-text-primary prose-headings:text-sm prose-headings:font-semibold prose-headings:mt-3 prose-headings:mb-1
+                                    prose-p:my-1 prose-p:leading-relaxed
+                                    prose-li:my-0.5 prose-li:text-theme-text-secondary
+                                    prose-strong:text-theme-text-primary prose-strong:font-semibold
+                                    prose-ul:my-1 prose-ol:my-1">
+                                    <ReactMarkdown>{answer.answer}</ReactMarkdown>
+                                </div>
                             </div>
                         )}
                     </div>
 
+                    {/* Meeting Summary */}
+                    <div className="glass-card p-5 mb-6">
+                        <div className="flex items-center justify-between mb-3">
+                            <h2 className="text-xs font-medium uppercase tracking-wider text-theme-text-tertiary flex items-center gap-1.5">
+                                <span className="text-brand-400">✦</span> Meeting Summary
+                            </h2>
+                            {summary && !summaryLoading && (
+                                <button
+                                    onClick={() => { setSummary(null); }}
+                                    className="text-[11px] font-medium text-brand-400 hover:text-brand-300 transition-colors"
+                                >
+                                    Regenerate
+                                </button>
+                            )}
+                        </div>
+                        {summaryLoading ? (
+                            <div className="space-y-2">
+                                <div className="h-3 bg-theme-border/30 rounded animate-pulse w-full" />
+                                <div className="h-3 bg-theme-border/30 rounded animate-pulse w-5/6" />
+                                <div className="h-3 bg-theme-border/30 rounded animate-pulse w-4/6" />
+                            </div>
+                        ) : summary ? (
+                            <div className="text-sm text-theme-text-secondary leading-relaxed prose prose-invert prose-sm max-w-none
+                                            prose-headings:text-theme-text-primary prose-headings:text-base prose-headings:font-semibold prose-headings:mt-4 prose-headings:mb-2
+                                            prose-p:my-1.5 prose-p:leading-relaxed
+                                            prose-li:my-0.5 prose-li:text-theme-text-secondary
+                                            prose-strong:text-theme-text-primary prose-strong:font-semibold
+                                            prose-ul:my-1.5 prose-ol:my-1.5">
+                                <ReactMarkdown>{summary}</ReactMarkdown>
+                            </div>
+                        ) : null}
+                    </div>
+
                     {/* Transcript Text */}
-                    <div className="glass-card p-6 font-mono text-sm leading-relaxed custom-scrollbar max-h-[calc(100vh-300px)] overflow-y-auto">
+                    <div className="glass-card p-6 font-sans text-[0.9rem] leading-[1.85] custom-scrollbar max-h-[calc(100vh-300px)] overflow-y-auto">
                         {lines.map((line, i) => {
-                            // Find if this line starts with a known speaker
+                            const trimmed = line.trim();
+
+                            // Detect timestamp lines like [00:01:28]
+                            const timestampMatch = trimmed.match(/^\[(\d[\d:]+)\](.*)/);
+                            if (timestampMatch) {
+                                const timestamp = timestampMatch[1];
+                                const afterTimestamp = timestampMatch[2]?.trim() ?? '';
+
+                                // Check if there's a speaker name after the timestamp
+                                const speaker = transcript.participants.find((p) =>
+                                    afterTimestamp.startsWith(`${p}:`) || afterTimestamp.startsWith(`${p} -`) || afterTimestamp.startsWith(`${p} –`)
+                                );
+
+                                if (speaker) {
+                                    const colorClass = 'text-brand-400';
+                                    const speakerEnd = afterTimestamp.indexOf(speaker) + speaker.length;
+                                    const rest = afterTimestamp.substring(speakerEnd).replace(/^[:\s–-]+/, ' ');
+
+                                    return (
+                                        <div key={i} className="mb-4">
+                                            <span className="font-mono text-[0.7rem] text-theme-text-muted">[{timestamp}]</span>
+                                            <p className="mt-0.5">
+                                                <span className={`font-semibold ${colorClass}`}>{speaker}</span>
+                                                <span className="text-theme-text-primary">{rest}</span>
+                                            </p>
+                                        </div>
+                                    );
+                                }
+
+                                // Timestamp line without a recognized speaker
+                                return (
+                                    <div key={i} className="mb-4">
+                                        <span className="font-mono text-[0.7rem] text-theme-text-muted">[{timestamp}]</span>
+                                        {afterTimestamp && (
+                                            <p className="text-theme-text-primary mt-0.5">{afterTimestamp}</p>
+                                        )}
+                                    </div>
+                                );
+                            }
+
+                            // Non-timestamp line: check for speaker
                             const speaker = transcript.participants.find((p) =>
-                                line.trim().startsWith(`${p}:`) || line.trim().startsWith(`${p} -`) || line.trim().startsWith(`${p} –`)
+                                trimmed.startsWith(`${p}:`) || trimmed.startsWith(`${p} -`) || trimmed.startsWith(`${p} –`)
                             );
 
                             if (speaker) {
-                                const colorClass = speakerColorMap.get(speaker) ?? 'text-theme-text-primary';
+                                const colorClass = 'text-brand-400';
                                 const prefix = line.substring(0, line.indexOf(speaker) + speaker.length);
                                 const rest = line.substring(prefix.length);
 
                                 return (
-                                    <p key={i} className="mb-1">
+                                    <p key={i} className="mb-4">
                                         <span className={`font-semibold ${colorClass}`}>{prefix}</span>
-                                        <span className="text-theme-text-secondary">{rest}</span>
+                                        <span className="text-theme-text-primary">{rest}</span>
                                     </p>
                                 );
                             }
 
                             return (
-                                <p key={i} className="text-theme-text-secondary mb-1">
+                                <p key={i} className="text-theme-text-primary mb-1">
                                     {line || '\u00A0'}
                                 </p>
                             );
@@ -297,20 +374,7 @@ export default function TranscriptDetailPage({
                             </span>
                         </MetaField>
                         <MetaField label="Processed At" value={new Date(transcript.processed_at).toLocaleString()} />
-                        <div>
-                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-2">
-                                Participants ({transcript.participants.length})
-                            </p>
-                            <div className="space-y-1.5">
-                                {transcript.participants.map((p) => (
-                                    <div key={p} className="flex items-center gap-2">
-                                        <div className={`w-2 h-2 rounded-full ${speakerColorMap.get(p)?.replace('text-', 'bg-') ?? 'bg-theme-text-tertiary'
-                                            }`} />
-                                        <span className="text-sm text-theme-text-secondary">{p}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+
                     </div>
 
                     {/* Action Items for this transcript */}
