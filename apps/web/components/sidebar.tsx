@@ -12,6 +12,7 @@ const NAV_ITEMS = [
     { href: '/calendar', label: 'Calendar', icon: '◫' },
     { href: '/transcripts', label: 'Transcripts', icon: '◇' },
     { href: '/action-items', label: 'Action Items', icon: '☑' },
+    { href: '/decisions', label: 'Decisions', icon: '◩' },
     { href: '/ask', label: 'Ask AI', icon: '◈' },
     { href: '/logs', label: 'Logs', icon: '◉' },
 ] as const;

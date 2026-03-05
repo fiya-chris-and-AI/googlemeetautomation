@@ -53,6 +53,24 @@ export async function POST(request: Request) {
             similarity: number;
         }>;
 
+        // Step 2b: Also search for relevant decisions
+        const { data: matchedDecisions } = await supabase.rpc('match_decisions', {
+            query_embedding: queryEmbedding,
+            match_count: 3,
+            match_threshold: 0.78,
+            filter_status: 'active',
+        });
+
+        const relevantDecisions = (matchedDecisions ?? []) as Array<{
+            id: string;
+            transcript_id: string;
+            decision_text: string;
+            context: string;
+            domain: string;
+            decided_at: string;
+            similarity: number;
+        }>;
+
         // Fallback: if scoped to a specific transcript but RAG returned no chunks,
         // fetch the raw transcript directly so the user always gets an answer
         if (matchedChunks.length === 0 && transcriptId) {
@@ -77,7 +95,14 @@ export async function POST(request: Request) {
         }
 
         // Step 3: Build context and call Claude
-        const context = matchedChunks
+        // Build decision context if any matched
+        const decisionContext = relevantDecisions.length > 0
+            ? `IMPORTANT — Previously recorded decisions that may be relevant:\n\n${relevantDecisions
+                .map((d, i) => `[Decision ${i + 1} (${new Date(d.decided_at).toLocaleDateString()}): ${d.decision_text}${d.context ? ` Context: ${d.context}` : ''}]`)
+                .join('\n\n')}\n\n---\n\n`
+            : '';
+
+        const context = decisionContext + matchedChunks
             .map((c, i) => `[Source ${i + 1}: ${c.meeting_title} (${new Date(c.meeting_date).toLocaleDateString()})]\n${c.text}`)
             .join('\n\n---\n\n');
 
@@ -88,7 +113,9 @@ You answer questions about meeting transcripts using ONLY the provided context. 
 - Be specific — reference actual names, tools, features, and dates mentioned in the transcripts
 - If the context doesn't contain enough information to fully answer, say what you can answer and note what's missing
 - Cite the meeting title and date when referencing specific information
-- Keep responses concise but thorough`;
+- Keep responses concise but thorough
+
+DECISION AWARENESS: If the context includes previously recorded decisions that are relevant to the question, ALWAYS mention them prominently at the start of your answer. Use phrasing like "Note: You previously decided on [date] that [decision]." This helps prevent re-debating settled topics. If the question seems to be reconsidering a past decision, point that out diplomatically.`;
 
         const userPrompt = context
             ? `Context from meeting transcripts:\n\n${context}\n\n---\n\nQuestion: ${question}`

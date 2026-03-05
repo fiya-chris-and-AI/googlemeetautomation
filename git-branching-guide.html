@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git Branching Guide for Fiya</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1119;
+    --surface: #181b27;
+    --surface-2: #1e2233;
+    --border: #2a2f45;
+    --text: #e4e6f0;
+    --text-dim: #8b90a8;
+    --main-color: #ff6b4a;
+    --main-glow: rgba(255, 107, 74, 0.15);
+    --dev-color: #4ac7ff;
+    --dev-glow: rgba(74, 199, 255, 0.15);
+    --feature-color: #a78bfa;
+    --feature-glow: rgba(167, 139, 250, 0.15);
+    --local-color: #34d399;
+    --local-glow: rgba(52, 211, 153, 0.15);
+    --remote-color: #fbbf24;
+    --remote-glow: rgba(251, 191, 36, 0.15);
+    --accent: #ff6b4a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 0;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8em;
+    font-weight: 400;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--main-color), var(--dev-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 1.15em;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7em;
+    font-weight: 400;
+    margin: 50px 0 20px;
+    color: var(--text);
+  }
+
+  h2 .num {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65em;
+    margin-right: 10px;
+    opacity: 0.7;
+  }
+
+  p { margin-bottom: 16px; font-size: 1.05em; }
+
+  .diagram-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin: 24px 0 32px;
+    overflow-x: auto;
+    position: relative;
+  }
+
+  .diagram-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(90deg, var(--main-color), var(--dev-color), var(--feature-color));
+  }
+
+  pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82em;
+    line-height: 1.65;
+    color: var(--text);
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .label-main { color: var(--main-color); font-weight: 600; }
+  .label-dev { color: var(--dev-color); font-weight: 600; }
+  .label-feat { color: var(--feature-color); font-weight: 600; }
+  .label-local { color: var(--local-color); font-weight: 600; }
+  .label-remote { color: var(--remote-color); font-weight: 600; }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0 32px;
+  }
+
+  .concept-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .concept-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+
+  .concept-card.local::after { background: var(--local-color); }
+  .concept-card.remote::after { background: var(--remote-color); }
+  .concept-card.main-card::after { background: var(--main-color); }
+  .concept-card.dev-card::after { background: var(--dev-color); }
+  .concept-card.feat-card::after { background: var(--feature-color); }
+
+  .concept-card h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .concept-card.local h3 { color: var(--local-color); }
+  .concept-card.remote h3 { color: var(--remote-color); }
+  .concept-card.main-card h3 { color: var(--main-color); }
+  .concept-card.dev-card h3 { color: var(--dev-color); }
+  .concept-card.feat-card h3 { color: var(--feature-color); }
+
+  .concept-card p {
+    font-size: 0.95em;
+    color: var(--text-dim);
+    margin-bottom: 0;
+  }
+
+  .analogy {
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-style: italic;
+    color: var(--text-dim);
+  }
+
+  .analogy strong { color: var(--text); font-style: normal; }
+
+  .step-list {
+    list-style: none;
+    margin: 20px 0;
+    counter-reset: steps;
+  }
+
+  .step-list li {
+    counter-increment: steps;
+    padding: 14px 20px 14px 56px;
+    margin-bottom: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    position: relative;
+    font-size: 1em;
+  }
+
+  .step-list li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 18px;
+    top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.85em;
+    color: var(--accent);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: var(--main-glow);
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88em;
+    background: var(--surface-2);
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    color: var(--dev-color);
+  }
+
+  .flow-section {
+    margin: 30px 0;
+  }
+
+  .flow-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+
+  .recommendation {
+    background: linear-gradient(135deg, rgba(255, 107, 74, 0.08), rgba(74, 199, 255, 0.08));
+    border: 1px solid rgba(255, 107, 74, 0.25);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px 0;
+  }
+
+  .recommendation h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3em;
+    color: var(--main-color);
+    margin-bottom: 14px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75em;
+    font-weight: 600;
+  }
+
+  .tag-main { background: var(--main-glow); color: var(--main-color); border: 1px solid rgba(255,107,74,0.3); }
+  .tag-dev { background: var(--dev-glow); color: var(--dev-color); border: 1px solid rgba(74,199,255,0.3); }
+  .tag-feat { background: var(--feature-glow); color: var(--feature-color); border: 1px solid rgba(167,139,250,0.3); }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 50px 0;
+  }
+
+  .command-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+  }
+
+  .command-block .prompt { color: var(--text-dim); }
+  .command-block .cmd { color: var(--local-color); }
+  .command-block .comment { color: var(--text-dim); font-style: italic; }
+
+  @media (max-width: 700px) {
+    .page { padding: 30px 20px; }
+    h1 { font-size: 2em; }
+    .concept-grid { grid-template-columns: 1fr; }
+    pre { font-size: 0.72em; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Git Branching Guide</h1>
+<p class="subtitle">A plain-language visual guide for collaborating with Chris on your Google Meet app</p>
+
+<!-- SECTION 1 -->
+<h2><span class="num">01</span> What is "the remote"?</h2>
+
+<p>Think of your code as existing in two places. Your computer (called <strong>"local"</strong>) is where you actually write and edit code. GitHub (called <strong>"the remote"</strong>) is the shared copy in the cloud where you and Chris can both access the code.</p>
+
+<div class="concept-grid">
+  <div class="concept-card local">
+    <h3>Local (Your Computer)</h3>
+    <p>Your personal copy of the code. You edit files here, make commits, and test things. Only you can see changes here until you <strong>push</strong> them.</p>
+  </div>
+  <div class="concept-card remote">
+    <h3>Remote (GitHub)</h3>
+    <p>The shared copy in the cloud. Both you and Chris can <strong>push</strong> code up to it and <strong>pull</strong> code down from it. Your remote is called <code>work</code>.</p>
+  </div>
+</div>
+
+<div class="analogy">
+  <strong>Analogy:</strong> Think of it like a shared Google Doc. Your local copy is like editing offline on your laptop. The remote is the live Google Doc that both of you sync with. "Pulling" downloads the latest version. "Pushing" uploads your changes.
+</div>
+
+<div class="diagram-box">
+<pre>
+  <span class="label-local">YOUR COMPUTER (local)</span>             <span class="label-remote">GITHUB (remote "work")</span>
+  ┌─────────────────────┐             ┌─────────────────────┐
+  │                     │   git push  │                     │
+  │   Your code files   │ ──────────► │   Shared code on    │
+  │   that you edit     │             │   GitHub that both   │
+  │                     │ ◄────────── │   you & Chris see   │
+  │                     │   git pull  │                     │
+  └─────────────────────┘             └─────────────────────┘
+                                                ▲
+                                                │ git push
+                                                │ git pull
+                                                ▼
+                                      ┌─────────────────────┐
+                                      │  <span class="label-remote">CHRIS'S COMPUTER</span>    │
+                                      │  (his local copy)    │
+                                      └─────────────────────┘
+</pre>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 2 -->
+<h2><span class="num">02</span> The three types of branches</h2>
+
+<p>Branches are like parallel copies of your code that let you work on different things without interfering with each other.</p>
+
+<div class="concept-grid">
+  <div class="concept-card main-card">
+    <h3><span class="tag tag-main">main</span> Production Branch</h3>
+    <p>The "finished product." This is what Vercel deploys to your live website. Only tested, stable code goes here. Think of it as the published book.</p>
+  </div>
+  <div class="concept-card dev-card">
+    <h3><span class="tag tag-dev">dev</span> Development Branch</h3>
+    <p>The "work in progress" area. This is where you integrate and test new features before they're ready for production. Think of it as the draft manuscript.</p>
+  </div>
+</div>
+
+<div class="concept-grid" style="grid-template-columns: 1fr">
+  <div class="concept-card feat-card">
+    <h3><span class="tag tag-feat">feature/*</span> Feature Branches</h3>
+    <p>A temporary branch for one specific feature (like your <code>feat/auto-extract-action-items</code>). You create it, do your work, merge it back, and delete it. Think of it as writing one chapter on a separate piece of paper before adding it to the manuscript.</p>
+  </div>
+</div>
+
+<div class="diagram-box">
+<pre>
+  <span class="label-main">main</span>  (live app on Vercel)
+    │
+    ├── <span class="label-main">●</span> password protection
+    ├── <span class="label-main">●</span> effort estimation
+    ├── <span class="label-main">●</span> two-column layout
+    │
+    │   <span class="label-dev">dev</span>  (testing & integration)
+    │    │
+    │    ├── <span class="label-dev">●</span> tested features get merged up to main
+    │    │
+    │    │   <span class="label-feat">feat/auto-extract-action-items</span>  (your current work)
+    │    │    │
+    │    │    ├── <span class="label-feat">●</span> your changes go here
+    │    │    ├── <span class="label-feat">●</span> more changes
+    │    │    │
+    │    │ ◄──┘  when done, merge feature → dev
+    │    │
+    │ ◄──┘  when tested, merge dev → main (deploys to Vercel!)
+    │
+    ▼
+</pre>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 3 -->
+<h2><span class="num">03</span> The ideal workflow</h2>
+
+<p>Here's how the branches should flow when everything is set up properly:</p>
+
+<div class="diagram-box">
+<pre>
+  <span class="label-main">main ──●──────────●───────────────────●──────────●──────►</span>  (Vercel deploys here)
+              ▲    │                         ▲
+              │    │  branch off             │
+              │    ▼                         │  merge when ready
+              │   <span class="label-dev">dev ──●────●────●────●────●──────────────────►</span>
+              │         ▲    │         ▲
+    merge PR  │         │    │         │  merge when done
+              │         │    ▼         │
+              │         │   <span class="label-feat">feat/A ──●──●──●</span>
+              │         │
+              │         │
+              │        <span class="label-feat">feat/B ──●──●──●──●</span>
+              │
+     (only after testing on dev)
+</pre>
+</div>
+
+<div class="flow-section">
+  <div class="flow-title">Step by step</div>
+  <ol class="step-list">
+    <li>Start a new feature by branching off <code>dev</code> (not main)</li>
+    <li>Do all your work on the feature branch, committing as you go</li>
+    <li>When the feature is done, merge it back into <code>dev</code></li>
+    <li>Test everything on <code>dev</code> to make sure nothing is broken</li>
+    <li>When <code>dev</code> is stable, merge it into <code>main</code> — Vercel auto-deploys</li>
+  </ol>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 4 -->
+<h2><span class="num">04</span> Your situation right now</h2>
+
+<p>Currently your repo looks like this — Chris has been working directly on <span class="tag tag-main">main</span> and <span class="tag tag-dev">dev</span> is behind:</p>
+
+<div class="diagram-box">
+<pre>
+  <span class="label-dev">dev</span>  (stale — missing recent features)
+    │
+    ├── <span class="label-dev">●</span> AI status badge
+    ├── <span class="label-dev">●</span> auto-detect meeting date
+    ├── <span class="label-dev">●</span> paste-text input
+    │
+    └── (stops here — nothing new)
+
+
+  <span class="label-main">main</span>  (has everything + more)
+    │
+    ├── <span class="label-main">●</span> all of dev's commits, PLUS:
+    ├── <span class="label-main">●</span> password protection + admin
+    ├── <span class="label-main">●</span> two-column assignee layout
+    ├── <span class="label-main">●</span> effort estimation
+    ├── <span class="label-main">●</span> sync inbox button
+    ├── <span class="label-main">●</span> English language default
+    │
+    └── (this is the most up-to-date)
+
+
+  <span class="label-feat">feat/auto-extract-action-items</span>  (your branch — up to date with main)
+</pre>
+</div>
+
+<div class="recommendation">
+  <h3>What you should do now</h3>
+  <p>You have two good options, and I'd recommend discussing with Chris which one he prefers:</p>
+
+  <p style="margin-top: 16px;"><strong>Option A — Sync dev first (best practice):</strong></p>
+  <ol class="step-list">
+    <li>Merge <code>main</code> into <code>dev</code> so dev is caught up</li>
+    <li>From now on, both of you branch features off <code>dev</code></li>
+    <li>Merge tested features from <code>dev</code> into <code>main</code> for deployment</li>
+  </ol>
+
+  <p style="margin-top: 16px;"><strong>Option B — Keep working off main (simpler for small team):</strong></p>
+  <ol class="step-list">
+    <li>Continue branching features off <code>main</code></li>
+    <li>Merge features directly back into <code>main</code></li>
+    <li>Use <code>dev</code> only for risky/experimental work (as Chris suggested)</li>
+  </ol>
+
+  <p style="margin-top: 16px; color: var(--text-dim);">Option B matches how Chris is already working and is totally fine for a two-person team. Option A is textbook best practice but adds overhead. Either way, the most important thing is that you and Chris agree on the same approach.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- SECTION 5 -->
+<h2><span class="num">05</span> Common commands cheat sheet</h2>
+
+<div class="flow-section">
+  <div class="flow-title">Starting a new feature</div>
+  <div class="command-block">
+    <span class="comment"># Make sure you have the latest code first</span><br>
+    <span class="prompt">$</span> <span class="cmd">git pull work main</span><br><br>
+    <span class="comment"># Create a new branch for your feature</span><br>
+    <span class="prompt">$</span> <span class="cmd">git checkout -b feat/my-new-feature</span><br><br>
+    <span class="comment"># Do your work, then save your changes</span><br>
+    <span class="prompt">$</span> <span class="cmd">git add .</span><br>
+    <span class="prompt">$</span> <span class="cmd">git commit -m "feat: describe what you did"</span><br><br>
+    <span class="comment"># Push your branch to GitHub</span><br>
+    <span class="prompt">$</span> <span class="cmd">git push work feat/my-new-feature</span>
+  </div>
+</div>
+
+<div class="flow-section">
+  <div class="flow-title">Getting Chris's latest changes</div>
+  <div class="command-block">
+    <span class="comment"># Download and merge the latest from main</span><br>
+    <span class="prompt">$</span> <span class="cmd">git pull work main</span>
+  </div>
+</div>
+
+<div class="flow-section">
+  <div class="flow-title">Merging your feature when it's done</div>
+  <div class="command-block">
+    <span class="comment"># Switch to main</span><br>
+    <span class="prompt">$</span> <span class="cmd">git checkout main</span><br><br>
+    <span class="comment"># Get the latest</span><br>
+    <span class="prompt">$</span> <span class="cmd">git pull work main</span><br><br>
+    <span class="comment"># Merge your feature in</span><br>
+    <span class="prompt">$</span> <span class="cmd">git merge feat/my-new-feature</span><br><br>
+    <span class="comment"># Push to GitHub (triggers Vercel deploy!)</span><br>
+    <span class="prompt">$</span> <span class="cmd">git push work main</span>
+  </div>
+</div>
+
+<div class="flow-section">
+  <div class="flow-title">If you want to sync dev with main</div>
+  <div class="command-block">
+    <span class="comment"># Switch to dev</span><br>
+    <span class="prompt">$</span> <span class="cmd">git checkout dev</span><br><br>
+    <span class="comment"># Merge all of main's changes into dev</span><br>
+    <span class="prompt">$</span> <span class="cmd">git merge main</span><br><br>
+    <span class="comment"># Push the updated dev to GitHub</span><br>
+    <span class="prompt">$</span> <span class="cmd">git push work dev</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<p style="color: var(--text-dim); font-size: 0.9em; text-align: center; margin-top: 30px;">
+  Created for Fiya · March 2026
+</p>
+
+</div>
+</body>
+</html>

@@ -24,6 +24,10 @@ export default function TranscriptDetailPage({
     const [summary, setSummary] = useState<string | null>(null);
     const [summaryLoading, setSummaryLoading] = useState(false);
 
+    // ── Decision extraction state ────────────────
+    const [extractingDecisions, setExtractingDecisions] = useState(false);
+    const [decisionResult, setDecisionResult] = useState<string | null>(null);
+
     // ── Editing state ────────────────────────────
     const [editingTitle, setEditingTitle] = useState(false);
     const [draftTitle, setDraftTitle] = useState('');
@@ -352,6 +356,46 @@ export default function TranscriptDetailPage({
                             </span>
                         </MetaField>
                         <MetaField label="Processed At" value={new Date(transcript.processed_at).toLocaleString()} />
+
+                        {/* Extract Decisions */}
+                        <div className="pt-2 border-t border-theme-border">
+                            <button
+                                id="extract-decisions-btn"
+                                onClick={async () => {
+                                    setExtractingDecisions(true);
+                                    setDecisionResult(null);
+                                    try {
+                                        const res = await fetch('/api/decisions/extract', {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json' },
+                                            body: JSON.stringify({ transcript_id: transcript.transcript_id }),
+                                        });
+                                        const data = await res.json();
+                                        if (!res.ok) {
+                                            setDecisionResult(`Error: ${data.error}`);
+                                        } else {
+                                            setDecisionResult(`Extracted ${data.count} decision${data.count !== 1 ? 's' : ''}`);
+                                        }
+                                    } catch {
+                                        setDecisionResult('Extraction failed');
+                                    } finally {
+                                        setExtractingDecisions(false);
+                                    }
+                                }}
+                                disabled={extractingDecisions}
+                                className="w-full px-3 py-2 text-sm font-medium rounded-lg
+                                           bg-accent-violet/20 text-accent-violet
+                                           hover:bg-accent-violet/30 transition-colors
+                                           disabled:opacity-50"
+                            >
+                                {extractingDecisions ? 'Extracting...' : '✦ Extract Decisions'}
+                            </button>
+                            {decisionResult && (
+                                <p className={`text-xs mt-2 ${decisionResult.startsWith('Error') ? 'text-rose-400' : 'text-emerald-400'}`}>
+                                    {decisionResult}
+                                </p>
+                            )}
+                        </div>
 
                     </div>
 

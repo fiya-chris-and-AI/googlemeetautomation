@@ -8,11 +8,26 @@ import type { TranscriptForExtraction, RawExtractedItem } from '@meet-pipeline/s
 
 export const dynamic = 'force-dynamic';
 
+/** Wait ms milliseconds. */
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Delay between Claude API calls (in ms) to stay under the 30k input
+ * tokens-per-minute rate limit. Each transcript + dedup call together
+ * can easily consume 10-20k tokens, so 5 s between transcripts keeps
+ * us safely under the ceiling.
+ */
+const THROTTLE_MS = 5_000;
+
+/** Max retries when we hit a 429 rate-limit error. */
+const MAX_RETRIES = 3;
+
 /**
  * POST /api/action-items/extract-all
  *
  * Bulk-extract action items from every unprocessed transcript.
  * Deduplicates new items against existing action items using Claude.
+ * Includes throttling and retry-with-backoff for rate limits.
  *
  * Returns: { transcripts_processed, transcripts_skipped, items_extracted, items_flagged_duplicate }
  */
@@ -93,29 +108,43 @@ export async function POST() {
         let failedCount = 0;
         let processedCount = 0;
 
-        for (const transcript of unprocessed) {
-            console.log(`[Extract-All] Processing: ${transcript.meeting_title} (${transcript.id})`);
+        for (let i = 0; i < unprocessed.length; i++) {
+            const transcript = unprocessed[i];
 
-            // 2a. Extract action items via Claude
-            let extracted: RawExtractedItem[];
-            try {
-                extracted = await extractActionItemsFromTranscript(transcript, anthropicKey);
-            } catch (err) {
-                console.error(`[Extract-All] Extraction failed for ${transcript.id}:`, err);
+            // Throttle between transcripts to avoid rate limits
+            if (i > 0) {
+                console.log(`[Extract-All] Waiting ${THROTTLE_MS / 1000}s before next transcript...`);
+                await sleep(THROTTLE_MS);
+            }
+
+            console.log(`[Extract-All] Processing (${i + 1}/${unprocessed.length}): ${transcript.meeting_title} (${transcript.id})`);
+
+            // 2a. Extract action items via Claude with retry on rate limit
+            let extracted: RawExtractedItem[] | null = null;
+            for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+                try {
+                    extracted = await extractActionItemsFromTranscript(transcript, anthropicKey);
+                    break; // success
+                } catch (err) {
+                    const msg = err instanceof Error ? err.message : String(err);
+                    const isRateLimit = msg.includes('429') || msg.toLowerCase().includes('rate_limit');
+
+                    if (isRateLimit && attempt < MAX_RETRIES) {
+                        const backoff = THROTTLE_MS * attempt * 2;
+                        console.warn(`[Extract-All] Rate limited on attempt ${attempt}/${MAX_RETRIES} for ${transcript.id} — retrying in ${backoff / 1000}s`);
+                        await sleep(backoff);
+                        continue;
+                    }
+
+                    // Non-rate-limit error, or final retry exhausted — skip without logging
+                    // as "attempted" so it can be retried on the next run
+                    console.error(`[Extract-All] Extraction failed for ${transcript.id} (attempt ${attempt}/${MAX_RETRIES}):`, msg);
+                    break;
+                }
+            }
+
+            if (extracted === null) {
                 failedCount++;
-                // Log the failure so we don't retry endlessly
-                await supabase.from('activity_log').insert({
-                    event_type: 'bulk_extraction_attempted',
-                    entity_type: 'transcript',
-                    entity_id: transcript.id,
-                    actor: 'system',
-                    summary: `Bulk extraction failed for: ${transcript.meeting_title}`,
-                    metadata: {
-                        transcript_id: transcript.id,
-                        error: err instanceof Error ? err.message : 'Unknown error',
-                        result: 'failed',
-                    },
-                });
                 continue;
             }
 
@@ -150,6 +179,9 @@ export async function POST() {
                 .neq('status', 'dismissed');
 
             const existingItems = allExisting ?? [];
+
+            // Throttle before dedup call (also hits Claude)
+            await sleep(THROTTLE_MS);
 
             // Ask Claude to identify duplicates
             const dupMapping = await findDuplicates(

@@ -4,6 +4,7 @@ import type {
     QueryResponse,
     ActionItem,
     ActivityLogEntry,
+    Decision,
 } from '@meet-pipeline/shared';
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
@@ -124,3 +125,68 @@ export function fetchActivity(options?: {
     const qs = params.toString();
     return apiFetch(`/api/activity${qs ? `?${qs}` : ''}`);
 }
+
+// ── Decisions ───────────────────────────────────
+
+/** Fetch decisions with optional filters. */
+export function fetchDecisions(filters?: {
+    domain?: string;
+    status?: string;
+    confidence?: string;
+    search?: string;
+    sort?: 'decided_at' | 'created_at';
+    order?: 'asc' | 'desc';
+    limit?: number;
+}): Promise<Decision[]> {
+    const params = new URLSearchParams();
+    if (filters?.domain) params.set('domain', filters.domain);
+    if (filters?.status) params.set('status', filters.status);
+    if (filters?.confidence) params.set('confidence', filters.confidence);
+    if (filters?.search) params.set('search', filters.search);
+    if (filters?.sort) params.set('sort', filters.sort);
+    if (filters?.order) params.set('order', filters.order);
+    if (filters?.limit) params.set('limit', String(filters.limit));
+    const qs = params.toString();
+    return apiFetch(`/api/decisions${qs ? `?${qs}` : ''}`);
+}
+
+/** Fetch a single decision by ID. */
+export function fetchDecision(id: string): Promise<Decision> {
+    return apiFetch(`/api/decisions/${encodeURIComponent(id)}`);
+}
+
+/** Create a decision manually. */
+export function createDecision(decision: Partial<Decision>): Promise<Decision> {
+    return apiFetch('/api/decisions', {
+        method: 'POST',
+        body: JSON.stringify(decision),
+    });
+}
+
+/** Update a decision by ID. */
+export function updateDecision(id: string, updates: Partial<Decision>): Promise<Decision> {
+    return apiFetch(`/api/decisions/${encodeURIComponent(id)}`, {
+        method: 'PATCH',
+        body: JSON.stringify(updates),
+    });
+}
+
+/** Trigger AI extraction of decisions from a transcript. */
+export function extractDecisions(transcriptId: string): Promise<{ decisions: Decision[]; count: number }> {
+    return apiFetch('/api/decisions/extract', {
+        method: 'POST',
+        body: JSON.stringify({ transcript_id: transcriptId }),
+    });
+}
+
+/** Trigger batch extraction of decisions from all unprocessed transcripts. */
+export function extractAllDecisions(): Promise<{
+    transcripts_processed: number;
+    transcripts_skipped: number;
+    transcripts_empty: number;
+    transcripts_failed: number;
+    decisions_extracted: number;
+}> {
+    return apiFetch('/api/decisions/extract-all', { method: 'POST' });
+}
+

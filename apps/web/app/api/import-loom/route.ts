@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '../../../lib/supabase';
 import { processUpload, generateTranscriptId } from '../../../lib/upload-pipeline';
+import { autoExtractActionItems } from '../../../lib/auto-extract';
 
 export const dynamic = 'force-dynamic';
 
@@ -82,6 +83,9 @@ export async function POST(request: NextRequest) {
             extractionMethod: 'loom_import',
             sourceEmailId,
         });
+
+        // Fire-and-forget: auto-extract action items in the background
+        autoExtractActionItems(transcript.transcript_id).catch(() => { });
 
         return NextResponse.json({ skipped: false, transcript }, { status: 201 });
     } catch (err) {

@@ -113,6 +113,41 @@ export interface ActionItem {
     duplicate_of: string | null;
 }
 
+// ── Decisions ───────────────────────────────────
+
+export type DecisionDomain = 'architecture' | 'product' | 'business' | 'design' | 'infrastructure' | 'operations' | 'general';
+export type DecisionConfidence = 'high' | 'medium' | 'low';
+export type DecisionStatus = 'active' | 'superseded' | 'reversed' | 'under_review' | 'completed';
+export type DecisionCreatedBy = 'ai' | 'manual';
+
+export interface Decision {
+    id: string;
+    transcript_id: string | null;
+    decision_text: string;
+    context: string | null;
+    domain: DecisionDomain;
+    confidence: DecisionConfidence;
+    participants: string[];
+    decided_at: string;
+    source_text: string | null;
+    superseded_by: string | null;
+    status: DecisionStatus;
+    created_by: DecisionCreatedBy;
+    created_at: string;
+    updated_at: string;
+    /** Meeting title, joined from transcripts table when needed */
+    meeting_title?: string;
+}
+
+/** Shape of a single extracted decision from Claude (pre-normalization). */
+export interface RawExtractedDecision {
+    decision_text: string;
+    context?: string | null;
+    domain?: DecisionDomain;
+    confidence?: DecisionConfidence;
+    source_text?: string;
+}
+
 // ── Activity Log ────────────────────────────────
 
 export interface ActivityLogEntry {
