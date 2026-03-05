@@ -22,6 +22,7 @@ const SORT_COLUMNS: Record<string, string> = {
  *   priority     — exact match
  *   sort         — created_at | due_date | priority (default: created_at)
  *   order        — asc | desc (default: desc)
+ *   limit        — max rows (default: 1000, max: 5000)
  */
 export async function GET(req: NextRequest) {
     try {
@@ -30,12 +31,16 @@ export async function GET(req: NextRequest) {
 
         const sortCol = SORT_COLUMNS[searchParams.get('sort') ?? ''] ?? 'created_at';
         const ascending = searchParams.get('order') === 'asc';
+        const limit = Math.min(
+            parseInt(searchParams.get('limit') ?? '1000', 10) || 1000,
+            5000,
+        );
 
         let query = supabase
             .from('action_items')
             .select('*')
             .order(sortCol, { ascending })
-            .limit(100);
+            .limit(limit);
 
         // Comma-separated status filter → Supabase .in()
         const status = searchParams.get('status');
