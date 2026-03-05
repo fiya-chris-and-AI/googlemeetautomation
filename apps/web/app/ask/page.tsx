@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import type { QueryResponse, SourceChunk } from '@meet-pipeline/shared';
 
@@ -109,7 +110,18 @@ export default function AskPage() {
                                 : 'glass-card rounded-bl-md'
                                 }`}
                         >
-                            <p className="text-sm whitespace-pre-wrap text-theme-text-primary">{msg.content}</p>
+                            {msg.role === 'user' ? (
+                                <p className="text-sm whitespace-pre-wrap text-theme-text-primary">{msg.content}</p>
+                            ) : (
+                                <div className="text-sm text-theme-text-primary prose prose-invert prose-sm max-w-none
+                                    prose-headings:text-theme-text-primary prose-headings:font-semibold prose-headings:mt-3 prose-headings:mb-1
+                                    prose-p:my-1 prose-p:leading-relaxed
+                                    prose-li:my-0.5 prose-li:text-theme-text-secondary
+                                    prose-strong:text-theme-text-primary prose-strong:font-semibold
+                                    prose-ul:my-1 prose-ol:my-1">
+                                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                                </div>
+                            )}
 
                             {/* Source Citations */}
                             {msg.sources && msg.sources.length > 0 && (
