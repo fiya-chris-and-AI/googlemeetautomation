@@ -23,18 +23,29 @@ export function getDriveClient() {
 
 // ── Email Filters (mirrors apps/worker/src/gmail/filters.ts) ───────
 
+const TRANSCRIPT_SENDERS: string[] = [
+    'gemini-notes@google.com',
+    'meetings-noreply@google.com',
+];
+
 const TRANSCRIPT_SUBJECT_PATTERNS: RegExp[] = [
+    // gemini-notes@google.com patterns
     /^Notes: /i,
     /^Notes from /i,
     /^Transcript for /i,
     /^Meeting transcript/i,
-];
 
-const TRANSCRIPT_SENDER = 'gemini-notes@google.com';
+    // meetings-noreply@google.com patterns
+    // TODO: confirm exact subject patterns from real emails
+    /^Meeting notes:?\s/i,
+    /^Meeting summary:?\s/i,
+    /^Post-call notes:?\s/i,
+];
 
 /** Determines whether an email is a Google Meet transcript. */
 export function isTranscriptEmail(from: string, subject: string): boolean {
-    const senderMatch = from.toLowerCase().includes(TRANSCRIPT_SENDER);
+    const fromLower = from.toLowerCase();
+    const senderMatch = TRANSCRIPT_SENDERS.some((s) => fromLower.includes(s));
     const subjectMatch = TRANSCRIPT_SUBJECT_PATTERNS.some((p) => p.test(subject));
     return senderMatch && subjectMatch;
 }
@@ -42,10 +53,17 @@ export function isTranscriptEmail(from: string, subject: string): boolean {
 // ── Title Extraction (mirrors apps/worker/src/extraction/normalize.ts) ──
 
 const SUBJECT_PATTERNS: RegExp[] = [
+    // gemini-notes@google.com patterns
     /^Notes:\s*"?(.+?)"?\s*$/i,
     /^Notes from\s+"?(.+?)"?\s*$/i,
     /^Transcript for\s+"?(.+?)"?\s*$/i,
     /^Meeting transcript:?\s*"?(.+?)"?\s*$/i,
+
+    // meetings-noreply@google.com patterns
+    // TODO: confirm exact subject patterns from real emails
+    /^Meeting notes:?\s*"?(.+?)"?\s*$/i,
+    /^Meeting summary:?\s*"?(.+?)"?\s*$/i,
+    /^Post-call notes:?\s*"?(.+?)"?\s*$/i,
 ];
 
 /** Extract a clean meeting title from the email subject line. */
@@ -59,13 +77,15 @@ export function extractMeetingTitle(subject: string): string {
 
 // ── Gmail API Helpers ──────────────────────────────────────────────
 
-/** Search Gmail for recent Gemini Notes transcript emails. */
+/** Search Gmail for recent transcript emails from all accepted senders. */
 export async function searchTranscriptEmails(
     maxResults = 50,
     newerThanDays = 30
 ): Promise<gmail_v1.Schema$Message[]> {
     const gmail = getGmailClient();
-    const query = `from:gemini-notes@google.com newer_than:${newerThanDays}d`;
+    // Gmail OR syntax: {from:a from:b} matches messages from either sender
+    const fromClause = TRANSCRIPT_SENDERS.map((s) => `from:${s}`).join(' ');
+    const query = `{${fromClause}} newer_than:${newerThanDays}d`;
 
     const res = await gmail.users.messages.list({
         userId: 'me',

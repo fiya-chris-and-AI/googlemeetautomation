@@ -65,6 +65,8 @@ export async function insertChunks(chunks: TranscriptChunk[]): Promise<void> {
 
 /**
  * Write a processing log entry (success, skipped, or error).
+ * The `sourceSender` field is optional — if the `source_sender` column
+ * doesn't exist in the table, Supabase will ignore it gracefully.
  */
 export async function logProcessing(params: {
     sourceEmailId: string;
@@ -72,6 +74,7 @@ export async function logProcessing(params: {
     status: LogStatus;
     extractionMethod?: ExtractionMethod | null;
     errorMessage?: string | null;
+    sourceSender?: string | null;
 }): Promise<void> {
     const { error } = await getSupabaseClient()
         .from('processing_log')
@@ -81,6 +84,7 @@ export async function logProcessing(params: {
             status: params.status,
             extraction_method: params.extractionMethod ?? null,
             error_message: params.errorMessage ?? null,
+            source_sender: params.sourceSender ?? null,
         });
 
     if (error) {

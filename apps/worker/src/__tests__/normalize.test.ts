@@ -22,6 +22,19 @@ describe('extractMeetingTitle', () => {
     it('falls back to raw subject for unknown patterns', () => {
         expect(extractMeetingTitle('Some other email')).toBe('Some other email');
     });
+
+    // meetings-noreply@google.com patterns
+    it('extracts title from "Meeting notes:" pattern', () => {
+        expect(extractMeetingTitle('Meeting notes: Sprint Demo')).toBe('Sprint Demo');
+    });
+
+    it('extracts title from "Meeting summary:" pattern', () => {
+        expect(extractMeetingTitle('Meeting summary: Q1 Review')).toBe('Q1 Review');
+    });
+
+    it('extracts title from "Post-call notes:" pattern', () => {
+        expect(extractMeetingTitle('Post-call notes: Client Call')).toBe('Client Call');
+    });
 });
 
 describe('extractParticipants', () => {

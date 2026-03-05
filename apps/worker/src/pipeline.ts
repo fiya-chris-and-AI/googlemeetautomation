@@ -20,11 +20,17 @@ import { isDuplicate, insertTranscript, insertChunks, logProcessing } from './db
  * 6. Chunk text and generate embeddings
  * 7. Store chunks
  * 8. Log success
+ *
+ * Note: The extraction pipeline is format-agnostic. Both gemini-notes@google.com
+ * and meetings-noreply@google.com emails are handled by the same 3-method
+ * cascade (attachment → Google Doc → inline HTML). The meetings-noreply sender
+ * primarily uses inline HTML, so no separate extractor is needed.
  */
 export async function processEmail(
     messageId: string,
     subject: string,
-    message: gmail_v1.Schema$Message
+    message: gmail_v1.Schema$Message,
+    senderAddress?: string
 ): Promise<void> {
     // Step 1: Dedup
     if (await isDuplicate(messageId)) {
@@ -34,6 +40,7 @@ export async function processEmail(
             emailSubject: subject,
             status: 'skipped',
             errorMessage: 'Duplicate email — already processed',
+            sourceSender: senderAddress,
         });
         return;
     }
@@ -46,7 +53,7 @@ export async function processEmail(
             throw new Error('Extracted transcript text is empty');
         }
 
-        console.log(`[pipeline] Extracted ${text.length} chars via "${method}" from ${messageId}`);
+        console.log(`[pipeline] Extracted ${text.length} chars via "${method}" from ${messageId} (sender=${senderAddress ?? 'unknown'})`);
 
         // Step 4: Normalize
         const transcript = normalizeTranscript({
@@ -93,6 +100,7 @@ export async function processEmail(
             emailSubject: subject,
             status: 'success',
             extractionMethod: method,
+            sourceSender: senderAddress,
         });
 
         console.log(`[pipeline] ✓ Successfully processed: ${transcript.meeting_title}`);
@@ -105,6 +113,7 @@ export async function processEmail(
             emailSubject: subject,
             status: 'error',
             errorMessage: errorMsg,
+            sourceSender: senderAddress,
         });
 
         throw err; // Re-throw so the caller knows it failed

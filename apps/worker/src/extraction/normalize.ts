@@ -6,9 +6,16 @@ import type { MeetingTranscript, ExtractionMethod } from '@meet-pipeline/shared'
  * Strips the prefix to get just the meeting name.
  */
 const SUBJECT_PATTERNS: RegExp[] = [
+    // gemini-notes@google.com patterns
     /^Notes from\s+"?(.+?)"?\s*$/i,
     /^Transcript for\s+"?(.+?)"?\s*$/i,
     /^Meeting transcript:?\s*"?(.+?)"?\s*$/i,
+
+    // meetings-noreply@google.com patterns
+    // TODO: confirm exact subject patterns from real emails
+    /^Meeting notes:?\s*"?(.+?)"?\s*$/i,
+    /^Meeting summary:?\s*"?(.+?)"?\s*$/i,
+    /^Post-call notes:?\s*"?(.+?)"?\s*$/i,
 ];
 
 /**

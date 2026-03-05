@@ -58,6 +58,8 @@ export interface ProcessingLogEntry {
     status: LogStatus;
     extraction_method: ExtractionMethod | null;
     error_message: string | null;
+    /** Email address of the sender that triggered processing. */
+    source_sender: string | null;
     processed_at: string;
 }
 

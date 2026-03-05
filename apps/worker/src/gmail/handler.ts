@@ -67,10 +67,10 @@ export async function handlePubSubPush(
                 continue;
             }
 
-            console.log(`[gmail:handler] Found transcript email: "${subject}" (id=${messageId})`);
+            console.log(`[gmail:handler] Found transcript email from ${from}: "${subject}" (id=${messageId})`);
 
             try {
-                await processEmail(messageId, subject, msgRes.data);
+                await processEmail(messageId, subject, msgRes.data, from);
                 processedCount++;
             } catch (err) {
                 const errorMsg = err instanceof Error ? err.message : String(err);
