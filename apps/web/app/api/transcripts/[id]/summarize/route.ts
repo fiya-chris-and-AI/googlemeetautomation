@@ -11,9 +11,10 @@ export const dynamic = 'force-dynamic';
  */
 export async function GET(
     _req: NextRequest,
-    { params }: { params: { id: string } },
+    { params }: { params: Promise<{ id: string }> },
 ) {
     try {
+        const { id } = await params;
         const anthropicKey = process.env.ANTHROPIC_API_KEY;
         if (!anthropicKey) {
             return NextResponse.json({ error: 'ANTHROPIC_API_KEY not configured' }, { status: 503 });
@@ -23,7 +24,7 @@ export async function GET(
         const { data: transcript, error } = await supabase
             .from('transcripts')
             .select('meeting_title, meeting_date, raw_transcript, word_count')
-            .eq('id', params.id)
+            .eq('id', id)
             .single();
 
         if (error || !transcript) {

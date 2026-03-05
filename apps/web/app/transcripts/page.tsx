@@ -15,7 +15,7 @@ export default function TranscriptsPage() {
     const [transcripts, setTranscripts] = useState<MeetingTranscript[]>([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
-    const [participantFilter, setParticipantFilter] = useState('');
+
     const [sortField, setSortField] = useState<SortField>('meeting_date');
     const [sortDir, setSortDir] = useState<SortDirection>('desc');
     const [deletingIds, setDeletingIds] = useState<Set<string>>(new Set());
@@ -140,12 +140,7 @@ export default function TranscriptsPage() {
             );
         }
 
-        if (participantFilter) {
-            const q = participantFilter.toLowerCase();
-            result = result.filter((t) =>
-                t.participants.some((p) => p.toLowerCase().includes(q))
-            );
-        }
+
 
         result.sort((a, b) => {
             let cmp = 0;
@@ -160,7 +155,7 @@ export default function TranscriptsPage() {
         });
 
         return result;
-    }, [transcripts, search, participantFilter, sortField, sortDir]);
+    }, [transcripts, search, sortField, sortDir]);
 
     const toggleSort = (field: SortField) => {
         if (sortField === field) {
@@ -191,14 +186,7 @@ export default function TranscriptsPage() {
                     onChange={(e) => setSearch(e.target.value)}
                     className="input-glow flex-1"
                 />
-                <input
-                    id="participant-filter"
-                    type="text"
-                    placeholder="Filter by participant..."
-                    value={participantFilter}
-                    onChange={(e) => setParticipantFilter(e.target.value)}
-                    className="input-glow w-64"
-                />
+
                 <button
                     id="sync-inbox-btn"
                     onClick={handleSync}
@@ -291,9 +279,7 @@ export default function TranscriptsPage() {
                             >
                                 Date{sortIndicator('meeting_date')}
                             </th>
-                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
-                                Participants
-                            </th>
+
                             <th
                                 onClick={() => toggleSort('word_count')}
                                 className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
@@ -314,14 +300,14 @@ export default function TranscriptsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     Loading transcripts...
                                 </td>
                             </tr>
                         ) : filtered.length === 0 ? (
                             <tr>
-                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
-                                    {search || participantFilter
+                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                    {search
                                         ? 'No transcripts match your filters.'
                                         : 'No transcripts yet.'}
                                 </td>
@@ -348,18 +334,7 @@ export default function TranscriptsPage() {
                                     <td className="px-6 py-4 text-sm text-theme-text-secondary">
                                         {new Date(t.meeting_date).toLocaleDateString()}
                                     </td>
-                                    <td className="px-6 py-4">
-                                        <div className="flex flex-wrap gap-1">
-                                            {t.participants.slice(0, 3).map((p) => (
-                                                <span key={p} className="badge-info text-[10px]">{p}</span>
-                                            ))}
-                                            {t.participants.length > 3 && (
-                                                <span className="badge text-[10px] text-theme-text-tertiary">
-                                                    +{t.participants.length - 3}
-                                                </span>
-                                            )}
-                                        </div>
-                                    </td>
+
                                     <td className="px-6 py-4 text-sm text-theme-text-secondary text-right">
                                         {t.word_count.toLocaleString()}
                                     </td>

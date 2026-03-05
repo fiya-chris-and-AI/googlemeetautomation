@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
-import type { MeetingTranscript, QueryResponse, ActionItem } from '@meet-pipeline/shared';
+import type { MeetingTranscript, QueryResponse } from '@meet-pipeline/shared';
 
 
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
@@ -20,8 +20,7 @@ export default function TranscriptDetailPage({
     const [question, setQuestion] = useState('');
     const [answer, setAnswer] = useState<QueryResponse | null>(null);
     const [asking, setAsking] = useState(false);
-    const [actionItems, setActionItems] = useState<ActionItem[]>([]);
-    const [extracting, setExtracting] = useState(false);
+
     const [summary, setSummary] = useState<string | null>(null);
     const [summaryLoading, setSummaryLoading] = useState(false);
 
@@ -68,10 +67,7 @@ export default function TranscriptDetailPage({
             })
             .catch(() => setLoading(false));
 
-        fetch(`/api/action-items?transcript_id=${params.id}`)
-            .then((r) => r.json())
-            .then((data) => { if (Array.isArray(data)) setActionItems(data); })
-            .catch(() => { });
+
     }, [params.id]);
 
     useEffect(() => {
@@ -106,25 +102,7 @@ export default function TranscriptDetailPage({
         }
     };
 
-    const handleExtract = async () => {
-        if (!transcript) return;
-        setExtracting(true);
-        try {
-            const res = await fetch('/api/action-items/extract', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ transcript_id: transcript.transcript_id }),
-            });
-            const data = (await res.json()) as { items?: ActionItem[] };
-            if (Array.isArray(data.items)) {
-                setActionItems((prev) => [...data.items!, ...prev]);
-            }
-        } catch {
-            // Silently handled
-        } finally {
-            setExtracting(false);
-        }
-    };
+
 
     if (loading) {
         return (
@@ -377,55 +355,7 @@ export default function TranscriptDetailPage({
 
                     </div>
 
-                    {/* Action Items for this transcript */}
-                    <div className="glass-card p-6 space-y-4">
-                        <div className="flex items-center justify-between">
-                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider">
-                                Action Items ({actionItems.filter((i) => i.status !== 'dismissed').length})
-                            </p>
-                            <button
-                                onClick={handleExtract}
-                                disabled={extracting}
-                                className="text-[11px] font-medium text-brand-400 hover:text-brand-300 transition-colors disabled:opacity-50"
-                            >
-                                {extracting ? 'Extracting...' : 'Extract with AI'}
-                            </button>
-                        </div>
 
-                        {actionItems.filter((i) => i.status !== 'dismissed').length === 0 ? (
-                            <p className="text-xs text-theme-text-muted">
-                                No action items yet. Click &ldquo;Extract with AI&rdquo; to find them.
-                            </p>
-                        ) : (
-                            <div className="space-y-2">
-                                {actionItems.filter((i) => i.status !== 'dismissed').map((item) => (
-                                    <div key={item.id} className="flex items-start gap-2">
-                                        <span className={`mt-1 inline-block w-2 h-2 rounded-full flex-shrink-0 ${item.priority === 'urgent' ? 'bg-rose-500' :
-                                            item.priority === 'high' ? 'bg-amber-500' :
-                                                item.priority === 'medium' ? 'bg-brand-400' : 'bg-theme-text-muted'
-                                            }`} />
-                                        <div className="min-w-0 flex-1">
-                                            <p className={`text-xs font-medium ${item.status === 'done' ? 'text-theme-text-muted line-through' : 'text-theme-text-primary'
-                                                }`}>
-                                                {item.title}
-                                            </p>
-                                            <div className="flex items-center gap-1.5 mt-0.5">
-                                                {item.assigned_to && (
-                                                    <span className="text-[10px] text-theme-text-tertiary">{item.assigned_to}</span>
-                                                )}
-                                                <span className={`text-[10px] font-medium ${item.status === 'done' ? 'text-emerald-400' :
-                                                    item.status === 'in_progress' ? 'text-brand-400' :
-                                                        'text-theme-text-muted'
-                                                    }`}>
-                                                    {item.status.replace('_', ' ')}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
                 </div>
             </div>
         </div>
