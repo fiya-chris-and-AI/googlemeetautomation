@@ -48,7 +48,7 @@ export async function GET(req: NextRequest) {
         if (confidence) query = query.eq('confidence', confidence);
 
         const search = searchParams.get('search');
-        if (search) query = query.ilike('decision_text', `%${search}%`);
+        if (search) query = query.or(`decision_text.ilike.%${search}%,topic.ilike.%${search}%`);
 
         const { data, error } = await query;
 
@@ -92,6 +92,7 @@ export async function POST(req: NextRequest) {
         const embedding = embeddingRes.data[0].embedding;
 
         const row = {
+            topic: body.topic ?? null,
             decision_text: body.decision_text.trim(),
             context: body.context ?? null,
             domain: body.domain ?? 'general',

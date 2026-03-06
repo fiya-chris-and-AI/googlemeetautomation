@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '../../../../lib/supabase';
-import { normalizeAssignee } from '@meet-pipeline/shared';
+import { normalizeAssignee, callGemini, stripMarkdownFences, EXTRACTION_SYSTEM_PROMPT } from '@meet-pipeline/shared';
 
 export const dynamic = 'force-dynamic';
 
@@ -36,56 +36,24 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Transcript not found' }, { status: 404 });
         }
 
-        // 2. Call Claude to extract action items
-        const anthropicKey = process.env.ANTHROPIC_API_KEY;
-        if (!anthropicKey) {
+        // 2. Call Gemini to extract action items
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (!geminiKey) {
             return NextResponse.json(
-                { error: 'ANTHROPIC_API_KEY is not configured' },
+                { error: 'GEMINI_API_KEY is not configured' },
                 { status: 503 }
             );
         }
 
-        const systemPrompt = `You extract action items from meeting transcripts.
-Return a JSON array of objects with these fields:
-- title (string, required): A concise description of the action item
-- description (string | null): Additional context if needed
-- assigned_to (string | null): The person responsible. MUST be exactly one of: "Lutfiya Miller", "Chris Müller", or null. Never use alternate spellings like "Chris-Steven Müller", "Chris Muller", or "Chris Mueller". If the task is assigned to BOTH people, emit two separate action items — one for each person. Never use composite values like "Both" or "Lutfiya Miller and Chris Müller".
-- priority ("low" | "medium" | "high" | "urgent"): Infer from context and urgency cues
-- due_date (string | null): ISO date if a deadline is mentioned, otherwise null
-- source_text (string): The exact excerpt from the transcript that implies this action item
-- group_label (string | null): A short label (1-3 words, title-cased) for the project, tool, or topic this item relates to. Use null if it doesn't clearly belong to a group. If multiple items relate to the same topic, give them the same label.
-- effort ("quick_fix" | "moderate" | "significant"): Estimate the effort required to complete this task:
-  • "quick_fix" — Can likely be done in under 30 minutes (e.g. sending an email, a quick decision, looking something up)
-  • "moderate" — Likely takes 30 minutes to a few hours (e.g. writing a short document, setting up a tool, a focused work session)
-  • "significant" — Likely takes multiple hours or spans multiple days (e.g. building a feature, conducting research, coordinating across people)
-  Base this on the nature of the task described in the transcript, not on its urgency or priority.
+        const participants = transcript.participants ?? [];
+        const userMessage = `Meeting: ${transcript.meeting_title}\nParticipants: ${participants.join(', ')}\n\nTranscript:\n${transcript.raw_transcript}`;
 
-Only return action items that are clearly implied by the transcript — do not fabricate tasks.
-If there are no action items, return an empty array.
-Return ONLY valid JSON, no markdown fences or extra text.`;
-
-        const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': anthropicKey,
-                'anthropic-version': '2023-06-01',
-            },
-            body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
-                max_tokens: 4096,
-                system: systemPrompt,
-                messages: [
-                    {
-                        role: 'user',
-                        content: `Meeting: ${transcript.meeting_title}\nParticipants: ${transcript.participants.join(', ')}\n\nTranscript:\n${transcript.raw_transcript}`,
-                    },
-                ],
-            }),
-        });
-
-        const anthropicData = await anthropicRes.json();
-        const rawText: string = anthropicData.content?.[0]?.text ?? '[]';
+        const rawText = await callGemini(
+            EXTRACTION_SYSTEM_PROMPT,
+            userMessage,
+            geminiKey,
+            { maxOutputTokens: 4096 },
+        );
 
         // 3. Parse the response
         let extracted: Array<{
@@ -100,7 +68,8 @@ Return ONLY valid JSON, no markdown fences or extra text.`;
         }>;
 
         try {
-            extracted = JSON.parse(rawText);
+            const cleaned = stripMarkdownFences(rawText);
+            extracted = JSON.parse(cleaned || '[]');
             if (!Array.isArray(extracted)) extracted = [];
         } catch {
             return NextResponse.json(

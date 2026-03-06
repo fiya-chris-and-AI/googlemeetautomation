@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parseVtt, parseSbv, processUpload } from '../../../lib/upload-pipeline';
 import { autoExtractActionItems } from '../../../lib/auto-extract';
+import { autoExtractDecisions } from '../../../lib/auto-extract-decisions';
 import { detectMeetingDate, detectDateFromFilename } from '../../../lib/detect-meeting-date';
 import { extractTextFromPdf } from '../../../lib/pdf-extract';
 
@@ -60,8 +61,9 @@ export async function POST(request: NextRequest) {
                 extractionMethod: 'paste',
             });
 
-            // Fire-and-forget: auto-extract action items in the background
+            // Fire-and-forget: auto-extract action items AND decisions in the background
             autoExtractActionItems(transcript.transcript_id).catch(() => { });
+            autoExtractDecisions(transcript.transcript_id).catch(() => { });
 
             return NextResponse.json(
                 { transcript, detectedDate: detectedDate?.toISOString() ?? null },
@@ -149,8 +151,9 @@ export async function POST(request: NextRequest) {
 
         const transcript = await processUpload({ text: parsedText, title, date, extractionMethod });
 
-        // Fire-and-forget: auto-extract action items in the background
+        // Fire-and-forget: auto-extract action items AND decisions in the background
         autoExtractActionItems(transcript.transcript_id).catch(() => { });
+        autoExtractDecisions(transcript.transcript_id).catch(() => { });
 
         return NextResponse.json(
             {

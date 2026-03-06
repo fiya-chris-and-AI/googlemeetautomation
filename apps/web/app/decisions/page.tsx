@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
@@ -74,10 +74,7 @@ export default function DecisionsPage() {
     const [showCreate, setShowCreate] = useState(false);
     const [expandedId, setExpandedId] = useState<string | null>(null);
 
-    // Extraction state
-    const [extracting, setExtracting] = useState(false);
-    const [extractResult, setExtractResult] = useState<string | null>(null);
-    const [extractProgress, setExtractProgress] = useState<string | null>(null);
+
 
     // Create form
     const [newText, setNewText] = useState('');
@@ -138,93 +135,7 @@ export default function DecisionsPage() {
         [decisions],
     );
 
-    const handleExtractAll = async () => {
-        setExtracting(true);
-        setExtractResult(null);
-        setExtractProgress('Starting extraction...');
 
-        try {
-            const res = await fetch('/api/decisions/extract-all', { method: 'POST' });
-
-            // If the response is not SSE (e.g. early error), handle as JSON
-            const contentType = res.headers.get('content-type') ?? '';
-            if (!contentType.includes('text/event-stream')) {
-                const data = await res.json();
-                if (!res.ok) {
-                    setExtractResult(`Error: ${data.error}`);
-                } else {
-                    setExtractResult(
-                        `Extracted ${data.decisions_extracted} decisions from ${data.transcripts_processed} transcripts ` +
-                        `(${data.transcripts_skipped} skipped, ${data.transcripts_empty} empty, ${data.transcripts_failed} failed)`
-                    );
-                    await fetchDecisions();
-                }
-                setExtracting(false);
-                setExtractProgress(null);
-                return;
-            }
-
-            // Read SSE stream
-            const reader = res.body!.getReader();
-            const decoder = new TextDecoder();
-            let buffer = '';
-
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-
-                buffer += decoder.decode(value, { stream: true });
-                const lines = buffer.split('\n');
-                buffer = lines.pop() ?? '';
-
-                for (const line of lines) {
-                    if (!line.startsWith('data: ')) continue;
-                    try {
-                        const event = JSON.parse(line.slice(6));
-
-                        switch (event.type) {
-                            case 'start':
-                                setExtractProgress(`Found ${event.total} transcripts to process (${event.skipped} already done)`);
-                                break;
-                            case 'waiting':
-                                setExtractProgress(`⏳ Waiting ${event.seconds}s before transcript ${event.index}/${event.total}: ${event.title}`);
-                                break;
-                            case 'processing':
-                                setExtractProgress(`🔍 Processing ${event.index}/${event.total}: ${event.title}`);
-                                break;
-                            case 'rate_limited':
-                                setExtractProgress(`⚠️ Rate limited — retrying in ${event.backoffSeconds}s (attempt ${event.attempt}/${event.maxRetries})`);
-                                break;
-                            case 'extracted':
-                                setExtractProgress(`✅ ${event.index}/${event.total}: Found ${event.count} decisions in "${event.title}" (${event.totalSoFar} total so far)`);
-                                // Refresh the list periodically as decisions come in
-                                fetchDecisions();
-                                break;
-                            case 'empty':
-                                setExtractProgress(`○ ${event.index}/${event.total}: No decisions in "${event.title}"`);
-                                break;
-                            case 'error':
-                                setExtractProgress(`❌ ${event.index}/${event.total}: Failed on "${event.title}" — ${event.error}`);
-                                break;
-                            case 'done':
-                                setExtractResult(
-                                    `Done! Extracted ${event.decisions_extracted} decisions from ${event.transcripts_processed} transcripts ` +
-                                    `(${event.transcripts_skipped} skipped, ${event.transcripts_empty} empty, ${event.transcripts_failed} failed)`
-                                );
-                                setExtractProgress(null);
-                                fetchDecisions();
-                                break;
-                        }
-                    } catch { /* skip malformed events */ }
-                }
-            }
-        } catch {
-            setExtractResult('Network error — extraction failed');
-        } finally {
-            setExtracting(false);
-            setExtractProgress(null);
-        }
-    };
 
     const handleCreate = async () => {
         if (!newText.trim()) return;
@@ -286,13 +197,6 @@ export default function DecisionsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                     <button
-                        onClick={handleExtractAll}
-                        disabled={extracting}
-                        className="btn-primary px-5 py-2.5"
-                    >
-                        {extracting ? 'Extracting...' : '✦ Extract All'}
-                    </button>
-                    <button
                         onClick={() => setShowCreate(true)}
                         className="btn-primary px-5 py-2.5"
                     >
@@ -301,18 +205,7 @@ export default function DecisionsPage() {
                 </div>
             </div>
 
-            {/* Live progress panel */}
-            {extractProgress && (
-                <div className="glass-card p-4 mb-4 border-l-4 border-brand-500 animate-slide-up">
-                    <p className="text-sm text-theme-text-secondary font-medium">{extractProgress}</p>
-                </div>
-            )}
 
-            {extractResult && (
-                <p className={`text-xs mb-4 ${extractResult.startsWith('Error') ? 'text-rose-400' : 'text-emerald-400'}`}>
-                    {extractResult}
-                </p>
-            )}
 
             {/* Stats Bar */}
             <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
@@ -394,7 +287,7 @@ export default function DecisionsPage() {
                     <p className="text-theme-text-tertiary text-sm">
                         {statusFilter !== 'all' || domainFilter !== 'all' || search
                             ? 'Try adjusting your filters.'
-                            : 'Click "✦ Extract All" to extract decisions from your transcripts, or add one manually.'}
+                            : 'Add a decision manually using the button above, or decisions will be extracted automatically when transcripts are uploaded.'}
                     </p>
                 </div>
             ) : (
@@ -545,6 +438,53 @@ function DecisionCard({
 }) {
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
 
+    // ── Ask AI mini-chat state ──────────────────────
+    const [showAskAI, setShowAskAI] = useState(false);
+    const [aiQuestion, setAiQuestion] = useState('');
+    const [aiMessages, setAiMessages] = useState<{ role: 'user' | 'assistant'; content: string }[]>([]);
+    const [aiLoading, setAiLoading] = useState(false);
+    const chatEndRef = useRef<HTMLDivElement>(null);
+
+    // Auto-scroll chat to latest message
+    useEffect(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [aiMessages, aiLoading]);
+
+    const handleAskAI = async (question?: string) => {
+        const q = question ?? aiQuestion.trim();
+        if (!q || !decision.transcript_id) return;
+
+        setAiMessages((prev) => [...prev, { role: 'user', content: q }]);
+        setAiQuestion('');
+        setAiLoading(true);
+
+        try {
+            const res = await fetch('/api/query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    question: `${q} — Context: this is about a decision: "${decision.decision_text}"`,
+                    transcript_id: decision.transcript_id,
+                }),
+            });
+            const data = await res.json();
+            setAiMessages((prev) => [...prev, { role: 'assistant', content: data.answer }]);
+        } catch {
+            setAiMessages((prev) => [
+                ...prev,
+                { role: 'assistant', content: 'Sorry, something went wrong. Please try again.' },
+            ]);
+        } finally {
+            setAiLoading(false);
+        }
+    };
+
+    const suggestedQuestions = [
+        'What led to this decision?',
+        'Were there alternative options discussed?',
+        'Who was involved in making this decision?',
+    ];
+
     return (
         <div className="glass-card p-4 transition-all duration-200 hover:border-theme-border/[0.12]">
             {/* Header — clickable */}
@@ -621,6 +561,94 @@ function DecisionCard({
                         </div>
                     )}
 
+                    {/* Ask AI button — only when transcript is available */}
+                    {decision.transcript_id && (
+                        <button
+                            onClick={() => setShowAskAI((v) => !v)}
+                            className={`mt-3 px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors ${showAskAI
+                                ? 'bg-accent-violet/20 text-accent-violet'
+                                : 'bg-accent-violet/10 text-accent-violet hover:bg-accent-violet/20'
+                                }`}
+                        >
+                            ◈ Ask AI
+                        </button>
+                    )}
+
+                    {/* Inline mini-chat panel */}
+                    {showAskAI && decision.transcript_id && (
+                        <div className="mt-3 p-3 rounded-xl bg-theme-overlay border border-theme-border">
+                            {/* Messages area */}
+                            <div className="max-h-[300px] overflow-y-auto custom-scrollbar space-y-2 mb-3">
+                                {aiMessages.length === 0 && !aiLoading && (
+                                    <div className="space-y-1.5">
+                                        <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
+                                            Suggested questions
+                                        </p>
+                                        {suggestedQuestions.map((q) => (
+                                            <button
+                                                key={q}
+                                                onClick={() => handleAskAI(q)}
+                                                className="block w-full text-left text-xs px-3 py-1.5 rounded-lg
+                                                           bg-theme-overlay/50 border border-theme-border/[0.04]
+                                                           text-theme-text-secondary hover:text-theme-text-primary
+                                                           hover:border-theme-border/[0.1] transition-all duration-200"
+                                            >
+                                                {q}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {aiMessages.map((msg, i) => (
+                                    <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div
+                                            className={`max-w-[85%] px-3 py-1.5 text-xs whitespace-pre-wrap ${msg.role === 'user'
+                                                ? 'bg-brand-500/15 text-theme-text-primary rounded-xl rounded-br-sm'
+                                                : 'glass-card text-theme-text-primary rounded-xl rounded-bl-sm'
+                                                }`}
+                                        >
+                                            {msg.content}
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {aiLoading && (
+                                    <div className="flex justify-start">
+                                        <div className="glass-card rounded-xl rounded-bl-sm px-3 py-1.5">
+                                            <div className="flex gap-1">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '150ms' }} />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div ref={chatEndRef} />
+                            </div>
+
+                            {/* Input row */}
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    placeholder="Ask about this decision..."
+                                    value={aiQuestion}
+                                    onChange={(e) => setAiQuestion(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleAskAI()}
+                                    disabled={aiLoading}
+                                    className="flex-1 input-glow text-xs border-0 bg-transparent focus:ring-0 py-1.5"
+                                />
+                                <button
+                                    onClick={() => handleAskAI()}
+                                    disabled={aiLoading || !aiQuestion.trim()}
+                                    className="btn-primary px-3 py-1.5 text-xs"
+                                >
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
                     {decision.transcript_id && (
                         <Link
                             href={`/transcripts/${decision.transcript_id}`}
@@ -669,6 +697,7 @@ function DecisionCard({
                             </button>
                         )}
                     </div>
+
                 </div>
             )}
         </div>

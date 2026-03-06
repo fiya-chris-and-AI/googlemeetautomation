@@ -1,0 +1,7 @@
+# NotebookLM Video — Workflow Insert
+
+Paste everything below the line into the `[Insert a detailed, step-by-step description...]` section of your NotebookLM prompt.
+
+---
+
+MeetScript is a meeting intelligence platform by 3rd AI LLC for ScienceExperts.ai. When a Google Meet call ends, a transcript email arrives in Gmail. MeetScript detects it instantly via Cloud Pub/Sub, extracts the text (from file attachment, Google Doc link, or inline HTML — in that priority order), normalizes it into a structured record with title, date, and participants, then splits it into overlapping chunks aligned to speaker turns. Each chunk is converted into a 1,536-dimension vector embedding using OpenAI's text-embedding-3-small and stored in PostgreSQL with pgvector for semantic search. Next, Anthropic's Claude Sonnet 4 extracts action items (with assignee, priority, effort) and decisions (with domain, confidence) as structured JSON. Users query their full meeting history through a RAG interface: their question is embedded, matched against stored chunks via cosine similarity, and Claude generates a cited answer grounded only in real transcripts. A calendar, scoreboard, and analytics dashboard round out the experience — all computed deterministically from the data. The architecture separates a fully deterministic data pipeline (capture → parse → chunk → embed → store) from a constrained AI layer (extract → query), giving scientists reliable, auditable meeting intelligence.

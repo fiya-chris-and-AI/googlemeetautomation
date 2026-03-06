@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { getServerSupabase } from '../../../lib/supabase';
+import { callGemini, stripMarkdownFences } from '@meet-pipeline/shared';
 import type { QueryResponse, SourceChunk } from '@meet-pipeline/shared';
 
 /**
@@ -9,7 +10,7 @@ import type { QueryResponse, SourceChunk } from '@meet-pipeline/shared';
  * Flow:
  * 1. Embed the user's question using OpenAI
  * 2. Search for the top 10 matching chunks via match_chunks()
- * 3. Send chunks + question to Claude for a grounded answer
+ * 3. Send chunks + question to Gemini for a grounded answer
  * 4. Return the answer with source citations
  */
 export async function POST(request: Request) {
@@ -94,7 +95,7 @@ export async function POST(request: Request) {
             }
         }
 
-        // Step 3: Build context and call Claude
+        // Step 3: Build context and call Gemini
         // Build decision context if any matched
         const decisionContext = relevantDecisions.length > 0
             ? `IMPORTANT — Previously recorded decisions that may be relevant:\n\n${relevantDecisions
@@ -121,32 +122,21 @@ DECISION AWARENESS: If the context includes previously recorded decisions that a
             ? `Context from meeting transcripts:\n\n${context}\n\n---\n\nQuestion: ${question}`
             : `No relevant meeting transcripts were found for this question.\n\nQuestion: ${question}`;
 
-        // Use Anthropic Claude via the REST API
-        const anthropicKey = process.env.ANTHROPIC_API_KEY;
+        // Use Gemini via the REST API
+        const geminiKey = process.env.GEMINI_API_KEY;
         let answer: string;
 
-        if (anthropicKey) {
-            const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'x-api-key': anthropicKey,
-                    'anthropic-version': '2023-06-01',
-                },
-                body: JSON.stringify({
-                    model: 'claude-sonnet-4-20250514',
-                    max_tokens: 2048,
-                    system: systemPrompt,
-                    messages: [{ role: 'user', content: userPrompt }],
-                }),
+        if (geminiKey) {
+            answer = await callGemini(systemPrompt, userPrompt, geminiKey, {
+                maxOutputTokens: 2048,
             });
-
-            const anthropicData = await anthropicRes.json();
-            answer = anthropicData.content?.[0]?.text ?? 'I could not generate an answer.';
+            if (!answer) {
+                answer = 'I could not generate an answer.';
+            }
         } else {
-            // Fallback: if no Anthropic key, return a summary of the chunks
+            // Fallback: if no Gemini key, return a summary of the chunks
             answer = matchedChunks.length > 0
-                ? `Found ${matchedChunks.length} relevant transcript segments. Configure ANTHROPIC_API_KEY for AI-generated answers.\n\nTop match: "${matchedChunks[0].text.slice(0, 200)}..."`
+                ? `Found ${matchedChunks.length} relevant transcript segments. Configure GEMINI_API_KEY for AI-generated answers.\n\nTop match: "${matchedChunks[0].text.slice(0, 200)}..."`
                 : 'No relevant transcripts found for your question.';
         }
 

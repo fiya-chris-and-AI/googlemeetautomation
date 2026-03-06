@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '../../../../../lib/supabase';
+import { callGemini } from '@meet-pipeline/shared';
+import { autoExtractActionItems } from '../../../../../lib/auto-extract';
+import { autoExtractDecisions } from '../../../../../lib/auto-extract-decisions';
 
 export const dynamic = 'force-dynamic';
 
@@ -7,7 +10,7 @@ export const dynamic = 'force-dynamic';
  * GET /api/transcripts/[id]/summarize
  *
  * Generate a structured meeting brief directly from the full transcript.
- * Bypasses RAG — sends the raw transcript straight to Claude for analysis.
+ * Bypasses RAG — sends the raw transcript straight to Gemini for analysis.
  */
 export async function GET(
     _req: NextRequest,
@@ -15,9 +18,9 @@ export async function GET(
 ) {
     try {
         const { id } = await params;
-        const anthropicKey = process.env.ANTHROPIC_API_KEY;
-        if (!anthropicKey) {
-            return NextResponse.json({ error: 'ANTHROPIC_API_KEY not configured' }, { status: 503 });
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (!geminiKey) {
+            return NextResponse.json({ error: 'GEMINI_API_KEY not configured' }, { status: 503 });
         }
 
         const supabase = getServerSupabase();
@@ -70,26 +73,67 @@ Guidelines:
 - If the transcript is informal or contains filler words, extract the substance and ignore the noise
 - The Loom transcripts may say "Speaker:" without identifying who — just summarize the content without attributing to a specific person unless it's clear from context`;
 
-        const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': anthropicKey,
-                'anthropic-version': '2023-06-01',
-            },
-            body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
-                max_tokens: 2048,
-                system: systemPrompt,
-                messages: [{
-                    role: 'user',
-                    content: `Meeting: ${transcript.meeting_title}\nDate: ${new Date(transcript.meeting_date).toLocaleDateString()}\nWord count: ${transcript.word_count}\n\nTranscript:\n${content}`,
-                }],
-            }),
-        });
+        const userMessage = `Meeting: ${transcript.meeting_title}\nDate: ${new Date(transcript.meeting_date).toLocaleDateString()}\nWord count: ${transcript.word_count}\n\nTranscript:\n${content}`;
 
-        const data = (await anthropicRes.json()) as { content?: { text?: string }[] };
-        const summary = data.content?.[0]?.text ?? 'Unable to generate summary.';
+        let summary: string;
+        try {
+            summary = await callGemini(systemPrompt, userMessage, geminiKey, {
+                maxOutputTokens: 2048,
+            });
+        } catch (err) {
+            const msg = err instanceof Error ? err.message : 'Summary generation failed';
+            console.error(`[summarize] Gemini error:`, msg);
+            const isRateLimit = msg.includes('429');
+            return NextResponse.json(
+                { error: isRateLimit ? 'Rate limit exceeded — please try again in a minute' : 'Summary generation failed' },
+                { status: isRateLimit ? 429 : 502 },
+            );
+        }
+
+        if (!summary) {
+            summary = 'Unable to generate summary.';
+        }
+
+        // Fire-and-forget: auto-extract decisions and action items if not already done.
+        // This only runs for old transcripts — recently uploaded ones are handled
+        // by the upload route's own extraction chain.
+        // Sequential with delays to avoid rate limits.
+        try {
+            const { count: decisionCount } = await supabase
+                .from('decisions')
+                .select('id', { count: 'exact', head: true })
+                .eq('transcript_id', id);
+
+            const { count: actionItemCount } = await supabase
+                .from('action_items')
+                .select('id', { count: 'exact', head: true })
+                .eq('transcript_id', id);
+
+            // Check if extraction was previously attempted (found 0 items)
+            const { count: decisionAttemptCount } = await supabase
+                .from('activity_log')
+                .select('id', { count: 'exact', head: true })
+                .eq('event_type', 'decision_extraction_attempted')
+                .eq('entity_id', id);
+
+            const { count: actionAttemptCount } = await supabase
+                .from('activity_log')
+                .select('id', { count: 'exact', head: true })
+                .eq('event_type', 'bulk_extraction_attempted')
+                .eq('entity_id', id);
+
+            const needsActionItems = (actionItemCount ?? 0) === 0 && (actionAttemptCount ?? 0) === 0;
+            const needsDecisions = (decisionCount ?? 0) === 0 && (decisionAttemptCount ?? 0) === 0;
+
+            if (needsActionItems) {
+                autoExtractActionItems(id).catch(() => { });
+            }
+            if (needsDecisions) {
+                autoExtractDecisions(id).catch(() => { });
+            }
+        } catch {
+            // Never let extraction checks delay the summary response
+        }
 
         return NextResponse.json({ summary });
     } catch (err) {

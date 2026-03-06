@@ -13,12 +13,11 @@ export const dynamic = 'force-dynamic';
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
- * Delay between Claude API calls (in ms).
- *
- * With a 30k input TPM limit, a typical 3000-word transcript uses ~4k tokens.
- * At 20s intervals, that's ~12k TPM — well under the limit even for long transcripts.
+ * Delay between Gemini API calls (in ms).
+ * Gemini has much higher rate limits than Claude, so a shorter
+ * throttle is sufficient to be safe.
  */
-const THROTTLE_MS = 20_000;
+const THROTTLE_MS = 5_000;
 
 /** Max retries when we hit a 429 rate-limit error. */
 const MAX_RETRIES = 5;
@@ -32,10 +31,10 @@ const MAX_RETRIES = 5;
  * so the UI can show which transcript is being processed instead of appearing stuck.
  */
 export async function POST() {
-    const anthropicKey = process.env.ANTHROPIC_API_KEY;
-    if (!anthropicKey) {
+    const geminiKey = process.env.GEMINI_API_KEY;
+    if (!geminiKey) {
         return NextResponse.json(
-            { error: 'ANTHROPIC_API_KEY is not configured' },
+            { error: 'GEMINI_API_KEY is not configured' },
             { status: 503 },
         );
     }
@@ -143,7 +142,7 @@ export async function POST() {
                 let extracted: Awaited<ReturnType<typeof extractDecisionsFromTranscript>> | null = null;
                 for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
                     try {
-                        extracted = await extractDecisionsFromTranscript(transcript, anthropicKey);
+                        extracted = await extractDecisionsFromTranscript(transcript, geminiKey);
                         break;
                     } catch (err) {
                         const msg = err instanceof Error ? err.message : String(err);
