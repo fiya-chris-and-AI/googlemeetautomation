@@ -561,55 +561,6 @@ function DecisionCard({
                         </div>
                     )}
 
-                    {decision.transcript_id && (
-                        <Link
-                            href={`/transcripts/${decision.transcript_id}`}
-                            className="inline-block text-xs text-brand-400 hover:text-brand-300 transition-colors mb-3"
-                        >
-                            View transcript →
-                        </Link>
-                    )}
-
-                    {/* Action buttons */}
-                    <div className="flex items-center gap-2 mt-2 flex-wrap">
-                        {decision.status === 'active' && (
-                            <>
-                                <button
-                                    onClick={() => onStatusChange(decision.id, 'completed')}
-                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-colors"
-                                >
-                                    ✓ Mark Completed
-                                </button>
-                                <button
-                                    onClick={() => onStatusChange(decision.id, 'superseded')}
-                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-theme-text-secondary transition-colors"
-                                >
-                                    Mark Superseded
-                                </button>
-                                <button
-                                    onClick={() => onStatusChange(decision.id, 'reversed')}
-                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-rose-400 transition-colors"
-                                >
-                                    Mark Reversed
-                                </button>
-                                <button
-                                    onClick={() => onStatusChange(decision.id, 'under_review')}
-                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-amber-400 transition-colors"
-                                >
-                                    Under Review
-                                </button>
-                            </>
-                        )}
-                        {decision.status !== 'active' && (
-                            <button
-                                onClick={() => onStatusChange(decision.id, 'active')}
-                                className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-emerald-400 transition-colors"
-                            >
-                                Reactivate
-                            </button>
-                        )}
-                    </div>
-
                     {/* Ask AI button — only when transcript is available */}
                     {decision.transcript_id && (
                         <button
@@ -697,6 +648,56 @@ function DecisionCard({
                             </div>
                         </div>
                     )}
+
+                    {decision.transcript_id && (
+                        <Link
+                            href={`/transcripts/${decision.transcript_id}`}
+                            className="inline-block text-xs text-brand-400 hover:text-brand-300 transition-colors mb-3"
+                        >
+                            View transcript →
+                        </Link>
+                    )}
+
+                    {/* Action buttons */}
+                    <div className="flex items-center gap-2 mt-2 flex-wrap">
+                        {decision.status === 'active' && (
+                            <>
+                                <button
+                                    onClick={() => onStatusChange(decision.id, 'completed')}
+                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-colors"
+                                >
+                                    ✓ Mark Completed
+                                </button>
+                                <button
+                                    onClick={() => onStatusChange(decision.id, 'superseded')}
+                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                                >
+                                    Mark Superseded
+                                </button>
+                                <button
+                                    onClick={() => onStatusChange(decision.id, 'reversed')}
+                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-rose-400 transition-colors"
+                                >
+                                    Mark Reversed
+                                </button>
+                                <button
+                                    onClick={() => onStatusChange(decision.id, 'under_review')}
+                                    className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-amber-400 transition-colors"
+                                >
+                                    Under Review
+                                </button>
+                            </>
+                        )}
+                        {decision.status !== 'active' && (
+                            <button
+                                onClick={() => onStatusChange(decision.id, 'active')}
+                                className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-emerald-400 transition-colors"
+                            >
+                                Reactivate
+                            </button>
+                        )}
+                    </div>
+
                 </div>
             )}
         </div>
