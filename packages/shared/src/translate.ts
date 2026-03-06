@@ -17,15 +17,15 @@ const LANG_NAMES: Record<TranslateLang, string> = {
 
 const BATCH_SIZE = 20;
 
-const SYSTEM_PROMPT = `You are a precise translator. Translate each line of text to the target language.
+const SYSTEM_PROMPT = `You are a precise translator.
 
 Rules:
-- Return ONLY the translations, one per line, in the EXACT same order as the input
-- Do NOT add numbering, bullets, or any extra formatting
+- Each input line is numbered like "1: some text"
+- Return ONLY the translations, keeping the EXACT same numbering: "1: translated text"
+- Do NOT skip or merge lines — every input number MUST appear in your output
 - Do NOT translate proper nouns (people names, company names, product names)
 - Keep the same tone and brevity as the original
-- If a line is already in the target language, return it unchanged
-- Return exactly the same number of lines as the input`;
+- If a line is already in the target language, return it unchanged with its number`;
 
 /**
  * Translate an array of strings from one language to another using Gemini.
@@ -44,18 +44,27 @@ export async function translateTexts(
     // Process in batches to keep token usage manageable
     for (let i = 0; i < texts.length; i += BATCH_SIZE) {
         const batch = texts.slice(i, i + BATCH_SIZE);
-        const userMessage = `Translate the following ${batch.length} lines to ${targetName}:\n\n${batch.join('\n')}`;
+
+        // Number each line so Gemini's response can be parsed reliably
+        const numbered = batch.map((text, idx) => `${idx + 1}: ${text}`).join('\n');
+        const userMessage = `Translate the following ${batch.length} lines to ${targetName}:\n\n${numbered}`;
 
         const response = await callGemini(SYSTEM_PROMPT, userMessage, apiKey, {
             maxOutputTokens: 2048,
         });
 
-        const lines = response.trim().split('\n').map((l) => l.trim()).filter(Boolean);
+        // Parse numbered responses: "1: translated text" → Map<number, string>
+        const parsed = new Map<number, string>();
+        for (const line of response.trim().split('\n')) {
+            const match = line.match(/^(\d+):\s*(.+)/);
+            if (match) {
+                parsed.set(parseInt(match[1], 10), match[2].trim());
+            }
+        }
 
-        // Gemini should return exactly as many lines as we sent.
-        // If it doesn't, fall back to originals for the missing ones.
+        // Map back to the batch — fall back to original if a line was missed
         for (let j = 0; j < batch.length; j++) {
-            results.push(lines[j] ?? batch[j]);
+            results.push(parsed.get(j + 1) ?? batch[j]);
         }
     }
 

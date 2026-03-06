@@ -115,6 +115,12 @@ export default function DashboardPage() {
     const recentTitles = recent.map((tr) => tr.meeting_title);
     const { translated: translatedTitles } = useTranslation(recentTitles, { entityType: 'transcript' });
 
+    // Translate open action item titles shown on the dashboard
+    const openItemTitles = openItems.map((i) => i.title);
+    const { translated: translatedItemTitles } = useTranslation(openItemTitles, { entityType: 'action_item' });
+    const itemTitleMap = new Map<string, string>();
+    openItems.forEach((item, idx) => itemTitleMap.set(item.id, translatedItemTitles[idx] ?? item.title));
+
     return (
         <div className="max-w-6xl mx-auto animate-fade-in">
             {/* Header */}
@@ -186,6 +192,7 @@ export default function DashboardPage() {
                 <ActionItemsSummary
                     openItems={openItems}
                     onStatusChange={handleStatusChange}
+                    titleMap={itemTitleMap}
                 />
             )}
 
@@ -312,9 +319,10 @@ function StatCard({ label, value, color, loading }: {
     );
 }
 
-function ActionItemsSummary({ openItems, onStatusChange }: {
+function ActionItemsSummary({ openItems, onStatusChange, titleMap }: {
     openItems: ActionItem[];
     onStatusChange: (id: string, status: ActionItem['status']) => void;
+    titleMap: Map<string, string>;
 }) {
     const { t } = useLocale();
     const assigneeCounts = new Map<string, number>();
@@ -365,7 +373,7 @@ function ActionItemsSummary({ openItems, onStatusChange }: {
                         <div key={item.id} className="flex items-center gap-2">
                             <span className={`inline-block w-2 h-2 rounded-full flex-shrink-0 ${item.priority === 'urgent' ? 'bg-rose-500' : 'bg-amber-500'
                                 }`} />
-                            <p className="text-sm text-theme-text-primary truncate flex-1">{item.title}</p>
+                            <p className="text-sm text-theme-text-primary truncate flex-1">{titleMap.get(item.id) ?? item.title}</p>
                             {item.assigned_to && (
                                 <span className="text-xs text-theme-text-tertiary flex-shrink-0">{item.assigned_to}</span>
                             )}
