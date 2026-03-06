@@ -6,15 +6,17 @@ import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './theme-toggle';
 import { SidebarUploadButton } from './upload-modal';
 import { TimezoneClock } from './timezone-clock';
+import { useLocale } from '../lib/locale';
+import type { TranslationKey } from '../lib/translations';
 
 const NAV_ITEMS = [
-    { href: '/', label: 'Dashboard', icon: '◆' },
-    { href: '/calendar', label: 'Calendar', icon: '◫' },
-    { href: '/transcripts', label: 'Transcripts', icon: '◇' },
-    { href: '/action-items', label: 'Action Items', icon: '☑' },
-    { href: '/decisions', label: 'Decisions', icon: '◩' },
-    { href: '/ask', label: 'Ask AI', icon: '◈' },
-    { href: '/logs', label: 'Logs', icon: '◉' },
+    { href: '/', labelKey: 'sidebar.nav.dashboard' as TranslationKey, icon: '◆' },
+    { href: '/calendar', labelKey: 'sidebar.nav.calendar' as TranslationKey, icon: '◫' },
+    { href: '/transcripts', labelKey: 'sidebar.nav.transcripts' as TranslationKey, icon: '◇' },
+    { href: '/action-items', labelKey: 'sidebar.nav.actionItems' as TranslationKey, icon: '☑' },
+    { href: '/decisions', labelKey: 'sidebar.nav.decisions' as TranslationKey, icon: '◩' },
+    { href: '/ask', labelKey: 'sidebar.nav.askAi' as TranslationKey, icon: '◈' },
+    { href: '/logs', labelKey: 'sidebar.nav.logs' as TranslationKey, icon: '◉' },
 ] as const;
 
 /**
@@ -23,6 +25,7 @@ const NAV_ITEMS = [
  */
 export function Sidebar() {
     const pathname = usePathname();
+    const { t, locale, toggleLocale } = useLocale();
     const [openCount, setOpenCount] = useState<number | null>(null);
     const [decisionCount, setDecisionCount] = useState<number | null>(null);
 
@@ -60,7 +63,7 @@ export function Sidebar() {
                         className="h-14 w-auto hidden dark:block"
                     />
                     <p className="text-[11px] text-theme-text-secondary font-medium mt-1.5 ml-0.5">
-                        Transcript Pipeline
+                        {t('sidebar.brand')}
                     </p>
                 </div>
             </div>
@@ -93,7 +96,7 @@ export function Sidebar() {
                             <span className={`text-lg transition-transform duration-200 ${isActive ? 'scale-110' : 'group-hover:scale-105'}`}>
                                 {item.icon}
                             </span>
-                            {item.label}
+                            {t(item.labelKey)}
                             {item.href === '/action-items' && openCount !== null && openCount > 0 && (
                                 <span className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-amber-500/15 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20">
                                     {openCount}
@@ -121,7 +124,19 @@ export function Sidebar() {
             {/* Footer */}
             <div className="p-4 border-t border-theme-border space-y-3">
                 <TimezoneClock />
-                <ThemeToggle />
+                <div className="flex items-center gap-2">
+                    <ThemeToggle />
+                    <button
+                        onClick={toggleLocale}
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+                                   text-gray-600 dark:text-neutral-400 hover:bg-gray-100 dark:hover:bg-neutral-800
+                                   transition-all duration-200 cursor-pointer"
+                        title={locale === 'en' ? 'Switch to German' : 'Auf Englisch umschalten'}
+                    >
+                        <span>{locale === 'en' ? '🇩🇪' : '🇺🇸'}</span>
+                        {t('locale.toggle')}
+                    </button>
+                </div>
 
                 {/* Admin & Auth */}
                 <div className="pt-2 space-y-1">
@@ -133,13 +148,13 @@ export function Sidebar() {
                                 : 'text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800'
                             }`}
                     >
-                        <span>👤</span> Admin
+                        <span>👤</span> {t('sidebar.admin')}
                     </Link>
                     <a
                         href="/api/auth/logout"
                         className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-all"
                     >
-                        <span>🚪</span> Logout
+                        <span>🚪</span> {t('sidebar.logout')}
                     </a>
                 </div>
 

@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { MeetingTranscript, QueryResponse, ActionItem, ActivityLogEntry, ScoreboardMetrics, CumulativeStats } from '@meet-pipeline/shared';
 import { UploadModal } from '../components/upload-modal';
+import { useLocale } from '../lib/locale';
 
 /**
  * Dashboard Home — summary stats, recent transcripts, and a query bar.
  */
 export default function DashboardPage() {
+    const { t, locale } = useLocale();
     const [transcripts, setTranscripts] = useState<MeetingTranscript[]>([]);
     const [loading, setLoading] = useState(true);
     const [query, setQuery] = useState('');
@@ -113,8 +115,8 @@ export default function DashboardPage() {
             {/* Header */}
             <div className="mb-8 flex items-start justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Dashboard</h1>
-                    <p className="text-theme-text-tertiary mt-1">Your meeting transcript overview</p>
+                    <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('dashboard.title')}</h1>
+                    <p className="text-theme-text-tertiary mt-1">{t('dashboard.subtitle')}</p>
                 </div>
                 <UploadModal onSuccess={() => refreshData()} />
             </div>
@@ -125,7 +127,7 @@ export default function DashboardPage() {
                     <input
                         id="dashboard-search"
                         type="text"
-                        placeholder="Ask a question about your meetings..."
+                        placeholder={t('dashboard.search.placeholder')}
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
@@ -137,7 +139,7 @@ export default function DashboardPage() {
                         disabled={querying}
                         className="btn-primary px-6 py-3"
                     >
-                        {querying ? 'Searching...' : 'Ask AI'}
+                        {querying ? t('dashboard.search.loading') : t('dashboard.search.button')}
                     </button>
                 </div>
 
@@ -146,7 +148,7 @@ export default function DashboardPage() {
                         <p className="text-theme-text-primary whitespace-pre-wrap">{answer.answer}</p>
                         {answer.sources.length > 0 && (
                             <div className="mt-4 pt-4 border-t border-theme-border">
-                                <p className="text-xs text-theme-text-tertiary mb-2">Sources ({answer.sources.length})</p>
+                                <p className="text-xs text-theme-text-tertiary mb-2">{t('dashboard.sources')} ({answer.sources.length})</p>
                                 <div className="space-y-2">
                                     {answer.sources.map((s) => (
                                         <Link
@@ -154,7 +156,7 @@ export default function DashboardPage() {
                                             href={`/transcripts/${s.transcript_id}`}
                                             className="block text-xs text-brand-400 hover:text-brand-300 transition-colors"
                                         >
-                                            {s.meeting_title} — {new Date(s.meeting_date).toLocaleDateString()}
+                                            {s.meeting_title} — {new Date(s.meeting_date).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')}
                                         </Link>
                                     ))}
                                 </div>
@@ -166,9 +168,9 @@ export default function DashboardPage() {
 
             {/* Stat Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <StatCard label="Total Transcripts" value={totalTranscripts} color="from-brand-500 to-brand-600" loading={loading} />
-                <StatCard label="This Week" value={thisWeek} color="from-accent-teal to-emerald-500" loading={loading} />
-                <StatCard label="This Month" value={thisMonth} color="from-accent-violet to-purple-500" loading={loading} />
+                <StatCard label={t('dashboard.stat.total')} value={totalTranscripts} color="from-brand-500 to-brand-600" loading={loading} />
+                <StatCard label={t('dashboard.stat.week')} value={thisWeek} color="from-accent-teal to-emerald-500" loading={loading} />
+                <StatCard label={t('dashboard.stat.month')} value={thisMonth} color="from-accent-violet to-purple-500" loading={loading} />
             </div>
 
             {/* This Month at a Glance */}
@@ -186,7 +188,7 @@ export default function DashboardPage() {
             {topParticipants.length > 0 && (
                 <div className="glass-card p-6 mb-8">
                     <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-4">
-                        Most Frequent Participants
+                        {t('dashboard.participants.title')}
                     </h2>
                     <div className="flex flex-wrap gap-2">
                         {topParticipants.map(([name, count]) => (
@@ -206,7 +208,7 @@ export default function DashboardPage() {
                                hover:bg-theme-muted transition-colors cursor-pointer"
                 >
                     <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider">
-                        Recent Transcripts
+                        {t('dashboard.transcripts.title')}
                         {!loading && <span className="ml-2 text-theme-text-muted font-normal normal-case tracking-normal">({recent.length})</span>}
                     </h2>
                     <span
@@ -219,34 +221,34 @@ export default function DashboardPage() {
                 {transcriptsOpen && (
                     <>
                         {loading ? (
-                            <div className="px-8 py-12 text-center text-theme-text-tertiary">Loading...</div>
+                            <div className="px-8 py-12 text-center text-theme-text-tertiary">{t('dashboard.transcripts.loading')}</div>
                         ) : recent.length === 0 ? (
                             <div className="px-8 py-12 text-center text-theme-text-tertiary">
-                                No transcripts yet. Processed emails will appear here.
+                                {t('dashboard.transcripts.empty')}
                             </div>
                         ) : (
                             <div className="divide-y divide-theme-border">
-                                {recent.map((t) => (
+                                {recent.map((tr) => (
                                     <Link
-                                        key={t.transcript_id}
-                                        href={`/transcripts/${t.transcript_id}`}
+                                        key={tr.transcript_id}
+                                        href={`/transcripts/${tr.transcript_id}`}
                                         className="block flex items-center justify-between px-8 py-4
                                                    border-b border-theme-border last:border-b-0
                                                    hover:bg-[rgb(var(--color-muted))] transition-colors duration-150 cursor-pointer"
                                     >
                                         <div className="min-w-0 flex-1 mr-4">
-                                            <p className="text-sm font-medium text-theme-text-primary truncate max-w-xs sm:max-w-sm md:max-w-md">{t.meeting_title}</p>
+                                            <p className="text-sm font-medium text-theme-text-primary truncate max-w-xs sm:max-w-sm md:max-w-md">{tr.meeting_title}</p>
                                             <p className="text-xs text-theme-text-tertiary mt-0.5">
-                                                {new Date(t.meeting_date).toLocaleDateString()} · {t.participants.length} participants
+                                                {new Date(tr.meeting_date).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')} · {tr.participants.length} {t('dashboard.transcripts.participants')}
                                             </p>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-xs text-theme-text-tertiary">{t.word_count.toLocaleString()} words</p>
-                                            <span className={`text-[10px] font-medium ${t.extraction_method === 'inline' ? 'text-brand-400' :
-                                                t.extraction_method === 'google_doc' ? 'text-accent-teal' :
-                                                    t.extraction_method === 'upload' ? 'text-emerald-400' : 'text-accent-violet'
+                                            <p className="text-xs text-theme-text-tertiary">{tr.word_count.toLocaleString()} {t('dashboard.transcripts.words')}</p>
+                                            <span className={`text-[10px] font-medium ${tr.extraction_method === 'inline' ? 'text-brand-400' :
+                                                tr.extraction_method === 'google_doc' ? 'text-accent-teal' :
+                                                    tr.extraction_method === 'upload' ? 'text-emerald-400' : 'text-accent-violet'
                                                 }`}>
-                                                {t.extraction_method}
+                                                {tr.extraction_method}
                                             </span>
                                         </div>
                                     </Link>
@@ -262,7 +264,7 @@ export default function DashboardPage() {
                 <div className="glass-card overflow-hidden mt-8">
                     <div className="p-6 border-b border-theme-border">
                         <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider">
-                            Recent Activity
+                            {t('dashboard.activity.title')}
                         </h2>
                     </div>
                     <div className="divide-y divide-theme-border">
@@ -309,6 +311,7 @@ function ActionItemsSummary({ openItems, onStatusChange }: {
     openItems: ActionItem[];
     onStatusChange: (id: string, status: ActionItem['status']) => void;
 }) {
+    const { t } = useLocale();
     const assigneeCounts = new Map<string, number>();
     openItems.forEach((i) => {
         const key = i.assigned_to ?? 'Unassigned';
@@ -328,13 +331,13 @@ function ActionItemsSummary({ openItems, onStatusChange }: {
         <div className="glass-card p-6 mb-8">
             <div className="flex items-center justify-between mb-4">
                 <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider">
-                    Open Action Items
+                    {t('dashboard.actions.title')}
                 </h2>
                 <Link
                     href="/action-items"
                     className="text-xs text-brand-400 hover:text-brand-300 transition-colors font-medium"
                 >
-                    View All →
+                    {t('dashboard.actions.viewAll')}
                 </Link>
             </div>
 
@@ -346,7 +349,7 @@ function ActionItemsSummary({ openItems, onStatusChange }: {
                 ))}
                 {overdueCount > 0 && (
                     <span className="badge-error">
-                        {overdueCount} overdue
+                        {overdueCount} {t('dashboard.actions.overdue')}
                     </span>
                 )}
             </div>
@@ -365,7 +368,7 @@ function ActionItemsSummary({ openItems, onStatusChange }: {
                                 onClick={() => onStatusChange(item.id, item.status === 'open' ? 'in_progress' : 'done')}
                                 className="px-2.5 py-0.5 text-[11px] rounded-lg bg-brand-500/10 text-brand-400 hover:bg-brand-500/20 transition-colors flex-shrink-0"
                             >
-                                {item.status === 'open' ? 'Start' : 'Done'}
+                                {item.status === 'open' ? t('dashboard.actions.start') : t('dashboard.actions.done')}
                             </button>
                         </div>
                     ))}
@@ -379,6 +382,7 @@ function CalendarWidget({ scoreboard, cumulative }: {
     scoreboard: ScoreboardMetrics | null;
     cumulative: CumulativeStats | null;
 }) {
+    const { t } = useLocale();
     if (!scoreboard) return null;
 
     return (
@@ -386,20 +390,20 @@ function CalendarWidget({ scoreboard, cumulative }: {
             <div className="flex items-center justify-between">
                 <div>
                     <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-2">
-                        This Month at a Glance
+                        {t('dashboard.calendar.title')}
                     </h2>
                     <p className="text-sm text-theme-text-primary">
-                        <span className="font-semibold text-brand-400">{scoreboard.totalMeetings}</span> meetings
-                        {' · ~'}<span className="font-semibold text-accent-teal">{scoreboard.totalHours.toFixed(1)}h</span> total
-                        {' · '}<span className="font-semibold text-accent-violet">{scoreboard.topicsDiscussed.length}</span> topics
-                        {' · '}<span className="font-semibold text-emerald-400">{scoreboard.actionItemCompletionRate}%</span> completion
+                        <span className="font-semibold text-brand-400">{scoreboard.totalMeetings}</span> {t('dashboard.calendar.meetings')}
+                        {' · ~'}<span className="font-semibold text-accent-teal">{scoreboard.totalHours.toFixed(1)}h</span> {t('dashboard.calendar.total')}
+                        {' · '}<span className="font-semibold text-accent-violet">{scoreboard.topicsDiscussed.length}</span> {t('dashboard.calendar.topics')}
+                        {' · '}<span className="font-semibold text-emerald-400">{scoreboard.actionItemCompletionRate}%</span> {t('dashboard.calendar.completion')}
                     </p>
                     {cumulative && (
                         <p className="text-xs text-theme-text-tertiary mt-1.5">
-                            All-time: <span className="font-medium text-theme-text-secondary">{cumulative.totalMeetings}</span> meetings
+                            {t('dashboard.calendar.allTime')} <span className="font-medium text-theme-text-secondary">{cumulative.totalMeetings}</span> {t('dashboard.calendar.meetings')}
                             {' · ~'}<span className="font-medium text-theme-text-secondary">{cumulative.totalHours.toFixed(1)}h</span>
-                            {' · '}<span className="font-medium text-theme-text-secondary">{cumulative.totalActionItems}</span> action items
-                            {' · '}<span className="font-medium text-theme-text-secondary">{cumulative.averageMeetingsPerMonth.toFixed(1)}</span>/month avg
+                            {' · '}<span className="font-medium text-theme-text-secondary">{cumulative.totalActionItems}</span> {t('dashboard.calendar.actionItems')}
+                            {' · '}<span className="font-medium text-theme-text-secondary">{cumulative.averageMeetingsPerMonth.toFixed(1)}</span>{t('dashboard.calendar.monthAvg')}
                         </p>
                     )}
                 </div>
@@ -407,7 +411,7 @@ function CalendarWidget({ scoreboard, cumulative }: {
                     href="/calendar"
                     className="text-xs text-brand-400 hover:text-brand-300 transition-colors font-medium whitespace-nowrap ml-4"
                 >
-                    View Calendar →
+                    {t('dashboard.calendar.viewCalendar')}
                 </Link>
             </div>
         </div>
