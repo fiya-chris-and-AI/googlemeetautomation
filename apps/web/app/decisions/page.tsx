@@ -73,10 +73,7 @@ export default function DecisionsPage() {
     const [showCreate, setShowCreate] = useState(false);
     const [expandedId, setExpandedId] = useState<string | null>(null);
 
-    // Extraction state
-    const [extracting, setExtracting] = useState(false);
-    const [extractResult, setExtractResult] = useState<string | null>(null);
-    const [extractProgress, setExtractProgress] = useState<string | null>(null);
+
 
     // Create form
     const [newText, setNewText] = useState('');
@@ -137,93 +134,7 @@ export default function DecisionsPage() {
         [decisions],
     );
 
-    const handleExtractAll = async () => {
-        setExtracting(true);
-        setExtractResult(null);
-        setExtractProgress('Starting extraction...');
 
-        try {
-            const res = await fetch('/api/decisions/extract-all', { method: 'POST' });
-
-            // If the response is not SSE (e.g. early error), handle as JSON
-            const contentType = res.headers.get('content-type') ?? '';
-            if (!contentType.includes('text/event-stream')) {
-                const data = await res.json();
-                if (!res.ok) {
-                    setExtractResult(`Error: ${data.error}`);
-                } else {
-                    setExtractResult(
-                        `Extracted ${data.decisions_extracted} decisions from ${data.transcripts_processed} transcripts ` +
-                        `(${data.transcripts_skipped} skipped, ${data.transcripts_empty} empty, ${data.transcripts_failed} failed)`
-                    );
-                    await fetchDecisions();
-                }
-                setExtracting(false);
-                setExtractProgress(null);
-                return;
-            }
-
-            // Read SSE stream
-            const reader = res.body!.getReader();
-            const decoder = new TextDecoder();
-            let buffer = '';
-
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-
-                buffer += decoder.decode(value, { stream: true });
-                const lines = buffer.split('\n');
-                buffer = lines.pop() ?? '';
-
-                for (const line of lines) {
-                    if (!line.startsWith('data: ')) continue;
-                    try {
-                        const event = JSON.parse(line.slice(6));
-
-                        switch (event.type) {
-                            case 'start':
-                                setExtractProgress(`Found ${event.total} transcripts to process (${event.skipped} already done)`);
-                                break;
-                            case 'waiting':
-                                setExtractProgress(`⏳ Waiting ${event.seconds}s before transcript ${event.index}/${event.total}: ${event.title}`);
-                                break;
-                            case 'processing':
-                                setExtractProgress(`🔍 Processing ${event.index}/${event.total}: ${event.title}`);
-                                break;
-                            case 'rate_limited':
-                                setExtractProgress(`⚠️ Rate limited — retrying in ${event.backoffSeconds}s (attempt ${event.attempt}/${event.maxRetries})`);
-                                break;
-                            case 'extracted':
-                                setExtractProgress(`✅ ${event.index}/${event.total}: Found ${event.count} decisions in "${event.title}" (${event.totalSoFar} total so far)`);
-                                // Refresh the list periodically as decisions come in
-                                fetchDecisions();
-                                break;
-                            case 'empty':
-                                setExtractProgress(`○ ${event.index}/${event.total}: No decisions in "${event.title}"`);
-                                break;
-                            case 'error':
-                                setExtractProgress(`❌ ${event.index}/${event.total}: Failed on "${event.title}" — ${event.error}`);
-                                break;
-                            case 'done':
-                                setExtractResult(
-                                    `Done! Extracted ${event.decisions_extracted} decisions from ${event.transcripts_processed} transcripts ` +
-                                    `(${event.transcripts_skipped} skipped, ${event.transcripts_empty} empty, ${event.transcripts_failed} failed)`
-                                );
-                                setExtractProgress(null);
-                                fetchDecisions();
-                                break;
-                        }
-                    } catch { /* skip malformed events */ }
-                }
-            }
-        } catch {
-            setExtractResult('Network error — extraction failed');
-        } finally {
-            setExtracting(false);
-            setExtractProgress(null);
-        }
-    };
 
     const handleCreate = async () => {
         if (!newText.trim()) return;
@@ -276,13 +187,6 @@ export default function DecisionsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                     <button
-                        onClick={handleExtractAll}
-                        disabled={extracting}
-                        className="btn-primary px-5 py-2.5"
-                    >
-                        {extracting ? 'Extracting...' : '✦ Extract All'}
-                    </button>
-                    <button
                         onClick={() => setShowCreate(true)}
                         className="btn-primary px-5 py-2.5"
                     >
@@ -291,18 +195,7 @@ export default function DecisionsPage() {
                 </div>
             </div>
 
-            {/* Live progress panel */}
-            {extractProgress && (
-                <div className="glass-card p-4 mb-4 border-l-4 border-brand-500 animate-slide-up">
-                    <p className="text-sm text-theme-text-secondary font-medium">{extractProgress}</p>
-                </div>
-            )}
 
-            {extractResult && (
-                <p className={`text-xs mb-4 ${extractResult.startsWith('Error') ? 'text-rose-400' : 'text-emerald-400'}`}>
-                    {extractResult}
-                </p>
-            )}
 
             {/* Stats Bar */}
             <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
@@ -384,7 +277,7 @@ export default function DecisionsPage() {
                     <p className="text-theme-text-tertiary text-sm">
                         {statusFilter !== 'all' || domainFilter !== 'all' || search
                             ? 'Try adjusting your filters.'
-                            : 'Click "✦ Extract All" to extract decisions from your transcripts, or add one manually.'}
+                            : 'Add a decision manually using the button above, or decisions will be extracted automatically when transcripts are uploaded.'}
                     </p>
                 </div>
             ) : (
