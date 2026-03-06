@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus } from '@meet-pipeline/shared';
 
@@ -531,6 +531,53 @@ function DecisionCard({
 }) {
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
 
+    // ── Ask AI mini-chat state ──────────────────────
+    const [showAskAI, setShowAskAI] = useState(false);
+    const [aiQuestion, setAiQuestion] = useState('');
+    const [aiMessages, setAiMessages] = useState<{ role: 'user' | 'assistant'; content: string }[]>([]);
+    const [aiLoading, setAiLoading] = useState(false);
+    const chatEndRef = useRef<HTMLDivElement>(null);
+
+    // Auto-scroll chat to latest message
+    useEffect(() => {
+        chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [aiMessages, aiLoading]);
+
+    const handleAskAI = async (question?: string) => {
+        const q = question ?? aiQuestion.trim();
+        if (!q || !decision.transcript_id) return;
+
+        setAiMessages((prev) => [...prev, { role: 'user', content: q }]);
+        setAiQuestion('');
+        setAiLoading(true);
+
+        try {
+            const res = await fetch('/api/query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    question: `${q} — Context: this is about a decision: "${decision.decision_text}"`,
+                    transcript_id: decision.transcript_id,
+                }),
+            });
+            const data = await res.json();
+            setAiMessages((prev) => [...prev, { role: 'assistant', content: data.answer }]);
+        } catch {
+            setAiMessages((prev) => [
+                ...prev,
+                { role: 'assistant', content: 'Sorry, something went wrong. Please try again.' },
+            ]);
+        } finally {
+            setAiLoading(false);
+        }
+    };
+
+    const suggestedQuestions = [
+        'What led to this decision?',
+        'Were there alternative options discussed?',
+        'Who was involved in making this decision?',
+    ];
+
     return (
         <div className="glass-card p-4 transition-all duration-200 hover:border-theme-border/[0.12]">
             {/* Header — clickable */}
@@ -655,6 +702,94 @@ function DecisionCard({
                             </button>
                         )}
                     </div>
+
+                    {/* Ask AI button — only when transcript is available */}
+                    {decision.transcript_id && (
+                        <button
+                            onClick={() => setShowAskAI((v) => !v)}
+                            className={`mt-3 px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors ${showAskAI
+                                ? 'bg-accent-violet/20 text-accent-violet'
+                                : 'bg-accent-violet/10 text-accent-violet hover:bg-accent-violet/20'
+                                }`}
+                        >
+                            ◈ Ask AI
+                        </button>
+                    )}
+
+                    {/* Inline mini-chat panel */}
+                    {showAskAI && decision.transcript_id && (
+                        <div className="mt-3 p-3 rounded-xl bg-theme-overlay border border-theme-border">
+                            {/* Messages area */}
+                            <div className="max-h-[300px] overflow-y-auto custom-scrollbar space-y-2 mb-3">
+                                {aiMessages.length === 0 && !aiLoading && (
+                                    <div className="space-y-1.5">
+                                        <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
+                                            Suggested questions
+                                        </p>
+                                        {suggestedQuestions.map((q) => (
+                                            <button
+                                                key={q}
+                                                onClick={() => handleAskAI(q)}
+                                                className="block w-full text-left text-xs px-3 py-1.5 rounded-lg
+                                                           bg-theme-overlay/50 border border-theme-border/[0.04]
+                                                           text-theme-text-secondary hover:text-theme-text-primary
+                                                           hover:border-theme-border/[0.1] transition-all duration-200"
+                                            >
+                                                {q}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {aiMessages.map((msg, i) => (
+                                    <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div
+                                            className={`max-w-[85%] px-3 py-1.5 text-xs whitespace-pre-wrap ${msg.role === 'user'
+                                                ? 'bg-brand-500/15 text-theme-text-primary rounded-xl rounded-br-sm'
+                                                : 'glass-card text-theme-text-primary rounded-xl rounded-bl-sm'
+                                                }`}
+                                        >
+                                            {msg.content}
+                                        </div>
+                                    </div>
+                                ))}
+
+                                {aiLoading && (
+                                    <div className="flex justify-start">
+                                        <div className="glass-card rounded-xl rounded-bl-sm px-3 py-1.5">
+                                            <div className="flex gap-1">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '150ms' }} />
+                                                <div className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div ref={chatEndRef} />
+                            </div>
+
+                            {/* Input row */}
+                            <div className="flex gap-2">
+                                <input
+                                    type="text"
+                                    placeholder="Ask about this decision..."
+                                    value={aiQuestion}
+                                    onChange={(e) => setAiQuestion(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleAskAI()}
+                                    disabled={aiLoading}
+                                    className="flex-1 input-glow text-xs border-0 bg-transparent focus:ring-0 py-1.5"
+                                />
+                                <button
+                                    onClick={() => handleAskAI()}
+                                    disabled={aiLoading || !aiQuestion.trim()}
+                                    className="btn-primary px-3 py-1.5 text-xs"
+                                >
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
         </div>
