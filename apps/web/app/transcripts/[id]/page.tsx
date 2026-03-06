@@ -24,9 +24,8 @@ export default function TranscriptDetailPage({
     const [summary, setSummary] = useState<string | null>(null);
     const [summaryLoading, setSummaryLoading] = useState(false);
 
-    // ── Decision extraction state ────────────────
-    const [extractingDecisions, setExtractingDecisions] = useState(false);
-    const [decisionResult, setDecisionResult] = useState<string | null>(null);
+
+
 
     // ── Editing state ────────────────────────────
     const [editingTitle, setEditingTitle] = useState(false);
@@ -64,8 +63,12 @@ export default function TranscriptDetailPage({
 
     useEffect(() => {
         fetch(`/api/transcripts/${params.id}`)
-            .then((r) => r.json() as Promise<MeetingTranscript>)
-            .then((data) => {
+            .then(async (r) => {
+                if (!r.ok) {
+                    setLoading(false);
+                    return;
+                }
+                const data = (await r.json()) as MeetingTranscript;
                 setTranscript(data);
                 setLoading(false);
             })
@@ -79,8 +82,15 @@ export default function TranscriptDetailPage({
         setSummaryLoading(true);
 
         fetch(`/api/transcripts/${transcript.transcript_id}/summarize`)
-            .then((r) => r.json())
-            .then((data) => setSummary(data.summary ?? 'Unable to generate summary.'))
+            .then(async (r) => {
+                const data = await r.json();
+                if (!r.ok) {
+                    // Surface the error message so the user can retry
+                    setSummary(data.error ?? 'Unable to generate summary.');
+                } else {
+                    setSummary(data.summary ?? 'Unable to generate summary.');
+                }
+            })
             .catch(() => setSummary('Unable to generate summary.'))
             .finally(() => setSummaryLoading(false));
     }, [transcript, summary]);
@@ -125,7 +135,7 @@ export default function TranscriptDetailPage({
     }
 
     // Split transcript into lines for rendering
-    const lines = transcript.raw_transcript.split('\n');
+    const lines = (transcript.raw_transcript ?? '').split('\n');
 
     return (
         <div className="max-w-7xl mx-auto animate-fade-in">
@@ -357,45 +367,8 @@ export default function TranscriptDetailPage({
                         </MetaField>
                         <MetaField label="Processed At" value={new Date(transcript.processed_at).toLocaleString()} />
 
-                        {/* Extract Decisions */}
-                        <div className="pt-2 border-t border-theme-border">
-                            <button
-                                id="extract-decisions-btn"
-                                onClick={async () => {
-                                    setExtractingDecisions(true);
-                                    setDecisionResult(null);
-                                    try {
-                                        const res = await fetch('/api/decisions/extract', {
-                                            method: 'POST',
-                                            headers: { 'Content-Type': 'application/json' },
-                                            body: JSON.stringify({ transcript_id: transcript.transcript_id }),
-                                        });
-                                        const data = await res.json();
-                                        if (!res.ok) {
-                                            setDecisionResult(`Error: ${data.error}`);
-                                        } else {
-                                            setDecisionResult(`Extracted ${data.count} decision${data.count !== 1 ? 's' : ''}`);
-                                        }
-                                    } catch {
-                                        setDecisionResult('Extraction failed');
-                                    } finally {
-                                        setExtractingDecisions(false);
-                                    }
-                                }}
-                                disabled={extractingDecisions}
-                                className="w-full px-3 py-2 text-sm font-medium rounded-lg
-                                           bg-accent-violet/20 text-accent-violet
-                                           hover:bg-accent-violet/30 transition-colors
-                                           disabled:opacity-50"
-                            >
-                                {extractingDecisions ? 'Extracting...' : '✦ Extract Decisions'}
-                            </button>
-                            {decisionResult && (
-                                <p className={`text-xs mt-2 ${decisionResult.startsWith('Error') ? 'text-rose-400' : 'text-emerald-400'}`}>
-                                    {decisionResult}
-                                </p>
-                            )}
-                        </div>
+
+
 
                     </div>
 

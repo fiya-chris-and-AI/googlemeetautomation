@@ -7,7 +7,7 @@ export async function GET() {
     try {
         const supabase = getServerSupabase();
 
-        const [transcriptRes, actionItemRes] = await Promise.all([
+        const [transcriptRes, actionItemRes, decisionRes] = await Promise.all([
             supabase
                 .from('transcripts')
                 .select('*')
@@ -15,7 +15,12 @@ export async function GET() {
                 .limit(100),
             supabase
                 .from('action_items')
-                .select('transcript_id')
+                .select('transcript_id, title')
+                .eq('created_by', 'ai')
+                .not('transcript_id', 'is', null),
+            supabase
+                .from('decisions')
+                .select('transcript_id, topic, decision_text')
                 .eq('created_by', 'ai')
                 .not('transcript_id', 'is', null),
         ]);
@@ -24,12 +29,32 @@ export async function GET() {
             return NextResponse.json({ error: transcriptRes.error.message }, { status: 500 });
         }
 
-        // Build lookup: transcript_id → AI-extracted item count
-        const countMap = new Map<string, number>();
+        // Build lookup: transcript_id → { count, titles (top 3) }
+        const actionMap = new Map<string, { count: number; titles: string[] }>();
         if (!actionItemRes.error && Array.isArray(actionItemRes.data)) {
             for (const row of actionItemRes.data) {
                 const tid = row.transcript_id as string;
-                countMap.set(tid, (countMap.get(tid) ?? 0) + 1);
+                const entry = actionMap.get(tid) ?? { count: 0, titles: [] };
+                entry.count++;
+                if (entry.titles.length < 3) {
+                    entry.titles.push(row.title as string);
+                }
+                actionMap.set(tid, entry);
+            }
+        }
+
+        const decisionMap = new Map<string, { count: number; titles: string[] }>();
+        if (!decisionRes.error && Array.isArray(decisionRes.data)) {
+            for (const row of decisionRes.data) {
+                const tid = row.transcript_id as string;
+                const entry = decisionMap.get(tid) ?? { count: 0, titles: [] };
+                entry.count++;
+                if (entry.titles.length < 3) {
+                    // Prefer short topic pill label; fall back to decision_text
+                    const label = (row.topic as string | null) ?? (row.decision_text as string);
+                    entry.titles.push(label);
+                }
+                decisionMap.set(tid, entry);
             }
         }
 
@@ -43,7 +68,10 @@ export async function GET() {
             extraction_method: row.extraction_method,
             word_count: row.word_count,
             processed_at: row.processed_at,
-            ai_extracted_count: countMap.get(row.id) ?? 0,
+            action_item_count: actionMap.get(row.id)?.count ?? 0,
+            action_item_titles: actionMap.get(row.id)?.titles ?? [],
+            decision_count: decisionMap.get(row.id)?.count ?? 0,
+            decision_titles: decisionMap.get(row.id)?.titles ?? [],
         }));
 
         return NextResponse.json(transcripts);

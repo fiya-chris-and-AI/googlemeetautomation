@@ -29,17 +29,6 @@ export default function TranscriptsPage() {
     } | null>(null);
     const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
 
-    // Bulk extraction state
-    const [extracting, setExtracting] = useState(false);
-    const [extractResult, setExtractResult] = useState<{
-        transcripts_processed: number;
-        transcripts_skipped: number;
-        transcripts_empty: number;
-        transcripts_failed: number;
-        items_extracted: number;
-        items_flagged_duplicate: number;
-    } | null>(null);
-
     const refreshTranscripts = () => {
         fetch('/api/transcripts')
             .then((r) => r.json())
@@ -62,8 +51,6 @@ export default function TranscriptsPage() {
             setSyncResult(data);
 
             // Track which transcripts were just synced so we can show a "new" dot.
-            // The sync API returns details with subject but not transcript_id,
-            // so we snapshot current IDs, refresh, then diff.
             const before = new Set(transcripts.map((t) => t.transcript_id));
             const refreshRes = await fetch('/api/transcripts');
             const refreshed = await refreshRes.json();
@@ -76,31 +63,6 @@ export default function TranscriptsPage() {
             setSyncResult(null);
         } finally {
             setSyncing(false);
-        }
-    };
-
-    // Count transcripts that have no AI-extracted items (unprocessed)
-    const unprocessedCount = useMemo(
-        () => transcripts.filter((t) => !t.ai_extracted_count || t.ai_extracted_count === 0).length,
-        [transcripts],
-    );
-
-    const handleExtractAll = async () => {
-        setExtracting(true);
-        setExtractResult(null);
-        try {
-            const res = await fetch('/api/action-items/extract-all', { method: 'POST' });
-            const data = await res.json();
-            if (res.ok) {
-                setExtractResult(data);
-                refreshTranscripts();
-            } else {
-                console.error('Extract-all error:', data.error);
-            }
-        } catch {
-            // Silently handled
-        } finally {
-            setExtracting(false);
         }
     };
 
@@ -140,8 +102,6 @@ export default function TranscriptsPage() {
             );
         }
 
-
-
         result.sort((a, b) => {
             let cmp = 0;
             if (sortField === 'meeting_date') {
@@ -170,7 +130,7 @@ export default function TranscriptsPage() {
         sortField === field ? (sortDir === 'asc' ? ' ↑' : ' ↓') : '';
 
     return (
-        <div className="max-w-6xl mx-auto animate-fade-in">
+        <div className="max-w-7xl mx-auto animate-fade-in">
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Transcript Library</h1>
                 <p className="text-theme-text-tertiary mt-1">{transcripts.length} transcripts indexed</p>
@@ -200,20 +160,6 @@ export default function TranscriptsPage() {
                 >
                     {syncing ? 'Syncing...' : '⟳ Sync Inbox'}
                 </button>
-                <button
-                    id="extract-all-btn"
-                    onClick={handleExtractAll}
-                    disabled={extracting || unprocessedCount === 0}
-                    title={unprocessedCount === 0 ? 'All transcripts already processed' : `${unprocessedCount} unprocessed transcript${unprocessedCount !== 1 ? 's' : ''}`}
-                    className="px-4 py-2 text-sm font-medium rounded-lg transition-colors
-                               bg-transparent border border-theme-border
-                               text-theme-text-primary
-                               hover:bg-[rgb(var(--color-muted))]
-                               disabled:opacity-50 disabled:cursor-not-allowed
-                               whitespace-nowrap"
-                >
-                    {extracting ? 'Extracting...' : `✦ Extract All${unprocessedCount > 0 ? ` (${unprocessedCount})` : ''}`}
-                </button>
                 <UploadModal onSuccess={() => refreshTranscripts()} />
             </div>
 
@@ -231,30 +177,6 @@ export default function TranscriptsPage() {
                     </span>
                     <button
                         onClick={() => { setSyncResult(null); setNewSyncedIds(new Set()); }}
-                        className="text-theme-text-muted hover:text-theme-text-primary ml-4 transition-colors"
-                    >
-                        ✕
-                    </button>
-                </div>
-            )}
-
-            {/* Extract-all result banner */}
-            {extractResult && (
-                <div className="mb-4 px-4 py-3 rounded-lg border border-theme-border
-                                bg-theme-card text-sm text-theme-text-primary
-                                flex items-center justify-between">
-                    <span>
-                        Extraction complete — {extractResult.transcripts_processed} transcript{extractResult.transcripts_processed !== 1 ? 's' : ''} with items
-                        {extractResult.items_extracted > 0
-                            ? `, ${extractResult.items_extracted} item${extractResult.items_extracted !== 1 ? 's' : ''} extracted`
-                            : ''}
-                        {extractResult.items_flagged_duplicate > 0 && ` (${extractResult.items_flagged_duplicate} duplicate${extractResult.items_flagged_duplicate !== 1 ? 's' : ''})`}
-                        {extractResult.transcripts_empty > 0 && `, ${extractResult.transcripts_empty} had no action items`}
-                        {extractResult.transcripts_failed > 0 && `, ${extractResult.transcripts_failed} failed`}
-                        {extractResult.transcripts_skipped > 0 && `, ${extractResult.transcripts_skipped} already processed`}
-                    </span>
-                    <button
-                        onClick={() => setExtractResult(null)}
                         className="text-theme-text-muted hover:text-theme-text-primary ml-4 transition-colors"
                     >
                         ✕
@@ -289,8 +211,11 @@ export default function TranscriptsPage() {
                             <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Method
                             </th>
-                            <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
-                                AI Items
+                            <th className="text-left px-4 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
+                                Action Items
+                            </th>
+                            <th className="text-left px-4 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
+                                Decisions
                             </th>
                             <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 Actions
@@ -300,13 +225,13 @@ export default function TranscriptsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     Loading transcripts...
                                 </td>
                             </tr>
                         ) : filtered.length === 0 ? (
                             <tr>
-                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {search
                                         ? 'No transcripts match your filters.'
                                         : 'No transcripts yet.'}
@@ -346,8 +271,21 @@ export default function TranscriptsPage() {
                                             {t.extraction_method}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 text-right">
-                                        <ExtractionStatusBadge count={t.ai_extracted_count} />
+                                    {/* Action Items column */}
+                                    <td className="px-4 py-4">
+                                        <ItemPreview
+                                            count={t.action_item_count ?? 0}
+                                            titles={t.action_item_titles ?? []}
+                                            color="emerald"
+                                        />
+                                    </td>
+                                    {/* Decisions column */}
+                                    <td className="px-4 py-4">
+                                        <ItemPreview
+                                            count={t.decision_count ?? 0}
+                                            titles={t.decision_titles ?? []}
+                                            color="brand"
+                                        />
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <button
@@ -375,18 +313,39 @@ export default function TranscriptsPage() {
     );
 }
 
-function ExtractionStatusBadge({ count }: { count?: number }) {
-    if (count && count > 0) {
+/**
+ * Compact preview of action items or decisions for a transcript row.
+ * Shows a count badge and up to 3 truncated titles.
+ */
+function ItemPreview({ count, titles, color }: {
+    count: number;
+    titles: string[];
+    color: 'emerald' | 'brand';
+}) {
+    if (count === 0) {
         return (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                ✓ {count} item{count !== 1 ? 's' : ''}
-            </span>
+            <span className="text-[10px] text-theme-text-muted">—</span>
         );
     }
 
+    const badgeClasses = color === 'emerald'
+        ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+        : 'bg-brand-500/10 text-brand-600 dark:text-brand-400';
+
     return (
-        <span className="text-[10px] text-theme-text-muted">
-            —
-        </span>
+        <div className="space-y-1">
+            <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full ${badgeClasses}`}>
+                {count} {count === 1 ? 'item' : 'items'}
+            </span>
+            {titles.length > 0 && (
+                <div className="space-y-0.5">
+                    {titles.map((title, i) => (
+                        <p key={i} className="text-[11px] text-theme-text-muted truncate max-w-[180px]" title={title}>
+                            {title.length > 50 ? `${title.slice(0, 50)}…` : title}
+                        </p>
+                    ))}
+                </div>
+            )}
+        </div>
     );
 }

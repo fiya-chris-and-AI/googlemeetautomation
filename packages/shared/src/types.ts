@@ -25,7 +25,13 @@ export interface MeetingTranscript {
     /** ISO 8601 timestamp */
     processed_at: string;
     /** Number of AI-extracted action items for this transcript. */
-    ai_extracted_count?: number;
+    action_item_count?: number;
+    /** Top action item titles (up to 3) for preview. */
+    action_item_titles?: string[];
+    /** Number of AI-extracted decisions for this transcript. */
+    decision_count?: number;
+    /** Top decision text snippets (up to 3) for preview. */
+    decision_titles?: string[];
 }
 
 /**
@@ -125,6 +131,8 @@ export type DecisionCreatedBy = 'ai' | 'manual';
 export interface Decision {
     id: string;
     transcript_id: string | null;
+    /** Short 2-5 word topic label for pill display (e.g. "Auth provider", "Launch timeline") */
+    topic: string | null;
     decision_text: string;
     context: string | null;
     domain: DecisionDomain;
@@ -143,6 +151,7 @@ export interface Decision {
 
 /** Shape of a single extracted decision from Claude (pre-normalization). */
 export interface RawExtractedDecision {
+    topic?: string;
     decision_text: string;
     context?: string | null;
     domain?: DecisionDomain;

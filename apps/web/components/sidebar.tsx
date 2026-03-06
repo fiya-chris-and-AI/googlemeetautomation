@@ -24,12 +24,20 @@ const NAV_ITEMS = [
 export function Sidebar() {
     const pathname = usePathname();
     const [openCount, setOpenCount] = useState<number | null>(null);
+    const [decisionCount, setDecisionCount] = useState<number | null>(null);
 
     useEffect(() => {
         fetch('/api/action-items?status=open,in_progress')
             .then((r) => r.json())
             .then((data) => {
                 if (Array.isArray(data)) setOpenCount(data.length);
+            })
+            .catch(() => { });
+
+        fetch('/api/decisions?status=active')
+            .then((r) => r.json())
+            .then((data) => {
+                if (Array.isArray(data)) setDecisionCount(data.length);
             })
             .catch(() => { });
     }, []);
@@ -91,10 +99,18 @@ export function Sidebar() {
                                     {openCount}
                                 </span>
                             )}
-                            {isActive && item.href !== '/action-items' && (
+                            {item.href === '/decisions' && decisionCount !== null && decisionCount > 0 && (
+                                <span className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-accent-violet/15 text-accent-violet ring-1 ring-accent-violet/20">
+                                    {decisionCount}
+                                </span>
+                            )}
+                            {isActive && item.href !== '/action-items' && item.href !== '/decisions' && (
                                 <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
                             )}
                             {isActive && item.href === '/action-items' && openCount === null && (
+                                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
+                            )}
+                            {isActive && item.href === '/decisions' && decisionCount === null && (
                                 <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
                             )}
                         </Link>

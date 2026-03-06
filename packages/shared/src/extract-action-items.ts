@@ -5,31 +5,56 @@
  * to avoid duplicating prompts, parsing, and normalization logic.
  */
 import { normalizeAssignee } from './normalize-assignee';
+import { callGemini, stripMarkdownFences } from './gemini';
 
-// ── Claude system prompt ────────────────────────
+// ── Gemini system prompt ────────────────────────
 
-export const EXTRACTION_SYSTEM_PROMPT = `You extract action items from meeting transcripts.
+export const EXTRACTION_SYSTEM_PROMPT = `You extract action items from meeting transcripts. An action item is a CONCRETE TASK that someone committed to doing or was asked to do.
+
+## What IS an action item (extract these):
+- Explicit commitments: "I'll set up the CI pipeline this week"
+- Direct assignments: "Chris, can you handle the API integration?"
+- Volunteering: "I can take care of the DNS migration"
+- Agreed-upon next steps: "OK so next step is we need to write the migration script"
+- Follow-ups: "Let's circle back after you've tested the staging deploy"
+- Research tasks: "I need to look into whether Vercel supports that"
+
+## What is NOT an action item (do NOT extract these):
+- Decisions or agreements ("We'll use Supabase") — this is a DECISION, not a task
+- Descriptions of how something works ("The API returns JSON") — this is INFORMATION
+- Vague intentions with no owner ("We should probably look into that someday") — too vague
+- Past completed work ("I already fixed that yesterday") — ALREADY DONE
+- Observations or opinions ("I think the UI looks good") — NOT a task
+
+## The key test:
+Ask yourself: "Could someone put this on a to-do list and check it off when done?" If not, skip it. Every action item needs a VERB (build, send, write, set up, investigate, fix, create, update, test, deploy, review, etc.).
+
 Return a JSON array of objects with these fields:
-- title (string, required): A concise description of the action item
-- description (string | null): Additional context if needed
-- assigned_to (string | null): The person responsible. MUST be exactly one of: "Lutfiya Miller", "Chris Müller", or null. Never use alternate spellings like "Chris-Steven Müller", "Chris Muller", or "Chris Mueller". If the task is assigned to BOTH people, emit two separate action items — one for each person. Never use composite values like "Both" or "Lutfiya Miller and Chris Müller".
-- priority ("low" | "medium" | "high" | "urgent"): Infer from context and urgency cues
+- title (string, required): A concise, actionable description starting with a verb (e.g. "Set up CI/CD pipeline on GitHub Actions", "Research Vercel edge function limits"). Max 15 words.
+- description (string | null): Additional context only if the title alone is ambiguous. Usually null.
+- assigned_to (string | null): The person responsible. MUST be exactly one of: "Lutfiya Miller", "Chris Müller", or null. Never use alternate spellings like "Chris-Steven Müller", "Chris Muller", or "Chris Mueller". If the task is assigned to BOTH people, emit two separate action items — one for each person. Never use composite values like "Both" or "Lutfiya Miller and Chris Müller". Pay close attention to who VOLUNTEERED or was ASKED — "I'll do X" means the speaker is assigned; "Can you do X?" means the listener is assigned.
+- priority ("low" | "medium" | "high" | "urgent"): Infer from urgency cues, deadlines, and blockers. Default to "medium" if unclear.
 - due_date (string | null): ISO date if a deadline is mentioned, otherwise null
-- source_text (string): The exact excerpt from the transcript that implies this action item
-- group_label (string | null): A short label (1-3 words, title-cased) for the project, tool, or topic this item relates to. Use null if it doesn't clearly belong to a group. If multiple items relate to the same topic, give them the same label.
-- effort ("quick_fix" | "moderate" | "significant"): Estimate the effort required to complete this task:
-  • "quick_fix" — Can likely be done in under 30 minutes (e.g. sending an email, a quick decision, looking something up)
-  • "moderate" — Likely takes 30 minutes to a few hours (e.g. writing a short document, setting up a tool, a focused work session)
-  • "significant" — Likely takes multiple hours or spans multiple days (e.g. building a feature, conducting research, coordinating across people)
-  Base this on the nature of the task described in the transcript, not on its urgency or priority.
+- source_text (string): The exact excerpt from the transcript (2-4 sentences) that contains or implies this action item.
+- group_label (string | null): A short label (1-3 words, Title Case) for the project or topic this relates to. Use consistent labels across items from the same topic area.
+- effort ("quick_fix" | "moderate" | "significant"): Estimate effort:
+  • "quick_fix" — Under 30 min (send an email, look something up, quick config change)
+  • "moderate" — 30 min to a few hours (write a doc, set up a tool, focused work session)
+  • "significant" — Multiple hours or days (build a feature, major research, cross-team coordination)
 
-Only return action items that are clearly implied by the transcript — do not fabricate tasks.
-If there are no action items, return an empty array.
+Extraction rules:
+- Every extracted item MUST have a clear verb — if you can't phrase it as "Do X", it's not an action item
+- Look carefully for implicit commitments: "I'll", "I can", "I need to", "let me", "I'm going to" — these are action items even without explicit assignment language
+- Also catch requests: "Can you", "Could you", "Would you mind", "You should" — the person being asked is the assignee
+- Most meetings produce 3-10 action items. If you're finding 0, re-read for implicit commitments. If finding more than 15, you may be including decisions or observations.
+- If there are genuinely no action items, return an empty array
+- Deduplicate: if the same task is mentioned multiple times, extract it only once
+
 Return ONLY valid JSON, no markdown fences or extra text.`;
 
 // ── Types ───────────────────────────────────────
 
-/** Shape of a single extracted item from Claude (pre-normalization). */
+/** Shape of a single extracted item from the AI (pre-normalization). */
 export interface RawExtractedItem {
     title: string;
     description?: string | null;
@@ -52,52 +77,33 @@ export interface TranscriptForExtraction {
 // ── Core extraction call ────────────────────────
 
 /**
- * Call Claude to extract action items from a single transcript's text.
+ * Call Gemini to extract action items from a single transcript's text.
  * Returns the raw parsed array (may be empty).
  *
  * Throws on network / parsing errors so callers can handle them.
  */
 export async function extractActionItemsFromTranscript(
     transcript: TranscriptForExtraction,
-    anthropicKey: string,
+    geminiKey: string,
 ): Promise<RawExtractedItem[]> {
     // Guard against null participants (some transcripts may have null instead of [])
     const participants = transcript.participants ?? [];
 
-    const requestBody = {
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 4096,
-        system: EXTRACTION_SYSTEM_PROMPT,
-        messages: [
-            {
-                role: 'user',
-                content: `Meeting: ${transcript.meeting_title}\nParticipants: ${participants.join(', ')}\n\nTranscript:\n${transcript.raw_transcript}`,
-            },
-        ],
-    };
+    const userMessage = `Meeting: ${transcript.meeting_title}\nParticipants: ${participants.join(', ')}\n\nTranscript:\n${transcript.raw_transcript}`;
 
-    const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': anthropicKey,
-            'anthropic-version': '2023-06-01',
-        },
-        body: JSON.stringify(requestBody),
-    });
+    const rawText = await callGemini(
+        EXTRACTION_SYSTEM_PROMPT,
+        userMessage,
+        geminiKey,
+        { maxOutputTokens: 65536 },
+    );
 
-    if (!anthropicRes.ok) {
-        const errorBody = await anthropicRes.text();
-        console.error(`[extract-helper] Claude API error ${anthropicRes.status}: ${errorBody}`);
-        throw new Error(`Claude API returned ${anthropicRes.status}: ${errorBody}`);
-    }
+    console.log(`[extract-helper] Gemini response for "${transcript.meeting_title}": ${rawText.slice(0, 200)}...`);
 
-    const data = (await anthropicRes.json()) as { content?: { text?: string }[] };
-    const rawText: string = data.content?.[0]?.text ?? '[]';
+    // Strip markdown fences if present
+    const cleaned = stripMarkdownFences(rawText);
 
-    console.log(`[extract-helper] Claude response for "${transcript.meeting_title}": ${rawText.slice(0, 200)}...`);
-
-    const extracted: RawExtractedItem[] = JSON.parse(rawText);
+    const extracted: RawExtractedItem[] = JSON.parse(cleaned || '[]');
     if (!Array.isArray(extracted)) return [];
 
     console.log(`[extract-helper] Extracted ${extracted.length} items from "${transcript.meeting_title}"`);

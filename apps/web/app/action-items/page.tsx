@@ -34,6 +34,13 @@ const EFFORT_CONFIG: Record<string, { icon: string; label: string; color: string
     significant: { icon: '🏗️', label: 'Significant', color: 'text-amber-400' },
 };
 
+/** Returns true if the item was created within the last 24 hours. */
+function isNewItem(createdAt: string): boolean {
+    const created = new Date(createdAt).getTime();
+    const now = Date.now();
+    return now - created < 24 * 60 * 60 * 1000;
+}
+
 export default function ActionItemsPage() {
     const [items, setItems] = useState<ActionItem[]>([]);
     const [loading, setLoading] = useState(true);
@@ -501,6 +508,7 @@ export default function ActionItemsPage() {
                                                                 allItems={items}
                                                                 isOverdue={isOverdue(item)}
                                                                 isShared={sharedItemIds.has(item.id)}
+                                                                isNew={isNewItem(item.created_at)}
                                                                 isExpanded={expandedId === item.id}
                                                                 onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
                                                                 onStatusChange={updateStatus}
@@ -544,6 +552,7 @@ export default function ActionItemsPage() {
                                                                                     allItems={items}
                                                                                     isOverdue={isOverdue(item)}
                                                                                     isShared={sharedItemIds.has(item.id)}
+                                                                                    isNew={isNewItem(item.created_at)}
                                                                                     isExpanded={expandedId === item.id}
                                                                                     onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
                                                                                     onStatusChange={updateStatus}
@@ -581,6 +590,7 @@ export default function ActionItemsPage() {
                                         allItems={items}
                                         isOverdue={isOverdue(item)}
                                         isShared={false}
+                                        isNew={isNewItem(item.created_at)}
                                         isExpanded={expandedId === item.id}
                                         onToggleExpand={() => setExpandedId(expandedId === item.id ? null : item.id)}
                                         onStatusChange={updateStatus}
@@ -698,6 +708,7 @@ function ActionItemCard({
     allItems,
     isOverdue,
     isShared,
+    isNew = false,
     isExpanded,
     onToggleExpand,
     onStatusChange,
@@ -708,6 +719,7 @@ function ActionItemCard({
     allItems: ActionItem[];
     isOverdue: boolean;
     isShared?: boolean;
+    isNew?: boolean;
     isExpanded: boolean;
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: ActionItemStatus) => void;
@@ -777,7 +789,14 @@ function ActionItemCard({
         <div className={`glass-card p-4 transition-all duration-200 ${isOverdue ? 'ring-1 ring-rose-500/30' : ''}`}>
             {/* Header */}
             <div className="flex items-start gap-2 cursor-pointer" onClick={onToggleExpand}>
-                <span className={`mt-1.5 inline-block w-2 h-2 rounded-full flex-shrink-0 ${PRIORITY_DOT[item.priority]}`} />
+                {isNew ? (
+                    <span className="relative flex h-2 w-2 shrink-0 mt-1.5" title="New">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                ) : (
+                    <span className={`mt-1.5 inline-block w-2 h-2 rounded-full flex-shrink-0 ${PRIORITY_DOT[item.priority]}`} />
+                )}
                 <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-theme-text-primary">{item.title}</p>
                     <div className="flex items-center gap-2 mt-1 flex-wrap">

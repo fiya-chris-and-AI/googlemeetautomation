@@ -51,6 +51,13 @@ function stripDecisionPrefix(text: string): string {
     ).replace(/^./, c => c.toUpperCase()); // Capitalize first letter after strip
 }
 
+/** Returns true if the item was created within the last 24 hours. */
+function isNewItem(createdAt: string): boolean {
+    const created = new Date(createdAt).getTime();
+    const now = Date.now();
+    return now - created < 24 * 60 * 60 * 1000;
+}
+
 export default function DecisionsPage() {
     const [decisions, setDecisions] = useState<Decision[]>([]);
     const [loading, setLoading] = useState(true);
@@ -392,6 +399,7 @@ export default function DecisionsPage() {
                                     isExpanded={expandedId === decision.id}
                                     onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
                                     onStatusChange={handleStatusChange}
+                                    isNew={isNewItem(decision.created_at)}
                                 />
                             ))}
                         </div>
@@ -513,11 +521,13 @@ function DecisionCard({
     isExpanded,
     onToggleExpand,
     onStatusChange,
+    isNew = false,
 }: {
     decision: Decision;
     isExpanded: boolean;
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: DecisionStatus) => void;
+    isNew?: boolean;
 }) {
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
 
@@ -525,17 +535,34 @@ function DecisionCard({
         <div className="glass-card p-4 transition-all duration-200 hover:border-theme-border/[0.12]">
             {/* Header — clickable */}
             <div className="flex items-start gap-2 cursor-pointer" onClick={onToggleExpand}>
-                {/* Confidence dot */}
-                <span className={`mt-1.5 inline-block w-2 h-2 rounded-full flex-shrink-0 ${CONFIDENCE_DOT[decision.confidence]}`} />
+                {/* Status dot — green pulse for new items, otherwise confidence color */}
+                {isNew ? (
+                    <span className="relative flex h-2 w-2 shrink-0 mt-1.5" title="New">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                ) : (
+                    <span className={`mt-1.5 inline-block w-2 h-2 rounded-full flex-shrink-0 ${CONFIDENCE_DOT[decision.confidence]}`} />
+                )}
                 <div className="min-w-0 flex-1">
-                    <p className={`text-sm font-medium text-theme-text-primary ${style.strike ? 'line-through opacity-60' : ''}`}>
-                        {stripDecisionPrefix(decision.decision_text)}
-                    </p>
+                    {/* Topic pill + short decision text */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                        {decision.topic && (
+                            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${DOMAIN_STYLE[decision.domain]}`}>
+                                {decision.topic}
+                            </span>
+                        )}
+                        <p className={`text-sm text-theme-text-primary ${style.strike ? 'line-through opacity-60' : ''}`}>
+                            {stripDecisionPrefix(decision.decision_text)}
+                        </p>
+                    </div>
                     <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-                        {/* Domain badge */}
-                        <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${DOMAIN_STYLE[decision.domain]}`}>
-                            {decision.domain}
-                        </span>
+                        {/* Domain badge (only show if no topic, to avoid redundancy) */}
+                        {!decision.topic && (
+                            <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${DOMAIN_STYLE[decision.domain]}`}>
+                                {decision.domain}
+                            </span>
+                        )}
                         {/* Status badge */}
                         <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${style.badge}`}>
                             {decision.status.replace('_', ' ')}

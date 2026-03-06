@@ -20,13 +20,25 @@ export async function autoExtractActionItems(transcriptId: string): Promise<void
     const tag = '[auto-extract]';
 
     try {
-        const anthropicKey = process.env.ANTHROPIC_API_KEY;
-        if (!anthropicKey) {
-            console.warn(`${tag} ANTHROPIC_API_KEY not set — skipping extraction`);
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (!geminiKey) {
+            console.warn(`${tag} GEMINI_API_KEY not set — skipping extraction`);
             return;
         }
 
         const supabase = getServerSupabase();
+
+        // Guard: skip if this transcript already has action items (prevents duplicates
+        // from race conditions when upload and summarize both trigger extraction)
+        const { count: existingCount } = await supabase
+            .from('action_items')
+            .select('id', { count: 'exact', head: true })
+            .eq('transcript_id', transcriptId);
+
+        if ((existingCount ?? 0) > 0) {
+            console.log(`${tag} Transcript ${transcriptId} already has ${existingCount} action items — skipping`);
+            return;
+        }
 
         // 1. Fetch the transcript
         const { data: transcript, error: txErr } = await supabase
@@ -42,10 +54,10 @@ export async function autoExtractActionItems(transcriptId: string): Promise<void
 
         console.log(`${tag} Extracting from: ${transcript.meeting_title}`);
 
-        // 2. Call Claude
+        // 2. Call Gemini
         const extracted = await extractActionItemsFromTranscript(
             transcript as TranscriptForExtraction,
-            anthropicKey,
+            geminiKey,
         );
 
         if (extracted.length === 0) {
