@@ -68,10 +68,7 @@ export default function ActionItemsPage() {
     // Grouping state
     const [viewMode, setViewMode] = useState<'grouped' | 'flat'>('grouped');
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
-    const [grouping, setGrouping] = useState(false);
-    const [groupError, setGroupError] = useState<string | null>(null);
-    const [estimating, setEstimating] = useState(false);
-    const [estimateError, setEstimateError] = useState<string | null>(null);
+
 
     const fetchItems = async () => {
         try {
@@ -250,59 +247,7 @@ export default function ActionItemsPage() {
         } catch { /* silently fail */ }
     };
 
-    const handleEstimateEffort = async () => {
-        setEstimating(true);
-        setEstimateError(null);
-        try {
-            const res = await fetch('/api/action-items/estimate-effort', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({}),
-            });
-            const result = await res.json() as { error?: string; updated?: number };
 
-            if (!res.ok) {
-                setEstimateError(result.error || 'Effort estimation failed');
-                console.error('[Estimate Effort] API error:', result);
-                return;
-            }
-
-            console.log(`[Estimate Effort] Estimated ${result.updated} items`);
-            await fetchItems();
-        } catch (err) {
-            setEstimateError('Network error — could not reach estimation API');
-            console.error('[Estimate Effort] Error:', err);
-        } finally {
-            setEstimating(false);
-        }
-    };
-
-    const handleSmartGroup = async () => {
-        setGrouping(true);
-        setGroupError(null);
-        try {
-            const res = await fetch('/api/action-items/group', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ force: true }),
-            });
-            const result = await res.json() as { error?: string; updated?: number };
-
-            if (!res.ok) {
-                setGroupError(result.error || 'Grouping failed');
-                console.error('[Smart Group] API error:', result);
-                return;
-            }
-
-            console.log(`[Smart Group] Grouped ${result.updated} items`);
-            await fetchItems();
-        } catch (err) {
-            setGroupError('Network error — could not reach grouping API');
-            console.error('[Smart Group] Error:', err);
-        } finally {
-            setGrouping(false);
-        }
-    };
 
     const handleGroupLabelSave = async (id: string, newLabel: string) => {
         const trimmed = newLabel.trim() || null;
@@ -337,20 +282,6 @@ export default function ActionItemsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                     <button
-                        onClick={handleEstimateEffort}
-                        disabled={estimating}
-                        className="btn-primary px-5 py-2.5"
-                    >
-                        {estimating ? 'Estimating...' : '⚡ Estimate Effort'}
-                    </button>
-                    <button
-                        onClick={handleSmartGroup}
-                        disabled={grouping}
-                        className="btn-primary px-5 py-2.5"
-                    >
-                        {grouping ? 'Grouping...' : '✦ Smart Group'}
-                    </button>
-                    <button
                         onClick={() => setShowCreate(true)}
                         className="btn-primary px-5 py-2.5"
                     >
@@ -359,12 +290,7 @@ export default function ActionItemsPage() {
                 </div>
             </div>
 
-            {groupError && (
-                <p className="text-xs text-rose-400 mt-2">{groupError}</p>
-            )}
-            {estimateError && (
-                <p className="text-xs text-rose-400 mt-2">{estimateError}</p>
-            )}
+
 
             {/* Filters Bar */}
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-3">
