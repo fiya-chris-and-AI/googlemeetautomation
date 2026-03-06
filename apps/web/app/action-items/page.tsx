@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort } from '@meet-pipeline/shared';
+import { useTranslation } from '../../lib/use-translation';
 
 const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
@@ -327,6 +328,15 @@ export default function ActionItemsPage() {
         return new Date(item.due_date) < new Date();
     };
 
+    // Translate all action item titles in one batch
+    const allTitles = useMemo(() => items.map((i) => i.title), [items]);
+    const { translated: translatedTitles } = useTranslation(allTitles, { entityType: 'action_item' });
+    const titleMap = useMemo(() => {
+        const map = new Map<string, string>();
+        items.forEach((item, idx) => map.set(item.id, translatedTitles[idx] ?? item.title));
+        return map;
+    }, [items, translatedTitles]);
+
     return (
         <div className="max-w-7xl mx-auto animate-fade-in">
             {/* Header */}
@@ -514,6 +524,7 @@ export default function ActionItemsPage() {
                                                                 onStatusChange={updateStatus}
                                                                 onDismiss={dismissItem}
                                                                 onGroupLabelSave={handleGroupLabelSave}
+                                                                translatedTitle={titleMap.get(item.id)}
                                                             />
                                                         ))}
                                                     </div>
@@ -596,6 +607,7 @@ export default function ActionItemsPage() {
                                         onStatusChange={updateStatus}
                                         onDismiss={dismissItem}
                                         onGroupLabelSave={handleGroupLabelSave}
+                                        translatedTitle={titleMap.get(item.id)}
                                     />
                                 ))}
                             </div>
@@ -714,6 +726,7 @@ function ActionItemCard({
     onStatusChange,
     onDismiss,
     onGroupLabelSave,
+    translatedTitle,
 }: {
     item: ActionItem;
     allItems: ActionItem[];
@@ -725,6 +738,7 @@ function ActionItemCard({
     onStatusChange: (id: string, status: ActionItemStatus) => void;
     onDismiss: (id: string) => void;
     onGroupLabelSave: (id: string, label: string) => void;
+    translatedTitle?: string;
 }) {
     const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
 
@@ -798,7 +812,7 @@ function ActionItemCard({
                     <span className={`mt-1.5 inline-block w-2 h-2 rounded-full flex-shrink-0 ${PRIORITY_DOT[item.priority]}`} />
                 )}
                 <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-theme-text-primary">{item.title}</p>
+                    <p className="text-sm font-medium text-theme-text-primary">{translatedTitle ?? item.title}</p>
                     <div className="flex items-center gap-2 mt-1 flex-wrap">
                         {item.assigned_to && (
                             <span className="badge-info text-[10px]">{item.assigned_to}</span>

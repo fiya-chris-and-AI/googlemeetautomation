@@ -18,4 +18,7 @@ export {
     buildDecisionInsertionRows,
 } from './extract-decisions';
 export type { TranscriptForDecisionExtraction } from './extract-decisions';
-
+export { callGemini, stripMarkdownFences } from './gemini';
+export type { GeminiOptions } from './gemini';
+export { translateTexts } from './translate';
+export type { TranslateLang } from './translate';

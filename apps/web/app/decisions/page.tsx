@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus } from '@meet-pipeline/shared';
+import { useTranslation } from '../../lib/use-translation';
 
 // ── Domain badge color map ──────────────────────
 const DOMAIN_STYLE: Record<DecisionDomain, string> = {
@@ -266,6 +267,15 @@ export default function DecisionsPage() {
         } catch { /* keep current state */ }
     };
 
+    // Translate all decision texts in one batch
+    const allTexts = useMemo(() => decisions.map((d) => d.decision_text), [decisions]);
+    const { translated: translatedTexts } = useTranslation(allTexts, { entityType: 'decision' });
+    const textMap = useMemo(() => {
+        const map = new Map<string, string>();
+        decisions.forEach((d, idx) => map.set(d.id, translatedTexts[idx] ?? d.decision_text));
+        return map;
+    }, [decisions, translatedTexts]);
+
     return (
         <div className="max-w-7xl mx-auto animate-fade-in">
             {/* Header */}
@@ -400,6 +410,7 @@ export default function DecisionsPage() {
                                     onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
                                     onStatusChange={handleStatusChange}
                                     isNew={isNewItem(decision.created_at)}
+                                    translatedText={textMap.get(decision.id)}
                                 />
                             ))}
                         </div>
@@ -423,6 +434,7 @@ export default function DecisionsPage() {
                                         isExpanded={expandedId === decision.id}
                                         onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
                                         onStatusChange={handleStatusChange}
+                                        translatedText={textMap.get(decision.id)}
                                     />
                                 ))}
                             </div>
@@ -522,12 +534,14 @@ function DecisionCard({
     onToggleExpand,
     onStatusChange,
     isNew = false,
+    translatedText,
 }: {
     decision: Decision;
     isExpanded: boolean;
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: DecisionStatus) => void;
     isNew?: boolean;
+    translatedText?: string;
 }) {
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
 
@@ -553,7 +567,7 @@ function DecisionCard({
                             </span>
                         )}
                         <p className={`text-sm text-theme-text-primary ${style.strike ? 'line-through opacity-60' : ''}`}>
-                            {stripDecisionPrefix(decision.decision_text)}
+                            {stripDecisionPrefix(translatedText ?? decision.decision_text)}
                         </p>
                     </div>
                     <div className="flex items-center gap-2 mt-1.5 flex-wrap">

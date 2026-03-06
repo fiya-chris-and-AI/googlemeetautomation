@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import type { MeetingTranscript, QueryResponse } from '@meet-pipeline/shared';
+import { useTranslation } from '../../../lib/use-translation';
 
 
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
@@ -116,7 +117,9 @@ export default function TranscriptDetailPage({
         }
     };
 
-
+    // Hooks must be called unconditionally (before any early returns)
+    const titleArray = useMemo(() => [transcript?.meeting_title ?? ''], [transcript?.meeting_title]);
+    const { translated: [translatedTitle] } = useTranslation(titleArray, { entityType: 'transcript' });
 
     if (loading) {
         return (
@@ -181,7 +184,7 @@ export default function TranscriptDetailPage({
                                        cursor-pointer hover:text-brand-400 transition-colors"
                             title="Click to edit title"
                         >
-                            {transcript.meeting_title}
+                            {translatedTitle ?? transcript.meeting_title}
                             <span className="ml-2 text-theme-text-muted opacity-0 group-hover:opacity-100
                                             transition-opacity text-sm font-normal">✏️</span>
                         </h1>

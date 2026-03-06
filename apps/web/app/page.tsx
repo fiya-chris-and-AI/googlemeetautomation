@@ -5,6 +5,7 @@ import Link from 'next/link';
 import type { MeetingTranscript, QueryResponse, ActionItem, ActivityLogEntry, ScoreboardMetrics, CumulativeStats } from '@meet-pipeline/shared';
 import { UploadModal } from '../components/upload-modal';
 import { useLocale } from '../lib/locale';
+import { useTranslation } from '../lib/use-translation';
 
 /**
  * Dashboard Home — summary stats, recent transcripts, and a query bar.
@@ -109,6 +110,10 @@ export default function DashboardPage() {
         .slice(0, 5);
 
     const recent = transcripts.slice(0, 10);
+
+    // Translate transcript titles when locale is 'de'
+    const recentTitles = recent.map((tr) => tr.meeting_title);
+    const { translated: translatedTitles } = useTranslation(recentTitles, { entityType: 'transcript' });
 
     return (
         <div className="max-w-6xl mx-auto animate-fade-in">
@@ -228,7 +233,7 @@ export default function DashboardPage() {
                             </div>
                         ) : (
                             <div className="divide-y divide-theme-border">
-                                {recent.map((tr) => (
+                                {recent.map((tr, idx) => (
                                     <Link
                                         key={tr.transcript_id}
                                         href={`/transcripts/${tr.transcript_id}`}
@@ -237,7 +242,7 @@ export default function DashboardPage() {
                                                    hover:bg-[rgb(var(--color-muted))] transition-colors duration-150 cursor-pointer"
                                     >
                                         <div className="min-w-0 flex-1 mr-4">
-                                            <p className="text-sm font-medium text-theme-text-primary truncate max-w-xs sm:max-w-sm md:max-w-md">{tr.meeting_title}</p>
+                                            <p className="text-sm font-medium text-theme-text-primary truncate max-w-xs sm:max-w-sm md:max-w-md">{translatedTitles[idx] ?? tr.meeting_title}</p>
                                             <p className="text-xs text-theme-text-tertiary mt-0.5">
                                                 {new Date(tr.meeting_date).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')} · {tr.participants.length} {t('dashboard.transcripts.participants')}
                                             </p>
