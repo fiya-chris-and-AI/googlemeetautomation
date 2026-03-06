@@ -179,14 +179,5 @@ export function extractDecisions(transcriptId: string): Promise<{ decisions: Dec
     });
 }
 
-/** Trigger batch extraction of decisions from all unprocessed transcripts. */
-export function extractAllDecisions(): Promise<{
-    transcripts_processed: number;
-    transcripts_skipped: number;
-    transcripts_empty: number;
-    transcripts_failed: number;
-    decisions_extracted: number;
-}> {
-    return apiFetch('/api/decisions/extract-all', { method: 'POST' });
-}
+
 
