@@ -72,6 +72,7 @@ export default function DecisionsPage() {
     const [confidenceFilter, setConfidenceFilter] = useState('all');
     const [search, setSearch] = useState('');
     const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
+    const [lockFilter, setLockFilter] = useState<'all' | 'locked' | 'unlocked'>('all');
 
     // Modal + expand state
     const [showCreate, setShowCreate] = useState(false);
@@ -128,11 +129,22 @@ export default function DecisionsPage() {
         return { total: decisions.length, domainCounts, active, superseded, completed };
     }, [decisions]);
 
-    // Split decisions into active (non-completed) and completed lists
-    const activeDecisions = useMemo(
-        () => decisions.filter((d) => d.status !== 'completed'),
-        [decisions],
-    );
+    // ── Lock / archive stats (active decisions only, excludes completed) ──
+    const lockStats = useMemo(() => {
+        const activeItems = decisions.filter(d => d.status !== 'completed');
+        const completedCount = decisions.filter(d => d.status === 'completed').length;
+        const locked = activeItems.filter(d => d.is_locked).length;
+        const unlocked = activeItems.length - locked;
+        return { locked, unlocked, subjectToArchive: unlocked, completed: completedCount };
+    }, [decisions]);
+
+    // Split decisions into active (non-completed) and completed lists, then apply lock filter
+    const activeDecisions = useMemo(() => {
+        const base = decisions.filter((d) => d.status !== 'completed');
+        if (lockFilter === 'all') return base;
+        const wantLocked = lockFilter === 'locked';
+        return base.filter(d => d.is_locked === wantLocked);
+    }, [decisions, lockFilter]);
     const completedDecisions = useMemo(
         () => decisions.filter((d) => d.status === 'completed'),
         [decisions],
@@ -247,6 +259,57 @@ export default function DecisionsPage() {
                             </span>
                         );
                     })}
+                </div>
+            </div>
+
+            {/* Lock Status Summary Bar */}
+            <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
+                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
+                            ? 'border-amber-500 bg-amber-500/20 ring-2 ring-amber-500/40'
+                            : 'border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/15'
+                        }`}
+                >
+                    <span className="text-sm">🔒</span>
+                    <span className="text-sm font-semibold text-amber-400">{lockStats.locked}</span>
+                    <span className="text-xs text-amber-400/80">Locked</span>
+                </button>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
+                            ? 'border-theme-text-secondary bg-theme-muted ring-2 ring-theme-text-muted/40'
+                            : 'border-theme-border bg-theme-overlay hover:bg-theme-muted'
+                        }`}
+                >
+                    <span className="text-sm">🔓</span>
+                    <span className="text-sm font-semibold text-theme-text-secondary">{lockStats.unlocked}</span>
+                    <span className="text-xs text-theme-text-muted">Unlocked</span>
+                </button>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
+                            ? 'border-rose-500 bg-rose-500/20 ring-2 ring-rose-500/40'
+                            : 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/15'
+                        }`}
+                >
+                    <span className="text-sm">⏳</span>
+                    <span className="text-sm font-semibold text-rose-400">{lockStats.subjectToArchive}</span>
+                    <span className="text-xs text-rose-400/80">Subject to Archive</span>
+                </button>
+                {lockFilter !== 'all' && (
+                    <button
+                        onClick={() => setLockFilter('all')}
+                        className="text-xs text-theme-text-muted hover:text-theme-text-secondary transition-colors ml-1 cursor-pointer"
+                    >
+                        ✕ Clear
+                    </button>
+                )}
+                <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
+                    <span className="text-sm">✅</span>
+                    <span className="text-sm font-semibold text-emerald-400">{lockStats.completed}</span>
+                    <span className="text-xs text-emerald-400/80">Completed</span>
                 </div>
             </div>
 
