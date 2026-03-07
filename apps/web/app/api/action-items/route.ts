@@ -63,6 +63,12 @@ export async function GET(req: NextRequest) {
         const effort = searchParams.get('effort');
         if (effort) query = query.eq('effort', effort);
 
+        // Exclude archived items from default listing (unless explicitly requested)
+        const includeArchived = searchParams.get('include_archived') === 'true';
+        if (!includeArchived) {
+            query = query.is('archived_at', null);
+        }
+
         const { data, error } = await query;
 
         if (error) {

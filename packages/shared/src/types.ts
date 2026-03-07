@@ -94,7 +94,7 @@ export interface QueryResponse {
 
 // ── Action Items ────────────────────────────────
 
-export type ActionItemStatus = 'open' | 'in_progress' | 'done' | 'dismissed';
+export type ActionItemStatus = 'open' | 'in_progress' | 'done' | 'dismissed' | 'archived';
 export type ActionItemPriority = 'low' | 'medium' | 'high' | 'urgent';
 export type ActionItemEffort = 'quick_fix' | 'moderate' | 'significant';
 export type ActionItemCreatedBy = 'ai' | 'manual';
@@ -119,13 +119,21 @@ export interface ActionItem {
     is_duplicate: boolean;
     /** ID of the original action item this is a duplicate of, if any. */
     duplicate_of: string | null;
+    /** Whether this item is locked (prevented from auto-archival). */
+    is_locked: boolean;
+    /** Who locked this item ('Lutfiya Miller' | 'Chris Müller'). */
+    locked_by: string | null;
+    /** When this item was locked. */
+    locked_at: string | null;
+    /** When this item was auto-archived (NULL = not archived). */
+    archived_at: string | null;
 }
 
 // ── Decisions ───────────────────────────────────
 
 export type DecisionDomain = 'architecture' | 'product' | 'business' | 'design' | 'infrastructure' | 'operations' | 'general';
 export type DecisionConfidence = 'high' | 'medium' | 'low';
-export type DecisionStatus = 'active' | 'superseded' | 'reversed' | 'under_review' | 'completed';
+export type DecisionStatus = 'active' | 'superseded' | 'reversed' | 'under_review' | 'completed' | 'archived';
 export type DecisionCreatedBy = 'ai' | 'manual';
 
 export interface Decision {
@@ -147,6 +155,14 @@ export interface Decision {
     updated_at: string;
     /** Meeting title, joined from transcripts table when needed */
     meeting_title?: string;
+    /** Whether this decision is locked (prevented from auto-archival). */
+    is_locked: boolean;
+    /** Who locked this decision ('Lutfiya Miller' | 'Chris Müller'). */
+    locked_by: string | null;
+    /** When this decision was locked. */
+    locked_at: string | null;
+    /** When this decision was auto-archived (NULL = not archived). */
+    archived_at: string | null;
 }
 
 /** Shape of a single extracted decision from Claude (pre-normalization). */

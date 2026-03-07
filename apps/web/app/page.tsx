@@ -87,6 +87,15 @@ export default function DashboardPage() {
 
     const openItems = actionItems.filter((i) => i.status === 'open' || i.status === 'in_progress');
 
+    // Lock/archive stats
+    const lockedCount = actionItems.filter(i => i.is_locked).length;
+    const expiringSoonCount = actionItems.filter(i => {
+        if (i.is_locked || i.archived_at) return false;
+        const deadline = new Date(i.created_at).getTime() + 24 * 60 * 60 * 1000;
+        const remaining = deadline - Date.now();
+        return remaining > 0 && remaining < 2 * 60 * 60 * 1000; // less than 2 hours
+    }).length;
+
     // Stats
     const totalTranscripts = transcripts.length;
     const now = new Date();
@@ -183,6 +192,22 @@ export default function DashboardPage() {
                 <StatCard label={t('dashboard.stat.week')} value={thisWeek} color="from-accent-teal to-emerald-500" loading={loading} />
                 <StatCard label={t('dashboard.stat.month')} value={thisMonth} color="from-accent-violet to-purple-500" loading={loading} />
             </div>
+
+            {/* Lock/Archive status badges */}
+            {(lockedCount > 0 || expiringSoonCount > 0) && (
+                <div className="flex flex-wrap items-center gap-3 mb-8">
+                    {expiringSoonCount > 0 && (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 text-rose-400 text-xs font-medium">
+                            ⏱ {expiringSoonCount} expiring soon
+                        </span>
+                    )}
+                    {lockedCount > 0 && (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-400 text-xs font-medium">
+                            🔒 {lockedCount} locked
+                        </span>
+                    )}
+                </div>
+            )}
 
             {/* This Month at a Glance */}
             <CalendarWidget scoreboard={calendarScoreboard} cumulative={calendarCumulative} />

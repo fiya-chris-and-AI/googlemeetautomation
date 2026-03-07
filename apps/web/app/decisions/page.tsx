@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
+import { LockButton } from '../../components/lock-button';
+import { TTLBadge } from '../../components/ttl-badge';
 
 // ── Domain badge color map ──────────────────────
 const DOMAIN_STYLE: Record<DecisionDomain, string> = {
@@ -33,6 +35,7 @@ const STATUS_STYLE: Record<DecisionStatus, { badge: string; strike: boolean }> =
     reversed: { badge: 'badge-error', strike: false },
     under_review: { badge: 'badge-warning', strike: false },
     completed: { badge: 'bg-blue-500/20 text-blue-400', strike: false },
+    archived: { badge: 'bg-theme-bg-muted text-theme-text-muted', strike: false },
 };
 
 const STATUS_LABELS: { value: string; label: string }[] = [
@@ -178,6 +181,15 @@ export default function DecisionsPage() {
         } catch { /* keep current state */ }
     };
 
+    /** Optimistic lock/unlock toggle. */
+    const handleLockChange = (id: string, locked: boolean) => {
+        setDecisions((prev) => prev.map((d) =>
+            d.id === id
+                ? { ...d, is_locked: locked, locked_by: locked ? 'Lutfiya Miller' : null, locked_at: locked ? new Date().toISOString() : null }
+                : d
+        ));
+    };
+
     // Translate all decision texts in one batch
     const allTexts = useMemo(() => decisions.map((d) => d.decision_text), [decisions]);
     const { translated: translatedTexts } = useTranslation(allTexts, { entityType: 'decision' });
@@ -302,6 +314,7 @@ export default function DecisionsPage() {
                                     isExpanded={expandedId === decision.id}
                                     onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
                                     onStatusChange={handleStatusChange}
+                                    onLockChange={handleLockChange}
                                     isNew={isNewItem(decision.created_at)}
                                     translatedText={textMap.get(decision.id)}
                                 />
@@ -327,6 +340,7 @@ export default function DecisionsPage() {
                                         isExpanded={expandedId === decision.id}
                                         onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
                                         onStatusChange={handleStatusChange}
+                                        onLockChange={handleLockChange}
                                         translatedText={textMap.get(decision.id)}
                                     />
                                 ))}
@@ -426,6 +440,7 @@ function DecisionCard({
     isExpanded,
     onToggleExpand,
     onStatusChange,
+    onLockChange,
     isNew = false,
     translatedText,
 }: {
@@ -433,6 +448,7 @@ function DecisionCard({
     isExpanded: boolean;
     onToggleExpand: () => void;
     onStatusChange: (id: string, status: DecisionStatus) => void;
+    onLockChange?: (id: string, locked: boolean) => void;
     isNew?: boolean;
     translatedText?: string;
 }) {
@@ -525,6 +541,7 @@ function DecisionCard({
                         <span className="text-[10px] text-theme-text-tertiary">
                             {new Date(decision.decided_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </span>
+                        <TTLBadge createdAt={decision.created_at} isLocked={decision.is_locked} />
                         {/* Meeting title */}
                         {decision.meeting_title && (
                             <span className="text-[10px] text-theme-text-muted truncate max-w-[200px]">
@@ -695,6 +712,16 @@ function DecisionCard({
                             >
                                 Reactivate
                             </button>
+                        )}
+                        {onLockChange && (
+                            <LockButton
+                                entityType="decision"
+                                entityId={decision.id}
+                                isLocked={decision.is_locked}
+                                lockedBy={decision.locked_by}
+                                currentUser="Lutfiya Miller"
+                                onLockChange={(locked) => onLockChange(decision.id, locked)}
+                            />
                         )}
                     </div>
 

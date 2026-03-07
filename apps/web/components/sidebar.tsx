@@ -15,6 +15,7 @@ const NAV_ITEMS = [
     { href: '/transcripts', labelKey: 'sidebar.nav.transcripts' as TranslationKey, icon: '◇' },
     { href: '/action-items', labelKey: 'sidebar.nav.actionItems' as TranslationKey, icon: '☑' },
     { href: '/decisions', labelKey: 'sidebar.nav.decisions' as TranslationKey, icon: '◩' },
+    { href: '/archive', labelKey: 'sidebar.nav.archive' as TranslationKey, icon: '📦' },
     { href: '/ask', labelKey: 'sidebar.nav.askAi' as TranslationKey, icon: '◈' },
     { href: '/logs', labelKey: 'sidebar.nav.logs' as TranslationKey, icon: '◉' },
 ] as const;

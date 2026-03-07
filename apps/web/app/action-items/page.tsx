@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
+import { LockButton } from '../../components/lock-button';
+import { TTLBadge } from '../../components/ttl-badge';
 
 const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
@@ -98,6 +100,8 @@ export default function ActionItemsPage() {
     const filtered = useMemo(() => {
         return items.filter((i) => {
             if (i.status === 'dismissed') return false;
+            if (i.status === 'archived') return false;
+            if (i.archived_at) return false;
             if (duplicateFilter === 'hidden' && i.is_duplicate) return false;
             if (assigneeFilter !== 'all' && i.assigned_to !== assigneeFilter) return false;
             if (priorityFilter !== 'all' && i.priority !== priorityFilter) return false;
@@ -139,7 +143,7 @@ export default function ActionItemsPage() {
 
         for (const assignee of ASSIGNEES) {
             const assigneeItems = filtered.filter(i => i.assigned_to === assignee.name);
-            result[assignee.name] = { open: [], in_progress: [], done: [], dismissed: [] };
+            result[assignee.name] = { open: [], in_progress: [], done: [], dismissed: [], archived: [] };
 
             for (const col of COLUMNS) {
                 const colItems = assigneeItems.filter(i => i.status === col.key);
@@ -216,6 +220,15 @@ export default function ActionItemsPage() {
                 setItems((prev) => prev.map((item) => (item.id === id ? updated : item)));
             }
         } catch { /* keep current state */ }
+    };
+
+    /** Optimistic lock/unlock toggle — updates local state immediately. */
+    const handleLockChange = (id: string, locked: boolean) => {
+        setItems((prev) => prev.map((item) =>
+            item.id === id
+                ? { ...item, is_locked: locked, locked_by: locked ? 'Lutfiya Miller' : null, locked_at: locked ? new Date().toISOString() : null }
+                : item
+        ));
     };
 
     const handleCreate = async () => {
@@ -450,6 +463,7 @@ export default function ActionItemsPage() {
                                                                 onStatusChange={updateStatus}
                                                                 onDismiss={dismissItem}
                                                                 onGroupLabelSave={handleGroupLabelSave}
+                                                                onLockChange={handleLockChange}
                                                                 translatedTitle={titleMap.get(item.id)}
                                                             />
                                                         ))}
@@ -495,6 +509,7 @@ export default function ActionItemsPage() {
                                                                                     onStatusChange={updateStatus}
                                                                                     onDismiss={dismissItem}
                                                                                     onGroupLabelSave={handleGroupLabelSave}
+                                                                                    onLockChange={handleLockChange}
                                                                                     translatedTitle={titleMap.get(item.id)}
                                                                                 />
                                                                             ))}
@@ -534,6 +549,7 @@ export default function ActionItemsPage() {
                                         onStatusChange={updateStatus}
                                         onDismiss={dismissItem}
                                         onGroupLabelSave={handleGroupLabelSave}
+                                        onLockChange={handleLockChange}
                                         translatedTitle={titleMap.get(item.id)}
                                     />
                                 ))}
@@ -653,6 +669,7 @@ function ActionItemCard({
     onStatusChange,
     onDismiss,
     onGroupLabelSave,
+    onLockChange,
     translatedTitle,
 }: {
     item: ActionItem;
@@ -665,6 +682,7 @@ function ActionItemCard({
     onStatusChange: (id: string, status: ActionItemStatus) => void;
     onDismiss: (id: string) => void;
     onGroupLabelSave: (id: string, label: string) => void;
+    onLockChange: (id: string, locked: boolean) => void;
     translatedTitle?: string;
 }) {
     const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
@@ -774,6 +792,7 @@ function ActionItemCard({
                                 🤝 Shared
                             </span>
                         )}
+                        <TTLBadge createdAt={item.created_at} isLocked={item.is_locked} />
                     </div>
                 </div>
             </div>
@@ -932,6 +951,14 @@ function ActionItemCard({
                         Dismiss
                     </button>
                 )}
+                <LockButton
+                    entityType="action_item"
+                    entityId={item.id}
+                    isLocked={item.is_locked}
+                    lockedBy={item.locked_by}
+                    currentUser="Lutfiya Miller"
+                    onLockChange={(locked) => onLockChange(item.id, locked)}
+                />
             </div>
         </div>
     );

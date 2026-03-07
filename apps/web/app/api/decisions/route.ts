@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
  *   confidence  — exact match
  *   sort        — decided_at | created_at (default: decided_at)
  *   order       — asc | desc (default: desc)
- *   limit       — max rows (default: 100, max: 500)
+ *   limit       — max rows (default: 1000, max: 5000)
  *   search      — text search in decision_text
  */
 export async function GET(req: NextRequest) {
@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
             ? searchParams.get('sort')!
             : 'decided_at';
         const ascending = searchParams.get('order') === 'asc';
-        const limit = Math.min(parseInt(searchParams.get('limit') ?? '100', 10) || 100, 500);
+        const limit = Math.min(parseInt(searchParams.get('limit') ?? '1000', 10) || 1000, 5000);
 
         let query = supabase
             .from('decisions')
@@ -49,6 +49,12 @@ export async function GET(req: NextRequest) {
 
         const search = searchParams.get('search');
         if (search) query = query.or(`decision_text.ilike.%${search}%,topic.ilike.%${search}%`);
+
+        // Exclude archived items from default listing (unless explicitly requested)
+        const includeArchived = searchParams.get('include_archived') === 'true';
+        if (!includeArchived) {
+            query = query.is('archived_at', null);
+        }
 
         const { data, error } = await query;
 

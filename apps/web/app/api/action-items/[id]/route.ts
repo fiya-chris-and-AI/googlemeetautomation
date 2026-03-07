@@ -66,6 +66,18 @@ export async function PATCH(
             }
         }
 
+        // Handle lock/unlock fields
+        if (body.is_locked !== undefined) {
+            update.is_locked = body.is_locked;
+            if (body.is_locked) {
+                update.locked_by = body.locked_by ?? 'Lutfiya Miller';
+                update.locked_at = new Date().toISOString();
+            } else {
+                update.locked_by = null;
+                update.locked_at = null;
+            }
+        }
+
         // Normalize assignee if provided
         let cloneAssignee: string | null = null;
         if (body.assigned_to !== undefined) {

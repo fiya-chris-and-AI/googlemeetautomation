@@ -43,6 +43,18 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
         if (body.status !== undefined) update.status = body.status;
         if (body.superseded_by !== undefined) update.superseded_by = body.superseded_by;
 
+        // Handle lock/unlock fields
+        if (body.is_locked !== undefined) {
+            update.is_locked = body.is_locked;
+            if (body.is_locked) {
+                update.locked_by = body.locked_by ?? 'Lutfiya Miller';
+                update.locked_at = new Date().toISOString();
+            } else {
+                update.locked_by = null;
+                update.locked_at = null;
+            }
+        }
+
         // Re-embed if decision_text changed
         if (body.decision_text) {
             const OpenAI = (await import('openai')).default;
