@@ -3,8 +3,9 @@
 import { useTheme } from '../lib/theme';
 
 /**
- * Theme toggle button — switches between light and dark mode.
- * Renders a sun/moon SVG icon to indicate current state.
+ * Theme toggle — compact tile button for the sidebar footer.
+ * Renders sun/moon inline SVG + label. Designed to sit side-by-side
+ * with the language toggle.
  */
 export function ThemeToggle() {
     const { theme, toggleTheme } = useTheme();
@@ -13,32 +14,35 @@ export function ThemeToggle() {
         <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="flex items-center gap-2 w-full px-3 py-2 rounded-full text-sm font-medium
-                       text-theme-text-secondary hover:text-theme-text-primary
-                       hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all duration-200"
+            className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg
+                       text-xs font-medium text-gray-500 dark:text-gray-400
+                       bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+                       hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600
+                       hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-100 cursor-pointer"
         >
             {theme === 'dark' ? (
                 <SunIcon className="w-4 h-4" />
             ) : (
                 <MoonIcon className="w-4 h-4" />
             )}
-            <span className="text-xs">{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+            <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
         </button>
     );
 }
 
 function SunIcon({ className }: { className?: string }) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
-            <path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.061l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.06 1.06l1.06 1.06z" />
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.4} strokeLinecap="round" className={className}>
+            <circle cx="8" cy="8" r="3" />
+            <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06" />
         </svg>
     );
 }
 
 function MoonIcon({ className }: { className?: string }) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
-            <path fillRule="evenodd" d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z" clipRule="evenodd" />
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.4} strokeLinecap="round" className={className}>
+            <path d="M13.5 9.2A6.5 6.5 0 016.8 2.5a5.5 5.5 0 106.7 6.7z" />
         </svg>
     );
 }

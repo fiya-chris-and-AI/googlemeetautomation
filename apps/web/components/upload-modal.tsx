@@ -445,7 +445,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
 }
 
 /**
- * Compact upload button for the sidebar — just an icon + tooltip.
+ * Compact upload button for the sidebar — dashed-border action button.
  * Opens the same upload modal.
  */
 export function SidebarUploadButton({ onSuccess }: UploadModalProps) {
@@ -455,14 +455,20 @@ export function SidebarUploadButton({ onSuccess }: UploadModalProps) {
         <>
             <button
                 onClick={() => setIsOpen(true)}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium w-full
-                           text-theme-text-secondary hover:text-theme-text-primary hover:bg-theme-muted
-                           transition-all duration-200 group"
+                className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium w-full
+                           border border-dashed border-gray-300 dark:border-gray-600
+                           text-gray-400 dark:text-gray-500
+                           hover:border-brand-500 hover:bg-brand-500/[0.08]
+                           hover:text-brand-500 dark:hover:text-brand-400
+                           transition-colors duration-100 cursor-pointer group"
                 title="Upload Transcript"
             >
-                <span className="text-lg transition-transform duration-200 group-hover:scale-105">
-                    ↑
-                </span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.6}
+                    strokeLinecap="round" strokeLinejoin="round"
+                    className="w-5 h-5 flex-shrink-0">
+                    <path d="M10 14V4m0 0L6.5 7.5M10 4l3.5 3.5" />
+                    <path d="M3 13v2a2 2 0 002 2h10a2 2 0 002-2v-2" />
+                </svg>
                 Upload
             </button>
 

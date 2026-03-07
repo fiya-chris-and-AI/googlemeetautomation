@@ -36,6 +36,13 @@ module.exports = {
                     emerald: '#22c55e',
                     blue: '#3b82f6',
                 },
+                // Per-nav-item icon colors (muted, cohesive tones)
+                icon: {
+                    calendar: '#4A7FC4',
+                    transcripts: '#8B6DB5',
+                    decisions: '#3A9E8A',
+                    archive: '#C08A50',
+                },
                 // Semantic theme tokens backed by CSS variables
                 theme: {
                     base: 'rgb(var(--color-background) / <alpha-value>)',

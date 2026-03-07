@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ComponentType } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './theme-toggle';
@@ -8,21 +8,61 @@ import { SidebarUploadButton } from './upload-modal';
 import { TimezoneClock } from './timezone-clock';
 import { useLocale } from '../lib/locale';
 import type { TranslationKey } from '../lib/translations';
+import {
+    DashboardIcon,
+    CalendarIcon,
+    TranscriptsIcon,
+    ActionItemsIcon,
+    DecisionsIcon,
+    ArchiveIcon,
+    AskAiIcon,
+    LogsIcon,
+    AdminIcon,
+    LogoutIcon,
+} from './sidebar-icons';
 
-const NAV_ITEMS = [
-    { href: '/', labelKey: 'sidebar.nav.dashboard' as TranslationKey, icon: '◆' },
-    { href: '/calendar', labelKey: 'sidebar.nav.calendar' as TranslationKey, icon: '◫' },
-    { href: '/transcripts', labelKey: 'sidebar.nav.transcripts' as TranslationKey, icon: '◇' },
-    { href: '/action-items', labelKey: 'sidebar.nav.actionItems' as TranslationKey, icon: '☑' },
-    { href: '/decisions', labelKey: 'sidebar.nav.decisions' as TranslationKey, icon: '◩' },
-    { href: '/archive', labelKey: 'sidebar.nav.archive' as TranslationKey, icon: '📦' },
-    { href: '/ask', labelKey: 'sidebar.nav.askAi' as TranslationKey, icon: '◈' },
-    { href: '/logs', labelKey: 'sidebar.nav.logs' as TranslationKey, icon: '◉' },
-] as const;
+// ── Nav item type ────────────────────────────────────────────────────
+interface NavItem {
+    href: string;
+    labelKey: TranslationKey;
+    icon: ComponentType<{ className?: string }>;
+    /** Tailwind text-color class for the icon's default (inactive) state */
+    iconColor: string;
+}
+
+// ── "Workspace" section ──────────────────────────────────────────────
+const WORKSPACE_ITEMS: NavItem[] = [
+    { href: '/', labelKey: 'sidebar.nav.dashboard', icon: DashboardIcon, iconColor: 'text-brand-500' },
+    { href: '/calendar', labelKey: 'sidebar.nav.calendar', icon: CalendarIcon, iconColor: 'text-icon-calendar' },
+    { href: '/transcripts', labelKey: 'sidebar.nav.transcripts', icon: TranscriptsIcon, iconColor: 'text-icon-transcripts' },
+    { href: '/action-items', labelKey: 'sidebar.nav.actionItems', icon: ActionItemsIcon, iconColor: 'text-brand-500' },
+    { href: '/decisions', labelKey: 'sidebar.nav.decisions', icon: DecisionsIcon, iconColor: 'text-icon-decisions' },
+    { href: '/archive', labelKey: 'sidebar.nav.archive', icon: ArchiveIcon, iconColor: 'text-icon-archive' },
+];
+
+// ── "Intelligence" section ───────────────────────────────────────────
+const INTELLIGENCE_ITEMS: NavItem[] = [
+    { href: '/ask', labelKey: 'sidebar.nav.askAi', icon: AskAiIcon, iconColor: 'text-brand-500' },
+    { href: '/logs', labelKey: 'sidebar.nav.logs', icon: LogsIcon, iconColor: 'text-gray-400' },
+];
+
+// ── Section label ────────────────────────────────────────────────────
+function SectionLabel({ children }: { children: React.ReactNode }) {
+    return (
+        <div className="text-[10px] font-semibold uppercase tracking-[1.1px] text-gray-400 dark:text-gray-500 px-3 pt-3 pb-1">
+            {children}
+        </div>
+    );
+}
+
+// ── Horizontal divider ──────────────────────────────────────────────
+function Divider() {
+    return <div className="h-px bg-gray-200 dark:bg-gray-700 mx-5 my-1.5" />;
+}
 
 /**
  * Sidebar navigation — persistent across all pages.
- * Flat design with pill-shaped active states.
+ * Sectioned layout with SVG icons, per-item colors, and active state bar.
  */
 export function Sidebar() {
     const pathname = usePathname();
@@ -46,119 +86,147 @@ export function Sidebar() {
             .catch(() => { });
     }, []);
 
+    /** Render a single nav item row */
+    function renderNavItem(item: NavItem) {
+        const isActive = item.href === '/'
+            ? pathname === '/'
+            : pathname.startsWith(item.href);
+
+        const Icon = item.icon;
+
+        return (
+            <Link
+                key={item.href}
+                href={item.href}
+                className={`
+                    relative flex items-center gap-3 px-3 py-2 rounded-lg text-sm
+                    transition-colors duration-100 group
+                    ${isActive
+                        ? 'bg-brand-500/[0.06] text-brand-500 font-semibold'
+                        : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white font-medium'
+                    }
+                `}
+            >
+                {/* Active left bar */}
+                {isActive && (
+                    <div className="absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r bg-brand-500" />
+                )}
+
+                {/* Icon — active overrides to brand, otherwise per-item color */}
+                <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? 'text-brand-500' : item.iconColor}`} />
+
+                {/* Label */}
+                <span className="flex-1">{t(item.labelKey)}</span>
+
+                {/* Badge: Action Items */}
+                {item.href === '/action-items' && openCount !== null && openCount > 0 && (
+                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500">
+                        {openCount}
+                    </span>
+                )}
+
+                {/* Badge: Decisions */}
+                {item.href === '/decisions' && decisionCount !== null && decisionCount > 0 && (
+                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500">
+                        {decisionCount}
+                    </span>
+                )}
+            </Link>
+        );
+    }
+
     return (
-        <aside className="fixed left-0 top-0 bottom-0 w-64 bg-theme-raised border-r border-theme-border flex flex-col z-50">
+        <aside className="fixed left-0 top-0 bottom-0 w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col z-50">
             {/* Brand */}
-            <div className="p-5 border-b border-theme-border">
+            <div className="p-5 border-b border-gray-200 dark:border-gray-800">
                 <div className="flex flex-col items-start">
-                    {/* Light mode logo (black text) */}
+                    {/* Light mode logo */}
                     <img
                         src="https://rgltabjdjrbmbjrjoqga.supabase.co/storage/v1/object/public/community-assets/community-logo-1772070053980.png"
                         alt="ScienceExperts.ai"
                         className="h-14 w-auto dark:hidden"
                     />
-                    {/* Dark mode logo (white text) */}
+                    {/* Dark mode logo */}
                     <img
                         src="https://rgltabjdjrbmbjrjoqga.supabase.co/storage/v1/object/public/community-assets/community-logo-dark-1772073090031.png"
                         alt="ScienceExperts.ai"
                         className="h-14 w-auto hidden dark:block"
                     />
-                    <p className="text-[11px] text-theme-text-secondary font-medium mt-1.5 ml-0.5">
+                    <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium mt-1.5 ml-0.5">
                         {t('sidebar.brand')}
                     </p>
                 </div>
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 px-3 py-4 space-y-1">
-                {/* Quick upload action */}
-                <SidebarUploadButton />
+            <nav className="flex-1 overflow-y-auto px-2.5 pt-2">
+                {/* Upload action */}
+                <div className="px-0.5">
+                    <SidebarUploadButton />
+                </div>
 
-                <div className="my-2 border-t border-theme-border" />
+                <Divider />
 
-                {NAV_ITEMS.map((item) => {
-                    const isActive = item.href === '/'
-                        ? pathname === '/'
-                        : pathname.startsWith(item.href);
+                {/* Workspace section */}
+                <SectionLabel>Workspace</SectionLabel>
+                <div className="space-y-0.5">
+                    {WORKSPACE_ITEMS.map(renderNavItem)}
+                </div>
 
-                    return (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            className={`
-                flex items-center gap-3 px-3 py-2.5 rounded-full text-sm font-medium
-                transition-all duration-200 group
-                ${isActive
-                                    ? 'bg-gray-100 dark:bg-neutral-800 text-gray-900 dark:text-neutral-100'
-                                    : 'text-gray-600 dark:text-neutral-400 hover:bg-gray-50 dark:hover:bg-neutral-800'
-                                }
-              `}
-                        >
-                            <span className={`text-lg transition-transform duration-200 ${isActive ? 'scale-110' : 'group-hover:scale-105'}`}>
-                                {item.icon}
-                            </span>
-                            {t(item.labelKey)}
-                            {item.href === '/action-items' && openCount !== null && openCount > 0 && (
-                                <span className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-amber-500/15 text-amber-600 dark:text-amber-400 ring-1 ring-amber-500/20">
-                                    {openCount}
-                                </span>
-                            )}
-                            {item.href === '/decisions' && decisionCount !== null && decisionCount > 0 && (
-                                <span className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-accent-violet/15 text-accent-violet ring-1 ring-accent-violet/20">
-                                    {decisionCount}
-                                </span>
-                            )}
-                            {isActive && item.href !== '/action-items' && item.href !== '/decisions' && (
-                                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
-                            )}
-                            {isActive && item.href === '/action-items' && openCount === null && (
-                                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
-                            )}
-                            {isActive && item.href === '/decisions' && decisionCount === null && (
-                                <div className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse-slow" />
-                            )}
-                        </Link>
-                    );
-                })}
+                <Divider />
+
+                {/* Intelligence section */}
+                <SectionLabel>Intelligence</SectionLabel>
+                <div className="space-y-0.5">
+                    {INTELLIGENCE_ITEMS.map(renderNavItem)}
+                </div>
             </nav>
 
-            {/* Footer */}
-            <div className="p-4 border-t border-theme-border space-y-3">
+            {/* Footer — three stacked rows */}
+            <div className="p-2.5 border-t border-gray-200 dark:border-gray-800 space-y-1.5">
+                {/* Row 1: Timezone */}
                 <TimezoneClock />
-                <div className="flex items-center gap-2">
+
+                {/* Row 2: Dark mode + Deutsch toggles (side by side) */}
+                <div className="flex gap-1.5">
                     <ThemeToggle />
                     <button
                         onClick={toggleLocale}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
-                                   text-gray-600 dark:text-neutral-400 hover:bg-gray-100 dark:hover:bg-neutral-800
-                                   transition-all duration-200 cursor-pointer"
+                        className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg
+                                   text-xs font-medium text-gray-500 dark:text-gray-400
+                                   bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+                                   hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600
+                                   hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-100 cursor-pointer"
                         title={locale === 'en' ? 'Switch to German' : 'Auf Englisch umschalten'}
                     >
-                        <span>{locale === 'en' ? '🇩🇪' : '🇺🇸'}</span>
+                        <span className="text-sm leading-none">{locale === 'en' ? '🇩🇪' : '🇺🇸'}</span>
                         {t('locale.toggle')}
                     </button>
                 </div>
 
-                {/* Admin & Auth */}
-                <div className="pt-2 space-y-1">
+                {/* Row 3: Admin + Logout (side by side) */}
+                <div className="flex gap-0.5">
                     <Link
                         href="/admin/login"
-                        className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all
+                        className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-medium transition-colors duration-100
                             ${pathname.startsWith('/admin')
-                                ? 'bg-gray-100 dark:bg-neutral-800 text-gray-900 dark:text-neutral-100'
-                                : 'text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800'
+                                ? 'text-brand-500'
+                                : 'text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800'
                             }`}
                     >
-                        <span>👤</span> {t('sidebar.admin')}
+                        <AdminIcon className="w-4 h-4" />
+                        {t('sidebar.admin')}
                     </Link>
                     <a
                         href="/api/auth/logout"
-                        className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-gray-500 dark:text-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800 transition-all"
+                        className="flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-xs font-medium
+                                   text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400
+                                   hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-100"
                     >
-                        <span>🚪</span> {t('sidebar.logout')}
+                        <LogoutIcon className="w-4 h-4" />
+                        {t('sidebar.logout')}
                     </a>
                 </div>
-
             </div>
         </aside>
     );
