@@ -55,6 +55,7 @@ export default function ActionItemsPage() {
     const [duplicateFilter, setDuplicateFilter] = useState<'hidden' | 'shown'>('hidden');
     const [search, setSearch] = useState('');
     const [effortFilter, setEffortFilter] = useState('all');
+    const [lockFilter, setLockFilter] = useState<'all' | 'locked' | 'unlocked'>('all');
 
     // Modal state
     const [showCreate, setShowCreate] = useState(false);
@@ -96,8 +97,8 @@ export default function ActionItemsPage() {
         return [...set].sort();
     }, [items]);
 
-    // Apply filters
-    const filtered = useMemo(() => {
+    // Apply all filters except lock status (so lock stats stay stable)
+    const baseFiltered = useMemo(() => {
         return items.filter((i) => {
             if (i.status === 'dismissed') return false;
             if (i.status === 'archived') return false;
@@ -118,6 +119,13 @@ export default function ActionItemsPage() {
         });
     }, [items, assigneeFilter, priorityFilter, effortFilter, sourceFilter, duplicateFilter, search]);
 
+    // Apply lock filter on top of baseFiltered
+    const filtered = useMemo(() => {
+        if (lockFilter === 'all') return baseFiltered;
+        const wantLocked = lockFilter === 'locked';
+        return baseFiltered.filter(i => i.is_locked === wantLocked);
+    }, [baseFiltered, lockFilter]);
+
     // Detect shared items — tasks assigned to both people from the same meeting
     const sharedItemIds = useMemo(() => {
         const shared = new Set<string>();
@@ -132,6 +140,23 @@ export default function ActionItemsPage() {
         }
         return shared;
     }, [items]);
+
+    // ── Lock / archive stats (active items only, excludes done) ──
+    const lockStats = useMemo(() => {
+        const active = baseFiltered.filter(i => i.status === 'open');
+        const done = baseFiltered.filter(i => i.status === 'done').length;
+        const locked = active.filter(i => i.is_locked).length;
+        const unlocked = active.length - locked;
+        const perAssignee: Record<string, { total: number; locked: number; unlocked: number; done: number }> = {};
+        for (const a of ASSIGNEES) {
+            const assigneeAll = baseFiltered.filter(i => i.assigned_to === a.name);
+            const assigneeActive = assigneeAll.filter(i => i.status === 'open');
+            const assigneeDone = assigneeAll.filter(i => i.status === 'done').length;
+            const aLocked = assigneeActive.filter(i => i.is_locked).length;
+            perAssignee[a.name] = { total: assigneeActive.length, locked: aLocked, unlocked: assigneeActive.length - aLocked, done: assigneeDone };
+        }
+        return { active: active.length, locked, unlocked, subjectToArchive: unlocked, done, perAssignee };
+    }, [baseFiltered]);
 
     // Items with no assignee — shown below both columns
     const unassignedItems = useMemo(() =>
@@ -408,6 +433,58 @@ export default function ActionItemsPage() {
                 )}
             </div>
 
+            {/* Lock Status Summary Bar */}
+            <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-4">
+                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
+                        ? 'border-amber-500 bg-amber-500/20 ring-2 ring-amber-500/40'
+                        : 'border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/15'
+                        }`}
+                >
+                    <span className="text-sm">🔒</span>
+                    <span className="text-sm font-semibold text-amber-400">{lockStats.locked}</span>
+                    <span className="text-xs text-amber-400/80">Locked</span>
+                </button>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
+                        ? 'border-theme-text-secondary bg-theme-muted ring-2 ring-theme-text-muted/40'
+                        : 'border-theme-border bg-theme-overlay hover:bg-theme-muted'
+                        }`}
+                >
+                    <span className="text-sm">🔓</span>
+                    <span className="text-sm font-semibold text-theme-text-secondary">{lockStats.unlocked}</span>
+                    <span className="text-xs text-theme-text-muted">Unlocked</span>
+                </button>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
+                        ? 'border-rose-500 bg-rose-500/20 ring-2 ring-rose-500/40'
+                        : 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/15'
+                        }`}
+                >
+                    <span className="text-sm">⏳</span>
+                    <span className="text-sm font-semibold text-rose-400">{lockStats.subjectToArchive}</span>
+                    <span className="text-xs text-rose-400/80">Subject to Archive</span>
+                </button>
+                {lockFilter !== 'all' && (
+                    <button
+                        onClick={() => setLockFilter('all')}
+                        className="text-xs text-theme-text-muted hover:text-theme-text-secondary transition-colors ml-1 cursor-pointer"
+                    >
+                        ✕ Clear
+                    </button>
+                )}
+                {/* Done count — separate from active metrics */}
+                <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
+                    <span className="text-sm">✅</span>
+                    <span className="text-sm font-semibold text-emerald-400">{lockStats.done}</span>
+                    <span className="text-xs text-emerald-400/80">Done</span>
+                </div>
+            </div>
+
             {/* Two-Column Assignee Board */}
             {loading ? (
                 <div className="p-12 text-center text-theme-text-tertiary">Loading action items...</div>
@@ -424,7 +501,19 @@ export default function ActionItemsPage() {
                                     {/* Assignee column header */}
                                     <div className={`glass-card p-4 border-l-4 ${assignee.accent} flex items-center justify-between sticky top-0 z-10`}>
                                         <h2 className="text-lg font-semibold text-theme-text-primary">{assignee.displayName}</h2>
-                                        <span className="text-sm text-theme-text-tertiary font-medium">{assigneeItemCount}</span>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-sm text-theme-text-tertiary font-medium">{lockStats.perAssignee[assignee.name]?.total ?? assigneeItemCount}</span>
+                                            {lockStats.perAssignee[assignee.name] && (
+                                                <span className="text-[11px] text-theme-text-muted">
+                                                    🔒 {lockStats.perAssignee[assignee.name].locked} · 🔓 {lockStats.perAssignee[assignee.name].unlocked}
+                                                </span>
+                                            )}
+                                            {lockStats.perAssignee[assignee.name]?.done > 0 && (
+                                                <span className="text-[11px] text-emerald-400">
+                                                    ✅ {lockStats.perAssignee[assignee.name].done}
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
 
                                     {/* Status sections within this column */}
