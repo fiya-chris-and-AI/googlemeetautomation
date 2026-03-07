@@ -83,34 +83,47 @@ export function useTranslation(
 
         const fetchTranslations = async () => {
             try {
-                const res = await fetch('/api/translate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        texts: needsTranslation.map((n) => n.text),
-                        targetLang: locale,
-                        entityType: options?.entityType,
-                        entityId: options?.entityId,
-                        fieldNames: options?.fieldNames,
-                    }),
-                    signal: controller.signal,
-                });
+                // Split into batches of BATCH_SIZE to avoid API timeouts
+                const BATCH_SIZE = 5;
+                const running = [...result];
 
-                if (!res.ok) throw new Error(`Translation API returned ${res.status}`);
+                for (let start = 0; start < needsTranslation.length; start += BATCH_SIZE) {
+                    if (controller.signal.aborted) return;
 
-                const data = (await res.json()) as { translations: string[] };
+                    const batch = needsTranslation.slice(start, start + BATCH_SIZE);
 
-                // Store in session cache and update results
-                const updated = [...result];
-                for (let i = 0; i < needsTranslation.length; i++) {
-                    const { index, text } = needsTranslation[i];
-                    const translatedText = data.translations[i] ?? text;
-                    sessionCache.set(cacheKey(text, locale), translatedText);
-                    updated[index] = translatedText;
+                    const res = await fetch('/api/translate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            texts: batch.map((n) => n.text),
+                            targetLang: locale,
+                            entityType: options?.entityType,
+                            entityId: options?.entityId,
+                            fieldNames: options?.fieldNames,
+                        }),
+                        signal: controller.signal,
+                    });
+
+                    if (!res.ok) throw new Error(`Translation API returned ${res.status}`);
+
+                    const data = (await res.json()) as { translations: string[] };
+
+                    // Store in session cache and update running results
+                    for (let i = 0; i < batch.length; i++) {
+                        const { index, text } = batch[i];
+                        const translatedText = data.translations[i] ?? text;
+                        sessionCache.set(cacheKey(text, locale), translatedText);
+                        running[index] = translatedText;
+                    }
+
+                    // Progressive update — show translations as each batch completes
+                    if (!controller.signal.aborted) {
+                        setTranslated([...running]);
+                    }
                 }
 
                 if (!controller.signal.aborted) {
-                    setTranslated(updated);
                     setLoading(false);
                 }
             } catch (err) {

@@ -15,7 +15,7 @@ const LANG_NAMES: Record<TranslateLang, string> = {
     de: 'German',
 };
 
-const BATCH_SIZE = 20;
+const BATCH_SIZE = 5;
 
 const SYSTEM_PROMPT = `You are a precise translator.
 
@@ -50,13 +50,19 @@ export async function translateTexts(
         const userMessage = `Translate the following ${batch.length} lines to ${targetName}:\n\n${numbered}`;
 
         const response = await callGemini(SYSTEM_PROMPT, userMessage, apiKey, {
-            maxOutputTokens: 2048,
+            maxOutputTokens: 4096,
         });
+
+        // Strip markdown fences (Gemini occasionally wraps output in ```)
+        const cleaned = response.trim()
+            .replace(/^```[a-z]*\s*/i, '')
+            .replace(/\s*```\s*$/i, '')
+            .trim();
 
         // Parse numbered responses: "1: translated text" → Map<number, string>
         const parsed = new Map<number, string>();
-        for (const line of response.trim().split('\n')) {
-            const match = line.match(/^(\d+):\s*(.+)/);
+        for (const line of cleaned.split('\n')) {
+            const match = line.match(/^(\d+)[:.)]\s*(.+)/);
             if (match) {
                 parsed.set(parseInt(match[1], 10), match[2].trim());
             }

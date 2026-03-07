@@ -83,7 +83,18 @@ export async function POST(req: NextRequest) {
             }
 
             const missTexts = misses.map((m) => m.text);
-            const translated = await translateTexts(missTexts, targetLang, apiKey);
+
+            // Batch translation in chunks of 20 to avoid Gemini timeouts
+            const BATCH_SIZE = 20;
+            const translated: string[] = new Array(missTexts.length);
+
+            for (let start = 0; start < missTexts.length; start += BATCH_SIZE) {
+                const chunk = missTexts.slice(start, start + BATCH_SIZE);
+                const chunkResults = await translateTexts(chunk, targetLang, apiKey);
+                for (let i = 0; i < chunkResults.length; i++) {
+                    translated[start + i] = chunkResults[i];
+                }
+            }
 
             // Fill in results and prepare cache rows
             const cacheRows = misses.map((miss, idx) => ({

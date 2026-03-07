@@ -495,6 +495,7 @@ export default function ActionItemsPage() {
                                                                                     onStatusChange={updateStatus}
                                                                                     onDismiss={dismissItem}
                                                                                     onGroupLabelSave={handleGroupLabelSave}
+                                                                                    translatedTitle={titleMap.get(item.id)}
                                                                                 />
                                                                             ))}
                                                                         </div>
