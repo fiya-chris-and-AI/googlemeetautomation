@@ -133,7 +133,7 @@ export async function PATCH(
 }
 /**
  * DELETE /api/transcripts/[id] — Delete a transcript and its related data.
- * Removes associated action_items, transcript_chunks, and logs the deletion.
+ * Removes associated action_items, decisions, transcript_chunks, and logs the deletion.
  */
 export async function DELETE(
     _request: Request,
@@ -156,6 +156,9 @@ export async function DELETE(
 
         // Delete related action items
         await supabase.from('action_items').delete().eq('transcript_id', id);
+
+        // Delete related decisions
+        await supabase.from('decisions').delete().eq('transcript_id', id);
 
         // Delete related embedding chunks
         await supabase.from('transcript_chunks').delete().eq('transcript_id', id);

@@ -3,6 +3,8 @@ import { getServerSupabase } from '../../../../lib/supabase';
 import {
     extractActionItemsFromTranscript,
     buildInsertionRows,
+    callGemini,
+    stripMarkdownFences,
 } from '@meet-pipeline/shared';
 import type { TranscriptForExtraction, RawExtractedItem } from '@meet-pipeline/shared';
 
@@ -33,10 +35,10 @@ const MAX_RETRIES = 3;
  */
 export async function POST() {
     try {
-        const anthropicKey = process.env.ANTHROPIC_API_KEY;
-        if (!anthropicKey) {
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (!geminiKey) {
             return NextResponse.json(
-                { error: 'ANTHROPIC_API_KEY is not configured' },
+                { error: 'GEMINI_API_KEY is not configured' },
                 { status: 503 },
             );
         }
@@ -123,7 +125,7 @@ export async function POST() {
             let extracted: RawExtractedItem[] | null = null;
             for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
                 try {
-                    extracted = await extractActionItemsFromTranscript(transcript, anthropicKey);
+                    extracted = await extractActionItemsFromTranscript(transcript, geminiKey);
                     break; // success
                 } catch (err) {
                     const msg = err instanceof Error ? err.message : String(err);
@@ -187,7 +189,7 @@ export async function POST() {
             const dupMapping = await findDuplicates(
                 baseRows,
                 existingItems,
-                anthropicKey,
+                geminiKey,
             );
 
             // 2d. Apply dedup flags and insert
@@ -265,7 +267,7 @@ export async function POST() {
 async function findDuplicates(
     newRows: Record<string, unknown>[],
     existingItems: { id: string; title: string; assigned_to: string | null }[],
-    anthropicKey: string,
+    geminiKey: string,
 ): Promise<Record<number, string>> {
     // If there are no existing items, nothing can be a duplicate
     if (existingItems.length === 0 || newRows.length === 0) {
@@ -301,34 +303,18 @@ Example: { "0": "abc-123", "3": "def-456" }
 
 Return ONLY valid JSON, no markdown fences or extra text. If no duplicates, return {}.`;
 
-    const anthropicRes = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': anthropicKey,
-            'anthropic-version': '2023-06-01',
-        },
-        body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 2048,
-            system: systemPrompt,
-            messages: [
-                {
-                    role: 'user',
-                    content: JSON.stringify({
-                        new_items: newItemsSummary,
-                        existing_items: existingItemsSummary,
-                    }),
-                },
-            ],
+    const rawText = await callGemini(
+        systemPrompt,
+        JSON.stringify({
+            new_items: newItemsSummary,
+            existing_items: existingItemsSummary,
         }),
-    });
-
-    const data = (await anthropicRes.json()) as { content?: { text?: string }[] };
-    const rawText: string = data.content?.[0]?.text ?? '{}';
+        geminiKey,
+    );
 
     try {
-        const parsed = JSON.parse(rawText) as Record<string, string>;
+        const cleaned = stripMarkdownFences(rawText);
+        const parsed = JSON.parse(cleaned || '{}') as Record<string, string>;
         // Convert string keys to number keys
         const result: Record<number, string> = {};
         for (const [key, value] of Object.entries(parsed)) {
@@ -339,7 +325,7 @@ Return ONLY valid JSON, no markdown fences or extra text. If no duplicates, retu
         }
         return result;
     } catch {
-        console.error('Dedup Claude response not valid JSON:', rawText);
+        console.error('Dedup Gemini response not valid JSON:', rawText);
         return {}; // Fail open — treat everything as non-duplicate
     }
 }

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { MeetingTranscript } from '@meet-pipeline/shared';
+import { detectDateFromFile } from '../lib/detect-meeting-date-client';
 
 const ACCEPTED_EXTENSIONS = '.txt,.vtt,.sbv,.pdf';
 const VALID_EXTENSIONS = ['.txt', '.vtt', '.sbv', '.pdf'];
@@ -98,6 +99,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     const [pastedText, setPastedText] = useState('');
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
+    const [dateAutoDetected, setDateAutoDetected] = useState(false);
     const [uploading, setUploading] = useState(false);
     const [progressIndex, setProgressIndex] = useState(0);
     const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript; detectedDate?: string | null } | { type: 'error'; message: string } | null>(null);
@@ -116,6 +118,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
         setPastedText('');
         setTitle('');
         setDate('');
+        setDateAutoDetected(false);
         setUploading(false);
         setProgressIndex(0);
         setResult(null);
@@ -162,6 +165,14 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
         setFile(selected);
         setTitle(titleFromFilename(selected.name));
         setResult(null);
+
+        // Auto-detect meeting date from filename / file content
+        detectDateFromFile(selected).then((detected) => {
+            if (detected) {
+                setDate(detected);
+                setDateAutoDetected(true);
+            }
+        });
     };
 
     const handleDrop = (e: React.DragEvent) => {
@@ -377,9 +388,14 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                                 id="upload-date"
                                 type="date"
                                 value={date}
-                                onChange={(e) => setDate(e.target.value)}
+                                onChange={(e) => { setDate(e.target.value); setDateAutoDetected(false); }}
                                 className="input-glow w-full"
                             />
+                            {dateAutoDetected && (
+                                <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
+                                    <span>✓</span> Auto-detected from file
+                                </p>
+                            )}
                         </div>
 
                         {/* Progress indicator */}
@@ -479,6 +495,7 @@ function UploadModalPortal({
     const [pastedText, setPastedText] = useState('');
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
+    const [dateAutoDetected, setDateAutoDetected] = useState(false);
     const [uploading, setUploading] = useState(false);
     const [progressIndex, setProgressIndex] = useState(0);
     const [result, setResult] = useState<{ type: 'success'; transcript: MeetingTranscript; detectedDate?: string | null } | { type: 'error'; message: string } | null>(null);
@@ -523,6 +540,14 @@ function UploadModalPortal({
         setFile(selected);
         setTitle(titleFromFilename(selected.name));
         setResult(null);
+
+        // Auto-detect meeting date from filename / file content
+        detectDateFromFile(selected).then((detected) => {
+            if (detected) {
+                setDate(detected);
+                setDateAutoDetected(true);
+            }
+        });
     };
 
     const handleDrop = (e: React.DragEvent) => {
@@ -718,9 +743,14 @@ function UploadModalPortal({
                                 id="portal-upload-date"
                                 type="date"
                                 value={date}
-                                onChange={(e) => setDate(e.target.value)}
+                                onChange={(e) => { setDate(e.target.value); setDateAutoDetected(false); }}
                                 className="input-glow w-full"
                             />
+                            {dateAutoDetected && (
+                                <p className="text-xs text-emerald-500 mt-1 flex items-center gap-1">
+                                    <span>✓</span> Auto-detected from file
+                                </p>
+                            )}
                         </div>
 
                         {uploading && (

@@ -42,18 +42,18 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Transcript not found' }, { status: 404 });
         }
 
-        // 2. Call Claude to extract decisions
-        const anthropicKey = process.env.ANTHROPIC_API_KEY;
-        if (!anthropicKey) {
+        // 2. Call Gemini to extract decisions
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (!geminiKey) {
             return NextResponse.json(
-                { error: 'ANTHROPIC_API_KEY is not configured' },
+                { error: 'GEMINI_API_KEY is not configured' },
                 { status: 503 },
             );
         }
 
         const extracted = await extractDecisionsFromTranscript(
             transcript as TranscriptForDecisionExtraction,
-            anthropicKey,
+            geminiKey,
         );
 
         if (extracted.length === 0) {
