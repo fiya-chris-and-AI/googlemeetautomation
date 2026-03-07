@@ -24,9 +24,7 @@ export default function TranscriptDetailPage({
 
     const [summary, setSummary] = useState<string | null>(null);
     const [summaryLoading, setSummaryLoading] = useState(false);
-
-
-
+    const [forceRegenerate, setForceRegenerate] = useState(false);
 
     // ── Editing state ────────────────────────────
     const [editingTitle, setEditingTitle] = useState(false);
@@ -79,22 +77,28 @@ export default function TranscriptDetailPage({
     }, [params.id]);
 
     useEffect(() => {
-        if (!transcript || summary !== null || summaryLoading) return;
-        setSummaryLoading(true);
+        if (!transcript || summaryLoading) return;
+        // Skip if we already have a summary and not forcing regeneration
+        if (summary !== null && !forceRegenerate) return;
 
-        fetch(`/api/transcripts/${transcript.transcript_id}/summarize`)
+        setSummaryLoading(true);
+        const forceParam = forceRegenerate ? '?force=true' : '';
+
+        fetch(`/api/transcripts/${transcript.transcript_id}/summarize${forceParam}`)
             .then(async (r) => {
                 const data = await r.json();
                 if (!r.ok) {
-                    // Surface the error message so the user can retry
                     setSummary(data.error ?? 'Unable to generate summary.');
                 } else {
                     setSummary(data.summary ?? 'Unable to generate summary.');
                 }
             })
             .catch(() => setSummary('Unable to generate summary.'))
-            .finally(() => setSummaryLoading(false));
-    }, [transcript, summary]);
+            .finally(() => {
+                setSummaryLoading(false);
+                setForceRegenerate(false);
+            });
+    }, [transcript, summary, forceRegenerate]);
 
     const handleAsk = async () => {
         if (!question.trim() || !transcript) return;
@@ -246,7 +250,7 @@ export default function TranscriptDetailPage({
                             </h2>
                             {summary && !summaryLoading && (
                                 <button
-                                    onClick={() => { setSummary(null); }}
+                                    onClick={() => { setSummary(null); setForceRegenerate(true); }}
                                     className="text-[11px] font-medium text-brand-400 hover:text-brand-300 transition-colors"
                                 >
                                     Regenerate

@@ -67,6 +67,8 @@ export interface ProcessingLogEntry {
     /** Email address of the sender that triggered processing. */
     source_sender: string | null;
     processed_at: string;
+    /** Cached Gemini-generated meeting summary (null = not yet generated). */
+    meeting_summary?: string | null;
 }
 
 /** Payload sent to the `/api/query` endpoint. */

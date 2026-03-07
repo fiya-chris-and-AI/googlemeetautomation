@@ -10,14 +10,18 @@ export const dynamic = 'force-dynamic';
  * GET /api/transcripts/[id]/summarize
  *
  * Generate a structured meeting brief directly from the full transcript.
- * Bypasses RAG — sends the raw transcript straight to Gemini for analysis.
+ * Caches the result in the `meeting_summary` column on the transcripts table.
+ *
+ * Query params:
+ *   force — if 'true', bypass cache and regenerate the summary.
  */
 export async function GET(
-    _req: NextRequest,
+    req: NextRequest,
     { params }: { params: Promise<{ id: string }> },
 ) {
     try {
         const { id } = await params;
+        const force = req.nextUrl.searchParams.get('force') === 'true';
         const geminiKey = process.env.GEMINI_API_KEY;
         if (!geminiKey) {
             return NextResponse.json({ error: 'GEMINI_API_KEY not configured' }, { status: 503 });
@@ -26,7 +30,7 @@ export async function GET(
         const supabase = getServerSupabase();
         const { data: transcript, error } = await supabase
             .from('transcripts')
-            .select('meeting_title, meeting_date, raw_transcript, word_count')
+            .select('meeting_title, meeting_date, raw_transcript, word_count, meeting_summary')
             .eq('id', id)
             .single();
 
@@ -34,8 +38,12 @@ export async function GET(
             return NextResponse.json({ error: 'Transcript not found' }, { status: 404 });
         }
 
-        // For very long transcripts, take the first ~8000 chars and last ~2000 chars
-        // to capture both the opening context and closing decisions/wrap-up
+        // ── Cache hit — return immediately ──
+        if (transcript.meeting_summary && !force) {
+            return NextResponse.json({ summary: transcript.meeting_summary, cached: true });
+        }
+
+        // ── Cache miss or force regeneration — call Gemini ──
         const raw = transcript.raw_transcript;
         let content: string;
         if (raw.length > 12000) {
@@ -94,10 +102,13 @@ Guidelines:
             summary = 'Unable to generate summary.';
         }
 
+        // ── Persist to database ──
+        await supabase
+            .from('transcripts')
+            .update({ meeting_summary: summary })
+            .eq('id', id);
+
         // Fire-and-forget: auto-extract decisions and action items if not already done.
-        // This only runs for old transcripts — recently uploaded ones are handled
-        // by the upload route's own extraction chain.
-        // Sequential with delays to avoid rate limits.
         try {
             const { count: decisionCount } = await supabase
                 .from('decisions')
@@ -109,7 +120,6 @@ Guidelines:
                 .select('id', { count: 'exact', head: true })
                 .eq('transcript_id', id);
 
-            // Check if extraction was previously attempted (found 0 items)
             const { count: decisionAttemptCount } = await supabase
                 .from('activity_log')
                 .select('id', { count: 'exact', head: true })
@@ -135,7 +145,7 @@ Guidelines:
             // Never let extraction checks delay the summary response
         }
 
-        return NextResponse.json({ summary });
+        return NextResponse.json({ summary, cached: false });
     } catch (err) {
         const msg = err instanceof Error ? err.message : 'Unknown error';
         return NextResponse.json({ error: msg }, { status: 500 });
