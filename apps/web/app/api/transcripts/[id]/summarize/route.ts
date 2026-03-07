@@ -86,7 +86,7 @@ Guidelines:
         let summary: string;
         try {
             summary = await callGemini(systemPrompt, userMessage, geminiKey, {
-                maxOutputTokens: 2048,
+                maxOutputTokens: 4096,
             });
         } catch (err) {
             const msg = err instanceof Error ? err.message : 'Summary generation failed';
