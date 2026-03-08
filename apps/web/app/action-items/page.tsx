@@ -174,8 +174,9 @@ export default function ActionItemsPage() {
     // Apply lock filter on top of baseFiltered
     const filtered = useMemo(() => {
         if (lockFilter === 'all') return baseFiltered;
-        const wantLocked = lockFilter === 'locked';
-        return baseFiltered.filter(i => i.is_locked === wantLocked);
+        if (lockFilter === 'locked') return baseFiltered.filter(i => i.is_locked);
+        // 'unlocked' — includes items where is_locked is false, null, or undefined
+        return baseFiltered.filter(i => !i.is_locked);
     }, [baseFiltered, lockFilter]);
 
     // Detect shared items — tasks assigned to both people from the same meeting
@@ -708,8 +709,8 @@ export default function ActionItemsPage() {
                         }
                     }}
                     className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all whitespace-nowrap ${selectionMode
-                            ? 'border-brand-500 bg-brand-500/20 text-brand-400 ring-1 ring-brand-500/30'
-                            : 'border-theme-border text-theme-text-muted hover:text-brand-400 hover:border-brand-500/50'
+                        ? 'border-brand-500 bg-brand-500/20 text-brand-400 ring-1 ring-brand-500/30'
+                        : 'border-theme-border text-theme-text-muted hover:text-brand-400 hover:border-brand-500/50'
                         }`}
                 >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
