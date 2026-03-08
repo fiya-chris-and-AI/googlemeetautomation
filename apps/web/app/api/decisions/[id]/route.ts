@@ -42,6 +42,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
         if (body.confidence !== undefined) update.confidence = body.confidence;
         if (body.status !== undefined) update.status = body.status;
         if (body.superseded_by !== undefined) update.superseded_by = body.superseded_by;
+        if (body.assigned_to !== undefined) update.assigned_to = body.assigned_to;
 
         // Handle lock/unlock fields
         if (body.is_locked !== undefined) {

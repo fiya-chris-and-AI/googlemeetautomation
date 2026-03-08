@@ -58,6 +58,9 @@ export default function ActionItemsPage() {
     const [effortFilter, setEffortFilter] = useState('all');
     const [lockFilter, setLockFilter] = useState<'all' | 'locked' | 'unlocked'>('all');
 
+    // Drag-and-drop state
+    const [dragOverAssignee, setDragOverAssignee] = useState<string | null>(null);
+
     // Modal state
     const [showCreate, setShowCreate] = useState(false);
     const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -257,6 +260,49 @@ export default function ActionItemsPage() {
         ));
     };
 
+    // ── Drag-and-drop handlers ──
+    const handleDragStart = (e: React.DragEvent, itemId: string) => {
+        e.dataTransfer.setData('text/plain', itemId);
+        e.dataTransfer.effectAllowed = 'move';
+    };
+
+    const handleDragOver = (e: React.DragEvent, assigneeName: string) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        setDragOverAssignee(assigneeName);
+    };
+
+    const handleDragLeave = () => setDragOverAssignee(null);
+
+    const handleDrop = async (e: React.DragEvent, targetAssignee: string) => {
+        e.preventDefault();
+        setDragOverAssignee(null);
+        const itemId = e.dataTransfer.getData('text/plain');
+        if (!itemId) return;
+
+        const item = items.find(i => i.id === itemId);
+        if (!item || item.assigned_to === targetAssignee) return;
+
+        const prevAssignee = item.assigned_to;
+        // Optimistic update
+        setItems(prev => prev.map(i =>
+            i.id === itemId ? { ...i, assigned_to: targetAssignee } : i
+        ));
+
+        try {
+            await fetch(`/api/action-items/${itemId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ assigned_to: targetAssignee }),
+            });
+        } catch {
+            // Revert on failure
+            setItems(prev => prev.map(i =>
+                i.id === itemId ? { ...i, assigned_to: prevAssignee } : i
+            ));
+        }
+    };
+
     const handleCreate = async () => {
         if (!newTitle.trim()) return;
         try {
@@ -434,6 +480,37 @@ export default function ActionItemsPage() {
                 )}
             </div>
 
+            {/* Stats Summary Bar */}
+            <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
+                <span className="text-sm font-medium text-theme-text-primary">{baseFiltered.length} action items</span>
+                <span className="text-theme-text-muted">·</span>
+                <span className="text-xs text-amber-400">{lockStats.active} open</span>
+                {lockStats.done > 0 && (
+                    <>
+                        <span className="text-theme-text-muted">·</span>
+                        <span className="text-xs text-emerald-400">{lockStats.done} done</span>
+                    </>
+                )}
+                <span className="text-theme-text-muted">·</span>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                    {(['urgent', 'high', 'medium', 'low'] as const).map((p) => {
+                        const count = baseFiltered.filter(i => i.priority === p).length;
+                        if (!count) return null;
+                        const style = {
+                            urgent: 'bg-rose-500/20 text-rose-400',
+                            high: 'bg-amber-500/20 text-amber-400',
+                            medium: 'bg-brand-400/20 text-brand-400',
+                            low: 'bg-theme-bg-muted text-theme-text-muted',
+                        }[p];
+                        return (
+                            <span key={p} className={`inline-flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 rounded ${style}`}>
+                                {PRIORITY_LABEL[p]} {count}
+                            </span>
+                        );
+                    })}
+                </div>
+            </div>
+
             {/* Lock Status Summary Bar */}
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-4">
                 <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
@@ -496,9 +573,16 @@ export default function ActionItemsPage() {
                         {ASSIGNEES.map((assignee) => {
                             const assigneeGroups = groupedByAssignee[assignee.name];
                             const assigneeItemCount = filtered.filter(i => i.assigned_to === assignee.name).length;
+                            const isDropTarget = dragOverAssignee === assignee.name;
 
                             return (
-                                <div key={assignee.name} className="space-y-4">
+                                <div
+                                    key={assignee.name}
+                                    className={`space-y-4 rounded-2xl transition-all duration-200 ${isDropTarget ? 'ring-2 ring-brand-400/50 bg-brand-400/5 p-2' : ''}`}
+                                    onDragOver={(e) => handleDragOver(e, assignee.name)}
+                                    onDragLeave={handleDragLeave}
+                                    onDrop={(e) => handleDrop(e, assignee.name)}
+                                >
                                     {/* Assignee column header */}
                                     <div className={`glass-card p-4 border-l-4 ${assignee.accent} flex items-center justify-between sticky top-0 z-10`}>
                                         <h2 className="text-lg font-semibold text-theme-text-primary">{assignee.displayName}</h2>
@@ -555,6 +639,7 @@ export default function ActionItemsPage() {
                                                                 onGroupLabelSave={handleGroupLabelSave}
                                                                 onLockChange={handleLockChange}
                                                                 translatedTitle={titleMap.get(item.id)}
+                                                                onDragStart={(e) => handleDragStart(e, item.id)}
                                                             />
                                                         ))}
                                                     </div>
@@ -601,6 +686,7 @@ export default function ActionItemsPage() {
                                                                                     onGroupLabelSave={handleGroupLabelSave}
                                                                                     onLockChange={handleLockChange}
                                                                                     translatedTitle={titleMap.get(item.id)}
+                                                                                    onDragStart={(e) => handleDragStart(e, item.id)}
                                                                                 />
                                                                             ))}
                                                                         </div>
@@ -641,6 +727,7 @@ export default function ActionItemsPage() {
                                         onGroupLabelSave={handleGroupLabelSave}
                                         onLockChange={handleLockChange}
                                         translatedTitle={titleMap.get(item.id)}
+                                        onDragStart={(e) => handleDragStart(e, item.id)}
                                     />
                                 ))}
                             </div>
@@ -761,6 +848,7 @@ function ActionItemCard({
     onGroupLabelSave,
     onLockChange,
     translatedTitle,
+    onDragStart,
 }: {
     item: ActionItem;
     allItems: ActionItem[];
@@ -774,6 +862,7 @@ function ActionItemCard({
     onGroupLabelSave: (id: string, label: string) => void;
     onLockChange: (id: string, locked: boolean) => void;
     translatedTitle?: string;
+    onDragStart?: (e: React.DragEvent) => void;
 }) {
     const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
 
@@ -835,7 +924,11 @@ function ActionItemCard({
     };
 
     return (
-        <div className={`glass-card p-4 transition-all duration-200 ${isOverdue ? 'ring-1 ring-rose-500/30' : ''}`}>
+        <div
+            className={`glass-card p-4 transition-all duration-200 ${isOverdue ? 'ring-1 ring-rose-500/30' : ''} ${onDragStart ? 'cursor-grab active:cursor-grabbing' : ''}`}
+            draggable={!!onDragStart}
+            onDragStart={onDragStart}
+        >
             {/* Header */}
             <div className="flex items-start gap-2 cursor-pointer" onClick={onToggleExpand}>
                 {isNew ? (

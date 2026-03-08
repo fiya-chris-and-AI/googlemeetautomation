@@ -80,6 +80,9 @@ export default function DecisionsPage() {
     const [lockFilter, setLockFilter] = useState<'all' | 'locked' | 'unlocked'>('all');
     const [assigneeFilter, setAssigneeFilter] = useState('all');
 
+    // Drag-and-drop state
+    const [dragOverAssignee, setDragOverAssignee] = useState<string | null>(null);
+
     // Modal + expand state
     const [showCreate, setShowCreate] = useState(false);
     const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
@@ -269,6 +272,49 @@ export default function DecisionsPage() {
                 ? { ...d, is_locked: locked, locked_by: locked ? 'Lutfiya Miller' : null, locked_at: locked ? new Date().toISOString() : null }
                 : d
         ));
+    };
+
+    // ── Drag-and-drop handlers ──
+    const handleDragStart = (e: React.DragEvent, decisionId: string) => {
+        e.dataTransfer.setData('text/plain', decisionId);
+        e.dataTransfer.effectAllowed = 'move';
+    };
+
+    const handleDragOver = (e: React.DragEvent, assigneeName: string) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        setDragOverAssignee(assigneeName);
+    };
+
+    const handleDragLeave = () => setDragOverAssignee(null);
+
+    const handleDrop = async (e: React.DragEvent, targetAssignee: string) => {
+        e.preventDefault();
+        setDragOverAssignee(null);
+        const decisionId = e.dataTransfer.getData('text/plain');
+        if (!decisionId) return;
+
+        const decision = decisions.find(d => d.id === decisionId);
+        if (!decision || decision.assigned_to === targetAssignee) return;
+
+        const prevAssignee = decision.assigned_to;
+        // Optimistic update
+        setDecisions(prev => prev.map(d =>
+            d.id === decisionId ? { ...d, assigned_to: targetAssignee } : d
+        ));
+
+        try {
+            await fetch(`/api/decisions/${decisionId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ assigned_to: targetAssignee }),
+            });
+        } catch {
+            // Revert on failure
+            setDecisions(prev => prev.map(d =>
+                d.id === decisionId ? { ...d, assigned_to: prevAssignee } : d
+            ));
+        }
     };
 
     // Translate all decision texts in one batch
@@ -467,9 +513,16 @@ export default function DecisionsPage() {
                             const groups = groupedByAssignee[assignee.name] ?? [];
                             const stats = perAssigneeLockStats[assignee.name];
                             const totalItems = groups.reduce((sum, g) => sum + g.items.length, 0);
+                            const isDropTarget = dragOverAssignee === assignee.name;
 
                             return (
-                                <div key={assignee.name} className="space-y-4">
+                                <div
+                                    key={assignee.name}
+                                    className={`space-y-4 rounded-2xl transition-all duration-200 ${isDropTarget ? 'ring-2 ring-brand-400/50 bg-brand-400/5 p-2' : ''}`}
+                                    onDragOver={(e) => handleDragOver(e, assignee.name)}
+                                    onDragLeave={handleDragLeave}
+                                    onDrop={(e) => handleDrop(e, assignee.name)}
+                                >
                                     {/* Assignee column header */}
                                     <div className={`glass-card p-4 border-l-4 ${assignee.accent} flex items-center justify-between sticky top-0 z-10`}>
                                         <h2 className="text-lg font-semibold text-theme-text-primary">{assignee.displayName}</h2>
@@ -518,6 +571,7 @@ export default function DecisionsPage() {
                                                             onLockChange={handleLockChange}
                                                             isNew={isNewItem(decision.created_at)}
                                                             translatedText={textMap.get(decision.id)}
+                                                            onDragStart={(e) => handleDragStart(e, decision.id)}
                                                         />
                                                     ))}
                                                 </div>
@@ -550,6 +604,7 @@ export default function DecisionsPage() {
                                         onLockChange={handleLockChange}
                                         isNew={isNewItem(decision.created_at)}
                                         translatedText={textMap.get(decision.id)}
+                                        onDragStart={(e) => handleDragStart(e, decision.id)}
                                     />
                                 ))}
                             </div>
@@ -677,6 +732,7 @@ function DecisionCard({
     onLockChange,
     isNew = false,
     translatedText,
+    onDragStart,
 }: {
     decision: Decision;
     isExpanded: boolean;
@@ -685,6 +741,7 @@ function DecisionCard({
     onLockChange?: (id: string, locked: boolean) => void;
     isNew?: boolean;
     translatedText?: string;
+    onDragStart?: (e: React.DragEvent) => void;
 }) {
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
 
@@ -736,7 +793,11 @@ function DecisionCard({
     ];
 
     return (
-        <div className="glass-card p-4 transition-all duration-200 hover:border-theme-border/[0.12]">
+        <div
+            className={`glass-card p-4 transition-all duration-200 hover:border-theme-border/[0.12] ${onDragStart ? 'cursor-grab active:cursor-grabbing' : ''}`}
+            draggable={!!onDragStart}
+            onDragStart={onDragStart}
+        >
             {/* Header — clickable */}
             <div className="flex items-start gap-2 cursor-pointer" onClick={onToggleExpand}>
                 {/* Status dot — green pulse for new items, otherwise confidence color */}
