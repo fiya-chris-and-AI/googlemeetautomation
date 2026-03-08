@@ -22,3 +22,8 @@ export { callGemini, stripMarkdownFences } from './gemini';
 export type { GeminiOptions } from './gemini';
 export { translateTexts } from './translate';
 export type { TranslateLang } from './translate';
+export {
+    generateActionItemPrompt,
+    generatePromptsForBatch,
+} from './generate-action-prompt';
+export type { ActionItemForPrompt, PromptContext, GeneratedPrompt } from './generate-action-prompt';
