@@ -61,6 +61,23 @@ Extraction rules:
 
 Return ONLY valid JSON, no markdown fences or extra text.`;
 
+/**
+ * Additional instructions for WhatsApp conversation decision extraction.
+ */
+export const WHATSAPP_DECISION_ADDENDUM = `
+
+## WhatsApp-Specific Instructions
+You are now processing a WhatsApp group conversation (not a meeting transcript).
+Decisions in chat are expressed differently — adapt accordingly:
+
+- Quick agreements count as decisions: "sounds good", "let's go with that", "+1", "👍", "agreed"
+- Look at REPLY CHAINS — when someone proposes something and the reply is an agreement emoji or "ok", that IS a decision
+- Decisions may span several short messages rather than one paragraph
+- Participants may use first names, nicknames, or initials
+- Links shared with agreement ("let's use this: [URL]" + "👍") represent tool/resource decisions
+- WhatsApp chats typically produce fewer decisions (1-3) than meetings — don't force extraction
+`;
+
 // ── Types ───────────────────────────────────────
 
 /** Shape of a single extracted decision from the AI (pre-normalization). */
@@ -81,6 +98,8 @@ export interface TranscriptForDecisionExtraction {
     meeting_date: string;
     raw_transcript: string;
     participants: string[];
+    /** When 'whatsapp', the WhatsApp-specific prompt addendum is appended. */
+    extraction_method?: string;
 }
 
 // ── Core extraction call ────────────────────────
@@ -100,8 +119,13 @@ export async function extractDecisionsFromTranscript(
 
     const userMessage = `Meeting: ${transcript.meeting_title}\nDate: ${transcript.meeting_date}\nParticipants: ${participants.join(', ')}\n\nTranscript:\n${transcript.raw_transcript}`;
 
+    // Append WhatsApp-specific instructions when processing chat conversations
+    const systemPrompt = transcript.extraction_method === 'whatsapp'
+        ? DECISION_EXTRACTION_SYSTEM_PROMPT + WHATSAPP_DECISION_ADDENDUM
+        : DECISION_EXTRACTION_SYSTEM_PROMPT;
+
     const rawText = await callGemini(
-        DECISION_EXTRACTION_SYSTEM_PROMPT,
+        systemPrompt,
         userMessage,
         geminiKey,
         { maxOutputTokens: 65536 },

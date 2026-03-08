@@ -52,6 +52,25 @@ Extraction rules:
 
 Return ONLY valid JSON, no markdown fences or extra text.`;
 
+/**
+ * Additional instructions appended to the system prompt when processing
+ * WhatsApp conversations (shorter, more informal messages).
+ */
+export const WHATSAPP_ACTION_ITEM_ADDENDUM = `
+
+## WhatsApp-Specific Instructions
+You are now processing a WhatsApp group conversation (not a meeting transcript).
+Messages are shorter and more informal — adapt your extraction accordingly:
+
+- Look for IMPLICIT commitments: "I'll do it", "on it", "will push tonight", "let me handle that", "I got this"
+- Short replies like "ok I'll check" or "sure, will send" are valid action items
+- Emoji reactions (👍, ✅) on a message about a task can indicate acceptance of ownership
+- Pay attention to REPLY CHAINS — the quoted context (lines starting with "↳") often contains the task being agreed to
+- Participants may use first names, nicknames, or initials — map them to known team members when possible
+- Code snippets, links, and technical references are common and should be captured in the source_text
+- WhatsApp chats typically produce fewer action items (1-5) than meetings — don't force extraction
+`;
+
 // ── Types ───────────────────────────────────────
 
 /** Shape of a single extracted item from the AI (pre-normalization). */
@@ -72,6 +91,8 @@ export interface TranscriptForExtraction {
     meeting_title: string;
     raw_transcript: string;
     participants: string[];
+    /** When 'whatsapp', the WhatsApp-specific prompt addendum is appended. */
+    extraction_method?: string;
 }
 
 // ── Core extraction call ────────────────────────
@@ -91,8 +112,13 @@ export async function extractActionItemsFromTranscript(
 
     const userMessage = `Meeting: ${transcript.meeting_title}\nParticipants: ${participants.join(', ')}\n\nTranscript:\n${transcript.raw_transcript}`;
 
+    // Append WhatsApp-specific instructions when processing chat conversations
+    const systemPrompt = transcript.extraction_method === 'whatsapp'
+        ? EXTRACTION_SYSTEM_PROMPT + WHATSAPP_ACTION_ITEM_ADDENDUM
+        : EXTRACTION_SYSTEM_PROMPT;
+
     const rawText = await callGemini(
-        EXTRACTION_SYSTEM_PROMPT,
+        systemPrompt,
         userMessage,
         geminiKey,
         { maxOutputTokens: 65536 },

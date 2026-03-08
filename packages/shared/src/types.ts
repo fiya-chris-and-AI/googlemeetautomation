@@ -1,5 +1,8 @@
 /** Method used to extract transcript content from the email. */
-export type ExtractionMethod = 'inline' | 'google_doc' | 'attachment' | 'upload' | 'pdf_upload' | 'paste' | 'loom_import';
+export type ExtractionMethod = 'inline' | 'google_doc' | 'attachment' | 'upload' | 'pdf_upload' | 'paste' | 'loom_import' | 'whatsapp';
+
+/** Discriminator for the original communication channel. */
+export type SourceType = 'google_meet' | 'whatsapp' | 'upload';
 
 /** Status of a processing log entry. */
 export type LogStatus = 'success' | 'skipped' | 'error';
@@ -24,6 +27,8 @@ export interface MeetingTranscript {
     word_count: number;
     /** ISO 8601 timestamp */
     processed_at: string;
+    /** Original communication channel: 'google_meet' | 'whatsapp' | 'upload'. */
+    source_type?: SourceType;
     /** Number of AI-extracted action items for this transcript. */
     action_item_count?: number;
     /** Top action item titles (up to 3) for preview. */
@@ -264,4 +269,49 @@ export interface CumulativeStats {
     chrisSolo: number;
     withExternalGuests: number;
     averageMeetingsPerMonth: number;
+}
+
+// ── WhatsApp ────────────────────────────────────
+
+/** Raw WhatsApp message stored in `whatsapp_messages`. */
+export interface WhatsAppMessage {
+    /** The wamid from WhatsApp — used as PK and dedup key. */
+    id: string;
+    group_id: string;
+    group_name: string;
+    sender_phone: string;
+    sender_name: string;
+    message_type: 'text' | 'image' | 'document' | 'reaction' | 'reply';
+    message_text: string | null;
+    quoted_message_id: string | null;
+    media_caption: string | null;
+    timestamp: string;
+    raw_payload: Record<string, unknown>;
+    session_id: string | null;
+    processed: boolean;
+    created_at: string;
+}
+
+/** Aggregated WhatsApp conversation window stored in `whatsapp_sessions`. */
+export interface WhatsAppSession {
+    /** Format: YYYY-MM-DD_group-slug_session-N */
+    id: string;
+    group_id: string;
+    group_name: string;
+    participants: string[];
+    session_start: string;
+    session_end: string;
+    message_count: number;
+    compiled_transcript: string;
+    word_count: number;
+    source_type: 'whatsapp';
+    processed_at: string | null;
+    created_at: string;
+}
+
+/** Phone-to-name mapping for WhatsApp contact resolution. */
+export interface WhatsAppContact {
+    phone_number: string;
+    display_name: string;
+    canonical_name: string;
 }

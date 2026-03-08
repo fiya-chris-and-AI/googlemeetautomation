@@ -1,7 +1,9 @@
 import express from 'express';
-import { config } from './config.js';
+import { config, isWhatsAppConfigured } from './config.js';
 import { handlePubSubPush } from './gmail/handler.js';
 import { setupWatch, renewWatch } from './gmail/watcher.js';
+import { handleVerification, handleIncomingMessages, validateSignature } from './whatsapp/handler.js';
+import { runSessionCompiler } from './whatsapp/session-compiler.js';
 
 const app = express();
 app.use(express.json());
@@ -51,6 +53,53 @@ app.post('/pubsub', async (req, res) => {
     }
 });
 
+// ── WhatsApp webhook routes (conditionally registered) ──
+
+if (isWhatsAppConfigured()) {
+    /**
+     * GET /whatsapp/webhook — Meta Cloud API verification challenge.
+     */
+    app.get('/whatsapp/webhook', (req, res) => {
+        handleVerification(req, res, config.whatsapp.verifyToken!);
+    });
+
+    /**
+     * POST /whatsapp/webhook — incoming WhatsApp messages.
+     * Validates HMAC signature, then processes the payload.
+     */
+    app.post('/whatsapp/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+        try {
+            // Validate signature if app secret is configured
+            if (config.whatsapp.appSecret) {
+                const signature = req.headers['x-hub-signature-256'] as string | undefined;
+                const rawBody = Buffer.isBuffer(req.body) ? req.body : Buffer.from(JSON.stringify(req.body));
+
+                if (!validateSignature(rawBody, signature, config.whatsapp.appSecret)) {
+                    console.warn('[whatsapp] Invalid webhook signature — rejecting');
+                    res.status(401).json({ error: 'Invalid signature' });
+                    return;
+                }
+            }
+
+            // Parse body (may already be parsed or may be raw Buffer)
+            const body = Buffer.isBuffer(req.body) ? JSON.parse(req.body.toString()) : req.body;
+            const { processed, skipped } = await handleIncomingMessages(body);
+
+            console.log(`[whatsapp] Processed ${processed} message(s), skipped ${skipped}`);
+            res.status(200).json({ processed, skipped });
+        } catch (err) {
+            const errorMsg = err instanceof Error ? err.message : String(err);
+            console.error(`[whatsapp] Webhook error: ${errorMsg}`);
+            // Return 200 to prevent Meta from retrying
+            res.status(200).json({ processed: false, error: errorMsg });
+        }
+    });
+
+    console.log('[server] WhatsApp webhook registered: GET/POST /whatsapp/webhook');
+} else {
+    console.log('[server] WhatsApp not configured — webhook routes skipped');
+}
+
 // ── Start server ──
 
 async function start(): Promise<void> {
@@ -81,6 +130,21 @@ async function start(): Promise<void> {
         console.warn('[server] The server is running but won\'t receive Gmail notifications.');
         console.warn('[server] Create the Pub/Sub topic and restart to enable Gmail watching.');
     }
+
+    // Start WhatsApp session compiler interval (if configured)
+    if (isWhatsAppConfigured()) {
+        const intervalMs = config.whatsapp.sessionCompileIntervalMinutes * 60 * 1000;
+        const idleTimeout = config.whatsapp.sessionIdleTimeoutMinutes;
+
+        setInterval(() => {
+            runSessionCompiler(idleTimeout).catch((err) => {
+                console.error('[whatsapp:compiler] Session compilation failed:', err);
+            });
+        }, intervalMs);
+
+        console.log(`[server] WhatsApp session compiler active — interval: ${config.whatsapp.sessionCompileIntervalMinutes}m, idle timeout: ${idleTimeout}m`);
+    }
 }
 
 start();
+

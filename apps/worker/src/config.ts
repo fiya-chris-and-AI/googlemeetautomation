@@ -28,6 +28,14 @@ interface Config {
     openai: {
         apiKey: string;
     };
+    whatsapp: {
+        verifyToken: string | null;
+        accessToken: string | null;
+        appSecret: string | null;
+        phoneNumberId: string | null;
+        sessionIdleTimeoutMinutes: number;
+        sessionCompileIntervalMinutes: number;
+    };
     port: number;
 }
 
@@ -38,6 +46,11 @@ function requireEnv(name: string): string {
         throw new Error(`Missing required environment variable: ${name}`);
     }
     return value;
+}
+
+/** Reads an optional env var, returns null if missing. */
+function optionalEnv(name: string): string | null {
+    return process.env[name] ?? null;
 }
 
 /**
@@ -59,5 +72,23 @@ export const config: Config = {
     openai: {
         apiKey: requireEnv('OPENAI_API_KEY'),
     },
+    whatsapp: {
+        verifyToken: optionalEnv('WHATSAPP_VERIFY_TOKEN'),
+        accessToken: optionalEnv('WHATSAPP_ACCESS_TOKEN'),
+        appSecret: optionalEnv('WHATSAPP_APP_SECRET'),
+        phoneNumberId: optionalEnv('WHATSAPP_PHONE_NUMBER_ID'),
+        sessionIdleTimeoutMinutes: parseInt(process.env['WHATSAPP_SESSION_IDLE_TIMEOUT_MINUTES'] ?? '120', 10),
+        sessionCompileIntervalMinutes: parseInt(process.env['WHATSAPP_SESSION_COMPILE_INTERVAL_MINUTES'] ?? '30', 10),
+    },
     port: parseInt(process.env['WORKER_PORT'] ?? '3001', 10),
 };
+
+/**
+ * Returns true if the minimum required WhatsApp secrets are present.
+ * Used to conditionally register webhook routes and the session compiler.
+ */
+export function isWhatsAppConfigured(): boolean {
+    const { verifyToken, appSecret } = config.whatsapp;
+    return Boolean(verifyToken && appSecret);
+}
+

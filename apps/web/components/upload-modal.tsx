@@ -28,7 +28,15 @@ const PROGRESS_STAGES_PASTE = [
     'Storing in database...',
 ];
 
-type InputMode = 'file' | 'paste';
+const PROGRESS_STAGES_WHATSAPP = [
+    'Parsing WhatsApp export...',
+    'Compiling messages...',
+    'Generating embeddings...',
+    'Extracting action items...',
+    'Storing in database...',
+];
+
+type InputMode = 'file' | 'paste' | 'whatsapp';
 
 /** Derive a title from a filename: strip extension, replace separators, title-case. */
 function titleFromFilename(filename: string): string {
@@ -73,7 +81,7 @@ function TabSwitcher({ mode, onChange, disabled }: { mode: InputMode; onChange: 
                     : 'text-theme-text-tertiary hover:text-theme-text-secondary'
                     } disabled:opacity-50`}
             >
-                📄 Upload File
+                📄 File
             </button>
             <button
                 type="button"
@@ -84,7 +92,18 @@ function TabSwitcher({ mode, onChange, disabled }: { mode: InputMode; onChange: 
                     : 'text-theme-text-tertiary hover:text-theme-text-secondary'
                     } disabled:opacity-50`}
             >
-                ✏️ Paste Text
+                ✏️ Paste
+            </button>
+            <button
+                type="button"
+                onClick={() => onChange('whatsapp')}
+                disabled={disabled}
+                className={`flex-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${mode === 'whatsapp'
+                    ? 'bg-green-500/15 text-green-400 shadow-sm ring-1 ring-green-500/20'
+                    : 'text-theme-text-tertiary hover:text-theme-text-secondary'
+                    } disabled:opacity-50`}
+            >
+                💬 WhatsApp
             </button>
         </div>
     );
@@ -108,8 +127,8 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
 
-    const progressStages = mode === 'paste' ? PROGRESS_STAGES_PASTE : PROGRESS_STAGES_FILE;
-    const canSubmit = mode === 'file' ? !!file : !!pastedText.trim();
+    const progressStages = mode === 'paste' ? PROGRESS_STAGES_PASTE : mode === 'whatsapp' ? PROGRESS_STAGES_WHATSAPP : PROGRESS_STAGES_FILE;
+    const canSubmit = mode === 'file' || mode === 'whatsapp' ? !!file : !!pastedText.trim();
 
     // Reset state when modal opens
     const openModal = useCallback(() => {
@@ -202,6 +221,11 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                         date: date ? new Date(date).toISOString() : undefined,
                     }),
                 });
+            } else if (mode === 'whatsapp') {
+                const formData = new FormData();
+                formData.append('file', file!);
+                if (title.trim()) formData.append('title', title.trim());
+                res = await fetch('/api/upload/whatsapp-export', { method: 'POST', body: formData });
             } else {
                 const formData = new FormData();
                 formData.append('file', file!);
@@ -364,6 +388,56 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                             </div>
                         )}
 
+                        {/* WhatsApp import drop zone */}
+                        {mode === 'whatsapp' && (
+                            <div
+                                onClick={() => fileInputRef.current?.click()}
+                                onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                                onDragLeave={() => setDragOver(false)}
+                                onDrop={handleDrop}
+                                className={`
+                                    border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
+                                    transition-all duration-200 mb-4
+                                    ${dragOver
+                                        ? 'border-green-500 bg-green-500/5'
+                                        : 'border-green-500/30 hover:border-green-500/50'
+                                    }
+                                `}
+                            >
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept=".txt"
+                                    className="hidden"
+                                    onChange={(e) => {
+                                        const f = e.target.files?.[0];
+                                        if (f) {
+                                            setFile(f);
+                                            setTitle(f.name.replace(/\.txt$/i, '').replace(/WhatsApp Chat with /i, '').trim());
+                                            setResult(null);
+                                        }
+                                    }}
+                                />
+                                {file ? (
+                                    <div>
+                                        <p className="text-sm font-medium text-green-400">💬 {file.name}</p>
+                                        <p className="text-xs text-theme-text-tertiary mt-1">
+                                            {formatFileSize(file.size)}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p className="text-sm text-green-400/80">
+                                            Drop a WhatsApp chat export (.txt) here
+                                        </p>
+                                        <p className="text-xs text-theme-text-muted mt-2">
+                                            Export from WhatsApp: Chat → More → Export chat → Without media
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
                         {/* Title input */}
                         <div className="mb-3">
                             <label htmlFor="upload-title" className="block text-xs font-medium text-theme-text-secondary mb-1">
@@ -422,7 +496,7 @@ export function UploadModal({ onSuccess }: UploadModalProps) {
                                 disabled={!canSubmit || uploading}
                                 className="btn-primary px-5 py-2"
                             >
-                                {uploading ? 'Processing...' : mode === 'paste' ? 'Process Text' : 'Upload & Process'}
+                                {uploading ? 'Processing...' : mode === 'paste' ? 'Process Text' : mode === 'whatsapp' ? 'Import Chat' : 'Upload & Process'}
                             </button>
                         </div>
                     </>
@@ -510,8 +584,8 @@ function UploadModalPortal({
     const fileInputRef = useRef<HTMLInputElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
 
-    const progressStages = mode === 'paste' ? PROGRESS_STAGES_PASTE : PROGRESS_STAGES_FILE;
-    const canSubmit = mode === 'file' ? !!file : !!pastedText.trim();
+    const progressStages = mode === 'paste' ? PROGRESS_STAGES_PASTE : mode === 'whatsapp' ? PROGRESS_STAGES_WHATSAPP : PROGRESS_STAGES_FILE;
+    const canSubmit = mode === 'file' || mode === 'whatsapp' ? !!file : !!pastedText.trim();
 
     // Close on Escape
     useEffect(() => {
@@ -582,6 +656,11 @@ function UploadModalPortal({
                         date: date ? new Date(date).toISOString() : undefined,
                     }),
                 });
+            } else if (mode === 'whatsapp') {
+                const formData = new FormData();
+                formData.append('file', file!);
+                if (title.trim()) formData.append('title', title.trim());
+                res = await fetch('/api/upload/whatsapp-export', { method: 'POST', body: formData });
             } else {
                 const formData = new FormData();
                 formData.append('file', file!);
@@ -727,6 +806,56 @@ function UploadModalPortal({
                             </div>
                         )}
 
+                        {/* WhatsApp import drop zone */}
+                        {mode === 'whatsapp' && (
+                            <div
+                                onClick={() => fileInputRef.current?.click()}
+                                onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                                onDragLeave={() => setDragOver(false)}
+                                onDrop={handleDrop}
+                                className={`
+                                    border-2 border-dashed rounded-xl p-8 text-center cursor-pointer
+                                    transition-all duration-200 mb-4
+                                    ${dragOver
+                                        ? 'border-green-500 bg-green-500/5'
+                                        : 'border-green-500/30 hover:border-green-500/50'
+                                    }
+                                `}
+                            >
+                                <input
+                                    ref={fileInputRef}
+                                    type="file"
+                                    accept=".txt"
+                                    className="hidden"
+                                    onChange={(e) => {
+                                        const f = e.target.files?.[0];
+                                        if (f) {
+                                            setFile(f);
+                                            setTitle(f.name.replace(/\.txt$/i, '').replace(/WhatsApp Chat with /i, '').trim());
+                                            setResult(null);
+                                        }
+                                    }}
+                                />
+                                {file ? (
+                                    <div>
+                                        <p className="text-sm font-medium text-green-400">💬 {file.name}</p>
+                                        <p className="text-xs text-theme-text-tertiary mt-1">
+                                            {formatFileSize(file.size)}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p className="text-sm text-green-400/80">
+                                            Drop a WhatsApp chat export (.txt) here
+                                        </p>
+                                        <p className="text-xs text-theme-text-muted mt-2">
+                                            Export from WhatsApp: Chat → More → Export chat → Without media
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
                         <div className="mb-3">
                             <label htmlFor="portal-upload-title" className="block text-xs font-medium text-theme-text-secondary mb-1">
                                 Meeting Title
@@ -781,7 +910,7 @@ function UploadModalPortal({
                                 disabled={!canSubmit || uploading}
                                 className="btn-primary px-5 py-2"
                             >
-                                {uploading ? 'Processing...' : mode === 'paste' ? 'Process Text' : 'Upload & Process'}
+                                {uploading ? 'Processing...' : mode === 'paste' ? 'Process Text' : mode === 'whatsapp' ? 'Import Chat' : 'Upload & Process'}
                             </button>
                         </div>
                     </>

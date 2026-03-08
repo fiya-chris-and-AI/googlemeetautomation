@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import type { MeetingTranscript, QueryResponse, ActionItem, ActivityLogEntry, ScoreboardMetrics, CumulativeStats } from '@meet-pipeline/shared';
+import type { MeetingTranscript, QueryResponse, ActionItem, ActivityLogEntry, ScoreboardMetrics, CumulativeStats, SourceType } from '@meet-pipeline/shared';
 import { UploadModal } from '../components/upload-modal';
 import { useLocale } from '../lib/locale';
 import { useTranslation } from '../lib/use-translation';
@@ -187,10 +187,16 @@ export default function DashboardPage() {
             </div>
 
             {/* Stat Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 <StatCard label={t('dashboard.stat.total')} value={totalTranscripts} color="from-brand-500 to-brand-600" loading={loading} />
                 <StatCard label={t('dashboard.stat.week')} value={thisWeek} color="from-accent-teal to-emerald-500" loading={loading} />
                 <StatCard label={t('dashboard.stat.month')} value={thisMonth} color="from-accent-violet to-purple-500" loading={loading} />
+                <StatCard
+                    label="WhatsApp Sessions"
+                    value={transcripts.filter(tr => tr.extraction_method === 'whatsapp' || (tr as MeetingTranscript & { source_type?: SourceType }).source_type === 'whatsapp').length}
+                    color="from-green-500 to-emerald-500"
+                    loading={loading}
+                />
             </div>
 
             {/* Lock/Archive status badges */}

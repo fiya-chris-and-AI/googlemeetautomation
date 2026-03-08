@@ -2,13 +2,28 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import type { MeetingTranscript } from '@meet-pipeline/shared';
+import type { MeetingTranscript, SourceType } from '@meet-pipeline/shared';
 import { UploadModal } from '../../components/upload-modal';
 import { useLocale } from '../../lib/locale';
 
 type SortField = 'meeting_date' | 'meeting_title' | 'word_count';
 type SortDirection = 'asc' | 'desc';
+type SourceFilter = 'all' | SourceType;
 
+/** Derive a source type from a transcript (handles legacy rows without source_type). */
+function getSourceType(tr: MeetingTranscript): SourceType {
+    if (tr.source_type) return tr.source_type;
+    if (tr.extraction_method === 'whatsapp') return 'whatsapp';
+    if (['upload', 'pdf_upload', 'paste', 'loom_import'].includes(tr.extraction_method)) return 'upload';
+    return 'google_meet';
+}
+
+const SOURCE_FILTERS: { value: SourceFilter; label: string; icon: string }[] = [
+    { value: 'all', label: 'All', icon: '📋' },
+    { value: 'google_meet', label: 'Google Meet', icon: '🎥' },
+    { value: 'whatsapp', label: 'WhatsApp', icon: '💬' },
+    { value: 'upload', label: 'Upload', icon: '📤' },
+];
 /**
  * Transcript Library — filterable, sortable table of all transcripts.
  */
@@ -29,6 +44,7 @@ export default function TranscriptsPage() {
         errors: number;
     } | null>(null);
     const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
+    const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all');
     const { t, locale } = useLocale();
 
     const refreshTranscripts = () => {
@@ -95,6 +111,11 @@ export default function TranscriptsPage() {
     const filtered = useMemo(() => {
         let result = transcripts;
 
+        // Source filter
+        if (sourceFilter !== 'all') {
+            result = result.filter((tr) => getSourceType(tr) === sourceFilter);
+        }
+
         if (search) {
             const q = search.toLowerCase();
             result = result.filter(
@@ -117,7 +138,7 @@ export default function TranscriptsPage() {
         });
 
         return result;
-    }, [transcripts, search, sortField, sortDir]);
+    }, [transcripts, search, sortField, sortDir, sourceFilter]);
 
     const toggleSort = (field: SortField) => {
         if (sortField === field) {
@@ -165,6 +186,29 @@ export default function TranscriptsPage() {
                     {syncing ? t('transcripts.syncing') : `⟳ ${t('transcripts.sync')}`}
                 </button>
                 <UploadModal onSuccess={() => refreshTranscripts()} />
+            </div>
+
+            {/* Source filter chips */}
+            <div className="flex gap-2 mb-4">
+                {SOURCE_FILTERS.map((sf) => {
+                    const count = sf.value === 'all'
+                        ? transcripts.length
+                        : transcripts.filter((tr) => getSourceType(tr) === sf.value).length;
+                    return (
+                        <button
+                            key={sf.value}
+                            id={`source-filter-${sf.value}`}
+                            onClick={() => setSourceFilter(sf.value)}
+                            className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all
+                                ${sourceFilter === sf.value
+                                    ? 'bg-brand-500/20 text-brand-400 ring-1 ring-brand-500/30'
+                                    : 'bg-theme-card text-theme-text-muted hover:text-theme-text-primary hover:bg-[rgb(var(--color-muted))]'
+                                }`}
+                        >
+                            {sf.icon} {sf.label} ({count})
+                        </button>
+                    );
+                })}
             </div>
 
             {/* Sync result banner */}
@@ -268,12 +312,18 @@ export default function TranscriptsPage() {
                                         {tr.word_count.toLocaleString(localeDateStr)}
                                     </td>
                                     <td className="px-6 py-4 text-right">
-                                        <span className={`badge text-[10px] ${tr.extraction_method === 'inline' ? 'badge-info' :
-                                            tr.extraction_method === 'google_doc' ? 'badge-success' :
-                                                tr.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
-                                            }`}>
-                                            {tr.extraction_method}
-                                        </span>
+                                        {getSourceType(tr) === 'whatsapp' ? (
+                                            <span className="badge text-[10px] bg-green-500/15 text-green-400 ring-1 ring-green-500/20">
+                                                💬 WhatsApp
+                                            </span>
+                                        ) : (
+                                            <span className={`badge text-[10px] ${tr.extraction_method === 'inline' ? 'badge-info' :
+                                                tr.extraction_method === 'google_doc' ? 'badge-success' :
+                                                    tr.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
+                                                }`}>
+                                                {tr.extraction_method}
+                                            </span>
+                                        )}
                                     </td>
                                     {/* Action Items column */}
                                     <td className="px-4 py-4">

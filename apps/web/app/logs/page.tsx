@@ -47,6 +47,9 @@ export default function LogsPage() {
                                 {t('logs.table.method')}
                             </th>
                             <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
+                                Source
+                            </th>
+                            <th className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 {t('logs.table.error')}
                             </th>
                         </tr>
@@ -54,13 +57,13 @@ export default function LogsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {t('logs.loading')}
                                 </td>
                             </tr>
                         ) : logs.length === 0 ? (
                             <tr>
-                                <td colSpan={5} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={6} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {t('logs.empty')}
                                 </td>
                             </tr>
@@ -82,6 +85,21 @@ export default function LogsPage() {
                                     </td>
                                     <td className="px-6 py-4 text-sm text-theme-text-tertiary">
                                         {log.extraction_method ?? '—'}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {log.extraction_method === 'whatsapp' ? (
+                                            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-green-500/15 text-green-400">
+                                                💬 WhatsApp
+                                            </span>
+                                        ) : log.extraction_method && ['upload', 'pdf_upload', 'paste', 'loom_import'].includes(log.extraction_method) ? (
+                                            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-brand-500/10 text-brand-400">
+                                                📤 Upload
+                                            </span>
+                                        ) : (
+                                            <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full bg-accent-teal/10 text-accent-teal">
+                                                🎥 Gmail
+                                            </span>
+                                        )}
                                     </td>
                                     <td className="px-6 py-4 text-sm text-rose-400/70 max-w-xs truncate" title={log.error_message ?? ''}>
                                         {log.error_message ?? '—'}

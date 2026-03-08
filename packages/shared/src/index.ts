@@ -1,10 +1,11 @@
 export type { MeetingTranscript, TranscriptChunk, ProcessingLogEntry } from './types.js';
 export type { QueryRequest, QueryResponse, SourceChunk } from './types.js';
-export type { ExtractionMethod, LogStatus } from './types.js';
+export type { ExtractionMethod, LogStatus, SourceType } from './types.js';
 export type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort, ActionItemCreatedBy } from './types.js';
 export type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus, DecisionCreatedBy, RawExtractedDecision } from './types.js';
 export type { ActivityLogEntry } from './types.js';
 export type { DayMeetingSummary, ScoreboardMetrics, CumulativeStats } from './types.js';
+export type { WhatsAppMessage, WhatsAppSession, WhatsAppContact } from './types.js';
 export { normalizeAssignee, normalizeAssigneeSingle, CANONICAL_NAMES } from './normalize-assignee';
 export {
     EXTRACTION_SYSTEM_PROMPT,
