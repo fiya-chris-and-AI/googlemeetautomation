@@ -89,6 +89,7 @@ export default function ActionItemsPage() {
     const [newCategories, setNewCategories] = useState<Category[]>([]);
 
     // Selection state for Power Prompt
+    const [selectionMode, setSelectionMode] = useState(false);
     const [selectedItemIds, setSelectedItemIds] = useState<Set<string>>(new Set());
     const [showPowerPromptModal, setShowPowerPromptModal] = useState(false);
     const [powerPromptData, setPowerPromptData] = useState<PowerPromptData | null>(null);
@@ -423,7 +424,10 @@ export default function ActionItemsPage() {
         setSelectedItemIds(ids);
     };
 
-    const deselectAll = () => setSelectedItemIds(new Set());
+    const deselectAll = () => {
+        setSelectedItemIds(new Set());
+        setSelectionMode(false);
+    };
 
     const generatePowerPrompt = async () => {
         const ids = Array.from(selectedItemIds);
@@ -461,6 +465,7 @@ export default function ActionItemsPage() {
                     active instanceof HTMLSelectElement;
                 if (!isInInput) {
                     e.preventDefault();
+                    setSelectionMode(true);
                     selectAllVisible();
                 }
             }
@@ -693,6 +698,25 @@ export default function ActionItemsPage() {
                         </button>
                     </div>
                 )}
+                {/* Select mode toggle */}
+                <button
+                    onClick={() => {
+                        if (selectionMode) {
+                            deselectAll();
+                        } else {
+                            setSelectionMode(true);
+                        }
+                    }}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-all whitespace-nowrap ${selectionMode
+                            ? 'border-brand-500 bg-brand-500/20 text-brand-400 ring-1 ring-brand-500/30'
+                            : 'border-theme-border text-theme-text-muted hover:text-brand-400 hover:border-brand-500/50'
+                        }`}
+                >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                    {selectionMode ? `${selectedItemIds.size} selected` : '⚡ Select'}
+                </button>
             </div>
 
             {/* Two-Column Assignee Board */}
@@ -773,7 +797,7 @@ export default function ActionItemsPage() {
                                                                 translatedTitle={titleMap.get(item.id)}
                                                                 onDragStart={(e) => handleDragStart(e, item.id)}
                                                                 isSelected={selectedItemIds.has(item.id)}
-                                                                onToggleSelect={() => toggleItemSelection(item.id)}
+                                                                onToggleSelect={selectionMode ? () => toggleItemSelection(item.id) : undefined}
                                                             />
                                                         ))}
                                                     </div>
@@ -822,7 +846,7 @@ export default function ActionItemsPage() {
                                                                                     translatedTitle={titleMap.get(item.id)}
                                                                                     onDragStart={(e) => handleDragStart(e, item.id)}
                                                                                     isSelected={selectedItemIds.has(item.id)}
-                                                                                    onToggleSelect={() => toggleItemSelection(item.id)}
+                                                                                    onToggleSelect={selectionMode ? () => toggleItemSelection(item.id) : undefined}
                                                                                 />
                                                                             ))}
                                                                         </div>
@@ -865,7 +889,7 @@ export default function ActionItemsPage() {
                                         translatedTitle={titleMap.get(item.id)}
                                         onDragStart={(e) => handleDragStart(e, item.id)}
                                         isSelected={selectedItemIds.has(item.id)}
-                                        onToggleSelect={() => toggleItemSelection(item.id)}
+                                        onToggleSelect={selectionMode ? () => toggleItemSelection(item.id) : undefined}
                                     />
                                 ))}
                             </div>
@@ -1139,13 +1163,13 @@ function ActionItemCard({
                     <button
                         type="button"
                         onClick={(e) => { e.stopPropagation(); onToggleSelect(); }}
-                        className={`mt-1 flex-shrink-0 w-4 h-4 rounded border transition-all ${isSelected
+                        className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded border transition-all ${isSelected
                             ? 'bg-brand-500 border-brand-500 text-white'
                             : 'border-theme-border hover:border-brand-500/50'
                             }`}
                     >
                         {isSelected && (
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                         )}
