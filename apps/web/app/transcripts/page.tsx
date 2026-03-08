@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import type { MeetingTranscript } from '@meet-pipeline/shared';
 import { UploadModal } from '../../components/upload-modal';
+import { useLocale } from '../../lib/locale';
 
 type SortField = 'meeting_date' | 'meeting_title' | 'word_count';
 type SortDirection = 'asc' | 'desc';
@@ -28,6 +29,7 @@ export default function TranscriptsPage() {
         errors: number;
     } | null>(null);
     const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
+    const { t, locale } = useLocale();
 
     const refreshTranscripts = () => {
         fetch('/api/transcripts')
@@ -51,13 +53,13 @@ export default function TranscriptsPage() {
             setSyncResult(data);
 
             // Track which transcripts were just synced so we can show a "new" dot.
-            const before = new Set(transcripts.map((t) => t.transcript_id));
+            const before = new Set(transcripts.map((tr) => tr.transcript_id));
             const refreshRes = await fetch('/api/transcripts');
             const refreshed = await refreshRes.json();
             const list: MeetingTranscript[] = Array.isArray(refreshed) ? refreshed : [];
             setTranscripts(list);
 
-            const added = new Set(list.filter((t) => !before.has(t.transcript_id)).map((t) => t.transcript_id));
+            const added = new Set(list.filter((tr) => !before.has(tr.transcript_id)).map((tr) => tr.transcript_id));
             setNewSyncedIds(added);
         } catch {
             setSyncResult(null);
@@ -77,7 +79,7 @@ export default function TranscriptsPage() {
         try {
             const res = await fetch(`/api/transcripts/${transcriptId}`, { method: 'DELETE' });
             if (res.ok) {
-                setTranscripts((prev) => prev.filter((t) => t.transcript_id !== transcriptId));
+                setTranscripts((prev) => prev.filter((tr) => tr.transcript_id !== transcriptId));
             }
         } catch {
             // Silently handled — row stays visible
@@ -96,9 +98,9 @@ export default function TranscriptsPage() {
         if (search) {
             const q = search.toLowerCase();
             result = result.filter(
-                (t) =>
-                    t.meeting_title.toLowerCase().includes(q) ||
-                    t.raw_transcript.toLowerCase().includes(q)
+                (tr) =>
+                    tr.meeting_title.toLowerCase().includes(q) ||
+                    tr.raw_transcript.toLowerCase().includes(q)
             );
         }
 
@@ -129,11 +131,13 @@ export default function TranscriptsPage() {
     const sortIndicator = (field: SortField) =>
         sortField === field ? (sortDir === 'asc' ? ' ↑' : ' ↓') : '';
 
+    const localeDateStr = locale === 'de' ? 'de-DE' : 'en-US';
+
     return (
         <div className="max-w-7xl mx-auto animate-fade-in">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Transcript Library</h1>
-                <p className="text-theme-text-tertiary mt-1">{transcripts.length} transcripts indexed</p>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('transcripts.title')}</h1>
+                <p className="text-theme-text-tertiary mt-1">{transcripts.length} {t('transcripts.title').toLowerCase()}</p>
             </div>
 
             {/* Filters */}
@@ -141,7 +145,7 @@ export default function TranscriptsPage() {
                 <input
                     id="transcript-search"
                     type="text"
-                    placeholder="Search by keyword..."
+                    placeholder={t('transcripts.search.placeholder')}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     className="input-glow flex-1"
@@ -158,7 +162,7 @@ export default function TranscriptsPage() {
                                disabled:opacity-50 disabled:cursor-not-allowed
                                whitespace-nowrap"
                 >
-                    {syncing ? 'Syncing...' : '⟳ Sync Inbox'}
+                    {syncing ? t('transcripts.syncing') : `⟳ ${t('transcripts.sync')}`}
                 </button>
                 <UploadModal onSuccess={() => refreshTranscripts()} />
             </div>
@@ -193,32 +197,32 @@ export default function TranscriptsPage() {
                                 onClick={() => toggleSort('meeting_title')}
                                 className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
                             >
-                                Title{sortIndicator('meeting_title')}
+                                {t('transcripts.table.title')}{sortIndicator('meeting_title')}
                             </th>
                             <th
                                 onClick={() => toggleSort('meeting_date')}
                                 className="text-left px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
                             >
-                                Date{sortIndicator('meeting_date')}
+                                {t('transcripts.table.date')}{sortIndicator('meeting_date')}
                             </th>
 
                             <th
                                 onClick={() => toggleSort('word_count')}
                                 className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider cursor-pointer hover:text-theme-text-primary transition-colors"
                             >
-                                Words{sortIndicator('word_count')}
+                                {t('transcripts.table.words')}{sortIndicator('word_count')}
                             </th>
                             <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
-                                Method
+                                {t('transcripts.table.source')}
                             </th>
                             <th className="text-left px-4 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
-                                Action Items
+                                {t('transcripts.table.actionItems')}
                             </th>
                             <th className="text-left px-4 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
-                                Decisions
+                                {t('transcripts.table.decisions')}
                             </th>
                             <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
-                                Actions
+                                {t('transcripts.table.actions')}
                             </th>
                         </tr>
                     </thead>
@@ -226,81 +230,81 @@ export default function TranscriptsPage() {
                         {loading ? (
                             <tr>
                                 <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
-                                    Loading transcripts...
+                                    {t('transcripts.loading')}
                                 </td>
                             </tr>
                         ) : filtered.length === 0 ? (
                             <tr>
                                 <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {search
-                                        ? 'No transcripts match your filters.'
-                                        : 'No transcripts yet.'}
+                                        ? t('transcripts.empty')
+                                        : t('transcripts.empty.hint')}
                                 </td>
                             </tr>
                         ) : (
-                            filtered.map((t) => (
-                                <tr key={t.transcript_id} className="table-row">
+                            filtered.map((tr) => (
+                                <tr key={tr.transcript_id} className="table-row">
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-2">
-                                            {newSyncedIds.has(t.transcript_id) && (
+                                            {newSyncedIds.has(tr.transcript_id) && (
                                                 <span className="relative flex h-2 w-2 shrink-0" title="Newly synced">
                                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                                                 </span>
                                             )}
                                             <Link
-                                                href={`/transcripts/${t.transcript_id}`}
+                                                href={`/transcripts/${tr.transcript_id}`}
                                                 className="text-sm font-medium text-theme-text-primary hover:text-brand-400 transition-colors"
                                             >
-                                                {t.meeting_title}
+                                                {tr.meeting_title}
                                             </Link>
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-theme-text-secondary">
-                                        {new Date(t.meeting_date).toLocaleDateString()}
+                                        {new Date(tr.meeting_date).toLocaleDateString(localeDateStr)}
                                     </td>
 
                                     <td className="px-6 py-4 text-sm text-theme-text-secondary text-right">
-                                        {t.word_count.toLocaleString()}
+                                        {tr.word_count.toLocaleString(localeDateStr)}
                                     </td>
                                     <td className="px-6 py-4 text-right">
-                                        <span className={`badge text-[10px] ${t.extraction_method === 'inline' ? 'badge-info' :
-                                            t.extraction_method === 'google_doc' ? 'badge-success' :
-                                                t.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
+                                        <span className={`badge text-[10px] ${tr.extraction_method === 'inline' ? 'badge-info' :
+                                            tr.extraction_method === 'google_doc' ? 'badge-success' :
+                                                tr.extraction_method === 'upload' ? 'badge-success' : 'badge-warning'
                                             }`}>
-                                            {t.extraction_method}
+                                            {tr.extraction_method}
                                         </span>
                                     </td>
                                     {/* Action Items column */}
                                     <td className="px-4 py-4">
                                         <ItemPreview
-                                            count={t.action_item_count ?? 0}
-                                            titles={t.action_item_titles ?? []}
+                                            count={tr.action_item_count ?? 0}
+                                            titles={tr.action_item_titles ?? []}
                                             color="emerald"
                                         />
                                     </td>
                                     {/* Decisions column */}
                                     <td className="px-4 py-4">
                                         <ItemPreview
-                                            count={t.decision_count ?? 0}
-                                            titles={t.decision_titles ?? []}
+                                            count={tr.decision_count ?? 0}
+                                            titles={tr.decision_titles ?? []}
                                             color="brand"
                                         />
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <button
-                                            onClick={() => handleDelete(t.transcript_id)}
-                                            disabled={deletingIds.has(t.transcript_id)}
-                                            className={`px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors disabled:opacity-50 ${confirmDeleteId === t.transcript_id
+                                            onClick={() => handleDelete(tr.transcript_id)}
+                                            disabled={deletingIds.has(tr.transcript_id)}
+                                            className={`px-2.5 py-1 text-[11px] font-medium rounded-lg transition-colors disabled:opacity-50 ${confirmDeleteId === tr.transcript_id
                                                 ? 'bg-rose-500/20 text-rose-400 ring-1 ring-rose-500/30'
                                                 : 'text-theme-text-muted hover:text-rose-400 hover:bg-rose-500/10'
                                                 }`}
                                         >
-                                            {deletingIds.has(t.transcript_id)
+                                            {deletingIds.has(tr.transcript_id)
                                                 ? '...'
-                                                : confirmDeleteId === t.transcript_id
-                                                    ? 'Confirm?'
-                                                    : 'Delete'}
+                                                : confirmDeleteId === tr.transcript_id
+                                                    ? t('transcripts.delete.confirm')
+                                                    : t('transcripts.delete')}
                                         </button>
                                     </td>
                                 </tr>
@@ -335,7 +339,7 @@ function ItemPreview({ count, titles, color }: {
     return (
         <div className="space-y-1">
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium rounded-full ${badgeClasses}`}>
-                {count} {count === 1 ? 'item' : 'items'}
+                {count}
             </span>
             {titles.length > 0 && (
                 <div className="space-y-0.5">

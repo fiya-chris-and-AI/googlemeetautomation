@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
+import { useLocale } from '../../lib/locale';
 import { LockButton } from '../../components/lock-button';
 import { TTLBadge } from '../../components/ttl-badge';
 
@@ -38,13 +39,13 @@ const STATUS_STYLE: Record<DecisionStatus, { badge: string; strike: boolean }> =
     archived: { badge: 'bg-theme-bg-muted text-theme-text-muted', strike: false },
 };
 
-const STATUS_LABELS: { value: string; label: string }[] = [
-    { value: 'active', label: 'Active' },
-    { value: 'completed', label: 'Completed' },
-    { value: 'superseded', label: 'Superseded' },
-    { value: 'reversed', label: 'Reversed' },
-    { value: 'under_review', label: 'Under Review' },
-    { value: 'all', label: 'All' },
+const STATUS_LABEL_KEYS: { value: string; labelKey: string }[] = [
+    { value: 'active', labelKey: 'decisions.status.active' },
+    { value: 'completed', labelKey: 'decisions.status.completed' },
+    { value: 'superseded', labelKey: 'decisions.status.superseded' },
+    { value: 'reversed', labelKey: 'decisions.status.reversed' },
+    { value: 'under_review', labelKey: 'decisions.status.underReview' },
+    { value: 'all', labelKey: 'decisions.status.all' },
 ];
 
 const ASSIGNEES: { name: string; displayName: string; accent: string }[] = [
@@ -87,7 +88,7 @@ export default function DecisionsPage() {
     const [showCreate, setShowCreate] = useState(false);
     const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
-
+    const { t, locale } = useLocale();
 
     // Create form
     const [newText, setNewText] = useState('');
@@ -331,15 +332,15 @@ export default function DecisionsPage() {
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Decision Ledger</h1>
-                    <p className="text-theme-text-tertiary mt-1">Every decision you&apos;ve made, searchable and surfaced.</p>
+                    <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('decisions.title')}</h1>
+                    <p className="text-theme-text-tertiary mt-1">{t('decisions.subtitle')}</p>
                 </div>
                 <div className="flex items-center gap-3">
                     <button
                         onClick={() => setShowCreate(true)}
                         className="btn-primary px-5 py-2.5"
                     >
-                        + Add Decision
+                        {t('decisions.addDecision')}
                     </button>
                 </div>
             </div>
@@ -348,19 +349,19 @@ export default function DecisionsPage() {
 
             {/* Stats Bar */}
             <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
-                <span className="text-sm font-medium text-theme-text-primary">{stats.total} decisions</span>
+                <span className="text-sm font-medium text-theme-text-primary">{stats.total} {t('decisions.items')}</span>
                 <span className="text-theme-text-muted">·</span>
-                <span className="text-xs text-emerald-400">{stats.active} active</span>
+                <span className="text-xs text-emerald-400">{stats.active} {t('decisions.active')}</span>
                 {stats.completed > 0 && (
                     <>
                         <span className="text-theme-text-muted">·</span>
-                        <span className="text-xs text-blue-400">{stats.completed} completed</span>
+                        <span className="text-xs text-blue-400">{stats.completed} {t('decisions.completed')}</span>
                     </>
                 )}
                 {stats.superseded > 0 && (
                     <>
                         <span className="text-theme-text-muted">·</span>
-                        <span className="text-xs text-theme-text-muted">{stats.superseded} superseded</span>
+                        <span className="text-xs text-theme-text-muted">{stats.superseded} {t('decisions.superseded')}</span>
                     </>
                 )}
                 <span className="text-theme-text-muted">·</span>
@@ -379,7 +380,7 @@ export default function DecisionsPage() {
 
             {/* Lock Status Summary Bar */}
             <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">{t('decisions.lockStatus')}</span>
                 <button
                     onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
@@ -389,7 +390,7 @@ export default function DecisionsPage() {
                 >
                     <span className="text-sm">🔒</span>
                     <span className="text-sm font-semibold text-amber-400">{lockStats.locked}</span>
-                    <span className="text-xs text-amber-400/80">Locked</span>
+                    <span className="text-xs text-amber-400/80">{t('decisions.locked')}</span>
                 </button>
                 <button
                     onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
@@ -400,7 +401,7 @@ export default function DecisionsPage() {
                 >
                     <span className="text-sm">🔓</span>
                     <span className="text-sm font-semibold text-theme-text-secondary">{lockStats.unlocked}</span>
-                    <span className="text-xs text-theme-text-muted">Unlocked</span>
+                    <span className="text-xs text-theme-text-muted">{t('decisions.unlocked')}</span>
                 </button>
                 <button
                     onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
@@ -411,20 +412,20 @@ export default function DecisionsPage() {
                 >
                     <span className="text-sm">⏳</span>
                     <span className="text-sm font-semibold text-rose-400">{lockStats.subjectToArchive}</span>
-                    <span className="text-xs text-rose-400/80">Subject to Archive</span>
+                    <span className="text-xs text-rose-400/80">{t('decisions.subjectToArchive')}</span>
                 </button>
                 {lockFilter !== 'all' && (
                     <button
                         onClick={() => setLockFilter('all')}
                         className="text-xs text-theme-text-muted hover:text-theme-text-secondary transition-colors ml-1 cursor-pointer"
                     >
-                        ✕ Clear
+                        {t('decisions.clear')}
                     </button>
                 )}
                 <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
                     <span className="text-sm">✅</span>
                     <span className="text-sm font-semibold text-emerald-400">{lockStats.completed}</span>
-                    <span className="text-xs text-emerald-400/80">Completed</span>
+                    <span className="text-xs text-emerald-400/80">{t('decisions.completedSection')}</span>
                 </div>
             </div>
 
@@ -432,7 +433,7 @@ export default function DecisionsPage() {
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-3">
                 <input
                     type="text"
-                    placeholder="Search decisions..."
+                    placeholder={t('decisions.search.placeholder')}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     className="input-glow border-0 bg-transparent focus:ring-0 text-sm flex-1 min-w-[200px]"
@@ -441,7 +442,7 @@ export default function DecisionsPage() {
                     value={assigneeFilter}
                     onChange={setAssigneeFilter}
                     options={[
-                        { value: 'all', label: 'All Assignees' },
+                        { value: 'all', label: t('decisions.filter.allAssignees') },
                         { value: 'Lutfiya Miller', label: 'Dr. Lutfiya Miller' },
                         { value: 'Chris Müller', label: 'Chris Müller' },
                     ]}
@@ -450,30 +451,30 @@ export default function DecisionsPage() {
                     value={domainFilter}
                     onChange={setDomainFilter}
                     options={[
-                        { value: 'all', label: 'All Domains' },
+                        { value: 'all', label: t('decisions.filter.allDomains') },
                         ...DOMAIN_LABELS.map((d) => ({ value: d, label: d.charAt(0).toUpperCase() + d.slice(1) })),
                     ]}
                 />
                 <FilterSelect
                     value={statusFilter}
                     onChange={setStatusFilter}
-                    options={STATUS_LABELS}
+                    options={STATUS_LABEL_KEYS.map(s => ({ value: s.value, label: t(s.labelKey as any) }))}
                 />
                 <FilterSelect
                     value={confidenceFilter}
                     onChange={setConfidenceFilter}
                     options={[
-                        { value: 'all', label: 'All Confidence' },
-                        { value: 'high', label: 'High' },
-                        { value: 'medium', label: 'Medium' },
-                        { value: 'low', label: 'Low' },
+                        { value: 'all', label: t('decisions.filter.allConfidence') },
+                        { value: 'high', label: t('decisions.confidence.high') },
+                        { value: 'medium', label: t('decisions.confidence.medium') },
+                        { value: 'low', label: t('decisions.confidence.low') },
                     ]}
                 />
                 <button
                     onClick={() => setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc')}
                     className="px-3 py-1.5 text-xs font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-theme-text-secondary transition-colors whitespace-nowrap"
                 >
-                    {sortOrder === 'desc' ? '↓ Most Recent' : '↑ Oldest First'}
+                    {sortOrder === 'desc' ? t('decisions.sort.mostRecent') : t('decisions.sort.oldestFirst')}
                 </button>
                 {decisions.length > 0 && (
                     <div className="flex items-center gap-1">
@@ -481,13 +482,13 @@ export default function DecisionsPage() {
                             onClick={expandAll}
                             className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
                         >
-                            Expand All
+                            {t('decisions.expandAll')}
                         </button>
                         <button
                             onClick={collapseAll}
                             className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
                         >
-                            Collapse All
+                            {t('decisions.collapseAll')}
                         </button>
                     </div>
                 )}
@@ -495,14 +496,14 @@ export default function DecisionsPage() {
 
             {/* Decision Cards */}
             {loading ? (
-                <div className="p-12 text-center text-theme-text-tertiary">Loading decisions...</div>
+                <div className="p-12 text-center text-theme-text-tertiary">{t('decisions.loading')}</div>
             ) : decisions.length === 0 ? (
                 <div className="glass-card p-12 text-center">
-                    <p className="text-theme-text-muted text-lg mb-2">No decisions found</p>
+                    <p className="text-theme-text-muted text-lg mb-2">{t('decisions.empty.title')}</p>
                     <p className="text-theme-text-tertiary text-sm">
                         {statusFilter !== 'all' || domainFilter !== 'all' || search
-                            ? 'Try adjusting your filters.'
-                            : 'Add a decision manually using the button above, or decisions will be extracted automatically when transcripts are uploaded.'}
+                            ? t('decisions.empty.filterHint')
+                            : t('decisions.empty.hint')}
                     </p>
                 </div>
             ) : (
@@ -587,7 +588,7 @@ export default function DecisionsPage() {
                     {unassignedDecisions.length > 0 && (
                         <div className="mt-6">
                             <div className="flex items-center gap-3 mb-4">
-                                <h2 className="text-lg font-semibold text-theme-text-secondary">Unassigned</h2>
+                                <h2 className="text-lg font-semibold text-theme-text-secondary">{t('decisions.unassigned')}</h2>
                                 <span className="text-xs text-theme-text-muted bg-theme-bg-muted px-2 py-0.5 rounded-full">
                                     {unassignedDecisions.length}
                                 </span>
@@ -615,7 +616,7 @@ export default function DecisionsPage() {
                     {completedDecisions.length > 0 && (
                         <div className="mt-10">
                             <div className="flex items-center gap-3 mb-4">
-                                <h2 className="text-lg font-semibold text-theme-text-secondary">Completed</h2>
+                                <h2 className="text-lg font-semibold text-theme-text-secondary">{t('decisions.completedSection')}</h2>
                                 <span className="text-xs text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full">
                                     {completedDecisions.length}
                                 </span>
@@ -643,30 +644,30 @@ export default function DecisionsPage() {
             {showCreate && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
                     <div className="glass-card p-6 w-full max-w-lg mx-4 animate-slide-up">
-                        <h2 className="text-lg font-semibold text-theme-text-primary mb-4">New Decision</h2>
+                        <h2 className="text-lg font-semibold text-theme-text-primary mb-4">{t('decisions.create.title')}</h2>
                         <div className="space-y-4">
                             <div>
-                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Decision</label>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('decisions.create.textLabel')}</label>
                                 <textarea
                                     value={newText}
                                     onChange={(e) => setNewText(e.target.value)}
                                     className="input-glow w-full text-sm min-h-[80px] resize-y"
-                                    placeholder="What was decided?"
+                                    placeholder={t('decisions.create.textPlaceholder')}
                                     autoFocus
                                 />
                             </div>
                             <div>
-                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Context</label>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('decisions.create.contextLabel')}</label>
                                 <textarea
                                     value={newContext}
                                     onChange={(e) => setNewContext(e.target.value)}
                                     className="input-glow w-full text-sm min-h-[60px] resize-y"
-                                    placeholder="What led to this decision? (optional)"
+                                    placeholder={t('decisions.create.contextPlaceholder')}
                                 />
                             </div>
                             <div className="grid grid-cols-3 gap-3">
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Domain</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('decisions.create.domain')}</label>
                                     <select
                                         value={newDomain}
                                         onChange={(e) => setNewDomain(e.target.value as DecisionDomain)}
@@ -678,7 +679,7 @@ export default function DecisionsPage() {
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Confidence</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('decisions.create.confidence')}</label>
                                     <select
                                         value={newConfidence}
                                         onChange={(e) => setNewConfidence(e.target.value as DecisionConfidence)}
@@ -690,7 +691,7 @@ export default function DecisionsPage() {
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Date</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('decisions.create.date')}</label>
                                     <input
                                         type="date"
                                         value={newDate}
@@ -705,14 +706,14 @@ export default function DecisionsPage() {
                                 onClick={() => setShowCreate(false)}
                                 className="px-4 py-2 text-sm text-theme-text-secondary hover:text-theme-text-primary transition-colors"
                             >
-                                Cancel
+                                {t('decisions.create.cancel')}
                             </button>
                             <button
                                 onClick={handleCreate}
                                 disabled={!newText.trim()}
                                 className="btn-primary px-5 py-2"
                             >
-                                Create
+                                {t('decisions.create.submit')}
                             </button>
                         </div>
                     </div>
@@ -743,6 +744,7 @@ function DecisionCard({
     translatedText?: string;
     onDragStart?: (e: React.DragEvent) => void;
 }) {
+    const { t } = useLocale();
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
 
     // ── Ask AI mini-chat state ──────────────────────
@@ -874,14 +876,14 @@ function DecisionCard({
                 <div className="mt-4 pt-4 border-t border-theme-border animate-slide-up">
                     {decision.context && (
                         <div className="mb-3">
-                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-1">Context</p>
+                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-1">{t('decisions.context')}</p>
                             <p className="text-sm text-theme-text-secondary">{decision.context}</p>
                         </div>
                     )}
 
                     {decision.source_text && (
                         <div className="mb-3">
-                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-1">Source</p>
+                            <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider mb-1">{t('decisions.source')}</p>
                             <blockquote className="text-sm text-theme-text-muted italic border-l-2 border-brand-500/30 pl-3">
                                 {decision.source_text}
                             </blockquote>
@@ -897,7 +899,7 @@ function DecisionCard({
                                 : 'bg-accent-violet/10 text-accent-violet hover:bg-accent-violet/20'
                                 }`}
                         >
-                            ◈ Ask AI
+                            ◈ {t('decisions.askAi.send') === 'Senden' ? 'KI fragen' : 'Ask AI'}
                         </button>
                     )}
 
@@ -909,7 +911,7 @@ function DecisionCard({
                                 {aiMessages.length === 0 && !aiLoading && (
                                     <div className="space-y-1.5">
                                         <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
-                                            Suggested questions
+                                            {t('decisions.askAi.suggested')}
                                         </p>
                                         {suggestedQuestions.map((q) => (
                                             <button
@@ -958,7 +960,7 @@ function DecisionCard({
                             <div className="flex gap-2">
                                 <input
                                     type="text"
-                                    placeholder="Ask about this decision..."
+                                    placeholder={t('decisions.askAi.placeholder')}
                                     value={aiQuestion}
                                     onChange={(e) => setAiQuestion(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleAskAI()}
@@ -970,7 +972,7 @@ function DecisionCard({
                                     disabled={aiLoading || !aiQuestion.trim()}
                                     className="btn-primary px-3 py-1.5 text-xs"
                                 >
-                                    Send
+                                    {t('decisions.askAi.send')}
                                 </button>
                             </div>
                         </div>
@@ -981,7 +983,7 @@ function DecisionCard({
                             href={`/transcripts/${decision.transcript_id}`}
                             className="inline-block text-xs text-brand-400 hover:text-brand-300 transition-colors mb-3"
                         >
-                            View transcript →
+                            {t('decisions.viewTranscript')}
                         </Link>
                     )}
 
@@ -993,25 +995,25 @@ function DecisionCard({
                                     onClick={() => onStatusChange(decision.id, 'completed')}
                                     className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-colors"
                                 >
-                                    ✓ Mark Completed
+                                    {t('decisions.markCompleted')}
                                 </button>
                                 <button
                                     onClick={() => onStatusChange(decision.id, 'superseded')}
                                     className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-theme-text-secondary transition-colors"
                                 >
-                                    Mark Superseded
+                                    {t('decisions.markSuperseded')}
                                 </button>
                                 <button
                                     onClick={() => onStatusChange(decision.id, 'reversed')}
                                     className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-rose-400 transition-colors"
                                 >
-                                    Mark Reversed
+                                    {t('decisions.markReversed')}
                                 </button>
                                 <button
                                     onClick={() => onStatusChange(decision.id, 'under_review')}
                                     className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-amber-400 transition-colors"
                                 >
-                                    Under Review
+                                    {t('decisions.underReview')}
                                 </button>
                             </>
                         )}
@@ -1020,7 +1022,7 @@ function DecisionCard({
                                 onClick={() => onStatusChange(decision.id, 'active')}
                                 className="px-2.5 py-1 text-[11px] font-medium rounded-lg border border-theme-border text-theme-text-muted hover:text-emerald-400 transition-colors"
                             >
-                                Reactivate
+                                {t('decisions.reactivate')}
                             </button>
                         )}
                         {onLockChange && (

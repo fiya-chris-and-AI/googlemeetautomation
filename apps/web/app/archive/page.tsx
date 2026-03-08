@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { ActionItem, Decision } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
+import { useLocale } from '../../lib/locale';
 
 type TabType = 'all' | 'action_items' | 'decisions';
 
@@ -16,6 +17,7 @@ export default function ArchivePage() {
     const [tab, setTab] = useState<TabType>('all');
     const [search, setSearch] = useState('');
     const [restoringIds, setRestoringIds] = useState<Set<string>>(new Set());
+    const { t, locale } = useLocale();
 
     const fetchArchive = async () => {
         try {
@@ -85,59 +87,59 @@ export default function ArchivePage() {
     const totalCount = actionItems.length + decisions.length;
 
     const TABS: { key: TabType; label: string }[] = [
-        { key: 'all', label: 'All' },
-        { key: 'action_items', label: 'Action Items' },
-        { key: 'decisions', label: 'Decisions' },
+        { key: 'all', label: t('archive.tab.all') },
+        { key: 'action_items', label: t('archive.tab.actionItems') },
+        { key: 'decisions', label: t('archive.tab.decisions') },
     ];
 
     return (
         <div className="max-w-7xl mx-auto animate-fade-in">
             {/* Header */}
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">📦 Archive</h1>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('archive.title')}</h1>
                 <p className="text-theme-text-tertiary mt-1">
-                    Items archived after 24 hours. Restore to bring them back to active view.
+                    {t('archive.subtitle')}
                 </p>
             </div>
 
             {/* Tabs + Search */}
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-3">
                 <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
-                    {TABS.map(t => (
+                    {TABS.map(tabItem => (
                         <button
-                            key={t.key}
-                            onClick={() => setTab(t.key)}
-                            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${tab === t.key
-                                    ? 'bg-brand-500/20 text-brand-400'
-                                    : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            key={tabItem.key}
+                            onClick={() => setTab(tabItem.key)}
+                            className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${tab === tabItem.key
+                                ? 'bg-brand-500/20 text-brand-400'
+                                : 'text-theme-text-muted hover:text-theme-text-secondary'
                                 }`}
                         >
-                            {t.label}
+                            {tabItem.label}
                         </button>
                     ))}
                 </div>
                 <input
                     type="text"
-                    placeholder="Search archived items..."
+                    placeholder={t('archive.search.placeholder')}
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                     className="input-glow border-0 bg-transparent focus:ring-0 text-sm flex-1 min-w-[200px]"
                 />
                 <span className="text-sm text-theme-text-muted">
-                    {totalCount} archived
+                    {totalCount} {t('archive.count')}
                 </span>
             </div>
 
             {/* Content */}
             {loading ? (
-                <div className="p-12 text-center text-theme-text-tertiary">Loading archive...</div>
+                <div className="p-12 text-center text-theme-text-tertiary">{t('archive.loading')}</div>
             ) : totalCount === 0 ? (
                 <div className="glass-card p-12 text-center">
-                    <p className="text-theme-text-muted text-lg mb-2">No archived items</p>
+                    <p className="text-theme-text-muted text-lg mb-2">{t('archive.empty')}</p>
                     <p className="text-theme-text-tertiary text-sm">
                         {search
-                            ? 'Try adjusting your search.'
-                            : 'Items will appear here after the 24-hour TTL expires.'}
+                            ? t('archive.empty.search')
+                            : t('archive.empty.hint')}
                     </p>
                 </div>
             ) : (
@@ -146,7 +148,7 @@ export default function ArchivePage() {
                     {actionItems.length > 0 && (tab === 'all' || tab === 'action_items') && (
                         <div>
                             <div className="flex items-center gap-3 mb-4">
-                                <h2 className="text-lg font-semibold text-theme-text-secondary">Action Items</h2>
+                                <h2 className="text-lg font-semibold text-theme-text-secondary">{t('archive.tab.actionItems')}</h2>
                                 <span className="text-xs text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">
                                     {actionItems.length}
                                 </span>
@@ -160,6 +162,8 @@ export default function ArchivePage() {
                                         translatedTitle={actionTitleMap.get(item.id)}
                                         onRestore={() => handleRestore('action_item', item.id)}
                                         isRestoring={restoringIds.has(item.id)}
+                                        t={t}
+                                        locale={locale}
                                     />
                                 ))}
                             </div>
@@ -170,7 +174,7 @@ export default function ArchivePage() {
                     {decisions.length > 0 && (tab === 'all' || tab === 'decisions') && (
                         <div>
                             <div className="flex items-center gap-3 mb-4">
-                                <h2 className="text-lg font-semibold text-theme-text-secondary">Decisions</h2>
+                                <h2 className="text-lg font-semibold text-theme-text-secondary">{t('archive.tab.decisions')}</h2>
                                 <span className="text-xs text-accent-violet bg-accent-violet/10 px-2 py-0.5 rounded-full">
                                     {decisions.length}
                                 </span>
@@ -184,6 +188,8 @@ export default function ArchivePage() {
                                         translatedText={decisionTextMap.get(decision.id)}
                                         onRestore={() => handleRestore('decision', decision.id)}
                                         isRestoring={restoringIds.has(decision.id)}
+                                        t={t}
+                                        locale={locale}
                                     />
                                 ))}
                             </div>
@@ -202,11 +208,15 @@ function ArchivedActionItemCard({
     translatedTitle,
     onRestore,
     isRestoring,
+    t,
+    locale,
 }: {
     item: ActionItem;
     translatedTitle?: string;
     onRestore: () => void;
     isRestoring: boolean;
+    t: (key: any) => string;
+    locale: string;
 }) {
     return (
         <div className="glass-card p-4 opacity-70 hover:opacity-90 transition-opacity duration-200">
@@ -228,9 +238,9 @@ function ArchivedActionItemCard({
                         )}
                     </div>
                     <div className="flex items-center gap-3 mt-2 text-[10px] text-theme-text-tertiary">
-                        <span>Created: {new Date(item.created_at).toLocaleDateString()}</span>
+                        <span>{t('archive.created')} {new Date(item.created_at).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')}</span>
                         {item.archived_at && (
-                            <span>Archived: {new Date(item.archived_at).toLocaleDateString()}</span>
+                            <span>{t('archive.archived')} {new Date(item.archived_at).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')}</span>
                         )}
                     </div>
                 </div>
@@ -242,7 +252,7 @@ function ArchivedActionItemCard({
                     className={`px-3 py-1 text-[11px] font-medium rounded-lg border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-colors ${isRestoring ? 'opacity-50 cursor-wait' : ''
                         }`}
                 >
-                    {isRestoring ? 'Restoring…' : '↩ Restore & Lock'}
+                    {isRestoring ? t('archive.restoring') : t('archive.restore')}
                 </button>
             </div>
         </div>
@@ -254,11 +264,15 @@ function ArchivedDecisionCard({
     translatedText,
     onRestore,
     isRestoring,
+    t,
+    locale,
 }: {
     decision: Decision;
     translatedText?: string;
     onRestore: () => void;
     isRestoring: boolean;
+    t: (key: any) => string;
+    locale: string;
 }) {
     return (
         <div className="glass-card p-4 opacity-70 hover:opacity-90 transition-opacity duration-200">
@@ -279,14 +293,14 @@ function ArchivedDecisionCard({
                         <span className="text-[10px] text-theme-text-muted">{decision.domain}</span>
                         {decision.meeting_title && (
                             <span className="text-[10px] text-theme-text-tertiary truncate max-w-[200px]">
-                                from: {decision.meeting_title}
+                                {t('archive.from')} {decision.meeting_title}
                             </span>
                         )}
                     </div>
                     <div className="flex items-center gap-3 mt-2 text-[10px] text-theme-text-tertiary">
-                        <span>Decided: {new Date(decision.decided_at).toLocaleDateString()}</span>
+                        <span>{t('archive.decided')} {new Date(decision.decided_at).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')}</span>
                         {decision.archived_at && (
-                            <span>Archived: {new Date(decision.archived_at).toLocaleDateString()}</span>
+                            <span>{t('archive.archived')} {new Date(decision.archived_at).toLocaleDateString(locale === 'de' ? 'de-DE' : 'en-US')}</span>
                         )}
                     </div>
                 </div>
@@ -298,7 +312,7 @@ function ArchivedDecisionCard({
                     className={`px-3 py-1 text-[11px] font-medium rounded-lg border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 transition-colors ${isRestoring ? 'opacity-50 cursor-wait' : ''
                         }`}
                 >
-                    {isRestoring ? 'Restoring…' : '↩ Restore & Lock'}
+                    {isRestoring ? t('archive.restoring') : t('archive.restore')}
                 </button>
             </div>
         </div>

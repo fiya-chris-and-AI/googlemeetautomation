@@ -4,13 +4,14 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
+import { useLocale } from '../../lib/locale';
 import { LockButton } from '../../components/lock-button';
 import { TTLBadge } from '../../components/ttl-badge';
 import { ActionPrompt } from '../../components/action-prompt';
 
-const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
-    { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
-    { key: 'done', label: 'Done', color: 'from-emerald-500 to-emerald-600' },
+const COLUMNS: { key: ActionItemStatus; labelKey: string; color: string }[] = [
+    { key: 'open', labelKey: 'actionItems.status.open', color: 'from-amber-500 to-amber-600' },
+    { key: 'done', labelKey: 'actionItems.status.done', color: 'from-emerald-500 to-emerald-600' },
 ];
 
 const ASSIGNEES: { name: string; displayName: string; accent: string }[] = [
@@ -25,17 +26,17 @@ const PRIORITY_DOT: Record<ActionItemPriority, string> = {
     low: 'bg-theme-text-muted',
 };
 
-const PRIORITY_LABEL: Record<ActionItemPriority, string> = {
-    urgent: 'Urgent',
-    high: 'High',
-    medium: 'Medium',
-    low: 'Low',
+const PRIORITY_LABEL_KEY: Record<ActionItemPriority, string> = {
+    urgent: 'actionItems.priority.urgent',
+    high: 'actionItems.priority.high',
+    medium: 'actionItems.priority.medium',
+    low: 'actionItems.priority.low',
 };
 
-const EFFORT_CONFIG: Record<string, { icon: string; label: string; color: string }> = {
-    quick_fix: { icon: '⚡', label: 'Quick Fix', color: 'text-emerald-400' },
-    moderate: { icon: '🔧', label: 'Moderate', color: 'text-brand-400' },
-    significant: { icon: '🏗️', label: 'Significant', color: 'text-amber-400' },
+const EFFORT_CONFIG: Record<string, { icon: string; labelKey: string; color: string }> = {
+    quick_fix: { icon: '⚡', labelKey: 'actionItems.effort.quickFix', color: 'text-emerald-400' },
+    moderate: { icon: '🔧', labelKey: 'actionItems.effort.moderate', color: 'text-brand-400' },
+    significant: { icon: '🏗️', labelKey: 'actionItems.effort.significant', color: 'text-amber-400' },
 };
 
 /** Returns true if the item was created within the last 24 hours. */
@@ -77,6 +78,7 @@ export default function ActionItemsPage() {
     const [viewMode, setViewMode] = useState<'grouped' | 'flat'>('grouped');
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
 
+    const { t, locale } = useLocale();
 
     const fetchItems = async () => {
         try {
@@ -217,7 +219,7 @@ export default function ActionItemsPage() {
             for (const col of COLUMNS) {
                 for (const group of assigneeGroups[col.key]) {
                     const label = group.label ?? 'Ungrouped';
-                    keys.push(`${assignee.name}::${col.key}::${label}`);
+                    keys.push(`${assignee.name}::${col.key}::${label === 'Ungrouped' ? t('actionItems.ungrouped') : label}`);
                 }
             }
         }
@@ -372,15 +374,15 @@ export default function ActionItemsPage() {
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Action Items</h1>
-                    <p className="text-theme-text-tertiary mt-1">Track and manage tasks from your meetings</p>
+                    <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('actionItems.title')}</h1>
+                    <p className="text-theme-text-tertiary mt-1">{t('actionItems.subtitle')}</p>
                 </div>
                 <div className="flex items-center gap-3">
                     <button
                         onClick={() => setShowCreate(true)}
                         className="btn-primary px-5 py-2.5"
                     >
-                        + Add Item
+                        {t('actionItems.addItem')}
                     </button>
                 </div>
             </div>
@@ -389,13 +391,13 @@ export default function ActionItemsPage() {
 
             {/* Stats Summary Bar */}
             <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
-                <span className="text-sm font-medium text-theme-text-primary">{baseFiltered.length} action items</span>
+                <span className="text-sm font-medium text-theme-text-primary">{baseFiltered.length} {t('actionItems.items')}</span>
                 <span className="text-theme-text-muted">·</span>
-                <span className="text-xs text-amber-400">{lockStats.active} open</span>
+                <span className="text-xs text-amber-400">{lockStats.active} {t('actionItems.open')}</span>
                 {lockStats.done > 0 && (
                     <>
                         <span className="text-theme-text-muted">·</span>
-                        <span className="text-xs text-emerald-400">{lockStats.done} done</span>
+                        <span className="text-xs text-emerald-400">{lockStats.done} {t('actionItems.done')}</span>
                     </>
                 )}
                 <span className="text-theme-text-muted">·</span>
@@ -411,7 +413,7 @@ export default function ActionItemsPage() {
                         }[p];
                         return (
                             <span key={p} className={`inline-flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 rounded ${style}`}>
-                                {PRIORITY_LABEL[p]} {count}
+                                {t(PRIORITY_LABEL_KEY[p] as any)} {count}
                             </span>
                         );
                     })}
@@ -420,7 +422,7 @@ export default function ActionItemsPage() {
 
             {/* Lock Status Summary Bar */}
             <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">{t('actionItems.lockStatus')}</span>
                 <button
                     onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
@@ -430,7 +432,7 @@ export default function ActionItemsPage() {
                 >
                     <span className="text-sm">🔒</span>
                     <span className="text-sm font-semibold text-amber-400">{lockStats.locked}</span>
-                    <span className="text-xs text-amber-400/80">Locked</span>
+                    <span className="text-xs text-amber-400/80">{t('actionItems.locked')}</span>
                 </button>
                 <button
                     onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
@@ -441,7 +443,7 @@ export default function ActionItemsPage() {
                 >
                     <span className="text-sm">🔓</span>
                     <span className="text-sm font-semibold text-theme-text-secondary">{lockStats.unlocked}</span>
-                    <span className="text-xs text-theme-text-muted">Unlocked</span>
+                    <span className="text-xs text-theme-text-muted">{t('actionItems.unlocked')}</span>
                 </button>
                 <button
                     onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
@@ -452,21 +454,21 @@ export default function ActionItemsPage() {
                 >
                     <span className="text-sm">⏳</span>
                     <span className="text-sm font-semibold text-rose-400">{lockStats.subjectToArchive}</span>
-                    <span className="text-xs text-rose-400/80">Subject to Archive</span>
+                    <span className="text-xs text-rose-400/80">{t('actionItems.subjectToArchive')}</span>
                 </button>
                 {lockFilter !== 'all' && (
                     <button
                         onClick={() => setLockFilter('all')}
                         className="text-xs text-theme-text-muted hover:text-theme-text-secondary transition-colors ml-1 cursor-pointer"
                     >
-                        ✕ Clear
+                        {t('actionItems.clear')}
                     </button>
                 )}
                 {/* Done count — separate from active metrics */}
                 <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
                     <span className="text-sm">✅</span>
                     <span className="text-sm font-semibold text-emerald-400">{lockStats.done}</span>
-                    <span className="text-xs text-emerald-400/80">Done</span>
+                    <span className="text-xs text-emerald-400/80">{t('actionItems.done')}</span>
                 </div>
             </div>
 
@@ -474,7 +476,7 @@ export default function ActionItemsPage() {
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-3">
                 <input
                     type="text"
-                    placeholder="Search title or description..."
+                    placeholder={t('actionItems.search.placeholder')}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     className="input-glow border-0 bg-transparent focus:ring-0 text-sm flex-1 min-w-[200px]"
@@ -482,36 +484,36 @@ export default function ActionItemsPage() {
                 <FilterSelect
                     value={assigneeFilter}
                     onChange={setAssigneeFilter}
-                    options={[{ value: 'all', label: 'All Assignees' }, ...assignees.map((a) => ({ value: a, label: a }))]}
+                    options={[{ value: 'all', label: t('actionItems.filter.allAssignees') }, ...assignees.map((a) => ({ value: a, label: a }))]}
                 />
                 <FilterSelect
                     value={priorityFilter}
                     onChange={setPriorityFilter}
                     options={[
-                        { value: 'all', label: 'All Priorities' },
-                        { value: 'urgent', label: 'Urgent' },
-                        { value: 'high', label: 'High' },
-                        { value: 'medium', label: 'Medium' },
-                        { value: 'low', label: 'Low' },
+                        { value: 'all', label: t('actionItems.filter.allPriorities') },
+                        { value: 'urgent', label: t('actionItems.priority.urgent') },
+                        { value: 'high', label: t('actionItems.priority.high') },
+                        { value: 'medium', label: t('actionItems.priority.medium') },
+                        { value: 'low', label: t('actionItems.priority.low') },
                     ]}
                 />
                 <FilterSelect
                     value={effortFilter}
                     onChange={setEffortFilter}
                     options={[
-                        { value: 'all', label: 'All Effort Levels' },
-                        { value: 'quick_fix', label: '⚡ Quick Fix' },
-                        { value: 'moderate', label: '🔧 Moderate' },
-                        { value: 'significant', label: '🏗️ Significant' },
+                        { value: 'all', label: t('actionItems.filter.allEffort') },
+                        { value: 'quick_fix', label: `⚡ ${t('actionItems.effort.quickFix')}` },
+                        { value: 'moderate', label: `🔧 ${t('actionItems.effort.moderate')}` },
+                        { value: 'significant', label: `🏗️ ${t('actionItems.effort.significant')}` },
                     ]}
                 />
                 <FilterSelect
                     value={sourceFilter}
                     onChange={setSourceFilter}
                     options={[
-                        { value: 'all', label: 'All Sources' },
-                        { value: 'ai', label: 'AI Extracted' },
-                        { value: 'manual', label: 'Manual' },
+                        { value: 'all', label: t('actionItems.filter.allSources') },
+                        { value: 'ai', label: t('actionItems.filter.aiExtracted') },
+                        { value: 'manual', label: t('actionItems.filter.manual') },
                     ]}
                 />
                 {/* Duplicate toggle */}
@@ -522,7 +524,7 @@ export default function ActionItemsPage() {
                         : 'border-theme-border text-theme-text-muted hover:text-theme-text-secondary'
                         }`}
                 >
-                    {duplicateFilter === 'shown' ? '◈ Hiding Duplicates' : '◇ Show Duplicates'}
+                    {duplicateFilter === 'shown' ? t('actionItems.filter.hidingDuplicates') : t('actionItems.filter.showDuplicates')}
                 </button>
                 {/* View mode toggle */}
                 <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
@@ -533,7 +535,7 @@ export default function ActionItemsPage() {
                             : 'text-theme-text-muted hover:text-theme-text-secondary'
                             }`}
                     >
-                        Grouped
+                        {t('actionItems.view.grouped')}
                     </button>
                     <button
                         onClick={() => setViewMode('flat')}
@@ -542,7 +544,7 @@ export default function ActionItemsPage() {
                             : 'text-theme-text-muted hover:text-theme-text-secondary'
                             }`}
                     >
-                        Flat
+                        {t('actionItems.view.flat')}
                     </button>
                 </div>
                 {viewMode === 'grouped' && allGroupKeys.length > 0 && (
@@ -551,13 +553,13 @@ export default function ActionItemsPage() {
                             onClick={expandAll}
                             className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
                         >
-                            Expand All
+                            {t('actionItems.expandAll')}
                         </button>
                         <button
                             onClick={collapseAll}
                             className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
                         >
-                            Collapse All
+                            {t('actionItems.collapseAll')}
                         </button>
                     </div>
                 )}
@@ -565,7 +567,7 @@ export default function ActionItemsPage() {
 
             {/* Two-Column Assignee Board */}
             {loading ? (
-                <div className="p-12 text-center text-theme-text-tertiary">Loading action items...</div>
+                <div className="p-12 text-center text-theme-text-tertiary">{t('actionItems.loading')}</div>
             ) : (
                 <div className="space-y-6">
                     {/* Main two-column grid */}
@@ -612,7 +614,7 @@ export default function ActionItemsPage() {
                                                 <div className="glass-card p-3 mb-2 flex items-center justify-between">
                                                     <div className="flex items-center gap-2">
                                                         <div className={`w-2 h-2 rounded-full ${col.key === 'open' ? 'bg-amber-500' : 'bg-emerald-500'}`} />
-                                                        <h3 className="text-sm font-semibold text-theme-text-primary">{col.label}</h3>
+                                                        <h3 className="text-sm font-semibold text-theme-text-primary">{t(col.labelKey as any)}</h3>
                                                     </div>
                                                     <span className="text-xs text-theme-text-tertiary font-medium">{statusItemCount}</span>
                                                 </div>
@@ -620,7 +622,7 @@ export default function ActionItemsPage() {
                                                 {/* Cards */}
                                                 {statusItemCount === 0 ? (
                                                     <div className="p-4 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
-                                                        No items
+                                                        {t('actionItems.noItems')}
                                                     </div>
                                                 ) : viewMode === 'flat' ? (
                                                     <div className="grid grid-cols-1 gap-3">
@@ -646,7 +648,7 @@ export default function ActionItemsPage() {
                                                 ) : (
                                                     <div className="space-y-3">
                                                         {groups.map((group) => {
-                                                            const displayLabel = group.label ?? 'Ungrouped';
+                                                            const displayLabel = group.label ?? t('actionItems.ungrouped');
                                                             const groupKey = `${assignee.name}::${col.key}::${displayLabel}`;
                                                             const isCollapsed = collapsedGroups.has(groupKey);
 
@@ -708,7 +710,7 @@ export default function ActionItemsPage() {
                     {unassignedItems.length > 0 && (
                         <div className="mt-2">
                             <div className="glass-card p-4 mb-3 border-l-4 border-theme-text-muted/40 flex items-center justify-between">
-                                <h2 className="text-lg font-semibold text-theme-text-muted">Unassigned</h2>
+                                <h2 className="text-lg font-semibold text-theme-text-muted">{t('actionItems.unassigned')}</h2>
                                 <span className="text-sm text-theme-text-tertiary font-medium">{unassignedItems.length}</span>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -740,68 +742,68 @@ export default function ActionItemsPage() {
             {showCreate && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
                     <div className="glass-card p-6 w-full max-w-lg mx-4 animate-slide-up">
-                        <h2 className="text-lg font-semibold text-theme-text-primary mb-4">New Action Item</h2>
+                        <h2 className="text-lg font-semibold text-theme-text-primary mb-4">{t('actionItems.create.title')}</h2>
                         <div className="space-y-4">
                             <div>
-                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Title</label>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.titleLabel')}</label>
                                 <input
                                     type="text"
                                     value={newTitle}
                                     onChange={(e) => setNewTitle(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleCreate()}
                                     className="input-glow w-full text-sm"
-                                    placeholder="What needs to be done?"
+                                    placeholder={t('actionItems.create.titlePlaceholder')}
                                     autoFocus
                                 />
                             </div>
                             <div>
-                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Description</label>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.description')}</label>
                                 <textarea
                                     value={newDescription}
                                     onChange={(e) => setNewDescription(e.target.value)}
                                     className="input-glow w-full text-sm min-h-[80px] resize-y"
-                                    placeholder="Additional context (optional)"
+                                    placeholder={t('actionItems.create.descriptionPlaceholder')}
                                 />
                             </div>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Assignee</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.assignee')}</label>
                                     <input
                                         type="text"
                                         value={newAssignee}
                                         onChange={(e) => setNewAssignee(e.target.value)}
                                         className="input-glow w-full text-sm"
-                                        placeholder="Name"
+                                        placeholder={t('actionItems.create.assigneePlaceholder')}
                                     />
                                 </div>
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Priority</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.priority')}</label>
                                     <select
                                         value={newPriority}
                                         onChange={(e) => setNewPriority(e.target.value as ActionItemPriority)}
                                         className="input-glow w-full text-sm"
                                     >
-                                        <option value="low">Low</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="high">High</option>
-                                        <option value="urgent">Urgent</option>
+                                        <option value="low">{t('actionItems.priority.low')}</option>
+                                        <option value="medium">{t('actionItems.priority.medium')}</option>
+                                        <option value="high">{t('actionItems.priority.high')}</option>
+                                        <option value="urgent">{t('actionItems.priority.urgent')}</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Effort</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.effort')}</label>
                                     <select
                                         value={newEffort}
                                         onChange={(e) => setNewEffort(e.target.value as ActionItemEffort | '')}
                                         className="input-glow w-full text-sm"
                                     >
-                                        <option value="">None</option>
-                                        <option value="quick_fix">⚡ Quick Fix</option>
-                                        <option value="moderate">🔧 Moderate</option>
-                                        <option value="significant">🏗️ Significant</option>
+                                        <option value="">{t('actionItems.create.effortNone')}</option>
+                                        <option value="quick_fix">⚡ {t('actionItems.effort.quickFix')}</option>
+                                        <option value="moderate">🔧 {t('actionItems.effort.moderate')}</option>
+                                        <option value="significant">🏗️ {t('actionItems.effort.significant')}</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Due Date</label>
+                                    <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.dueDate')}</label>
                                     <input
                                         type="date"
                                         value={newDueDate}
@@ -816,14 +818,14 @@ export default function ActionItemsPage() {
                                 onClick={() => setShowCreate(false)}
                                 className="px-4 py-2 text-sm text-theme-text-secondary hover:text-theme-text-primary transition-colors"
                             >
-                                Cancel
+                                {t('actionItems.create.cancel')}
                             </button>
                             <button
                                 onClick={handleCreate}
                                 disabled={!newTitle.trim()}
                                 className="btn-primary px-5 py-2"
                             >
-                                Create
+                                {t('actionItems.create.submit')}
                             </button>
                         </div>
                     </div>
@@ -864,6 +866,7 @@ function ActionItemCard({
     translatedTitle?: string;
     onDragStart?: (e: React.DragEvent) => void;
 }) {
+    const { t } = useLocale();
     const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
 
     // Sync local state when item changes (e.g. after Smart Group)
@@ -919,8 +922,8 @@ function ActionItemCard({
     ];
 
     const transitions: Partial<Record<ActionItemStatus, { label: string; target: ActionItemStatus }[]>> = {
-        open: [{ label: 'Done', target: 'done' }],
-        done: [{ label: 'Reopen', target: 'open' }],
+        open: [{ label: t('actionItems.transition.done'), target: 'done' }],
+        done: [{ label: t('actionItems.transition.reopen'), target: 'open' }],
     };
 
     return (
@@ -949,16 +952,16 @@ function ActionItemCard({
                             item.priority === 'high' ? 'text-amber-400' :
                                 'text-theme-text-muted'
                             }`}>
-                            {PRIORITY_LABEL[item.priority]}
+                            {t(PRIORITY_LABEL_KEY[item.priority] as any)}
                         </span>
                         {item.effort && EFFORT_CONFIG[item.effort] && (
                             <span className={`text-[10px] font-medium ${EFFORT_CONFIG[item.effort].color}`}>
-                                {EFFORT_CONFIG[item.effort].icon} {EFFORT_CONFIG[item.effort].label}
+                                {EFFORT_CONFIG[item.effort].icon} {t(EFFORT_CONFIG[item.effort].labelKey as any)}
                             </span>
                         )}
                         {item.due_date && (
                             <span className={`text-[10px] ${isOverdue ? 'text-rose-400 font-medium' : 'text-theme-text-muted'}`}>
-                                {isOverdue ? 'Overdue · ' : 'Due '}
+                                {isOverdue ? `${t('actionItems.overdue')} · ` : ''}
                                 {new Date(item.due_date).toLocaleDateString()}
                             </span>
                         )}
@@ -967,12 +970,12 @@ function ActionItemCard({
                         )}
                         {item.is_duplicate && (
                             <span className="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-full bg-amber-500/10 text-amber-500">
-                                Duplicate
+                                {t('actionItems.duplicate')}
                             </span>
                         )}
                         {isShared && (
                             <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-medium rounded-full bg-violet-500/10 text-violet-400">
-                                🤝 Shared
+                                🤝 {t('actionItems.shared')}
                             </span>
                         )}
                         <TTLBadge createdAt={item.created_at} isLocked={item.is_locked} />
@@ -997,7 +1000,7 @@ function ActionItemCard({
                     {item.is_duplicate && item.duplicate_of && (
                         <div className="flex items-center gap-1.5 text-xs text-amber-500/80">
                             <span>◈</span>
-                            <span>Duplicate of: <DuplicateOfLabel itemId={item.duplicate_of} allItems={allItems} /></span>
+                            <span>{t('actionItems.duplicateOf')}: <DuplicateOfLabel itemId={item.duplicate_of} allItems={allItems} /></span>
                         </div>
                     )}
 
@@ -1022,7 +1025,7 @@ function ActionItemCard({
                                 {aiMessages.length === 0 && !aiLoading && (
                                     <div className="space-y-1.5">
                                         <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
-                                            Suggested questions
+                                            {t('actionItems.askAi.suggested')}
                                         </p>
                                         {suggestedQuestions.map((q) => (
                                             <button
@@ -1071,7 +1074,7 @@ function ActionItemCard({
                             <div className="flex gap-2">
                                 <input
                                     type="text"
-                                    placeholder="Ask about this action item..."
+                                    placeholder={t('actionItems.askAi.placeholder')}
                                     value={aiQuestion}
                                     onChange={(e) => setAiQuestion(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleAskAI()}
@@ -1083,7 +1086,7 @@ function ActionItemCard({
                                     disabled={aiLoading || !aiQuestion.trim()}
                                     className="btn-primary px-3 py-1.5 text-xs"
                                 >
-                                    Send
+                                    {t('actionItems.askAi.send')}
                                 </button>
                             </div>
                         </div>
@@ -1094,7 +1097,7 @@ function ActionItemCard({
                             href={`/transcripts/${item.transcript_id}`}
                             className="block text-xs text-brand-400 hover:text-brand-300 transition-colors"
                         >
-                            View source transcript &rarr;
+                            {t('actionItems.viewTranscript')}
                         </Link>
                     )}
 
@@ -1107,14 +1110,14 @@ function ActionItemCard({
 
                     {/* Group label editor */}
                     <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-theme-text-tertiary uppercase tracking-wider">Group:</span>
+                        <span className="text-[10px] text-theme-text-tertiary uppercase tracking-wider">{t('actionItems.group')}</span>
                         <input
                             type="text"
                             value={editGroupLabel}
                             onChange={(e) => setEditGroupLabel(e.target.value)}
                             onBlur={() => onGroupLabelSave(item.id, editGroupLabel)}
                             onKeyDown={(e) => e.key === 'Enter' && onGroupLabelSave(item.id, editGroupLabel)}
-                            placeholder="Ungrouped"
+                            placeholder={t('actionItems.ungrouped')}
                             className="text-xs text-theme-text-secondary bg-transparent border-b border-theme-border
                                        focus:border-brand-500/50 focus:outline-none px-1 py-0.5 w-32 transition-colors"
                         />
@@ -1124,13 +1127,13 @@ function ActionItemCard({
 
             {/* Actions */}
             <div className="flex items-center gap-2 mt-3 pt-3 border-t border-theme-border">
-                {(transitions[item.status] ?? []).map((t) => (
+                {(transitions[item.status] ?? []).map((tr) => (
                     <button
-                        key={t.target}
-                        onClick={() => onStatusChange(item.id, t.target)}
+                        key={tr.target}
+                        onClick={() => onStatusChange(item.id, tr.target)}
                         className="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-brand-500/10 text-brand-400 hover:bg-brand-500/20 transition-colors"
                     >
-                        {t.label}
+                        {tr.label}
                     </button>
                 ))}
                 {item.status !== 'done' && (
@@ -1138,7 +1141,7 @@ function ActionItemCard({
                         onClick={() => onDismiss(item.id)}
                         className="ml-auto px-2.5 py-1 text-[11px] font-medium rounded-lg text-theme-text-muted hover:text-rose-400 hover:bg-rose-500/10 transition-colors"
                     >
-                        Dismiss
+                        {t('actionItems.dismiss')}
                     </button>
                 )}
                 <LockButton

@@ -7,18 +7,21 @@ import {
     eachDayOfInterval, isSameMonth, isToday, isWeekend,
     addMonths, subMonths, parseISO,
 } from 'date-fns';
+import { de, enUS } from 'date-fns/locale';
 import type { DayMeetingSummary, ScoreboardMetrics, CumulativeStats } from '@meet-pipeline/shared';
+import { useLocale } from '../../lib/locale';
+import type { TranslationKey } from '../../lib/translations';
 
 // ── Helpers ──────────────────────────────────────
 
 /** Derive a human-readable cadence label from average meetings per week. */
-function getCadenceLabel(avg: number): string {
-    if (avg >= 5) return 'Daily';
-    if (avg >= 3.5) return 'Near-daily';
-    if (avg >= 2) return 'Several times/week';
-    if (avg >= 1) return 'Weekly';
-    if (avg >= 0.5) return 'Bi-weekly';
-    return 'Occasional';
+function getCadenceLabelKey(avg: number): TranslationKey {
+    if (avg >= 5) return 'calendar.cadence.daily';
+    if (avg >= 3.5) return 'calendar.cadence.nearDaily';
+    if (avg >= 2) return 'calendar.cadence.several';
+    if (avg >= 1) return 'calendar.cadence.weekly';
+    if (avg >= 0.5) return 'calendar.cadence.biweekly';
+    return 'calendar.cadence.occasional';
 }
 
 /** Heatmap intensity class based on meeting count. */
@@ -44,6 +47,8 @@ export default function CalendarPage() {
     const [data, setData] = useState<CalendarData | null>(null);
     const [loading, setLoading] = useState(true);
     const [selectedDay, setSelectedDay] = useState<string | null>(null);
+    const { t, locale } = useLocale();
+    const dateFnsLocale = locale === 'de' ? de : enUS;
 
     const fetchCalendar = useCallback(async (month: Date) => {
         setLoading(true);
@@ -87,16 +92,21 @@ export default function CalendarPage() {
     const selectedDayData = selectedDay ? dayMap.get(selectedDay) : null;
     const timezone = useMemo(() => Intl.DateTimeFormat().resolvedOptions().timeZone, []);
 
+    const DAY_KEYS: TranslationKey[] = [
+        'calendar.day.mon', 'calendar.day.tue', 'calendar.day.wed', 'calendar.day.thu',
+        'calendar.day.fri', 'calendar.day.sat', 'calendar.day.sun',
+    ];
+
     return (
         <div className="max-w-6xl mx-auto animate-fade-in">
             {/* Header */}
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Calendar</h1>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('calendar.title')}</h1>
                 <p className="text-theme-text-tertiary mt-1">
-                    Meeting rhythm &amp; collaboration overview
+                    {t('calendar.subtitle')}
                     {scoreboard && (
                         <span className="ml-3 text-theme-text-muted text-sm">
-                            · Meeting cadence: <span className="text-brand-400 font-medium">{getCadenceLabel(scoreboard.averageMeetingsPerWeek)}</span>
+                            · {t('calendar.cadence')} <span className="text-brand-400 font-medium">{t(getCadenceLabelKey(scoreboard.averageMeetingsPerWeek))}</span>
                         </span>
                     )}
                 </p>
@@ -107,21 +117,20 @@ export default function CalendarPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
                     {Array.from({ length: 6 }).map((_, i) => (
                         <div key={i} className="stat-card">
-                            {/* Accent bar from CSS ::before */}
                             <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider">—</p>
                             <p className="text-3xl font-bold text-theme-text-primary mt-2">—</p>
                         </div>
                     ))}
                 </div>
             ) : scoreboard && (
-                <ScoreboardHeader scoreboard={scoreboard} />
+                <ScoreboardHeader scoreboard={scoreboard} t={t} />
             )}
 
             {/* ── All-Time Totals ─────────────────────── */}
             {loading ? (
                 <div className="glass-card h-32 animate-pulse bg-theme-muted/20 mb-6" />
             ) : cumulative && (
-                <AllTimeTotals cumulative={cumulative} />
+                <AllTimeTotals cumulative={cumulative} t={t} dateFnsLocale={dateFnsLocale} />
             )}
 
             {/* ── Month Navigation ────────────────────── */}
@@ -132,10 +141,10 @@ export default function CalendarPage() {
                                bg-theme-raised hover:bg-theme-overlay rounded-xl border border-theme-border
                                transition-all duration-200"
                 >
-                    ← Prev
+                    {t('calendar.prev')}
                 </button>
                 <h2 className="text-xl font-semibold text-theme-text-primary">
-                    {format(currentMonth, 'MMMM yyyy')}
+                    {format(currentMonth, 'MMMM yyyy', { locale: dateFnsLocale })}
                 </h2>
                 <button
                     onClick={handleNext}
@@ -143,7 +152,7 @@ export default function CalendarPage() {
                                bg-theme-raised hover:bg-theme-overlay rounded-xl border border-theme-border
                                transition-all duration-200"
                 >
-                    Next →
+                    {t('calendar.next')}
                 </button>
             </div>
 
@@ -151,9 +160,9 @@ export default function CalendarPage() {
             <div className="glass-card p-4 mb-8">
                 {/* Day headers */}
                 <div className="grid grid-cols-7 mb-2">
-                    {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => (
-                        <div key={d} className="text-center text-xs text-theme-text-muted uppercase tracking-wider font-medium py-2">
-                            {d}
+                    {DAY_KEYS.map((key) => (
+                        <div key={key} className="text-center text-xs text-theme-text-muted uppercase tracking-wider font-medium py-2">
+                            {t(key)}
                         </div>
                     ))}
                 </div>
@@ -197,7 +206,7 @@ export default function CalendarPage() {
                                             )}
                                         </div>
                                         <p className="text-[10px] text-theme-text-tertiary mt-1 truncate">
-                                            {meetingCount === 1 ? daySummary!.meetings[0].title : `${meetingCount} meetings`}
+                                            {meetingCount === 1 ? daySummary!.meetings[0].title : `${meetingCount} ${t('calendar.meetings')}`}
                                         </p>
                                     </div>
                                 )}
@@ -209,22 +218,22 @@ export default function CalendarPage() {
 
             {/* ── Day Detail Panel ────────────────────── */}
             {selectedDayData && (
-                <DayDetailPanel day={selectedDayData} />
+                <DayDetailPanel day={selectedDayData} t={t} locale={locale} dateFnsLocale={dateFnsLocale} />
             )}
 
             {/* ── Activity Heatmap ────────────────────── */}
             {!loading && data && (
-                <ActivityHeatmap calendarDays={calendarDays} currentMonth={currentMonth} dayMap={dayMap} />
+                <ActivityHeatmap calendarDays={calendarDays} currentMonth={currentMonth} dayMap={dayMap} t={t} dateFnsLocale={dateFnsLocale} />
             )}
 
             {/* ── Collaboration Insights ──────────────── */}
             {!loading && scoreboard && (
-                <CollaborationInsights scoreboard={scoreboard} />
+                <CollaborationInsights scoreboard={scoreboard} t={t} />
             )}
 
             {/* ── Co-Founder Features ─────────────────── */}
             {!loading && scoreboard && (
-                <CoFounderFeatures scoreboard={scoreboard} timezone={timezone} />
+                <CoFounderFeatures scoreboard={scoreboard} timezone={timezone} t={t} />
             )}
         </div>
     );
@@ -232,21 +241,20 @@ export default function CalendarPage() {
 
 // ── Sub-components ───────────────────────────────
 
-function ScoreboardHeader({ scoreboard }: { scoreboard: ScoreboardMetrics }) {
+function ScoreboardHeader({ scoreboard, t }: { scoreboard: ScoreboardMetrics; t: (key: any) => string }) {
     const cards = [
-        { label: 'Meetings', value: String(scoreboard.totalMeetings), color: 'from-brand-500 to-brand-600' },
-        { label: 'Est. Hours', value: scoreboard.totalHours.toFixed(1), color: 'from-accent-teal to-emerald-500' },
-        { label: 'Topics', value: String(scoreboard.topicsDiscussed.length), color: 'from-accent-violet to-purple-500' },
-        { label: 'Action Items', value: String(scoreboard.totalActionItems), color: 'from-amber-500 to-amber-600' },
-        { label: 'Completion', value: `${scoreboard.actionItemCompletionRate}%`, color: 'from-emerald-500 to-emerald-600' },
-        { label: 'Streak', value: `${scoreboard.streakDays}d`, color: 'from-rose-500 to-rose-600' },
+        { label: t('calendar.scoreboard.meetings'), value: String(scoreboard.totalMeetings) },
+        { label: t('calendar.scoreboard.estHours'), value: scoreboard.totalHours.toFixed(1) },
+        { label: t('calendar.scoreboard.topics'), value: String(scoreboard.topicsDiscussed.length) },
+        { label: t('calendar.scoreboard.actionItems'), value: String(scoreboard.totalActionItems) },
+        { label: t('calendar.scoreboard.completion'), value: `${scoreboard.actionItemCompletionRate}%` },
+        { label: t('calendar.scoreboard.streak'), value: `${scoreboard.streakDays}d` },
     ];
 
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
             {cards.map((card) => (
                 <div key={card.label} className="stat-card">
-                    {/* Accent bar from CSS ::before */}
                     <p className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider">{card.label}</p>
                     <p className="text-3xl font-bold text-theme-text-primary mt-2">{card.value}</p>
                 </div>
@@ -255,17 +263,17 @@ function ScoreboardHeader({ scoreboard }: { scoreboard: ScoreboardMetrics }) {
     );
 }
 
-function DayDetailPanel({ day }: { day: DayMeetingSummary }) {
+function DayDetailPanel({ day, t, locale, dateFnsLocale }: { day: DayMeetingSummary; t: (key: any) => string; locale: string; dateFnsLocale: any }) {
     const date = parseISO(day.date);
     const estMinutes = Math.round(day.totalWords / 150);
 
     return (
         <div className="glass-card p-6 mb-8 animate-slide-up">
             <h3 className="text-lg font-semibold text-theme-text-primary mb-1">
-                {format(date, 'EEEE, MMMM d, yyyy')}
+                {format(date, 'EEEE, MMMM d, yyyy', { locale: dateFnsLocale })}
             </h3>
             <p className="text-sm text-theme-text-tertiary mb-4">
-                {day.totalMeetings} meeting{day.totalMeetings !== 1 ? 's' : ''} · {day.totalWords.toLocaleString()} words · ~{estMinutes} min · {day.uniqueParticipants.length} participant{day.uniqueParticipants.length !== 1 ? 's' : ''}
+                {day.totalMeetings} {day.totalMeetings !== 1 ? t('calendar.meetings') : t('calendar.meeting')} · {day.totalWords.toLocaleString(locale === 'de' ? 'de-DE' : 'en-US')} {t('calendar.words')} · ~{estMinutes} min · {day.uniqueParticipants.length} {t('dashboard.transcripts.participants')}
             </p>
 
             <div className="space-y-3">
@@ -281,7 +289,7 @@ function DayDetailPanel({ day }: { day: DayMeetingSummary }) {
                                 <span key={p} className="badge-info text-[10px]">{p}</span>
                             ))}
                             <span className="text-xs text-theme-text-muted ml-auto">
-                                {m.word_count.toLocaleString()} words
+                                {m.word_count.toLocaleString(locale === 'de' ? 'de-DE' : 'en-US')} {t('calendar.words')}
                             </span>
                             <span className={`text-[10px] font-medium ${m.extraction_method === 'inline' ? 'text-brand-400' :
                                 m.extraction_method === 'google_doc' ? 'text-accent-teal' :
@@ -298,11 +306,13 @@ function DayDetailPanel({ day }: { day: DayMeetingSummary }) {
 }
 
 function ActivityHeatmap({
-    calendarDays, currentMonth, dayMap,
+    calendarDays, currentMonth, dayMap, t, dateFnsLocale,
 }: {
     calendarDays: Date[];
     currentMonth: Date;
     dayMap: Map<string, DayMeetingSummary>;
+    t: (key: any) => string;
+    dateFnsLocale: any;
 }) {
     // Only show days that belong to this month
     const monthDays = calendarDays.filter((d) => isSameMonth(d, currentMonth));
@@ -310,7 +320,7 @@ function ActivityHeatmap({
     return (
         <div className="glass-card p-6 mb-8">
             <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-4">
-                Meeting Density
+                {t('calendar.heatmap.title')}
             </h2>
             <div className="flex flex-wrap gap-1.5">
                 {monthDays.map((day) => {
@@ -319,25 +329,25 @@ function ActivityHeatmap({
                     return (
                         <div
                             key={dateKey}
-                            title={`${format(day, 'MMM d')}: ${count} meeting${count !== 1 ? 's' : ''}`}
+                            title={`${format(day, 'MMM d', { locale: dateFnsLocale })}: ${count} ${count !== 1 ? 'meetings' : 'meeting'}`}
                             className={`w-7 h-7 rounded-md ${heatmapClass(count)} transition-colors duration-200`}
                         />
                     );
                 })}
             </div>
             <div className="flex items-center gap-3 mt-3 text-[10px] text-theme-text-muted">
-                <span>Less</span>
+                <span>{t('calendar.heatmap.less')}</span>
                 <div className="w-4 h-4 rounded bg-theme-muted/30" />
                 <div className="w-4 h-4 rounded bg-brand-500/20" />
                 <div className="w-4 h-4 rounded bg-brand-500/40" />
                 <div className="w-4 h-4 rounded bg-brand-500/70" />
-                <span>More</span>
+                <span>{t('calendar.heatmap.more')}</span>
             </div>
         </div>
     );
 }
 
-function CollaborationInsights({ scoreboard }: { scoreboard: ScoreboardMetrics }) {
+function CollaborationInsights({ scoreboard, t }: { scoreboard: ScoreboardMetrics; t: (key: any) => string }) {
     const participantEntries = Object.entries(scoreboard.meetingsByParticipant)
         .sort(([, a], [, b]) => (b as number) - (a as number));
     const maxCount = participantEntries.length > 0 ? (participantEntries[0][1] as number) : 1;
@@ -345,13 +355,13 @@ function CollaborationInsights({ scoreboard }: { scoreboard: ScoreboardMetrics }
     return (
         <div className="glass-card p-6 mb-8">
             <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-4">
-                Collaboration Insights
+                {t('calendar.collaboration.title')}
             </h2>
 
             {/* Who's Meeting Most — bar chart */}
             {participantEntries.length > 0 && (
                 <div className="mb-6">
-                    <h3 className="text-xs text-theme-text-tertiary font-medium mb-3">Who&apos;s Meeting Most</h3>
+                    <h3 className="text-xs text-theme-text-tertiary font-medium mb-3">{t('calendar.collaboration.whosMeeting')}</h3>
                     <div className="space-y-2">
                         {participantEntries.slice(0, 8).map(([name, count]) => (
                             <div key={name as string} className="flex items-center gap-3">
@@ -372,7 +382,7 @@ function CollaborationInsights({ scoreboard }: { scoreboard: ScoreboardMetrics }
             {/* Busiest Day */}
             {scoreboard.busiestDay && (
                 <div className="mb-6">
-                    <h3 className="text-xs text-theme-text-tertiary font-medium mb-2">Busiest Day of Week</h3>
+                    <h3 className="text-xs text-theme-text-tertiary font-medium mb-2">{t('calendar.collaboration.busiestDay')}</h3>
                     <span className="badge-success text-sm">{scoreboard.busiestDay}</span>
                 </div>
             )}
@@ -380,7 +390,7 @@ function CollaborationInsights({ scoreboard }: { scoreboard: ScoreboardMetrics }
             {/* Topics Discussed */}
             {scoreboard.topicsDiscussed.length > 0 && (
                 <div>
-                    <h3 className="text-xs text-theme-text-tertiary font-medium mb-2">Topics Discussed</h3>
+                    <h3 className="text-xs text-theme-text-tertiary font-medium mb-2">{t('calendar.collaboration.topics')}</h3>
                     <div className="flex flex-wrap gap-2">
                         {scoreboard.topicsDiscussed.map((topic: string) => (
                             <span key={topic} className="badge-info">{topic}</span>
@@ -393,10 +403,11 @@ function CollaborationInsights({ scoreboard }: { scoreboard: ScoreboardMetrics }
 }
 
 function CoFounderFeatures({
-    scoreboard, timezone,
+    scoreboard, timezone, t,
 }: {
     scoreboard: ScoreboardMetrics;
     timezone: string;
+    t: (key: any) => string;
 }) {
     const velocityMax = Math.max(scoreboard.actionItemsCreated, scoreboard.actionItemsCompleted, 1);
 
@@ -405,26 +416,26 @@ function CoFounderFeatures({
             {/* Participant Pair Analysis */}
             <div className="glass-card p-6">
                 <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-4">
-                    Co-Founder Meetings
+                    {t('calendar.cofounder.title')}
                 </h2>
                 <div className="space-y-3">
-                    <PairRow label="Meetings together" value={scoreboard.meetingsTogether} color="bg-brand-400" />
-                    <PairRow label="Lutfiya solo" value={scoreboard.lutfiyaSolo} color="bg-accent-teal" />
-                    <PairRow label="Chris solo" value={scoreboard.chrisSolo} color="bg-accent-violet" />
-                    <PairRow label="With external guests" value={scoreboard.withExternalGuests} color="bg-amber-400" />
+                    <PairRow label={t('calendar.cofounder.together')} value={scoreboard.meetingsTogether} color="bg-brand-400" />
+                    <PairRow label={t('calendar.cofounder.lutfiyaSolo')} value={scoreboard.lutfiyaSolo} color="bg-accent-teal" />
+                    <PairRow label={t('calendar.cofounder.chrisSolo')} value={scoreboard.chrisSolo} color="bg-accent-violet" />
+                    <PairRow label={t('calendar.cofounder.external')} value={scoreboard.withExternalGuests} color="bg-amber-400" />
                 </div>
             </div>
 
             {/* Action Item Velocity + Free Days + Timezone */}
             <div className="glass-card p-6">
                 <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider mb-4">
-                    Productivity
+                    {t('calendar.productivity.title')}
                 </h2>
 
                 {/* Action Item Velocity */}
                 <div className="mb-5">
                     <p className="text-xs text-theme-text-tertiary mb-2">
-                        Action Item Velocity — <span className="text-amber-400">{scoreboard.actionItemsCreated} created</span> · <span className="text-emerald-400">{scoreboard.actionItemsCompleted} completed</span>
+                        {t('calendar.productivity.velocity')} — <span className="text-amber-400">{scoreboard.actionItemsCreated} {t('calendar.productivity.created')}</span> · <span className="text-emerald-400">{scoreboard.actionItemsCompleted} {t('calendar.productivity.completed')}</span>
                     </p>
                     <div className="space-y-1.5">
                         <div className="h-3 bg-theme-muted/20 rounded-full overflow-hidden">
@@ -444,16 +455,16 @@ function CoFounderFeatures({
 
                 {/* No-Meeting Weekdays */}
                 <div className="mb-5">
-                    <p className="text-xs text-theme-text-tertiary mb-1">Free Weekdays (No Meetings)</p>
+                    <p className="text-xs text-theme-text-tertiary mb-1">{t('calendar.productivity.freeDays')}</p>
                     <p className="text-2xl font-bold text-theme-text-primary">
-                        {scoreboard.freeDays} <span className="text-sm font-normal text-theme-text-muted">day{scoreboard.freeDays !== 1 ? 's' : ''}</span>
+                        {scoreboard.freeDays} <span className="text-sm font-normal text-theme-text-muted">{scoreboard.freeDays !== 1 ? t('calendar.productivity.days') : t('calendar.productivity.day')}</span>
                     </p>
                 </div>
 
                 {/* Timezone */}
                 <div className="pt-3 border-t border-theme-border">
                     <p className="text-[11px] text-theme-text-muted">
-                        📍 Viewing in your local timezone — <span className="font-medium text-theme-text-tertiary">{timezone}</span>
+                        📍 {t('calendar.timezone')} — <span className="font-medium text-theme-text-tertiary">{timezone}</span>
                     </p>
                 </div>
             </div>
@@ -472,9 +483,9 @@ function PairRow({ label, value, color }: { label: string; value: number; color:
 }
 
 /** Compact all-time totals section — text-driven, visually distinct from monthly stat cards. */
-function AllTimeTotals({ cumulative }: { cumulative: CumulativeStats }) {
+function AllTimeTotals({ cumulative, t, dateFnsLocale }: { cumulative: CumulativeStats; t: (key: any) => string; dateFnsLocale: any }) {
     const sinceLabel = cumulative.firstMeetingDate
-        ? format(parseISO(cumulative.firstMeetingDate), 'MMM yyyy')
+        ? format(parseISO(cumulative.firstMeetingDate), 'MMM yyyy', { locale: dateFnsLocale })
         : null;
 
     return (
@@ -482,52 +493,51 @@ function AllTimeTotals({ cumulative }: { cumulative: CumulativeStats }) {
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
                 <h2 className="text-sm font-semibold text-theme-text-secondary uppercase tracking-wider">
-                    All-Time Totals
+                    {t('calendar.allTime.title')}
                 </h2>
                 {sinceLabel && (
                     <span className="text-xs text-theme-text-muted">
-                        Since {sinceLabel}
+                        {t('calendar.allTime.since')} {sinceLabel}
                     </span>
                 )}
             </div>
 
             {/* Primary stats line */}
             <p className="text-sm text-theme-text-primary leading-relaxed">
-                <span className="font-semibold text-brand-400">{cumulative.totalMeetings}</span> meetings
+                <span className="font-semibold text-brand-400">{cumulative.totalMeetings}</span> {t('calendar.allTime.meetings')}
                 {' · ~'}<span className="font-semibold text-accent-teal">{cumulative.totalHours.toFixed(1)}h</span>
-                {' · '}<span className="font-semibold text-amber-400">{cumulative.totalActionItems}</span> action items
-                {' · '}<span className="font-semibold text-emerald-400">{cumulative.actionItemCompletionRate}%</span> completion
+                {' · '}<span className="font-semibold text-amber-400">{cumulative.totalActionItems}</span> {t('calendar.allTime.actionItems')}
+                {' · '}<span className="font-semibold text-emerald-400">{cumulative.actionItemCompletionRate}%</span> {t('calendar.allTime.completion')}
             </p>
 
             {/* Secondary stats line */}
             <p className="text-xs text-theme-text-tertiary mt-1.5">
-                {cumulative.topicsDiscussed.length} topics
-                {' · '}{cumulative.uniqueParticipants.length} participants
-                {cumulative.busiestDay && <>{' · Busiest day: '}<span className="text-theme-text-secondary">{cumulative.busiestDay}</span></>}
+                {cumulative.topicsDiscussed.length} {t('calendar.allTime.topics')}
+                {' · '}{cumulative.uniqueParticipants.length} {t('calendar.allTime.participants')}
+                {cumulative.busiestDay && <>{' · '}{t('calendar.allTime.busiestDay')} <span className="text-theme-text-secondary">{cumulative.busiestDay}</span></>}
             </p>
 
             {/* Co-founder mini-stats */}
             <div className="flex flex-wrap gap-3 mt-4">
                 <span className="inline-flex items-center gap-1.5 text-xs text-theme-text-secondary bg-brand-500/10 px-2.5 py-1 rounded-lg">
                     <span className="w-2 h-2 rounded-full bg-brand-400" />
-                    Together: <span className="font-semibold">{cumulative.meetingsTogether}</span>
+                    {t('calendar.allTime.together')} <span className="font-semibold">{cumulative.meetingsTogether}</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs text-theme-text-secondary bg-accent-teal/10 px-2.5 py-1 rounded-lg">
                     <span className="w-2 h-2 rounded-full bg-accent-teal" />
-                    Lutfiya solo: <span className="font-semibold">{cumulative.lutfiyaSolo}</span>
+                    {t('calendar.allTime.lutfiyaSolo')} <span className="font-semibold">{cumulative.lutfiyaSolo}</span>
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs text-theme-text-secondary bg-accent-violet/10 px-2.5 py-1 rounded-lg">
                     <span className="w-2 h-2 rounded-full bg-accent-violet" />
-                    Chris solo: <span className="font-semibold">{cumulative.chrisSolo}</span>
+                    {t('calendar.allTime.chrisSolo')} <span className="font-semibold">{cumulative.chrisSolo}</span>
                 </span>
             </div>
 
             {/* Footer */}
             <p className="text-xs text-theme-text-muted mt-3 pt-3 border-t border-theme-border">
-                Avg: <span className="font-medium text-theme-text-tertiary">{cumulative.averageMeetingsPerMonth.toFixed(1)}</span> meetings/month
-                {' · '}<span className="font-medium text-theme-text-tertiary">{cumulative.totalMonthsActive}</span> active month{cumulative.totalMonthsActive !== 1 ? 's' : ''}
+                {t('calendar.allTime.avg')} <span className="font-medium text-theme-text-tertiary">{cumulative.averageMeetingsPerMonth.toFixed(1)}</span> {t('calendar.allTime.meetingsPerMonth')}
+                {' · '}<span className="font-medium text-theme-text-tertiary">{cumulative.totalMonthsActive}</span> {cumulative.totalMonthsActive !== 1 ? t('calendar.allTime.activeMonths') : t('calendar.allTime.activeMonth')}
             </p>
         </div>
     );
 }
-
