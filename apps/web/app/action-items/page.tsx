@@ -387,6 +387,89 @@ export default function ActionItemsPage() {
 
 
 
+            {/* Stats Summary Bar */}
+            <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
+                <span className="text-sm font-medium text-theme-text-primary">{baseFiltered.length} action items</span>
+                <span className="text-theme-text-muted">·</span>
+                <span className="text-xs text-amber-400">{lockStats.active} open</span>
+                {lockStats.done > 0 && (
+                    <>
+                        <span className="text-theme-text-muted">·</span>
+                        <span className="text-xs text-emerald-400">{lockStats.done} done</span>
+                    </>
+                )}
+                <span className="text-theme-text-muted">·</span>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                    {(['urgent', 'high', 'medium', 'low'] as const).map((p) => {
+                        const count = baseFiltered.filter(i => i.priority === p).length;
+                        if (!count) return null;
+                        const style = {
+                            urgent: 'bg-rose-500/20 text-rose-400',
+                            high: 'bg-amber-500/20 text-amber-400',
+                            medium: 'bg-brand-400/20 text-brand-400',
+                            low: 'bg-theme-bg-muted text-theme-text-muted',
+                        }[p];
+                        return (
+                            <span key={p} className={`inline-flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 rounded ${style}`}>
+                                {PRIORITY_LABEL[p]} {count}
+                            </span>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* Lock Status Summary Bar */}
+            <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
+                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
+                        ? 'border-amber-500 bg-amber-500/20 ring-2 ring-amber-500/40'
+                        : 'border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/15'
+                        }`}
+                >
+                    <span className="text-sm">🔒</span>
+                    <span className="text-sm font-semibold text-amber-400">{lockStats.locked}</span>
+                    <span className="text-xs text-amber-400/80">Locked</span>
+                </button>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
+                        ? 'border-theme-text-secondary bg-theme-muted ring-2 ring-theme-text-muted/40'
+                        : 'border-theme-border bg-theme-overlay hover:bg-theme-muted'
+                        }`}
+                >
+                    <span className="text-sm">🔓</span>
+                    <span className="text-sm font-semibold text-theme-text-secondary">{lockStats.unlocked}</span>
+                    <span className="text-xs text-theme-text-muted">Unlocked</span>
+                </button>
+                <button
+                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
+                        ? 'border-rose-500 bg-rose-500/20 ring-2 ring-rose-500/40'
+                        : 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/15'
+                        }`}
+                >
+                    <span className="text-sm">⏳</span>
+                    <span className="text-sm font-semibold text-rose-400">{lockStats.subjectToArchive}</span>
+                    <span className="text-xs text-rose-400/80">Subject to Archive</span>
+                </button>
+                {lockFilter !== 'all' && (
+                    <button
+                        onClick={() => setLockFilter('all')}
+                        className="text-xs text-theme-text-muted hover:text-theme-text-secondary transition-colors ml-1 cursor-pointer"
+                    >
+                        ✕ Clear
+                    </button>
+                )}
+                {/* Done count — separate from active metrics */}
+                <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
+                    <span className="text-sm">✅</span>
+                    <span className="text-sm font-semibold text-emerald-400">{lockStats.done}</span>
+                    <span className="text-xs text-emerald-400/80">Done</span>
+                </div>
+            </div>
+
             {/* Filters Bar */}
             <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-3">
                 <input
@@ -478,89 +561,6 @@ export default function ActionItemsPage() {
                         </button>
                     </div>
                 )}
-            </div>
-
-            {/* Stats Summary Bar */}
-            <div className="glass-card p-4 mb-6 flex flex-wrap items-center gap-4">
-                <span className="text-sm font-medium text-theme-text-primary">{baseFiltered.length} action items</span>
-                <span className="text-theme-text-muted">·</span>
-                <span className="text-xs text-amber-400">{lockStats.active} open</span>
-                {lockStats.done > 0 && (
-                    <>
-                        <span className="text-theme-text-muted">·</span>
-                        <span className="text-xs text-emerald-400">{lockStats.done} done</span>
-                    </>
-                )}
-                <span className="text-theme-text-muted">·</span>
-                <div className="flex items-center gap-1.5 flex-wrap">
-                    {(['urgent', 'high', 'medium', 'low'] as const).map((p) => {
-                        const count = baseFiltered.filter(i => i.priority === p).length;
-                        if (!count) return null;
-                        const style = {
-                            urgent: 'bg-rose-500/20 text-rose-400',
-                            high: 'bg-amber-500/20 text-amber-400',
-                            medium: 'bg-brand-400/20 text-brand-400',
-                            low: 'bg-theme-bg-muted text-theme-text-muted',
-                        }[p];
-                        return (
-                            <span key={p} className={`inline-flex items-center gap-1 text-[10px] font-medium px-1.5 py-0.5 rounded ${style}`}>
-                                {PRIORITY_LABEL[p]} {count}
-                            </span>
-                        );
-                    })}
-                </div>
-            </div>
-
-            {/* Lock Status Summary Bar */}
-            <div className="glass-card p-4 mb-8 flex flex-wrap items-center gap-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-theme-text-tertiary mr-1">Lock Status</span>
-                <button
-                    onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
-                        ? 'border-amber-500 bg-amber-500/20 ring-2 ring-amber-500/40'
-                        : 'border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/15'
-                        }`}
-                >
-                    <span className="text-sm">🔒</span>
-                    <span className="text-sm font-semibold text-amber-400">{lockStats.locked}</span>
-                    <span className="text-xs text-amber-400/80">Locked</span>
-                </button>
-                <button
-                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
-                        ? 'border-theme-text-secondary bg-theme-muted ring-2 ring-theme-text-muted/40'
-                        : 'border-theme-border bg-theme-overlay hover:bg-theme-muted'
-                        }`}
-                >
-                    <span className="text-sm">🔓</span>
-                    <span className="text-sm font-semibold text-theme-text-secondary">{lockStats.unlocked}</span>
-                    <span className="text-xs text-theme-text-muted">Unlocked</span>
-                </button>
-                <button
-                    onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
-                        ? 'border-rose-500 bg-rose-500/20 ring-2 ring-rose-500/40'
-                        : 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/15'
-                        }`}
-                >
-                    <span className="text-sm">⏳</span>
-                    <span className="text-sm font-semibold text-rose-400">{lockStats.subjectToArchive}</span>
-                    <span className="text-xs text-rose-400/80">Subject to Archive</span>
-                </button>
-                {lockFilter !== 'all' && (
-                    <button
-                        onClick={() => setLockFilter('all')}
-                        className="text-xs text-theme-text-muted hover:text-theme-text-secondary transition-colors ml-1 cursor-pointer"
-                    >
-                        ✕ Clear
-                    </button>
-                )}
-                {/* Done count — separate from active metrics */}
-                <div className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
-                    <span className="text-sm">✅</span>
-                    <span className="text-sm font-semibold text-emerald-400">{lockStats.done}</span>
-                    <span className="text-xs text-emerald-400/80">Done</span>
-                </div>
             </div>
 
             {/* Two-Column Assignee Board */}

@@ -854,6 +854,21 @@ function DecisionCard({
                 </span>
             </div>
 
+            {/* Always-visible action bar — matches Action Items pattern */}
+            <div className="flex items-center gap-2 mt-3 pt-3 border-t border-theme-border">
+                <span className="ml-auto" />
+                {onLockChange && (
+                    <LockButton
+                        entityType="decision"
+                        entityId={decision.id}
+                        isLocked={decision.is_locked}
+                        lockedBy={decision.locked_by}
+                        currentUser="Lutfiya Miller"
+                        onLockChange={(locked) => onLockChange(decision.id, locked)}
+                    />
+                )}
+            </div>
+
             {/* Expanded content */}
             {isExpanded && (
                 <div className="mt-4 pt-4 border-t border-theme-border animate-slide-up">

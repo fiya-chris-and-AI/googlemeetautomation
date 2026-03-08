@@ -136,7 +136,7 @@ export function Sidebar() {
     }
 
     return (
-        <aside className="fixed left-0 top-0 bottom-0 w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex flex-col z-50">
+        <aside className="fixed left-0 top-0 bottom-0 w-64 bg-white dark:bg-black border-r border-gray-200 dark:border-gray-800 flex flex-col z-50">
             {/* Brand */}
             <div className="p-5 border-b border-gray-200 dark:border-gray-800">
                 <div className="flex flex-col items-start">
