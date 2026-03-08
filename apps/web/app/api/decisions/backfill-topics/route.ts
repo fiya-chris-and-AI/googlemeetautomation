@@ -1,17 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase } from '../../../../lib/supabase';
-import { callGemini, stripMarkdownFences } from '@meet-pipeline/shared';
+import { callGemini, stripMarkdownFences, DECISION_TOPIC_CATEGORIES } from '@meet-pipeline/shared';
 
 export const dynamic = 'force-dynamic';
 
+const VALID_TOPICS = new Set<string>(DECISION_TOPIC_CATEGORIES);
+
 /**
- * POST /api/decisions/backfill-topics — Assign topics to decisions that don't have one.
+ * POST /api/decisions/backfill-topics — Assign broad topic categories to decisions.
  *
- * Uses Gemini to generate a short 2-5 word topic label for each decision
- * based on its decision_text. Processes in batches of 50 to stay within
- * token limits.
+ * Body (optional):
+ *   { batchSize?: number, recategorize?: boolean }
  *
- * Body (optional): { batchSize?: number }   // default 50, max 200
+ * - Default: only processes decisions with topic IS NULL
+ * - recategorize: true — re-categorize ALL decisions (e.g. after changing category set)
  */
 export async function POST(req: NextRequest) {
     try {
@@ -25,23 +27,29 @@ export async function POST(req: NextRequest) {
 
         const body = await req.json().catch(() => ({}));
         const batchSize = Math.min(Math.max(parseInt(body.batchSize ?? '50', 10) || 50, 1), 200);
+        const recategorize = body.recategorize === true;
 
         const supabase = getServerSupabase();
 
-        // Fetch decisions missing a topic
-        const { data: decisions, error: fetchErr } = await supabase
+        // Fetch decisions — either all (recategorize) or only those missing a topic
+        let query = supabase
             .from('decisions')
             .select('id, decision_text, domain')
-            .is('topic', null)
             .order('created_at', { ascending: false })
             .limit(batchSize);
+
+        if (!recategorize) {
+            query = query.is('topic', null);
+        }
+
+        const { data: decisions, error: fetchErr } = await query;
 
         if (fetchErr) {
             return NextResponse.json({ error: fetchErr.message }, { status: 500 });
         }
 
         if (!decisions || decisions.length === 0) {
-            return NextResponse.json({ updated: 0, message: 'All decisions already have topics' });
+            return NextResponse.json({ updated: 0, message: 'No decisions to process' });
         }
 
         // Build a numbered list for the AI prompt
@@ -49,17 +57,29 @@ export async function POST(req: NextRequest) {
             .map((d, i) => `${i + 1}. [${d.domain}] ${d.decision_text}`)
             .join('\n');
 
-        const systemPrompt = `You assign short topic labels to decisions. For each decision, produce a 2-5 word topic label that captures the subject area (e.g. "Auth provider", "Launch timeline", "WhatsApp integration", "Sidebar design", "Meeting cadence", "Lock feature").
+        const categoryList = DECISION_TOPIC_CATEGORIES.join('", "');
+
+        const systemPrompt = `You categorize decisions into broad topic groups. For each decision, assign exactly one of these categories: "${categoryList}".
+
+Category definitions:
+- "UI & Design" — Interface layout, icons, buttons, dashboard, visual style, CSS, colors
+- "AI & Automation" — AI features, chatbots, agentic workflows, RAG, extraction, mind maps, model selection
+- "Translation" — i18n, multilingual support, translation services, language features
+- "DevOps" — Git, deployment, hosting, CI/CD, infrastructure, repos, secrets, migrations
+- "Business & Legal" — Pricing, partnerships, contracts, legal, company strategy, payments
+- "Product Features" — Feature scope, specific app features, action items, search, notifications
+- "Branding & Content" — YouTube, marketing, mascots, merchandise, website copy, social media
+- "Process & Meetings" — Meeting logistics, workflow, roles, work sharing, scheduling, cadence
+- "Accounts & Access" — Permissions, login, passwords, account setup, user management
+- "Personal" — Personal decisions, travel, non-work items
 
 Rules:
-- Group related decisions under the SAME topic label when they cover the same subject
-- Use Title Case (e.g. "Transcript Editing" not "transcript editing")
-- Be specific enough to distinguish topics, but general enough to group related items
-- Keep labels between 2-5 words
+- Use ONLY the categories listed above — do not invent new ones
+- Pick the single best fit; when in doubt, prefer the more specific category
 
 Return ONLY a JSON array of objects with { "index": number, "topic": string } — one per input decision. No markdown fences or extra text.`;
 
-        const userMessage = `Assign topic labels to these ${decisions.length} decisions:\n\n${numberedList}`;
+        const userMessage = `Categorize these ${decisions.length} decisions:\n\n${numberedList}`;
 
         const rawText = await callGemini(systemPrompt, userMessage, geminiKey, {
             maxOutputTokens: 8192,
@@ -72,39 +92,45 @@ Return ONLY a JSON array of objects with { "index": number, "topic": string } �
             return NextResponse.json({ error: 'Unexpected AI response format' }, { status: 500 });
         }
 
-        // Apply topic updates
+        // Apply topic updates — only accept valid categories
         let updated = 0;
+        let rejected = 0;
         for (const assignment of assignments) {
             const idx = assignment.index - 1; // 1-indexed → 0-indexed
-            if (idx < 0 || idx >= decisions.length || !assignment.topic?.trim()) continue;
+            const topic = assignment.topic?.trim();
+            if (idx < 0 || idx >= decisions.length || !topic) continue;
+
+            if (!VALID_TOPICS.has(topic)) {
+                rejected++;
+                console.warn(`[backfill-topics] Rejected invalid topic "${topic}" for decision ${decisions[idx].id}`);
+                continue;
+            }
 
             const { error: updateErr } = await supabase
                 .from('decisions')
-                .update({ topic: assignment.topic.trim() })
+                .update({ topic })
                 .eq('id', decisions[idx].id);
 
             if (!updateErr) updated++;
         }
 
-        console.log(`[backfill-topics] Updated ${updated}/${decisions.length} decisions with topics`);
+        console.log(`[backfill-topics] Updated ${updated}/${decisions.length} decisions (${rejected} rejected)`);
+
+        // Count remaining uncategorized
+        const { count } = await supabase
+            .from('decisions')
+            .select('id', { count: 'exact', head: true })
+            .is('topic', null);
 
         return NextResponse.json({
             updated,
+            rejected,
             total: decisions.length,
-            remaining: await countRemaining(supabase),
+            remaining: count ?? 0,
         });
     } catch (err) {
         const msg = err instanceof Error ? err.message : 'Unknown error';
         console.error('[backfill-topics] Error:', msg);
         return NextResponse.json({ error: msg }, { status: 500 });
     }
-}
-
-/** Count how many decisions still have no topic. */
-async function countRemaining(supabase: ReturnType<typeof getServerSupabase>) {
-    const { count } = await supabase
-        .from('decisions')
-        .select('id', { count: 'exact', head: true })
-        .is('topic', null);
-    return count ?? 0;
 }

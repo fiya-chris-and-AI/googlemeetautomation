@@ -8,6 +8,24 @@ import type { DecisionDomain, DecisionConfidence } from './types';
 import { callGemini, stripMarkdownFences } from './gemini';
 import { normalizeAssigneeSingle } from './normalize-assignee';
 
+// ── Topic categories ────────────────────────────
+
+/** Fixed set of broad topic categories for decision grouping. */
+export const DECISION_TOPIC_CATEGORIES = [
+    'UI & Design',
+    'AI & Automation',
+    'Translation',
+    'DevOps',
+    'Business & Legal',
+    'Product Features',
+    'Branding & Content',
+    'Process & Meetings',
+    'Accounts & Access',
+    'Personal',
+] as const;
+
+export type DecisionTopic = (typeof DECISION_TOPIC_CATEGORIES)[number];
+
 // ── Gemini system prompt ────────────────────────
 
 export const DECISION_EXTRACTION_SYSTEM_PROMPT = `You extract DECISIONS from meeting transcripts. A decision is a CHOICE BETWEEN ALTERNATIVES that was resolved during the meeting — something that could have gone a different way but the participants committed to a specific direction.
@@ -33,7 +51,7 @@ export const DECISION_EXTRACTION_SYSTEM_PROMPT = `You extract DECISIONS from mee
 Ask yourself: "What was the ALTERNATIVE they rejected?" If you cannot identify a rejected alternative or a question that was open before this discussion, it is NOT a decision — it's just a statement. Skip it.
 
 Return a JSON array of objects with these fields:
-- topic (string, required): A 2-5 word label capturing the subject area (e.g. "Auth provider", "Launch timeline", "Search layout", "Meeting cadence"). This is used as a short pill/badge in the UI.
+- topic (string, required): Classify into exactly one of: "UI & Design", "AI & Automation", "Translation", "DevOps", "Business & Legal", "Product Features", "Branding & Content", "Process & Meetings", "Accounts & Access", "Personal". Pick the single best fit.
 - decision_text (string, required): A concise, standalone statement of what was decided. Write it as a direct statement (e.g. "Use Supabase over Firebase for auth" or "Defer mobile app to Q3"). Do NOT start with "We decided", "The team agreed", or similar preambles. Maximum 1 sentence. Include what was chosen AND what was rejected or changed from, when clear.
 - context (string | null): 1-2 sentences on what alternatives were considered and why this direction was chosen. Null only if truly no context exists.
 - domain (string): Classify into exactly one of: "architecture", "product", "business", "design", "infrastructure", "operations", "general"

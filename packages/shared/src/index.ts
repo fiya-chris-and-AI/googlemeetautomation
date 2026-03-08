@@ -15,10 +15,11 @@ export {
 export type { RawExtractedItem, TranscriptForExtraction } from './extract-action-items';
 export {
     DECISION_EXTRACTION_SYSTEM_PROMPT,
+    DECISION_TOPIC_CATEGORIES,
     extractDecisionsFromTranscript,
     buildDecisionInsertionRows,
 } from './extract-decisions';
-export type { TranscriptForDecisionExtraction } from './extract-decisions';
+export type { DecisionTopic, TranscriptForDecisionExtraction } from './extract-decisions';
 export { callGemini, stripMarkdownFences } from './gemini';
 export type { GeminiOptions } from './gemini';
 export { translateTexts } from './translate';
