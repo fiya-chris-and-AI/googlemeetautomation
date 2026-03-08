@@ -23,7 +23,7 @@ CREATE INDEX idx_categories_usage ON categories (usage_count DESC);
 
 -- 2. Junction table: action_items <-> categories (many-to-many)
 CREATE TABLE action_item_categories (
-    action_item_id UUID NOT NULL REFERENCES action_items(id) ON DELETE CASCADE,
+    action_item_id TEXT NOT NULL REFERENCES action_items(id) ON DELETE CASCADE,
     category_id    UUID NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
     assigned_at    TIMESTAMPTZ DEFAULT now(),
     PRIMARY KEY (action_item_id, category_id)

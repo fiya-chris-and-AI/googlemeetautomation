@@ -4,7 +4,7 @@
 
 CREATE TABLE unified_prompts (
     id                UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    action_item_ids   UUID[] NOT NULL,
+    action_item_ids   TEXT[] NOT NULL,
     prompt_text       TEXT NOT NULL,
     prompt_model      TEXT NOT NULL DEFAULT 'gemini-2.5-flash',
     version           INTEGER DEFAULT 1,
