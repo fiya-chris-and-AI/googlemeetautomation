@@ -6,6 +6,7 @@ import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort
 import { useTranslation } from '../../lib/use-translation';
 import { LockButton } from '../../components/lock-button';
 import { TTLBadge } from '../../components/ttl-badge';
+import { ActionPrompt } from '../../components/action-prompt';
 
 const COLUMNS: { key: ActionItemStatus; label: string; color: string }[] = [
     { key: 'open', label: 'Open', color: 'from-amber-500 to-amber-600' },
@@ -1003,6 +1004,13 @@ function ActionItemCard({
                             View source transcript &rarr;
                         </Link>
                     )}
+
+                    {/* Implementation Prompt */}
+                    <ActionPrompt
+                        actionItemId={item.id}
+                        actionItemTitle={item.title}
+                        autoLoad
+                    />
 
                     {/* Group label editor */}
                     <div className="flex items-center gap-2">

@@ -6,6 +6,7 @@
  */
 import type { DecisionDomain, DecisionConfidence } from './types';
 import { callGemini, stripMarkdownFences } from './gemini';
+import { normalizeAssigneeSingle } from './normalize-assignee';
 
 // ── Gemini system prompt ────────────────────────
 
@@ -48,6 +49,7 @@ Return a JSON array of objects with these fields:
   • "medium" — Implied: one person states direction, the other doesn't object, or "I think we should" + "yeah, makes sense"
   • "low" — Ambiguous: could be tentative rather than firm
 - source_text (string): The exact 2-4 sentence excerpt from the transcript showing the moment the decision was made (the discussion, the proposal, and the agreement).
+- assigned_to (string | null): The person who PROPOSED or CHAMPIONED this decision. MUST be exactly one of: "Lutfiya Miller", "Chris Müller", or null. Never use alternate spellings like "Chris-Steven Müller", "Chris Muller", or "Chris Mueller". Pay close attention to who PROPOSED the direction — "I think we should go with X" or "Let's use X" means the speaker is the champion. If both contributed equally, assign to the person who first raised the topic.
 
 Extraction rules:
 - Apply the "rejected alternative" test strictly — if there's no alternative, it's not a decision
@@ -69,6 +71,7 @@ export interface RawExtractedDecision {
     domain?: string;
     confidence?: string;
     source_text?: string;
+    assigned_to?: string | null;
 }
 
 /** Transcript fields needed for decision extraction. */
@@ -138,6 +141,7 @@ export function buildDecisionInsertionRows(
         participants: transcript.participants ?? [],
         decided_at: transcript.meeting_date,
         source_text: item.source_text ?? null,
+        assigned_to: normalizeAssigneeSingle(item.assigned_to),
         status: 'active',
         created_by: 'ai',
         ...overrides,

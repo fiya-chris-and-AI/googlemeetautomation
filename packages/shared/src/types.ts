@@ -129,6 +129,16 @@ export interface ActionItem {
     locked_at: string | null;
     /** When this item was auto-archived (NULL = not archived). */
     archived_at: string | null;
+    /** Auto-generated IDE prompt for completing this action item. */
+    generated_prompt: string | null;
+    /** Model used to generate the prompt (e.g. 'gemini-2.5-flash'). */
+    prompt_model: string | null;
+    /** When the prompt was last generated. */
+    prompt_generated_at: string | null;
+    /** Prompt version — increments on regeneration. */
+    prompt_version: number;
+    /** User feedback on prompt quality: 'useful' | 'not_useful' | null. */
+    prompt_feedback: string | null;
 }
 
 // ── Decisions ───────────────────────────────────
@@ -152,6 +162,7 @@ export interface Decision {
     source_text: string | null;
     superseded_by: string | null;
     status: DecisionStatus;
+    assigned_to: string | null;
     created_by: DecisionCreatedBy;
     created_at: string;
     updated_at: string;
@@ -175,6 +186,7 @@ export interface RawExtractedDecision {
     domain?: DecisionDomain;
     confidence?: DecisionConfidence;
     source_text?: string;
+    assigned_to?: string | null;
 }
 
 // ── Activity Log ────────────────────────────────

@@ -47,6 +47,11 @@ const STATUS_LABELS: { value: string; label: string }[] = [
     { value: 'all', label: 'All' },
 ];
 
+const ASSIGNEES: { name: string; displayName: string; accent: string }[] = [
+    { name: 'Lutfiya Miller', displayName: 'Dr. Lutfiya Miller', accent: 'border-violet-500' },
+    { name: 'Chris Müller', displayName: 'Chris Müller', accent: 'border-blue-500' },
+];
+
 /** Strip repetitive "We decided to…" style prefixes for cleaner display. */
 function stripDecisionPrefix(text: string): string {
     return text.replace(
@@ -73,6 +78,7 @@ export default function DecisionsPage() {
     const [search, setSearch] = useState('');
     const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
     const [lockFilter, setLockFilter] = useState<'all' | 'locked' | 'unlocked'>('all');
+    const [assigneeFilter, setAssigneeFilter] = useState('all');
 
     // Modal + expand state
     const [showCreate, setShowCreate] = useState(false);
@@ -149,6 +155,56 @@ export default function DecisionsPage() {
         () => decisions.filter((d) => d.status === 'completed'),
         [decisions],
     );
+
+    // ── Per-assignee lock stats ──
+    const perAssigneeLockStats = useMemo(() => {
+        const result: Record<string, { total: number; locked: number; unlocked: number; completed: number }> = {};
+        for (const a of ASSIGNEES) {
+            const assigneeAll = decisions.filter(d => d.assigned_to === a.name);
+            const assigneeActive = assigneeAll.filter(d => d.status !== 'completed');
+            const completedCount = assigneeAll.filter(d => d.status === 'completed').length;
+            const locked = assigneeActive.filter(d => d.is_locked).length;
+            result[a.name] = {
+                total: assigneeActive.length,
+                locked,
+                unlocked: assigneeActive.length - locked,
+                completed: completedCount,
+            };
+        }
+        return result;
+    }, [decisions]);
+
+    // ── Group active decisions by assignee, then by domain ──
+    const groupedByAssignee = useMemo(() => {
+        const result: Record<string, { label: DecisionDomain; items: Decision[] }[]> = {};
+
+        for (const assignee of ASSIGNEES) {
+            let assigneeItems = activeDecisions.filter(d => d.assigned_to === assignee.name);
+            if (assigneeFilter !== 'all' && assigneeFilter !== assignee.name) {
+                assigneeItems = [];
+            }
+
+            // Group by domain
+            const domainBuckets = new Map<DecisionDomain, Decision[]>();
+            for (const item of assigneeItems) {
+                const domain = item.domain;
+                if (!domainBuckets.has(domain)) domainBuckets.set(domain, []);
+                domainBuckets.get(domain)!.push(item);
+            }
+
+            result[assignee.name] = [...domainBuckets.entries()]
+                .sort((a, b) => b[1].length - a[1].length) // Largest domain groups first
+                .map(([label, items]) => ({ label, items }));
+        }
+
+        return result;
+    }, [activeDecisions, assigneeFilter]);
+
+    // Unassigned decisions
+    const unassignedDecisions = useMemo(() => {
+        if (assigneeFilter !== 'all') return [];
+        return activeDecisions.filter(d => !d.assigned_to);
+    }, [activeDecisions, assigneeFilter]);
 
     // ── Expand / Collapse helpers ──
     const toggleExpand = (id: string) => {
@@ -336,6 +392,15 @@ export default function DecisionsPage() {
                     className="input-glow border-0 bg-transparent focus:ring-0 text-sm flex-1 min-w-[200px]"
                 />
                 <FilterSelect
+                    value={assigneeFilter}
+                    onChange={setAssigneeFilter}
+                    options={[
+                        { value: 'all', label: 'All Assignees' },
+                        { value: 'Lutfiya Miller', label: 'Dr. Lutfiya Miller' },
+                        { value: 'Chris Müller', label: 'Chris Müller' },
+                    ]}
+                />
+                <FilterSelect
                     value={domainFilter}
                     onChange={setDomainFilter}
                     options={[
@@ -395,22 +460,99 @@ export default function DecisionsPage() {
                     </p>
                 </div>
             ) : (
-                <>
-                    {/* Active / non-completed decisions */}
-                    {activeDecisions.length > 0 && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {activeDecisions.map((decision) => (
-                                <DecisionCard
-                                    key={decision.id}
-                                    decision={decision}
-                                    isExpanded={expandedIds.has(decision.id)}
-                                    onToggleExpand={() => toggleExpand(decision.id)}
-                                    onStatusChange={handleStatusChange}
-                                    onLockChange={handleLockChange}
-                                    isNew={isNewItem(decision.created_at)}
-                                    translatedText={textMap.get(decision.id)}
-                                />
-                            ))}
+                <div className="space-y-6">
+                    {/* Two-Column Assignee Board */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {ASSIGNEES.map((assignee) => {
+                            const groups = groupedByAssignee[assignee.name] ?? [];
+                            const stats = perAssigneeLockStats[assignee.name];
+                            const totalItems = groups.reduce((sum, g) => sum + g.items.length, 0);
+
+                            return (
+                                <div key={assignee.name} className="space-y-4">
+                                    {/* Assignee column header */}
+                                    <div className={`glass-card p-4 border-l-4 ${assignee.accent} flex items-center justify-between sticky top-0 z-10`}>
+                                        <h2 className="text-lg font-semibold text-theme-text-primary">{assignee.displayName}</h2>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-sm text-theme-text-tertiary font-medium">{stats?.total ?? totalItems}</span>
+                                            {stats && (
+                                                <span className="text-[11px] text-theme-text-muted">
+                                                    🔒 {stats.locked} · 🔓 {stats.unlocked}
+                                                </span>
+                                            )}
+                                            {stats && stats.completed > 0 && (
+                                                <span className="text-[11px] text-emerald-400">
+                                                    ✅ {stats.completed}
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Domain groups within assignee column */}
+                                    {totalItems === 0 ? (
+                                        <div className="p-4 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
+                                            No decisions
+                                        </div>
+                                    ) : (
+                                        groups.map((group) => (
+                                            <div key={group.label}>
+                                                {/* Domain sub-header */}
+                                                <div className="glass-card p-3 mb-2 flex items-center justify-between">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${DOMAIN_STYLE[group.label]}`}>
+                                                            {group.label}
+                                                        </span>
+                                                    </div>
+                                                    <span className="text-xs text-theme-text-tertiary font-medium">{group.items.length}</span>
+                                                </div>
+
+                                                {/* Decision cards */}
+                                                <div className="grid grid-cols-1 gap-3">
+                                                    {group.items.map((decision) => (
+                                                        <DecisionCard
+                                                            key={decision.id}
+                                                            decision={decision}
+                                                            isExpanded={expandedIds.has(decision.id)}
+                                                            onToggleExpand={() => toggleExpand(decision.id)}
+                                                            onStatusChange={handleStatusChange}
+                                                            onLockChange={handleLockChange}
+                                                            isNew={isNewItem(decision.created_at)}
+                                                            translatedText={textMap.get(decision.id)}
+                                                        />
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Unassigned decisions */}
+                    {unassignedDecisions.length > 0 && (
+                        <div className="mt-6">
+                            <div className="flex items-center gap-3 mb-4">
+                                <h2 className="text-lg font-semibold text-theme-text-secondary">Unassigned</h2>
+                                <span className="text-xs text-theme-text-muted bg-theme-bg-muted px-2 py-0.5 rounded-full">
+                                    {unassignedDecisions.length}
+                                </span>
+                                <div className="flex-1 border-t border-theme-border/50" />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {unassignedDecisions.map((decision) => (
+                                    <DecisionCard
+                                        key={decision.id}
+                                        decision={decision}
+                                        isExpanded={expandedIds.has(decision.id)}
+                                        onToggleExpand={() => toggleExpand(decision.id)}
+                                        onStatusChange={handleStatusChange}
+                                        onLockChange={handleLockChange}
+                                        isNew={isNewItem(decision.created_at)}
+                                        translatedText={textMap.get(decision.id)}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     )}
 
@@ -439,7 +581,7 @@ export default function DecisionsPage() {
                             </div>
                         </div>
                     )}
-                </>
+                </div>
             )}
 
             {/* Create Decision Modal */}

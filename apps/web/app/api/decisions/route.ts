@@ -50,6 +50,9 @@ export async function GET(req: NextRequest) {
         const search = searchParams.get('search');
         if (search) query = query.or(`decision_text.ilike.%${search}%,topic.ilike.%${search}%`);
 
+        const assignedTo = searchParams.get('assigned_to');
+        if (assignedTo) query = query.eq('assigned_to', assignedTo);
+
         // Exclude archived items from default listing (unless explicitly requested)
         const includeArchived = searchParams.get('include_archived') === 'true';
         if (!includeArchived) {
@@ -107,6 +110,7 @@ export async function POST(req: NextRequest) {
             decided_at: body.decided_at ?? new Date().toISOString(),
             source_text: body.source_text ?? null,
             transcript_id: body.transcript_id ?? null,
+            assigned_to: body.assigned_to ?? null,
             embedding,
             status: 'active',
             created_by: 'manual',
