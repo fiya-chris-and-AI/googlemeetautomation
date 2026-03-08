@@ -99,6 +99,18 @@ export interface QueryResponse {
     sources: SourceChunk[];
 }
 
+// ── Categories ──────────────────────────────────
+
+export interface Category {
+    id: string;
+    name: string;
+    slug: string;
+    color: string | null;
+    usage_count: number;
+    created_by: 'ai' | 'manual';
+    created_at: string;
+}
+
 // ── Action Items ────────────────────────────────
 
 export type ActionItemStatus = 'open' | 'in_progress' | 'done' | 'dismissed' | 'archived';
@@ -144,6 +156,16 @@ export interface ActionItem {
     prompt_version: number;
     /** User feedback on prompt quality: 'useful' | 'not_useful' | null. */
     prompt_feedback: string | null;
+    /** Supabase Storage object path for attached screenshot. */
+    screenshot_path: string | null;
+    /** Signed URL for rendering the screenshot in the UI. */
+    screenshot_url: string | null;
+    /** AI-generated alt text describing the screenshot content. */
+    screenshot_alt: string | null;
+    /** Screenshot file size in bytes. */
+    screenshot_size: number | null;
+    /** Categories assigned to this action item (populated via join). */
+    categories?: Category[];
 }
 
 // ── Decisions ───────────────────────────────────

@@ -135,7 +135,7 @@ async function autoGeneratePrompts(transcriptId: string): Promise<void> {
         // Fetch items that need prompts (just inserted, so generated_prompt is NULL)
         const { data: items } = await supabase
             .from('action_items')
-            .select('id, title, description, assigned_to, priority, effort, due_date, source_text, group_label, created_by')
+            .select('id, title, description, assigned_to, priority, effort, due_date, source_text, group_label, created_by, screenshot_alt')
             .eq('transcript_id', transcriptId)
             .is('generated_prompt', null);
 
@@ -163,7 +163,7 @@ async function autoGeneratePrompts(transcriptId: string): Promise<void> {
         const { generatePromptsForBatch } = await import('@meet-pipeline/shared');
 
         const results = await generatePromptsForBatch(
-            items,
+            items.map(i => ({ ...i, categories: [] as string[] })),
             {
                 meeting_title: transcript.meeting_title,
                 meeting_date: transcript.meeting_date,

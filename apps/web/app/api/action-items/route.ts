@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
 
         let query = supabase
             .from('action_items')
-            .select('*')
+            .select('*, action_item_categories(category:categories(*))')
             .order(sortCol, { ascending })
             .limit(limit);
 
@@ -75,7 +75,16 @@ export async function GET(req: NextRequest) {
             return NextResponse.json({ error: error.message }, { status: 500 });
         }
 
-        return NextResponse.json(data ?? []);
+        // Flatten the nested join into a simpler categories[] array
+        const items = (data ?? []).map((row: any) => {
+            const { action_item_categories, ...item } = row;
+            return {
+                ...item,
+                categories: (action_item_categories ?? []).map((aic: any) => aic.category).filter(Boolean),
+            };
+        });
+
+        return NextResponse.json(items);
     } catch (err) {
         const msg = err instanceof Error ? err.message : 'Unknown error';
         return NextResponse.json({ error: msg }, { status: 500 });
@@ -88,7 +97,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
     try {
         const supabase = getServerSupabase();
-        const body = (await req.json()) as Partial<ActionItem>;
+        const body = (await req.json()) as Partial<ActionItem> & { category_ids?: string[] };
 
         if (!body.title?.trim()) {
             return NextResponse.json({ error: 'title is required' }, { status: 400 });
@@ -122,6 +131,18 @@ export async function POST(req: NextRequest) {
         }
 
         const inserted = data ?? [];
+
+        // Assign categories if provided
+        const categoryIds = body.category_ids ?? [];
+        if (categoryIds.length > 0) {
+            for (const item of inserted) {
+                const junctionRows = categoryIds.map(catId => ({
+                    action_item_id: item.id,
+                    category_id: catId,
+                }));
+                await supabase.from('action_item_categories').insert(junctionRows);
+            }
+        }
 
         // Log each creation in activity_log
         for (const item of inserted) {

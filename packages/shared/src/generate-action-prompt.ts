@@ -24,6 +24,10 @@ export interface ActionItemForPrompt {
     source_text: string | null;
     group_label: string | null;
     created_by: string;
+    /** AI-generated alt text describing an attached screenshot. */
+    screenshot_alt: string | null;
+    /** Category names assigned to this item. */
+    categories: string[];
 }
 
 export interface PromptContext {
@@ -126,6 +130,9 @@ export async function generateActionItemPrompt(
     parts.push(`- **Effort:** ${item.effort ?? 'unknown (treat as moderate)'}`);
     if (item.due_date) parts.push(`- **Due date:** ${item.due_date}`);
     if (item.group_label) parts.push(`- **Project/Topic:** ${item.group_label}`);
+    if (item.categories && item.categories.length > 0) {
+        parts.push(`- **Categories:** ${item.categories.join(', ')}`);
+    }
 
     if (context.meeting_title) {
         parts.push(`\n## Meeting Context`);
@@ -152,6 +159,13 @@ export async function generateActionItemPrompt(
     if (context.sibling_action_items.length > 0) {
         parts.push(`\n## Other Action Items From Same Meeting (for cross-reference)`);
         context.sibling_action_items.forEach((a, i) => parts.push(`${i + 1}. ${a}`));
+    }
+
+    if (item.screenshot_alt) {
+        parts.push(`\n## Attached Screenshot Context`);
+        parts.push(`The developer attached a screenshot to this task. Description of the screenshot:`);
+        parts.push(item.screenshot_alt);
+        parts.push(`\nUse this visual context to inform your implementation approach. The screenshot may show a bug, a design mockup, an error message, or a UI state that needs attention.`);
     }
 
     if (context.feedback_history.length > 0) {

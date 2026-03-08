@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask AI — Little Prince Mascot Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --prince-gold: #D4A843;
+    --prince-green: #4A8B5C;
+    --prince-green-light: #6BAF7E;
+    --prince-scarf: #C4A035;
+    --star-yellow: #F5D76E;
+    --sky-light: #E8F0FE;
+    --sky-mid: #B8D4F0;
+    --planet-gray: #B0B8C4;
+    --rose-pink: #E88B9C;
+    --fox-orange: #D4874D;
+    --night-blue: #1B2A4A;
+    --night-mid: #253658;
+    --soft-white: #F7F4EF;
+    --text-dark: #2C3E50;
+    --text-muted: #7A8A9E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--soft-white);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---- Header ---- */
+  .page-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(1.5px 1.5px at 10% 20%, var(--star-yellow) 50%, transparent 50%),
+      radial-gradient(1px 1px at 30% 60%, var(--star-yellow) 50%, transparent 50%),
+      radial-gradient(2px 2px at 50% 15%, var(--star-yellow) 50%, transparent 50%),
+      radial-gradient(1px 1px at 70% 45%, var(--star-yellow) 50%, transparent 50%),
+      radial-gradient(1.5px 1.5px at 85% 25%, var(--star-yellow) 50%, transparent 50%),
+      radial-gradient(1px 1px at 90% 70%, var(--star-yellow) 50%, transparent 50%);
+    opacity: 0.4;
+    animation: twinkle 3s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+  }
+  .page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--night-blue);
+    position: relative;
+    letter-spacing: 0.02em;
+  }
+  .page-header p {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    position: relative;
+  }
+
+  /* ---- Grid ---- */
+  .mockup-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 36px;
+  }
+
+  /* ---- Card ---- */
+  .card {
+    border-radius: 20px;
+    padding: 36px 28px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card-label {
+    font-family: 'Caveat', cursive;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: var(--night-blue);
+  }
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  /* ========== VARIANT 1 — Floating Companion ========== */
+  .card-v1 {
+    background: linear-gradient(135deg, #F7F4EF 0%, #EDE8DF 100%);
+    box-shadow: 0 4px 24px rgba(27,42,74,0.06);
+  }
+  .btn-v1-wrap { display: flex; justify-content: center; padding: 20px 0; }
+  .btn-v1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, var(--night-blue), var(--night-mid));
+    color: #fff;
+    border: none;
+    border-radius: 56px;
+    padding: 14px 32px 14px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 24px rgba(27,42,74,0.25);
+    overflow: visible;
+  }
+  .btn-v1:hover {
+    box-shadow: 0 8px 32px rgba(27,42,74,0.35);
+    transform: scale(1.04);
+  }
+  .btn-v1 .prince-icon {
+    width: 42px; height: 42px;
+    flex-shrink: 0;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  .btn-v1 .stars {
+    position: absolute;
+    top: -6px; right: -4px;
+    width: 20px; height: 20px;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* ========== VARIANT 2 — Planet Orb ========== */
+  .card-v2 {
+    background: linear-gradient(160deg, var(--night-blue) 0%, #1E3358 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(27,42,74,0.15);
+  }
+  .card-v2 .card-title { color: #fff; }
+  .card-v2 .card-label { color: rgba(255,255,255,0.5); }
+  .card-v2 .card-desc { color: rgba(255,255,255,0.6); }
+  .btn-v2-wrap { display: flex; justify-content: center; padding: 24px 0; }
+  .btn-v2 {
+    position: relative;
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, #8FAFC8 0%, var(--planet-gray) 50%, #8A95A4 100%);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow:
+      0 0 0 3px rgba(245,215,110,0.15),
+      0 0 40px rgba(245,215,110,0.1),
+      0 8px 32px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  .btn-v2:hover {
+    box-shadow:
+      0 0 0 4px rgba(245,215,110,0.3),
+      0 0 60px rgba(245,215,110,0.2),
+      0 12px 40px rgba(0,0,0,0.35);
+    transform: scale(1.06);
+  }
+  .btn-v2 .prince-on-planet {
+    width: 52px; height: 52px;
+    margin-top: -8px;
+  }
+  .btn-v2 .btn-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--night-blue);
+    letter-spacing: 0.06em;
+  }
+  .btn-v2 .orbit-star {
+    position: absolute;
+    width: 8px; height: 8px;
+    animation: orbit 6s linear infinite;
+  }
+  .btn-v2 .orbit-star:nth-child(2) { animation-delay: -2s; }
+  .btn-v2 .orbit-star:nth-child(3) { animation-delay: -4s; }
+  @keyframes orbit {
+    0% { transform: rotate(0deg) translateX(78px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(78px) rotate(-360deg); }
+  }
+
+  /* ========== VARIANT 3 — Watercolor Card ========== */
+  .card-v3 {
+    background: #fff;
+    border: 1.5px solid #E8E2D8;
+    box-shadow: 0 2px 16px rgba(27,42,74,0.04);
+  }
+  .btn-v3-wrap { display: flex; justify-content: center; padding: 20px 0; }
+  .btn-v3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 2px solid var(--prince-green);
+    border-radius: 14px;
+    padding: 12px 24px 12px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-v3::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(74,139,92,0.06), rgba(74,139,92,0.02));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .btn-v3:hover::before { opacity: 1; }
+  .btn-v3:hover { border-color: var(--prince-green-light); transform: scale(1.02); }
+  .btn-v3 .prince-sketch {
+    width: 38px; height: 38px;
+  }
+  .btn-v3 .btn-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-v3 .btn-label {
+    font-family: 'Caveat', cursive;
+    font-size: 0.7rem;
+    color: var(--prince-green);
+    line-height: 1;
+  }
+  .btn-v3 .btn-main {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  /* ========== VARIANT 4 — Tooltip/Peek ========== */
+  .card-v4 {
+    background: linear-gradient(135deg, #F0EDE6 0%, #E8E2D8 100%);
+    box-shadow: 0 4px 24px rgba(27,42,74,0.06);
+  }
+  .btn-v4-wrap { display: flex; justify-content: center; padding: 24px 0; }
+  .btn-v4 {
+    position: relative;
+    background: var(--prince-green);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 28px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(74,139,92,0.3);
+  }
+  .btn-v4:hover {
+    background: var(--prince-green-light);
+    box-shadow: 0 6px 24px rgba(74,139,92,0.4);
+  }
+  .btn-v4:hover .prince-peek { transform: translateY(-6px); }
+  .btn-v4 .prince-peek {
+    position: absolute;
+    top: -36px;
+    right: -10px;
+    width: 48px; height: 48px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* ========== VARIANT 5 — Starfield FAB ========== */
+  .card-v5 {
+    background: linear-gradient(160deg, #1A1F36 0%, var(--night-blue) 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(27,42,74,0.15);
+  }
+  .card-v5 .card-title { color: #fff; }
+  .card-v5 .card-label { color: rgba(255,255,255,0.5); }
+  .card-v5 .card-desc { color: rgba(255,255,255,0.6); }
+  .btn-v5-wrap { display: flex; justify-content: center; padding: 24px 0; }
+  .btn-v5 {
+    position: relative;
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--star-yellow) 0%, var(--prince-gold) 100%);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+      0 4px 20px rgba(212,168,67,0.35),
+      0 0 0 6px rgba(245,215,110,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-v5:hover {
+    box-shadow:
+      0 6px 28px rgba(212,168,67,0.5),
+      0 0 0 8px rgba(245,215,110,0.2);
+    transform: scale(1.08);
+  }
+  .btn-v5 .prince-mini {
+    width: 40px; height: 40px;
+  }
+  .btn-v5-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ========== VARIANT 6 — Full Banner CTA ========== */
+  .card-v6 {
+    background: linear-gradient(135deg, #FFF9EE 0%, #FFF3DD 50%, #FEEFD5 100%);
+    border: 1.5px solid rgba(212,168,67,0.2);
+    box-shadow: 0 4px 24px rgba(212,168,67,0.08);
+    grid-column: 1 / -1;
+  }
+  .banner-inner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .banner-prince {
+    width: 100px; height: 100px;
+    flex-shrink: 0;
+    animation: float 4s ease-in-out infinite;
+  }
+  .banner-content {
+    flex: 1;
+    min-width: 240px;
+  }
+  .banner-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--night-blue);
+    margin-bottom: 6px;
+  }
+  .banner-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 420px;
+  }
+  .btn-v6 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--night-blue);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(27,42,74,0.2);
+    flex-shrink: 0;
+  }
+  .btn-v6:hover {
+    background: var(--night-mid);
+    box-shadow: 0 6px 24px rgba(27,42,74,0.3);
+    transform: translateY(-2px);
+  }
+  .btn-v6 .star-icon { width: 18px; height: 18px; }
+
+  /* ---- SVG helper ---- */
+  svg { display: block; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Ask AI — Little Prince Mascot</h1>
+  <p>"What is essential is invisible to the eye…" but these buttons aren't</p>
+</div>
+
+<!-- Little Prince SVG definitions (reusable) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;">
+  <defs>
+    <!-- Standing Prince -->
+    <symbol id="prince-standing" viewBox="0 0 80 100">
+      <!-- Scarf tails -->
+      <path d="M38 38 Q30 50 26 62" stroke="#C4A035" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+      <path d="M36 40 Q28 48 22 58" stroke="#D4B045" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <!-- Body / coat -->
+      <path d="M32 40 Q30 55 28 75 L52 75 Q50 55 48 40 Z" fill="#4A8B5C"/>
+      <path d="M32 40 Q30 55 28 75 L40 75 L40 40 Z" fill="#3D7A4E" opacity="0.4"/>
+      <!-- Belt -->
+      <rect x="31" y="56" width="18" height="3" rx="1.5" fill="#C4A035" opacity="0.7"/>
+      <!-- Boots -->
+      <ellipse cx="34" cy="78" rx="8" ry="4" fill="#5A4A3A"/>
+      <ellipse cx="46" cy="78" rx="8" ry="4" fill="#5A4A3A"/>
+      <!-- Arms -->
+      <path d="M32 44 Q24 48 20 46" stroke="#4A8B5C" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M48 44 Q56 48 60 46" stroke="#4A8B5C" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <!-- Hands -->
+      <circle cx="19" cy="45" r="3" fill="#F5D4B0"/>
+      <circle cx="61" cy="45" r="3" fill="#F5D4B0"/>
+      <!-- Neck / scarf knot -->
+      <ellipse cx="40" cy="36" rx="6" ry="4" fill="#C4A035"/>
+      <!-- Head -->
+      <circle cx="40" cy="24" r="14" fill="#F5D4B0"/>
+      <!-- Hair (golden, tousled) -->
+      <path d="M26 20 Q28 8 40 6 Q52 8 54 20 Q56 14 52 10 Q46 4 40 3 Q34 4 28 10 Q24 14 26 20Z" fill="#D4A843"/>
+      <path d="M26 22 Q24 16 28 12" stroke="#C49A38" stroke-width="1.5" fill="none"/>
+      <path d="M54 22 Q56 16 52 12" stroke="#C49A38" stroke-width="1.5" fill="none"/>
+      <path d="M36 8 Q40 4 44 8" stroke="#E0B84D" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Face -->
+      <circle cx="35" cy="23" r="1.8" fill="#2C3E50"/>
+      <circle cx="45" cy="23" r="1.8" fill="#2C3E50"/>
+      <path d="M37 29 Q40 32 43 29" stroke="#D4874D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <!-- Cheeks -->
+      <circle cx="30" cy="27" r="3" fill="#E88B9C" opacity="0.25"/>
+      <circle cx="50" cy="27" r="3" fill="#E88B9C" opacity="0.25"/>
+    </symbol>
+
+    <!-- Prince on planet (smaller, sitting pose) -->
+    <symbol id="prince-on-planet" viewBox="0 0 100 100">
+      <!-- Planet -->
+      <circle cx="50" cy="68" r="30" fill="#B0B8C4"/>
+      <circle cx="50" cy="68" r="30" fill="url(#planetShade)"/>
+      <ellipse cx="42" cy="60" rx="6" ry="3" fill="#9BA8B4" opacity="0.5"/>
+      <ellipse cx="58" cy="72" rx="4" ry="2" fill="#9BA8B4" opacity="0.4"/>
+      <!-- Rose -->
+      <line x1="62" y1="42" x2="62" y2="54" stroke="#4A8B5C" stroke-width="1.5"/>
+      <circle cx="62" cy="40" r="4" fill="#E88B9C"/>
+      <circle cx="62" cy="40" r="2.5" fill="#D47A8B"/>
+      <path d="M58 44 Q60 42 62 44" stroke="#4A8B5C" stroke-width="1" fill="none"/>
+      <!-- Body -->
+      <path d="M42 40 Q40 48 38 54 L52 54 Q50 48 48 40 Z" fill="#4A8B5C"/>
+      <!-- Scarf -->
+      <path d="M42 36 Q36 44 32 50" stroke="#C4A035" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="45" cy="34" rx="5" ry="3" fill="#C4A035"/>
+      <!-- Head -->
+      <circle cx="45" cy="24" r="11" fill="#F5D4B0"/>
+      <!-- Hair -->
+      <path d="M34 20 Q36 10 45 8 Q54 10 56 20 Q56 14 52 11 Q48 7 45 6 Q42 7 38 11 Q34 14 34 20Z" fill="#D4A843"/>
+      <path d="M40 10 Q44 7 48 10" stroke="#E0B84D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Face -->
+      <circle cx="42" cy="22" r="1.4" fill="#2C3E50"/>
+      <circle cx="49" cy="22" r="1.4" fill="#2C3E50"/>
+      <path d="M43 27 Q45 29 47 27" stroke="#D4874D" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <circle cx="38" cy="25" r="2.5" fill="#E88B9C" opacity="0.2"/>
+      <circle cx="52" cy="25" r="2.5" fill="#E88B9C" opacity="0.2"/>
+    </symbol>
+
+    <!-- Star -->
+    <symbol id="star" viewBox="0 0 20 20">
+      <polygon points="10,2 12.5,7.5 18,8 14,12 15,18 10,15 5,18 6,12 2,8 7.5,7.5" fill="#F5D76E"/>
+    </symbol>
+
+    <!-- Small star -->
+    <symbol id="star-sm" viewBox="0 0 12 12">
+      <polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9 3,11 3.5,7.5 1,5 4.5,4.5" fill="#F5D76E"/>
+    </symbol>
+
+    <radialGradient id="planetShade" cx="40%" cy="35%">
+      <stop offset="0%" stop-color="#C8D0DA" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#8A95A4" stop-opacity="0.3"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<div class="mockup-grid">
+
+  <!-- VARIANT 1: Floating Companion -->
+  <div class="card card-v1">
+    <div class="card-label">Variant 1</div>
+    <div class="card-title">Floating Companion</div>
+    <div class="btn-v1-wrap">
+      <button class="btn-v1">
+        <svg class="prince-icon" viewBox="0 0 80 100"><use href="#prince-standing"/></svg>
+        <span>Ask AI</span>
+        <svg class="stars" viewBox="0 0 20 20"><use href="#star-sm"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">The Little Prince floats gently beside the label. A tiny star sparkles at the corner. Dark, cosmic background gives it gravitas.</p>
+  </div>
+
+  <!-- VARIANT 2: Planet Orb -->
+  <div class="card card-v2">
+    <div class="card-label">Variant 2</div>
+    <div class="card-title">Planet Orb</div>
+    <div class="btn-v2-wrap">
+      <button class="btn-v2">
+        <svg class="orbit-star" viewBox="0 0 12 12"><use href="#star-sm"/></svg>
+        <svg class="orbit-star" viewBox="0 0 12 12"><use href="#star-sm"/></svg>
+        <svg class="orbit-star" viewBox="0 0 12 12"><use href="#star-sm"/></svg>
+        <svg class="prince-on-planet" viewBox="0 0 100 100"><use href="#prince-on-planet"/></svg>
+        <span class="btn-text">ASK AI</span>
+      </button>
+    </div>
+    <p class="card-desc">The Prince sits on his asteroid, with stars orbiting around it. Tapping the planet opens the AI assistant. A circular, iconic interaction.</p>
+  </div>
+
+  <!-- VARIANT 3: Watercolor Sketch -->
+  <div class="card card-v3">
+    <div class="card-label">Variant 3</div>
+    <div class="card-title">Watercolor Sketch</div>
+    <div class="btn-v3-wrap">
+      <button class="btn-v3">
+        <svg class="prince-sketch" viewBox="0 0 80 100" style="opacity:0.85"><use href="#prince-standing"/></svg>
+        <div class="btn-text-group">
+          <span class="btn-label">The Prince says…</span>
+          <span class="btn-main">Ask AI</span>
+        </div>
+      </button>
+    </div>
+    <p class="card-desc">Delicate, storybook-inspired line art with a soft green border. The whimsical sub-label adds charm: "The Prince says…"</p>
+  </div>
+
+  <!-- VARIANT 4: Peeking Prince -->
+  <div class="card card-v4">
+    <div class="card-label">Variant 4</div>
+    <div class="card-title">Peeking Prince</div>
+    <div class="btn-v4-wrap">
+      <button class="btn-v4">
+        ✦ Ask AI
+        <svg class="prince-peek" viewBox="0 0 80 100"><use href="#prince-standing"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">On hover, the Little Prince peeks up from behind the button — a delightful surprise. Green CTA feels organic and warm.</p>
+  </div>
+
+  <!-- VARIANT 5: Starfield FAB -->
+  <div class="card card-v5">
+    <div class="card-label">Variant 5</div>
+    <div class="card-title">Starfield FAB</div>
+    <div class="btn-v5-wrap">
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <button class="btn-v5">
+          <svg class="prince-mini" viewBox="0 0 80 100"><use href="#prince-standing"/></svg>
+        </button>
+        <div class="btn-v5-label">ASK AI</div>
+      </div>
+    </div>
+    <p class="card-desc">A golden floating action button with the Prince silhouette inside. Glowing halo effect on hover — perfect for bottom-right placement.</p>
+  </div>
+
+  <!-- VARIANT 6: Full Banner CTA -->
+  <div class="card card-v6">
+    <div class="card-label">Variant 6</div>
+    <div class="card-title">Full Banner CTA</div>
+    <div class="banner-inner">
+      <svg class="banner-prince" viewBox="0 0 100 100"><use href="#prince-on-planet"/></svg>
+      <div class="banner-content">
+        <h3>Need help? Ask the Little Prince.</h3>
+        <p>Our AI assistant is ready to explore any question with you — from simple tasks to journeys across the stars.</p>
+      </div>
+      <button class="btn-v6">
+        <svg class="star-icon" viewBox="0 0 20 20"><use href="#star"/></svg>
+        Ask AI
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Add subtle interactivity
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.style.transform = 'scale(0.96)';
+      setTimeout(() => { this.style.transform = ''; }, 150);
+    });
+  });
+</script>
+</body>
+</html>
