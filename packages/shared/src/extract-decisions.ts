@@ -158,6 +158,7 @@ export function buildDecisionInsertionRows(
 ): Record<string, unknown>[] {
     return extracted.map((item) => ({
         transcript_id: transcript.id,
+        topic: item.topic?.trim() || null,
         decision_text: item.decision_text,
         context: item.context ?? null,
         domain: VALID_DOMAINS.has(item.domain ?? '') ? item.domain : 'general',

@@ -66,11 +66,23 @@ export async function GET(req: NextRequest) {
         }
 
         // Flatten the joined meeting_title onto each decision
-        const decisions = (data ?? []).map((d: any) => ({
+        const withTitles = (data ?? []).map((d: any) => ({
             ...d,
             meeting_title: d.transcripts?.meeting_title ?? null,
             transcripts: undefined,
         }));
+
+        // Deduplicate by normalized decision_text — keep the most recently created
+        // version so locked/annotated decisions are preserved over older copies.
+        const seen = new Map<string, typeof withTitles[number]>();
+        for (const d of withTitles) {
+            const key = d.decision_text.toLowerCase().trim().replace(/\s+/g, ' ');
+            const existing = seen.get(key);
+            if (!existing || new Date(d.created_at) > new Date(existing.created_at)) {
+                seen.set(key, d);
+            }
+        }
+        const decisions = [...seen.values()];
 
         return NextResponse.json(decisions);
     } catch (err) {

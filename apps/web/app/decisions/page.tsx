@@ -80,6 +80,7 @@ export default function DecisionsPage() {
     const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
     const [lockFilter, setLockFilter] = useState<'all' | 'locked' | 'unlocked'>('all');
     const [assigneeFilter, setAssigneeFilter] = useState('all');
+    const [topicFilter, setTopicFilter] = useState('all');
 
     // Drag-and-drop state
     const [dragOverAssignee, setDragOverAssignee] = useState<string | null>(null);
@@ -88,11 +89,16 @@ export default function DecisionsPage() {
     const [showCreate, setShowCreate] = useState(false);
     const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
+    // Topic grouping state
+    const [viewMode, setViewMode] = useState<'grouped' | 'flat'>('grouped');
+    const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+
     const { t, locale } = useLocale();
 
     // Create form
     const [newText, setNewText] = useState('');
     const [newContext, setNewContext] = useState('');
+    const [newTopic, setNewTopic] = useState('');
     const [newDomain, setNewDomain] = useState<DecisionDomain>('general');
     const [newConfidence, setNewConfidence] = useState<DecisionConfidence>('high');
     const [newDate, setNewDate] = useState(new Date().toISOString().slice(0, 10));
@@ -148,13 +154,27 @@ export default function DecisionsPage() {
         return { locked, unlocked, subjectToArchive: unlocked, completed: completedCount };
     }, [decisions]);
 
-    // Split decisions into active (non-completed) and completed lists, then apply lock filter
+    // Unique topic labels for the topic filter dropdown
+    const uniqueTopics = useMemo(() => {
+        const topics = new Set<string>();
+        for (const d of decisions) {
+            if (d.topic) topics.add(d.topic);
+        }
+        return [...topics].sort((a, b) => a.localeCompare(b));
+    }, [decisions]);
+
+    // Split decisions into active (non-completed) and completed lists, then apply lock + topic filters
     const activeDecisions = useMemo(() => {
-        const base = decisions.filter((d) => d.status !== 'completed');
-        if (lockFilter === 'all') return base;
-        const wantLocked = lockFilter === 'locked';
-        return base.filter(d => d.is_locked === wantLocked);
-    }, [decisions, lockFilter]);
+        let base = decisions.filter((d) => d.status !== 'completed');
+        if (lockFilter !== 'all') {
+            const wantLocked = lockFilter === 'locked';
+            base = base.filter(d => d.is_locked === wantLocked);
+        }
+        if (topicFilter !== 'all') {
+            base = base.filter(d => (d.topic ?? '') === topicFilter);
+        }
+        return base;
+    }, [decisions, lockFilter, topicFilter]);
     const completedDecisions = useMemo(
         () => decisions.filter((d) => d.status === 'completed'),
         [decisions],
@@ -178,9 +198,9 @@ export default function DecisionsPage() {
         return result;
     }, [decisions]);
 
-    // ── Group active decisions by assignee, then by domain ──
+    // ── Group active decisions by assignee, then by topic ──
     const groupedByAssignee = useMemo(() => {
-        const result: Record<string, { label: DecisionDomain; items: Decision[] }[]> = {};
+        const result: Record<string, { label: string | null; items: Decision[] }[]> = {};
 
         for (const assignee of ASSIGNEES) {
             let assigneeItems = activeDecisions.filter(d => d.assigned_to === assignee.name);
@@ -188,16 +208,21 @@ export default function DecisionsPage() {
                 assigneeItems = [];
             }
 
-            // Group by domain
-            const domainBuckets = new Map<DecisionDomain, Decision[]>();
+            // Group by topic
+            const topicBuckets = new Map<string | null, Decision[]>();
             for (const item of assigneeItems) {
-                const domain = item.domain;
-                if (!domainBuckets.has(domain)) domainBuckets.set(domain, []);
-                domainBuckets.get(domain)!.push(item);
+                const key = item.topic ?? null;
+                if (!topicBuckets.has(key)) topicBuckets.set(key, []);
+                topicBuckets.get(key)!.push(item);
             }
 
-            result[assignee.name] = [...domainBuckets.entries()]
-                .sort((a, b) => b[1].length - a[1].length) // Largest domain groups first
+            // Sort: named topic groups first (alphabetically), then ungrouped (null) last
+            result[assignee.name] = [...topicBuckets.entries()]
+                .sort((a, b) => {
+                    if (a[0] === null) return 1;
+                    if (b[0] === null) return -1;
+                    return a[0].localeCompare(b[0]);
+                })
                 .map(([label, items]) => ({ label, items }));
         }
 
@@ -209,6 +234,27 @@ export default function DecisionsPage() {
         if (assigneeFilter !== 'all') return [];
         return activeDecisions.filter(d => !d.assigned_to);
     }, [activeDecisions, assigneeFilter]);
+
+    // ── Topic group collapse/expand helpers ──
+    const toggleGroup = (key: string) => {
+        setCollapsedGroups(prev => {
+            const next = new Set(prev);
+            next.has(key) ? next.delete(key) : next.add(key);
+            return next;
+        });
+    };
+
+    const allGroupKeys = useMemo(() => {
+        const keys: string[] = [];
+        for (const assignee of ASSIGNEES) {
+            const groups = groupedByAssignee[assignee.name] ?? [];
+            for (const group of groups) {
+                const label = group.label ?? t('decisions.ungrouped');
+                keys.push(`${assignee.name}::${label}`);
+            }
+        }
+        return keys;
+    }, [groupedByAssignee]);
 
     // ── Expand / Collapse helpers ──
     const toggleExpand = (id: string) => {
@@ -222,6 +268,8 @@ export default function DecisionsPage() {
     const allDecisionIds = useMemo(() => decisions.map(d => d.id), [decisions]);
     const expandAll = () => setExpandedIds(new Set(allDecisionIds));
     const collapseAll = () => setExpandedIds(new Set());
+    const collapseAllGroups = () => setCollapsedGroups(new Set(allGroupKeys));
+    const expandAllGroups = () => setCollapsedGroups(new Set());
 
 
 
@@ -234,6 +282,7 @@ export default function DecisionsPage() {
                 body: JSON.stringify({
                     decision_text: newText.trim(),
                     context: newContext.trim() || null,
+                    topic: newTopic.trim() || null,
                     domain: newDomain,
                     confidence: newConfidence,
                     decided_at: newDate,
@@ -245,6 +294,7 @@ export default function DecisionsPage() {
                 setShowCreate(false);
                 setNewText('');
                 setNewContext('');
+                setNewTopic('');
                 setNewDomain('general');
                 setNewConfidence('high');
                 setNewDate(new Date().toISOString().slice(0, 10));
@@ -447,6 +497,16 @@ export default function DecisionsPage() {
                         { value: 'Chris Müller', label: 'Chris Müller' },
                     ]}
                 />
+                {uniqueTopics.length > 0 && (
+                    <FilterSelect
+                        value={topicFilter}
+                        onChange={setTopicFilter}
+                        options={[
+                            { value: 'all', label: t('decisions.filter.allTopics') },
+                            ...uniqueTopics.map((topic) => ({ value: topic, label: topic })),
+                        ]}
+                    />
+                )}
                 <FilterSelect
                     value={domainFilter}
                     onChange={setDomainFilter}
@@ -476,6 +536,27 @@ export default function DecisionsPage() {
                 >
                     {sortOrder === 'desc' ? t('decisions.sort.mostRecent') : t('decisions.sort.oldestFirst')}
                 </button>
+                {/* View mode toggle */}
+                <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
+                    <button
+                        onClick={() => setViewMode('grouped')}
+                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${viewMode === 'grouped'
+                                ? 'bg-brand-500/20 text-brand-400'
+                                : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            }`}
+                    >
+                        {t('decisions.view.grouped')}
+                    </button>
+                    <button
+                        onClick={() => setViewMode('flat')}
+                        className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${viewMode === 'flat'
+                                ? 'bg-brand-500/20 text-brand-400'
+                                : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            }`}
+                    >
+                        {t('decisions.view.flat')}
+                    </button>
+                </div>
                 {decisions.length > 0 && (
                     <div className="flex items-center gap-1">
                         <button
@@ -489,6 +570,22 @@ export default function DecisionsPage() {
                             className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
                         >
                             {t('decisions.collapseAll')}
+                        </button>
+                    </div>
+                )}
+                {viewMode === 'grouped' && allGroupKeys.length > 0 && (
+                    <div className="flex items-center gap-1">
+                        <button
+                            onClick={expandAllGroups}
+                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                        >
+                            {t('decisions.expandAllGroups')}
+                        </button>
+                        <button
+                            onClick={collapseAllGroups}
+                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                        >
+                            {t('decisions.collapseAllGroups')}
                         </button>
                     </div>
                 )}
@@ -542,42 +639,74 @@ export default function DecisionsPage() {
                                         </div>
                                     </div>
 
-                                    {/* Domain groups within assignee column */}
+                                    {/* Topic groups within assignee column */}
                                     {totalItems === 0 ? (
                                         <div className="p-4 text-center text-xs text-theme-text-muted border border-dashed border-theme-border rounded-2xl">
                                             No decisions
                                         </div>
+                                    ) : viewMode === 'flat' ? (
+                                        <div className="grid grid-cols-1 gap-3">
+                                            {groups.flatMap(g => g.items).map((decision) => (
+                                                <DecisionCard
+                                                    key={decision.id}
+                                                    decision={decision}
+                                                    isExpanded={expandedIds.has(decision.id)}
+                                                    onToggleExpand={() => toggleExpand(decision.id)}
+                                                    onStatusChange={handleStatusChange}
+                                                    onLockChange={handleLockChange}
+                                                    isNew={isNewItem(decision.created_at)}
+                                                    translatedText={textMap.get(decision.id)}
+                                                    onDragStart={(e) => handleDragStart(e, decision.id)}
+                                                />
+                                            ))}
+                                        </div>
                                     ) : (
-                                        groups.map((group) => (
-                                            <div key={group.label}>
-                                                {/* Domain sub-header */}
-                                                <div className="glass-card p-3 mb-2 flex items-center justify-between">
-                                                    <div className="flex items-center gap-2">
-                                                        <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${DOMAIN_STYLE[group.label]}`}>
-                                                            {group.label}
-                                                        </span>
-                                                    </div>
-                                                    <span className="text-xs text-theme-text-tertiary font-medium">{group.items.length}</span>
-                                                </div>
+                                        <div className="space-y-3">
+                                            {groups.map((group) => {
+                                                const displayLabel = group.label ?? t('decisions.ungrouped');
+                                                const groupKey = `${assignee.name}::${displayLabel}`;
+                                                const isCollapsed = collapsedGroups.has(groupKey);
 
-                                                {/* Decision cards */}
-                                                <div className="grid grid-cols-1 gap-3">
-                                                    {group.items.map((decision) => (
-                                                        <DecisionCard
-                                                            key={decision.id}
-                                                            decision={decision}
-                                                            isExpanded={expandedIds.has(decision.id)}
-                                                            onToggleExpand={() => toggleExpand(decision.id)}
-                                                            onStatusChange={handleStatusChange}
-                                                            onLockChange={handleLockChange}
-                                                            isNew={isNewItem(decision.created_at)}
-                                                            translatedText={textMap.get(decision.id)}
-                                                            onDragStart={(e) => handleDragStart(e, decision.id)}
-                                                        />
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        ))
+                                                return (
+                                                    <div key={groupKey} className={`border-l-2 ${group.label === null ? 'border-theme-text-muted/30' : 'border-brand-500/30'} rounded-xl overflow-hidden`}>
+                                                        <button
+                                                            onClick={() => toggleGroup(groupKey)}
+                                                            className="w-full flex items-center justify-between px-4 py-2.5
+                                                                bg-theme-overlay hover:bg-theme-muted
+                                                                transition-colors cursor-pointer"
+                                                        >
+                                                            <div className="flex items-center gap-2">
+                                                                <span
+                                                                    className="text-xs text-theme-text-muted transition-transform duration-200"
+                                                                    style={{ display: 'inline-block', transform: isCollapsed ? 'rotate(0deg)' : 'rotate(90deg)' }}
+                                                                >
+                                                                    &#9654;
+                                                                </span>
+                                                                <span className={`text-sm font-semibold ${group.label === null ? 'text-theme-text-muted' : 'text-theme-text-primary'}`}>{displayLabel}</span>
+                                                            </div>
+                                                            <span className="text-xs text-theme-text-tertiary">{group.items.length}</span>
+                                                        </button>
+                                                        {!isCollapsed && (
+                                                            <div className="grid grid-cols-1 gap-3 p-2 pt-2">
+                                                                {group.items.map((decision) => (
+                                                                    <DecisionCard
+                                                                        key={decision.id}
+                                                                        decision={decision}
+                                                                        isExpanded={expandedIds.has(decision.id)}
+                                                                        onToggleExpand={() => toggleExpand(decision.id)}
+                                                                        onStatusChange={handleStatusChange}
+                                                                        onLockChange={handleLockChange}
+                                                                        isNew={isNewItem(decision.created_at)}
+                                                                        translatedText={textMap.get(decision.id)}
+                                                                        onDragStart={(e) => handleDragStart(e, decision.id)}
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     )}
                                 </div>
                             );
@@ -663,6 +792,16 @@ export default function DecisionsPage() {
                                     onChange={(e) => setNewContext(e.target.value)}
                                     className="input-glow w-full text-sm min-h-[60px] resize-y"
                                     placeholder={t('decisions.create.contextPlaceholder')}
+                                />
+                            </div>
+                            <div>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('decisions.create.topicLabel')}</label>
+                                <input
+                                    type="text"
+                                    value={newTopic}
+                                    onChange={(e) => setNewTopic(e.target.value)}
+                                    className="input-glow w-full text-sm"
+                                    placeholder={t('decisions.create.topicPlaceholder')}
                                 />
                             </div>
                             <div className="grid grid-cols-3 gap-3">

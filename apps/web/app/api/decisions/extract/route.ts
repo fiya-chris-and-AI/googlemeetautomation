@@ -42,6 +42,22 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Transcript not found' }, { status: 404 });
         }
 
+        // Guard: skip if this transcript already has decisions (prevents duplicates
+        // from repeated manual extraction clicks)
+        const { data: existing, count: existingCount } = await supabase
+            .from('decisions')
+            .select('*', { count: 'exact' })
+            .eq('transcript_id', transcript_id);
+
+        if ((existingCount ?? 0) > 0) {
+            return NextResponse.json({
+                decisions: existing ?? [],
+                count: existingCount ?? 0,
+                skipped: true,
+                message: `Transcript already has ${existingCount} decisions — skipping re-extraction`,
+            });
+        }
+
         // 2. Call Gemini to extract decisions
         const geminiKey = process.env.GEMINI_API_KEY;
         if (!geminiKey) {
