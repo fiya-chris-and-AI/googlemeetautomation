@@ -541,8 +541,8 @@ export default function DecisionsPage() {
                     <button
                         onClick={() => setViewMode('grouped')}
                         className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${viewMode === 'grouped'
-                                ? 'bg-brand-500/20 text-brand-400'
-                                : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            ? 'bg-brand-500/20 text-brand-400'
+                            : 'text-theme-text-muted hover:text-theme-text-secondary'
                             }`}
                     >
                         {t('decisions.view.grouped')}
@@ -550,40 +550,40 @@ export default function DecisionsPage() {
                     <button
                         onClick={() => setViewMode('flat')}
                         className={`px-3 py-1 text-xs font-medium rounded-md transition-colors ${viewMode === 'flat'
-                                ? 'bg-brand-500/20 text-brand-400'
-                                : 'text-theme-text-muted hover:text-theme-text-secondary'
+                            ? 'bg-brand-500/20 text-brand-400'
+                            : 'text-theme-text-muted hover:text-theme-text-secondary'
                             }`}
                     >
                         {t('decisions.view.flat')}
                     </button>
                 </div>
                 {decisions.length > 0 && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
                         <button
                             onClick={expandAll}
-                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                            className="px-3 py-1 text-xs font-medium rounded-md transition-colors text-theme-text-muted hover:text-theme-text-secondary"
                         >
                             {t('decisions.expandAll')}
                         </button>
                         <button
                             onClick={collapseAll}
-                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                            className="px-3 py-1 text-xs font-medium rounded-md transition-colors text-theme-text-muted hover:text-theme-text-secondary"
                         >
                             {t('decisions.collapseAll')}
                         </button>
                     </div>
                 )}
                 {viewMode === 'grouped' && allGroupKeys.length > 0 && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
                         <button
                             onClick={expandAllGroups}
-                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                            className="px-3 py-1 text-xs font-medium rounded-md transition-colors text-theme-text-muted hover:text-theme-text-secondary"
                         >
                             {t('decisions.expandAllGroups')}
                         </button>
                         <button
                             onClick={collapseAllGroups}
-                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                            className="px-3 py-1 text-xs font-medium rounded-md transition-colors text-theme-text-muted hover:text-theme-text-secondary"
                         >
                             {t('decisions.collapseAllGroups')}
                         </button>
