@@ -95,6 +95,8 @@ export async function POST(req: NextRequest) {
             source_text: item.source_text,
             group_label: item.group_label,
             created_by: item.created_by,
+            screenshot_alt: item.screenshot_alt ?? null,
+            categories: [] as string[],
         }));
 
         const results = await generatePromptsForBatch(

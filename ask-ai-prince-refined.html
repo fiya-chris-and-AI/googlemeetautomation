@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask AI — Little Prince · ScienceExperts Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── ScienceExperts.ai Design Tokens ── */
+  :root {
+    --bg: #121212;
+    --bg-card: #2a2a2a;
+    --bg-muted: #323232;
+    --bg-overlay: #202020;
+    --border: rgba(255,255,255,0.08);
+    --border-card: rgba(255,255,255,0.06);
+
+    --brand-500: #D94A4A;
+    --brand-600: #C43E3E;
+    --brand-700: #b91c1c;
+    --brand-400: #e06060;
+    --brand-glow: rgba(217, 74, 74, 0.15);
+
+    --teal: #06b6d4;
+    --violet: #8b5cf6;
+    --amber: #f59e0b;
+    --emerald: #22c55e;
+    --blue: #3b82f6;
+
+    --text-primary: #f0f0f0;
+    --text-secondary: rgba(255,255,255,0.6);
+    --text-tertiary: rgba(255,255,255,0.35);
+
+    --radius-full: 9999px;
+    --radius-xl: 16px;
+    --radius-lg: 12px;
+    --radius-md: 8px;
+
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --transition: 200ms ease-out;
+
+    /* Prince character palette (muted to fit dark UI) */
+    --prince-gold: #D4A843;
+    --prince-green: #5A9B6C;
+    --prince-skin: #F0D0A8;
+    --prince-scarf: #C4A035;
+    --prince-hair: #D4A843;
+    --prince-eye: #e0e0e0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Page Layout ── */
+  .page-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 20px;
+  }
+  .page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+  .page-header p {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+  .brand-bar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: var(--brand-500);
+    border-radius: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .grid {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 24px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── Card (glass-card style) ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    padding: 20px;
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    overflow: visible;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .card-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 2px;
+  }
+  .card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .card-desc {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+
+  .btn-area {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 8px;
+    min-height: 100px;
+    align-items: flex-end;
+  }
+
+  /* ── Shared button reset ── */
+  .ask-btn {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
+  }
+  .ask-btn:focus-visible {
+    box-shadow: 0 0 0 2px var(--brand-500);
+  }
+
+  /* ── Prince SVG characters (refined, cleaner lines for dark UI) ── */
+  .prince-svg {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  }
+
+  /* ========================================
+     VARIATION A — Brand CTA + Full Body Right
+     The primary "btn-primary" style pill
+     ======================================== */
+  .btn-a {
+    background: var(--brand-500);
+    color: #fff;
+    border-radius: var(--radius-full);
+    padding: 10px 22px;
+    box-shadow: 0 2px 8px var(--brand-glow);
+  }
+  .btn-a:hover {
+    background: var(--brand-600);
+    box-shadow: 0 4px 16px var(--brand-glow);
+  }
+  .btn-a:hover .peek-a { transform: translateY(-8px) rotate(-3deg); }
+  .peek-a {
+    position: absolute;
+    top: -44px;
+    right: -6px;
+    width: 46px;
+    height: 58px;
+  }
+
+  /* ========================================
+     VARIATION B — Face & Scarf, Top Center, Brand Pill
+     ======================================== */
+  .btn-b {
+    background: var(--brand-500);
+    color: #fff;
+    border-radius: var(--radius-full);
+    padding: 10px 22px;
+    box-shadow: 0 2px 8px var(--brand-glow);
+  }
+  .btn-b:hover {
+    background: var(--brand-600);
+    box-shadow: 0 4px 16px var(--brand-glow);
+  }
+  .btn-b:hover .peek-b { transform: translateX(-50%) translateY(-7px); }
+  .peek-b {
+    position: absolute;
+    top: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+  }
+
+  /* ========================================
+     VARIATION C — Ghost/Outlined + Face Left
+     ======================================== */
+  .btn-c {
+    background: transparent;
+    color: var(--brand-400);
+    border: 1.5px solid rgba(217, 74, 74, 0.3);
+    border-radius: var(--radius-full);
+    padding: 9px 22px;
+  }
+  .btn-c:hover {
+    background: rgba(217, 74, 74, 0.08);
+    border-color: rgba(217, 74, 74, 0.5);
+  }
+  .btn-c:hover .peek-c { transform: translateY(-6px) rotate(4deg); }
+  .peek-c {
+    position: absolute;
+    top: -30px;
+    left: -4px;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* ========================================
+     VARIATION D — Muted Surface + Full Body Left Lean
+     ======================================== */
+  .btn-d {
+    background: var(--bg-muted);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 10px 22px;
+  }
+  .btn-d:hover {
+    background: #3a3a3a;
+    border-color: rgba(255,255,255,0.12);
+  }
+  .btn-d:hover .peek-d { transform: translateY(-10px) rotate(-7deg); }
+  .peek-d {
+    position: absolute;
+    top: -50px;
+    left: -12px;
+    width: 48px;
+    height: 62px;
+    transform-origin: bottom center;
+  }
+
+  /* ========================================
+     VARIATION E — Teal accent badge-style + Face Right
+     ======================================== */
+  .btn-e {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--teal);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 10px 22px;
+    ring: 1px solid rgba(6, 182, 212, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(6, 182, 212, 0.2);
+  }
+  .btn-e:hover {
+    background: rgba(6, 182, 212, 0.15);
+    box-shadow: inset 0 0 0 1px rgba(6, 182, 212, 0.35);
+  }
+  .btn-e:hover .peek-e { transform: translateY(-6px) rotate(-3deg); }
+  .peek-e {
+    position: absolute;
+    top: -30px;
+    right: -4px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ========================================
+     VARIATION F — Face Scarf, Rounded-XL card-embedded
+     Simulates how it might look inside a card/panel
+     ======================================== */
+  .card-f { padding: 0; overflow: hidden; }
+  .card-f .card-label, .card-f .card-title { padding: 20px 20px 0; }
+  .card-f .card-desc { padding: 0 20px 20px; }
+
+  .embed-panel {
+    background: var(--bg-overlay);
+    border-top: 1px solid var(--border);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .embed-hint {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 400;
+  }
+  .btn-f {
+    background: var(--brand-500);
+    color: #fff;
+    border-radius: var(--radius-full);
+    padding: 8px 18px;
+    font-size: 12px;
+    box-shadow: 0 2px 8px var(--brand-glow);
+  }
+  .btn-f:hover {
+    background: var(--brand-600);
+    box-shadow: 0 4px 16px var(--brand-glow);
+  }
+  .btn-f:hover .peek-f { transform: translateX(-50%) translateY(-7px) scale(1.05); }
+  .peek-f {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ========================================
+     VARIATION G — FAB circle (bottom-right style)
+     ======================================== */
+  .card-g-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 0 8px;
+  }
+  .btn-g {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--brand-500);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px var(--brand-glow);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: all var(--transition);
+    position: relative;
+  }
+  .btn-g:hover {
+    background: var(--brand-600);
+    box-shadow: 0 6px 24px rgba(217, 74, 74, 0.3);
+    transform: scale(1.05);
+  }
+  .btn-g:hover .peek-g { transform: translateX(-50%) translateY(-8px); }
+  .peek-g {
+    position: absolute;
+    top: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 38px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  }
+  .fab-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+  }
+
+  /* ========================================
+     VARIATION H — Wide inline bar (banner)
+     Simulates placement in a transcript or action-items view
+     ======================================== */
+  .card-h {
+    grid-column: 1 / -1;
+    padding: 0;
+    overflow: hidden;
+  }
+  .card-h .card-label, .card-h .card-title { padding: 20px 20px 0; }
+  .card-h .card-desc { padding: 0 20px 16px; }
+
+  .banner-bar {
+    background: var(--bg-overlay);
+    border-top: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .banner-context {
+    flex: 1;
+    min-width: 200px;
+  }
+  .banner-context .ctx-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+  }
+  .banner-context .ctx-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+  .btn-h {
+    background: var(--brand-500);
+    color: #fff;
+    border-radius: var(--radius-full);
+    padding: 10px 22px;
+    font-size: 13px;
+    box-shadow: 0 2px 8px var(--brand-glow);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all var(--transition);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-h:hover {
+    background: var(--brand-600);
+    box-shadow: 0 4px 16px var(--brand-glow);
+  }
+  .btn-h:hover .peek-h { transform: translateX(-50%) translateY(-7px); }
+  .peek-h {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  }
+
+  /* ── Sparkle icon (inline SVG for button) ── */
+  .icon-sparkle {
+    width: 14px;
+    height: 14px;
+    opacity: 0.8;
+  }
+
+  svg { display: block; }
+</style>
+</head>
+<body>
+
+<!-- ── Reusable SVG Symbols ── -->
+<svg style="position:absolute;width:0;height:0" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <!-- Full body prince (cleaner, slightly more geometric for UI context) -->
+  <symbol id="prince-full" viewBox="0 0 80 100">
+    <path d="M38 38 Q30 50 26 62" stroke="#C4A035" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M36 40 Q28 48 22 58" stroke="#D4B045" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55"/>
+    <path d="M32 40 Q30 55 28 75 L52 75 Q50 55 48 40 Z" fill="#4A8B5C"/>
+    <path d="M32 40 Q30 55 28 75 L40 75 L40 40 Z" fill="rgba(0,0,0,0.12)"/>
+    <rect x="31" y="56" width="18" height="2.5" rx="1.25" fill="#C4A035" opacity="0.6"/>
+    <ellipse cx="34" cy="77" rx="7" ry="3.5" fill="#3D3530"/>
+    <ellipse cx="46" cy="77" rx="7" ry="3.5" fill="#3D3530"/>
+    <path d="M32 44 Q24 48 20 46" stroke="#4A8B5C" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M48 44 Q56 48 60 46" stroke="#4A8B5C" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <circle cx="19" cy="45" r="2.5" fill="#F0D0A8"/>
+    <circle cx="61" cy="45" r="2.5" fill="#F0D0A8"/>
+    <ellipse cx="40" cy="36" rx="5.5" ry="3.5" fill="#C4A035"/>
+    <circle cx="40" cy="24" r="13" fill="#F0D0A8"/>
+    <path d="M27 20 Q29 9 40 7 Q51 9 53 20 Q55 14 51 10 Q46 5 40 4 Q34 5 29 10 Q25 14 27 20Z" fill="#D4A843"/>
+    <path d="M27 22 Q25 16 29 12" stroke="#C09030" stroke-width="1.2" fill="none"/>
+    <path d="M53 22 Q55 16 51 12" stroke="#C09030" stroke-width="1.2" fill="none"/>
+    <path d="M37 9 Q40 5 43 9" stroke="#E0B84D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="36" cy="23" r="1.6" fill="#2C3040"/>
+    <circle cx="44" cy="23" r="1.6" fill="#2C3040"/>
+    <circle cx="36.5" cy="22.4" r="0.5" fill="#fff" opacity="0.5"/>
+    <circle cx="44.5" cy="22.4" r="0.5" fill="#fff" opacity="0.5"/>
+    <path d="M38 28 Q40 31 42 28" stroke="#C08060" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <circle cx="31" cy="26" r="2.5" fill="#D08070" opacity="0.15"/>
+    <circle cx="49" cy="26" r="2.5" fill="#D08070" opacity="0.15"/>
+  </symbol>
+
+  <!-- Face + scarf only -->
+  <symbol id="prince-face" viewBox="0 0 70 70">
+    <path d="M32 46 Q24 54 18 62" stroke="#C4A035" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+    <path d="M30 48 Q22 54 15 58" stroke="#D4B045" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <path d="M38 46 Q44 54 50 60" stroke="#C4A035" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+    <ellipse cx="35" cy="44" rx="6.5" ry="4" fill="#C4A035"/>
+    <ellipse cx="35" cy="43" rx="4.5" ry="2.5" fill="#D4B045" opacity="0.4"/>
+    <circle cx="35" cy="28" r="16" fill="#F0D0A8"/>
+    <path d="M19 24 Q21 10 35 7 Q49 10 51 24 Q53 16 49 12 Q44 5 35 4 Q26 5 21 12 Q17 16 19 24Z" fill="#D4A843"/>
+    <path d="M19 26 Q17 18 22 13" stroke="#C09030" stroke-width="1.2" fill="none"/>
+    <path d="M51 26 Q53 18 48 13" stroke="#C09030" stroke-width="1.2" fill="none"/>
+    <path d="M30 10 Q35 5 40 10" stroke="#E0B84D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M28 8 Q26 3 30 5" stroke="#E0B84D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <circle cx="30" cy="27" r="2" fill="#2C3040"/>
+    <circle cx="41" cy="27" r="2" fill="#2C3040"/>
+    <circle cx="30.6" cy="26.2" r="0.6" fill="#fff" opacity="0.5"/>
+    <circle cx="41.6" cy="26.2" r="0.6" fill="#fff" opacity="0.5"/>
+    <path d="M32 34 Q35 37 39 34" stroke="#C08060" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <circle cx="24" cy="31" r="3" fill="#D08070" opacity="0.13"/>
+    <circle cx="47" cy="31" r="3" fill="#D08070" opacity="0.13"/>
+  </symbol>
+
+  <!-- Sparkle 4-point star -->
+  <symbol id="sparkle" viewBox="0 0 16 16">
+    <path d="M8 0 L9.5 6 L16 8 L9.5 10 L8 16 L6.5 10 L0 8 L6.5 6 Z" fill="currentColor"/>
+  </symbol>
+</defs>
+</svg>
+
+<div class="page-header">
+  <h1><span class="brand-bar"></span>Ask AI — Peeking Prince Variations</h1>
+  <p>Matched to ScienceExperts.ai design system · hover each button</p>
+</div>
+
+<div class="grid">
+
+  <!-- A: Brand pill + full body right -->
+  <div class="card">
+    <div class="card-label">Variation A</div>
+    <div class="card-title">Brand Pill — Full Body Right</div>
+    <div class="btn-area">
+      <button class="ask-btn btn-a">
+        <svg class="icon-sparkle" viewBox="0 0 16 16"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-a" viewBox="0 0 80 100"><use href="#prince-full"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">Primary CTA style matching btn-primary. Full prince peeks from the right edge with a subtle lean on hover.</p>
+  </div>
+
+  <!-- B: Brand pill + face center -->
+  <div class="card">
+    <div class="card-label">Variation B</div>
+    <div class="card-title">Brand Pill — Face Center</div>
+    <div class="btn-area">
+      <button class="ask-btn btn-b">
+        <svg class="icon-sparkle" viewBox="0 0 16 16"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-b" viewBox="0 0 70 70"><use href="#prince-face"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">Same primary pill, but just the face and scarf peeking from top center. Clean and compact — scarf tails add motion.</p>
+  </div>
+
+  <!-- C: Ghost/outlined + face left -->
+  <div class="card">
+    <div class="card-label">Variation C</div>
+    <div class="card-title">Ghost Outlined — Face Left</div>
+    <div class="btn-area">
+      <button class="ask-btn btn-c">
+        <svg class="icon-sparkle" viewBox="0 0 16 16"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-c" viewBox="0 0 70 70"><use href="#prince-face"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">Ghost button with brand-colored ring. Face peeks from the left — good for secondary CTAs or inline placement.</p>
+  </div>
+
+  <!-- D: Muted surface + full body left lean -->
+  <div class="card">
+    <div class="card-label">Variation D</div>
+    <div class="card-title">Muted Surface — Full Body Lean</div>
+    <div class="btn-area">
+      <button class="ask-btn btn-d">
+        <svg class="icon-sparkle" viewBox="0 0 16 16" style="opacity:0.4"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-d" viewBox="0 0 80 100"><use href="#prince-full"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">Neutral surface button. The prince leans in curiously from the left on hover — like he's reading what you typed.</p>
+  </div>
+
+  <!-- E: Teal badge-style + face right -->
+  <div class="card">
+    <div class="card-label">Variation E</div>
+    <div class="card-title">Teal Badge — Face Right</div>
+    <div class="btn-area">
+      <button class="ask-btn btn-e">
+        <svg class="icon-sparkle" viewBox="0 0 16 16"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-e" viewBox="0 0 70 70"><use href="#prince-face"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">Uses the teal semantic accent with ring-1 badge pattern. Face and scarf peek from the right. Good for AI-specific actions.</p>
+  </div>
+
+  <!-- F: Card-embedded panel -->
+  <div class="card card-f">
+    <div class="card-label">Variation F</div>
+    <div class="card-title">Embedded Panel — Face Center</div>
+    <div class="embed-panel">
+      <span class="embed-hint">Need help understanding this transcript?</span>
+      <button class="ask-btn btn-f">
+        <svg class="icon-sparkle" viewBox="0 0 16 16"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-f" viewBox="0 0 70 70"><use href="#prince-face"/></svg>
+      </button>
+    </div>
+    <p class="card-desc">Shows how the button might sit inside a panel footer — like at the bottom of a transcript card or action-items list.</p>
+  </div>
+
+  <!-- G: FAB circle -->
+  <div class="card">
+    <div class="card-label">Variation G</div>
+    <div class="card-title">FAB Circle</div>
+    <div class="btn-area" style="align-items:center;">
+      <div class="card-g-inner">
+        <button class="btn-g">
+          <svg class="icon-sparkle" viewBox="0 0 16 16" style="width:20px;height:20px"><use href="#sparkle"/></svg>
+          <svg class="prince-svg peek-g" viewBox="0 0 70 70"><use href="#prince-face"/></svg>
+        </button>
+        <span class="fab-label">Ask AI</span>
+      </div>
+    </div>
+    <p class="card-desc">Floating action button for bottom-right placement. Face hovers above the circle. Brand-red glow on hover.</p>
+  </div>
+
+  <!-- H: Wide banner bar -->
+  <div class="card card-h">
+    <div class="card-label">Variation H</div>
+    <div class="card-title" style="padding-bottom:0;">Inline Banner</div>
+    <p class="card-desc">Full-width bar for transcript or meeting detail views. The prince face floats above the CTA in context.</p>
+    <div class="banner-bar">
+      <div class="banner-context">
+        <div class="ctx-label">AI Assistant</div>
+        <div class="ctx-text">Summarize this meeting, extract action items, or ask anything about the transcript.</div>
+      </div>
+      <button class="btn-h">
+        <svg class="icon-sparkle" viewBox="0 0 16 16"><use href="#sparkle"/></svg>
+        Ask AI
+        <svg class="prince-svg peek-h" viewBox="0 0 70 70"><use href="#prince-face"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.style.transform = (this.style.transform || '') + ' scale(0.96)';
+      setTimeout(() => { this.style.transform = ''; }, 150);
+    });
+  });
+</script>
+</body>
+</html>

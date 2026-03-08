@@ -1,7 +1,7 @@
 export type { MeetingTranscript, TranscriptChunk, ProcessingLogEntry } from './types.js';
 export type { QueryRequest, QueryResponse, SourceChunk } from './types.js';
 export type { ExtractionMethod, LogStatus, SourceType } from './types.js';
-export type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort, ActionItemCreatedBy } from './types.js';
+export type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort, ActionItemCreatedBy, Category } from './types.js';
 export type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus, DecisionCreatedBy, RawExtractedDecision } from './types.js';
 export type { ActivityLogEntry } from './types.js';
 export type { DayMeetingSummary, ScoreboardMetrics, CumulativeStats } from './types.js';
@@ -28,3 +28,8 @@ export {
     generatePromptsForBatch,
 } from './generate-action-prompt';
 export type { ActionItemForPrompt, PromptContext, GeneratedPrompt } from './generate-action-prompt';
+export {
+    generateCombinedPrompt,
+    validateItemsCombination,
+} from './generate-combined-prompt';
+export type { GeneratedCombinedPrompt, ValidationResult } from './generate-combined-prompt';

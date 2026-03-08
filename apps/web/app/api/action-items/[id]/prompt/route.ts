@@ -152,6 +152,18 @@ export async function POST(req: NextRequest, { params }: RouteContext) {
         feedbackHistory.push({ version: item.prompt_version, feedback: item.prompt_feedback });
     }
 
+    // Fetch categories for this item
+    const categoryNames: string[] = [];
+    const { data: catRows } = await supabase
+        .from('action_item_categories')
+        .select('category:categories(name)')
+        .eq('action_item_id', id);
+    if (catRows) {
+        for (const row of catRows) {
+            if ((row as any).category?.name) categoryNames.push((row as any).category.name);
+        }
+    }
+
     // 3. Generate the prompt
     const actionItemForPrompt: ActionItemForPrompt = {
         id: item.id,
@@ -164,6 +176,8 @@ export async function POST(req: NextRequest, { params }: RouteContext) {
         source_text: item.source_text,
         group_label: item.group_label,
         created_by: item.created_by,
+        screenshot_alt: item.screenshot_alt ?? null,
+        categories: categoryNames,
     };
 
     const context: PromptContext = {

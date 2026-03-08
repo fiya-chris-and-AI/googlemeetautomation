@@ -2,12 +2,17 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
-import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort } from '@meet-pipeline/shared';
+import type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort, Category } from '@meet-pipeline/shared';
 import { useTranslation } from '../../lib/use-translation';
 import { useLocale } from '../../lib/locale';
 import { LockButton } from '../../components/lock-button';
 import { TTLBadge } from '../../components/ttl-badge';
 import { ActionPrompt } from '../../components/action-prompt';
+import { CategoryCombobox } from '../../components/category-combobox';
+import { PowerPromptModal } from '../../components/power-prompt-modal';
+import type { PowerPromptData } from '../../components/power-prompt-modal';
+import { ScreenshotUpload } from '../../components/screenshot-upload';
+import { ScreenshotLightbox } from '../../components/screenshot-lightbox';
 
 const COLUMNS: { key: ActionItemStatus; labelKey: string; color: string }[] = [
     { key: 'open', labelKey: 'actionItems.status.open', color: 'from-amber-500 to-amber-600' },
@@ -78,6 +83,17 @@ export default function ActionItemsPage() {
     const [viewMode, setViewMode] = useState<'grouped' | 'flat'>('grouped');
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
 
+    // Category state
+    const [allCategories, setAllCategories] = useState<Category[]>([]);
+    const [categoryFilter, setCategoryFilter] = useState('all');
+    const [newCategories, setNewCategories] = useState<Category[]>([]);
+
+    // Selection state for Power Prompt
+    const [selectedItemIds, setSelectedItemIds] = useState<Set<string>>(new Set());
+    const [showPowerPromptModal, setShowPowerPromptModal] = useState(false);
+    const [powerPromptData, setPowerPromptData] = useState<PowerPromptData | null>(null);
+    const [powerPromptLoading, setPowerPromptLoading] = useState(false);
+
     const { t, locale } = useLocale();
 
     const fetchItems = async () => {
@@ -92,8 +108,33 @@ export default function ActionItemsPage() {
         }
     };
 
+    const fetchCategories = async () => {
+        try {
+            const r = await fetch('/api/categories');
+            const data = await r.json();
+            if (Array.isArray(data)) setAllCategories(data);
+        } catch { /* silently fail */ }
+    };
+
+    const handleCreateCategory = async (name: string): Promise<Category | null> => {
+        try {
+            const res = await fetch('/api/categories', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name }),
+            });
+            if (res.ok) {
+                const cat = await res.json() as Category;
+                setAllCategories(prev => [cat, ...prev]);
+                return cat;
+            }
+        } catch { /* silently fail */ }
+        return null;
+    };
+
     useEffect(() => {
         fetchItems();
+        fetchCategories();
     }, []);
 
     // Derive unique assignees from data
@@ -115,6 +156,10 @@ export default function ActionItemsPage() {
             if (effortFilter !== 'all' && i.effort !== effortFilter) return false;
             if (sourceFilter === 'ai' && i.created_by !== 'ai') return false;
             if (sourceFilter === 'manual' && i.created_by !== 'manual') return false;
+            if (categoryFilter !== 'all') {
+                const cats = i.categories ?? [];
+                if (!cats.some(c => c.id === categoryFilter)) return false;
+            }
             if (search) {
                 const q = search.toLowerCase();
                 const inTitle = i.title.toLowerCase().includes(q);
@@ -123,7 +168,7 @@ export default function ActionItemsPage() {
             }
             return true;
         });
-    }, [items, assigneeFilter, priorityFilter, effortFilter, sourceFilter, duplicateFilter, search]);
+    }, [items, assigneeFilter, priorityFilter, effortFilter, sourceFilter, duplicateFilter, categoryFilter, search]);
 
     // Apply lock filter on top of baseFiltered
     const filtered = useMemo(() => {
@@ -319,6 +364,7 @@ export default function ActionItemsPage() {
                     effort: newEffort || null,
                     due_date: newDueDate || null,
                     created_by: 'manual',
+                    category_ids: newCategories.map(c => c.id),
                 }),
             });
             const created = (await res.json()) as ActionItem;
@@ -331,6 +377,7 @@ export default function ActionItemsPage() {
                 setNewPriority('medium');
                 setNewEffort('');
                 setNewDueDate('');
+                setNewCategories([]);
             }
         } catch { /* silently fail */ }
     };
@@ -359,6 +406,80 @@ export default function ActionItemsPage() {
         if (!item.due_date || item.status === 'done') return false;
         return new Date(item.due_date) < new Date();
     };
+
+    // ── Selection helpers ──────────────────────────
+
+    const toggleItemSelection = (id: string) => {
+        setSelectedItemIds(prev => {
+            const next = new Set(prev);
+            if (next.has(id)) next.delete(id);
+            else next.add(id);
+            return next;
+        });
+    };
+
+    const selectAllVisible = () => {
+        const ids = new Set(filtered.map(i => i.id));
+        setSelectedItemIds(ids);
+    };
+
+    const deselectAll = () => setSelectedItemIds(new Set());
+
+    const generatePowerPrompt = async () => {
+        const ids = Array.from(selectedItemIds);
+        if (ids.length < 2) return;
+        setPowerPromptLoading(true);
+        try {
+            const res = await fetch('/api/action-items/power-prompt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ itemIds: ids }),
+            });
+            const data = await res.json();
+            if (res.ok) {
+                const selectedItems = items.filter(i => selectedItemIds.has(i.id));
+                setPowerPromptData({
+                    ...data,
+                    itemTitles: selectedItems.map(i => i.title),
+                });
+                setShowPowerPromptModal(true);
+            }
+        } catch { /* silently fail */ }
+        setPowerPromptLoading(false);
+    };
+
+    // ── Keyboard shortcuts ────────────────────────
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const metaOrCtrl = e.metaKey || e.ctrlKey;
+
+            // Ctrl/Cmd+A → select all visible
+            if (metaOrCtrl && e.key === 'a' && !e.shiftKey) {
+                const active = document.activeElement;
+                const isInInput = active instanceof HTMLInputElement ||
+                    active instanceof HTMLTextAreaElement ||
+                    active instanceof HTMLSelectElement;
+                if (!isInInput) {
+                    e.preventDefault();
+                    selectAllVisible();
+                }
+            }
+
+            // Escape → clear selection
+            if (e.key === 'Escape' && selectedItemIds.size > 0) {
+                deselectAll();
+            }
+
+            // Ctrl/Cmd+Enter → generate power prompt
+            if (metaOrCtrl && e.key === 'Enter' && selectedItemIds.size >= 2) {
+                e.preventDefault();
+                generatePowerPrompt();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [selectedItemIds, filtered]);
 
     // Translate all action item titles in one batch
     const allTitles = useMemo(() => items.map((i) => i.title), [items]);
@@ -526,6 +647,15 @@ export default function ActionItemsPage() {
                 >
                     {duplicateFilter === 'shown' ? t('actionItems.filter.hidingDuplicates') : t('actionItems.filter.showDuplicates')}
                 </button>
+                {/* Category filter */}
+                <FilterSelect
+                    value={categoryFilter}
+                    onChange={setCategoryFilter}
+                    options={[
+                        { value: 'all', label: 'All Categories' },
+                        ...allCategories.map(c => ({ value: c.id, label: c.name })),
+                    ]}
+                />
                 {/* View mode toggle */}
                 <div className="flex items-center gap-1 bg-theme-overlay rounded-lg p-0.5">
                     <button
@@ -642,6 +772,8 @@ export default function ActionItemsPage() {
                                                                 onLockChange={handleLockChange}
                                                                 translatedTitle={titleMap.get(item.id)}
                                                                 onDragStart={(e) => handleDragStart(e, item.id)}
+                                                                isSelected={selectedItemIds.has(item.id)}
+                                                                onToggleSelect={() => toggleItemSelection(item.id)}
                                                             />
                                                         ))}
                                                     </div>
@@ -689,6 +821,8 @@ export default function ActionItemsPage() {
                                                                                     onLockChange={handleLockChange}
                                                                                     translatedTitle={titleMap.get(item.id)}
                                                                                     onDragStart={(e) => handleDragStart(e, item.id)}
+                                                                                    isSelected={selectedItemIds.has(item.id)}
+                                                                                    onToggleSelect={() => toggleItemSelection(item.id)}
                                                                                 />
                                                                             ))}
                                                                         </div>
@@ -730,6 +864,8 @@ export default function ActionItemsPage() {
                                         onLockChange={handleLockChange}
                                         translatedTitle={titleMap.get(item.id)}
                                         onDragStart={(e) => handleDragStart(e, item.id)}
+                                        isSelected={selectedItemIds.has(item.id)}
+                                        onToggleSelect={() => toggleItemSelection(item.id)}
                                     />
                                 ))}
                             </div>
@@ -812,6 +948,15 @@ export default function ActionItemsPage() {
                                     />
                                 </div>
                             </div>
+                            <div>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">Categories</label>
+                                <CategoryCombobox
+                                    selectedCategories={newCategories}
+                                    onChange={setNewCategories}
+                                    availableCategories={allCategories}
+                                    onCreateCategory={handleCreateCategory}
+                                />
+                            </div>
                         </div>
                         <div className="flex justify-end gap-3 mt-6">
                             <button
@@ -830,6 +975,56 @@ export default function ActionItemsPage() {
                         </div>
                     </div>
                 </div>
+            )}
+
+            {/* Floating Action Bar — visible when items are selected */}
+            {selectedItemIds.size > 0 && (
+                <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 animate-slide-up">
+                    <div className="glass-card px-5 py-3 flex items-center gap-4 shadow-2xl border border-brand-500/20">
+                        <span className="text-sm font-medium text-theme-text-primary">
+                            {selectedItemIds.size} selected
+                        </span>
+                        <div className="w-px h-5 bg-theme-border" />
+                        <button
+                            onClick={selectAllVisible}
+                            className="text-xs text-theme-text-secondary hover:text-theme-text-primary transition-colors"
+                        >
+                            Select All ({filtered.length})
+                        </button>
+                        <button
+                            onClick={deselectAll}
+                            className="text-xs text-theme-text-secondary hover:text-theme-text-primary transition-colors"
+                        >
+                            Clear
+                        </button>
+                        <div className="w-px h-5 bg-theme-border" />
+                        <button
+                            onClick={generatePowerPrompt}
+                            disabled={selectedItemIds.size < 2 || powerPromptLoading}
+                            className="btn-primary px-4 py-1.5 text-xs flex items-center gap-2"
+                        >
+                            {powerPromptLoading ? (
+                                <span className="inline-block w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                            ) : (
+                                <span>⚡</span>
+                            )}
+                            {powerPromptLoading ? 'Generating…' : 'Power Prompt'}
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* Power Prompt Modal */}
+            {powerPromptData && (
+                <PowerPromptModal
+                    isOpen={showPowerPromptModal}
+                    onClose={() => setShowPowerPromptModal(false)}
+                    data={powerPromptData}
+                    onClearSelection={() => {
+                        deselectAll();
+                        setShowPowerPromptModal(false);
+                    }}
+                />
             )}
         </div>
     );
@@ -851,6 +1046,8 @@ function ActionItemCard({
     onLockChange,
     translatedTitle,
     onDragStart,
+    isSelected = false,
+    onToggleSelect,
 }: {
     item: ActionItem;
     allItems: ActionItem[];
@@ -865,9 +1062,12 @@ function ActionItemCard({
     onLockChange: (id: string, locked: boolean) => void;
     translatedTitle?: string;
     onDragStart?: (e: React.DragEvent) => void;
+    isSelected?: boolean;
+    onToggleSelect?: () => void;
 }) {
     const { t } = useLocale();
     const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
+    const [showLightbox, setShowLightbox] = useState(false);
 
     // Sync local state when item changes (e.g. after Smart Group)
     useEffect(() => {
@@ -928,12 +1128,29 @@ function ActionItemCard({
 
     return (
         <div
-            className={`glass-card p-4 transition-all duration-200 ${isOverdue ? 'ring-1 ring-rose-500/30' : ''} ${onDragStart ? 'cursor-grab active:cursor-grabbing' : ''}`}
+            className={`glass-card p-4 transition-all duration-200 ${isOverdue ? 'ring-1 ring-rose-500/30' : ''} ${isSelected ? 'ring-1 ring-brand-500/40 bg-brand-500/5' : ''} ${onDragStart ? 'cursor-grab active:cursor-grabbing' : ''}`}
             draggable={!!onDragStart}
             onDragStart={onDragStart}
         >
             {/* Header */}
             <div className="flex items-start gap-2 cursor-pointer" onClick={onToggleExpand}>
+                {/* Selection checkbox */}
+                {onToggleSelect && (
+                    <button
+                        type="button"
+                        onClick={(e) => { e.stopPropagation(); onToggleSelect(); }}
+                        className={`mt-1 flex-shrink-0 w-4 h-4 rounded border transition-all ${isSelected
+                            ? 'bg-brand-500 border-brand-500 text-white'
+                            : 'border-theme-border hover:border-brand-500/50'
+                            }`}
+                    >
+                        {isSelected && (
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                        )}
+                    </button>
+                )}
                 {isNew ? (
                     <span className="relative flex h-2 w-2 shrink-0 mt-1.5" title="New">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -979,6 +1196,30 @@ function ActionItemCard({
                             </span>
                         )}
                         <TTLBadge createdAt={item.created_at} isLocked={item.is_locked} />
+                        {item.screenshot_path && (
+                            <span className="inline-flex items-center px-1 py-0.5 text-[9px] text-theme-text-muted" title="Has screenshot">
+                                📷
+                            </span>
+                        )}
+                        {/* Category pills */}
+                        {item.categories && item.categories.length > 0 && (
+                            <>
+                                {item.categories.slice(0, 3).map((cat) => (
+                                    <span
+                                        key={cat.id}
+                                        className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-medium rounded-full border border-theme-border bg-theme-muted/50 text-theme-text-secondary"
+                                    >
+                                        {cat.color && (
+                                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: cat.color }} />
+                                        )}
+                                        {cat.name}
+                                    </span>
+                                ))}
+                                {item.categories.length > 3 && (
+                                    <span className="text-[9px] text-theme-text-muted">+{item.categories.length - 3}</span>
+                                )}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
@@ -995,6 +1236,22 @@ function ActionItemCard({
                             <p className="text-xs text-theme-text-secondary italic">&ldquo;{item.source_text}&rdquo;</p>
                         </div>
                     )}
+
+                    {/* Screenshot */}
+                    <div>
+                        <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-1">Screenshot</p>
+                        <ScreenshotUpload
+                            screenshotUrl={item.screenshot_url}
+                            screenshotAlt={item.screenshot_alt}
+                            actionItemId={item.id}
+                            onUpdate={(data) => {
+                                // Parent will re-fetch, but let's optimistically mark the card
+                                // by calling a status change with same status to trigger re-render
+                                onStatusChange(item.id, item.status);
+                            }}
+                            onOpenLightbox={() => setShowLightbox(true)}
+                        />
+                    </div>
 
                     {/* Duplicate reference */}
                     {item.is_duplicate && item.duplicate_of && (
@@ -1153,6 +1410,15 @@ function ActionItemCard({
                     onLockChange={(locked) => onLockChange(item.id, locked)}
                 />
             </div>
+
+            {/* Screenshot Lightbox */}
+            {showLightbox && item.screenshot_url && (
+                <ScreenshotLightbox
+                    src={item.screenshot_url}
+                    alt={item.screenshot_alt ?? 'Screenshot'}
+                    onClose={() => setShowLightbox(false)}
+                />
+            )}
         </div>
     );
 }
