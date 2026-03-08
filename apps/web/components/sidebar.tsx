@@ -168,7 +168,7 @@ export function Sidebar() {
                 <Divider />
 
                 {/* Workspace section */}
-                <SectionLabel>Workspace</SectionLabel>
+                <SectionLabel>{t('sidebar.section.workspace')}</SectionLabel>
                 <div className="space-y-0.5">
                     {WORKSPACE_ITEMS.map(renderNavItem)}
                 </div>
@@ -176,7 +176,7 @@ export function Sidebar() {
                 <Divider />
 
                 {/* Intelligence section */}
-                <SectionLabel>Intelligence</SectionLabel>
+                <SectionLabel>{t('sidebar.section.intelligence')}</SectionLabel>
                 <div className="space-y-0.5">
                     {INTELLIGENCE_ITEMS.map(renderNavItem)}
                 </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLocale } from "../../lib/locale";
 
 export default function LoginPage() {
     const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ export default function LoginPage() {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const { t } = useLocale();
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -25,14 +27,14 @@ export default function LoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
-                setError(data.error || "Login failed");
+                setError(data.error || t('login.error.default'));
                 return;
             }
 
             router.push("/");
             router.refresh();
         } catch {
-            setError("Network error — please try again");
+            setError(t('login.error.network'));
         } finally {
             setLoading(false);
         }
@@ -54,14 +56,14 @@ export default function LoginPage() {
                         className="h-16 mx-auto hidden dark:block"
                     />
                     <p className="text-sm text-theme-text-secondary mt-2">
-                        Transcript Pipeline
+                        {t('login.subtitle')}
                     </p>
                 </div>
 
                 {/* Login Card */}
                 <div className="bg-theme-card rounded-xl border border-theme-border shadow-lg p-8">
                     <h1 className="text-2xl font-bold text-theme-text mb-6 text-center">
-                        Sign In
+                        {t('login.title')}
                     </h1>
 
                     {error && (
@@ -76,7 +78,7 @@ export default function LoginPage() {
                                 htmlFor="username"
                                 className="block text-sm font-medium text-theme-text-secondary mb-1.5"
                             >
-                                Username
+                                {t('login.username')}
                             </label>
                             <input
                                 id="username"
@@ -84,7 +86,7 @@ export default function LoginPage() {
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 className="w-full px-4 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-theme-text placeholder-theme-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                                placeholder="Enter username"
+                                placeholder={t('login.username.placeholder')}
                                 required
                                 autoFocus
                             />
@@ -95,7 +97,7 @@ export default function LoginPage() {
                                 htmlFor="password"
                                 className="block text-sm font-medium text-theme-text-secondary mb-1.5"
                             >
-                                Password
+                                {t('login.password')}
                             </label>
                             <input
                                 id="password"
@@ -103,7 +105,7 @@ export default function LoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="w-full px-4 py-2.5 rounded-lg border border-theme-border bg-theme-bg text-theme-text placeholder-theme-text-secondary/50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                                placeholder="Enter password"
+                                placeholder={t('login.password.placeholder')}
                                 required
                             />
                         </div>
@@ -113,7 +115,7 @@ export default function LoginPage() {
                             disabled={loading}
                             className="w-full py-2.5 px-4 bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                         >
-                            {loading ? "Signing in..." : "Sign In"}
+                            {loading ? t('login.button.loading') : t('login.button')}
                         </button>
                     </form>
                 </div>

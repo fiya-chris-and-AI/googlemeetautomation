@@ -4,19 +4,13 @@ import { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import type { QueryResponse, SourceChunk } from '@meet-pipeline/shared';
+import { useLocale } from '../../lib/locale';
 
 interface ChatMessage {
     role: 'user' | 'assistant';
     content: string;
     sources?: SourceChunk[];
 }
-
-const SUGGESTED_QUESTIONS = [
-    'What action items came out of last week\'s meetings?',
-    'Summarize discussions about project deadlines',
-    'What were the key decisions made this month?',
-    'What did the team say about budget planning?',
-];
 
 /**
  * AI Query page — chat-style interface for asking questions
@@ -27,6 +21,14 @@ export default function AskPage() {
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const { t } = useLocale();
+
+    const SUGGESTED_QUESTIONS = [
+        t('ask.suggested.1'),
+        t('ask.suggested.2'),
+        t('ask.suggested.3'),
+        t('ask.suggested.4'),
+    ];
 
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -58,7 +60,7 @@ export default function AskPage() {
         } catch {
             const errorMsg: ChatMessage = {
                 role: 'assistant',
-                content: 'Sorry, I encountered an error processing your question. Please try again.',
+                content: t('ask.error'),
             };
             setMessages((prev) => [...prev, errorMsg]);
         } finally {
@@ -70,8 +72,8 @@ export default function AskPage() {
         <div className="max-w-4xl mx-auto animate-fade-in flex flex-col h-[calc(100vh-4rem)]">
             {/* Header */}
             <div className="mb-6">
-                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">Ask AI</h1>
-                <p className="text-theme-text-tertiary mt-1">Query your meeting history with natural language</p>
+                <h1 className="text-3xl font-bold text-theme-text-primary tracking-tight">{t('ask.title')}</h1>
+                <p className="text-theme-text-tertiary mt-1">{t('ask.subtitle')}</p>
             </div>
 
             {/* Chat Area */}
@@ -82,10 +84,10 @@ export default function AskPage() {
                             <span className="text-3xl">◈</span>
                         </div>
                         <h2 className="text-lg font-semibold text-theme-text-primary mb-2">
-                            Ask anything about your meetings
+                            {t('ask.empty.title')}
                         </h2>
                         <p className="text-sm text-theme-text-tertiary mb-8 max-w-md">
-                            I can search through all your transcripts and provide answers with citations to the original meetings.
+                            {t('ask.empty.description')}
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-lg">
                             {SUGGESTED_QUESTIONS.map((q) => (
@@ -127,7 +129,7 @@ export default function AskPage() {
                             {msg.sources && msg.sources.length > 0 && (
                                 <div className="mt-3 pt-3 border-t border-theme-border">
                                     <p className="text-[10px] text-theme-text-tertiary uppercase tracking-wider mb-2">
-                                        Sources ({msg.sources.length})
+                                        {t('ask.sources')} ({msg.sources.length})
                                     </p>
                                     <div className="space-y-1.5">
                                         {msg.sources.map((s) => (
@@ -160,7 +162,7 @@ export default function AskPage() {
                 <input
                     id="ask-input"
                     type="text"
-                    placeholder="Ask a question about your meetings..."
+                    placeholder={t('ask.input.placeholder')}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
@@ -173,7 +175,7 @@ export default function AskPage() {
                     disabled={loading || !input.trim()}
                     className="btn-primary px-6 py-3"
                 >
-                    Send
+                    {t('ask.send')}
                 </button>
             </div>
         </div>
