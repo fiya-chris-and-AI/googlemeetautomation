@@ -76,7 +76,7 @@ export default function DecisionsPage() {
 
     // Modal + expand state
     const [showCreate, setShowCreate] = useState(false);
-    const [expandedId, setExpandedId] = useState<string | null>(null);
+    const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
 
 
@@ -149,6 +149,19 @@ export default function DecisionsPage() {
         () => decisions.filter((d) => d.status === 'completed'),
         [decisions],
     );
+
+    // ── Expand / Collapse helpers ──
+    const toggleExpand = (id: string) => {
+        setExpandedIds(prev => {
+            const next = new Set(prev);
+            next.has(id) ? next.delete(id) : next.add(id);
+            return next;
+        });
+    };
+
+    const allDecisionIds = useMemo(() => decisions.map(d => d.id), [decisions]);
+    const expandAll = () => setExpandedIds(new Set(allDecisionIds));
+    const collapseAll = () => setExpandedIds(new Set());
 
 
 
@@ -268,8 +281,8 @@ export default function DecisionsPage() {
                 <button
                     onClick={() => setLockFilter(lockFilter === 'locked' ? 'all' : 'locked')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'locked'
-                            ? 'border-amber-500 bg-amber-500/20 ring-2 ring-amber-500/40'
-                            : 'border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/15'
+                        ? 'border-amber-500 bg-amber-500/20 ring-2 ring-amber-500/40'
+                        : 'border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/15'
                         }`}
                 >
                     <span className="text-sm">🔒</span>
@@ -279,8 +292,8 @@ export default function DecisionsPage() {
                 <button
                     onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
-                            ? 'border-theme-text-secondary bg-theme-muted ring-2 ring-theme-text-muted/40'
-                            : 'border-theme-border bg-theme-overlay hover:bg-theme-muted'
+                        ? 'border-theme-text-secondary bg-theme-muted ring-2 ring-theme-text-muted/40'
+                        : 'border-theme-border bg-theme-overlay hover:bg-theme-muted'
                         }`}
                 >
                     <span className="text-sm">🔓</span>
@@ -290,8 +303,8 @@ export default function DecisionsPage() {
                 <button
                     onClick={() => setLockFilter(lockFilter === 'unlocked' ? 'all' : 'unlocked')}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer ${lockFilter === 'unlocked'
-                            ? 'border-rose-500 bg-rose-500/20 ring-2 ring-rose-500/40'
-                            : 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/15'
+                        ? 'border-rose-500 bg-rose-500/20 ring-2 ring-rose-500/40'
+                        : 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/15'
                         }`}
                 >
                     <span className="text-sm">⏳</span>
@@ -351,6 +364,22 @@ export default function DecisionsPage() {
                 >
                     {sortOrder === 'desc' ? '↓ Most Recent' : '↑ Oldest First'}
                 </button>
+                {decisions.length > 0 && (
+                    <div className="flex items-center gap-1">
+                        <button
+                            onClick={expandAll}
+                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                        >
+                            Expand All
+                        </button>
+                        <button
+                            onClick={collapseAll}
+                            className="px-2.5 py-1 text-xs font-medium text-theme-text-muted hover:text-theme-text-secondary transition-colors"
+                        >
+                            Collapse All
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* Decision Cards */}
@@ -374,8 +403,8 @@ export default function DecisionsPage() {
                                 <DecisionCard
                                     key={decision.id}
                                     decision={decision}
-                                    isExpanded={expandedId === decision.id}
-                                    onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
+                                    isExpanded={expandedIds.has(decision.id)}
+                                    onToggleExpand={() => toggleExpand(decision.id)}
                                     onStatusChange={handleStatusChange}
                                     onLockChange={handleLockChange}
                                     isNew={isNewItem(decision.created_at)}
@@ -400,8 +429,8 @@ export default function DecisionsPage() {
                                     <DecisionCard
                                         key={decision.id}
                                         decision={decision}
-                                        isExpanded={expandedId === decision.id}
-                                        onToggleExpand={() => setExpandedId(expandedId === decision.id ? null : decision.id)}
+                                        isExpanded={expandedIds.has(decision.id)}
+                                        onToggleExpand={() => toggleExpand(decision.id)}
                                         onStatusChange={handleStatusChange}
                                         onLockChange={handleLockChange}
                                         translatedText={textMap.get(decision.id)}
