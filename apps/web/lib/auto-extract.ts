@@ -108,8 +108,102 @@ export async function autoExtractActionItems(transcriptId: string): Promise<void
         if (activityRows.length > 0) {
             await supabase.from('activity_log').insert(activityRows);
         }
+
+        // 5. Fire-and-forget: generate implementation prompts for the new action items
+        autoGeneratePrompts(transcriptId).catch(promptErr =>
+            console.error(`${tag} Prompt generation failed (non-blocking):`, promptErr),
+        );
     } catch (err) {
         // Never propagate — upload must succeed even if extraction fails
+        console.error(`${tag} Failed for ${transcriptId}:`, err);
+    }
+}
+
+/**
+ * Auto-generate implementation prompts for all action items from a transcript.
+ * Fire-and-forget — errors are caught and logged, never propagated.
+ */
+async function autoGeneratePrompts(transcriptId: string): Promise<void> {
+    const tag = '[auto-prompt]';
+
+    try {
+        const geminiKey = process.env.GEMINI_API_KEY;
+        if (!geminiKey) return;
+
+        const supabase = getServerSupabase();
+
+        // Fetch items that need prompts (just inserted, so generated_prompt is NULL)
+        const { data: items } = await supabase
+            .from('action_items')
+            .select('id, title, description, assigned_to, priority, effort, due_date, source_text, group_label, created_by')
+            .eq('transcript_id', transcriptId)
+            .is('generated_prompt', null);
+
+        if (!items?.length) return;
+
+        // Fetch transcript context
+        const { data: transcript } = await supabase
+            .from('transcripts')
+            .select('meeting_title, meeting_date, participants, raw_transcript')
+            .eq('id', transcriptId)
+            .single();
+
+        if (!transcript) return;
+
+        // Fetch related decisions
+        const { data: decisions } = await supabase
+            .from('decisions')
+            .select('decision_text')
+            .eq('transcript_id', transcriptId)
+            .limit(10);
+
+        const relatedDecisions = (decisions ?? []).map((d: { decision_text: string }) => d.decision_text);
+
+        // Import the batch generator
+        const { generatePromptsForBatch } = await import('@meet-pipeline/shared');
+
+        const results = await generatePromptsForBatch(
+            items,
+            {
+                meeting_title: transcript.meeting_title,
+                meeting_date: transcript.meeting_date,
+                participants: transcript.participants ?? [],
+                raw_transcript: transcript.raw_transcript ?? '',
+            },
+            relatedDecisions,
+            geminiKey,
+        );
+
+        // Store all generated prompts
+        const now = new Date().toISOString();
+        let count = 0;
+
+        for (const [itemId, generated] of results) {
+            const { error } = await supabase
+                .from('action_items')
+                .update({
+                    generated_prompt: generated.prompt,
+                    prompt_model: generated.model,
+                    prompt_generated_at: now,
+                    prompt_version: generated.version,
+                    updated_at: now,
+                })
+                .eq('id', itemId);
+
+            if (!error) count++;
+        }
+
+        console.log(`${tag} Generated ${count}/${items.length} prompts for transcript ${transcriptId}`);
+
+        await supabase.from('activity_log').insert({
+            event_type: 'prompts_auto_generated',
+            entity_type: 'action_item',
+            entity_id: transcriptId,
+            actor: 'system',
+            summary: `Auto-generated ${count} implementation prompts for transcript`,
+            metadata: { transcript_id: transcriptId, total: items.length, success: count },
+        });
+    } catch (err) {
         console.error(`${tag} Failed for ${transcriptId}:`, err);
     }
 }
