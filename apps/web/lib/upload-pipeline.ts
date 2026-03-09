@@ -76,11 +76,30 @@ export function extractParticipants(text: string): string[] {
     return Array.from(speakers).sort();
 }
 
-/** Generate canonical transcript ID: YYYY-MM-DD_meeting-title-slug */
-export function generateTranscriptId(title: string, date: Date): string {
+/**
+ * Generate a transcript ID: YYYY-MM-DD_meeting-title-slug_<hash>
+ * The optional uniqueSuffix (e.g. Gmail message ID) is hashed to 8 chars
+ * to ensure uniqueness when multiple meetings share the same title + date.
+ * For manual uploads without a suffix, a random 8-char string is used.
+ */
+export function generateTranscriptId(title: string, date: Date, uniqueSuffix?: string): string {
     const dateStr = date.toISOString().split('T')[0];
     const slug = slugify(title);
-    return `${dateStr}_${slug}`;
+    // Use a simple hash of the suffix, or a random string for uploads
+    const hash = uniqueSuffix
+        ? shortHash(uniqueSuffix)
+        : Math.random().toString(36).substring(2, 10);
+    return `${dateStr}_${slug}_${hash}`;
+}
+
+/** Produce a short 8-char hash from an arbitrary string. */
+function shortHash(input: string): string {
+    let h = 0;
+    for (let i = 0; i < input.length; i++) {
+        h = Math.imul(31, h) + input.charCodeAt(i) | 0;
+    }
+    // Convert to unsigned 32-bit, then to base-36, pad to 8 chars
+    return (h >>> 0).toString(36).padStart(8, '0').slice(0, 8);
 }
 
 // ── Chunker (copied from worker — pure functions, no deps) ──────────
@@ -260,7 +279,7 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
     // PDF-extracted text lacks structured "Speaker: text" lines, so the
     // speaker regex produces false positives on arbitrary sentences.
     const participants = extractionMethod === 'pdf_upload' ? [] : extractParticipants(text);
-    const transcriptId = generateTranscriptId(title, date);
+    const transcriptId = generateTranscriptId(title, date, sourceEmailId);
     const wordCount = text.split(/\s+/).filter(Boolean).length;
 
     const transcript: MeetingTranscript = {
@@ -276,9 +295,9 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
     };
 
     try {
-        // Upsert transcript record — same meeting (title + date) from multiple
-        // emails produces the same deterministic ID, so update if it already exists.
-        const { error: insertError } = await supabase.from('transcripts').upsert({
+        // Insert transcript record — IDs are unique per email (via hash suffix),
+        // and the sync route deduplicates by source_email_id before reaching here.
+        const { error: insertError } = await supabase.from('transcripts').insert({
             id: transcript.transcript_id,
             meeting_title: transcript.meeting_title,
             meeting_date: transcript.meeting_date,
@@ -288,9 +307,9 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
             extraction_method: transcript.extraction_method,
             word_count: transcript.word_count,
             processed_at: transcript.processed_at,
-        }, { onConflict: 'id' });
+        });
 
-        if (insertError) throw new Error(`Failed to upsert transcript: ${insertError.message}`);
+        if (insertError) throw new Error(`Failed to insert transcript: ${insertError.message}`);
 
         // Chunk the text
         const chunks = chunkTranscript(text);
@@ -314,8 +333,8 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
             created_at: new Date().toISOString(),
         }));
 
-        // Upsert chunks — mirrors the transcript upsert logic
-        const { error: chunksError } = await supabase.from('transcript_chunks').upsert(
+        // Insert chunks
+        const { error: chunksError } = await supabase.from('transcript_chunks').insert(
             chunkRows.map((c) => ({
                 id: c.id,
                 transcript_id: c.transcript_id,
@@ -327,11 +346,10 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
                 text: c.text,
                 embedding: c.embedding,
                 token_estimate: c.token_estimate,
-            })),
-            { onConflict: 'id' }
+            }))
         );
 
-        if (chunksError) throw new Error(`Failed to upsert chunks: ${chunksError.message}`);
+        if (chunksError) throw new Error(`Failed to insert chunks: ${chunksError.message}`);
 
         // Log success
         await supabase.from('processing_log').insert({
