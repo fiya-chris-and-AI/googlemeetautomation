@@ -42,6 +42,8 @@ export default function TranscriptsPage() {
         alreadyProcessed: number;
         newlyProcessed: number;
         errors: number;
+        error?: string;
+        query?: string;
     } | null>(null);
     const [newSyncedIds, setNewSyncedIds] = useState<Set<string>>(new Set());
     const [sourceFilter, setSourceFilter] = useState<SourceFilter>('all');
@@ -68,6 +70,9 @@ export default function TranscriptsPage() {
             const data = await res.json();
             setSyncResult(data);
 
+            // If there was a top-level error, don't try to refresh
+            if (data.error) return;
+
             // Track which transcripts were just synced so we can show a "new" dot.
             const before = new Set(transcripts.map((tr) => tr.transcript_id));
             const refreshRes = await fetch('/api/transcripts');
@@ -77,8 +82,14 @@ export default function TranscriptsPage() {
 
             const added = new Set(list.filter((tr) => !before.has(tr.transcript_id)).map((tr) => tr.transcript_id));
             setNewSyncedIds(added);
-        } catch {
-            setSyncResult(null);
+        } catch (err) {
+            setSyncResult({
+                found: 0,
+                alreadyProcessed: 0,
+                newlyProcessed: 0,
+                errors: 1,
+                error: err instanceof Error ? err.message : 'Network error — could not reach sync API',
+            });
         } finally {
             setSyncing(false);
         }
@@ -213,15 +224,28 @@ export default function TranscriptsPage() {
 
             {/* Sync result banner */}
             {syncResult && (
-                <div className="mb-4 px-4 py-3 rounded-lg border border-theme-border
+                <div className={`mb-4 px-4 py-3 rounded-lg border
                                 bg-theme-card text-sm text-theme-text-primary
-                                flex items-center justify-between">
+                                flex items-center justify-between
+                                ${syncResult.error
+                        ? 'border-rose-500/30 bg-rose-500/5'
+                        : 'border-theme-border'}`}>
                     <span>
-                        Sync complete — found {syncResult.found} email{syncResult.found !== 1 ? 's' : ''}
-                        {syncResult.newlyProcessed > 0
-                            ? `, ingested ${syncResult.newlyProcessed} new transcript${syncResult.newlyProcessed !== 1 ? 's' : ''}`
-                            : ', no new transcripts'}
-                        {syncResult.errors > 0 && `, ${syncResult.errors} error${syncResult.errors !== 1 ? 's' : ''}`}
+                        {syncResult.error ? (
+                            <>
+                                <span className="text-rose-400 font-medium">Sync error</span>
+                                {' — '}
+                                {syncResult.error}
+                            </>
+                        ) : (
+                            <>
+                                Sync complete — found {syncResult.found} email{syncResult.found !== 1 ? 's' : ''}
+                                {syncResult.newlyProcessed > 0
+                                    ? `, ingested ${syncResult.newlyProcessed} new transcript${syncResult.newlyProcessed !== 1 ? 's' : ''}`
+                                    : ', no new transcripts'}
+                                {syncResult.errors > 0 && `, ${syncResult.errors} error${syncResult.errors !== 1 ? 's' : ''}`}
+                            </>
+                        )}
                     </span>
                     <button
                         onClick={() => { setSyncResult(null); setNewSyncedIds(new Set()); }}

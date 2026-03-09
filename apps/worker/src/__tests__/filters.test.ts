@@ -11,6 +11,10 @@ describe('isTranscriptEmail', () => {
         expect(isTranscriptEmail(GEMINI_SENDER, 'Notes from "Weekly Standup"')).toBe(true);
     });
 
+    it('matches "Notes:" subject with date suffix from gemini-notes sender', () => {
+        expect(isTranscriptEmail(GEMINI_SENDER, 'Notes: "Chris/Lutfiya" Mar 8, 2026')).toBe(true);
+    });
+
     it('matches "Transcript for" subject with gemini-notes sender', () => {
         expect(isTranscriptEmail(GEMINI_SENDER, 'Transcript for Sprint Review')).toBe(true);
     });

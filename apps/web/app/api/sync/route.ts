@@ -33,6 +33,8 @@ interface SyncResult {
     newlyProcessed: number;
     errors: number;
     details: SyncDetail[];
+    query?: string;
+    error?: string;
 }
 
 // ── Main Handler ───────────────────────────────────────────────────
@@ -40,81 +42,99 @@ interface SyncResult {
 export async function POST(): Promise<NextResponse<SyncResult>> {
     const supabase = getServerSupabase();
 
-    // Step 1: Search Gmail for Gemini Notes emails (last 30 days, max 50)
-    const messages = await searchTranscriptEmails(50, 30);
+    try {
+        // Step 1: Search Gmail for Gemini Notes emails (last 30 days, max 50)
+        const { messages, query } = await searchTranscriptEmails(50, 30);
 
-    const result: SyncResult = {
-        found: messages.length,
-        alreadyProcessed: 0,
-        newlyProcessed: 0,
-        errors: 0,
-        details: [],
-    };
+        const result: SyncResult = {
+            found: messages.length,
+            alreadyProcessed: 0,
+            newlyProcessed: 0,
+            errors: 0,
+            details: [],
+            query,
+        };
 
-    if (messages.length === 0) {
-        return NextResponse.json(result);
-    }
-
-    // Step 2: Collect message IDs for dedup check
-    const messageIds = messages.map((m) => m.id!).filter(Boolean);
-
-    // Batch dedup: fetch all existing source_email_ids in one query
-    const { data: existingRows } = await supabase
-        .from('transcripts')
-        .select('source_email_id')
-        .in('source_email_id', messageIds);
-
-    const existingIds = new Set(
-        (existingRows ?? []).map((r: { source_email_id: string }) => r.source_email_id)
-    );
-
-    // Step 3: Process new messages in batches of 5
-    const CONCURRENCY = 5;
-    const toProcess: gmail_v1.Schema$Message[] = [];
-    const skippedDetails: SyncDetail[] = [];
-
-    // Separate already-processed from new
-    for (const msg of messages) {
-        const msgId = msg.id!;
-        if (existingIds.has(msgId)) {
-            result.alreadyProcessed++;
-            skippedDetails.push({ subject: msgId, status: 'skipped' });
-        } else {
-            toProcess.push(msg);
+        if (messages.length === 0) {
+            return NextResponse.json(result);
         }
-    }
 
-    result.details.push(...skippedDetails);
+        // Step 2: Collect message IDs for dedup check
+        const messageIds = messages.map((m) => m.id!).filter(Boolean);
 
-    // Process in concurrent batches
-    for (let i = 0; i < toProcess.length; i += CONCURRENCY) {
-        const batch = toProcess.slice(i, i + CONCURRENCY);
-        const settled = await Promise.allSettled(
-            batch.map((msg) => processSingleEmail(msg.id!))
+        // Batch dedup: fetch all existing source_email_ids in one query
+        const { data: existingRows } = await supabase
+            .from('transcripts')
+            .select('source_email_id')
+            .in('source_email_id', messageIds);
+
+        const existingIds = new Set(
+            (existingRows ?? []).map((r: { source_email_id: string }) => r.source_email_id)
         );
 
-        for (const outcome of settled) {
-            if (outcome.status === 'fulfilled') {
-                result.details.push(outcome.value);
-                if (outcome.value.status === 'processed') {
-                    result.newlyProcessed++;
-                } else if (outcome.value.status === 'error') {
-                    result.errors++;
-                }
+        // Step 3: Process new messages in batches of 5
+        const CONCURRENCY = 5;
+        const toProcess: gmail_v1.Schema$Message[] = [];
+        const skippedDetails: SyncDetail[] = [];
+
+        // Separate already-processed from new
+        for (const msg of messages) {
+            const msgId = msg.id!;
+            if (existingIds.has(msgId)) {
+                result.alreadyProcessed++;
+                skippedDetails.push({ subject: msgId, status: 'skipped' });
             } else {
-                result.errors++;
-                result.details.push({
-                    subject: 'unknown',
-                    status: 'error',
-                    error: outcome.reason instanceof Error
-                        ? outcome.reason.message
-                        : String(outcome.reason),
-                });
+                toProcess.push(msg);
             }
         }
-    }
 
-    return NextResponse.json(result);
+        result.details.push(...skippedDetails);
+
+        // Process in concurrent batches
+        for (let i = 0; i < toProcess.length; i += CONCURRENCY) {
+            const batch = toProcess.slice(i, i + CONCURRENCY);
+            const settled = await Promise.allSettled(
+                batch.map((msg) => processSingleEmail(msg.id!))
+            );
+
+            for (const outcome of settled) {
+                if (outcome.status === 'fulfilled') {
+                    result.details.push(outcome.value);
+                    if (outcome.value.status === 'processed') {
+                        result.newlyProcessed++;
+                    } else if (outcome.value.status === 'error') {
+                        result.errors++;
+                    }
+                } else {
+                    result.errors++;
+                    result.details.push({
+                        subject: 'unknown',
+                        status: 'error',
+                        error: outcome.reason instanceof Error
+                            ? outcome.reason.message
+                            : String(outcome.reason),
+                    });
+                }
+            }
+        }
+
+        return NextResponse.json(result);
+    } catch (err) {
+        const errorMsg = err instanceof Error ? err.message : String(err);
+        console.error(`[sync] Top-level error: ${errorMsg}`);
+
+        return NextResponse.json(
+            {
+                found: 0,
+                alreadyProcessed: 0,
+                newlyProcessed: 0,
+                errors: 1,
+                details: [],
+                error: errorMsg,
+            },
+            { status: 200 } // Return 200 so the frontend can parse the error
+        );
+    }
 }
 
 // ── Per-Email Processing ───────────────────────────────────────────

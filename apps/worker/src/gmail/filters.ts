@@ -1,5 +1,6 @@
 /**
  * Accepted transcript senders — only emails from these addresses are processed.
+ * NOTE: Keep in sync with apps/web/lib/gmail.ts (TRANSCRIPT_SENDERS + TRANSCRIPT_SUBJECT_PATTERNS)
  */
 const TRANSCRIPT_SENDERS: string[] = [
     'gemini-notes@google.com',

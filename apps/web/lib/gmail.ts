@@ -77,15 +77,21 @@ export function extractMeetingTitle(subject: string): string {
 
 // ── Gmail API Helpers ──────────────────────────────────────────────
 
+/** Build the Gmail search query for transcript emails. Exported for diagnostics. */
+export function buildTranscriptSearchQuery(newerThanDays = 30): string {
+    const fromClause = TRANSCRIPT_SENDERS.map((s) => `from:${s}`).join(' ');
+    return `{${fromClause}} newer_than:${newerThanDays}d`;
+}
+
 /** Search Gmail for recent transcript emails from all accepted senders. */
 export async function searchTranscriptEmails(
     maxResults = 50,
     newerThanDays = 30
-): Promise<gmail_v1.Schema$Message[]> {
+): Promise<{ messages: gmail_v1.Schema$Message[]; query: string }> {
     const gmail = getGmailClient();
-    // Gmail OR syntax: {from:a from:b} matches messages from either sender
-    const fromClause = TRANSCRIPT_SENDERS.map((s) => `from:${s}`).join(' ');
-    const query = `{${fromClause}} newer_than:${newerThanDays}d`;
+    const query = buildTranscriptSearchQuery(newerThanDays);
+
+    console.log(`[sync] Gmail query: ${query}`);
 
     const res = await gmail.users.messages.list({
         userId: 'me',
@@ -93,7 +99,14 @@ export async function searchTranscriptEmails(
         maxResults,
     });
 
-    return res.data.messages ?? [];
+    if (res.data.nextPageToken) {
+        console.warn(`[sync] Gmail returned nextPageToken — results may be truncated beyond ${maxResults}`);
+    }
+
+    const messages = res.data.messages ?? [];
+    console.log(`[sync] Gmail returned ${messages.length} message(s)`);
+
+    return { messages, query };
 }
 
 /** Fetch a full Gmail message by ID. */
