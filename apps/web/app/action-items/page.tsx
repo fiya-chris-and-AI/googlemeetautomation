@@ -352,6 +352,29 @@ export default function ActionItemsPage() {
         }
     };
 
+    /** Assign an unassigned item to a specific user (non-drag alternative). */
+    const handleAssign = async (itemId: string, targetAssignee: string) => {
+        const item = items.find(i => i.id === itemId);
+        if (!item || item.assigned_to === targetAssignee) return;
+
+        const prevAssignee = item.assigned_to;
+        setItems(prev => prev.map(i =>
+            i.id === itemId ? { ...i, assigned_to: targetAssignee } : i
+        ));
+
+        try {
+            await fetch(`/api/action-items/${itemId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ assigned_to: targetAssignee }),
+            });
+        } catch {
+            setItems(prev => prev.map(i =>
+                i.id === itemId ? { ...i, assigned_to: prevAssignee } : i
+            ));
+        }
+    };
+
     const handleCreate = async () => {
         if (!newTitle.trim()) return;
         try {
@@ -891,6 +914,7 @@ export default function ActionItemsPage() {
                                         onDragStart={(e) => handleDragStart(e, item.id)}
                                         isSelected={selectedItemIds.has(item.id)}
                                         onToggleSelect={selectionMode ? () => toggleItemSelection(item.id) : undefined}
+                                        onAssign={(assignee) => handleAssign(item.id, assignee)}
                                     />
                                 ))}
                             </div>
@@ -1073,6 +1097,7 @@ function ActionItemCard({
     onDragStart,
     isSelected = false,
     onToggleSelect,
+    onAssign,
 }: {
     item: ActionItem;
     allItems: ActionItem[];
@@ -1089,6 +1114,7 @@ function ActionItemCard({
     onDragStart?: (e: React.DragEvent) => void;
     isSelected?: boolean;
     onToggleSelect?: () => void;
+    onAssign?: (assigneeName: string) => void;
 }) {
     const { t } = useLocale();
     const [editGroupLabel, setEditGroupLabel] = useState(item.group_label ?? '');
@@ -1408,7 +1434,23 @@ function ActionItemCard({
             )}
 
             {/* Actions */}
-            <div className="flex items-center gap-2 mt-3 pt-3 border-t border-theme-border">
+            <div className="flex items-center gap-2 mt-3 pt-3 border-t border-theme-border flex-wrap">
+                {onAssign && (
+                    <>
+                        <span className="text-[10px] text-theme-text-tertiary">{t('common.assignTo')}</span>
+                        {ASSIGNEES.map((a) => (
+                            <button
+                                key={a.name}
+                                onClick={() => onAssign(a.name)}
+                                className={`px-2 py-0.5 text-[10px] font-medium rounded-md border transition-colors ${a.accent.replace('border-', 'border-') + '/30'
+                                    } hover:bg-${a.accent.replace('border-', '')}/10 text-theme-text-secondary hover:text-theme-text-primary`}
+                            >
+                                → {a.displayName}
+                            </button>
+                        ))}
+                        <span className="w-px h-4 bg-theme-border" />
+                    </>
+                )}
                 {(transitions[item.status] ?? []).map((tr) => (
                     <button
                         key={tr.target}

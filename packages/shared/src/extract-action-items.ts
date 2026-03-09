@@ -7,6 +7,26 @@
 import { normalizeAssignee } from './normalize-assignee';
 import { callGemini, stripMarkdownFences } from './gemini';
 
+// ── Topic categories ────────────────────────────
+
+/** Fixed set of broad topic categories for action item grouping. */
+export const ACTION_ITEM_TOPIC_CATEGORIES = [
+    'UI & Design',
+    'AI & Automation',
+    'Translation',
+    'DevOps',
+    'Business & Legal',
+    'Product Features',
+    'Branding & Content',
+    'Process & Meetings',
+    'Accounts & Access',
+    'Data & Analytics',
+    'Documentation',
+    'Personal',
+] as const;
+
+export type ActionItemTopic = (typeof ACTION_ITEM_TOPIC_CATEGORIES)[number];
+
 // ── Gemini system prompt ────────────────────────
 
 export const EXTRACTION_SYSTEM_PROMPT = `You extract action items from meeting transcripts. An action item is a CONCRETE TASK that someone committed to doing or was asked to do.
@@ -36,7 +56,7 @@ Return a JSON array of objects with these fields:
 - priority ("low" | "medium" | "high" | "urgent"): Infer from urgency cues, deadlines, and blockers. Default to "medium" if unclear.
 - due_date (string | null): ISO date if a deadline is mentioned, otherwise null
 - source_text (string): The exact excerpt from the transcript (2-4 sentences) that contains or implies this action item.
-- group_label (string | null): A short label (1-3 words, Title Case) for the project or topic this relates to. Use consistent labels across items from the same topic area.
+- group_label (string, required): Classify into exactly one of: "UI & Design", "AI & Automation", "Translation", "DevOps", "Business & Legal", "Product Features", "Branding & Content", "Process & Meetings", "Accounts & Access", "Data & Analytics", "Documentation", "Personal". Pick the single best fit.
 - effort ("quick_fix" | "moderate" | "significant"): Estimate effort:
   • "quick_fix" — Under 30 min (send an email, look something up, quick config change)
   • "moderate" — 30 min to a few hours (write a doc, set up a tool, focused work session)

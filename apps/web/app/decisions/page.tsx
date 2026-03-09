@@ -368,6 +368,29 @@ export default function DecisionsPage() {
         }
     };
 
+    /** Assign an unassigned decision to a specific user (non-drag alternative). */
+    const handleAssign = async (decisionId: string, targetAssignee: string) => {
+        const decision = decisions.find(d => d.id === decisionId);
+        if (!decision || decision.assigned_to === targetAssignee) return;
+
+        const prevAssignee = decision.assigned_to;
+        setDecisions(prev => prev.map(d =>
+            d.id === decisionId ? { ...d, assigned_to: targetAssignee } : d
+        ));
+
+        try {
+            await fetch(`/api/decisions/${decisionId}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ assigned_to: targetAssignee }),
+            });
+        } catch {
+            setDecisions(prev => prev.map(d =>
+                d.id === decisionId ? { ...d, assigned_to: prevAssignee } : d
+            ));
+        }
+    };
+
     // Translate all decision texts in one batch
     const allTexts = useMemo(() => decisions.map((d) => d.decision_text), [decisions]);
     const { translated: translatedTexts } = useTranslation(allTexts, { entityType: 'decision' });
@@ -735,6 +758,7 @@ export default function DecisionsPage() {
                                         isNew={isNewItem(decision.created_at)}
                                         translatedText={textMap.get(decision.id)}
                                         onDragStart={(e) => handleDragStart(e, decision.id)}
+                                        onAssign={(assignee) => handleAssign(decision.id, assignee)}
                                     />
                                 ))}
                             </div>
@@ -873,6 +897,7 @@ function DecisionCard({
     isNew = false,
     translatedText,
     onDragStart,
+    onAssign,
 }: {
     decision: Decision;
     isExpanded: boolean;
@@ -882,6 +907,7 @@ function DecisionCard({
     isNew?: boolean;
     translatedText?: string;
     onDragStart?: (e: React.DragEvent) => void;
+    onAssign?: (assigneeName: string) => void;
 }) {
     const { t } = useLocale();
     const style = STATUS_STYLE[decision.status] ?? STATUS_STYLE.active;
@@ -997,6 +1023,21 @@ function DecisionCard({
 
             {/* Always-visible action bar — matches Action Items pattern */}
             <div className="flex items-center gap-2 mt-3 pt-3 border-t border-theme-border">
+                {onAssign && (
+                    <>
+                        <span className="text-[10px] text-theme-text-tertiary">{t('common.assignTo')}</span>
+                        {ASSIGNEES.map((a) => (
+                            <button
+                                key={a.name}
+                                onClick={() => onAssign(a.name)}
+                                className={`px-2 py-0.5 text-[10px] font-medium rounded-md border transition-colors ${a.accent.replace('border-', 'border-') + '/30'
+                                    } hover:bg-${a.accent.replace('border-', '')}/10 text-theme-text-secondary hover:text-theme-text-primary`}
+                            >
+                                → {a.displayName}
+                            </button>
+                        ))}
+                    </>
+                )}
                 <span className="ml-auto" />
                 {onLockChange && (
                     <LockButton

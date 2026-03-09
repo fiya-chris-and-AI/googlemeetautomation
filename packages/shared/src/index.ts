@@ -9,10 +9,11 @@ export type { WhatsAppMessage, WhatsAppSession, WhatsAppContact } from './types.
 export { normalizeAssignee, normalizeAssigneeSingle, CANONICAL_NAMES } from './normalize-assignee';
 export {
     EXTRACTION_SYSTEM_PROMPT,
+    ACTION_ITEM_TOPIC_CATEGORIES,
     extractActionItemsFromTranscript,
     buildInsertionRows,
 } from './extract-action-items';
-export type { RawExtractedItem, TranscriptForExtraction } from './extract-action-items';
+export type { RawExtractedItem, TranscriptForExtraction, ActionItemTopic } from './extract-action-items';
 export {
     DECISION_EXTRACTION_SYSTEM_PROMPT,
     DECISION_TOPIC_CATEGORIES,

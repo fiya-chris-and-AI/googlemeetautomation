@@ -355,6 +355,9 @@ export const translations = {
         'actionPrompt.regenerate': '↻ Regenerate',
         'actionPrompt.regenerating': 'Regenerating…',
         'actionPrompt.error': 'Failed to generate implementation prompt.',
+
+        // ── Common ───────────────────────────────────────────────
+        'common.assignTo': 'Assign to',
     },
 
     de: {
@@ -701,5 +704,8 @@ export const translations = {
         'actionPrompt.regenerate': '↻ Neu generieren',
         'actionPrompt.regenerating': 'Wird neu generiert…',
         'actionPrompt.error': 'Umsetzungsvorschlag konnte nicht generiert werden.',
+
+        // ── Common ───────────────────────────────────────────────
+        'common.assignTo': 'Zuweisen an',
     },
 } as const;
