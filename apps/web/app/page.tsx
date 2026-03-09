@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import type { MeetingTranscript, QueryResponse, ActionItem, ActivityLogEntry, ScoreboardMetrics, CumulativeStats, SourceType } from '@meet-pipeline/shared';
 import { UploadModal } from '../components/upload-modal';
@@ -165,7 +166,14 @@ export default function DashboardPage() {
 
                 {answer && (
                     <div className="glass-card p-6 mt-4 animate-slide-up">
-                        <p className="text-theme-text-primary whitespace-pre-wrap">{answer.answer}</p>
+                        <div className="text-sm text-theme-text-primary prose prose-invert prose-sm max-w-none
+                            prose-headings:text-theme-text-primary prose-headings:font-semibold prose-headings:mt-3 prose-headings:mb-1
+                            prose-p:my-1 prose-p:leading-relaxed
+                            prose-li:my-0.5 prose-li:text-theme-text-secondary
+                            prose-strong:text-theme-text-primary prose-strong:font-semibold
+                            prose-ul:my-1 prose-ol:my-1">
+                            <ReactMarkdown>{answer.answer}</ReactMarkdown>
+                        </div>
                         {answer.sources.length > 0 && (
                             <div className="mt-4 pt-4 border-t border-theme-border">
                                 <p className="text-xs text-theme-text-tertiary mb-2">{t('dashboard.sources')} ({answer.sources.length})</p>

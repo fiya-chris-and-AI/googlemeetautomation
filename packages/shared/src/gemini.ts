@@ -62,8 +62,14 @@ export async function callGemini(
     const data = (await res.json()) as {
         candidates?: Array<{
             content?: { parts?: Array<{ text?: string }> };
+            finishReason?: string;
         }>;
     };
+
+    const finishReason = data.candidates?.[0]?.finishReason;
+    if (finishReason === 'MAX_TOKENS') {
+        console.warn('[gemini] Response was truncated (MAX_TOKENS). Consider increasing maxOutputTokens.');
+    }
 
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
 

@@ -128,7 +128,7 @@ DECISION AWARENESS: If the context includes previously recorded decisions that a
 
         if (geminiKey) {
             answer = await callGemini(systemPrompt, userPrompt, geminiKey, {
-                maxOutputTokens: 2048,
+                maxOutputTokens: 8192,
             });
             if (!answer) {
                 answer = 'I could not generate an answer.';
