@@ -276,8 +276,9 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
     };
 
     try {
-        // Insert transcript record
-        const { error: insertError } = await supabase.from('transcripts').insert({
+        // Upsert transcript record — same meeting (title + date) from multiple
+        // emails produces the same deterministic ID, so update if it already exists.
+        const { error: insertError } = await supabase.from('transcripts').upsert({
             id: transcript.transcript_id,
             meeting_title: transcript.meeting_title,
             meeting_date: transcript.meeting_date,
@@ -287,9 +288,9 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
             extraction_method: transcript.extraction_method,
             word_count: transcript.word_count,
             processed_at: transcript.processed_at,
-        });
+        }, { onConflict: 'id' });
 
-        if (insertError) throw new Error(`Failed to insert transcript: ${insertError.message}`);
+        if (insertError) throw new Error(`Failed to upsert transcript: ${insertError.message}`);
 
         // Chunk the text
         const chunks = chunkTranscript(text);
@@ -313,8 +314,8 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
             created_at: new Date().toISOString(),
         }));
 
-        // Insert chunks
-        const { error: chunksError } = await supabase.from('transcript_chunks').insert(
+        // Upsert chunks — mirrors the transcript upsert logic
+        const { error: chunksError } = await supabase.from('transcript_chunks').upsert(
             chunkRows.map((c) => ({
                 id: c.id,
                 transcript_id: c.transcript_id,
@@ -326,10 +327,11 @@ export async function processUpload(params: UploadPipelineParams): Promise<Meeti
                 text: c.text,
                 embedding: c.embedding,
                 token_estimate: c.token_estimate,
-            }))
+            })),
+            { onConflict: 'id' }
         );
 
-        if (chunksError) throw new Error(`Failed to insert chunks: ${chunksError.message}`);
+        if (chunksError) throw new Error(`Failed to upsert chunks: ${chunksError.message}`);
 
         // Log success
         await supabase.from('processing_log').insert({
