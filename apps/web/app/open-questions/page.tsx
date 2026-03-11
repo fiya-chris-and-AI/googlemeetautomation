@@ -28,6 +28,11 @@ const STATUS_STYLE: Record<string, string> = {
     archived: 'bg-theme-bg-muted text-theme-text-muted',
 };
 
+const ASSIGNEES: { name: string; displayName: string; accent: string }[] = [
+    { name: 'Lutfiya Miller', displayName: 'Dr. Lutfiya Miller', accent: 'border-violet-500' },
+    { name: 'Chris Müller', displayName: 'Chris Müller', accent: 'border-blue-500' },
+];
+
 /** Check if item was created in the last 24 hours. */
 function isNewItem(createdAt: string): boolean {
     return Date.now() - new Date(createdAt).getTime() < 24 * 60 * 60 * 1000;
@@ -101,30 +106,82 @@ export default function OpenQuestionsPage() {
         return questions.filter((q) => q.topic === topicFilter);
     }, [questions, topicFilter]);
 
-    // Group by meeting transcript
-    const groupedByMeeting = useMemo(() => {
-        const groups = new Map<string, { title: string; transcriptId: string; items: OpenQuestion[] }>();
-        const ungrouped: OpenQuestion[] = [];
+    // ── Group by assignee, then sub-group by topic ──
+    type TopicGroup = { topic: string; items: OpenQuestion[] };
+    const { byAssignee, unassigned } = useMemo(() => {
+        const result: Record<string, TopicGroup[]> = {};
+        const unassignedItems: OpenQuestion[] = [];
+
+        // Normalize raised_by to an assignee name, or null
+        const matchAssignee = (raisedBy: string | null | undefined): string | null => {
+            if (!raisedBy) return null;
+            const lower = raisedBy.toLowerCase();
+            for (const a of ASSIGNEES) {
+                const parts = a.name.toLowerCase().split(' ');
+                if (parts.some((p) => lower.includes(p))) return a.name;
+            }
+            return null;
+        };
+
+        // Bucket items by assignee
+        const buckets: Record<string, OpenQuestion[]> = {};
+        for (const a of ASSIGNEES) buckets[a.name] = [];
 
         for (const q of filteredQuestions) {
-            if (q.transcript_id && q.meeting_title) {
-                const existing = groups.get(q.transcript_id);
-                if (existing) {
-                    existing.items.push(q);
-                } else {
-                    groups.set(q.transcript_id, {
-                        title: q.meeting_title,
-                        transcriptId: q.transcript_id,
-                        items: [q],
-                    });
-                }
+            const assigneeName = matchAssignee(q.raised_by);
+            if (assigneeName) {
+                buckets[assigneeName].push(q);
             } else {
-                ungrouped.push(q);
+                unassignedItems.push(q);
             }
         }
 
-        return { meetings: [...groups.values()], ungrouped };
+        // Within each assignee, group by topic
+        for (const a of ASSIGNEES) {
+            const topicMap = new Map<string, OpenQuestion[]>();
+            for (const q of buckets[a.name]) {
+                const key = q.topic || 'Uncategorized';
+                const arr = topicMap.get(key) ?? [];
+                arr.push(q);
+                topicMap.set(key, arr);
+            }
+            result[a.name] = [...topicMap.entries()]
+                .sort(([a], [b]) => a.localeCompare(b))
+                .map(([topic, items]) => ({ topic, items }));
+        }
+
+        // Group unassigned by topic too
+        const unassignedTopicMap = new Map<string, OpenQuestion[]>();
+        for (const q of unassignedItems) {
+            const key = q.topic || 'Uncategorized';
+            const arr = unassignedTopicMap.get(key) ?? [];
+            arr.push(q);
+            unassignedTopicMap.set(key, arr);
+        }
+        const unassignedGroups = [...unassignedTopicMap.entries()]
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([topic, items]) => ({ topic, items }));
+
+        return { byAssignee: result, unassigned: unassignedGroups };
     }, [filteredQuestions]);
+
+    // Per-assignee stats
+    const perAssigneeStats = useMemo(() => {
+        const stats: Record<string, { total: number; open: number; resolved: number }> = {};
+        for (const a of ASSIGNEES) {
+            const groups = byAssignee[a.name] ?? [];
+            let total = 0, open = 0, resolved = 0;
+            for (const g of groups) {
+                for (const q of g.items) {
+                    total++;
+                    if (q.status === 'open') open++;
+                    if (q.status === 'resolved') resolved++;
+                }
+            }
+            stats[a.name] = { total, open, resolved };
+        }
+        return stats;
+    }, [byAssignee]);
 
     // Expand/collapse
     const toggleExpand = (id: string) => {
@@ -168,8 +225,10 @@ export default function OpenQuestionsPage() {
         return map;
     }, [questions, translatedTexts]);
 
+    const maxW = 'max-w-7xl'; // wider for dual-column
+
     return (
-        <div className="max-w-5xl mx-auto animate-fade-in">
+        <div className={`${maxW} mx-auto animate-fade-in`}>
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
                 <div>
@@ -264,67 +323,106 @@ export default function OpenQuestionsPage() {
                     </p>
                 </div>
             ) : (
-                <div className="space-y-8">
-                    {/* Grouped by meeting */}
-                    {groupedByMeeting.meetings.map((meeting) => (
-                        <div key={meeting.transcriptId}>
-                            {/* Meeting header */}
-                            <div className="flex items-center gap-3 mb-4">
-                                <Link
-                                    href={`/transcripts/${meeting.transcriptId}`}
-                                    className="text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors"
-                                >
-                                    {meeting.title}
-                                </Link>
-                                <span className="text-xs text-theme-text-muted bg-theme-bg-muted px-2 py-0.5 rounded-full">
-                                    {meeting.items.length}
-                                </span>
-                                <div className="flex-1 border-t border-theme-border/50" />
-                            </div>
+                <>
+                    {/* Dual-column grid — one column per assignee */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        {ASSIGNEES.map((assignee) => {
+                            const groups = byAssignee[assignee.name] ?? [];
+                            const aStats = perAssigneeStats[assignee.name] ?? { total: 0, open: 0, resolved: 0 };
 
-                            {/* Question cards for this meeting */}
-                            <div className="space-y-3">
-                                {meeting.items.map((question) => (
-                                    <QuestionCard
-                                        key={question.id}
-                                        question={question}
-                                        isExpanded={expandedIds.has(question.id)}
-                                        onToggleExpand={() => toggleExpand(question.id)}
-                                        onStatusToggle={handleStatusToggle}
-                                        isNew={isNewItem(question.created_at)}
-                                        translatedText={textMap.get(question.id)}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    ))}
+                            return (
+                                <div key={assignee.name} className={`border-t-2 ${assignee.accent} pt-4`}>
+                                    {/* Assignee header */}
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h2 className="text-base font-semibold text-theme-text-primary">
+                                            {assignee.displayName}
+                                        </h2>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-xs text-theme-text-secondary font-medium">
+                                                {aStats.total}
+                                            </span>
+                                            <span className="text-xs text-amber-400">{aStats.open} open</span>
+                                            {aStats.resolved > 0 && (
+                                                <span className="text-xs text-emerald-400">
+                                                    ✅ {aStats.resolved}
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
 
-                    {/* Ungrouped questions */}
-                    {groupedByMeeting.ungrouped.length > 0 && (
-                        <div>
-                            <div className="flex items-center gap-3 mb-4">
-                                <span className="text-sm font-semibold text-theme-text-secondary">Unlinked Questions</span>
-                                <span className="text-xs text-theme-text-muted bg-theme-bg-muted px-2 py-0.5 rounded-full">
-                                    {groupedByMeeting.ungrouped.length}
-                                </span>
-                                <div className="flex-1 border-t border-theme-border/50" />
-                            </div>
-                            <div className="space-y-3">
-                                {groupedByMeeting.ungrouped.map((question) => (
-                                    <QuestionCard
-                                        key={question.id}
-                                        question={question}
-                                        isExpanded={expandedIds.has(question.id)}
-                                        onToggleExpand={() => toggleExpand(question.id)}
-                                        onStatusToggle={handleStatusToggle}
-                                        isNew={isNewItem(question.created_at)}
-                                        translatedText={textMap.get(question.id)}
-                                    />
+                                    {/* Topic sub-groups */}
+                                    {groups.length === 0 ? (
+                                        <p className="text-xs text-theme-text-muted py-4">No questions</p>
+                                    ) : (
+                                        <div className="space-y-5">
+                                            {groups.map((topicGroup) => (
+                                                <div key={topicGroup.topic}>
+                                                    <div className="flex items-center gap-2 mb-2">
+                                                        <span className={`text-[11px] font-semibold px-2 py-0.5 rounded ${TOPIC_STYLE[topicGroup.topic] ?? 'bg-theme-bg-muted text-theme-text-muted'}`}>
+                                                            ▼ {topicGroup.topic}
+                                                        </span>
+                                                        <span className="text-[10px] text-theme-text-muted">
+                                                            {topicGroup.items.length}
+                                                        </span>
+                                                        <div className="flex-1 border-t border-theme-border/30" />
+                                                    </div>
+                                                    <div className="space-y-2">
+                                                        {topicGroup.items.map((question) => (
+                                                            <QuestionCard
+                                                                key={question.id}
+                                                                question={question}
+                                                                isExpanded={expandedIds.has(question.id)}
+                                                                onToggleExpand={() => toggleExpand(question.id)}
+                                                                onStatusToggle={handleStatusToggle}
+                                                                isNew={isNewItem(question.created_at)}
+                                                                translatedText={textMap.get(question.id)}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Unassigned questions */}
+                    {unassigned.length > 0 && (
+                        <div className="border-t border-theme-border/50 pt-6">
+                            <h3 className="text-sm font-semibold text-theme-text-secondary mb-4">Unassigned</h3>
+                            <div className="space-y-5">
+                                {unassigned.map((topicGroup) => (
+                                    <div key={topicGroup.topic}>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className={`text-[11px] font-semibold px-2 py-0.5 rounded ${TOPIC_STYLE[topicGroup.topic] ?? 'bg-theme-bg-muted text-theme-text-muted'}`}>
+                                                ▼ {topicGroup.topic}
+                                            </span>
+                                            <span className="text-[10px] text-theme-text-muted">
+                                                {topicGroup.items.length}
+                                            </span>
+                                            <div className="flex-1 border-t border-theme-border/30" />
+                                        </div>
+                                        <div className="space-y-2">
+                                            {topicGroup.items.map((question) => (
+                                                <QuestionCard
+                                                    key={question.id}
+                                                    question={question}
+                                                    isExpanded={expandedIds.has(question.id)}
+                                                    onToggleExpand={() => toggleExpand(question.id)}
+                                                    onStatusToggle={handleStatusToggle}
+                                                    isNew={isNewItem(question.created_at)}
+                                                    translatedText={textMap.get(question.id)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
                     )}
-                </div>
+                </>
             )}
         </div>
     );
@@ -373,47 +471,38 @@ function QuestionCard({
                     )}
                 </button>
 
-                {/* Content */}
+                {/* Content — text spans full width, tags below */}
                 <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                        <p
-                            className={`text-sm leading-relaxed cursor-pointer ${isResolved
-                                ? 'text-theme-text-muted line-through'
-                                : 'text-theme-text-primary'
-                                }`}
-                            onClick={onToggleExpand}
-                        >
-                            {displayText}
-                        </p>
+                    <p
+                        className={`text-sm leading-relaxed cursor-pointer ${isResolved
+                            ? 'text-theme-text-muted line-through'
+                            : 'text-theme-text-primary'
+                            }`}
+                        onClick={onToggleExpand}
+                    >
+                        {displayText}
+                    </p>
 
-                        <div className="flex items-center gap-1.5 flex-shrink-0">
-                            {isNew && (
-                                <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-500/15 text-brand-400">
-                                    NEW
-                                </span>
-                            )}
-                            {question.topic && (
-                                <span
-                                    className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${TOPIC_STYLE[question.topic] ?? 'bg-theme-bg-muted text-theme-text-muted'}`}
-                                >
-                                    {question.topic}
-                                </span>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Metadata row */}
-                    <div className="flex items-center gap-3 mt-2 text-[11px] text-theme-text-muted">
-                        {question.raised_by && (
-                            <span className="flex items-center gap-1">
-                                <span className="text-brand-400">●</span>
-                                {question.raised_by}
-                            </span>
+                    {/* Metadata row — source transcript, date, status, NEW badge */}
+                    <div className="flex items-center gap-2 mt-2 text-[11px] text-theme-text-muted flex-wrap">
+                        {question.meeting_title && question.transcript_id && (
+                            <Link
+                                href={`/transcripts/${question.transcript_id}`}
+                                className="text-brand-400/70 hover:text-brand-400 transition-colors truncate max-w-[180px]"
+                                title={question.meeting_title}
+                            >
+                                {question.meeting_title}
+                            </Link>
                         )}
                         <span>{new Date(question.created_at).toLocaleDateString()}</span>
                         <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${STATUS_STYLE[question.status] ?? ''}`}>
                             {question.status}
                         </span>
+                        {isNew && (
+                            <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-500/15 text-brand-400">
+                                NEW
+                            </span>
+                        )}
                     </div>
 
                     {/* Expanded details */}
