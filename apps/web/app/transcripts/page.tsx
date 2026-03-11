@@ -289,6 +289,9 @@ export default function TranscriptsPage() {
                             <th className="text-left px-4 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 {t('transcripts.table.decisions')}
                             </th>
+                            <th className="text-left px-4 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
+                                Open Questions
+                            </th>
                             <th className="text-right px-6 py-3 text-xs font-semibold text-theme-text-tertiary uppercase tracking-wider">
                                 {t('transcripts.table.actions')}
                             </th>
@@ -297,13 +300,13 @@ export default function TranscriptsPage() {
                     <tbody>
                         {loading ? (
                             <tr>
-                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={8} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {t('transcripts.loading')}
                                 </td>
                             </tr>
                         ) : filtered.length === 0 ? (
                             <tr>
-                                <td colSpan={7} className="px-6 py-12 text-center text-theme-text-tertiary">
+                                <td colSpan={8} className="px-6 py-12 text-center text-theme-text-tertiary">
                                     {search
                                         ? t('transcripts.empty')
                                         : t('transcripts.empty.hint')}
@@ -365,6 +368,14 @@ export default function TranscriptsPage() {
                                             color="brand"
                                         />
                                     </td>
+                                    {/* Open Questions column */}
+                                    <td className="px-4 py-4">
+                                        <ItemPreview
+                                            count={(tr as any).open_question_count ?? 0}
+                                            titles={(tr as any).open_question_titles ?? []}
+                                            color="amber"
+                                        />
+                                    </td>
                                     <td className="px-6 py-4 text-right">
                                         <button
                                             onClick={() => handleDelete(tr.transcript_id)}
@@ -398,7 +409,7 @@ export default function TranscriptsPage() {
 function ItemPreview({ count, titles, color }: {
     count: number;
     titles: string[];
-    color: 'emerald' | 'brand';
+    color: 'emerald' | 'brand' | 'amber';
 }) {
     if (count === 0) {
         return (
@@ -408,7 +419,9 @@ function ItemPreview({ count, titles, color }: {
 
     const badgeClasses = color === 'emerald'
         ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
-        : 'bg-brand-500/10 text-brand-600 dark:text-brand-400';
+        : color === 'amber'
+            ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400'
+            : 'bg-brand-500/10 text-brand-600 dark:text-brand-400';
 
     return (
         <div className="space-y-1">
