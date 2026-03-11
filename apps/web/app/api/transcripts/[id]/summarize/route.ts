@@ -3,6 +3,7 @@ import { getServerSupabase } from '../../../../../lib/supabase';
 import { callGemini } from '@meet-pipeline/shared';
 import { autoExtractActionItems } from '../../../../../lib/auto-extract';
 import { autoExtractDecisions } from '../../../../../lib/auto-extract-decisions';
+import { autoExtractOpenQuestions } from '../../../../../lib/auto-extract-open-questions';
 
 export const dynamic = 'force-dynamic';
 
@@ -36,6 +37,28 @@ export async function GET(
 
         if (error || !transcript) {
             return NextResponse.json({ error: 'Transcript not found' }, { status: 404 });
+        }
+
+        // ── Check if open questions need extracting (even on cache hit) ──
+        // This runs before the cache-hit return so existing transcripts
+        // that were summarized before the open-questions feature get extracted.
+        try {
+            const { count: openQuestionCount } = await supabase
+                .from('open_questions')
+                .select('id', { count: 'exact', head: true })
+                .eq('transcript_id', id);
+
+            const { count: oqAttemptCount } = await supabase
+                .from('activity_log')
+                .select('id', { count: 'exact', head: true })
+                .eq('event_type', 'open_question_extraction_attempted')
+                .eq('entity_id', id);
+
+            if ((openQuestionCount ?? 0) === 0 && (oqAttemptCount ?? 0) === 0) {
+                autoExtractOpenQuestions(id).catch(() => { });
+            }
+        } catch {
+            // Never block summary on extraction checks
         }
 
         // ── Cache hit — return immediately ──
@@ -72,7 +95,7 @@ Bullet list of any concrete decisions reached during the meeting. If none, write
 Bullet list of tasks or follow-ups mentioned. For each, note who it's for (Lutfiya, Chris, or both) if clear from context. If none, write "No action items identified."
 
 ## Open Questions
-Any unresolved questions or topics that need follow-up. If none, omit this section.
+Any unresolved questions or topics that need follow-up. If none, write "No open questions identified during this meeting."
 
 Guidelines:
 - Be specific and concrete — reference actual tools, features, or topics by name
@@ -141,6 +164,7 @@ Guidelines:
             if (needsDecisions) {
                 autoExtractDecisions(id).catch(() => { });
             }
+            // Note: open questions extraction is handled above (before cache-hit check)
         } catch {
             // Never let extraction checks delay the summary response
         }

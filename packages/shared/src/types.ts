@@ -216,6 +216,30 @@ export interface RawExtractedDecision {
     assigned_to?: string | null;
 }
 
+// ── Open Questions ──────────────────────────────
+
+export type OpenQuestionStatus = 'open' | 'resolved' | 'archived';
+export type OpenQuestionCreatedBy = 'ai' | 'manual';
+
+export interface OpenQuestion {
+    id: string;
+    transcript_id: string | null;
+    question_text: string;
+    context: string | null;
+    topic: string | null;
+    raised_by: string | null;
+    source_text: string | null;
+    resolution: string | null;
+    status: OpenQuestionStatus;
+    is_locked: boolean;
+    created_by: OpenQuestionCreatedBy;
+    created_at: string;
+    updated_at: string;
+    /** Meeting title, joined from transcripts table when needed */
+    meeting_title?: string;
+}
+
+
 // ── Activity Log ────────────────────────────────
 
 export interface ActivityLogEntry {
