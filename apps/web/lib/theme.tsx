@@ -21,11 +21,9 @@ function getInitialTheme(): Theme {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState<Theme>('dark');
-
-    useEffect(() => {
-        setTheme(getInitialTheme());
-    }, []);
+    // Lazy initializer reads from localStorage on the first client render,
+    // avoiding the flash of dark mode when the user had selected light mode.
+    const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
     useEffect(() => {
         const root = document.documentElement;

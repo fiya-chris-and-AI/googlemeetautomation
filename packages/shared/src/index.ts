@@ -3,6 +3,7 @@ export type { QueryRequest, QueryResponse, SourceChunk } from './types.js';
 export type { ExtractionMethod, LogStatus, SourceType } from './types.js';
 export type { ActionItem, ActionItemStatus, ActionItemPriority, ActionItemEffort, ActionItemCreatedBy, Category } from './types.js';
 export type { Decision, DecisionDomain, DecisionConfidence, DecisionStatus, DecisionCreatedBy, RawExtractedDecision } from './types.js';
+export type { OpenQuestion, OpenQuestionStatus, OpenQuestionCreatedBy } from './types.js';
 export type { ActivityLogEntry } from './types.js';
 export type { DayMeetingSummary, ScoreboardMetrics, CumulativeStats } from './types.js';
 export type { WhatsAppMessage, WhatsAppSession, WhatsAppContact } from './types.js';
@@ -23,6 +24,12 @@ export {
 export type { DecisionTopic, TranscriptForDecisionExtraction } from './extract-decisions';
 export { callGemini, stripMarkdownFences } from './gemini';
 export type { GeminiOptions } from './gemini';
+export {
+    OPEN_QUESTION_EXTRACTION_SYSTEM_PROMPT,
+    extractOpenQuestionsFromTranscript,
+    buildOpenQuestionInsertionRows,
+} from './extract-open-questions';
+export type { RawExtractedOpenQuestion, TranscriptForOpenQuestionExtraction } from './extract-open-questions';
 export { translateTexts } from './translate';
 export type { TranslateLang } from './translate';
 export {

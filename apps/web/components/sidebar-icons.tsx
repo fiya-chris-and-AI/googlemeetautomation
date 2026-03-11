@@ -109,6 +109,17 @@ export function LogsIcon({ className }: IconProps) {
     );
 }
 
+/** Open Questions icon — question mark in a speech bubble. */
+export function OpenQuestionsIcon({ className }: IconProps) {
+    return (
+        <svg {...svgBase} className={className}>
+            <path d="M3 4a2 2 0 012-2h10a2 2 0 012 2v9a2 2 0 01-2 2H8l-4 3v-3a2 2 0 01-1-1.7V4z" />
+            <path d="M8 6.5a2 2 0 112.5 1.94V9.5" />
+            <circle cx="10.25" cy="11.5" r="0.5" fill="currentColor" stroke="none" />
+        </svg>
+    );
+}
+
 /** Small admin icon for the footer (viewBox 0 0 16 16). */
 export function AdminIcon({ className }: IconProps) {
     return (

@@ -51,6 +51,7 @@ export const translations = {
         'sidebar.nav.transcripts': 'Transcripts',
         'sidebar.nav.actionItems': 'Action Items',
         'sidebar.nav.decisions': 'Decisions',
+        'sidebar.nav.openQuestions': 'Open Questions',
         'sidebar.nav.archive': 'Archive',
         'sidebar.nav.askAi': 'Ask AI',
         'sidebar.nav.logs': 'Logs',
@@ -356,6 +357,10 @@ export const translations = {
         'actionPrompt.regenerating': 'Regenerating…',
         'actionPrompt.error': 'Failed to generate implementation prompt.',
 
+        // ── Open Questions ───────────────────────────────────────
+        'openQuestions.title': 'Open Questions',
+        'openQuestions.subtitle': 'Unresolved topics and follow-ups from your meetings',
+
         // ── Common ───────────────────────────────────────────────
         'common.assignTo': 'Assign to',
     },
@@ -401,6 +406,7 @@ export const translations = {
         'sidebar.nav.transcripts': 'Transkripte',
         'sidebar.nav.actionItems': 'Aufgaben',
         'sidebar.nav.decisions': 'Entscheidungen',
+        'sidebar.nav.openQuestions': 'Offene Fragen',
         'sidebar.nav.archive': 'Archiv',
         'sidebar.nav.askAi': 'KI fragen',
         'sidebar.nav.logs': 'Protokolle',
@@ -704,6 +710,10 @@ export const translations = {
         'actionPrompt.regenerate': '↻ Neu generieren',
         'actionPrompt.regenerating': 'Wird neu generiert…',
         'actionPrompt.error': 'Umsetzungsvorschlag konnte nicht generiert werden.',
+
+        // ── Open Questions ───────────────────────────────────────
+        'openQuestions.title': 'Offene Fragen',
+        'openQuestions.subtitle': 'Ungeklärte Themen und Nachverfolgungen aus Ihren Besprechungen',
 
         // ── Common ───────────────────────────────────────────────
         'common.assignTo': 'Zuweisen an',
