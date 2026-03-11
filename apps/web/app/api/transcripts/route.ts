@@ -7,7 +7,7 @@ export async function GET() {
     try {
         const supabase = getServerSupabase();
 
-        const [transcriptRes, actionItemRes, decisionRes] = await Promise.all([
+        const [transcriptRes, actionItemRes, decisionRes, openQuestionRes] = await Promise.all([
             supabase
                 .from('transcripts')
                 .select('*')
@@ -22,6 +22,10 @@ export async function GET() {
                 .from('decisions')
                 .select('transcript_id, topic, decision_text')
                 .eq('created_by', 'ai')
+                .not('transcript_id', 'is', null),
+            supabase
+                .from('open_questions')
+                .select('transcript_id, question_text, topic')
                 .not('transcript_id', 'is', null),
         ]);
 
@@ -58,6 +62,20 @@ export async function GET() {
             }
         }
 
+        const openQuestionMap = new Map<string, { count: number; titles: string[] }>();
+        if (!openQuestionRes.error && Array.isArray(openQuestionRes.data)) {
+            for (const row of openQuestionRes.data) {
+                const tid = row.transcript_id as string;
+                const entry = openQuestionMap.get(tid) ?? { count: 0, titles: [] };
+                entry.count++;
+                if (entry.titles.length < 3) {
+                    const label = (row.topic as string | null) ?? (row.question_text as string);
+                    entry.titles.push(label);
+                }
+                openQuestionMap.set(tid, entry);
+            }
+        }
+
         const transcripts = (transcriptRes.data ?? []).map((row) => ({
             transcript_id: row.id,
             meeting_title: row.meeting_title,
@@ -72,6 +90,8 @@ export async function GET() {
             action_item_titles: actionMap.get(row.id)?.titles ?? [],
             decision_count: decisionMap.get(row.id)?.count ?? 0,
             decision_titles: decisionMap.get(row.id)?.titles ?? [],
+            open_question_count: openQuestionMap.get(row.id)?.count ?? 0,
+            open_question_titles: openQuestionMap.get(row.id)?.titles ?? [],
         }));
 
         return NextResponse.json(transcripts);
