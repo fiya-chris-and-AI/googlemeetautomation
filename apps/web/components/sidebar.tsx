@@ -14,6 +14,7 @@ import {
     TranscriptsIcon,
     ActionItemsIcon,
     DecisionsIcon,
+    OpenQuestionsIcon,
     ArchiveIcon,
     AskAiIcon,
     LogsIcon,
@@ -37,6 +38,7 @@ const WORKSPACE_ITEMS: NavItem[] = [
     { href: '/transcripts', labelKey: 'sidebar.nav.transcripts', icon: TranscriptsIcon, iconColor: 'text-icon-transcripts' },
     { href: '/action-items', labelKey: 'sidebar.nav.actionItems', icon: ActionItemsIcon, iconColor: 'text-brand-500' },
     { href: '/decisions', labelKey: 'sidebar.nav.decisions', icon: DecisionsIcon, iconColor: 'text-icon-decisions' },
+    { href: '/open-questions', labelKey: 'sidebar.nav.openQuestions', icon: OpenQuestionsIcon, iconColor: 'text-amber-400' },
     { href: '/archive', labelKey: 'sidebar.nav.archive', icon: ArchiveIcon, iconColor: 'text-icon-archive' },
 ];
 
@@ -69,6 +71,7 @@ export function Sidebar() {
     const { t, locale, toggleLocale } = useLocale();
     const [openCount, setOpenCount] = useState<number | null>(null);
     const [decisionCount, setDecisionCount] = useState<number | null>(null);
+    const [openQuestionCount, setOpenQuestionCount] = useState<number | null>(null);
 
     useEffect(() => {
         fetch('/api/action-items?status=open,in_progress')
@@ -82,6 +85,13 @@ export function Sidebar() {
             .then((r) => r.json())
             .then((data) => {
                 if (Array.isArray(data)) setDecisionCount(data.length);
+            })
+            .catch(() => { });
+
+        fetch('/api/open-questions?status=open')
+            .then((r) => r.json())
+            .then((data) => {
+                if (Array.isArray(data)) setOpenQuestionCount(data.length);
             })
             .catch(() => { });
     }, []);
@@ -129,6 +139,13 @@ export function Sidebar() {
                 {item.href === '/decisions' && decisionCount !== null && decisionCount > 0 && (
                     <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500">
                         {decisionCount}
+                    </span>
+                )}
+
+                {/* Badge: Open Questions */}
+                {item.href === '/open-questions' && openQuestionCount !== null && openQuestionCount > 0 && (
+                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400">
+                        {openQuestionCount}
                     </span>
                 )}
             </Link>
