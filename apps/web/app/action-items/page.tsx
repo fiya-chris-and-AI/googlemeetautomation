@@ -78,6 +78,11 @@ export default function ActionItemsPage() {
     const [newPriority, setNewPriority] = useState<ActionItemPriority>('medium');
     const [newEffort, setNewEffort] = useState<ActionItemEffort | ''>('');
     const [newDueDate, setNewDueDate] = useState('');
+    const [newScreenshotFile, setNewScreenshotFile] = useState<File | null>(null);
+    const [newScreenshotPreview, setNewScreenshotPreview] = useState<string | null>(null);
+    const screenshotInputRef = useRef<HTMLInputElement>(null);
+    const [screenshotDragOver, setScreenshotDragOver] = useState(false);
+    const [screenshotError, setScreenshotError] = useState<string | null>(null);
 
     // Grouping state
     const [viewMode, setViewMode] = useState<'grouped' | 'flat'>('grouped');
@@ -394,6 +399,24 @@ export default function ActionItemsPage() {
             });
             const created = (await res.json()) as ActionItem;
             if (created.id) {
+                // Upload screenshot if one was selected
+                if (newScreenshotFile) {
+                    try {
+                        const formData = new FormData();
+                        formData.append('file', newScreenshotFile);
+                        const ssRes = await fetch(`/api/action-items/${created.id}/screenshot`, {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        if (ssRes.ok) {
+                            const ssData = await ssRes.json();
+                            created.screenshot_url = ssData.screenshot_url;
+                            created.screenshot_path = ssData.screenshot_path;
+                            created.screenshot_alt = ssData.screenshot_alt;
+                        }
+                    } catch { /* screenshot upload failed, item is still created */ }
+                }
+
                 setItems((prev) => [created, ...prev]);
                 setShowCreate(false);
                 setNewTitle('');
@@ -403,6 +426,11 @@ export default function ActionItemsPage() {
                 setNewEffort('');
                 setNewDueDate('');
                 setNewCategories([]);
+                // Clean up screenshot state
+                if (newScreenshotPreview) URL.revokeObjectURL(newScreenshotPreview);
+                setNewScreenshotFile(null);
+                setNewScreenshotPreview(null);
+                setScreenshotError(null);
             }
         } catch { /* silently fail */ }
     };
@@ -1004,6 +1032,98 @@ export default function ActionItemsPage() {
                                     onChange={setNewCategories}
                                     availableCategories={allCategories}
                                     onCreateCategory={handleCreateCategory}
+                                />
+                            </div>
+                            {/* Screenshot upload */}
+                            <div>
+                                <label className="text-xs text-theme-text-tertiary font-medium uppercase tracking-wider block mb-1">{t('actionItems.create.screenshot')}</label>
+                                {newScreenshotPreview ? (
+                                    <div className="relative w-full rounded-xl overflow-hidden border border-theme-border bg-theme-muted/30 group">
+                                        <img
+                                            src={newScreenshotPreview}
+                                            alt="Screenshot preview"
+                                            className="w-full h-auto max-h-[160px] object-contain"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                if (newScreenshotPreview) URL.revokeObjectURL(newScreenshotPreview);
+                                                setNewScreenshotFile(null);
+                                                setNewScreenshotPreview(null);
+                                                setScreenshotError(null);
+                                            }}
+                                            className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/50 hover:bg-rose-500/80 text-white transition-colors"
+                                            title="Remove"
+                                        >
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div
+                                        className={`w-full rounded-xl border-2 border-dashed p-4 flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-colors ${screenshotDragOver
+                                                ? 'border-brand-500 bg-brand-500/5'
+                                                : 'border-theme-border hover:border-brand-500/40 hover:bg-theme-overlay/50'
+                                            }`}
+                                        onClick={() => screenshotInputRef.current?.click()}
+                                        onDragOver={(e) => { e.preventDefault(); setScreenshotDragOver(true); }}
+                                        onDragLeave={() => setScreenshotDragOver(false)}
+                                        onDrop={(e) => {
+                                            e.preventDefault();
+                                            setScreenshotDragOver(false);
+                                            const file = e.dataTransfer.files[0];
+                                            if (file) {
+                                                if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+                                                    setScreenshotError('Only PNG, JPG, and WebP images are allowed');
+                                                    return;
+                                                }
+                                                if (file.size > 5 * 1024 * 1024) {
+                                                    setScreenshotError('File is too large (max 5 MB)');
+                                                    return;
+                                                }
+                                                setScreenshotError(null);
+                                                setNewScreenshotFile(file);
+                                                setNewScreenshotPreview(URL.createObjectURL(file));
+                                            }
+                                        }}
+                                    >
+                                        <svg className="w-5 h-5 text-theme-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        <span className="text-[11px] text-theme-text-muted text-center">
+                                            {screenshotDragOver ? t('actionItems.create.screenshotDrop') : t('actionItems.create.screenshotHint')}
+                                        </span>
+                                        {screenshotError && (
+                                            <span className="text-[10px] text-rose-400">{screenshotError}</span>
+                                        )}
+                                    </div>
+                                )}
+                                <input
+                                    ref={screenshotInputRef}
+                                    type="file"
+                                    accept="image/png,image/jpeg,image/webp"
+                                    className="hidden"
+                                    onChange={(e) => {
+                                        const file = e.target.files?.[0];
+                                        if (file) {
+                                            if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+                                                setScreenshotError('Only PNG, JPG, and WebP images are allowed');
+                                                return;
+                                            }
+                                            if (file.size > 5 * 1024 * 1024) {
+                                                setScreenshotError('File is too large (max 5 MB)');
+                                                return;
+                                            }
+                                            setScreenshotError(null);
+                                            if (newScreenshotPreview) URL.revokeObjectURL(newScreenshotPreview);
+                                            setNewScreenshotFile(file);
+                                            setNewScreenshotPreview(URL.createObjectURL(file));
+                                        }
+                                        // Reset input so same file can be re-selected
+                                        e.target.value = '';
+                                    }}
                                 />
                             </div>
                         </div>
